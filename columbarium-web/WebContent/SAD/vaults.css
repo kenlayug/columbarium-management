@@ -1,0 +1,28 @@
+table, td {
+    border: 1px solid black;
+    width: auto;
+    height: auto;
+}
+td a{
+    color: #2f1706;
+    margin-left: 25%;
+    margin-right: 25%;
+    padding-right: 20px;
+    text-decoration: none;
+    font-family: "KG Blank Space Solid";
+    font-size: 20px;
+}
+td a:hover, td a:active{
+    color: #2f1706;
+    text-shadow: 2px 2px #ddb385;
+    margin-left: 25%;
+    margin-right: 25%;
+    padding-right: 20px;
+    text-decoration: none;
+    font-family: "KG Blank Space Solid";
+    font-size: 20px;
+}
+#building-no{
+    background: url("img/dropdown.jpg");
+    margin-top: 25px;
+}
