@@ -34,14 +34,6 @@ tbody tr td{
     font-family: "KG Blank Space Sketch";
     box-shadow: none;
 }
-.dropdown-button{
-    background:  linear-gradient(rgba(133, 70, 27, 0.58), rgba(133, 70, 27, 0.44));
-    color: #000000;
-}
-.dropdown-button:hover{
-    background:  linear-gradient(rgba(133, 70, 27, 0.58), rgba(133, 70, 27, 0.44));
-    color: #000000;
-}
 .h{
     visibility: hidden;
 }

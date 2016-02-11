@@ -60,92 +60,86 @@
     </div>
     <!-- Modal Trigger -->
     <!-- Customer Add Modal -->
-    <div id="add" class="modal">
-        <div class="modal-content">
-            <h5>ADD EMPLOYEE</h5>
-            <form action="Employee.html" method="post">
-                <div class="row">
-                    <div class="input-field col s4">
-                        <input id="empCode" type="text" required="" aria-required="true" class="validate">
-                        <label for="empCode">Employee Code</label>
-                    </div>
-                    <div class="input-field col s9">
-                        <input id="name" type="text" required="" aria-required="true" class="validate">
-                        <label for="name">Name</label>
-                    </div>
-                    <div class="input-field col s3">
-                        <input id="contact" type="text" required="" aria-required="true" class="validate">
-                        <label for="contact">Contact No.</label>
-                    </div>
-                    <div class="input-field col s12">
-                        <input id="address" type="text" required="" aria-required="true" class="validate">
-                        <label for="address">Address</label>
-                    </div>
-                    <div class="modal-footer">
-                        <button data-target="#" class="btn modal-trigger">Add</button>
-                    </div>
+    <div id="add" class="modal modal-fixed-footer">
+        <h5>ADD EMPLOYEE</h5>
+        <form action="Employee.html" method="post">
+            <div class="row">
+                <div class="input-field col s4">
+                    <input id="empCode" type="text" required="" aria-required="true" class="validate">
+                    <label for="empCode">Employee Code</label>
                 </div>
-            </form>
-        </div>
+                <div class="input-field col s9">
+                    <input id="name" type="text" required="" aria-required="true" class="validate">
+                    <label for="name">Name</label>
+                </div>
+                <div class="input-field col s3">
+                    <input id="contact" type="text" required="" aria-required="true" class="validate">
+                    <label for="contact">Contact No.</label>
+                </div>
+                <div class="input-field col s12">
+                    <input id="address" type="text" required="" aria-required="true" class="validate">
+                    <label for="address">Address</label>
+                </div>
+                <div class="modal-footer">
+                    <button data-target="#" class="btn modal-trigger">Add</button>
+                </div>
+            </div>
+        </form>
     </div>
     <!-- Customer Update Modal -->
-    <div id="update" class="modal">
-        <div class="modal-content">
-            <h5>UPDATE EMPLOYEE RECORD</h5>
-            <form action="Employee.html" method="post">
-                <div class="row">
-                    <div class="h">
-                        <div class="col s7">mm</div>
-                    </div>
-                    <div class="col s5">
-                        <input type="text" name="search" required="" aria-required="true" class="validate" placeholder="Search Employee Name">
-                    </div>
+    <div id="update" class="modal modal-fixed-footer">
+        <h5>UPDATE EMPLOYEE RECORD</h5>
+        <form action="Employee.html" method="post">
+            <div class="row">
+                <div class="h">
+                    <div class="col s7">mm</div>
                 </div>
-                <div class="row">
-                    <div class="input-field col s4">
-                        <input id="empCode" type="text" required="" aria-required="true" class="validate">
-                        <label for="empCode">Employee Code</label>
-                    </div>
-                    <div class="input-field col s9">
-                        <input id="name" type="text" required="" aria-required="true" class="validate">
-                        <label for="name">Name</label>
-                    </div>
-                    <div class="input-field col s3">
-                        <input id="contact" type="text" required="" aria-required="true" class="validate">
-                        <label for="contact">Contact No.</label>
-                    </div>
-                    <div class="input-field col s12">
-                        <input id="address" type="text" required="" aria-required="true" class="validate">
-                        <label for="address">Address</label>
-                    </div>
-                    <div class="modal-footer">
-                        <button data-target="#" class="btn modal-trigger">Add</button>
-                    </div>
+                <div class="col s5">
+                    <input type="text" name="search" required="" aria-required="true" class="validate" placeholder="Search Employee Name">
                 </div>
-            </form>
-        </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s4">
+                    <input id="empCode" type="text" required="" aria-required="true" class="validate">
+                    <label for="empCode">Employee Code</label>
+                </div>
+                <div class="input-field col s9">
+                    <input id="name" type="text" required="" aria-required="true" class="validate">
+                    <label for="name">Name</label>
+                </div>
+                <div class="input-field col s3">
+                    <input id="contact" type="text" required="" aria-required="true" class="validate">
+                    <label for="contact">Contact No.</label>
+                </div>
+                <div class="input-field col s12">
+                    <input id="address" type="text" required="" aria-required="true" class="validate">
+                    <label for="address">Address</label>
+                </div>
+                <div class="modal-footer">
+                    <button data-target="#" class="btn modal-trigger">Add</button>
+                </div>
+            </div>
+        </form>
     </div>
-    <div id="delete" class="modal">
-        <div class="modal-content">
-            <h5>DELETE EMPLOYEE</h5>
-            <form action="Employee.html" method="post">
-                <div class="row">
-                    <div class="h">
-                        <div class="col s7">mm</div>
-                    </div>
-                    <div class="col s5">
-                        <input type="text" name="search" required="" aria-required="true" class="validate" placeholder="Search Employee Code">
-                    </div>
-                    <div>
-                        <h6>EMPLOYEE DETAILS</h6>
-
-                    </div>
-                    <div class="modal-footer">
-                        <button data-target="#" class="btn modal-trigger">Delete</button>
-                    </div>
+    <div id="delete" class="modal modal-fixed-footer">
+        <h5>DELETE EMPLOYEE</h5>
+        <form action="Employee.html" method="post">
+            <div class="row">
+                <div class="h">
+                    <div class="col s7">mm</div>
                 </div>
-            </form>
-        </div>
+                <div class="col s5">
+                    <input type="text" name="search" required="" aria-required="true" class="validate" placeholder="Search Employee Code">
+                </div>
+                <div>
+                    <h6>EMPLOYEE DETAILS</h6>
+
+                </div>
+                <div class="modal-footer">
+                    <button data-target="#" class="btn modal-trigger">Delete</button>
+                </div>
+            </div>
+        </form>
     </div>
 </body>
 </html>
