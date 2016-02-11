@@ -1,0 +1,79 @@
+html{
+    background-color: #0f0f0f;
+}
+.vaults-content {
+    float: left;
+    width: 420px;
+    height: 355px;
+}
+table{
+    margin-top: 20px;
+}
+table, td {
+    border: 1px solid #745a1a;
+    width: auto;
+    height: auto;
+    background:  linear-gradient(rgba(181, 175, 112, 0.58), rgba(185, 177, 100, 0.44)),
+    url("img/p1.jpg");
+}
+p{
+    font-family: "KG Blank Space Solid";
+    font-size: 20px;
+    padding-left: 15px;
+}
+td a{
+    color: #2f1706;
+    margin-left: 25%;
+    margin-right: 25%;
+    padding-right: 20px;
+    text-decoration: none;
+    font-family: "KG Blank Space Solid";
+    font-size: 20px;
+}
+td a:hover, td a:active{
+    color: #2f1706;
+    text-shadow: 2px 2px #634d16;
+    margin-left: 25%;
+    margin-right: 25%;
+    padding-right: 20px;
+    text-decoration: none;
+    font-family: "KG Blank Space Solid";
+    font-size: 20px;
+    background-color: transparent;
+}
+#building-no{
+    background: url("img/dropdown.jpg");
+    margin-top: 25px;
+}
+.h{
+    visibility: hidden;
+}
+.modal-footer .modal-trigger,.modal-footer .modal-trigger:active{
+    background:  linear-gradient(rgba(235, 235, 148, 0.58), rgba(227, 222, 139, 0.44)),
+    url("img/p1.jpg");
+    color: #2f1706;
+    font-family: "KG Blank Space Solid";
+}
+.modal-background{
+    background:  linear-gradient(rgba(227, 225, 152, 0.58), rgba(255, 226, 177, 0.44)),
+    url("img/Origami8.jpg");
+    background-size:cover;
+    height: 100%;
+    width: 100%;
+}
+.modal-header{
+    background:  linear-gradient(rgba(235, 235, 148, 0.58), rgba(227, 222, 139, 0.44)),
+    url("img/p1.jpg");
+}
+.modal-header label{
+    font-family: "KG Blank Space Sketch";
+    text-shadow: 2px 2px #e2d5ad;
+    color: #2f1706;
+    font-size: x-large;
+}
+.modal-fixed-footer{
+    position: fixed;
+
+    background:  linear-gradient(rgba(181, 175, 112, 0.58), rgba(185, 177, 100, 0.44)),
+    url("img/Origami8.jpg");
+}

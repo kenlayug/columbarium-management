@@ -1,0 +1,63 @@
+thead tr{
+    background:  linear-gradient(rgba(163, 151, 91, 0.58), rgba(171, 152, 57, 0.44)),
+    url("img/p1.jpg");
+}
+thead tr th{
+    font-size: 25px;
+    padding-left: 20px;
+    font-family: "KG Blank Space Sketch";
+    position: relative;
+    color: #2f1706;
+    text-shadow: 2px 2px #ddab32;
+}
+
+tbody tr td{
+    padding-left: 20px;
+    font-size: 17px;
+    position: relative;
+}
+.modal-trigger{
+    float: right;
+    margin-right: 50px;
+    color: #160b03;
+    background:  linear-gradient(rgba(244, 225, 136, 0.58), rgba(243, 216, 80, 0.44)),
+    url("img/p1.jpg");
+    font-family: "KG Blank Space Sketch";
+
+}
+.modal-trigger:hover, .modal-trigger:active{
+    float: right;
+    margin-right: 50px;
+    color: #160b03;
+    background:  linear-gradient(rgba(244, 225, 136, 0.58), rgba(243, 216, 80, 0.44)),
+    url("img/p1.jpg");
+    font-family: "KG Blank Space Sketch";
+    box-shadow: none;
+}
+.h{
+    visibility: hidden;
+}
+th{
+    height: 70px;
+    position: fixed;//para-kahit-magscroll-andun-parin-sa-taas-yung-header-para-sa-table
+}
+
+th, td {
+    padding: 15px;
+    text-align: center;
+}
+
+.search-customer-update input[type=text] {
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+.search-customer-update input[type=text]:focus {
+    width: 100%;
+}
