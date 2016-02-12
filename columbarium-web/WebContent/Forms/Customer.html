@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer_Maintenance</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+
+    <!-- Import File -->
+    <script type="text/javascript" src = "js/CustomerJS.js"></script>
+    <link href="css/CustomerCSS.css" rel="stylesheet" type="text/css"/>
+
+</head>
+<body>
+    <div class="Responsive">
+        <table class="striped">
+            <thead>
+            <tr>
+                <th data-field="CName">Name</th>
+                <th data-field="Address">Address</th>
+                <th data-field="contact">Contact Number</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Alvin</td>
+                <td>Eclair</td>
+                <td>$0.87</td>
+            </tr>
+            <tr>
+                <td>Alvin</td>
+                <td>Eclair</td>
+                <td>$0.87</td>
+            </tr>
+            <tr>
+                <td>Alvin</td>
+                <td>Eclair</td>
+                <td>$0.87</td>
+            </tr>
+            <tr>
+                <td>Alvin</td>
+                <td>Eclair</td>
+                <td>$0.87</td>
+            </tr>
+            </tbody>
+        </table>
+        <button data-target="update" class="btn modal-trigger">Update</button>
+        <button data-target="add" class="btn modal-trigger">Add</button>
+    </div>
+    <!-- Modal Trigger -->
+    <!-- Customer Add Modal -->
+    <div id="add" class="modal modal-fixed-footer">
+        <div class="modal-header">
+            <label>ADD CUSTOMER</label>
+        </div>
+        <form action="Customer.html" method="post">
+            <div class="row">
+                <div class="input-field col s4">
+                    <input id="name" type="text" required="" aria-required="true" class="validate">
+                    <label for="name">Name</label>
+                </div>
+                <div class="input-field col s4">
+                    <input id="address" type="text" required="" aria-required="true" class="validate">
+                    <label for="address">Address</label>
+                </div>
+                <div class="input-field col s4">
+                    <input id="contact" type="text" required="" aria-required="true" class="validate">
+                    <label for="contact">Contact No.</label>
+                </div>
+                <div class="modal-footer">
+                    <button data-target="#" class="btn modal-trigger">Add</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- Customer Update Modal -->
+    <div id="update" class="modal modal-fixed-footer">
+        <div class="modal-header">
+            <label>UPDATE CUSTOMER RECORD</label>
+        </div>
+        <form action="Customer.html" method="post">
+            <div class="row">
+                <div class="h">
+                    <div class="col s7">mm</div>
+                </div>
+                <div class="col s5">
+                    <input type="text" name="search" required="" aria-required="true" class="validate" placeholder="Search Customer Name">
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s4">
+                    <input id="uname" type="text" required="" aria-required="true" class="validate">
+                    <label for="uname">Name</label>
+                </div>
+                <div class="input-field col s4">
+                    <input id="uaddress" type="text" required="" aria-required="true" class="validate">
+                    <label for="uaddress">Address</label>
+                </div>
+                <div class="input-field col s4">
+                    <input id="ucontact" type="text" required="" aria-required="true" class="validate">
+                    <label for="ucontact">Contact No.</label>
+                </div>
+                <div class="modal-footer">
+                    <button data-target="#" class="btn modal-trigger">Update</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

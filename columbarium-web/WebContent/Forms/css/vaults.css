@@ -1,0 +1,93 @@
+html{
+    background-color: #0f0f0f;
+}
+.vaults-content {
+    float: left;
+    width: 420px;
+    height: 355px;
+}
+table{
+    margin-top: 20px;
+}
+table, td {
+    border: 1px solid #160b03;
+    width: auto;
+    height: auto;
+    color: #160b03;
+    background:  linear-gradient(rgba(244, 225, 136, 0.58), rgba(243, 216, 80, 0.44)),
+    url("../img/p1.jpg");
+}
+p{
+    font-family: "KG Blank Space Solid";
+    font-size: 20px;
+    padding-left: 15px;
+}
+td a{
+    color: #2f1706;
+    margin-left: 25%;
+    margin-right: 25%;
+    padding-right: 20px;
+    text-decoration: none;
+    font-family: "KG Blank Space Solid";
+    font-size: 20px;
+}
+td a:hover, td a:active{
+    color: #2f1706;
+    text-shadow: 2px 2px #e2d5ad;
+    margin-left: 25%;
+    margin-right: 25%;
+    padding-right: 20px;
+    text-decoration: none;
+    font-family: "KG Blank Space Solid";
+    font-size: 20px;
+    background-color: transparent;
+    text-decoration: none;
+    cursor: pointer;
+}
+#building-no{
+    margin-top: 35px;
+}
+#building-no li a{
+    background:  linear-gradient(rgba(244, 225, 136, 0.58), rgba(243, 216, 80, 0.44)),
+    url("../img/p1.jpg");
+    color: #160b03;
+    font-family: "KG Blank Space Solid";
+    font-size: medium;
+    text-decoration: none;
+    cursor: pointer;
+}
+#building-no li a:hover, #building-no li a:active{
+    background:  linear-gradient(rgba(226, 209, 126, 0.58), rgba(212, 188, 70, 0.44)),
+    url("../img/p1.jpg");
+    color: #48240a;
+
+}
+.h{
+    visibility: hidden;
+}
+.modal-footer .modal-trigger,.modal-footer .modal-trigger:active{
+    background:  linear-gradient(rgba(235, 235, 148, 0.58), rgba(227, 222, 139, 0.44)),
+    url("../img/p1.jpg");
+    color: #2f1706;
+    font-family: "KG Blank Space Solid";
+}
+.modal-header{
+    background:  linear-gradient(rgba(235, 235, 148, 0.58), rgba(227, 222, 139, 0.44)),
+    url("../img/p1.jpg");
+}
+.modal-header label{
+    font-family: "KG Blank Space Sketch";
+    text-shadow: 2px 2px #e2d5ad;
+    color: #2f1706;
+    font-size: xx-large;
+}
+.modal-fixed-footer{
+    position: fixed;
+}
+.building-dropdown .dropdown-button{
+    color: #160b03;
+    font-family: "KG Blank Space Solid";
+    font-size: medium;
+    background:  linear-gradient(rgba(159, 147, 89, 0.58), rgba(217, 193, 72, 0.44)),
+    url("../img/p1.jpg");
+}
