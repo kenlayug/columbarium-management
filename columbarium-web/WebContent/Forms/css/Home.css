@@ -37,3 +37,32 @@
     width:450px; /* you can use % */
     height: 300px;
 }
+.caption h5{
+    font-family: "KG Blank Space Sketch";
+    color: black;
+}
+
+.row h3 {
+    font-family: "KG Blank Space Sketch";
+    color: black;
+}
+
+.row li {
+    font-family: "KG Blank Space Sketch";
+    font-size: 20px;
+}
+
+.row p {
+    font-family: "KG Blank Space Sketch";
+    font-size: 15px;
+}
+
+.container h1{
+    font-family: "KG Blank Space Sketch";
+    color: dimgrey;
+}
+
+.container h2{
+    font-family: "KG Blank Space Sketch";
+    color: dimgrey;
+}
