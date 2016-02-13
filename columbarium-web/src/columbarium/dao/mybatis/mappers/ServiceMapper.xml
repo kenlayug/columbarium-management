@@ -19,7 +19,7 @@
 		</resultMap>
 		
 		<resultMap type="java.lang.Integer" id="ServiceIdResultMap">
-			<result property="employeeId" column="employeeId"/>
+			<result property="serviceId" column="ServiceId"/>
 		</resultMap>
 	
 	<!-- END RESULTMAPS -->
