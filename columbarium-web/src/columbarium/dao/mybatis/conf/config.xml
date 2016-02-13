@@ -12,6 +12,7 @@
 	
 		<typeAlias type="columbarium.model.Employee" alias="Employee"/>
 		<typeAlias type="columbarium.model.Position" alias="Position"/>
+		<typeAlias type="columbarium.model.Customer" alias="Customer"/>
 	
 	</typeAliases>
 	

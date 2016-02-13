@@ -15,7 +15,7 @@
   </filter-mapping>
   
   <welcome-file-list>
-  	<welcome-file>index.html</welcome-file>
+  	<welcome-file>add-employee.jsp</welcome-file>
   </welcome-file-list>
   
   <listener>

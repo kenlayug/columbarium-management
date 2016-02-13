@@ -4,6 +4,8 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
+import columbarium.business.EmployeeBusiness;
+import columbarium.business.impl.EmployeeBusinessImpl;
 import columbarium.dao.ConnectionManager;
 import columbarium.dao.EmployeeRepository;
 import columbarium.dao.mybatis.MybatisConnectionManager;
@@ -31,8 +33,11 @@ public class MainContextListener implements ServletContextListener{
 			//Employee
 			EmployeeRepository employeeRepository =
 					new MybatisEmployeeRepository((MybatisConnectionManager)connectionManager);
+			EmployeeBusiness employeeBusiness = new EmployeeBusinessImpl();
+			((EmployeeBusinessImpl)employeeBusiness).setEmployeeRepository(employeeRepository);
 			EmployeeService employeeService = new EmployeeServiceImpl();
 			((EmployeeServiceImpl)employeeService).setEmployeeRepository(employeeRepository);
+			((EmployeeServiceImpl)employeeService).setEmployeeBusiness(employeeBusiness);
 			servletContext.setAttribute("employeeService", employeeService);
 			
 			System.out.println("Context Listener initialized...");
