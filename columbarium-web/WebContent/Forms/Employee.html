@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee_Maintenance</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+
+    <!-- Import File -->
+    <script type="text/javascript" src = "js/CustomerJS.js"></script>
+    <link href="css/CustomerCSS.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+    <div class="Responsive">
+        <table class="striped">
+            <thead>
+            <tr>
+                <th data-field="CName">Employee Code</th>
+                <th data-field="CName">Name</th>
+                <th data-field="CName">Birthday</th>
+                <th data-field="Address">Gender</th>
+                <th data-field="contact">Civil Status</th>
+                <th data-field="CName">Position</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Alvin</td>
+                <td>Eclair</td>
+                <td>$0.87</td>
+                <td>92304</td>
+                <td>KJfsa</td>
+                <td>knasd</td>
+            </tr>
+            <tr>
+                <td>Alvin</td>
+                <td>Eclair</td>
+                <td>$0.87</td>
+                <td>92304</td>
+                <td>KJfsa</td>
+                <td>knasd</td>
+            </tr>
+            <tr>
+                <td>Alvin</td>
+                <td>Eclair</td>
+                <td>$0.87</td>
+                <td>92304</td>
+                <td>KJfsa</td>
+                <td>knasd</td>
+            </tr>
+            <tr>
+                <td>Alvin</td>
+                <td>Eclair</td>
+                <td>$0.87</td>
+                <td>92304</td>
+                <td>KJfsa</td>
+                <td>knasd</td>
+            </tr>
+            </tbody>
+        </table>
+        <button data-target="delete" class="btn modal-trigger">Delete</button>
+        <button data-target="update" class="btn modal-trigger">Update</button>
+        <button data-target="add" class="btn modal-trigger">Add</button>
+    </div>
+    <!-- Modal Trigger -->
+    <ul id="position" class="dropdown-content">
+        <li><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+    </ul>
+    <ul id="position1" class="dropdown-content">
+        <li><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+    </ul>
+    <!-- Customer Add Modal -->
+    <div id="add" class="modal modal-fixed-footer">
+        <div class="modal-header">
+            <label>ADD EMPLOYEE</label>
+        </div>
+        <form action="Employee.html" method="post">
+            <div class="row">
+                <div class="input-field col s1">
+                    <label>Name:</label>
+                </div>
+                <div class="input-field col s3">
+                    <input id="fname" type="text" required="" aria-required="true" class="validate">
+                    <label for="fname">First Name</label>
+                </div>
+                <div class="input-field col s3">
+                    <input id="mname" type="text">
+                    <label for="mname">Middle Name</label>
+                </div>
+                <div class="input-field col s3">
+                    <input id="lname" type="text" required="" aria-required="true" class="validate">
+                    <label for="lname">Last Name</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s1">
+                    <label>Gender:</label>
+                </div>
+                <div class="input-field col s2">
+                    <input id="gender" type="radio">
+                    <label for="gender">Male</label>
+                </div>
+                <div class="input-field col s2">
+                    <input id="gender" type="radio">
+                    <label for="gender">Female</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s2">
+                    <label>Civil Status:</label>
+                </div>
+                <div class="input-field col s2">
+                    <input id="status" type="radio" required="" aria-required="true" class="validate">
+                    <label for="status">Single</label>
+                </div>
+                <div class="input-field col s2">
+                    <input id="status" type="radio" required="" aria-required="true" class="validate">
+                    <label for="status">Married</label>
+                </div>
+                <div class="input-field col s2">
+                    <input id="status" type="radio" required="" aria-required="true" class="validate">
+                    <label for="status">Widow/Widower</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s2">
+                    <label>Birth Date:</label>
+                </div>
+                <div class="input-field col s3">
+                    <input id="bday" type="date" required="" aria-required="true" class="validate">
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s3">
+                    <label>Employee Position:</label>
+                </div>
+                <div class="position-dropdown">
+                    <a class='dropdown-button btn' href='#' data-activates='position1'>Position</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s2">
+                    <label>Type Password:</label>
+                </div>
+                <div class="input-field col s4">
+                    <input id="ps" type="password" required="" aria-required="true" class="validate">
+                    <label for="ps">Password</label>
+                </div>
+                <div class="input-field col s2">
+                    <label>Type Again:</label>
+                </div>
+                <div class="input-field col s4">
+                    <input id="ps" type="password" required="" aria-required="true" class="validate">
+                    <label for="ps">Retype Password</label>
+                </div>
+            </div>
+
+            <div class="mf">
+                <button data-target="#" class="right btn modal-trigger">Add</button>
+            </div>
+        </form>
+    </div>
+    <!-- Customer Update Modal -->
+    <div id="update" class="modal modal-fixed-footer">
+        <div class="modal-header">
+            <label>UPDATE EMPLOYEE RECORD</label>
+        </div>
+        <form action="Employee.html" method="post">
+            <div class="row">
+                <div class="h">
+                    <div class="col s7">mm</div>
+                </div>
+                <div class="col s5">
+                    <input type="text" name="search" required="" aria-required="true" class="validate" placeholder="Search Employee Name">
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s1">
+                    <label>Name:</label>
+                </div>
+                <div class="input-field col s3">
+                    <input id="fname" type="text" required="" aria-required="true" class="validate">
+                    <label for="fname">First Name</label>
+                </div>
+                <div class="input-field col s3">
+                    <input id="mname" type="text">
+                    <label for="mname">Middle Name</label>
+                </div>
+                <div class="input-field col s3">
+                    <input id="lname" type="text" required="" aria-required="true" class="validate">
+                    <label for="lname">Last Name</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s1">
+                    <label>Gender:</label>
+                </div>
+                <div class="input-field col s2">
+                    <input id="gender" type="radio">
+                    <label for="gender">Male</label>
+                </div>
+                <div class="input-field col s2">
+                    <input id="gender" type="radio">
+                    <label for="gender">Female</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s2">
+                    <label>Civil Status:</label>
+                </div>
+                <div class="input-field col s2">
+                    <input id="status" type="radio" required="" aria-required="true" class="validate">
+                    <label for="status">Single</label>
+                </div>
+                <div class="input-field col s2">
+                    <input id="status" type="radio" required="" aria-required="true" class="validate">
+                    <label for="status">Married</label>
+                </div>
+                <div class="input-field col s2">
+                    <input id="status" type="radio" required="" aria-required="true" class="validate">
+                    <label for="status">Widow/Widower</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s2">
+                    <label>Birth Date:</label>
+                </div>
+                <div class="input-field col s3">
+                    <input id="bday" type="date" required="" aria-required="true" class="validate">
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s3">
+                    <label>Employee Position:</label>
+                </div>
+                <div class="position-dropdown">
+                    <a class='dropdown-button btn' href='#' data-activates='position1'>Position</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s2">
+                    <label>Type Password:</label>
+                </div>
+                <div class="input-field col s4">
+                    <input id="ps" type="password" required="" aria-required="true" class="validate">
+                    <label for="ps">Password</label>
+                </div>
+                <div class="input-field col s2">
+                    <label>Type Again:</label>
+                </div>
+                <div class="input-field col s4">
+                    <input id="ps" type="password" required="" aria-required="true" class="validate">
+                    <label for="ps">Retype Password</label>
+                </div>
+            </div>
+
+            <div class="mf">
+                <button data-target="#" class="right btn modal-trigger">Add</button>
+            </div>
+        </form>
+    </div>
+    <div id="delete" class="modal modal-fixed-footer">
+        <div class="modal-header">
+            <label>DELETE EMPLOYEE RECORD</label>
+        </div>
+        <form action="Employee.html" method="post">
+            <div class="row">
+                <div class="h">
+                    <div class="col s7">mm</div>
+                </div>
+                <div class="col s5">
+                    <input type="text" name="search" required="" aria-required="true" class="validate" placeholder="Search Employee Code">
+                </div>
+                <div>
+                    <label>EMPLOYEE DETAILS</label>
+                </div>
+            </div>
+            <div class="mf">
+                <button data-target="#" class="right btn modal-trigger">Delete</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

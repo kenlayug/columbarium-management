@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vaults_Maintenance</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+    <!-- Import File -->
+    <script type="text/javascript" src = "js/vaults.js"></script>
+    <link href="css/vaults.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+    <div class="vaults-content">
+        <label id="spec1">VAULTS</label>
+        <ul id="building-no" class="dropdown-content">
+            <li><a href="#">Building 1</a></li>
+            <li><a href="#">Building 2</a></li>
+            <li><a href="#">Building 3</a></li>
+        </ul>
+        <ul id="building-floor" class="dropdown-content">
+            <li><a href="#">Floor 1</a></li>
+            <li><a href="#">Floor 2</a></li>
+            <li><a href="#">Floor 3</a></li>
+        </ul>
+        <div class="building-dropdown">
+            <a class='dropdown-button btn' href='#' data-activates='building-no'>Building No.</a>
+            <br><a class='dropdown-button btn' href='#' data-activates='building-floor'>Floor No.</a>
+        </div>
+        <table>
+            <tbody>
+            <tr>
+                <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">E1</a></td>
+                <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">E2</a></td>
+                <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">E3</a></td>
+                <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">E4</a></td>
+                <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">E5</a></td>
+                <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">E6</a></td>
+                <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">E7</a></td>
+            </tr>
+            <tr>
+                <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">D1</a></td>
+                <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">D2</a></td>
+                <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">D3</a></td>
+                <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">D4</a></td>
+                <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">D5</a></td>
+                <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">D6</a></td>
+                <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">D7</a></td>
+            </tr>
+            <tr>
+                <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">C1</a></td>
+                <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">C2</a></td>
+                <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">C3</a></td>
+                <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">C4</a></td>
+                <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">C5</a></td>
+                <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">C6</a></td>
+                <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">C7</a></td>
+            </tr>
+            <tr>
+                <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">B1</a></td>
+                <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">B2</a></td>
+                <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">B3</a></td>
+                <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">B4</a></td>
+                <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">B5</a></td>
+                <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">B6</a></td>
+                <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">B7</a></td>
+            </tr>
+            <tr>
+                <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">A1</a></td>
+                <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">A2</a></td>
+                <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">A3</a></td>
+                <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">A4</a></td>
+                <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">A5</a></td>
+                <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">A6</a></td>
+                <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">A7</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal modal-fixed-footer">
+        <div class="modal-header">
+            <label>Vault ID:</label>
+        </div>
+        <form action="vaults.html" method="post" class="modal-background">
+            <br><p>Owner: </p>
+            <p>Number of Urns: </p>
+            <p>Deceased Names: </p>
+            <div class="modal-footer">
+                <button data-target="modalv3" class="btn modal-trigger">Delete</button>
+                <button data-target="modalv2" class="btn modal-trigger">Update</button>
+                <button data-target="modalv1" class="btn modal-trigger">Add</button>
+            </div>
+        </form>
+    </div>
+    <div id="modalv1" class="modal modal-fixed-footer">
+        <form action="vaults.html" method="post">
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="name" type="text" required="" aria-required="true" class="validate">
+                    <label for="name">Deceased Name</label>
+                </div>
+                <div class="modal-footer">
+                    <button data-target="modal2" class="btn modal-trigger">Save</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div id="modalv2" class="modal modal-fixed-footer">
+        <form action="vaults.html" method="post">
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="name" type="text" required="" aria-required="true" class="validate">
+                    <label for="name">Owner Name</label>
+                </div>
+                <div class="input-field col s12">
+                    <input id="address" type="text" required="" aria-required="true" class="validate">
+                    <label for="address">Address</label>
+                </div>
+                <div class="input-field col s12">
+                    <input id="contact" type="text" required="" aria-required="true" class="validate">
+                    <label for="contact">Contact No.</label>
+                </div>
+                <div class="modal-footer">
+                    <button data-target="modal2" class="btn modal-trigger">Save</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div id="modalv3" class="modal modal-fixed-footer">
+        <form action="vaults.html" method="post">
+            <div class="row">
+                <div class="input-field col s12">
+                    <label for="name">Vault Details</label>
+                </div>
+                <div class="modal-footer">
+                    <button data-target="modal2" class="btn modal-trigger">Delete</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
