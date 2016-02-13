@@ -1,0 +1,129 @@
+package columbarium.dao.mybatis;
+
+import java.util.List;
+
+import columbarium.model.Service;
+import junit.framework.Test;
+import junit.framework.TestCase;
+import junit.framework.TestSuite;
+
+public class MybatisServiceRepositoryTest extends TestCase{
+
+	public MybatisServiceRepositoryTest(String testName){
+		super(testName);
+	}
+	
+	public void testCreateService(){
+		
+		MybatisConnectionManager connectionManager = new MybatisConnectionManager();
+		connectionManager.establishConnection();
+		
+		MybatisServiceRepository serviceRepository =
+				new MybatisServiceRepository(connectionManager);
+		
+		Service service = new Service();
+		service.setStrServiceName("Cremation");
+		service.setStrServiceDesc("Sunog patay.");
+		service.setDblPrice(100.00);
+		
+		assertEquals("success", serviceRepository.createService(service));
+		
+	}
+	
+	public void testGetService(){
+		
+		MybatisConnectionManager connectionManager = new MybatisConnectionManager();
+		connectionManager.establishConnection();
+		
+		MybatisServiceRepository serviceRepository =
+				new MybatisServiceRepository(connectionManager);
+		
+		Service service = new Service();
+		service.setServiceId(1);
+		service.setStrServiceName("Cremation");
+		
+		assertNotNull(serviceRepository.searchService(service));
+
+		
+	}
+	
+	public void testUpdateService(){
+		
+		MybatisConnectionManager connectionManager = new MybatisConnectionManager();
+		connectionManager.establishConnection();
+		
+		MybatisServiceRepository serviceRepository =
+				new MybatisServiceRepository(connectionManager);
+		
+		Service service = new Service();
+		service.setServiceId(1);
+		service.setStrServiceDesc("Ano ba yan?");
+		service.setStrServiceName("Cremation");
+		service.setDblPrice(200.50);
+		
+		assertEquals("success",serviceRepository.updateService(service));
+		
+	}
+	
+	public void testGetAllService(){
+		
+		MybatisConnectionManager connectionManager = new MybatisConnectionManager();
+		connectionManager.establishConnection();
+		
+		MybatisServiceRepository serviceRepository =
+				new MybatisServiceRepository(connectionManager);
+		
+		assertNotNull(serviceRepository.getAllService());
+		
+	}
+	
+	public void testDeactivateService(){
+		
+		MybatisConnectionManager connectionManager = new MybatisConnectionManager();
+		connectionManager.establishConnection();
+		
+		MybatisServiceRepository serviceRepository =
+				new MybatisServiceRepository(connectionManager);
+		
+		Service service = new Service();
+		service.setServiceId(1);
+		
+		assertEquals("success", serviceRepository.deactivateService(service));
+		
+	}
+	
+	public void testSearchServiceByName(){
+		
+		MybatisConnectionManager connectionManager = new MybatisConnectionManager();
+		connectionManager.establishConnection();
+		
+		MybatisServiceRepository serviceRepository =
+				new MybatisServiceRepository(connectionManager);
+		
+		Service service = new Service();
+		service.setStrServiceName("mati");
+		
+		List<Service> serviceResult = serviceRepository.searchServiceByName(service);
+		for (Service service2 : serviceResult) {
+			System.out.println(service2);
+		}
+		assertNotNull(serviceResult);
+		
+	}
+	
+	public static Test suite(){
+		
+		TestSuite suite = new TestSuite();
+		
+		suite.addTest(new MybatisServiceRepositoryTest("testCreateService"));
+		suite.addTest(new MybatisServiceRepositoryTest("testGetService"));
+		suite.addTest(new MybatisServiceRepositoryTest("testUpdateService"));
+		suite.addTest(new MybatisServiceRepositoryTest("testGetAllService"));
+//		suite.addTest(new MybatisServiceRepositoryTest("testDeactivateService"));
+		suite.addTest(new MybatisServiceRepositoryTest("testSearchServiceByName"));
+		
+		return suite;
+		
+	}
+	
+}

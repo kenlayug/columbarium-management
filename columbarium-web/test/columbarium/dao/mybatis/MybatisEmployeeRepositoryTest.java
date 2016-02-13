@@ -46,6 +46,7 @@ public class MybatisEmployeeRepositoryTest extends TestCase{
 				new MybatisEmployeeRepository((MybatisConnectionManager)connectionManager);
 		
 		Employee employee = new Employee();
+		employee.setEmployeeId(2);
 		employee.setName(new Name("Ken", "Malit", "Layug"));
 		assertNotNull(mybatisEmployeeRepository.searchEmployee(employee));
 		
@@ -107,10 +108,10 @@ public class MybatisEmployeeRepositoryTest extends TestCase{
 	
 	public static Test suite(){
 		TestSuite suite = new TestSuite();
-//		suite.addTest(new MybatisEmployeeRepositoryTest("testSaveEmployee"));
+		suite.addTest(new MybatisEmployeeRepositoryTest("testSaveEmployee"));
 		suite.addTest(new MybatisEmployeeRepositoryTest("testSearchEmployee"));
 //		suite.addTest(new MybatisEmployeeRepositoryTest("testDeactivateEmployee"));
-//		suite.addTest(new MybatisEmployeeRepositoryTest("testUpdateEmployee"));
+		suite.addTest(new MybatisEmployeeRepositoryTest("testUpdateEmployee"));
 		suite.addTest(new MybatisEmployeeRepositoryTest("testGetAllEmployee"));
 		suite.addTest(new MybatisEmployeeRepositoryTest("testLoginEmployee"));
 		return suite;

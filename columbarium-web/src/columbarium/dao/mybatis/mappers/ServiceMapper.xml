@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+	<mapper namespace="columbarium.dao.mybatis.mappers.ServiceMapper">
+	
+	<!-- RESULTMAPS -->
+	
+		<resultMap type="java.lang.Integer" id="CountServiceResultMap">
+			<result property="intCountService" column="COUNT(*)"/>
+		</resultMap>
+		
+		<resultMap type="Service" id="ServiceResultMap">
+			<id property="serviceId" column="serviceId"/>
+			<result property="strServiceName" column="strServiceName"/>
+			<result property="strServiceDesc" column="strServiceDesc"/>
+			<result property="dblPrice" column="deciPrice"/>
+		</resultMap>
+		
+		<resultMap type="java.lang.Integer" id="ServiceIdResultMap">
+			<result property="employeeId" column="employeeId"/>
+		</resultMap>
+	
+	<!-- END RESULTMAPS -->
+	
+	<!-- SELECT QUERIES -->
+	
+		<select id="checkIfExisting" resultMap="CountServiceResultMap">
+			SELECT COUNT(*)
+			FROM tblService
+			<where>
+				intStatus = 1
+				<choose>
+					<when test="serviceId == null">
+						OR serviceId = #{serviceId}
+					</when>
+					<when test="strServiceName != null">
+						OR strServiceName LIKE #{strServiceName}
+					</when>
+				</choose>
+			</where>
+		</select>
+		
+		<select id="getService" resultMap="ServiceResultMap">
+			SELECT * FROM tblService
+			<where>
+				intStatus = 1
+				<choose>
+					<when test="serviceId != 0">
+						AND serviceId = #{serviceId}
+					</when>
+					<when test="strServiceName != null">
+						AND strServiceName LIKE #{strServiceName}
+					</when>
+				</choose>
+			</where>
+			LIMIT 1
+		</select>
+		
+		<select id="getAllService" resultMap="ServiceResultMap">
+			SELECT serviceId, strServiceName, strServiceDesc, deciPrice
+			FROM tblService ORDER BY strServiceName ASC
+		</select>
+		
+		<select id="countAllService" resultMap="CountServiceResultMap">
+			SELECT COUNT(*) FROM tblService
+		</select>
+		
+		<select id="getLastServiceId" resultMap="ServiceIdResultMap">
+			SELECT serviceId FROM tblService ORDER BY serviceId DESC LIMIT 1
+		</select>
+		
+		<select id="searchServiceList" resultMap="ServiceResultMap">
+			<bind name="serviceName" value="'%' + strServiceName + '%'" />
+			SELECT serviceId, strServiceName, strServiceDesc, deciPrice
+			FROM tblService
+			<where>
+				<choose>
+					<when test="strServiceName != null">
+						strServiceName LIKE #{serviceName}
+					</when>
+					<when test="serviceId != 0">
+						OR serviceId = #{serviceId}
+					</when>
+				</choose>
+			</where>
+		</select>
+	
+	<!-- END SELECT QUERIES -->
+	
+	<!-- INSERT QUERIES -->
+	
+		<insert id="saveService">
+			INSERT INTO tblService(strServiceName, strServiceDesc, deciPrice, intStatus)
+			VALUES (#{strServiceName}, #{strServiceDesc}, #{dblPrice}, 1)
+		</insert>
+		
+	<!-- END INSERT QUERIES -->
+	
+	<!-- UPDATE QUERIES -->
+	
+		<update id="updateService">
+			UPDATE tblService
+			<set>
+				<if test="strServiceName != null">strServiceName = #{strServiceName},</if>
+				<if test="strServiceDesc != null">strServiceDesc = #{strServiceDesc},</if>
+				<if test="dblPrice != 0">deciPrice = #{dblPrice}</if>
+			</set>
+			WHERE serviceId = #{serviceId}
+		</update>
+		
+		<update id="deactivateService">
+			UPDATE tblService
+			<set>
+				intStatus = 0
+			</set>
+			WHERE serviceId = #{serviceId}
+		</update>
+	
+	<!-- END UPDATE QUERIES -->
+	
+	
+	</mapper>

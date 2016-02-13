@@ -12,7 +12,7 @@
 	
 		<typeAlias type="columbarium.model.Employee" alias="Employee"/>
 		<typeAlias type="columbarium.model.Position" alias="Position"/>
-		<typeAlias type="columbarium.model.Customer" alias="Customer"/>
+		<typeAlias type="columbarium.model.Service" alias="Service"/>
 	
 	</typeAliases>
 	
@@ -36,6 +36,7 @@
 	<mappers>
 	
 		<mapper resource="columbarium/dao/mybatis/mappers/EmployeeMapper.xml"/>
+		<mapper resource="columbarium/dao/mybatis/mappers/ServiceMapper.xml"/>
 	
 	</mappers>
 	

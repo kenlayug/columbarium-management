@@ -51,16 +51,6 @@ public class Employee extends Person{
 		
 	}
 	
-	public String update(){
-		
-		EmployeeService employeeService = (EmployeeService)ServletActionContext.getServletContext()
-				.getAttribute("employeeService");
-		String strStatus = employeeService.updateEmployee(this);
-		setStrPassword(null);
-		return strStatus;
-		
-	}
-	
 	public void fetch(){
 		EmployeeService employeeService = (EmployeeService)ServletActionContext.getServletContext()
 				.getAttribute("employeeService");
@@ -71,6 +61,16 @@ public class Employee extends Person{
 		setPosition(employee.getPosition());
 		setStrCivilStatus(employee.getStrCivilStatus());
 		setStrGender(employee.getStrGender());
+	}
+	
+	public String update(){
+		
+		EmployeeService employeeService = (EmployeeService)ServletActionContext.getServletContext()
+				.getAttribute("employeeService");
+		String strStatus = employeeService.updateEmployee(this);
+		setStrPassword(null);
+		return strStatus;
+		
 	}
 	
 	public String delete(){

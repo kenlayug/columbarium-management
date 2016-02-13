@@ -57,12 +57,12 @@
 				e.intStatus = 1
 				<choose>
 					<when test="employeeId != null">
-						AND e.employeeId = #{employeeId}
+						OR e.employeeId = #{employeeId}
 					</when>
 					<when test="name.strFirstName != null and name.strLastName != null">
-						AND e.strFirstName = #{name.strFirstName}
+						OR (e.strFirstName = #{name.strFirstName}
 						AND e.strMiddleName = #{name.strMiddleName}
-						AND e.strLastName = #{name.strLastName}
+						AND e.strLastName = #{name.strLastName})
 					</when>
 				</choose>
 			</where>
@@ -76,12 +76,12 @@
 				intStatus = 1
 				<choose>
 					<when test="employeeId != null">
-						AND employeeId = #{employeeId}
+						OR employeeId = #{employeeId}
 					</when>
 					<when test="name != null">
-						AND strFirstName = #{name.strFirstName}
+						OR (strFirstName = #{name.strFirstName}
 						AND strMiddleName = #{name.strMiddleName}
-						AND strLastName = #{name.strLastName}
+						AND strLastName = #{name.strLastName})
 					</when>
 				</choose>
 			</where>
