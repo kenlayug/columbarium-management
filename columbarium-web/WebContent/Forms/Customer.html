@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:float="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Customer_Maintenance</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
@@ -20,12 +22,9 @@
         <table class="striped">
             <thead>
             <tr>
-                <th data-field="CName">Customer Code</th>
                 <th data-field="CName">Name</th>
-                <th data-field="CName">Birthday</th>
-                <th data-field="Address">Gender</th>
-                <th data-field="contact">Civil Status</th>
-                <th data-field="CName">Spouse</th>
+                <th data-field="Address">Address</th>
+                <th data-field="contact">Contact Number</th>
             </tr>
             </thead>
             <tbody>
@@ -33,6 +32,8 @@
                 <td>Alvin</td>
                 <td>Eclair</td>
                 <td>$0.87</td>
+            </tr>
+            <tr>
                 <td>Alvin</td>
                 <td>Eclair</td>
                 <td>$0.87</td>
@@ -41,22 +42,8 @@
                 <td>Alvin</td>
                 <td>Eclair</td>
                 <td>$0.87</td>
-                <td>Alvin</td>
-                <td>Eclair</td>
-                <td>$0.87</td>
             </tr>
             <tr>
-                <td>Alvin</td>
-                <td>Eclair</td>
-                <td>$0.87</td>
-                <td>Alvin</td>
-                <td>Eclair</td>
-                <td>$0.87</td>
-            </tr>
-            <tr>
-                <td>Alvin</td>
-                <td>Eclair</td>
-                <td>$0.87</td>
                 <td>Alvin</td>
                 <td>Eclair</td>
                 <td>$0.87</td>
@@ -67,16 +54,6 @@
         <button data-target="add" class="btn modal-trigger">Add</button>
     </div>
     <!-- Modal Trigger -->
-    <ul id="position" class="dropdown-content">
-        <li><a href="#">1</a></li>
-        <li><a href="#">2</a></li>
-        <li><a href="#">3</a></li>
-    </ul>
-    <ul id="position1" class="dropdown-content">
-        <li><a href="#">1</a></li>
-        <li><a href="#">2</a></li>
-        <li><a href="#">3</a></li>
-    </ul>
     <!-- Customer Add Modal -->
     <div id="add" class="modal modal-fixed-footer">
         <div class="modal-header">
@@ -84,62 +61,21 @@
         </div>
         <form action="Customer.html" method="post">
             <div class="row">
-                <div class="input-field col s1">
-                    <label>Name:</label>
+                <div class="input-field col s4">
+                    <input id="name" type="text" required="" aria-required="true" class="validate">
+                    <label for="name">Name</label>
                 </div>
-                <div class="input-field col s3">
-                    <input id="fname" type="text" required="" aria-required="true" class="validate">
-                    <label for="fname">First Name</label>
+                <div class="input-field col s4">
+                    <input id="address" type="text" required="" aria-required="true" class="validate">
+                    <label for="address">Address</label>
                 </div>
-                <div class="input-field col s3">
-                    <input id="mname" type="text">
-                    <label for="mname">Middle Name</label>
+                <div class="input-field col s4">
+                    <input id="contact" type="text" required="" aria-required="true" class="validate">
+                    <label for="contact">Contact No.</label>
                 </div>
-                <div class="input-field col s3">
-                    <input id="lname" type="text" required="" aria-required="true" class="validate">
-                    <label for="lname">Last Name</label>
+                <div class="modal-footer">
+                    <button data-target="#" class="btn modal-trigger">Add</button>
                 </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s1">
-                    <label>Gender:</label>
-                </div>
-                <div class="input-field col s2">
-                    <input id="gender" type="radio">
-                    <label for="gender">Male</label>
-                </div>
-                <div class="input-field col s2">
-                    <input id="gender" type="radio">
-                    <label for="gender">Female</label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s2">
-                    <label>Civil Status:</label>
-                </div>
-                <div class="input-field col s2">
-                    <input id="status" type="radio" required="" aria-required="true" class="validate">
-                    <label for="status">Single</label>
-                </div>
-                <div class="input-field col s2">
-                    <input id="status" type="radio" required="" aria-required="true" class="validate">
-                    <label for="status">Married</label>
-                </div>
-                <div class="input-field col s2">
-                    <input id="status" type="radio" required="" aria-required="true" class="validate">
-                    <label for="status">Widow/Widower</label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s2">
-                    <label>Birth Date:</label>
-                </div>
-                <div class="input-field col s3">
-                    <input id="bday" type="date" required="" aria-required="true" class="validate">
-                </div>
-            </div>
-            <div class="mf">
-                <button data-target="#" class="right btn modal-trigger">Add</button>
             </div>
         </form>
     </div>
@@ -154,87 +90,25 @@
                     <div class="col s7">mm</div>
                 </div>
                 <div class="col s5">
-                    <input type="text" name="search" required="" aria-required="true" class="validate" placeholder="Search Employee Name">
+                    <input type="text" name="search" required="" aria-required="true" class="validate" placeholder="Search Customer Name">
                 </div>
             </div>
             <div class="row">
-                <div class="input-field col s1">
-                    <label>Name:</label>
+                <div class="input-field col s4">
+                    <input id="uname" type="text" required="" aria-required="true" class="validate">
+                    <label for="uname">Name</label>
                 </div>
-                <div class="input-field col s3">
-                    <input id="fname" type="text" required="" aria-required="true" class="validate">
-                    <label for="fname">First Name</label>
+                <div class="input-field col s4">
+                    <input id="uaddress" type="text" required="" aria-required="true" class="validate">
+                    <label for="uaddress">Address</label>
                 </div>
-                <div class="input-field col s3">
-                    <input id="mname" type="text">
-                    <label for="mname">Middle Name</label>
+                <div class="input-field col s4">
+                    <input id="ucontact" type="text" required="" aria-required="true" class="validate">
+                    <label for="ucontact">Contact No.</label>
                 </div>
-                <div class="input-field col s3">
-                    <input id="lname" type="text" required="" aria-required="true" class="validate">
-                    <label for="lname">Last Name</label>
+                <div class="modal-footer">
+                    <button data-target="#" class="btn modal-trigger">Update</button>
                 </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s1">
-                    <label>Gender:</label>
-                </div>
-                <div class="input-field col s2">
-                    <input id="gender" type="radio">
-                    <label for="gender">Male</label>
-                </div>
-                <div class="input-field col s2">
-                    <input id="gender" type="radio">
-                    <label for="gender">Female</label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s2">
-                    <label>Civil Status:</label>
-                </div>
-                <div class="input-field col s2">
-                    <input id="status" type="radio" required="" aria-required="true" class="validate">
-                    <label for="status">Single</label>
-                </div>
-                <div class="input-field col s2">
-                    <input id="status" type="radio" required="" aria-required="true" class="validate">
-                    <label for="status">Married</label>
-                </div>
-                <div class="input-field col s2">
-                    <input id="status" type="radio" required="" aria-required="true" class="validate">
-                    <label for="status">Widow/Widower</label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s2">
-                    <label>Birth Date:</label>
-                </div>
-                <div class="input-field col s3">
-                    <input id="bday" type="date" required="" aria-required="true" class="validate">
-                </div>
-            </div>
-            <div class="mf">
-                <button data-target="#" class="right btn modal-trigger">Add</button>
-            </div>
-        </form>
-    </div>
-    <div id="delete" class="modal modal-fixed-footer">
-        <div class="modal-header">
-            <label>DELETE EMPLOYEE RECORD</label>
-        </div>
-        <form action="Employee.html" method="post">
-            <div class="row">
-                <div class="h">
-                    <div class="col s7">mm</div>
-                </div>
-                <div class="col s5">
-                    <input type="text" name="search" required="" aria-required="true" class="validate" placeholder="Search Employee Code">
-                </div>
-                <div>
-                    <label>EMPLOYEE DETAILS</label>
-                </div>
-            </div>
-            <div class="mf">
-                <button data-target="#" class="right btn modal-trigger">Delete</button>
             </div>
         </form>
     </div>

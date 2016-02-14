@@ -4,12 +4,26 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
+import columbarium.business.EmployeeBusiness;
+import columbarium.business.ItemBusiness;
+import columbarium.business.ServiceBusiness;
+import columbarium.business.impl.EmployeeBusinessImpl;
+import columbarium.business.impl.ItemBusinessImpl;
+import columbarium.business.impl.ServiceBusinessImpl;
 import columbarium.dao.ConnectionManager;
 import columbarium.dao.EmployeeRepository;
+import columbarium.dao.ItemRepository;
+import columbarium.dao.ServiceRepository;
 import columbarium.dao.mybatis.MybatisConnectionManager;
 import columbarium.dao.mybatis.MybatisEmployeeRepository;
+import columbarium.dao.mybatis.MybatisItemRepository;
+import columbarium.dao.mybatis.MybatisServiceRepository;
 import columbarium.service.EmployeeService;
+import columbarium.service.ItemService;
+import columbarium.service.ServiceService;
 import columbarium.service.impl.EmployeeServiceImpl;
+import columbarium.service.impl.ItemServiceImpl;
+import columbarium.service.impl.ServiceServiceImpl;
 
 public class MainContextListener implements ServletContextListener{
 
@@ -31,9 +45,32 @@ public class MainContextListener implements ServletContextListener{
 			//Employee
 			EmployeeRepository employeeRepository =
 					new MybatisEmployeeRepository((MybatisConnectionManager)connectionManager);
+			EmployeeBusiness employeeBusiness = new EmployeeBusinessImpl();
+			((EmployeeBusinessImpl)employeeBusiness).setEmployeeRepository(employeeRepository);
 			EmployeeService employeeService = new EmployeeServiceImpl();
 			((EmployeeServiceImpl)employeeService).setEmployeeRepository(employeeRepository);
+			((EmployeeServiceImpl)employeeService).setEmployeeBusiness(employeeBusiness);
 			servletContext.setAttribute("employeeService", employeeService);
+			
+			//Service
+			ServiceRepository serviceRepository =
+					new MybatisServiceRepository((MybatisConnectionManager)connectionManager);
+			ServiceBusiness serviceBusiness = new ServiceBusinessImpl();
+			((ServiceBusinessImpl)serviceBusiness).setServiceRepository(serviceRepository);
+			ServiceService serviceService = new ServiceServiceImpl();
+			((ServiceServiceImpl)serviceService).setServiceBusiness(serviceBusiness);
+			((ServiceServiceImpl)serviceService).setServiceRepository(serviceRepository);
+			servletContext.setAttribute("serviceService", serviceService);
+			
+			//Item
+			ItemRepository itemRepository =
+					new MybatisItemRepository((MybatisConnectionManager)connectionManager);
+			ItemBusiness itemBusiness = new ItemBusinessImpl();
+			((ItemBusinessImpl)itemBusiness).setItemRepository(itemRepository);
+			ItemService itemService = new ItemServiceImpl();
+			((ItemServiceImpl)itemService).setItemBusiness(itemBusiness);
+			((ItemServiceImpl)itemService).setItemRepository(itemRepository);
+			servletContext.setAttribute("itemService", itemService);
 			
 			System.out.println("Context Listener initialized...");
 			

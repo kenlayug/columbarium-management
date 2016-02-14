@@ -12,8 +12,24 @@
      
      <package name="main" extends="struts-default" namespace="/">
      
+     	<action name="add-employee" class="columbarium.actions.ChainAction">
+     		<result name="success" type="redirect">/add-employee/</result>
+     	</action>
+     
+     	<action name="home" class="columbarium.actions.ChainAction">
+     		<result name="success">SAD_forms/about_us.jsp</result>
+     	</action>
      	
+     	<action name="login" class="columbarium.actions.ChainAction">
+     		<result name="success">/login-employee.jsp</result>
+     	</action>
+     	
+     	<action name="log-in" class="columbarium.actions.login.LoginAccount">
+     		<result name="success">/home-employee.jsp</result>
+     	</action>
      
      </package>
+     
+     <include file="struts-employee.xml"/>
      
  </struts> 
