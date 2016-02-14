@@ -1,12 +1,10 @@
 html{
-    background-color: #d6c577
+    background-color: #0f0f0f;
 }
 .vaults-content {
     float: left;
     width: 420px;
     height: 355px;
-    margin-left: 35%;
-    margin-top: 8%;
 }
 table{
     margin-top: 20px;
@@ -46,48 +44,23 @@ td a:hover, td a:active{
     text-decoration: none;
     cursor: pointer;
 }
-#building-no, #building-floor{
-    margin-top: 33px;
-    margin-left: 12px;
+#building-no{
+    margin-top: 35px;
 }
-#spec1{
-    font-family: "KG Blank Space Sketch";
-    text-shadow: 2px 2px #e2d5ad;
-    color: #2f1706;
-    font-size: xx-large;
-    padding-left: 15px;
-    margin-left: 30%;
-}
-#spec{
-    margin-left: 35px;
-    font-family: "KG Blank Space Sketch";
-    text-shadow: 2px 2px #e2d5ad;
-    color: #2f1706;
-    font-size: xx-large;
-    padding-left: 15px;
-}
-.building-dropdown .dropdown-button{
-    color: #c8af47;
-    font-family: "KG Blank Space Solid";
-    font-size: medium;
-    background:  #160b03;
-    margin-right: 20px;
-    margin-bottom: 10px;
-    border: solid 1px rgba(231, 202, 82, 0.74);
-}
-#building-no li a, #building-floor li a{
-    background:  #160b03;
-    color: #c8af47;
+#building-no li a{
+    background:  linear-gradient(rgba(244, 225, 136, 0.58), rgba(243, 216, 80, 0.44)),
+    url("../img/p1.jpg");
+    color: #160b03;
     font-family: "KG Blank Space Solid";
     font-size: medium;
     text-decoration: none;
     cursor: pointer;
-    border: solid 1px rgba(231, 202, 82, 0.74);
 }
-#building-no li a:hover, #building-no li a:active, #building-floor li a:hover, #building-floor li a:active{
-    background: #3a1d08;
-    color: #f8d958;
-    text-shadow: 4px 4px #160b03;
+#building-no li a:hover, #building-no li a:active{
+    background:  linear-gradient(rgba(226, 209, 126, 0.58), rgba(212, 188, 70, 0.44)),
+    url("../img/p1.jpg");
+    color: #48240a;
+
 }
 .h{
     visibility: hidden;
@@ -110,4 +83,11 @@ td a:hover, td a:active{
 }
 .modal-fixed-footer{
     position: fixed;
+}
+.building-dropdown .dropdown-button{
+    color: #160b03;
+    font-family: "KG Blank Space Solid";
+    font-size: medium;
+    background:  linear-gradient(rgba(159, 147, 89, 0.58), rgba(217, 193, 72, 0.44)),
+    url("../img/p1.jpg");
 }
