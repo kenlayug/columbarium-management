@@ -24,7 +24,7 @@
 		navToggleBtn = bodyEl.find('.nav-toggle-btn');
 
 	navToggleBtn.on('click', function(e){
-		bodyEl.toggleClass('#cssmenu:active');
+		bodyEl.toggleClass('#cssmenu:hover');
 		e.preventDefault();
 	});
 })(jQuery);

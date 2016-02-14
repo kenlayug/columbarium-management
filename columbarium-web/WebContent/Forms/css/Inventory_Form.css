@@ -1,3 +1,10 @@
+
+.aside{
+    width: 500px;
+    height: 500px;
+    margin-top: 15px;
+    background-color: #00a1b5;
+}
 thead tr th{
      font-size: 25px;
      font-family: "KG Blank Space Sketch";
