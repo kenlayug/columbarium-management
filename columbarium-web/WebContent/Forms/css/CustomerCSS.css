@@ -1,16 +1,16 @@
-nav{
-    background-color: #171F0F;
+#del{
+    margin-left: 20px;
 }
-form{
-    margin-top: 30px;
+.nav-birdifly nav{
+    background-color: saddlebrown;
 }
-h4{
+h2{
     margin-left: 30px;
     font-family: "KG Blank Space Sketch";
 }
 
 thead tr{
-    background:  linear-gradient(rgba(163, 151, 91, 0.58), rgba(171, 152, 57, 0.44)),
+    background:  linear-gradient(rgba(235, 235, 148, 0.58), rgba(227, 222, 139, 0.44)),
     url("../img/p1.jpg");
 }
 thead tr th{
@@ -92,7 +92,16 @@ th, td {
 .row .modal-footer{
     margin-right: 50px;
 }
-form{
-    margin-left: 10px;
-    margin-right: 10px;
+.dropdown-content{
+    background:  linear-gradient(rgba(163, 151, 91, 0.58), rgba(171, 152, 57, 0.44)),
+    url("../img/p1.jpg");
+    margin-top: 45px;
+}
+.dropdown-content li a:hover{
+    background:  linear-gradient(rgba(136, 126, 76, 0.58), rgba(145, 129, 48, 0.44)),
+    url("../img/p1.jpg");
+}
+.dropdown-content li a{
+    font-family: "KG Blank Space Solid";
+    color: #160b03;
 }
