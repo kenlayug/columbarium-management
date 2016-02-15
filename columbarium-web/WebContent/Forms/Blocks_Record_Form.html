@@ -44,8 +44,8 @@
 
 
     <!-- Import -->
-    <script type="text/javascript" src="js/Building_Record_Form.js"></script>
-    <link rel = "stylesheet" href = "css/Building_Record_Form.css"/>
+    <script type="text/javascript" src="js/Blocks_Record_Form.js"></script>
+    <link rel = "stylesheet" href = "css/Blocks_Record_Form.css"/>
 
 
     <!-- Magic -->
@@ -79,22 +79,22 @@
     </nav>
 </div>
 
-<h2>Building Maintenance</h2>
+<h2>Blocks Maintenance</h2>
 <!-- Section -->
 <form class = col s12 >
     <div class = "row">
         <div class = "col s8">
 
-            <!-- Create Building -->
+            <!-- Create -->
             <div class = "col s12">
-                <div class = "aside aside z-depth-3">
+                <div class = "aside aside z-depth-3" style = "height: 410px;">
                     <h4>Create</h4>
 
                     <!-- Code -->
 
                     <div class="row">
                         <div class="input-field col s3">
-                            <label>Enter Building Code: </label>
+                            <label>Enter Block Code: </label>
                         </div>
                         <div class="input-field col s1">
                             <input id="dvo" type="text" required="" aria-required="true" class="validate">
@@ -105,22 +105,32 @@
                     <form class = "col s12">
                         <div class="row">
                             <div class="input-field col s6">
-                                <input id="level" type="text" class="validate" onBlur = "if(!exists(this.value)) { alert('Please enter building name');}">
-                                <label for="level" data-error = "wrong" data-success = "right">Name of building:</label>
+                                <input id="bldng_name" type="text" class="validate" required = "">
+                                <label for="bldng_name">Name of building:</label>
                             </div>
                             <div class="input-field col s6">
-                                <input id="loc" type="text" class="validate">
-                                <label for="loc">Location:</label>
+                                <input id="floor_no" type="text" class="validate">
+                                <label for="floor_no">Floor no.:</label>
                             </div>
                         </div>
                     </form>
-                    <a class="waves-effect waves-light btn red right" style = "margin-right: 10px; width: 180px;  margin-top: 20px;"><i class="mdi-content-add-circle left"></i>Create</a>
+                    <form class = "col s12">
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input id="blocks_no" type="text" class="validate">
+                                <label for="blocks_no">No. of blocks to be created:</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input id="blocks_name" type="text" class="validate">
+                                <label for="blocks_name">Block/s name:</label>
+                            </div>
+                        </div>
+                    </form>
+                    <a class="waves-effect waves-light btn red right" style = "margin-right: 10px; width: 180px;  margin-top: 10px;"><i class="mdi-content-add-circle left"></i>Create</a>
                 </div>
             </div>
 
-
-
-            <!-- Update Building -->
+            <!-- Update -->
             <div class = "col s12">
                 <div class = "aside aside z-depth-3">
                     <h4>Update</h4>
@@ -129,37 +139,37 @@
 
                         <div class="row">
                             <div class="input-field col s3">
-                                <label>Enter Package Code:</label>
+                                <label>Enter Block Code: </label>
                             </div>
                             <div class="input-field col s1">
                                 <input id="dv" type="text" required="" aria-required="true" class="validate">
                                 <label for="dv">####</label>
                             </div>
                         </div>
-
                         <div>
-                            <h5>Building Name:</h5>
+                            <h5>Block Name:</h5>
                         </div>
                         <form action="#" style = "padding-left: 10px;">
                             <p>
-                                <input type="checkbox" id="test41" />
-                                <label for="test41">Package one</label>
+                                <input type="checkbox" id="test40" />
+                                <label for="test40">Block one</label>
                             </p>
                         </form>
                     </div>
 
 
+
                     <!-- Modal Structure -->
                     <div id="modal1" class="modal">
                         <div class="modal-content">
-                            <h3>Update Building</h3>
+                            <h3>Update Block</h3>
                             <form class = "col s12">
                                 <div class="row">
                                     <br>
                                     <br>
                                     <div class="input-field col s12">
                                         <input id="block_name" type="text" class="validate">
-                                        <label for="block_name">Input new building name:</label>
+                                        <label for="block_name">Input new block name:</label>
                                     </div>
                                 </div>
                             </form>
@@ -183,21 +193,21 @@
                             <a class="waves-effect waves-light btn red right" style = "margin-right: 10px; width: 180px;"><i class="mdi-content-add-circle left"></i>Update</a>
                         </div>
                     </div>
-                    <button data-target = "modal1" class="waves-effect waves-light modal-trigger red right" style = "margin-right: 10px; width: 180px; height: 35px; color: white; margin-top: 35px;"><i class="mdi-content-create left"></i>UPDATE</button>
+                    <button data-target = "modal1" class="waves-effect waves-light modal-trigger red right" style = "margin-right: 10px; width: 180px; height: 35px; color: white; margin-top: 30px;"><i class="mdi-content-create left"></i>UPDATE</button>
                 </div>
             </div>
 
-            <!-- Deactivate Building -->
+
+            <!-- Deactivate -->
             <div class = "col s12">
                 <div class = "aside aside z-depth-3">
                     <h4>Deactivate</h4>
                     <div class="row">
-
                         <!-- Code -->
 
                         <div class="row">
                             <div class="input-field col s3">
-                                <label>Enter Package Code: </label>
+                                <label>Enter Block Code: </label>
                             </div>
                             <div class="input-field col s1">
                                 <input id="d" type="text" required="" aria-required="true" class="validate">
@@ -206,12 +216,12 @@
                         </div>
 
                         <div>
-                            <h5>Building Name:</h5>
+                            <h5>Block Name:</h5>
                         </div>
                         <form action="#" style = "padding-left: 10px;">
                             <p>
-                                <input type="checkbox" id="test40" />
-                                <label for="test40">Package one</label>
+                                <input type="checkbox" id="test41" />
+                                <label for="test41">Block one</label>
                             </p>
                         </form>
                     </div>
@@ -219,25 +229,21 @@
                     <!-- Modal Structure -->
                     <div id="modal2" class="modal">
                         <div class="modal-content">
-                            <h3>Deactivate Building</h3>
+                            <h3>Deactivate Block</h3>
                             <br>
                             <br>
                             <br>
-                            <h4>Building Name:</h4>
+                            <h4>Block Details</h4>
                             <form action="#">
                                 <p>
-                                    <input type="checkbox" id="test4" />
-                                    <label for="test4">Building one</label>
-                                </p>
-                                <p>
                                     <input type="checkbox" id="test5" />
-                                    <label for="test5">Building two</label>
-                                </p>
-                                <p>
-                                    <input type="checkbox" id="test6" />
-                                    <label for="test6">Building three</label>
+                                    <label for="test5">Block 1</label>
                                 </p>
                             </form>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
                             <br>
                             <br>
                             <br>
@@ -246,69 +252,75 @@
                             <a class="waves-effect waves-light btn red right" style = "margin-right: 10px; width: 180px;"><i class="mdi-content-add-circle left"></i>DEACTIVATE</a>
                         </div>
                     </div>
-                    <button data-target = "modal2" class="waves-effect waves-light modal-trigger red right" style = "margin-right: 10px; width: 180px; height: 35px; color: white; margin-top: 35px;"><i class="mdi-communication-dnd-on left"></i>DEACTIVATE</button>
+                    <button data-target = "modal2" class="waves-effect waves-light modal-trigger red right" style = "margin-right: 10px; width: 180px; height: 35px; color: white; margin-top: 30px;"><i class="mdi-communication-dnd-on left"></i>DEACTIVATE</button>
                 </div>
             </div>
         </div>
 
-        <!-- table -->
+        <!-- Data Grid -->
         <div class = "col s4">
             <table style = "width: 100%;">
 
                 <thead>
                 <tr>
-                    <th data-field="id">Building Code</th>
-                    <th data-field="name">Building Name</th>
+                    <th data-field="id">Building name</th>
                     <th data-field="name">Building location</th>
+                    <th data-field="name">No. of floors</th>
+                    <th data-field="name">No. of blocks</th>
+                    <th data-field="name">Block/s name</th>
                 </tr>
                 </thead>
 
                 <tbody>
                 <tr>
-                    <td>B001</td>
                     <td>Building one</td>
                     <td>East</td>
-
+                    <td>3</td>
+                    <td>6</td>
+                    <td>Block one, Block two, Block three, Block four, Block five, Block six</td>
                 </tr>
 
                 <tr>
-                    <td>B002</td>
                     <td>Building two</td>
                     <td>West</td>
-
+                    <td>5</td>
+                    <td>3</td>
+                    <td>Block one, Block two, Block three</td>
                 </tr>
 
                 <tr>
-                    <td>B003</td>
                     <td>Building three</td>
                     <td>South</td>
-
+                    <td>0</td>
+                    <td>0</td>
                 </tr>
 
                 <tr>
-                    <td>B004</td>
                     <td>Building four</td>
                     <td>North</td>
-
+                    <td>1</td>
+                    <td>3</td>
+                    <td>Block one, Block two, Block three</td>
                 </tr>
 
                 <tr>
-                    <td>B005</td>
                     <td>Building five</td>
                     <td>East</td>
-
+                    <td>0</td>
+                    <td>0</td>
                 </tr>
                 <tr>
-                    <td>B006</td>
                     <td>Building six</td>
                     <td>West</td>
-
+                    <td>3</td>
+                    <td>2</td>
+                    <td>Block one, Block two</td>
                 </tr>
                 <tr>
-                    <td>B007</td>
                     <td>Building seven</td>
                     <td>South</td>
-
+                    <td>0</td>
+                    <td>0</td>
                 </tr>
                 </tbody>
             </table>

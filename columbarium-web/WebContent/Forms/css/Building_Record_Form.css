@@ -1,71 +1,94 @@
-.edit_radio_btn h4{
-    font-family: "KG Blank Space Sketch";
-    font-size: 40px;
-    padding-top: 10px;
-    padding-left: 50px;
+#slide-out-l {
+    background-color: #171F0F;
 }
 
-.card-header h4{
-    padding-top: 10px;
+#slide-out-r {
+    background-color: #e3e3e3;
+}
+
+.side-nav .switch label {
+    color: #fff;
+}
+/** Search Navbar Input**/
+
+.side-nav li#nav-search {
+    background-color: #fff;
+    color: rgba(0, 0, 0, 0.85);
+}
+
+.side-nav li#nav-search:hover,
+.side-nav li#nav-search.active {
+    background: #fff;
+}
+
+#slide-out-r li:hover,
+#slide-out-r li.active {
+    background-color: #e3e3e3;
+}
+
+#slide-out-l li:hover,
+#slide-out-r li.active {
+    background-color: #171F0F;
+}
+/** Custom Checkbox **/
+
+.switch label .lever,
+.switch label input[type=checkbox]:checked+.lever {
+    background-color: #E7E8E4;
+    width: 68px;
+}
+
+.switch label .lever:after,
+.switch label input[type=checkbox]:checked+.lever:after {
+    top: 0;
+    height: 15px;
+    background-color: #ffcc00;
+    width: 45px;
+}
+
+.nav-birdifly nav{
+    background-color: saddlebrown;
+}
+
+.aside {
+    margin-left: 70px;
+    height: 320px;
+    width: 800px;
+}
+
+h1 {
+    padding-left: 100px;
+    font-family: "KG Blank Space Sketch";
+}
+
+h4{
+    font-family: "KG Blank Space Sketch";
     padding-left: 10px;
+    padding-right: 10px;
+}
+
+.h{
+    visibility: hidden;
+}
+
+h2 {
     font-family: "KG Blank Space Sketch";
-    font-size: xx-large;
-    color: #2f1706;
+    padding-left: 100px;
 }
 
-.edit_radio_btn p{
-    padding-left: 50px;
-}
-
-.dropdown2{
-    padding-left: 20px;
-}
-.card-header{
-    background:  linear-gradient(rgba(244, 225, 136, 0.58), rgba(243, 216, 80, 0.44)),
-    url("../img/pattern1_karton.jpg");
-    height: 60px;
-}
-
-.data-activates {
-    padding-left: 50px;
-}
-
-.edit_radio_btn p{
+h6{
     font-family: "KG Blank Space Sketch";
-    font-size: 30px;
-    color: black;
+    font-size: x-large;
 }
 
-.card {
-    width:800px;
-    background: url(../img/pagper.png) repeat;
-
-}
-
-.center1 {
-    padding-left: 350px;
-}
-
-@media only screen
-and (max-width : 480px) {
-    .card { width:100px;}
-}
-
-
-@media only screen
-and (max-width : 767px) {
-    .card { width:400px;}
-}
-
-.modal-trigger{
-    margin-right: 100px;
-    color: #160b03;
-    background:  linear-gradient(rgba(244, 225, 136, 0.58), rgba(243, 216, 80, 0.44)),
-    url("../img/pattern1_karton.jpg");
+h5 {
     font-family: "KG Blank Space Sketch";
-
+    font-size: 20px;
+    padding-left: 10px;
 }
 
-.modal-trigger:hover, .modal-trigger:active{
-    box-shadow: none;
+h3 {
+    font-family: "KG Blank Space Sketch";
+    font-size: 50px;
+    padding-left: 10px;
 }
