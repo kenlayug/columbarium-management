@@ -39,9 +39,10 @@
     <title>SAD Forms</title>
 
 
-    <!-- Font Awesome CSS -->
-    <link rel="stylesheet" href="./fonts/font-awesome.min.css" type="text/css" media="screen">
-
+    <!-- Import Fonts -->
+    <style>
+        @font-face { font-family: JuneBug; src: url('fonts/KGBlankSpaceSketch.ttf'); }
+    </style>
 
     <!-- Import -->
     <script type="text/javascript" src="js/Services_Record_Form.js"></script>
@@ -90,23 +91,25 @@
                 <div class = "aside aside z-depth-3">
                     <h4>Create</h4>
 
-                    <!-- Code -->
-
-                    <div class="row">
-                        <div class="input-field col s3">
-                            <label>Enter Service Code: </label>
-                        </div>
-                        <div class="input-field col s1">
-                            <input id="dvo" type="text" required="" aria-required="true" class="validate">
-                            <label for="dvo">####</label>
-                        </div>
+                    <!-- Radio Button -->
+                    <div class = "align"  style = "padding-left: 10px;">
+                    <form action="#">
+                        <p>
+                            <input name="group1" type="radio" id="test1" />
+                            <label for="test1">Columbary Vault</label>
+                        </p>
+                        <p>
+                            <input name="group1" type="radio" id="test2" />
+                            <label for="test2">Full Body</label>
+                        </p>
+                    </form>
                     </div>
 
                     <form class = "col s12">
                         <div class="row">
                             <div class="input-field col s4">
                                 <input id="level" type="text" class="validate">
-                                <label for="level" data-error = "wrong" data-success = "right">Service name:</label>
+                                <label for="level">Service name:</label>
                             </div>
                             <div class="input-field col s4">
                                 <input id="price" type="text" class="validate">
@@ -117,17 +120,139 @@
                                 <label for="loc">Service description:</label>
                             </div>
                         </div>
+
+                        <button data-target = "modal3" class="waves-effect waves-light modal-trigger red left" style = "margin-left: 10px; width: 180px; height: 35px; color: white; margin-top: 0px; font-size: 14px;"><i class="mdi-content-create left"></i>REQUIREMENTS</button>
                     </form>
 
+
+                    <a class="waves-effect waves-light btn red right" style = "margin-right: 10px; width: 180px;  margin-top: 120px;"><i class="mdi-content-add-circle left"></i>Create</a>
+                </div>
+            </div>
+
+            <!-- Modal Structure -->
+            <div id="modal3" class="modal">
+                <div class="modal-content">
+                    <h3>Update Service</h3>
+                    <br>
                     <form class = "col s12">
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <input id="req" type="text" class="validate" required = "">
-                                <label for="req">Input list of requirements:</label>
+
+                        <div class = "col s12">
+                            <div class="row">
+                                <div class = col >
+                                    <form action="#">
+                                        <h6>Columbary Vaults</h6>
+                                        <p>
+                                            <input type="checkbox" id="test81" />
+                                            <label for="test81">Death Certificate</label>
+                                        </p>
+                                        <p>
+                                            <input type="checkbox" id="test1111" />
+                                            <label for="test1111">Transfer Permit</label>
+                                        </p>
+                                        <p>
+                                            <input type="checkbox" id="test1177" />
+                                            <label for="test1177">Cremation</label>
+                                        </p>
+                                        <p>
+                                            <input type="checkbox" id="test1166" />
+                                            <label for="test1166">I.D. of Informant</label>
+                                        </p>
+
+                                        <br>
+
+
+                                        <h1>Additional Requirements:</h1>
+                                        <h1>(Authority to cremate if informant is:)</h1>
+                                        <p>
+                                            <input type="checkbox" id="test811" />
+                                            <label for="test811">Husband/Wife - Marriage Certificate/ Marriage Contract</label>
+                                        </p>
+                                        <p>
+                                            <input type="checkbox" id="test11111" />
+                                            <label for="test11111">Parent - Birth Certificate of Deceased (if none, Affidavit of Conformity)</label>
+                                        </p>
+                                        <p>
+                                            <input type="checkbox" id="test11777" />
+                                            <label for="test11777">Brother/Sister - Birth Certificate Deceased & Siblings</label>
+                                        </p>
+                                        <p>
+                                            <input type="checkbox" id="testt" />
+                                            <label for="testt">Relative - Affidavit of Conformity</label>
+                                        </p>
+                                        <p>
+                                            <input type="checkbox" id="testtt" />
+                                            <label for="testtt">I.D of Informant</label>
+                                        </p>
+                                    </form>
+                                </div>
+                                <br>
+                                <br>
+                                <div class = col>
+                                    <form action="#">
+                                        <br>
+                                        <br>
+                                        <h6>Full Body</h6>
+                                        <p>
+                                            <input type="checkbox" id="test0111" />
+                                            <label for="test0111">Death Certificate</label>
+                                        </p>
+                                        <p>
+                                            <input type="checkbox" id="test122" />
+                                            <label for="test122">Transfer Permit</label>
+                                        </p>
+                                        <p>
+                                            <input type="checkbox" id="test1233" />
+                                            <label for="test1233">Burial Person</label>
+                                        </p>
+                                        <p>
+                                            <input type="checkbox" id="test19" />
+                                            <label for="test19">I.D. of Buyer</label>
+                                        </p>
+                                    </form>
+                                </div>
                             </div>
                         </div>
-                    </form>
-                    <a class="waves-effect waves-light btn red right" style = "margin-right: 10px; width: 180px;  margin-top: 20px;"><i class="mdi-content-add-circle left"></i>Create</a>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+
+                </div>
+                <div class="modal-footer">
+                    <a class="waves-effect waves-light btn red right" style = "margin-right: 10px; width: 180px;"><i class="mdi-content-add-circle left"></i>Update</a>
                 </div>
             </div>
 

@@ -51,13 +51,13 @@
 }
 
 .aside {
-    margin-left: 70px;
+    margin-left: 40px;
     height: 320px;
     width: 800px;
 }
 
 h1 {
-    padding-left: 100px;
+    font-size: 15px;
     font-family: "KG Blank Space Sketch";
 }
 
@@ -73,7 +73,7 @@ h4{
 
 h2 {
     font-family: "KG Blank Space Sketch";
-    padding-left: 100px;
+    padding-left: 60px;
 }
 
 h6{
@@ -92,3 +92,40 @@ h3 {
     font-size: 50px;
     padding-left: 10px;
 }
+
+/* label color */
+.input-field label {
+    color: ;
+}
+/* label focus color */
+.input-field input[type=text]:focus + label {
+    color: red;
+}
+/* label underline focus color */
+.input-field input[type=text]:focus {
+    border-bottom: 1px solid red;
+    box-shadow: 0 1px 0 0 red;
+}
+/* valid color */
+.input-field input[type=text].valid {
+    border-bottom: 1px solid red;
+    box-shadow: 0 1px 0 0 red;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
