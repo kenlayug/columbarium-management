@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Employee_Maintenance</title>
+    <title>Employee</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
@@ -16,6 +16,323 @@
     <link href="css/CustomerCSS.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
+<<<<<<< HEAD
+    <div class="navbar-fixed nav-birdifly">
+        <nav>
+            <div class="nav-wrapper">
+
+                <a href="#" class="brand-logo center">Logo</a>
+
+                <ul id="slide-out-l" class="side-nav left">
+                    <li>
+                        <!-- Sidenav Content -->
+                        <!-- kim ayusin mo to ha :DD tnx -->
+                    </li>
+                </ul>
+
+                <a href="#" data-activates="slide-out-l" class="button-collapse show-on-large"><i class="material-icons">settings</i></a>
+
+                <a href="#" data-activates="slide-out-r" class="button-collapse show-on-large right"><i class="material-icons">search</i></a>
+            </div>
+        </nav>
+    </div>
+    <h2>EMPLOYEE</h2>
+    <!-- Section -->
+    <form class = col s12 >
+        <div class = "row">
+            <div class = "col s8">
+
+                <div class = "col s12">
+                    <div class = "aside aside z-depth-3">
+                        <div class="modal-header">
+                            <label>CREATE EMPLOYEE</label>
+                        </div>
+                        <form action="Employee.html" method="post">
+                            <div class="row">
+                                <div class="input-field col s1">
+                                    <label>Name:</label>
+                                </div>
+                                <div class="input-field col s3">
+                                    <input id="fname" type="text" required="" aria-required="true" class="validate">
+                                    <label for="fname">First Name</label>
+                                </div>
+                                <div class="input-field col s3">
+                                    <input id="mname" type="text">
+                                    <label for="mname">Middle Name</label>
+                                </div>
+                                <div class="input-field col s3">
+                                    <input id="lname" type="text" required="" aria-required="true" class="validate">
+                                    <label for="lname">Last Name</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s2">
+                                    <label>Gender:</label>
+                                </div>
+                                <div class="input-field col s2">
+                                    <p>
+                                        <input name="group1" type="radio" id="gender1" />
+                                        <label for="gender1">Male</label>
+                                        <input name="group1" type="radio" id="gender2" />
+                                        <label for="gender2">Female</label>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s2">
+                                    <label>Civil Status:</label>
+                                </div>
+                                <div class="input-field col s2">
+                                    <p>
+                                        <input name="group11" type="radio" id="test1" />
+                                        <label for="test1">Single</label>
+                                        <input name="group11" type="radio" id="test2" />
+                                        <label for="test2">Married</label>
+                                        <input name="group11" type="radio" id="test3" />
+                                        <label for="test3">Widow/Widower</label>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s2">
+                                    <label>Date of Birth:</label>
+                                </div>
+                                <div class="input-field col s3">
+                                    <input id="bday" type="date" required="" aria-required="true" class="validate">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s3">
+                                    <label>Employee Position:</label>
+                                </div>
+                                <div class="position-dropdown">
+                                    <a class='dropdown-button btn' href='#' data-activates='position1'>Position</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s2">
+                                    <label>Type Password:</label>
+                                </div>
+                                <div class="input-field col s4">
+                                    <input id="ps" type="password" required="" aria-required="true" class="validate">
+                                    <label for="ps">Password</label>
+                                </div>
+                                <div class="input-field col s2">
+                                    <label>Type Again:</label>
+                                </div>
+                                <div class="input-field col s4">
+                                    <input id="ps" type="password" required="" aria-required="true" class="validate">
+                                    <label for="ps">Retype Password</label>
+                                    <a class="waves-effect waves-light btn red right" style = "width: 180px;  margin-top: 20px; margin-bottom: 10px;"><i class="mdi-content-add-circle left"></i>Create</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class = "col s12">
+                    <div class = "aside aside z-depth-3">
+                        <div class="modal-header">
+                            <label>UPDATE EMPLOYEE RECORD</label>
+                        </div>
+                        <form action="Employee.html" method="post">
+                            <div class="row">
+                                <div class="h">
+                                    <div class="col s7">mm</div>
+                                </div>
+                                <div class="col s5">
+                                    <input type="text" name="search" required="" aria-required="true" class="validate" placeholder="Search Employee Code">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s1">
+                                    <label>Name:</label>
+                                </div>
+                                <div class="input-field col s3">
+                                    <input id="fname" type="text" required="" aria-required="true" class="validate">
+                                    <label for="fname">First Name</label>
+                                </div>
+                                <div class="input-field col s3">
+                                    <input id="mname" type="text">
+                                    <label for="mname">Middle Name</label>
+                                </div>
+                                <div class="input-field col s3">
+                                    <input id="lname" type="text" required="" aria-required="true" class="validate">
+                                    <label for="lname">Last Name</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s2">
+                                    <label>Gender:</label>
+                                </div>
+                                <div class="input-field col s2">
+                                    <p>
+                                        <input name="group111" type="radio" id="gender11"  />
+                                        <label for="gender11">Male</label>
+                                        <input name="group111" type="radio" id="gender22" />
+                                        <label for="gender22">Female</label>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s2">
+                                    <label>Civil Status:</label>
+                                </div>
+                                <div class="input-field col s2">
+                                        <p>
+                                            <input name="group1111" type="radio" id="test11" />
+                                            <label for="test11">Single</label>
+                                            <input name="group1111" type="radio" id="test22" />
+                                            <label for="test22">Married</label>
+                                            <input name="group1111" type="radio" id="test33" />
+                                            <label for="test33">Widow/Widower</label>
+                                        </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s2">
+                                    <label>Date of Birth:</label>
+                                </div>
+                                <div class="input-field col s3">
+                                    <input id="bday" type="date" required="" aria-required="true" class="validate">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s3">
+                                    <label>Employee Position:</label>
+                                </div>
+                                <div class="position-dropdown">
+                                    <a class='dropdown-button btn' href='#' data-activates='position1'>Position</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s2">
+                                    <label>Type Password:</label>
+                                </div>
+                                <div class="input-field col s4">
+                                    <input id="ps" type="password" required="" aria-required="true" class="validate">
+                                    <label for="ps">Password</label>
+                                </div>
+                                <div class="input-field col s2">
+                                    <label>Type Again:</label>
+                                </div>
+                                <div class="input-field col s4">
+                                    <input id="ps" type="password" required="" aria-required="true" class="validate">
+                                    <label for="ps">Retype Password</label>
+                                </div>
+                                <a class="waves-effect waves-light btn red right" style = "margin-right: 10px; width: 180px; margin-top: 20px; margin-bottom: 10px"><i class="mdi-content-create left"></i>Update</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class = "col s12">
+                    <div class = "aside aside z-depth-3">
+                        <div class="modal-header">
+                            <label>DEACTIVATE EMPLOYEE</label>
+                        </div>
+                        <form action="Employee.html" method="post">
+                            <div class="row">
+                                <div class="h">
+                                    <div class="col s7">mm</div>
+                                </div>
+                                <div class="col s5">
+                                    <input type="text" name="search" required="" aria-required="true" class="validate" placeholder="Search Employee Code">
+                                </div>
+                                <div>
+                                    <p>
+                                        <input type="checkbox" id="test6" checked="checked" />
+                                        <label for="test6" id="del">Name</label>
+                                    </p>
+                                    <a class="waves-effect waves-light btn red right" style = "margin-right: 10px; width: 200px; margin-top: 20px; margin-bottom: 10px;"><i class="mdi-communication-dnd-on left"></i>Deactivate</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- table -->
+
+            <div class = "col s4">
+                <div class="responsive">
+                    <table style = "width: 70%;">
+                        <thead id="iba">
+                            <tr>
+                                <th data-field="name">Emp Code</th>
+                                <th data-field="name">Name</th>
+                                <th data-field="gender">Gender</th>
+                                <th data-field="cv">Civil Status</th>
+                                <th data-field="cv">Date of Birth</th>
+                                <th data-field="cv">Position</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>001</td>
+                                <td>Alvin</td>
+                                <td>Male</td>
+                                <td>Single</td>
+                                <td>01/01/1990</td>
+                                <td>Admin</td>
+                            </tr>
+                            <tr>
+                                <td>001</td>
+                                <td>Alvin</td>
+                                <td>Male</td>
+                                <td>Single</td>
+                                <td>01/01/1990</td>
+                                <td>Admin</td>
+                            </tr>
+                            <tr>
+                                <td>001</td>
+                                <td>Alvin</td>
+                                <td>Male</td>
+                                <td>Single</td>
+                                <td>01/01/1990</td>
+                                <td>Admin</td>
+                            </tr>
+                            <tr>
+                                <td>001</td>
+                                <td>Alvin</td>
+                                <td>Male</td>
+                                <td>Single</td>
+                                <td>01/01/1990</td>
+                                <td>Admin</td>
+                            </tr>
+                            <tr>
+                                <td>001</td>
+                                <td>Alvin</td>
+                                <td>Male</td>
+                                <td>Single</td>
+                                <td>01/01/1990</td>
+                                <td>Admin</td>
+                            </tr>
+                            <tr>
+                                <td>001</td>
+                                <td>Alvin</td>
+                                <td>Male</td>
+                                <td>Single</td>
+                                <td>01/01/1990</td>
+                                <td>Admin</td>
+                            </tr>
+                            <tr>
+                                <td>001</td>
+                                <td>Alvin</td>
+                                <td>Male</td>
+                                <td>Single</td>
+                                <td>01/01/1990</td>
+                                <td>Admin</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </form>
+    <!-- Drop down Content-->
+=======
     <div class="Responsive">
         <table class="striped">
             <thead>
@@ -68,6 +385,7 @@
         <button data-target="add" class="btn modal-trigger">Add</button>
     </div>
     <!-- Modal Trigger -->
+>>>>>>> 51f88862beac3637ff06c7cf1771b4ef25771520
     <ul id="position" class="dropdown-content">
         <li><a href="#">1</a></li>
         <li><a href="#">2</a></li>

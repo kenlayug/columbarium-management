@@ -1,3 +1,24 @@
+<<<<<<< HEAD
+#del{
+    margin-left: 20px;
+}
+.data-grid table{
+    width: 30px;
+}
+.nav-birdifly nav{
+    background-color: saddlebrown;
+}
+h2{
+    margin-left: 30px;
+    font-family: "KG Blank Space Sketch";
+}
+#iba tr th{
+    font-size: medium;
+}
+
+
+=======
+>>>>>>> 51f88862beac3637ff06c7cf1771b4ef25771520
 thead tr{
     background:  linear-gradient(rgba(163, 151, 91, 0.58), rgba(171, 152, 57, 0.44)),
     url("../img/p1.jpg");

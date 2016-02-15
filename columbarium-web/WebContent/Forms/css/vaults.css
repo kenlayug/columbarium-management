@@ -1,10 +1,20 @@
 html{
-    background-color: #0f0f0f;
+    background-color: #ffffff;
+}
+.nav-birdifly nav{
+    background-color: saddlebrown;
+}
+h2{
+    margin-left: 30px;
+    font-family: "KG Blank Space Sketch";
 }
 .vaults-content {
     float: left;
     width: 420px;
     height: 355px;
+}
+.modal-table{
+    border: none;
 }
 table{
     margin-top: 20px;
@@ -17,9 +27,23 @@ table, td {
     background:  linear-gradient(rgba(244, 225, 136, 0.58), rgba(243, 216, 80, 0.44)),
     url("../img/p1.jpg");
 }
+#data td{
+    text-align: center;
+    background: white;
+    border: none;
+    font-family: "KG Blank Space Solid";
+}
+#iba th{
+    text-align: center;
+    border: none;
+    font-family: "KG Blank Space Solid";
+}
+.data-grid{
+    border: none;
+}
 p{
     font-family: "KG Blank Space Solid";
-    font-size: 20px;
+    font-size: 15px;
     padding-left: 15px;
 }
 td a{
@@ -80,6 +104,9 @@ td a:hover, td a:active{
     text-shadow: 2px 2px #e2d5ad;
     color: #2f1706;
     font-size: xx-large;
+}
+.modal-header{
+    padding: 15px;
 }
 .modal-fixed-footer{
     position: fixed;
