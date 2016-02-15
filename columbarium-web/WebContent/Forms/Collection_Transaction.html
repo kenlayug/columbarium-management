@@ -44,8 +44,8 @@
 
 
     <!-- Import -->
-    <script type="text/javascript" src="js/Package_Record_Form.js"></script>
-    <link rel = "stylesheet" href = "css/Package_Record_Form.css"/>
+    <script type="text/javascript" src="js/Collection_Transaction.js"></script>
+    <link rel = "stylesheet" href = "css/Collection_Transaction.css"/>
 
 
     <!-- Magic -->
@@ -79,22 +79,22 @@
     </nav>
 </div>
 
-<h2>Package Maintenance</h2>
+<h2>Collection Transaction</h2>
 <!-- Section -->
 <form class = col s12 >
     <div class = "row">
         <div class = "col s8">
 
-            <!-- Create Package-->
+            <!-- Create Collection -->
             <div class = "col s12">
-                <div class = "aside aside z-depth-3" style = "height: 720px;">
+                <div class = "aside aside z-depth-3" style = "height: 560px;">
                     <h4>Create</h4>
 
                     <!-- Code -->
 
                     <div class="row">
                         <div class="input-field col s3">
-                            <label>Enter Package Code: </label>
+                            <label>Enter Collection Code: </label>
                         </div>
                         <div class="input-field col s1">
                             <input id="dvo" type="text" required="" aria-required="true" class="validate">
@@ -102,180 +102,127 @@
                         </div>
                     </div>
 
-                    <form class = "col s12">
-                        <div class="row">
-                            <div class="input-field col s6">
-                                <input id="bldng_name" type="text" class="validate" required = "">
-                                <label for="bldng_name">Package name:</label>
-                            </div>
-                            <div class="input-field col s6">
-                                <input id="floor_no" type="text" class="validate">
-                                <label for="floor_no">Package price:</label>
-                            </div>
-                        </div>
-                    </form>
-                    <form class = "col s12">
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <input id="desc" type="text" class="validate">
-                                <label for="desc">Package description:</label>
-                            </div>
-                        </div>
-                    </form>
+                    <a class='dropdown-button btn red' data-beloworigin="true" href='#' data-activates='dropdown1'>Collection Type</a>
+                    <!-- Dropdown Structure -->
+                    <ul id='dropdown1' class='dropdown-content' style = "margin-left: 10px;">
+                        <li><a href="#!">Monthly</a></li>
+                        <li><a href="#!">Yearly</a></li>
+                    </ul>
 
-                    <div class = "col s12">
-                        <div class="row">
-                            <div class = col >
-                            <form action="#">
-                                <h6>Services</h6>
-                                <p>
-                                    <input type="checkbox" id="test44" />
-                                    <label for="test44">Cremation</label>
-                                </p>
-                                <p>
-                                    <input type="checkbox" id="test111" />
-                                    <label for="test111">Full Body Crypts</label>
-                                </p>
-                                <p>
-                                    <input type="checkbox" id="test177" />
-                                    <label for="test177">Vault Inscription</label>
-                                </p>
-                                <p>
-                                    <input type="checkbox" id="test166" />
-                                    <label for="test166">Urn Inscription</label>
-                                </p>
-                            </form>
-                            </div>
-                            <div class = col>
-                                <form action="#">
-                                    <h6>Items</h6>
-                                    <p>
-                                        <input type="checkbox" id="test011" />
-                                        <label for="test011">Wooden urn</label>
-                                    </p>
-                                    <p>
-                                        <input type="checkbox" id="test22" />
-                                        <label for="test22">Metal urn</label>
-                                    </p>
-                                    <p>
-                                        <input type="checkbox" id="test233" />
-                                        <label for="test233">Porcelain</label>
-                                    </p>
-                                    <p>
-                                        <input type="checkbox" id="test9" />
-                                        <label for="test9">Pouch</label>
-                                    </p>
-                                </form>
-                            </div>
+                    <!-- Date -->
+                    <div class="row">
+                        <div class="input-field col s2">
+                            <label>Collection Date:</label>
+                        </div>
+                        <div class="input-field col s3">
+                            <input id="day" type="date" required="" aria-required="true" class="validate">
                         </div>
                     </div>
-                    <a class="waves-effect waves-light btn red right" style = "margin-right: 10px; width: 180px;  margin-top: 10px;"><i class="mdi-content-add-circle left"></i>Create</a>
+
+                    <form class = "col s12">
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input id="name3" type="text" class="validate">
+                                <label for="name3">Customer Name:</label>
+                            </div>
+                        </div>
+                    </form>
+                    <form class = "col s12">
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input id="amt" type="text" class="validate">
+                                <label for="amt">Collection Amount:</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input id="bal" type="text" class="validate">
+                                <label for="bal">Collection Balance:</label>
+                            </div>
+                        </div>
+                    </form>
+                    <a class="waves-effect waves-light btn red right" style = "margin-right: 10px; width: 180px;  margin-top: 20px;"><i class="mdi-content-add-circle left"></i>Create</a>
                 </div>
             </div>
 
-            <!-- Update Package -->
+
+
+            <!-- Update Collection -->
             <div class = "col s12">
                 <div class = "aside aside z-depth-3">
                     <h4>Update</h4>
                     <div class="row">
+                        <!-- Code -->
+
                         <div class="row">
                             <div class="input-field col s3">
-                                <label>Enter Package Code: </label>
+                                <label>Enter Collection Code:</label>
                             </div>
                             <div class="input-field col s1">
                                 <input id="dv" type="text" required="" aria-required="true" class="validate">
                                 <label for="dv">####</label>
                             </div>
                         </div>
+
                         <div>
-                            <h5>Package Name</h5>
+                            <h5>Customer Name:</h5>
                         </div>
                         <form action="#" style = "padding-left: 10px;">
                             <p>
-                                <input type="checkbox" id="test40" />
-                                <label for="test40">Package one</label>
+                                <input type="checkbox" id="test41" />
+                                <label for="test41">Customer Details</label>
                             </p>
                         </form>
                     </div>
 
 
-
                     <!-- Modal Structure -->
                     <div id="modal1" class="modal">
                         <div class="modal-content">
-                            <h3>Update Package</h3>
+                            <h3>Update Collection</h3>
                             <form class = "col s12">
                                 <div class="row">
+                                    <br>
+                                    <br>
+                                    <a class='dropdown-button btn red' data-beloworigin="true" href='#' data-activates='dropdown2'>Collection Type</a>
+                                    <!-- Dropdown Structure -->
+                                    <ul id='dropdown2' class='dropdown-content' style = "margin-left: 10px;">
+                                        <li><a href="#!">Monthly</a></li>
+                                        <li><a href="#!">Yearly</a></li>
+                                    </ul>
+
+                                    <!-- Date -->
+                                    <div class="row">
+                                        <div class="input-field col s2">
+                                            <label>Collection Date:</label>
+                                        </div>
+                                        <div class="input-field col s3">
+                                            <input id="day1" type="date" required="" aria-required="true" class="validate">
+                                        </div>
+                                    </div>
+
                                     <form class = "col s12">
                                         <div class="row">
                                             <div class="input-field col s6">
-                                                <input id="name" type="text" class="validate" required = "">
-                                                <label for="name">New package name:</label>
-                                            </div>
-                                            <div class="input-field col s6">
-                                                <input id="price" type="text" class="validate">
-                                                <label for="price">New package price:</label>
+                                                <input id="name33" type="text" class="validate">
+                                                <label for="name33">Customer Name:</label>
                                             </div>
                                         </div>
                                     </form>
                                     <form class = "col s12">
                                         <div class="row">
-                                            <div class="input-field col s12">
-                                                <input id="blocks_no" type="text" class="validate">
-                                                <label for="blocks_no">New package description:</label>
+                                            <div class="input-field col s6">
+                                                <input id="amt1" type="text" class="validate">
+                                                <label for="amt1">Collection Amount:</label>
+                                            </div>
+                                            <div class="input-field col s6">
+                                                <input id="bal1" type="text" class="validate">
+                                                <label for="bal1">Collection Balance:</label>
                                             </div>
                                         </div>
                                     </form>
 
-                                    <div class = "col s12">
-                                        <div class="row">
-                                            <div class = col >
-                                                <form action="#">
-                                                    <h6>Services</h6>
-                                                    <p>
-                                                        <input type="checkbox" id="test4" />
-                                                        <label for="test4">Wooden urn</label>
-                                                    </p>
-                                                    <p>
-                                                        <input type="checkbox" id="test11" />
-                                                        <label for="test11">Metal urn</label>
-                                                    </p>
-                                                    <p>
-                                                        <input type="checkbox" id="test17" />
-                                                        <label for="test17">Porcelain</label>
-                                                    </p>
-                                                    <p>
-                                                        <input type="checkbox" id="test16" />
-                                                        <label for="test16">Pouch</label>
-                                                    </p>
-                                                </form>
-                                            </div>
-                                            <div class = col>
-                                                <form action="#">
-                                                    <h6>Items</h6>
-                                                    <p>
-                                                        <input type="checkbox" id="test1" />
-                                                        <label for="test1">Wooden urn</label>
-                                                    </p>
-                                                    <p>
-                                                        <input type="checkbox" id="test2" />
-                                                        <label for="test2">Metal urn</label>
-                                                    </p>
-                                                    <p>
-                                                        <input type="checkbox" id="test23" />
-                                                        <label for="test23">Porcelain</label>
-                                                    </p>
-                                                    <p>
-                                                        <input type="checkbox" id="test99" />
-                                                        <label for="test99">Pouch</label>
-                                                    </p>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
+
                                 </div>
                             </form>
-                            <br>
                             <br>
                             <br>
                             <br>
@@ -303,32 +250,35 @@
                             <a class="waves-effect waves-light btn red right" style = "margin-right: 10px; width: 180px;"><i class="mdi-content-add-circle left"></i>Update</a>
                         </div>
                     </div>
-                    <button data-target = "modal1" class="waves-effect waves-light modal-trigger red right" style = "margin-right: 10px; width: 180px; height: 35px; color: white; margin-top: 30px;"><i class="mdi-content-create left"></i>UPDATE</button>
+                    <button data-target = "modal1" class="waves-effect waves-light modal-trigger red right" style = "margin-right: 10px; width: 180px; height: 35px; color: white; margin-top: 35px;"><i class="mdi-content-create left"></i>UPDATE</button>
                 </div>
             </div>
 
-
-            <!-- Deactivate Package -->
+            <!-- Deactivate Collection -->
             <div class = "col s12">
                 <div class = "aside aside z-depth-3">
                     <h4>Deactivate</h4>
                     <div class="row">
+
+                        <!-- Code -->
+
                         <div class="row">
                             <div class="input-field col s3">
-                                <label>Enter Package Code: </label>
+                                <label>Enter Customer Code: </label>
                             </div>
                             <div class="input-field col s1">
                                 <input id="d" type="text" required="" aria-required="true" class="validate">
                                 <label for="d">####</label>
                             </div>
                         </div>
+
                         <div>
-                            <h5>Package Details</h5>
+                            <h5>Customer Name:</h5>
                         </div>
                         <form action="#" style = "padding-left: 10px;">
                             <p>
-                                <input type="checkbox" id="test7" />
-                                <label for="test7">Package one</label>
+                                <input type="checkbox" id="test40" />
+                                <label for="test40">Customer Details</label>
                             </p>
                         </form>
                     </div>
@@ -336,18 +286,17 @@
                     <!-- Modal Structure -->
                     <div id="modal2" class="modal">
                         <div class="modal-content">
-                            <h3>Deactivate Block</h3>
+                            <h3>Deactivate Collection</h3>
                             <br>
                             <br>
                             <br>
-                            <h4>Package Details</h4>
-                            <form action="#">
+                            <h4>Customer Name:</h4>
+                            <form action="#" style = "padding-left: 10px;">
                                 <p>
-                                    <input type="checkbox" id="test5" />
-                                    <label for="test5">Package one</label>
+                                    <input type="checkbox" id="test4" />
+                                    <label for="test4">Customer Details</label>
                                 </p>
                             </form>
-                            <br>
                             <br>
                             <br>
                             <br>
@@ -359,51 +308,66 @@
                             <a class="waves-effect waves-light btn red right" style = "margin-right: 10px; width: 180px;"><i class="mdi-content-add-circle left"></i>DEACTIVATE</a>
                         </div>
                     </div>
-                    <button data-target = "modal2" class="waves-effect waves-light modal-trigger red right" style = "margin-right: 10px; width: 180px; height: 35px; color: white; margin-top: 30px;"><i class="mdi-communication-dnd-on left"></i>DEACTIVATE</button>
+                    <button data-target = "modal2" class="waves-effect waves-light modal-trigger red right" style = "margin-right: 10px; width: 180px; height: 35px; color: white; margin-top: 35px;"><i class="mdi-communication-dnd-on left"></i>DEACTIVATE</button>
                 </div>
             </div>
         </div>
 
-        <!-- Data Grid -->
+        <!-- table -->
         <div class = "col s4">
-            <table style = "width: 100%;">
+            <table class = "striped" style = "width: 100%;;">
 
                 <thead>
                 <tr>
-                    <th data-field="id">Package Code</th>
-                    <th data-field="name">Package Name</th>
-                    <th data-field="name">Package Price</th>
-                    <th data-field="name">Package Description</th>
+                    <th data-field="id">Collection Code</th>
+                    <th data-field="id">Collection Type</th>
+                    <th data-field="name">Collection Date</th>
+                    <th data-field="name">Customer Name</th>
+                    <th data-field="name">Collection Amount</th>
+                    <th data-field="name">Collection Balance</th>
                 </tr>
                 </thead>
 
                 <tbody>
                 <tr>
-                    <td>P001</td>
-                    <td>Package one</td>
-                    <td>P 70,000.00</td>
-                    <td>Contains cremation with urn, and vault.</td>
+                    <td>CC01</td>
+                    <td>Monthly</td>
+                    <td>May 24, 2015</td>
+                    <td>Grace</td>
+                    <td>P 30,000.00</td>
+                    <td>P 30,000.00</td>
                 </tr>
-
                 <tr>
-                    <td>P002</td>
-                    <td>Package two</td>
+                    <td>CC02</td>
+                    <td>Monthly</td>
+                    <td>June 6, 2015</td>
+                    <td>Ana</td>
                     <td>P 50,000.00</td>
-                    <td>Full body crypts and vault with inscription.</td>
+                    <td>P 30,000.00</td>
                 </tr>
-
                 <tr>
-                    <td>P003</td>
-                    <td>Package three</td>
-                    <td>P 40,000.00</td>
-                    <td>Cremation with urn inscription.</td>
+                    <td>CC03</td>
+                    <td>Yearly</td>
+                    <td>September 18, 2015</td>
+                    <td>Ben</td>
+                    <td>P 45,000.00</td>
+                    <td>P 30,000.00</td>
                 </tr>
-
                 <tr>
-                    <td>P004</td>
-                    <td>package four</td>
-                    <td>P 105,000.00</td>
-                    <td>Contains cremation, urn with inscription, and vault with inscription.</td>
+                    <td>CC04</td>
+                    <td>Monthly</td>
+                    <td>February 11, 2015</td>
+                    <td>Gab</td>
+                    <td>P 30,000.00</td>
+                    <td>P 30,000.00</td>
+                </tr>
+                <tr>
+                    <td>CC05</td>
+                    <td>Yearly</td>
+                    <td>March 28, 2015</td>
+                    <td>Bob</td>
+                    <td>P 60,000.00</td>
+                    <td>P 30,000.00</td>
                 </tr>
                 </tbody>
             </table>
