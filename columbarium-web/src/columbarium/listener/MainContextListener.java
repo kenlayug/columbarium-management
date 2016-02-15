@@ -6,23 +6,29 @@ import javax.servlet.ServletContextListener;
 
 import columbarium.business.EmployeeBusiness;
 import columbarium.business.ItemBusiness;
+import columbarium.business.PackageBusiness;
 import columbarium.business.ServiceBusiness;
 import columbarium.business.impl.EmployeeBusinessImpl;
 import columbarium.business.impl.ItemBusinessImpl;
+import columbarium.business.impl.PackageBusinessImpl;
 import columbarium.business.impl.ServiceBusinessImpl;
 import columbarium.dao.ConnectionManager;
 import columbarium.dao.EmployeeRepository;
 import columbarium.dao.ItemRepository;
+import columbarium.dao.PackageRepository;
 import columbarium.dao.ServiceRepository;
 import columbarium.dao.mybatis.MybatisConnectionManager;
 import columbarium.dao.mybatis.MybatisEmployeeRepository;
 import columbarium.dao.mybatis.MybatisItemRepository;
+import columbarium.dao.mybatis.MybatisPackageRepository;
 import columbarium.dao.mybatis.MybatisServiceRepository;
 import columbarium.service.EmployeeService;
 import columbarium.service.ItemService;
 import columbarium.service.ServiceService;
+import columbarium.service.PackageService;
 import columbarium.service.impl.EmployeeServiceImpl;
 import columbarium.service.impl.ItemServiceImpl;
+import columbarium.service.impl.PackageServiceImpl;
 import columbarium.service.impl.ServiceServiceImpl;
 
 public class MainContextListener implements ServletContextListener{
@@ -71,6 +77,16 @@ public class MainContextListener implements ServletContextListener{
 			((ItemServiceImpl)itemService).setItemBusiness(itemBusiness);
 			((ItemServiceImpl)itemService).setItemRepository(itemRepository);
 			servletContext.setAttribute("itemService", itemService);
+			
+			//Package
+			PackageRepository packageRepository =
+					new MybatisPackageRepository((MybatisConnectionManager)connectionManager);
+			PackageBusiness packageBusiness = new PackageBusinessImpl();
+			((PackageBusinessImpl)packageBusiness).setPackageRepository(packageRepository);
+			PackageService packageService = new PackageServiceImpl();
+			((PackageServiceImpl)packageService).setPackageBusiness(packageBusiness);
+			((PackageServiceImpl)packageService).setPackageRepository(packageRepository);
+			servletContext.setAttribute("packageService", packageService);
 			
 			System.out.println("Context Listener initialized...");
 			

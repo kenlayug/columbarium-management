@@ -92,10 +92,12 @@ public class Item {
 		ItemService itemItem = (ItemService)ServletActionContext.getServletContext()
 				.getAttribute("itemItem");
 		Item item = itemItem.searchItem(this);
-		setItemId(item.getItemId());
-		setStrItemName(item.getStrItemName());
-		setStrItemDesc(item.getStrItemDesc());
-		setDblPrice(Double.parseDouble(item.getDblPrice()));
+		if(item != null){
+			setItemId(item.getItemId());
+			setStrItemName(item.getStrItemName());
+			setStrItemDesc(item.getStrItemDesc());
+			setDblPrice(Double.parseDouble(item.getDblPrice()));
+		}
 	}
 	
 	public String update(){

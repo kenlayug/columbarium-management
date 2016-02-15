@@ -92,10 +92,12 @@ public class Service {
 		ServiceService serviceService = (ServiceService)ServletActionContext.getServletContext()
 				.getAttribute("serviceService");
 		Service service = serviceService.searchService(this);
-		setServiceId(service.getServiceId());
-		setStrServiceName(service.getStrServiceName());
-		setStrServiceDesc(service.getStrServiceDesc());
-		setDblPrice(Double.parseDouble(service.getDblPrice()));
+		if (service != null){
+			setServiceId(service.getServiceId());
+			setStrServiceName(service.getStrServiceName());
+			setStrServiceDesc(service.getStrServiceDesc());
+			setDblPrice(Double.parseDouble(service.getDblPrice()));
+		}
 	}
 	
 	public String update(){
