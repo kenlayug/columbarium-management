@@ -44,8 +44,8 @@
 
 
     <!-- Import -->
-    <script type="text/javascript" src="js/Inventory_Form.js"></script>
-    <link rel = "stylesheet" href = "css/Inventory_Form.css"/>
+    <script type="text/javascript" src="js/Reservation_Transaction.js"></script>
+    <link rel = "stylesheet" href = "css/Reservation_Transaction.css"/>
 
 
     <!-- Magic -->
@@ -79,22 +79,22 @@
     </nav>
 </div>
 
-<h2>Inventory Maintenance</h2>
+<h2>Reservation Transaction</h2>
 <!-- Section -->
 <form class = col s12 >
     <div class = "row">
-        <div class = "col s8">
+        <div class = "col s7">
 
-            <!-- Create Inventory -->
+            <!-- Create Reservation -->
             <div class = "col s12">
-                <div class = "aside aside z-depth-3" style = "height: 365px;">
+                <div class = "aside aside z-depth-3" style = "height: 430px;">
                     <h4>Create</h4>
 
                     <!-- Code -->
 
                     <div class="row">
                         <div class="input-field col s3">
-                            <label>Enter Package Code: </label>
+                            <label>Enter Reservation Code: </label>
                         </div>
                         <div class="input-field col s1">
                             <input id="dvo" type="text" required="" aria-required="true" class="validate">
@@ -105,36 +105,48 @@
                     <form class = "col s12">
                         <div class="row">
                             <div class="input-field col s4">
-                                <input id="level" type="text" class="validate">
-                                <label for="level" data-error = "wrong" data-success = "right">Item name:</label>
+                                <input id="name3" type="text" class="validate">
+                                <label for="name3">Reservation Name:</label>
                             </div>
                             <div class="input-field col s4">
-                                <input id="qty" type="text" class="validate">
-                                <label for="qty">Item quantity:</label>
+                                <input id="name" type="text" class="validate">
+                                <label for="name" data-error = "wrong" data-success = "right">Customer Name:</label>
                             </div>
                             <div class="input-field col s4">
-                                <input id="desc" type="text" class="validate">
-                                <label for="desc">Item description:</label>
+                                <input id="name2" type="text" class="validate">
+                                <label for="name2">Deceased Name:</label>
                             </div>
                         </div>
                     </form>
-                    <a class="waves-effect waves-light btn red right" style = "margin-right: 10px; width: 180px;  margin-top: 60px;"><i class="mdi-content-add-circle left"></i>Create</a>
+
+                    <form class = "col s12">
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input id="level" type="text" class="validate">
+                                <label for="level" data-error = "wrong" data-success = "right">Service/Package avail:</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input id="loc" type="text" class="validate">
+                                <label for="loc">Schedule Date:</label>
+                            </div>
+                        </div>
+                    </form>
+                    <a class="waves-effect waves-light btn red right" style = "margin-right: 10px; width: 180px;  margin-top: 20px;"><i class="mdi-content-add-circle left"></i>Create</a>
                 </div>
             </div>
 
 
 
-            <!-- Update Inventory -->
+            <!-- Update Reservation -->
             <div class = "col s12">
                 <div class = "aside aside z-depth-3">
                     <h4>Update</h4>
                     <div class="row">
-
                         <!-- Code -->
 
                         <div class="row">
                             <div class="input-field col s3">
-                                <label>Enter Package Code: </label>
+                                <label>Enter Reservation Code:</label>
                             </div>
                             <div class="input-field col s1">
                                 <input id="dv" type="text" required="" aria-required="true" class="validate">
@@ -143,12 +155,12 @@
                         </div>
 
                         <div>
-                            <h5>Item Details</h5>
+                            <h5>Reservation Name:</h5>
                         </div>
                         <form action="#" style = "padding-left: 10px;">
                             <p>
-                                <input type="checkbox" id="test8" />
-                                <label for="test8">Wooden urn</label>
+                                <input type="checkbox" id="test41" />
+                                <label for="test41">Reservation one</label>
                             </p>
                         </form>
                     </div>
@@ -157,21 +169,40 @@
                     <!-- Modal Structure -->
                     <div id="modal1" class="modal">
                         <div class="modal-content">
-                            <h3>Update Inventory</h3>
+                            <h3>Update Reservation</h3>
                             <form class = "col s12">
                                 <div class="row">
-                                    <div class="input-field col s4">
-                                        <input id="name" type="text" class="validate">
-                                        <label for="name">Input new item name:</label>
-                                    </div>
-                                    <div class="input-field col s4">
-                                        <input id="qty1" type="text" class="validate">
-                                        <label for="qty1">Input new item quantity:</label>
-                                    </div>
-                                    <div class="input-field col s4">
-                                        <input id="desc1" type="text" class="validate">
-                                        <label for="desc1">Input new item description:</label>
-                                    </div>
+                                    <br>
+                                    <br>
+                                    <form class = "col s12">
+                                        <div class="row">
+                                            <div class="input-field col s4">
+                                                <input id="name4" type="text" class="validate">
+                                                <label for="name4">Reservation Name:</label>
+                                            </div>
+                                            <div class="input-field col s4">
+                                                <input id="name5" type="text" class="validate">
+                                                <label for="name5" data-error = "wrong" data-success = "right">Customer Name:</label>
+                                            </div>
+                                            <div class="input-field col s4">
+                                                <input id="name6" type="text" class="validate">
+                                                <label for="name6">Deceased Name:</label>
+                                            </div>
+                                        </div>
+                                    </form>
+
+                                    <form class = "col s12">
+                                        <div class="row">
+                                            <div class="input-field col s6">
+                                                <input id="level1" type="text" class="validate">
+                                                <label for="level1" data-error = "wrong" data-success = "right">Service/Package avail:</label>
+                                            </div>
+                                            <div class="input-field col s6">
+                                                <input id="loc1" type="text" class="validate">
+                                                <label for="loc1">Schedule Date:</label>
+                                            </div>
+                                        </div>
+                                    </form>
                                 </div>
                             </form>
                             <br>
@@ -194,11 +225,11 @@
                             <a class="waves-effect waves-light btn red right" style = "margin-right: 10px; width: 180px;"><i class="mdi-content-add-circle left"></i>Update</a>
                         </div>
                     </div>
-                    <button data-target = "modal1" class="waves-effect waves-light modal-trigger red right" style = "margin-right: 10px; width: 180px; height: 35px; color: white; margin-top: 20px;"><i class="mdi-content-create left"></i>UPDATE</button>
+                    <button data-target = "modal1" class="waves-effect waves-light modal-trigger red right" style = "margin-right: 10px; width: 180px; height: 35px; color: white; margin-top: 35px;"><i class="mdi-content-create left"></i>UPDATE</button>
                 </div>
             </div>
 
-            <!-- Deactivate Item -->
+            <!-- Deactivate Reservation -->
             <div class = "col s12">
                 <div class = "aside aside z-depth-3">
                     <h4>Deactivate</h4>
@@ -208,7 +239,7 @@
 
                         <div class="row">
                             <div class="input-field col s3">
-                                <label>Enter Package Code: </label>
+                                <label>Enter Reservation Code: </label>
                             </div>
                             <div class="input-field col s1">
                                 <input id="d" type="text" required="" aria-required="true" class="validate">
@@ -217,12 +248,12 @@
                         </div>
 
                         <div>
-                            <h5>Item Name:</h5>
+                            <h5>Reservation Name:</h5>
                         </div>
                         <form action="#" style = "padding-left: 10px;">
                             <p>
-                                <input type="checkbox" id="test9" />
-                                <label for="test9">Wooden urn</label>
+                                <input type="checkbox" id="test40" />
+                                <label for="test40">Reservation one</label>
                             </p>
                         </form>
                     </div>
@@ -230,28 +261,21 @@
                     <!-- Modal Structure -->
                     <div id="modal2" class="modal">
                         <div class="modal-content">
-                            <h3>Deactivate Item</h3>
+                            <h3>Deactivate Reservation</h3>
                             <br>
                             <br>
-                            <h4>Item Details:</h4>
-                            <form action="#">
+                            <br>
+                            <h4>Reservation Name:</h4>
+                            <form action="#" style = "padding-left: 10px;">
                                 <p>
                                     <input type="checkbox" id="test4" />
-                                    <label for="test4">Wooden urn</label>
-                                </p>
-                                <p>
-                                    <input type="checkbox" id="test5" />
-                                    <label for="test5">Metal urn</label>
-                                </p>
-                                <p>
-                                    <input type="checkbox" id="test7" />
-                                    <label for="test7">Porcelain</label>
-                                </p>
-                                <p>
-                                    <input type="checkbox" id="test6" />
-                                    <label for="test6">Pouch</label>
+                                    <label for="test4">Reservation one</label>
                                 </p>
                             </form>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
                             <br>
                             <br>
                         </div>
@@ -259,59 +283,66 @@
                             <a class="waves-effect waves-light btn red right" style = "margin-right: 10px; width: 180px;"><i class="mdi-content-add-circle left"></i>DEACTIVATE</a>
                         </div>
                     </div>
-                    <button data-target = "modal2" class="waves-effect waves-light modal-trigger red right" style = "margin-right: 10px; width: 180px; height: 35px; color: white; margin-top: 20px;"><i class="mdi-communication-dnd-on left"></i>DEACTIVATE</button>
+                    <button data-target = "modal2" class="waves-effect waves-light modal-trigger red right" style = "margin-right: 10px; width: 180px; height: 35px; color: white; margin-top: 35px;"><i class="mdi-communication-dnd-on left"></i>DEACTIVATE</button>
                 </div>
             </div>
         </div>
 
         <!-- table -->
-        <div class = "col s4">
-            <table style = "width: 100%;">
+        <div class = "col s5">
+            <table class = "striped" style = "width: 50%; margin-left: 50px;">
 
                 <thead>
                 <tr>
-                    <th data-field="id">Item Code</th>
-                    <th data-field="name">Item Name</th>
-                    <th data-field="name">Item Quantity</th>
-                    <th data-field="name">Item Description</th>
-
+                    <th data-field="id">Reservation Code</th>
+                    <th data-field="id">Reservation Name</th>
+                    <th data-field="name">Customer Name</th>
+                    <th data-field="name">Deceased Name</th>
+                    <th data-field="name">Service/Package Avail</th>
+                    <th data-field="name">Schedule Date</th>
                 </tr>
                 </thead>
 
                 <tbody>
                 <tr>
-                    <td>I001</td>
-                    <td>Wooden urn</td>
-                    <td>57</td>
-                    <td>Urn made in wood.</td>
+                    <td>R001</td>
+                    <td>Reservation one</td>
+                    <td>Bill</td>
+                    <td>Grace</td>
+                    <td>Cremation with vault</td>
+                    <td>May 20, 2016</td>
                 </tr>
-
                 <tr>
-                    <td>I002</td>
-                    <td>Metal urn</td>
-                    <td>25</td>
-                    <td>Urn made in metal.</td>
+                    <td>R002</td>
+                    <td>Reservation two</td>
+                    <td>Ben</td>
+                    <td>Ana</td>
+                    <td>Body Crypts</td>
+                    <td>November 7, 2016</td>
                 </tr>
-
                 <tr>
-                    <td>I003</td>
-                    <td>Porcelain urn</td>
-                    <td>88</td>
-                    <td>Urn made in porcelain.</td>
+                    <td>R003</td>
+                    <td>Reservation three</td>
+                    <td>Peter</td>
+                    <td>Maria</td>
+                    <td>Cremation</td>
+                    <td>December 17, 2016</td>
                 </tr>
-
                 <tr>
-                    <td>I004</td>
-                    <td>Ceramin urn</td>
-                    <td>50</td>
-                    <td>Urn made in ceramic.</td>
+                    <td>R004</td>
+                    <td>Reservation four</td>
+                    <td>John</td>
+                    <td>Gab</td>
+                    <td>Body Crypts with vault</td>
+                    <td>June 29, 2016</td>
                 </tr>
-
                 <tr>
-                    <td>I005</td>
-                    <td>Pouch</td>
-                    <td>150</td>
-                    <td>Holds ash after cremation.</td>
+                    <td>R005</td>
+                    <td>Reservation five</td>
+                    <td>Sarah</td>
+                    <td>Jun</td>
+                    <td>Cremation</td>
+                    <td>July 17, 2016</td>
                 </tr>
                 </tbody>
             </table>

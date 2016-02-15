@@ -52,7 +52,7 @@
 
 .aside {
     margin-left: 70px;
-    height: 320px;
+    height: 220px;
     width: 800px;
 }
 
@@ -63,36 +63,8 @@ h1 {
 
 h4{
     font-family: "KG Blank Space Sketch";
-    padding-left: 10px;
-    padding-right: 10px;
 }
 
 .h{
     visibility: hidden;
-}
-
-h2 {
-    font-family: "KG Blank Space Sketch";
-    padding-left: 100px;
-}
-
-h6{
-    font-family: "KG Blank Space Sketch";
-    font-size: x-large;
-}
-
-h5 {
-    font-family: "KG Blank Space Sketch";
-    font-size: 20px;
-    padding-left: 10px;
-}
-
-h3 {
-    font-family: "KG Blank Space Sketch";
-    font-size: 50px;
-    padding-left: 10px;
-}
-
-.dropdown-button {
-    margin-left: 10px;
 }

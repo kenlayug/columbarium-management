@@ -44,8 +44,8 @@
 
 
     <!-- Import -->
-    <script type="text/javascript" src="js/Inventory_Form.js"></script>
-    <link rel = "stylesheet" href = "css/Inventory_Form.css"/>
+    <script type="text/javascript" src="js/Services_Record_Form.js"></script>
+    <link rel = "stylesheet" href = "css/Services_Record_Form.css"/>
 
 
     <!-- Magic -->
@@ -79,22 +79,22 @@
     </nav>
 </div>
 
-<h2>Inventory Maintenance</h2>
+<h2>Services Maintenance</h2>
 <!-- Section -->
 <form class = col s12 >
     <div class = "row">
         <div class = "col s8">
 
-            <!-- Create Inventory -->
+            <!-- Create Service -->
             <div class = "col s12">
-                <div class = "aside aside z-depth-3" style = "height: 365px;">
+                <div class = "aside aside z-depth-3">
                     <h4>Create</h4>
 
                     <!-- Code -->
 
                     <div class="row">
                         <div class="input-field col s3">
-                            <label>Enter Package Code: </label>
+                            <label>Enter Service Code: </label>
                         </div>
                         <div class="input-field col s1">
                             <input id="dvo" type="text" required="" aria-required="true" class="validate">
@@ -106,35 +106,43 @@
                         <div class="row">
                             <div class="input-field col s4">
                                 <input id="level" type="text" class="validate">
-                                <label for="level" data-error = "wrong" data-success = "right">Item name:</label>
+                                <label for="level" data-error = "wrong" data-success = "right">Service name:</label>
                             </div>
                             <div class="input-field col s4">
-                                <input id="qty" type="text" class="validate">
-                                <label for="qty">Item quantity:</label>
+                                <input id="price" type="text" class="validate">
+                                <label for="price">Service price:</label>
                             </div>
                             <div class="input-field col s4">
-                                <input id="desc" type="text" class="validate">
-                                <label for="desc">Item description:</label>
+                                <input id="loc" type="text" class="validate">
+                                <label for="loc">Service description:</label>
                             </div>
                         </div>
                     </form>
-                    <a class="waves-effect waves-light btn red right" style = "margin-right: 10px; width: 180px;  margin-top: 60px;"><i class="mdi-content-add-circle left"></i>Create</a>
+
+                    <form class = "col s12">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="req" type="text" class="validate" required = "">
+                                <label for="req">Input list of requirements:</label>
+                            </div>
+                        </div>
+                    </form>
+                    <a class="waves-effect waves-light btn red right" style = "margin-right: 10px; width: 180px;  margin-top: 20px;"><i class="mdi-content-add-circle left"></i>Create</a>
                 </div>
             </div>
 
 
 
-            <!-- Update Inventory -->
+            <!-- Update Service -->
             <div class = "col s12">
                 <div class = "aside aside z-depth-3">
                     <h4>Update</h4>
                     <div class="row">
-
                         <!-- Code -->
 
                         <div class="row">
                             <div class="input-field col s3">
-                                <label>Enter Package Code: </label>
+                                <label>Enter Service Code:</label>
                             </div>
                             <div class="input-field col s1">
                                 <input id="dv" type="text" required="" aria-required="true" class="validate">
@@ -143,12 +151,12 @@
                         </div>
 
                         <div>
-                            <h5>Item Details</h5>
+                            <h5>Service Name:</h5>
                         </div>
                         <form action="#" style = "padding-left: 10px;">
                             <p>
-                                <input type="checkbox" id="test8" />
-                                <label for="test8">Wooden urn</label>
+                                <input type="checkbox" id="test41" />
+                                <label for="test41">Service one</label>
                             </p>
                         </form>
                     </div>
@@ -157,20 +165,31 @@
                     <!-- Modal Structure -->
                     <div id="modal1" class="modal">
                         <div class="modal-content">
-                            <h3>Update Inventory</h3>
+                            <h3>Update Service</h3>
                             <form class = "col s12">
                                 <div class="row">
+                                    <br>
+                                    <br>
                                     <div class="input-field col s4">
                                         <input id="name" type="text" class="validate">
-                                        <label for="name">Input new item name:</label>
+                                        <label for="name">New service name:</label>
                                     </div>
                                     <div class="input-field col s4">
-                                        <input id="qty1" type="text" class="validate">
-                                        <label for="qty1">Input new item quantity:</label>
+                                        <input id="price1" type="text" class="validate">
+                                        <label for="price1">New service price:</label>
                                     </div>
                                     <div class="input-field col s4">
-                                        <input id="desc1" type="text" class="validate">
-                                        <label for="desc1">Input new item description:</label>
+                                        <input id="desc" type="text" class="validate">
+                                        <label for="desc">New building description:</label>
+                                    </div>
+                                </div>
+                            </form>
+
+                            <form class = "col s12">
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input id="req1" type="text" class="validate" required = "">
+                                        <label for="req1">Input list of requirements:</label>
                                     </div>
                                 </div>
                             </form>
@@ -194,11 +213,11 @@
                             <a class="waves-effect waves-light btn red right" style = "margin-right: 10px; width: 180px;"><i class="mdi-content-add-circle left"></i>Update</a>
                         </div>
                     </div>
-                    <button data-target = "modal1" class="waves-effect waves-light modal-trigger red right" style = "margin-right: 10px; width: 180px; height: 35px; color: white; margin-top: 20px;"><i class="mdi-content-create left"></i>UPDATE</button>
+                    <button data-target = "modal1" class="waves-effect waves-light modal-trigger red right" style = "margin-right: 10px; width: 180px; height: 35px; color: white; margin-top: 35px;"><i class="mdi-content-create left"></i>UPDATE</button>
                 </div>
             </div>
 
-            <!-- Deactivate Item -->
+            <!-- Deactivate Service -->
             <div class = "col s12">
                 <div class = "aside aside z-depth-3">
                     <h4>Deactivate</h4>
@@ -217,12 +236,12 @@
                         </div>
 
                         <div>
-                            <h5>Item Name:</h5>
+                            <h5>Service Name:</h5>
                         </div>
                         <form action="#" style = "padding-left: 10px;">
                             <p>
-                                <input type="checkbox" id="test9" />
-                                <label for="test9">Wooden urn</label>
+                                <input type="checkbox" id="test40" />
+                                <label for="test40">Package one</label>
                             </p>
                         </form>
                     </div>
@@ -230,28 +249,18 @@
                     <!-- Modal Structure -->
                     <div id="modal2" class="modal">
                         <div class="modal-content">
-                            <h3>Deactivate Item</h3>
+                            <h3>Deactivate Building</h3>
                             <br>
                             <br>
-                            <h4>Item Details:</h4>
+                            <br>
+                            <h5>Service Name:</h5>
                             <form action="#">
                                 <p>
                                     <input type="checkbox" id="test4" />
-                                    <label for="test4">Wooden urn</label>
-                                </p>
-                                <p>
-                                    <input type="checkbox" id="test5" />
-                                    <label for="test5">Metal urn</label>
-                                </p>
-                                <p>
-                                    <input type="checkbox" id="test7" />
-                                    <label for="test7">Porcelain</label>
-                                </p>
-                                <p>
-                                    <input type="checkbox" id="test6" />
-                                    <label for="test6">Pouch</label>
+                                    <label for="test4">Service one</label>
                                 </p>
                             </form>
+                            <br>
                             <br>
                             <br>
                         </div>
@@ -259,7 +268,7 @@
                             <a class="waves-effect waves-light btn red right" style = "margin-right: 10px; width: 180px;"><i class="mdi-content-add-circle left"></i>DEACTIVATE</a>
                         </div>
                     </div>
-                    <button data-target = "modal2" class="waves-effect waves-light modal-trigger red right" style = "margin-right: 10px; width: 180px; height: 35px; color: white; margin-top: 20px;"><i class="mdi-communication-dnd-on left"></i>DEACTIVATE</button>
+                    <button data-target = "modal2" class="waves-effect waves-light modal-trigger red right" style = "margin-right: 10px; width: 180px; height: 35px; color: white; margin-top: 35px;"><i class="mdi-communication-dnd-on left"></i>DEACTIVATE</button>
                 </div>
             </div>
         </div>
@@ -270,48 +279,39 @@
 
                 <thead>
                 <tr>
-                    <th data-field="id">Item Code</th>
-                    <th data-field="name">Item Name</th>
-                    <th data-field="name">Item Quantity</th>
-                    <th data-field="name">Item Description</th>
-
+                    <th data-field="id">Service Code</th>
+                    <th data-field="name">Service Name</th>
+                    <th data-field="name">Service Price</th>
+                    <th data-field="name">Service Description</th>
+                    <th data-field="name">Service Requirements</th>
                 </tr>
                 </thead>
 
                 <tbody>
                 <tr>
-                    <td>I001</td>
-                    <td>Wooden urn</td>
-                    <td>57</td>
-                    <td>Urn made in wood.</td>
+                    <td>S001</td>
+                    <td>Cremation</td>
+                    <td>P 30,000.00</td>
+                    <td>Process of burning deceased body into ashes.</td>
+                    <td>I.D. of buyer, Burial Permit, Transfer Permit</td>
+
                 </tr>
 
                 <tr>
-                    <td>I002</td>
-                    <td>Metal urn</td>
-                    <td>25</td>
-                    <td>Urn made in metal.</td>
+                    <td>S002</td>
+                    <td>Inscription</td>
+                    <td>P 2,000.00</td>
+                    <td>Inscribed text/messages in urns/vault.</td>
+                    <td>Inscription sample, and urn/vault</td>
+
                 </tr>
 
                 <tr>
-                    <td>I003</td>
-                    <td>Porcelain urn</td>
-                    <td>88</td>
-                    <td>Urn made in porcelain.</td>
-                </tr>
-
-                <tr>
-                    <td>I004</td>
-                    <td>Ceramin urn</td>
-                    <td>50</td>
-                    <td>Urn made in ceramic.</td>
-                </tr>
-
-                <tr>
-                    <td>I005</td>
-                    <td>Pouch</td>
-                    <td>150</td>
-                    <td>Holds ash after cremation.</td>
+                    <td>S003</td>
+                    <td>Body Crypts</td>
+                    <td>P 30,000.00</td>
+                    <td>Provide coffin and vault for the deceased.</td>
+                    <td>Death Certificate, Transfer Permit.</td>
                 </tr>
                 </tbody>
             </table>
