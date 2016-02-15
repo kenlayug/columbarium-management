@@ -52,6 +52,36 @@ public class Service {
 		return getStrServiceName()+" -- P"+getDblPrice();
 	}
 	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((strServiceName == null) ? 0 : strServiceName.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (obj == null) {
+			return false;
+		}
+		if (!(obj instanceof Service)) {
+			return false;
+		}
+		Service other = (Service) obj;
+		if (strServiceName == null) {
+			if (other.strServiceName != null) {
+				return false;
+			}
+		} else if (!strServiceName.equals(other.strServiceName)) {
+			return false;
+		}
+		return true;
+	}
+
 	public String create(){
 		ServiceService serviceService = (ServiceService)ServletActionContext.getServletContext()
 				.getAttribute("serviceService");

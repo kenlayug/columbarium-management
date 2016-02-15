@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+     "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" 
+     "http://struts.apache.org/dtds/struts-2.0.dtd"> 
+   
+   <struts>
+   
+   	<package name="employee" extends="struts-default" namespace="/add-employee"> 
+  		 
+  		<action name="*" class="columbarium.actions.employee.FormEmployeeAction">
+  			<result name="success">/add-employee.jsp</result>
+  		</action>
+  		 
+  		<action name="createEmployee" class="columbarium.actions.employee.CreateEmployeeAction"
+  			method="execute">
+  			<result name="success">/index.html</result>
+  			<result name="input" type="redirect">/add-employee/</result>
+  		</action>
+  	 
+  	</package> 
+   
+   </struts>

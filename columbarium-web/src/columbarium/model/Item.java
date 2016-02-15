@@ -51,14 +51,15 @@ public class Item {
 	public String toString(){
 		return getStrItemName()+" -- "+getDblPrice();
 	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + itemId;
 		result = prime * result + ((strItemName == null) ? 0 : strItemName.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) {
@@ -71,9 +72,6 @@ public class Item {
 			return false;
 		}
 		Item other = (Item) obj;
-		if (itemId != other.itemId) {
-			return false;
-		}
 		if (strItemName == null) {
 			if (other.strItemName != null) {
 				return false;
@@ -83,7 +81,7 @@ public class Item {
 		}
 		return true;
 	}
-	
+
 	public String create(){
 		ItemService itemItem = (ItemService)ServletActionContext.getServletContext()
 				.getAttribute("itemItem");
