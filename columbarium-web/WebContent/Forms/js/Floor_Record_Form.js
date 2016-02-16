@@ -50,3 +50,7 @@ $('.dropdown-button').dropdown({
         alignment: 'left' // Displays dropdown with edge aligned to the left of button
     }
 );
+
+$(document).ready(function() {
+    $('select').material_select();
+});
