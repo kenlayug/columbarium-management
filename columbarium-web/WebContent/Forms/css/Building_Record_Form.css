@@ -47,12 +47,12 @@
 }
 
 .nav-birdifly nav{
-    background-color: saddlebrown;
+    background-color: darkred;
 }
 
 .aside {
-    margin-left: 30px;
-    height: 320px;
+    margin-left: 20px;
+    height: 340px;
     width: 800px;
 }
 
@@ -61,11 +61,6 @@ h1 {
     font-family: "KG Blank Space Sketch";
 }
 
-h4{
-    font-family: "KG Blank Space Sketch";
-    padding-left: 10px;
-    padding-right: 10px;
-}
 
 .h{
     visibility: hidden;
@@ -73,7 +68,9 @@ h4{
 
 h2 {
     font-family: "KG Blank Space Sketch";
-    padding-left: 50px;
+    padding-left: 45px;
+    font-size: 50px;
+
 }
 
 h6{
@@ -99,7 +96,6 @@ h3 {
 
 /* label color */
 .input-field label {
-    color: ;
 }
 /* label focus color */
 .input-field input[type=text]:focus + label {
@@ -115,5 +111,42 @@ h3 {
     border-bottom: 1px solid red;
     box-shadow: 0 1px 0 0 red;
 }
+
+.header {
+    background:  linear-gradient(rgba(244, 225, 136, 0.58), rgba(243, 216, 80, 0.44)),
+    url("../img/pattern1_karton.jpg");
+    height: 60px;
+    color: black;
+
+}
+
+.header {
+    background: url(../img/black_pattern1.jpg) repeat;
+    height: 70px;
+
+}
+
+.header h4{
+    font-family: "KG Blank Space Sketch";
+    padding-left: 20px;
+    padding-top: 10px;
+    font-size: 45px;
+    color: white;
+
+}
+
+.modal-header {
+    background: url(../img/black_pattern1.jpg) repeat;
+    height: 70px;
+    color: white;
+}
+
+.striped {
+    margin-top: 10px;
+    margin-left: 0px;
+}
+
+
+
 
 

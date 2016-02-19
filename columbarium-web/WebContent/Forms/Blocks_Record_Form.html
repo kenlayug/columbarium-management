@@ -80,22 +80,24 @@
     </nav>
 </div>
 
-<h2>Blocks Maintenance</h2>
 <!-- Section -->
+<h2>Block Maintenance</h2>
 <form class = col s12 >
     <div class = "row">
         <div class = "col s8">
 
             <!-- Create -->
             <div class = "col s12">
-                <div class = "aside aside z-depth-3" style = "height: 405px;">
-                    <h4>Create</h4>
+                <div class = "aside aside z-depth-3" style = "height: 435px;">
+                    <div class = "header">
+                         <h4 style = "stroke: black; stroke-width: 10px;">Create Block</h4>
+                    </div>
                     <br>
                     <br>
 
                     <form class = "col s12">
                         <div class = "row">
-                         <div class = "col s6">
+                         <div class = "col s6" style = "padding-left: 20px;">
                              <label>Select Building Name</label>
                             <select>
                                 <option value="" disabled selected>Building Name:</option>
@@ -137,8 +139,10 @@
             <!-- Update -->
             <div class = "col s12">
                 <div class = "aside aside z-depth-3" style = "margin-top: 50px;">
-                    <h4>Update</h4>
-                    <div class="row">
+                    <div class = "header">
+                    <h4>Update Block</h4>
+                    </div>
+                    <div class="row" style = "padding-left: 10px;">
                         <!-- Code -->
 
                         <div class="row">
@@ -165,20 +169,18 @@
 
                     <!-- Modal Structure -->
                     <div id="modal1" class="modal">
+                        <div class = "modal-header">
+                            <h3 style = "font-size: 40px;">Update Block</h3>
+                        </div>
                         <div class="modal-content">
-                            <h3>Update Block</h3>
                             <form class = "col s12">
                                 <div class="row">
-                                    <br>
-                                    <br>
                                     <div class="input-field col s12">
                                         <input id="block_name" type="text" class="validate">
                                         <label for="block_name">Input new block name:</label>
                                     </div>
                                 </div>
                             </form>
-                            <br>
-                            <br>
                             <br>
                             <br>
                             <br>
@@ -205,8 +207,10 @@
             <!-- Deactivate -->
             <div class = "col s12">
                 <div class = "aside aside z-depth-3" style = "margin-top: 50px;">
-                    <h4>Deactivate</h4>
-                    <div class="row">
+                    <div class = "header">
+                           <h4>Deactivate Block</h4>
+                    </div>
+                    <div class="row" style = "padding-left: 10px;">
                         <!-- Code -->
 
                         <div class="row">
@@ -232,13 +236,12 @@
 
                     <!-- Modal Structure -->
                     <div id="modal2" class="modal">
+                        <div class = "modal-header fixed">
+                            <h3 style = "font-size: 40px;">Deactivate Block</h3>
+                        </div>
                         <div class="modal-content">
-                            <h3>Deactivate Block</h3>
-                            <br>
-                            <br>
-                            <br>
-                            <h4>Block Details</h4>
-                            <form action="#">
+                            <h5>Block Details</h5>
+                            <form action="#" style = "padding-left: 10px;">
                                 <p>
                                     <input type="checkbox" id="test5" />
                                     <label for="test5">Block 1</label>
@@ -263,7 +266,7 @@
 
         <!-- Data Grid -->
         <div class = "col s4">
-            <table class = "striped z-depth-3" style = "width: 100%;">
+            <table class = "striped z-depth-3" style = "margin-top: 10px; margin-left: 0px; width: 100%;">
 
                 <thead>
                 <tr>
@@ -335,7 +338,7 @@
 </form>
 
 <!-- Footer -->
-<footer class="page-footer" style = "background-color: saddlebrown;">
+<footer class="page-footer" style = "background-color: darkred;">
     <div class="container">
         <div class="row">
             <div class="col l6 s12">

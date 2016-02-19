@@ -47,12 +47,12 @@
 }
 
 .nav-birdifly nav{
-    background-color: saddlebrown;
+    background-color: darkred;
 }
 
 .aside {
-    margin-left: 70px;
-    height: 320px;
+    margin-left: 20px;
+    height: 340px;
     width: 800px;
 }
 
@@ -61,19 +61,15 @@ h1 {
     font-family: "KG Blank Space Sketch";
 }
 
-h4{
-    font-family: "KG Blank Space Sketch";
-    padding-left: 10px;
-    padding-top: 10px;
-}
-
 .h{
     visibility: hidden;
 }
 
 h2 {
     font-family: "KG Blank Space Sketch";
-    padding-left: 100px;
+    padding-left: 45px;
+    font-size: 50px;
+
 }
 
 h6{
@@ -95,7 +91,6 @@ h3 {
 
 /* label color */
 .input-field label {
-    color: ;
 }
 /* label focus color */
 .input-field input[type=text]:focus + label {
@@ -112,4 +107,34 @@ h3 {
     box-shadow: 0 1px 0 0 red;
 }
 
+
+.header h4{
+    font-family: "KG Blank Space Sketch";
+    padding-left: 20px;
+    padding-top: 10px;
+    font-size: 45px;
+    color: white;
+}
+
+.header{
+    background: url(../img/black_pattern1.jpg) repeat;
+    height: 70px;
+}
+
+.striped {
+    margin-top: 10px;
+}
+
+.modal-header {
+    background: url(../img/black_pattern1.jpg) repeat;
+    color: white;
+    height: 70px;
+}
+
+.modal-header h4{
+    font-family: "KG Blank Space Sketch";
+    padding-left: 40px;
+    font-size: 40px;
+    color: white;
+}
 

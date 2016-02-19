@@ -48,6 +48,10 @@
         @font-face { font-family: JuneBug; src: url('fonts/KGBlankSpaceSketch.ttf'); }
     </style>
 
+    <!-- Import -->
+    <script type="text/javascript" src="js/Collection_Transaction.js"></script>
+    <link rel = "stylesheet" href = "css/Collection_Transaction.css"/>
+
     <!-- Magic -->
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="./fonts/font-awesome.min.css" type="text/css" media="screen">
@@ -79,38 +83,23 @@
     </nav>
 </div>
 
-<h2>Collection Transaction</h2>
 <!-- Section -->
+<h2>Collection Transaction</h2>
 <form class = col s12 >
     <div class = "row">
-        <div class = "col s8">
+        <div class = "col s7">
 
-            <!-- Create Collection -->
+            <!-- Collection Form-->
             <div class = "col s12">
-                <div class = "aside aside z-depth-3" style = "height: 560px;">
-                    <h4>Create</h4>
+                <div class = "aside aside z-depth-4" style = "height: 480px;">
 
-                    <!-- Code -->
 
-                    <div class="row">
-                        <div class="input-field col s3">
-                            <label>Enter Collection Code: </label>
-                        </div>
-                        <div class="input-field col s1">
-                            <input id="dvo" type="text" required="" aria-required="true" class="validate">
-                            <label for="dvo">####</label>
-                        </div>
+                    <div class = "header">
+                        <h4>Collection Form</h4>
                     </div>
 
-                    <a class='dropdown-button btn red' data-beloworigin="true" href='#' data-activates='dropdown1'>Collection Type</a>
-                    <!-- Dropdown Structure -->
-                    <ul id='dropdown1' class='dropdown-content' style = "margin-left: 10px;">
-                        <li><a href="#!">Monthly</a></li>
-                        <li><a href="#!">Yearly</a></li>
-                    </ul>
-
                     <!-- Date -->
-                    <div class="row">
+                    <div class="row" style = "padding-left: 10px;">
                         <div class="input-field col s2">
                             <label>Collection Date:</label>
                         </div>
@@ -119,255 +108,98 @@
                         </div>
                     </div>
 
-                    <form class = "col s12">
+                    <!-- Customer Information -->
+                    <div class = "inputpadding col s12">
+                        <label style = "padding-left: 10px;">Customer Name:</label>
                         <div class="row">
-                            <div class="input-field col s6">
-                                <input id="name3" type="text" class="validate">
-                                <label for="name3">Customer Name:</label>
+                            <div class="input-field col s4">
+                                <input id="fname" type="text" class="validate">
+                                <label for="fname" data-error = "wrong" data-success = "right">First Name</label>
+                            </div>
+                            <div class="input-field col s4">
+                                <input id="mname" type="text" class="validate">
+                                <label for="mname">Middle Name</label>
+                            </div>
+                            <div class="input-field col s4">
+                                <input id="lname" type="text" class="validate">
+                                <label for="lname">Last Name</label>
                             </div>
                         </div>
-                    </form>
+                    </div>
+
                     <form class = "col s12">
-                        <div class="row">
+                        <div class="row" style = "padding-left: 10px;">
                             <div class="input-field col s6">
                                 <input id="amt" type="text" class="validate">
-                                <label for="amt">Collection Amount:</label>
+                                <label for="amt">Service Amount:</label>
                             </div>
                             <div class="input-field col s6">
                                 <input id="bal" type="text" class="validate">
-                                <label for="bal">Collection Balance:</label>
+                                <label for="bal">Collection Amount:</label>
                             </div>
                         </div>
                     </form>
-                    <a class="waves-effect waves-light btn red right" style = "margin-right: 10px; width: 180px;  margin-top: 20px;"><i class="mdi-content-add-circle left"></i>Create</a>
-                </div>
-            </div>
-
-
-
-            <!-- Update Collection -->
-            <div class = "col s12">
-                <div class = "aside aside z-depth-3">
-                    <h4>Update</h4>
-                    <div class="row">
-                        <!-- Code -->
-
-                        <div class="row">
-                            <div class="input-field col s3">
-                                <label>Enter Collection Code:</label>
-                            </div>
-                            <div class="input-field col s1">
-                                <input id="dv" type="text" required="" aria-required="true" class="validate">
-                                <label for="dv">####</label>
-                            </div>
-                        </div>
-
-                        <div>
-                            <h5>Customer Name:</h5>
-                        </div>
-                        <form action="#" style = "padding-left: 10px;">
-                            <p>
-                                <input type="checkbox" id="test41" />
-                                <label for="test41">Customer Details</label>
-                            </p>
-                        </form>
-                    </div>
-
-
-                    <!-- Modal Structure -->
-                    <div id="modal1" class="modal">
-                        <div class="modal-content">
-                            <h3>Update Collection</h3>
-                            <form class = "col s12">
-                                <div class="row">
-                                    <br>
-                                    <br>
-                                    <a class='dropdown-button btn red' data-beloworigin="true" href='#' data-activates='dropdown2'>Collection Type</a>
-                                    <!-- Dropdown Structure -->
-                                    <ul id='dropdown2' class='dropdown-content' style = "margin-left: 10px;">
-                                        <li><a href="#!">Monthly</a></li>
-                                        <li><a href="#!">Yearly</a></li>
-                                    </ul>
-
-                                    <!-- Date -->
-                                    <div class="row">
-                                        <div class="input-field col s2">
-                                            <label>Collection Date:</label>
-                                        </div>
-                                        <div class="input-field col s3">
-                                            <input id="day1" type="date" required="" aria-required="true" class="validate">
-                                        </div>
-                                    </div>
-
-                                    <form class = "col s12">
-                                        <div class="row">
-                                            <div class="input-field col s6">
-                                                <input id="name33" type="text" class="validate">
-                                                <label for="name33">Customer Name:</label>
-                                            </div>
-                                        </div>
-                                    </form>
-                                    <form class = "col s12">
-                                        <div class="row">
-                                            <div class="input-field col s6">
-                                                <input id="amt1" type="text" class="validate">
-                                                <label for="amt1">Collection Amount:</label>
-                                            </div>
-                                            <div class="input-field col s6">
-                                                <input id="bal1" type="text" class="validate">
-                                                <label for="bal1">Collection Balance:</label>
-                                            </div>
-                                        </div>
-                                    </form>
-
-
-                                </div>
-                            </form>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-
-                        </div>
-                        <div class="modal-footer">
-                            <a class="waves-effect waves-light btn red right" style = "margin-right: 10px; width: 180px;"><i class="mdi-content-add-circle left"></i>Update</a>
-                        </div>
-                    </div>
-                    <button data-target = "modal1" class="waves-effect waves-light modal-trigger red right" style = "margin-right: 10px; width: 180px; height: 35px; color: white; margin-top: 35px;"><i class="mdi-content-create left"></i>UPDATE</button>
-                </div>
-            </div>
-
-            <!-- Deactivate Collection -->
-            <div class = "col s12">
-                <div class = "aside aside z-depth-3">
-                    <h4>Deactivate</h4>
-                    <div class="row">
-
-                        <!-- Code -->
-
-                        <div class="row">
-                            <div class="input-field col s3">
-                                <label>Enter Customer Code: </label>
-                            </div>
-                            <div class="input-field col s1">
-                                <input id="d" type="text" required="" aria-required="true" class="validate">
-                                <label for="d">####</label>
-                            </div>
-                        </div>
-
-                        <div>
-                            <h5>Customer Name:</h5>
-                        </div>
-                        <form action="#" style = "padding-left: 10px;">
-                            <p>
-                                <input type="checkbox" id="test40" />
-                                <label for="test40">Customer Details</label>
-                            </p>
-                        </form>
-                    </div>
-
-                    <!-- Modal Structure -->
-                    <div id="modal2" class="modal">
-                        <div class="modal-content">
-                            <h3>Deactivate Collection</h3>
-                            <br>
-                            <br>
-                            <br>
-                            <h4>Customer Name:</h4>
-                            <form action="#" style = "padding-left: 10px;">
-                                <p>
-                                    <input type="checkbox" id="test4" />
-                                    <label for="test4">Customer Details</label>
-                                </p>
-                            </form>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                        </div>
-                        <div class="modal-footer">
-                            <a class="waves-effect waves-light btn red right" style = "margin-right: 10px; width: 180px;"><i class="mdi-content-add-circle left"></i>DEACTIVATE</a>
-                        </div>
-                    </div>
-                    <button data-target = "modal2" class="waves-effect waves-light modal-trigger red right" style = "margin-right: 10px; width: 180px; height: 35px; color: white; margin-top: 35px;"><i class="mdi-communication-dnd-on left"></i>DEACTIVATE</button>
+                    <a class="waves-effect waves-light btn black right" style = "margin-right: 10px; width: 180px;  margin-top: 20px;"><i class="mdi-content-add-circle left"></i>Create</a>
                 </div>
             </div>
         </div>
 
         <!-- table -->
-        <div class = "col s4">
-            <table class = "striped" style = "width: 100%;;">
+
+        <div class = "col s5" style = "width: 50px;">
+            <table class = "striped z-depth-4" style = "width: 500px; margin-top: 20px; margin-left: 20px;">
 
                 <thead>
                 <tr>
                     <th data-field="id">Collection Code</th>
-                    <th data-field="id">Collection Type</th>
                     <th data-field="name">Collection Date</th>
-                    <th data-field="name">Customer Name</th>
+                    <th data-field="id">Customer Name</th>
+                    <th data-field="name">Customer Status</th>
+                    <th data-field="name">Service Amount</th>
                     <th data-field="name">Collection Amount</th>
-                    <th data-field="name">Collection Balance</th>
                 </tr>
                 </thead>
 
                 <tbody>
                 <tr>
                     <td>CC01</td>
-                    <td>Monthly</td>
-                    <td>May 24, 2015</td>
+                    <td>May 24, 2016</td>
                     <td>Grace</td>
-                    <td>P 30,000.00</td>
-                    <td>P 30,000.00</td>
+                    <td>5 days left</td>
+                    <td>P 120,000.00</td>
+                    <td>P 5,000.00</td>
                 </tr>
                 <tr>
                     <td>CC02</td>
-                    <td>Monthly</td>
-                    <td>June 6, 2015</td>
-                    <td>Ana</td>
-                    <td>P 50,000.00</td>
-                    <td>P 30,000.00</td>
+                    <td>May 27, 2016</td>
+                    <td>Ben</td>
+                    <td>8 days left</td>
+                    <td>P 150,000.00</td>
+                    <td>P 10,000.00</td>
                 </tr>
                 <tr>
                     <td>CC03</td>
-                    <td>Yearly</td>
-                    <td>September 18, 2015</td>
-                    <td>Ben</td>
-                    <td>P 45,000.00</td>
-                    <td>P 30,000.00</td>
+                    <td>February 5, 2016</td>
+                    <td>Ana</td>
+                    <td>Past due since 5 days</td>
+                    <td>P 220,000.00</td>
+                    <td>P 15,000.00</td>
                 </tr>
                 <tr>
                     <td>CC04</td>
-                    <td>Monthly</td>
-                    <td>February 11, 2015</td>
-                    <td>Gab</td>
-                    <td>P 30,000.00</td>
-                    <td>P 30,000.00</td>
+                    <td>January 20, 2015</td>
+                    <td>Mirriam</td>
+                    <td>Past due since 10 days</td>
+                    <td>P 300,000.00</td>
+                    <td>P 25,000.00</td>
                 </tr>
                 <tr>
                     <td>CC05</td>
-                    <td>Yearly</td>
-                    <td>March 28, 2015</td>
-                    <td>Bob</td>
-                    <td>P 60,000.00</td>
-                    <td>P 30,000.00</td>
+                    <td>March 24, 2015</td>
+                    <td>Kris</td>
+                    <td>12 hrs left</td>
+                    <td>P 50,000.00</td>
+                    <td>P 5,000.00</td>
                 </tr>
                 </tbody>
             </table>
@@ -378,7 +210,7 @@
 </form>
 
 <!-- Footer -->
-<footer class="page-footer" style = "background-color: saddlebrown;">
+<footer class="page-footer" style = "background-color: darkred;">
     <div class="container">
         <div class="row">
             <div class="col l6 s12">

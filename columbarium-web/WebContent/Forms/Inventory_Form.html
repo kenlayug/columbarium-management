@@ -80,40 +80,35 @@
     </nav>
 </div>
 
-<h2>Inventory Maintenance</h2>
 <!-- Section -->
+<h2>Inventory Maintenance</h2>
 <form class = col s12 >
     <div class = "row">
         <div class = "col s8">
 
             <!-- Create Inventory -->
             <div class = "col s12">
-                <div class = "aside aside z-depth-3" style = "height: 365px;">
-                    <h4>Create</h4>
-
-                    <!-- Code -->
-
-                    <div class="row">
-                        <div class="input-field col s3">
-                            <label>Enter Package Code: </label>
-                        </div>
-                        <div class="input-field col s1">
-                            <input id="dvo" type="text" required="" aria-required="true" class="validate">
-                            <label for="dvo">####</label>
-                        </div>
+                <div class = "aside aside z-depth-3" style = "height: 380px;">
+                    <div class = "header">
+                        <h4>Create Inventory</h4>
                     </div>
 
+
                     <form class = "col s12">
-                        <div class="row">
-                            <div class="input-field col s4">
+                        <div class="row" style = "padding-left: 10px;">
+                            <div class="input-field col s6">
                                 <input id="level" type="text" class="validate">
                                 <label for="level" data-error = "wrong" data-success = "right">Item name:</label>
                             </div>
-                            <div class="input-field col s4">
+                            <div class="input-field col s6">
                                 <input id="qty" type="text" class="validate">
                                 <label for="qty">Item quantity:</label>
                             </div>
-                            <div class="input-field col s4">
+                        </div>
+                    </form>
+                    <form class = "col s12">
+                        <div class="row">
+                            <div class="input-field col s12">
                                 <input id="desc" type="text" class="validate">
                                 <label for="desc">Item description:</label>
                             </div>
@@ -127,13 +122,16 @@
 
             <!-- Update Inventory -->
             <div class = "col s12">
-                <div class = "aside aside z-depth-3">
-                    <h4>Update</h4>
+                <div class = "aside aside z-depth-3" style = "margin-top: 50px;">
+                    <div class = "header">
+                        <h4>Update Inventory</h4>
+                    </div>
+
                     <div class="row">
 
                         <!-- Code -->
 
-                        <div class="row">
+                        <div class="row" style = "padding-left: 10px;">
                             <div class="input-field col s3">
                                 <label>Enter Package Code: </label>
                             </div>
@@ -146,7 +144,7 @@
                         <div>
                             <h5>Item Details</h5>
                         </div>
-                        <form action="#" style = "padding-left: 10px;">
+                        <form action="#" style = "padding-left: 20px;">
                             <p>
                                 <input type="checkbox" id="test8" />
                                 <label for="test8">Wooden urn</label>
@@ -157,8 +155,11 @@
 
                     <!-- Modal Structure -->
                     <div id="modal1" class="modal">
+                        <div class = "modal-header">
+                            <h4>Update Inventory</h4>
+                        </div>
                         <div class="modal-content">
-                            <h3>Update Inventory</h3>
+
                             <form class = "col s12">
                                 <div class="row">
                                     <div class="input-field col s4">
@@ -201,13 +202,16 @@
 
             <!-- Deactivate Item -->
             <div class = "col s12">
-                <div class = "aside aside z-depth-3">
-                    <h4>Deactivate</h4>
+                <div class = "aside aside z-depth-3" style = "margin-top: 50px;">
+                    <div class = "header">
+                        <h4>Deactivate Inventory</h4>
+                    </div>
+
                     <div class="row">
 
                         <!-- Code -->
 
-                        <div class="row">
+                        <div class="row" style = "padding-left: 10px;">
                             <div class="input-field col s3">
                                 <label>Enter Package Code: </label>
                             </div>
@@ -220,7 +224,7 @@
                         <div>
                             <h5>Item Name:</h5>
                         </div>
-                        <form action="#" style = "padding-left: 10px;">
+                        <form action="#" style = "padding-left: 20px;">
                             <p>
                                 <input type="checkbox" id="test9" />
                                 <label for="test9">Wooden urn</label>
@@ -230,8 +234,11 @@
 
                     <!-- Modal Structure -->
                     <div id="modal2" class="modal">
+                        <div class = "modal-header">
+                            <h4>Deactivate Item</h4>
+                        </div>
                         <div class="modal-content">
-                            <h3>Deactivate Item</h3>
+
                             <br>
                             <br>
                             <h4>Item Details:</h4>
@@ -267,7 +274,7 @@
 
         <!-- table -->
         <div class = "col s4">
-            <table style = "width: 100%;">
+            <table class = "striped z-depth-3" style = "width: 100%;">
 
                 <thead>
                 <tr>
@@ -323,7 +330,7 @@
 </form>
 
 <!-- Footer -->
-<footer class="page-footer" style = "background-color: saddlebrown;">
+<footer class="page-footer" style = "background-color: darkred;">
     <div class="container">
         <div class="row">
             <div class="col l6 s12">

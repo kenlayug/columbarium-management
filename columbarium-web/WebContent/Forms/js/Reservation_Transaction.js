@@ -50,3 +50,14 @@ $('.dropdown-button').dropdown({
         alignment: 'left' // Displays dropdown with edge aligned to the left of button
     }
 );
+
+$(document).ready(function() {
+    $('select').material_select();
+});
+
+$(document).ready(function() {
+    // Select - Single
+    $('select:not([multiple])').material_select();
+});
+
+$('select').material_select('destroy');
