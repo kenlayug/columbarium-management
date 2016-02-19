@@ -1,63 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>SAD Forms</title>
+
+    <!-- Materialize -->
     <meta charset="UTF-8">
-    <title>Reservation</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
-    <!-- Import File -->
-    <script type="text/javascript" src = "js/Reservation_Transaction.js"></script>
-    <link href="css/Reservation_Transaction.css" rel="stylesheet" type="text/css"/>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/js/materialize.min.js"></script>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+
+
+    <!-- Import CSS/JS -->
+    <script type="text/javascript" src="js/Reservation_Transaction.js"></script>
+    <link rel = "stylesheet" href = "css/Reservation_Transaction.css"/>
+
 </head>
 <body>
-<div class="navbar-fixed nav-birdifly">
+
+<!-- Navbar -->
+<div class="navbar-fixed navbar-leo">
     <nav>
         <div class="nav-wrapper">
-            <ul id="maintenance" class="dropdown-content">
-                <li><a href='Inventory_Form.html' id="db-content"><span>INVENTORY</span></a></li>
-                <li><a href='Services_Record_Form.html' id="db-content"><span>SERVICE</span></a></li>
-                <li><a href='Package_Record_Form.html' id="db-content"><span>PACKAGE</span></a></li>
-                <li><a href='Building_Record_Form.html' id="db-content"><span>BUILDING</span></a></li>
-                <li><a href='Floor_Record_Form.html' id="db-content"><span>FLOOR</span></a></li>
-                <li><a href='Blocks_Record_Form.html' id="db-content"><span>BLOCK</span></a></li>
-                <li><a href="vaults.html" id="db-content"><span>VAULTS</span></a></li>
-                <li><a class="last" href="FullBodyCrypts.html" id="db-content"><span>FULL BODY CRYPTS</span></a></li>
+            <a href="#!" class="brand-logo left">Logo</a>
+            <ul class="right hide-on-med-and-down">
+                <li><a class="dropdown-button" href="#!" data-beloworigin="true" data-activates="dropdown1">Maintenance<i class="material-icons right">arrow_drop_down</i></a></li>
+                <li><a class="dropdown-button" href="#!" data-beloworigin="true" data-activates="dropdown2">Transaction<i class="material-icons right">arrow_drop_down</i></a></li>
+                <li><a class="dropdown-button" href="#!" data-beloworigin="true" data-activates="dropdown3">Queries<i class="material-icons right">arrow_drop_down</i></a></li>
+                <li><a class="dropdown-button" href="#!" data-beloworigin="true" data-activates="dropdown4">Reports<i class="material-icons right">arrow_drop_down</i></a></li>
+                <li><a class="dropdown-button" href="#!" data-beloworigin="true" data-activates="dropdown5">Utilities<i class="material-icons right">arrow_drop_down</i></a></li>
             </ul>
-            <ul id="transaction" class="dropdown-content">
-                <li><a href='Customer.html' id="db-content"><span>CUSTOMER</span></a></li>
-                <li><a href='Reservation_Transaction.html' id="db-content"><span>RESERVATION</span></a></li>
-                <li><a href='scheduling.html' id="db-content"><span>SCHEDULING</span></a></li>
-                <li><a href='Collection_Transaction.html' id="db-content"><span>COLLECTION</span></a></li>
-                <li><a class="last" href="UnitOwnership.html" id="db-content"><span>TRANSFERRING</span></a></li>
-            </ul>
-            <ul id="utilities" class="dropdown-content">
-                <li><a class="last" href="Employee.html" id="db-content"><span>EMPLOYEE</span></a></li>
-            </ul>
-            <ul id="report" class="dropdown-content">
-                <li><a href='Reservation-Report.html' id="db-content"><span>RESERVATION RECORD</span></a></li>
-                <li><a href='scheduling-report.html' id="db-content"><span>SCHEDULING RECORD</span></a></li>
-                <li><a href='Collection-Report.html' id="db-content"><span>COLLECTION RECORD</span></a></li>
-                <li><a class="last" href="transferring-report.html" id="db-content"><span>TRANSFERRING RECORD</span></a></li>
-            </ul>
-            <nav>
-                <div class="nav-wrapper">
-                    <a href="#!" class="brand-logo">Logo</a>
-                    <ul class="right hide-on-med-and-down">
-                        <li><a class="dropdown-button" href="#!" data-activates="maintenance" id="db-content">Maintenance<i class="material-icons right">arrow_drop_down</i></a></li>
-                        <li><a class="dropdown-button" href="#!" data-activates="transaction" id="db-content">Transaction<i class="material-icons right">arrow_drop_down</i></a></li>
-                        <li><a href="#" id="normal-nav">Queries</a></li>
-                        <li><a class="dropdown-button" href="#!" data-activates="report" id="db-content">Reports<i class="material-icons right">arrow_drop_down</i></a></li>
-                        <li><a class="dropdown-button" href="#!" data-activates="utilities" id="db-content">Utilities<i class="material-icons right">arrow_drop_down</i></a></li>
-                    </ul>
-                </div>
-            </nav>
         </div>
     </nav>
 </div>
+
+<!-- Dropdown Maintenance-->
+<ul id="dropdown1" class="dropdown-content">
+    <li><a href="Inventory_Form.html">Inventory</a></li>
+    <li><a href="Services_Record_Form.html">Service</a></li>
+    <li class="divider"></li>
+    <li><a href="Package_Record_Form.html">Package</a></li>
+    <li><a href="Building_Record_Form.html">Building</a></li>
+    <li><a href="Floor_Record_Form.html">Floor</a></li>
+    <li><a href="Blocks_Record_Form.html">Block</a></li>
+    <li><a href="vaults.html">Vaults</a></li>
+    <li><a href="FullBodyCrypts.html">Body Crypts</a></li>
+</ul>
+
+<!-- Dropdown Transaction -->
+<ul id="dropdown2" class="dropdown-content">
+    <li><a href="Customer.html">Customer</a></li>
+    <li><a href="Reservation_Transaction.html">Reservation</a></li>
+    <li><a href="scheduling.html">Scheduling</a></li>
+    <li class="divider"></li>
+    <li><a href="Collection_Transaction.html">Collection</a></li>
+    <li><a href="UnitOwnership.html">Transferring</a></li>
+</ul>
+
+<!-- Dropdown Queries -->
+<ul id="dropdown3" class="dropdown-content">
+    <li><a href="">Product</a></li>
+    <li><a href="">Employee</a></li>
+    <li class="divider"></li>
+    <li><a href="">Customer</a></li>
+</ul>
+
+<!-- Dropdown Reports -->
+<ul id="dropdown4" class="dropdown-content">
+    <li><a href="Reservation-Report.html">Reservation Record</a></li>
+    <li><a href="">Scheduling Record</a></li>
+    <li class="divider"></li>
+    <li><a href="Collection-Report.html">Collection Record</a></li>
+    <li><a href="">Transferring Record</a></li>
+</ul>
+
+<!-- Dropdown Utilities -->
+<ul id="dropdown5" class="dropdown-content">
+    <li><a href="Employee.html">Employee</a></li>
+    <li class="divider"></li>
+</ul>
+
+
 
 <!-- Section -->
 <center><h2>Reservation Transaction</h2></center>
@@ -69,8 +103,8 @@
             <div class = "col s12">
                 <div class = "aside aside z-depth-3" style = "height: 880px;">
                     <div class = "header">
-                        <h4>Reservation Form</h4>
-                        <p>Please Fill up the needed fields.</p>
+                            <h4>Reservation Form</h4>
+                            <p>Please Fill up the needed fields.</p>
                     </div>
                     <br>
                     <br>
@@ -144,15 +178,15 @@
                     </div>
 
                     <div class = "col s12">
-                        <div class = "row">
-                            <div class = "col s4"  >
-                                <button data-target = "modal1" class="waves-effect waves-light modal-trigger black left" style = "margin-left: 0px; width: 220px; height: 60px; color: white; margin-top: 5px; font-size: 18px;"><i class="mdi-content-create left"></i>Check available Unit</button>
-                            </div>
-                            <div class="input-field col s8">
-                                <input id="vault" type="text" class="validate">
-                                <label for="vault">Vault Code</label>
-                            </div>
+                    <div class = "row">
+                         <div class = "col s4"  >
+                               <button data-target = "modal1" class="waves-effect waves-light modal-trigger black left" style = "margin-left: 0px; width: 220px; height: 60px; color: white; margin-top: 5px; font-size: 18px;"><i class="mdi-content-create left"></i>Check available Unit</button>
+                         </div>
+                        <div class="input-field col s8">
+                            <input id="vault" type="text" class="validate">
+                            <label for="vault">Vault Code</label>
                         </div>
+                    </div>
                     </div>
 
                     <form class = "col s12" style = "padding-top: 30px;">
@@ -177,7 +211,7 @@
                     </form>
 
 
-
+                   
                     <a class="waves-effect waves-light btn black right" style = "margin-right: 20px; width: 250px;  margin-top: 30px;"><i class="mdi-content-add-circle left"></i>Create Reservation</a>
                 </div>
             </div>
@@ -186,7 +220,7 @@
 
             <div id="modal1" class="modal">
                 <div class = "modal-header fixed">
-                    <h3 style = "font-size: 40px;">Available Units</h3>
+                    <h3 style = "font-size: 40px; padding-top: 10px; padding-left: 10px; ">Available Units</h3>
                 </div>
                 <div class="modal-content">
 
@@ -310,7 +344,7 @@
 
                 </div>
                 <div class="modal-footer">
-                    <a class="waves-effect waves-light btn black right" style = "margin-right: 10px; width: 100px;"><i class="mdi-content-add-circle left"></i>OK</a>
+                    <a class="waves-effect waves-light btn black right" style = "margin-right: 10px; width: 180px;color:white;"><i class="mdi-content-add-circle left"></i>Confirm</a>
                 </div>
             </div>
 
@@ -323,6 +357,7 @@
     </div>
 </form>
 
+<!-- Footer -->
 <footer class="page-footer" style = "background-color: darkred;">
     <div class="container">
         <div class="row">
@@ -351,3 +386,4 @@
 
 </body>
 </html>
+

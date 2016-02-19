@@ -2,16 +2,17 @@
     font-family: myFirstFont;
     src: url(../fonts/KGBlankSpaceSketch.ttf);
 }
-
-.navbar-leo nav{
+.nav-birdifly nav{
     background-color: darkred;
-    color: white;
+    font-family: myFirstFont;
+    color: #ffffff;
 }
 
 .dropdown-content{
     background-color: darkred;
     font-family: myFirstFont;
     color: #ffffff;
+    margin-top: 55px;
 }
 .dropdown-content li a{
     background-color: darkred;
