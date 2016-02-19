@@ -1,3 +1,8 @@
+@font-face {
+    font-family: myFirstFont;
+    src: url(../fonts/KGBlankSpaceSketch.ttf);
+}
+
 #slide-out-l {
     background-color: #171F0F;
 }
@@ -58,11 +63,11 @@
 
 h1 {
     padding-left: 100px;
-    font-family: "KG Blank Space Sketch";
+    font-family: myFirstFont;
 }
 
 .header h4{
-    font-family: "KG Blank Space Sketch";
+    font-family: myFirstFont;
     padding-left: 20px;
     padding-top: 10px;
     font-size: 45px;
@@ -76,24 +81,24 @@ h1 {
 }
 
 h2 {
-    font-family: "KG Blank Space Sketch";
+    font-family: myFirstFont;
     padding-left: 45px;
     font-size: 50px;
 
 }
 h5 {
-    font-family: "KG Blank Space Sketch";
+    font-family: myFirstFont;
     font-size: 20px;
     padding-left: 10px;
 }
 
 h6{
-    font-family: "KG Blank Space Sketch";
+    font-family: myFirstFont;
     font-size: x-large;
 }
 
 h3 {
-    font-family: "KG Blank Space Sketch";
+    font-family: myFirstFont;
     font-size: 30px;
     padding-left: 10px;
 }
