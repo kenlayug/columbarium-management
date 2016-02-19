@@ -16,4 +16,6 @@ public interface ItemService {
 	
 	public int getNewItemId();
 	
+	public int countItem();
+	
 }

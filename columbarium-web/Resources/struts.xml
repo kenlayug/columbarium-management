@@ -31,5 +31,6 @@
      </package>
      
      <include file="struts-employee.xml"/>
+     <include file="struts-item.xml"/>
      
  </struts> 

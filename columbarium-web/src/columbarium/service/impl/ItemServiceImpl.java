@@ -62,4 +62,10 @@ public class ItemServiceImpl implements ItemService{
 		return itemRepository.searchItemByName(item);
 	}
 
+	@Override
+	public int countItem() {
+		// TODO Auto-generated method stub
+		return itemRepository.countItem();
+	}
+
 }

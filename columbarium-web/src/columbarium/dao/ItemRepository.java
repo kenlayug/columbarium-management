@@ -16,4 +16,6 @@ public interface ItemRepository {
 	
 	public int getLastItemId();
 	
+	public int countItem();
+	
 }

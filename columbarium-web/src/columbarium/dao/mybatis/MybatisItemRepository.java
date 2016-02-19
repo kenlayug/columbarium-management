@@ -159,4 +159,21 @@ public class MybatisItemRepository extends MybatisClient implements ItemReposito
 		return null;
 	}
 
+	@Override
+	public int countItem() {
+		// TODO Auto-generated method stub
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		try{
+			
+			ItemMapper itemMapper = sqlSession.getMapper(ItemMapper.class);
+			return itemMapper.countAllItem();
+			
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			sqlSession.close();
+		}
+		return 0;
+	}
+
 }
