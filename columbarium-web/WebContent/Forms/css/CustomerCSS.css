@@ -11,6 +11,10 @@
 .nav-birdifly nav{
     background-color: darkred;
 }
+#dd-btn{
+    margin-top: 0;
+    height: 100%;
+}
 h2{
     margin-left: 30px;
     font-family:  myFirstFont;
@@ -42,15 +46,23 @@ tbody tr td{
 
 }
 .dropdown-button{
+    background-color: darkred;
+    font-family: myFirstFont;
+    color: #ffffff;
+}
+#db-content, #normal-nav{
+    background-color: darkred;
+    font-family: myFirstFont;
+    color: #ffffff;
+}
+#db-iba{
     color: #ffffff;
     background: url("../img/bg.jpg");
     font-family:  myFirstFont;
-    margin-top: 15px;
-
 }
 .modal-trigger:hover, .modal-trigger:active{
 
-    font-family: "KG Blank Space Sketch";
+    font-family: myFirstFont;
     box-shadow: none;
 }
 .modal-header{
@@ -77,14 +89,25 @@ th, td {
     padding: 15px;
     text-align: center;
 }
+#db-iba{
+    background: url("../img/bg.jpg");
+}
 .dropdown-content{
     margin-top: 45px;
-    background:  url("../img/bg.jpg");
-    font-family:  myFirstFont;
-}
-.dropdown-content li a, .dropdown-content li a:hover{
+    background-color: darkred;
+    font-family: myFirstFont;
     color: #ffffff;
-    background: url("../img/bg.jpg");
+}
+.dropdown-content li a{
+    background-color: darkred;
+    font-family: myFirstFont;
+    color: #ffffff;
+}
+.dropdown-content li a:hover{
+    background-color: #670000;
+    font-family: myFirstFont;
+    color: #ffffff;
+    text-shadow: 2px 2px #000000;
 }
 .search-customer-update input[type=text] {
     width: 130px;

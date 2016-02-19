@@ -12,6 +12,12 @@ h2{
     margin-left: 30px;
     font-family:  myFirstFont;
 }
+#db-content, #normal-nav{
+    background-color: darkred;
+    font-family: myFirstFont;
+    color: #ffffff;
+}
+
 .vaults-content {
     float: left;
     width: 420px;
@@ -120,4 +126,21 @@ td a:hover, td a:active{
 #unit-type{
     font-size: medium;
     font-family:  myFirstFont;
+}
+.dropdown-content{
+    margin-top: 55px;
+    background-color: darkred;
+    font-family: myFirstFont;
+    color: #ffffff;
+}
+.dropdown-content li a{
+    background-color: darkred;
+    font-family: myFirstFont;
+    color: #ffffff;
+}
+.dropdown-content li a:hover{
+    background-color: #670000;
+    font-family: myFirstFont;
+    color: #ffffff;
+    text-shadow: 2px 2px #000000;
 }

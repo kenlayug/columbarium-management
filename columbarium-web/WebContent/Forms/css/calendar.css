@@ -12,23 +12,37 @@
 .h{
     visibility: hidden;
 }
-.modal-trigger, .dropdown-button{
+.modal-trigger, .dropdown-button {
     margin: 0;
     width: 100%;
     padding: 0;
     text-align: center;
     background-color: #000000;
     color: white;
-    font-family:  myFirstFont;
+    font-family: myFirstFont;
     font-size: medium;
 }
-.dropdown-content li a{
-    color: white;
-    background: url("../img/bg.jpg");
+#db-content, #normal-nav{
+    background-color: darkred;
+    font-family: myFirstFont;
+    color: #ffffff;
+}
+.dropdown-content{
+    margin-top: 55px;
+    background-color: darkred;
+    font-family: myFirstFont;
+    color: #ffffff;
 }
 .dropdown-content li a{
-    color: white;
-    background: #000000;
+    background-color: darkred;
+    font-family: myFirstFont;
+    color: #ffffff;
+}
+.dropdown-content li a:hover{
+    background-color: #670000;
+    font-family: myFirstFont;
+    color: #ffffff;
+    text-shadow: 2px 2px #000000;
 }
 label{
     font-size: large;
@@ -108,7 +122,7 @@ tbody tr th{
     margin-left: 0;
 }
 .dropdown-button{
-    width: 100px;
+    width: 150px;
 }
 /* label focus color */
 .input-field input[type=text]:focus + label {
