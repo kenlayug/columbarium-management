@@ -92,6 +92,7 @@
 
 <!-- Dropdown Transaction -->
 <ul id="dropdown2" class="dropdown-content">
+    <li><a href="Customer.html">Customer</a></li>
     <li><a href="Reservation_Transaction.html">Reservation</a></li>
     <li><a href="scheduling.html">Scheduling</a></li>
     <li class="divider"></li>
@@ -118,7 +119,6 @@
 
 <!-- Dropdown Utilities -->
 <ul id="dropdown5" class="dropdown-content">
-    <li><a href="Customer.html">Customer</a></li>
     <li><a href="Employee.html">Employee</a></li>
     <li class="divider"></li>
 </ul>
@@ -170,31 +170,26 @@
                     <div class = "header">
                         <h4>Update Inventory</h4>
                     </div>
-
-                    <div class="row">
-
-                        <!-- Code -->
-
-                        <div class="row" style = "padding-left: 10px;">
-                            <div class="input-field col s3">
-                                <label>Enter Package Code: </label>
-                            </div>
-                            <div class="input-field col s1">
-                                <input id="dv" type="text" required="" aria-required="true" class="validate">
-                                <label for="dv">####</label>
-                            </div>
+                        <!-- Select Item Name -->
+                        <br>
+                        <div class = "col s6" style = "padding-left: 20px;">
+                            <label>Select Item Name</label>
+                            <select>
+                                <option value="" disabled selected>Item Name:</option>
+                                <option value="1">Item One</option>
+                                <option value="2">Item Two</option>
+                                <option value="3">Item Three</option>
+                            </select>
                         </div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
 
-                        <div>
-                            <h5>Item Details</h5>
-                        </div>
-                        <form action="#" style = "padding-left: 20px;">
-                            <p>
-                                <input type="checkbox" id="test8" />
-                                <label for="test8">Wooden urn</label>
-                            </p>
-                        </form>
-                    </div>
+
 
 
                     <!-- Modal Structure -->
@@ -251,30 +246,24 @@
                         <h4>Deactivate Inventory</h4>
                     </div>
 
-                    <div class="row">
-
-                        <!-- Code -->
-
-                        <div class="row" style = "padding-left: 10px;">
-                            <div class="input-field col s3">
-                                <label>Enter Package Code: </label>
-                            </div>
-                            <div class="input-field col s1">
-                                <input id="d" type="text" required="" aria-required="true" class="validate">
-                                <label for="d">####</label>
-                            </div>
-                        </div>
-
-                        <div>
-                            <h5>Item Name:</h5>
-                        </div>
-                        <form action="#" style = "padding-left: 20px;">
-                            <p>
-                                <input type="checkbox" id="test9" />
-                                <label for="test9">Wooden urn</label>
-                            </p>
-                        </form>
+                    <!-- Select Item Name -->
+                    <br>
+                    <div class = "col s6" style = "padding-left: 20px;">
+                        <label>Select Item Name</label>
+                        <select>
+                            <option value="" disabled selected>Item Name:</option>
+                            <option value="1">Item One</option>
+                            <option value="2">Item Two</option>
+                            <option value="3">Item Three</option>
+                        </select>
                     </div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
 
                     <!-- Modal Structure -->
                     <div id="modal2" class="modal">
