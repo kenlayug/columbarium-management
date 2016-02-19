@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
 <html lang="en">
 <head>
     <!-- Bootstrap -->
@@ -41,22 +42,22 @@
 
     <!-- Import Fonts -->
     <style>
-        @font-face { font-family: JuneBug; src: url('fonts/KGBlankSpaceSketch.ttf'); }
+        @font-face { font-family: JuneBug; src: url('<%=request.getContextPath()%>/fonts/KGBlankSpaceSketch.ttf'); }
     </style>
 
     <!-- Import -->
-    <script type="text/javascript" src="js/Inventory_Form.js"></script>
-    <link rel = "stylesheet" href = "css/Inventory_Form.css"/>
+    <script type="text/javascript" src="<%=request.getContextPath()%>/js/Inventory_Form.js"></script>
+    <link rel = "stylesheet" href = "<%=request.getContextPath()%>/css/Inventory_Form.css"/>
 
 
     <!-- Magic -->
     <!-- Font Awesome CSS -->
-    <link rel="stylesheet" href="./fonts/font-awesome.min.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/fonts/font-awesome.min.css" type="text/css" media="screen">
     <!-- Include roboto.css to use the Roboto web font, material.css to include the theme and ripples.css to style the ripple effect -->
-    <link href="./css/ripples.min.css" rel="stylesheet">
+    <link href="<%=request.getContextPath()%>/css/ripples.min.css" rel="stylesheet">
 
-    <link href="./css/responsive.css" rel="stylesheet">
-    <link href="./css/animate.min.css" rel="stylesheet">
+    <link href="<%=request.getContextPath()%>/css/responsive.css" rel="stylesheet">
+    <link href="<%=request.getContextPath()%>/css/animate.min.css" rel="stylesheet">
 </head>
 <body>
 
@@ -137,22 +138,22 @@
                     </div>
 
 
-                    <form class = "col s12">
+                    <form class = "col s12" action="create" method="post">
                         <div class="row" style = "padding-left: 10px;">
                             <div class="input-field col s6">
-                                <input id="level" type="text" class="validate">
+                                <input id="level" type="text" class="validate" name="item.strItemName">
                                 <label for="level" data-error = "wrong" data-success = "right">Item name:</label>
                             </div>
                             <div class="input-field col s6">
-                                <input id="qty" type="text" class="validate">
-                                <label for="qty">Item quantity:</label>
+                                <input id="qty" type="text" class="validate" name="item.dblPrice">
+                                <label for="qty">Item Price:</label>
                             </div>
                         </div>
                     </form>
                     <form class = "col s12">
                         <div class="row">
                             <div class="input-field col s12">
-                                <input id="desc" type="text" class="validate">
+                                <input id="desc" type="text" class="validate" name="item.strItemDesc">
                                 <label for="desc">Item description:</label>
                             </div>
                         </div>
@@ -330,40 +331,23 @@
                 </thead>
 
                 <tbody>
-                <tr>
-                    <td>I001</td>
-                    <td>Wooden urn</td>
-                    <td>57</td>
-                    <td>Urn made in wood.</td>
-                </tr>
+                <c:if test="${itemList  == null }">
+                	<tr>
+                		<td>N/A</td>
+                	</tr>
+                
+                </c:if>
+                <c:if test="${itemList != null}">
+                	<c:forEach items="${itemList }" var="item">
+                		<tr>
+		                    <td>${item.itemId }</td>
+		                    <td>${item.strItemName }</td>
+		                    <td>${item.dblPrice }</td>
+		                    <td>${item.strItemDesc }</td>
+	                	</tr>
+                	</c:forEach>
+                </c:if>
 
-                <tr>
-                    <td>I002</td>
-                    <td>Metal urn</td>
-                    <td>25</td>
-                    <td>Urn made in metal.</td>
-                </tr>
-
-                <tr>
-                    <td>I003</td>
-                    <td>Porcelain urn</td>
-                    <td>88</td>
-                    <td>Urn made in porcelain.</td>
-                </tr>
-
-                <tr>
-                    <td>I004</td>
-                    <td>Ceramin urn</td>
-                    <td>50</td>
-                    <td>Urn made in ceramic.</td>
-                </tr>
-
-                <tr>
-                    <td>I005</td>
-                    <td>Pouch</td>
-                    <td>150</td>
-                    <td>Holds ash after cremation.</td>
-                </tr>
                 </tbody>
             </table>
         </div>

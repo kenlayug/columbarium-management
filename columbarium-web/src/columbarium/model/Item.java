@@ -84,13 +84,13 @@ public class Item {
 
 	public String create(){
 		ItemService itemItem = (ItemService)ServletActionContext.getServletContext()
-				.getAttribute("itemItem");
+				.getAttribute("itemService");
 		return itemItem.createItem(this);
 	}
 	
 	public void fetch(){
 		ItemService itemItem = (ItemService)ServletActionContext.getServletContext()
-				.getAttribute("itemItem");
+				.getAttribute("itemService");
 		Item item = itemItem.searchItem(this);
 		if(item != null){
 			setItemId(item.getItemId());
@@ -102,33 +102,39 @@ public class Item {
 	
 	public String update(){
 		ItemService itemItem = (ItemService)ServletActionContext.getServletContext()
-				.getAttribute("itemItem");
+				.getAttribute("itemService");
 		return itemItem.updateItem(this);
 	}
 	
 	public String delete(){
 		ItemService itemItem = (ItemService)ServletActionContext.getServletContext()
-				.getAttribute("itemItem");
+				.getAttribute("itemService");
 		return itemItem.deactivateItem(this);
 	}
 	
 	public static List<Item>getAllItems(){
 		ItemService itemItem = (ItemService)ServletActionContext.getServletContext()
-				.getAttribute("itemItem");
+				.getAttribute("itemService");
 		return itemItem.getAllItem();
 	}
 	
 	public static int getNewItemId(){
 		ItemService itemItem = (ItemService)ServletActionContext.getServletContext()
-				.getAttribute("itemItem");
+				.getAttribute("itemService");
 		return itemItem.getNewItemId();
 	}
 	
 	public static List<Item>searchByName(String strItemName){
 		Item item = new Item(strItemName);
 		ItemService itemItem = (ItemService)ServletActionContext.getServletContext()
-				.getAttribute("itemItem");
+				.getAttribute("itemService");
 		return itemItem.searchItemByName(item);
+	}
+	
+	public static int countItem(){
+		ItemService itemItem = (ItemService)ServletActionContext.getServletContext()
+				.getAttribute("itemService");
+		return itemItem.countItem();
 	}
 	
 }
