@@ -9,6 +9,9 @@
     padding: 0;
     margin: 0;
 }
+.h{
+    visibility: hidden;
+}
 .modal-trigger, .dropdown-button{
     margin: 0;
     width: 100%;
