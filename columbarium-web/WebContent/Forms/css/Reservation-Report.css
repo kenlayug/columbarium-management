@@ -3,28 +3,9 @@
     src: url(../fonts/KGBlankSpaceSketch.ttf);
 }
 
-.navbar-leo nav{
+.nav-birdifly nav{
     background-color: darkred;
-    color: white;
 }
-
-.dropdown-content{
-    background-color: darkred;
-    font-family: myFirstFont;
-    color: #ffffff;
-}
-.dropdown-content li a{
-    background-color: darkred;
-    font-family: myFirstFont;
-    color: #ffffff;
-}
-.dropdown-content li a:hover{
-    background-color: #670000;
-    font-family: myFirstFont;
-    color: #ffffff;
-    text-shadow: 2px 2px #000000;
-}
-
 
 .aside {
     margin-left: 280px;
@@ -72,9 +53,18 @@ h3 {
     padding-left: 20px;
     font-size: 15px;
 }
-
-.dropdown-button {
-    margin-left: 10px;
+.dropdown-button{
+    background-color: darkred;
+    font-family: myFirstFont;
+    color: #ffffff;
+}
+#db-content, #normal-nav{
+    background-color: darkred;
+    font-family: myFirstFont;
+    color: #ffffff;
+}
+.dropdown-content{
+    margin-top: 55px;
 }
 
 /* label color */
