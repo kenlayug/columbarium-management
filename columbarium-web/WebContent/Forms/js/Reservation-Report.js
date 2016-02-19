@@ -1,5 +1,3 @@
-
-
 $('.dropdown-button').dropdown({
         inDuration: 300,
         outDuration: 225,
@@ -10,9 +8,3 @@ $('.dropdown-button').dropdown({
         alignment: 'left' // Displays dropdown with edge aligned to the left of button
     }
 );
-
-$(document).ready(function(){
-    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-    $('.modal-trigger').leanModal();
-});
-
