@@ -1,12 +1,16 @@
+@font-face {
+    font-family: myFirstFont;
+    src: url(../fonts/KGBlankSpaceSketch.ttf);
+}
 html{
     background-color: #ffffff;
 }
 .nav-birdifly nav{
-    background-color: saddlebrown;
+    background-color: darkred;
 }
 h2{
     margin-left: 30px;
-    font-family: "KG Blank Space Sketch";
+    font-family:  myFirstFont;
 }
 .vaults-content {
     float: left;
@@ -23,46 +27,47 @@ table, td {
     border: 1px solid #160b03;
     width: auto;
     height: auto;
-    color: #160b03;
-    background:  linear-gradient(rgba(244, 225, 136, 0.58), rgba(243, 216, 80, 0.44)),
-    url("../img/p1.jpg");
+    color: #ffffff;
+    background: url("../img/bg.jpg");
 }
 #data td{
     text-align: center;
     background: white;
     border: none;
-    font-family: "KG Blank Space Solid";
+    font-family:  myFirstFont;
+}
+#data tr td{
+    color: #000000;
 }
 #iba th{
     text-align: center;
     border: none;
-    font-family: "KG Blank Space Solid";
+    font-family:  myFirstFont;
 }
 .data-grid{
     border: none;
 }
 p{
-    font-family: "KG Blank Space Solid";
+    font-family:  myFirstFont;
     font-size: 15px;
     padding-left: 15px;
 }
 td a{
-    color: #2f1706;
+    color: #ffffff;
     margin-left: 25%;
     margin-right: 25%;
     padding-right: 20px;
     text-decoration: none;
-    font-family: "KG Blank Space Solid";
+    font-family:  myFirstFont;
     font-size: 20px;
 }
 td a:hover, td a:active{
-    color: #2f1706;
-    text-shadow: 2px 2px #e2d5ad;
+    color: #ffffff;
     margin-left: 25%;
     margin-right: 25%;
     padding-right: 20px;
     text-decoration: none;
-    font-family: "KG Blank Space Solid";
+    font-family:  myFirstFont;
     font-size: 20px;
     background-color: transparent;
     text-decoration: none;
@@ -72,37 +77,32 @@ td a:hover, td a:active{
     margin-top: 35px;
 }
 #building-no li a{
-    background:  linear-gradient(rgba(244, 225, 136, 0.58), rgba(243, 216, 80, 0.44)),
-    url("../img/p1.jpg");
-    color: #160b03;
-    font-family: "KG Blank Space Solid";
+    background: url("../img/bg.jpg");
+    color: #ffffff;
+    font-family:  myFirstFont;
     font-size: medium;
     text-decoration: none;
     cursor: pointer;
 }
 #building-no li a:hover, #building-no li a:active{
-    background:  linear-gradient(rgba(226, 209, 126, 0.58), rgba(212, 188, 70, 0.44)),
-    url("../img/p1.jpg");
-    color: #48240a;
+    background: url("../img/bg.jpg");
+    color: #ffffff;
 
 }
 .h{
     visibility: hidden;
 }
 .modal-footer .modal-trigger,.modal-footer .modal-trigger:active{
-    background:  linear-gradient(rgba(235, 235, 148, 0.58), rgba(227, 222, 139, 0.44)),
-    url("../img/p1.jpg");
-    color: #2f1706;
-    font-family: "KG Blank Space Solid";
+    background: url("../img/bg.jpg");
+    color: #ffffff;
+    font-family:  myFirstFont;
 }
 .modal-header{
-    background:  linear-gradient(rgba(235, 235, 148, 0.58), rgba(227, 222, 139, 0.44)),
-    url("../img/p1.jpg");
+    background: url("../img/bg.jpg");
 }
 .modal-header label{
-    font-family: "KG Blank Space Sketch";
-    text-shadow: 2px 2px #e2d5ad;
-    color: #2f1706;
+    font-family:  myFirstFont;
+    color: #ffffff;
     font-size: xx-large;
 }
 .modal-header{
@@ -112,9 +112,12 @@ td a:hover, td a:active{
     position: fixed;
 }
 .building-dropdown .dropdown-button{
-    color: #160b03;
-    font-family: "KG Blank Space Solid";
+    color: #ffffff;
+    font-family:  myFirstFont;
     font-size: medium;
-    background:  linear-gradient(rgba(159, 147, 89, 0.58), rgba(217, 193, 72, 0.44)),
-    url("../img/p1.jpg");
+    background: url("../img/bg.jpg");
+}
+#unit-type{
+    font-size: medium;
+    font-family:  myFirstFont;
 }

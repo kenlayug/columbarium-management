@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Scheduling</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+    <!-- Import File -->
+    <script type="text/javascript" src = "js/calendar.js"></script>
+    <link href="css/calendar.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+
+<div class="navbar-fixed nav-birdifly">
+    <nav>
+        <div class="nav-wrapper">
+
+            <a href="#" class="brand-logo center">Logo</a>
+
+            <ul id="slide-out-l" class="side-nav left">
+                <li>
+                    <!-- Sidenav Content -->
+                    <!-- kim ayusin mo to ha :DD tnx -->
+                </li>
+            </ul>
+
+            <a href="#" data-activates="slide-out-l" class="button-collapse show-on-large"><i class="material-icons">settings</i></a>
+
+            <a href="#" data-activates="slide-out-r" class="button-collapse show-on-large right"><i class="material-icons">search</i></a>
+        </div>
+    </nav>
+</div>
+<h2>SCHEDULING</h2>
+<form class = col s12 >
+    <div class = "row">
+        <div class = "col s8">
+            <div class = "col s12">
+                <div class = "aside aside z-depth-3">
+                    <div class="modal-header">
+                        <label>SCHEDULE SERVICE</label>
+                    </div>
+                    <form action="Employee.html" method="post">
+                        <div class="modal" id="modal1">
+                            <form class = "col s12">
+                                <div class = "row">
+                                    <div class = "col s1">
+                                        <div class = "col s12">
+                                            <button data-target="#" class="btn modal-trigger"><</button>
+                                        </div>
+                                    </div>
+                                    <div class = "col s10">
+                                        <div class="row">
+                                            <div class = "col s6">
+                                                <label>JANUARY</label>
+                                                <table class="jan">
+                                                    <div clas="jan-mo">
+                                                        <div clas="aside aside z-depth-3">
+                                                            <thead>
+                                                            <tr>
+                                                                <th>SUN</th>
+                                                                <th>MON</th>
+                                                                <th>TUES</th>
+                                                                <th>WED</th>
+                                                                <th>THURS</th>
+                                                                <th>FRI</th>
+                                                                <th>SAT</th>
+                                                            </thead>
+                                                            <tbody>
+                                                            <tr>
+                                                                <th></th>
+                                                                <th></th>
+                                                                <th></th>
+                                                                <th></th>
+                                                                <th></th>
+                                                                <th>1</th>
+                                                                <th>2</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>3</th>
+                                                                <th>4</th>
+                                                                <th>5</th>
+                                                                <th>6</th>
+                                                                <th>7</th>
+                                                                <th>8</th>
+                                                                <th>9</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>10</th>
+                                                                <th>11</th>
+                                                                <th>12</th>
+                                                                <th>13</th>
+                                                                <th>14</th>
+                                                                <th>15</th>
+                                                                <th>16</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>17</th>
+                                                                <th>18</th>
+                                                                <th>19</th>
+                                                                <th>20</th>
+                                                                <th>21</th>
+                                                                <th>22</th>
+                                                                <th>23</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>24</th>
+                                                                <th>25</th>
+                                                                <th>26</th>
+                                                                <th>27</th>
+                                                                <th>28</th>
+                                                                <th>29</th>
+                                                                <th>30</th>
+                                                            </tr>
+                                                            </tbody>
+                                                        </div>
+                                                    </div>
+                                                </table>
+                                            </div>
+                                            <div class = "col s6">
+                                                <label>FEBRUARY</label>
+                                                <table class="feb">
+                                                    <div clas="feb-mo">
+                                                        <div clas="aside aside z-depth-3">
+                                                            <thead>
+                                                            <tr>
+                                                                <th>SUN</th>
+                                                                <th>MON</th>
+                                                                <th>TUES</th>
+                                                                <th>WED</th>
+                                                                <th>THURS</th>
+                                                                <th>FRI</th>
+                                                                <th>SAT</th>
+                                                            </thead>
+                                                            <tbody>
+                                                            <tr>
+                                                                <th></th>
+                                                                <th>1</th>
+                                                                <th>2</th>
+                                                                <th>3</th>
+                                                                <th>4</th>
+                                                                <th>5</th>
+                                                                <th>6</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>7</th>
+                                                                <th>8</th>
+                                                                <th>9</th>
+                                                                <th>10</th>
+                                                                <th>11</th>
+                                                                <th>12</th>
+                                                                <th>13</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>14</th>
+                                                                <th>15</th>
+                                                                <th>16</th>
+                                                                <th>17</th>
+                                                                <th>18</th>
+                                                                <th>19</th>
+                                                                <th>20</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>21</th>
+                                                                <th>22</th>
+                                                                <th>23</th>
+                                                                <th>24</th>
+                                                                <th>25</th>
+                                                                <th>26</th>
+                                                                <th>27</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>28</th>
+                                                                <th>29</th>
+                                                                <th></th>
+                                                                <th></th>
+                                                                <th></th>
+                                                                <th></th>
+                                                                <th></th>
+                                                            </tr>
+                                                            </tbody>
+                                                        </div>
+                                                    </div>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class = "col s6">
+                                                <label>MARCH</label>
+                                                <table class="march">
+                                                    <div clas="march-mo">
+                                                        <div clas="aside aside z-depth-3">
+                                                            <thead>
+                                                            <tr>
+                                                                <th>SUN</th>
+                                                                <th>MON</th>
+                                                                <th>TUES</th>
+                                                                <th>WED</th>
+                                                                <th>THURS</th>
+                                                                <th>FRI</th>
+                                                                <th>SAT</th>
+                                                            </thead>
+                                                            <tbody>
+                                                            <tr>
+                                                                <th></th>
+                                                                <th></th>
+                                                                <th>1</th>
+                                                                <th>2</th>
+                                                                <th>3</th>
+                                                                <th>4</th>
+                                                                <th>5</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>6</th>
+                                                                <th>7</th>
+                                                                <th>8</th>
+                                                                <th>9</th>
+                                                                <th>10</th>
+                                                                <th>11</th>
+                                                                <th>12</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>13</th>
+                                                                <th>14</th>
+                                                                <th>15</th>
+                                                                <th>16</th>
+                                                                <th>17</th>
+                                                                <th>18</th>
+                                                                <th>19</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>20</th>
+                                                                <th>21</th>
+                                                                <th>22</th>
+                                                                <th>23</th>
+                                                                <th>24</th>
+                                                                <th>25</th>
+                                                                <th>26</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>27</th>
+                                                                <th>28</th>
+                                                                <th>29</th>
+                                                                <th>30</th>
+                                                                <th>31</th>
+                                                                <th></th>
+                                                                <th></th>
+                                                            </tr>
+                                                            </tbody>
+                                                        </div>
+                                                    </div>
+                                                </table>
+                                            </div>
+                                            <div class = "col s6">
+                                                <label>APRIL</label>
+                                                <table class="april">
+                                                    <div clas="april-mo">
+                                                        <div clas="aside aside z-depth-3">
+                                                            <thead>
+                                                            <tr>
+                                                                <th>SUN</th>
+                                                                <th>MON</th>
+                                                                <th>TUES</th>
+                                                                <th>WED</th>
+                                                                <th>THURS</th>
+                                                                <th>FRI</th>
+                                                                <th>SAT</th>
+                                                            </thead>
+                                                            <tbody>
+                                                            <tr>
+                                                                <th></th>
+                                                                <th></th>
+                                                                <th></th>
+                                                                <th></th>
+                                                                <th></th>
+                                                                <th>1</th>
+                                                                <th>2</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>3</th>
+                                                                <th>4</th>
+                                                                <th>5</th>
+                                                                <th>6</th>
+                                                                <th>7</th>
+                                                                <th>8</th>
+                                                                <th>9</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>10</th>
+                                                                <th>11</th>
+                                                                <th>12</th>
+                                                                <th>13</th>
+                                                                <th>14</th>
+                                                                <th>15</th>
+                                                                <th>16</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>17</th>
+                                                                <th>18</th>
+                                                                <th>19</th>
+                                                                <th>20</th>
+                                                                <th>21</th>
+                                                                <th>22</th>
+                                                                <th>23</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>24</th>
+                                                                <th>25</th>
+                                                                <th>26</th>
+                                                                <th>27</th>
+                                                                <th>28</th>
+                                                                <th>29</th>
+                                                                <th>30</th>
+                                                            </tr>
+                                                            </tbody>
+                                                        </div>
+                                                    </div>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class = "col s1">
+                                        <div class = "col s12">
+                                            <button data-target="modal2" class="btn modal-trigger">></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal" id="modal2">
+                            <form class = "col s12">
+                                <div class = "row">
+                                    <div class = "col s1">
+                                        <div class = "col s12">
+                                            <button data-target="modal1" class="btn modal-trigger"><</button>
+                                        </div>
+                                    </div>
+                                    <div class = "col s10">
+                                        <div class="row">
+                                            <div class = "col s6">
+                                                <label>MAY</label>
+                                                <table class="may">
+                                                    <div clas="may-mo">
+                                                        <div clas="aside aside z-depth-3">
+                                                            <thead>
+                                                            <tr>
+                                                                <th>SUN</th>
+                                                                <th>MON</th>
+                                                                <th>TUES</th>
+                                                                <th>WED</th>
+                                                                <th>THURS</th>
+                                                                <th>FRI</th>
+                                                                <th>SAT</th>
+                                                            </thead>
+                                                            <tbody>
+                                                            <tr>
+                                                                <th>1</th>
+                                                                <th>2</th>
+                                                                <th>3</th>
+                                                                <th>4</th>
+                                                                <th>5</th>
+                                                                <th>6</th>
+                                                                <th>7</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>8</th>
+                                                                <th>9</th>
+                                                                <th>10</th>
+                                                                <th>11</th>
+                                                                <th>12</th>
+                                                                <th>13</th>
+                                                                <th>14</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>15</th>
+                                                                <th>16</th>
+                                                                <th>17</th>
+                                                                <th>18</th>
+                                                                <th>19</th>
+                                                                <th>20</th>
+                                                                <th>21</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>22</th>
+                                                                <th>23</th>
+                                                                <th>24</th>
+                                                                <th>25</th>
+                                                                <th>26</th>
+                                                                <th>27</th>
+                                                                <th>28</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>29</th>
+                                                                <th>30</th>
+                                                                <th>31</th>
+                                                                <th></th>
+                                                                <th></th>
+                                                                <th></th>
+                                                                <th></th>
+                                                            </tr>
+                                                            </tbody>
+                                                        </div>
+                                                    </div>
+                                                </table>
+                                            </div>
+                                            <div class = "col s6">
+                                                <label>JUNE</label>
+                                                <table class="june">
+                                                    <div clas="june-mo">
+                                                        <div clas="aside aside z-depth-3">
+                                                            <thead>
+                                                            <tr>
+                                                                <th>SUN</th>
+                                                                <th>MON</th>
+                                                                <th>TUES</th>
+                                                                <th>WED</th>
+                                                                <th>THURS</th>
+                                                                <th>FRI</th>
+                                                                <th>SAT</th>
+                                                            </thead>
+                                                            <tbody>
+                                                            <tr>
+                                                                <th></th>
+                                                                <th></th>
+                                                                <th></th>
+                                                                <th>1</th>
+                                                                <th>2</th>
+                                                                <th>3</th>
+                                                                <th>4</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>5</th>
+                                                                <th>6</th>
+                                                                <th>7</th>
+                                                                <th>8</th>
+                                                                <th>9</th>
+                                                                <th>10</th>
+                                                                <th>11</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>12</th>
+                                                                <th>13</th>
+                                                                <th>14</th>
+                                                                <th>15</th>
+                                                                <th>16</th>
+                                                                <th>17</th>
+                                                                <th>18</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>19</th>
+                                                                <th>20</th>
+                                                                <th>21</th>
+                                                                <th>22</th>
+                                                                <th>23</th>
+                                                                <th>24</th>
+                                                                <th>25</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>26</th>
+                                                                <th>27</th>
+                                                                <th>28</th>
+                                                                <th>29</th>
+                                                                <th>30</th>
+                                                                <th></th>
+                                                                <th></th>
+                                                            </tr>
+                                                            </tbody>
+                                                        </div>
+                                                    </div>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class = "col s6">
+                                                <label>JULY</label>
+                                                <table class="july">
+                                                    <div clas="july-mo">
+                                                        <div clas="aside aside z-depth-3">
+                                                            <thead>
+                                                            <tr>
+                                                                <th>SUN</th>
+                                                                <th>MON</th>
+                                                                <th>TUES</th>
+                                                                <th>WED</th>
+                                                                <th>THURS</th>
+                                                                <th>FRI</th>
+                                                                <th>SAT</th>
+                                                            </thead>
+                                                            <tbody>
+                                                            <tr>
+                                                                <th></th>
+                                                                <th></th>
+                                                                <th></th>
+                                                                <th></th>
+                                                                <th></th>
+                                                                <th>1</th>
+                                                                <th>2</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>3</th>
+                                                                <th>4</th>
+                                                                <th>5</th>
+                                                                <th>6</th>
+                                                                <th>7</th>
+                                                                <th>8</th>
+                                                                <th>9</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>10</th>
+                                                                <th>11</th>
+                                                                <th>12</th>
+                                                                <th>13</th>
+                                                                <th>14</th>
+                                                                <th>15</th>
+                                                                <th>16</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>17</th>
+                                                                <th>18</th>
+                                                                <th>19</th>
+                                                                <th>20</th>
+                                                                <th>21</th>
+                                                                <th>22</th>
+                                                                <th>23</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>24</th>
+                                                                <th>25</th>
+                                                                <th>26</th>
+                                                                <th>27</th>
+                                                                <th>28</th>
+                                                                <th>29</th>
+                                                                <th>30</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>31</th>
+                                                                <th></th>
+                                                                <th></th>
+                                                                <th></th>
+                                                                <th></th>
+                                                                <th></th>
+                                                                <th></th>
+                                                            </tr>
+                                                            </tbody>
+                                                        </div>
+                                                    </div>
+                                                </table>
+                                            </div>
+                                            <div class = "col s6">
+                                                <label>AUGUST</label>
+                                                <table class="aug">
+                                                    <div clas="aug-mo">
+                                                        <div clas="aside aside z-depth-3">
+                                                            <thead>
+                                                            <tr>
+                                                                <th>SUN</th>
+                                                                <th>MON</th>
+                                                                <th>TUES</th>
+                                                                <th>WED</th>
+                                                                <th>THURS</th>
+                                                                <th>FRI</th>
+                                                                <th>SAT</th>
+                                                            </thead>
+                                                            <tbody>
+                                                            <tr>
+                                                                <th></th>
+                                                                <th>1</th>
+                                                                <th>2</th>
+                                                                <th>3</th>
+                                                                <th>4</th>
+                                                                <th>5</th>
+                                                                <th>6</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>7</th>
+                                                                <th>8</th>
+                                                                <th>9</th>
+                                                                <th>10</th>
+                                                                <th>11</th>
+                                                                <th>12</th>
+                                                                <th>13</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>14</th>
+                                                                <th>15</th>
+                                                                <th>16</th>
+                                                                <th>17</th>
+                                                                <th>18</th>
+                                                                <th>19</th>
+                                                                <th>20</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>21</th>
+                                                                <th>22</th>
+                                                                <th>23</th>
+                                                                <th>24</th>
+                                                                <th>25</th>
+                                                                <th>26</th>
+                                                                <th>27</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>28</th>
+                                                                <th>29</th>
+                                                                <th>30</th>
+                                                                <th>31</th>
+                                                                <th></th>
+                                                                <th></th>
+                                                                <th></th>
+                                                            </tr>
+                                                            </tbody>
+                                                        </div>
+                                                    </div>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class = "col s1">
+                                        <div class = "col s12">
+                                            <button data-target="modal3" class="btn modal-trigger">></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal" id="modal3">
+                            <form class = "col s12">
+                                <div class = "row">
+                                    <div class = "col s1">
+                                        <div class = "col s12">
+                                            <button data-target="modal1" class="btn modal-trigger"><</button>
+                                        </div>
+                                    </div>
+                                    <div class = "col s10">
+                                        <div class="row">
+                                            <div class = "col s6">
+                                                <label>SEPTEMBER</label>
+                                                <table class="sep">
+                                                    <div clas="sep-mo">
+                                                        <div clas="aside aside z-depth-3">
+                                                            <thead>
+                                                            <tr>
+                                                                <th>SUN</th>
+                                                                <th>MON</th>
+                                                                <th>TUES</th>
+                                                                <th>WED</th>
+                                                                <th>THURS</th>
+                                                                <th>FRI</th>
+                                                                <th>SAT</th>
+                                                            </thead>
+                                                            <tbody>
+                                                            <tr>
+                                                                <th></th>
+                                                                <th></th>
+                                                                <th></th>
+                                                                <th></th>
+                                                                <th>1</th>
+                                                                <th>2</th>
+                                                                <th>3</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>4</th>
+                                                                <th>5</th>
+                                                                <th>6</th>
+                                                                <th>7</th>
+                                                                <th>8</th>
+                                                                <th>9</th>
+                                                                <th>10</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>11</th>
+                                                                <th>12</th>
+                                                                <th>13</th>
+                                                                <th>14</th>
+                                                                <th>15</th>
+                                                                <th>16</th>
+                                                                <th>17</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>18</th>
+                                                                <th>19</th>
+                                                                <th>20</th>
+                                                                <th>21</th>
+                                                                <th>22</th>
+                                                                <th>23</th>
+                                                                <th>24</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>25</th>
+                                                                <th>26</th>
+                                                                <th>27</th>
+                                                                <th>28</th>
+                                                                <th>29</th>
+                                                                <th>30</th>
+                                                                <th></th>
+                                                            </tr>
+                                                            </tbody>
+                                                        </div>
+                                                    </div>
+                                                </table>
+                                            </div>
+                                            <div class = "col s6">
+                                                <label>OCTOBER</label>
+                                                <table class="octo">
+                                                    <div clas="octo-mo">
+                                                        <div clas="aside aside z-depth-3">
+                                                            <thead>
+                                                            <tr>
+                                                                <th>SUN</th>
+                                                                <th>MON</th>
+                                                                <th>TUES</th>
+                                                                <th>WED</th>
+                                                                <th>THURS</th>
+                                                                <th>FRI</th>
+                                                                <th>SAT</th>
+                                                            </thead>
+                                                            <tbody>
+                                                            <tr>
+                                                                <th></th>
+                                                                <th></th>
+                                                                <th></th>
+                                                                <th></th>
+                                                                <th></th>
+                                                                <th></th>
+                                                                <th>1</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>2</th>
+                                                                <th>3</th>
+                                                                <th>4</th>
+                                                                <th>5</th>
+                                                                <th>6</th>
+                                                                <th>7</th>
+                                                                <th>8</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>9</th>
+                                                                <th>10</th>
+                                                                <th>11</th>
+                                                                <th>12</th>
+                                                                <th>13</th>
+                                                                <th>14</th>
+                                                                <th>15</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>16</th>
+                                                                <th>17</th>
+                                                                <th>18</th>
+                                                                <th>29</th>
+                                                                <th>20</th>
+                                                                <th>21</th>
+                                                                <th>22</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>23</th>
+                                                                <th>24</th>
+                                                                <th>25</th>
+                                                                <th>26</th>
+                                                                <th>27</th>
+                                                                <th>28</th>
+                                                                <th>29</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>30</th>
+                                                                <th></th>
+                                                                <th></th>
+                                                                <th></th>
+                                                                <th></th>
+                                                                <th></th>
+                                                                <th></th>
+                                                            </tr>
+                                                            </tbody>
+                                                        </div>
+                                                    </div>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class = "col s6">
+                                                <label>NOVEMBER</label>
+                                                <table class="nov">
+                                                    <div clas="nov-mo">
+                                                        <div clas="aside aside z-depth-3">
+                                                            <thead>
+                                                            <tr>
+                                                                <th>SUN</th>
+                                                                <th>MON</th>
+                                                                <th>TUES</th>
+                                                                <th>WED</th>
+                                                                <th>THURS</th>
+                                                                <th>FRI</th>
+                                                                <th>SAT</th>
+                                                            </thead>
+                                                            <tbody>
+                                                            <tr>
+                                                                <th></th>
+                                                                <th></th>
+                                                                <th>1</th>
+                                                                <th>2</th>
+                                                                <th>3</th>
+                                                                <th>4</th>
+                                                                <th>5</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>6</th>
+                                                                <th>7</th>
+                                                                <th>8</th>
+                                                                <th>9</th>
+                                                                <th>10</th>
+                                                                <th>11</th>
+                                                                <th>12</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>13</th>
+                                                                <th>14</th>
+                                                                <th>15</th>
+                                                                <th>16</th>
+                                                                <th>17</th>
+                                                                <th>18</th>
+                                                                <th>19</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>20</th>
+                                                                <th>21</th>
+                                                                <th>22</th>
+                                                                <th>23</th>
+                                                                <th>24</th>
+                                                                <th>25</th>
+                                                                <th>26</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>27</th>
+                                                                <th>28</th>
+                                                                <th>29</th>
+                                                                <th>30</th>
+                                                                <th></th>
+                                                                <th></th>
+                                                                <th></th>
+                                                            </tr>
+                                                            </tbody>
+                                                        </div>
+                                                    </div>
+                                                </table>
+                                            </div>
+                                            <div class = "col s6">
+                                                <label>DECEMBER</label>
+                                                <table class="dec">
+                                                    <div clas="dec-mo">
+                                                        <div clas="aside aside z-depth-3">
+                                                            <thead>
+                                                            <tr>
+                                                                <th>SUN</th>
+                                                                <th>MON</th>
+                                                                <th>TUES</th>
+                                                                <th>WED</th>
+                                                                <th>THURS</th>
+                                                                <th>FRI</th>
+                                                                <th>SAT</th>
+                                                            </thead>
+                                                            <tbody>
+                                                            <tr>
+                                                                <th></th>
+                                                                <th></th>
+                                                                <th></th>
+                                                                <th></th>
+                                                                <th>1</th>
+                                                                <th>2</th>
+                                                                <th>3</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>4</th>
+                                                                <th>5</th>
+                                                                <th>6</th>
+                                                                <th>7</th>
+                                                                <th>8</th>
+                                                                <th>9</th>
+                                                                <th>10</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>11</th>
+                                                                <th>12</th>
+                                                                <th>13</th>
+                                                                <th>14</th>
+                                                                <th>15</th>
+                                                                <th>16</th>
+                                                                <th>17</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>18</th>
+                                                                <th>19</th>
+                                                                <th>20</th>
+                                                                <th>21</th>
+                                                                <th>22</th>
+                                                                <th>23</th>
+                                                                <th>24</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>25</th>
+                                                                <th>26</th>
+                                                                <th>27</th>
+                                                                <th>28</th>
+                                                                <th>29</th>
+                                                                <th>30</th>
+                                                                <th>31</th>
+                                                            </tr>
+                                                            </tbody>
+                                                        </div>
+                                                    </div>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class = "col s1">
+                                        <div class = "col s12">
+                                            <button data-target="#" class="btn modal-trigger">></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s3">
+                                <label>Customer Name:</label>
+                            </div>
+                            <div class="input-field col s4">
+                                <input id="cname" type="text" required="" aria-required="true" class="validate">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s1">
+                                <label>Service:</label>
+                            </div>
+                            <div class="input-field col s5">
+                                <ul id="service" class="dropdown-content">
+                                    <li><a href="#">Service 1</a></li>
+                                    <li><a href="#">Service 2</a></li>
+                                    <li><a href="#">Service 3</a></li>
+                                </ul>
+                                <div class="building-dropdown">
+                                    <a class='dropdown-button btn' href='#' data-activates='service'>Service</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s1">
+                                <label>Date:</label>
+                            </div>
+                            <div class="input-field col s3">
+                                <input id="date" type="date" required="" aria-required="true" class="validate">
+                            </div>
+                            <div class="input-field col s3">
+                                <button data-target="modal1" class="btn modal-trigger" id="btn-date">DATE</button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s1">
+                                <label>Time:</label>
+                            </div>
+                            <div class="input-field col s3">
+                                <ul id="time" class="dropdown-content">
+                                    <li><a href="#">Time 1</a></li>
+                                    <li><a href="#">Time 2</a></li>
+                                    <li><a href="#">Time 3</a></li>
+                                    <li><a href="#">Time 4</a></li>
+                                    <li><a href="#">Time 5</a></li>
+                                    <li><a href="#">Time 6</a></li>
+                                    <li><a href="#">Time 7</a></li>
+                                </ul>
+                                <div class="building-dropdown">
+                                    <a class='dropdown-button btn' href='#' data-activates='time' id="btn-time">Time</a><br><br>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- table -->
+
+        <div class = "col s4">
+            <div class="responsive">
+                <div clas="aside aside z-depth-3">
+                    <table style = "width: 100%;" class="striped">
+                        <thead id="iba">
+                        <tr>
+                            <th data-field="name">Service</th>
+                            <th data-field="name">Day</th>
+                            <th data-field="gender">Time</th>
+                            <th data-field="cv">Customer Name</th>
+                        </tr>
+                        </thead>
+
+                        <tbody id="data">
+                        <tr>
+                            <td>001</td>
+                            <td>01/02/16</td>
+                            <td>1:00PM - 2:00PM</td>
+                            <td>Alwin Alvin</td>
+                        </tr>
+                        <tr>
+                            <td>001</td>
+                            <td>01/02/16</td>
+                            <td>1:00PM - 2:00PM</td>
+                            <td>Alwin Alvin</td>
+                        </tr>
+                        <tr>
+                            <td>001</td>
+                            <td>01/02/16</td>
+                            <td>1:00PM - 2:00PM</td>
+                            <td>Alwin Alvin</td>
+                        </tr>
+                        <tr>
+                            <td>001</td>
+                            <td>01/02/16</td>
+                            <td>1:00PM - 2:00PM</td>
+                            <td>Alwin Alvin</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+</body>
+</html>
