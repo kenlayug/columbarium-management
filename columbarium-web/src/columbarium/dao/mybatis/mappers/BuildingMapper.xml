@@ -7,16 +7,32 @@
 	
 	<!-- RESULTMAPS -->
 	
-		<resultMap type="java.lang.Integer" id="CountBuildingResultMap">
-			<result property="intCountBuilding" column="COUNT(*)" />
+		<resultMap type="java.lang.Integer" id="CountResultMap">
+			<result property="intCount" column="COUNT(*)" />
+		</resultMap>
+		
+		<resultMap type="Floor" id="FloorResultMap">
+			<result property="floorId" column="floorId"/>
+			<result property="buildingId" column="buildingIdFK"/>
+			<result property="intFloorNo" column="intFloorNo"/>
+			<result property="intLevelNo" column="intLevelNo"/>
+			<result property="intColumnNo" column="intColumnNo"/>
 		</resultMap>
 	
 	<!-- END RESULTMAPS -->
 	
 	<!-- SELECT QUERIES -->
 	
-		<select id="checkIfExistingBuilding" resultMap="CountBuildingResultMap">
+		<select id="checkIfExistingBuilding" resultMap="CountResultMap">
 			SELECT COUNT(*) FROM tblBldg WHERE strBldgDesc = #{strBuildingName}
+		</select>
+		
+		<select id="checkIfExistingBlock" resultMap="CountResultMap">
+			SELECT COUNT(*) FROM tblBlock WHERE strBlockDesc = #{strBlockName}
+		</select>
+		
+		<select id="selectFloorById" resultMap="FloorResultMap">
+			SELECT * FROM tblFloor WHERE floorId = #{floorId} LIMIT 1
 		</select>
 	
 	<!-- END SELECT QUERIES -->
@@ -50,13 +66,14 @@
 			)
 		</insert>
 		
-		<insert id="createUnit">
+		<!--<insert id="createUnit">
 			INSERT INTO tblUnit (blockIdFK, intColumnNo, unitCategoryIdFK, intUnitStatus)
 				VALUES (#{blockId}, #{intColumnNo}, 
-					(SELECT unitCategoryId FROM tblUnitCategory WHERE floorIdFK = #{floorId}),
+					(SELECT unitCategoryId FROM tblUnitCategory WHERE floorIdFK = #{floorId}
+						AND levelIdFK),
 					1
 				)
-		</insert>
+		</insert>-->
 		
 	<!-- END INSERT QUERIES -->
 	

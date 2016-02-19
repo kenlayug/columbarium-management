@@ -4,6 +4,7 @@ import org.apache.ibatis.session.SqlSession;
 
 import columbarium.dao.BuildingRepository;
 import columbarium.dao.mybatis.mappers.BuildingMapper;
+import columbarium.model.Block;
 import columbarium.model.Building;
 import columbarium.model.Floor;
 
@@ -45,6 +46,35 @@ public class MybatisBuildingRepository extends MybatisClient implements Building
 			
 			BuildingMapper buildingMapper = sqlSession.getMapper(BuildingMapper.class);
 			buildingMapper.createFloor(floor);
+			for (int intCtr = 0; intCtr < floor.getIntLevelNo(); intCtr++){
+				buildingMapper.createUnitCategory(floor);
+			}
+			sqlSession.commit();
+			return "success";
+			
+		}catch(Exception e){
+			e.printStackTrace();
+			sqlSession.rollback();
+		}finally{
+			sqlSession.close();
+		}
+		return "failed-database";
+	}
+
+	@Override
+	public String createBlock(Block block) {
+		// TODO Auto-generated method stub
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		try{
+			
+			BuildingMapper buildingMapper = sqlSession.getMapper(BuildingMapper.class);
+			if (buildingMapper.checkIfExistingBlock(block) > 0){
+				return "failed-existing";
+			}
+			buildingMapper.createBlock(block);
+			Floor floor = new Floor();
+			floor.setFloorId(block.getFloorId());
+			floor = buildingMapper.selectFloorById(floor);
 			sqlSession.commit();
 			return "success";
 			

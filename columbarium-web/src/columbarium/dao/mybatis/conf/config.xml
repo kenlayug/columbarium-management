@@ -16,6 +16,7 @@
 		<typeAlias type="columbarium.model.Item" alias="Item"/>
 		<typeAlias type="columbarium.model.Package" alias="Package"/>
 		<typeAlias type="columbarium.model.Building" alias="Building"/>
+		<typeAlias type="columbarium.model.Floor" alias="Floor"/>
 	
 	</typeAliases>
 	
