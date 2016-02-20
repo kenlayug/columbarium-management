@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>SAD Forms</title>
+
+    <!-- Materialize -->
+    <meta charset="UTF-8">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/js/materialize.min.js"></script>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+
+
+    <!-- Import CSS/JS -->
+    <script type="text/javascript" src="js/Building_Record_Form.js"></script>
+    <link rel = "stylesheet" href = "css/Building_Record_Form.css"/>
+
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar-fixed navbar-leo">
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#!" class="brand-logo left">Logo</a>
+            <ul class="right hide-on-med-and-down">
+                <li><a class="dropdown-button" href="#!" data-beloworigin="true" data-activates="dropdown1">Maintenance<i class="material-icons right">arrow_drop_down</i></a></li>
+                <li><a class="dropdown-button" href="#!" data-beloworigin="true" data-activates="dropdown2">Transaction<i class="material-icons right">arrow_drop_down</i></a></li>
+                <li><a class="dropdown-button" href="#!" data-beloworigin="true" data-activates="dropdown3">Queries<i class="material-icons right">arrow_drop_down</i></a></li>
+                <li><a class="dropdown-button" href="#!" data-beloworigin="true" data-activates="dropdown4">Reports<i class="material-icons right">arrow_drop_down</i></a></li>
+                <li><a class="dropdown-button" href="#!" data-beloworigin="true" data-activates="dropdown5">Utilities<i class="material-icons right">arrow_drop_down</i></a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<!-- Dropdown Maintenance-->
+<ul id="dropdown1" class="dropdown-content">
+    <li><a href="Inventory_Form.html">Inventory</a></li>
+    <li><a href="Services_Record_Form.html">Service</a></li>
+    <li class="divider"></li>
+    <li><a href="Package_Record_Form.html">Package</a></li>
+    <li><a href="Building_Record_Form.html">Building</a></li>
+    <li><a href="Floor_Record_Form.html">Floor</a></li>
+    <li><a href="Blocks_Record_Form.html">Block</a></li>
+    <li><a href="vaults.html">Vaults</a></li>
+    <li><a href="FullBodyCrypts.html">Body Crypts</a></li>
+</ul>
+
+<!-- Dropdown Transaction -->
+<ul id="dropdown2" class="dropdown-content">
+    <li><a href="Customer.html">Customer</a></li>
+    <li><a href="Reservation_Transaction.html">Reservation</a></li>
+    <li><a href="scheduling.html">Scheduling</a></li>
+    <li class="divider"></li>
+    <li><a href="Collection_Transaction.html">Collection</a></li>
+    <li><a href="UnitOwnership.html">Transferring</a></li>
+</ul>
+
+<!-- Dropdown Queries -->
+<ul id="dropdown3" class="dropdown-content">
+    <li><a href="Maintenance.html">Product</a></li>
+    <li><a href="Employee-Maintenance.html">Employee</a></li>
+    <li class="divider"></li>
+    <li><a href="Customer-Maintenance.html">Customer</a></li>
+</ul>
+
+<!-- Dropdown Reports -->
+<ul id="dropdown4" class="dropdown-content">
+    <li><a href="Reservation-Report.html">Reservation Record</a></li>
+    <li><a href="Employee-Maintenance.html">Scheduling Record</a></li>
+    <li class="divider"></li>
+    <li><a href="Collection-Report.html">Collection Record</a></li>
+    <li><a href="Customer-Maintenance.html">Transferring Record</a></li>
+</ul>
+
+<!-- Dropdown Utilities -->
+<ul id="dropdown5" class="dropdown-content">
+    <li><a href="Employee.html">Employee</a></li>
+    <li class="divider"></li>
+</ul>
+
+
+<!-- Section -->
+<h2>Building Maintenance</h2>
+<form class = col s12 >
+    <div class = "row">
+        <div class = "col s8">
+
+            <!-- Create Building -->
+            <div class = "col s12">
+                <div class = "aside aside z-depth-3" style = "height: 360px;">
+                    <div class = "header">
+                        <h4>Create Building</h4>
+                    </div>
+                    <br>
+
+                    <!-- Radio Button -->
+                    <div class = "align"  style = "padding-left: 20px;">
+                        <form action="#">
+                            <p>
+                                <input name="group1" type="radio" id="test1" />
+                                <label for="test1">Columbary Vault</label>
+                            </p>
+                            <p>
+                                <input name="group1" type="radio" id="test2" />
+                                <label for="test2">Full Body</label>
+                            </p>
+                        </form>
+                    </div>
+
+
+                    <form class = "col s12">
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input id="level" type="text" class="validate" onBlur = "if(!exists(this.value)) { alert('Please enter building name');}">
+                                <label for="level" data-error = "wrong" data-success = "right">Name of building:</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input id="loc" type="text" class="validate">
+                                <label for="loc">Location:</label>
+                            </div>
+                        </div>
+                    </form>
+                    <a class="waves-effect waves-light btn black right" style = "margin-right: 10px; width: 180px;  margin-top: 30px;"><i class="mdi-content-add-circle left"></i>Create</a>
+                </div>
+            </div>
+
+
+
+            <!-- Update Building -->
+            <div class = "col s12">
+                <div class = "aside aside z-depth-3" style = "margin-top: 50px;">
+                    <div class = "header">
+                        <h4>Update Building</h4>
+                    </div>
+
+
+                        <!-- Select Building Name -->
+                        <br>
+                        <div class = "col s6" style = "padding-left: 20px;">
+                            <label>Select Building Name</label>
+                            <select>
+                                <option value="" disabled selected>Building Name:</option>
+                                <option value="1">Building One</option>
+                                <option value="2">Building Two</option>
+                                <option value="3">Building Three</option>
+                            </select>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+
+
+                    <!-- Modal Structure -->
+                    <div id="modal1" class="modal">
+                        <div class = "modal-header">
+                            <h3 style = "font-size: 40px; padding-top: 10px;">Update Building</h3>
+                        </div>
+                        <div class="modal-content">
+
+                            <form class = "col s12">
+                                <div class="row">
+                                    <br>
+                                    <div class="input-field col s12">
+                                        <input id="block_name" type="text" class="validate">
+                                        <label for="block_name">Input new building name:</label>
+                                    </div>
+                                </div>
+                            </form>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+
+                        </div>
+                        <div class="modal-footer">
+                            <a class="waves-effect waves-light btn black right" style = "margin-right: 10px; width: 180px;"><i class="mdi-content-add-circle left"></i>Update</a>
+                        </div>
+                    </div>
+                    <button data-target = "modal1" class="waves-effect waves-light modal-trigger black right" style = "margin-right: 10px; width: 180px; height: 35px; color: white; margin-top: 35px;"><i class="mdi-content-create left"></i>UPDATE</button>
+                </div>
+            </div>
+
+            <!-- Deactivate Building -->
+            <div class = "col s12">
+                <div class = "aside aside z-depth-3"  style = "margin-top: 50px;">
+                    <div class = "header">
+                        <h4>Deactivate Building</h4>
+                    </div>
+
+
+                        <!-- Select Building Name -->
+                        <br>
+                        <div class = "col s6" style = "padding-left: 20px;">
+                            <label>Select Building Name</label>
+                            <select>
+                                <option value="" disabled selected>Building Name:</option>
+                                <option value="1">Building One</option>
+                                <option value="2">Building Two</option>
+                                <option value="3">Building Three</option>
+                            </select>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+
+                    <!-- Modal Structure -->
+                    <div id="modal2" class="modal">
+                        <div class = "modal-header fixed">
+                            <h3 style = "font-size: 40px; padding-top: 10px;">Deactivate Block</h3>
+                        </div>
+                        <div class="modal-content">
+                            <h6>Are you sure you want to deactivate block?</h6>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                        </div>
+                        <div class="modal-footer">
+                            <a class="waves-effect waves-light btn black right" style = "margin-right: 10px; width: 180px;color:white;"><i class="mdi-content-add-circle left"></i>Confirm</a>
+                        </div>
+                    </div>
+                    <button data-target = "modal2" class="waves-effect waves-light modal-trigger black right" style = "margin-right: 10px; width: 180px; height: 35px; color: white; margin-top: 35px;"><i class="mdi-communication-dnd-on left"></i>DEACTIVATE</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- table -->
+        <div class = "col s4">
+            <table class = "striped  z-depth-3" style = "width: 100%;">
+
+                <thead>
+                <tr>
+                    <th data-field="id">Building Code</th>
+                    <th data-field="id">Building Type</th>
+                    <th data-field="name">Building Name</th>
+                    <th data-field="name">Building location</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td>B001</td>
+                    <td>Full Body</td>
+                    <td>Building one</td>
+                    <td>East</td>
+
+                </tr>
+
+                <tr>
+                    <td>B002</td>
+                    <td>Full Body</td>
+                    <td>Building two</td>
+                    <td>West</td>
+
+                </tr>
+
+                <tr>
+                    <td>B003</td>
+                    <td>Cremation</td>
+                    <td>Building three</td>
+                    <td>South</td>
+
+                </tr>
+
+                <tr>
+                    <td>B004</td>
+                    <td>Full Body</td>
+                    <td>Building four</td>
+                    <td>North</td>
+
+                </tr>
+
+                <tr>
+                    <td>B005</td>
+                    <td>Full Body</td>
+                    <td>Building five</td>
+                    <td>East</td>
+
+                </tr>
+                <tr>
+                    <td>B006</td>
+                    <td>Cremation</td>
+                    <td>Building six</td>
+                    <td>West</td>
+
+                </tr>
+                <tr>
+                    <td>B007</td>
+                    <td>Cremation</td>
+                    <td>Building seven</td>
+                    <td>South</td>
+
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+    </div>
+</form>
+
+<!-- Footer -->
+<footer class="page-footer" style = "background-color: darkred;">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <h5 class="white-text">Footer Content</h5>
+                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            © 2014 Copyright Text
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
+

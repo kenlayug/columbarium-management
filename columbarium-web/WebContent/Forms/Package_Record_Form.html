@@ -1,20 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-    <!-- Latest compiled JavaScript -->
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <title>SAD Forms</title>
 
     <!-- Materialize -->
     <meta charset="UTF-8">
@@ -30,33 +17,10 @@
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
 
-
-
-    <meta name="description" content="Responsive Bootstrap Landing Page Template">
-    <meta name="keywords" content="Bootstrap, Landing page, Template, Registration, Landing">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="author" content="Grayrids">
-    <title>SAD Forms</title>
-
-
-    <!-- Import Fonts -->
-    <style>
-        @font-face { font-family: JuneBug; src: url('fonts/KGBlankSpaceSketch.ttf'); }
-    </style>
-
     <!-- Import -->
     <script type="text/javascript" src="js/Package_Record_Form.js"></script>
     <link rel = "stylesheet" href = "css/Package_Record_Form.css"/>
 
-
-    <!-- Magic -->
-    <!-- Font Awesome CSS -->
-    <link rel="stylesheet" href="./fonts/font-awesome.min.css" type="text/css" media="screen">
-    <!-- Include roboto.css to use the Roboto web font, material.css to include the theme and ripples.css to style the ripple effect -->
-    <link href="./css/ripples.min.css" rel="stylesheet">
-
-    <link href="./css/responsive.css" rel="stylesheet">
-    <link href="./css/animate.min.css" rel="stylesheet">
 </head>
 <body>
 
@@ -216,34 +180,32 @@
                         <h4>Update Package</h4>
                     </div>
 
-                    <!-- Code -->
-                    <div class="row" style = "padding-left: 10px;">
-                        <div class="row">
-                            <div class="input-field col s3">
-                                <label>Enter Package Code: </label>
-                            </div>
-                            <div class="input-field col s1">
-                                <input id="dv" type="text" required="" aria-required="true" class="validate">
-                                <label for="dv">####</label>
-                            </div>
-                        </div>
-                        <div>
-                            <h5>Package Name</h5>
-                        </div>
-                        <form action="#" style = "padding-left: 10px;">
-                            <p>
-                                <input type="checkbox" id="test40" />
-                                <label for="test40">Package one</label>
-                            </p>
-                        </form>
+                    <!-- Select Package Name -->
+                    <br>
+                    <div class = "col s6" style = "padding-left: 20px;">
+                        <label>Select Package Name</label>
+                        <select>
+                            <option value="" disabled selected>Package Name:</option>
+                            <option value="1">Package One</option>
+                            <option value="2">Package Two</option>
+                            <option value="3">Package Three</option>
+                        </select>
                     </div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
 
 
 
                     <!-- Modal Structure -->
                     <div id="modal1" class="modal">
                         <div class = "modal-header">
-                            <h4>Update Package</h4>
+                            <h4 style = "padding-top:10px;">Update Package</h4>
                         </div>
                         <div class="modal-content">
                             <form class = "col s12">
@@ -342,10 +304,10 @@
 
                         </div>
                         <div class="modal-footer">
-                            <a class="waves-effect waves-light btn black right" style = "margin-right: 10px; width: 180px;"><i class="mdi-content-add-circle left"></i>Update</a>
+                            <a class="waves-effect waves-light btn black right" style = "margin-right: 10px; width: 180px;color:white;"><i class="mdi-content-add-circle left"></i>Confirm</a>
                         </div>
                     </div>
-                    <button data-target = "modal1" class="waves-effect waves-light modal-trigger black right" style = "margin-right: 10px; width: 180px; height: 35px; color: white; margin-top: 30px;"><i class="mdi-content-create left"></i>UPDATE</button>
+                    <button data-target = "modal1" class="waves-effect waves-light modal-trigger black right" style = "margin-right: 10px; width: 180px; height: 35px; color: white; margin-top: 8px;"><i class="mdi-content-create left"></i>UPDATE</button>
                 </div>
             </div>
 
@@ -357,43 +319,33 @@
                         <h4>Deactivate Package</h4>
                     </div>
 
-                    <!-- Code -->
-                    <div class="row" style = "padding-left: 10px;">
-                        <div class="row">
-                            <div class="input-field col s3">
-                                <label>Enter Package Code: </label>
-                            </div>
-                            <div class="input-field col s1">
-                                <input id="d" type="text" required="" aria-required="true" class="validate">
-                                <label for="d">####</label>
-                            </div>
-                        </div>
-                        <div>
-                            <h5>Package Details</h5>
-                        </div>
-                        <form action="#" style = "padding-left: 10px;">
-                            <p>
-                                <input type="checkbox" id="test7" />
-                                <label for="test7">Package one</label>
-                            </p>
-                        </form>
+                    <!-- Select Package Name -->
+                    <br>
+                    <div class = "col s6" style = "padding-left: 20px;">
+                        <label>Select Package Name</label>
+                        <select>
+                            <option value="" disabled selected>Package Name:</option>
+                            <option value="1">Package One</option>
+                            <option value="2">Package Two</option>
+                            <option value="3">Package Three</option>
+                        </select>
                     </div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
 
                     <!-- Modal Structure -->
                     <div id="modal2" class="modal">
                         <div class = "modal-header">
-                            <h4>Deactivate Block</h4>
+                            <h4 style = "padding-top: 10px;">Deactivate Block</h4>
                         </div>
                         <div class="modal-content">
-
-                            <h5  style = "padding-left: 30px;">Package Details</h5>
-                            <form action="#" style = "padding-left: 30px;">
-                                <p>
-                                    <input type="checkbox" id="test5" />
-                                    <label for="test5">Package one</label>
-                                </p>
-                            </form>
-                            <br>
+                            <h6>Are you sure you want to deactivate block?</h6>
                             <br>
                             <br>
                             <br>
@@ -404,10 +356,10 @@
                             <br>
                         </div>
                         <div class="modal-footer">
-                            <a class="waves-effect waves-light btn black right" style = "margin-right: 10px; width: 180px;"><i class="mdi-content-add-circle left"></i>DEACTIVATE</a>
+                            <a class="waves-effect waves-light btn black right" style = "margin-right: 10px; width: 180px;color:white;"><i class="mdi-content-add-circle left"></i>Confirm</a>
                         </div>
                     </div>
-                    <button data-target = "modal2" class="waves-effect waves-light modal-trigger black right" style = "margin-right: 10px; width: 180px; height: 35px; color: white; margin-top: 30px;"><i class="mdi-communication-dnd-on left"></i>DEACTIVATE</button>
+                    <button data-target = "modal2" class="waves-effect waves-light modal-trigger black right" style = "margin-right: 10px; width: 180px; height: 35px; color: white; margin-top: 8px;"><i class="mdi-communication-dnd-on left"></i>DEACTIVATE</button>
                 </div>
             </div>
         </div>
