@@ -2,17 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dd7de87f-0dc6-4bd5-9494-5163b436739e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/columbarium-web/WebContent/Forms/Blocks_Record_Form.html" afterPath="$PROJECT_DIR$/columbarium-web/WebContent/Forms/Blocks_Record_Form.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/columbarium-web/WebContent/Forms/Building_Record_Form.html" afterPath="$PROJECT_DIR$/columbarium-web/WebContent/Forms/Building_Record_Form.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/columbarium-web/WebContent/Forms/Collection-Report.html" afterPath="$PROJECT_DIR$/columbarium-web/WebContent/Forms/Collection-Report.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/columbarium-web/WebContent/Forms/Collection_Transaction.html" afterPath="$PROJECT_DIR$/columbarium-web/WebContent/Forms/Collection_Transaction.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/columbarium-web/WebContent/Forms/Floor_Record_Form.html" afterPath="$PROJECT_DIR$/columbarium-web/WebContent/Forms/Floor_Record_Form.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/columbarium-web/WebContent/Forms/Inventory_Form.html" afterPath="$PROJECT_DIR$/columbarium-web/WebContent/Forms/Inventory_Form.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/columbarium-web/WebContent/Forms/Package_Record_Form.html" afterPath="$PROJECT_DIR$/columbarium-web/WebContent/Forms/Package_Record_Form.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/columbarium-web/WebContent/Forms/Reservation-Report.html" afterPath="$PROJECT_DIR$/columbarium-web/WebContent/Forms/Reservation-Report.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/columbarium-web/WebContent/Forms/Reservation_Transaction.html" afterPath="$PROJECT_DIR$/columbarium-web/WebContent/Forms/Reservation_Transaction.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/columbarium-web/WebContent/Forms/Services_Record_Form.html" afterPath="$PROJECT_DIR$/columbarium-web/WebContent/Forms/Services_Record_Form.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/columbarium-web/WebContent/Forms/css/Inventory_Form.css" afterPath="$PROJECT_DIR$/columbarium-web/WebContent/Forms/css/Inventory_Form.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/columbarium-web/WebContent/Forms/js/Blocks_Record_Form.js" afterPath="$PROJECT_DIR$/columbarium-web/WebContent/Forms/js/Blocks_Record_Form.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/columbarium-web/WebContent/Forms/js/Inventory_Form.js" afterPath="$PROJECT_DIR$/columbarium-web/WebContent/Forms/js/Inventory_Form.js" />
     </list>
     <ignored path="columbarium-management.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,14 +27,81 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Services_Record_Form.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Services_Record_Form.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/columbarium-web/WebContent/Forms/Services_Record_Form.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.1224138">
+            <state vertical-scroll-proportion="-25.038462">
               <caret line="93" column="49" selection-start-line="93" selection-start-column="49" selection-end-line="93" selection-end-column="49" />
               <folding>
                 <element signature="n#style#0;n#h5#0;n#div#1;n#div#2;n#div#0;n#div#3;n#div#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Inventory_Form.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/columbarium-web/WebContent/Forms/Inventory_Form.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.49827588">
+              <caret line="310" column="108" selection-start-line="310" selection-start-column="108" selection-end-line="310" selection-end-column="108" />
+              <folding>
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#form#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#div#2;n#div#3;n#div#0;n#div#1;n#div#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#form#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#div#0;n#div#2;n#div#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Inventory_Form.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/columbarium-web/WebContent/Forms/css/Inventory_Form.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.8846154">
+              <caret line="30" column="14" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Blocks_Record_Form.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/columbarium-web/WebContent/Forms/js/Blocks_Record_Form.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Inventory_Form.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/columbarium-web/WebContent/Forms/js/Inventory_Form.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="20" column="3" selection-start-line="20" selection-start-column="3" selection-end-line="20" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Blocks_Record_Form.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/columbarium-web/WebContent/Forms/Blocks_Record_Form.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.8846154">
+              <caret line="142" column="23" selection-start-line="142" selection-start-column="23" selection-end-line="152" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Building_Record_Form.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/columbarium-web/WebContent/Forms/Building_Record_Form.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.65384614">
+              <caret line="93" column="49" selection-start-line="93" selection-start-column="49" selection-end-line="93" selection-end-column="49" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -76,29 +136,29 @@
         <option value="$PROJECT_DIR$/columbarium-web/WebContent/Forms/css/Building_Record_Form.css" />
         <option value="$PROJECT_DIR$/columbarium-web/WebContent/Forms/css/Collection-Report.css" />
         <option value="$PROJECT_DIR$/columbarium-web/WebContent/Forms/css/Floor_Record_Form.css" />
-        <option value="$PROJECT_DIR$/columbarium-web/WebContent/Forms/css/Inventory_Form.css" />
         <option value="$PROJECT_DIR$/columbarium-web/WebContent/Forms/css/Package_Record_Form.css" />
         <option value="$PROJECT_DIR$/columbarium-web/WebContent/Forms/css/Reservation-Report.css" />
         <option value="$PROJECT_DIR$/columbarium-web/WebContent/Forms/css/Reservation_Transaction.css" />
         <option value="$PROJECT_DIR$/columbarium-web/WebContent/Forms/js/Services_Record_Form.js" />
         <option value="$PROJECT_DIR$/columbarium-web/WebContent/Forms/css/Services_Record_Form.css" />
         <option value="$PROJECT_DIR$/columbarium-web/WebContent/Forms/js/Reservation_Transaction.js" />
-        <option value="$PROJECT_DIR$/columbarium-web/WebContent/Forms/js/Blocks_Record_Form.js" />
         <option value="$PROJECT_DIR$/columbarium-web/WebContent/Forms/js/Building_Record_Form.js" />
         <option value="$PROJECT_DIR$/columbarium-web/WebContent/Forms/js/Collection_Transaction.js" />
         <option value="$PROJECT_DIR$/columbarium-web/WebContent/Forms/js/Floor_Record_Form.js" />
-        <option value="$PROJECT_DIR$/columbarium-web/WebContent/Forms/js/Inventory_Form.js" />
         <option value="$PROJECT_DIR$/columbarium-web/WebContent/Forms/js/Package_Record_Form.js" />
         <option value="$PROJECT_DIR$/columbarium-web/WebContent/Forms/Blocks_Record_Form.html" />
         <option value="$PROJECT_DIR$/columbarium-web/WebContent/Forms/Building_Record_Form.html" />
         <option value="$PROJECT_DIR$/columbarium-web/WebContent/Forms/Collection-Report.html" />
         <option value="$PROJECT_DIR$/columbarium-web/WebContent/Forms/Collection_Transaction.html" />
         <option value="$PROJECT_DIR$/columbarium-web/WebContent/Forms/Floor_Record_Form.html" />
-        <option value="$PROJECT_DIR$/columbarium-web/WebContent/Forms/Inventory_Form.html" />
         <option value="$PROJECT_DIR$/columbarium-web/WebContent/Forms/Package_Record_Form.html" />
         <option value="$PROJECT_DIR$/columbarium-web/WebContent/Forms/Reservation-Report.html" />
         <option value="$PROJECT_DIR$/columbarium-web/WebContent/Forms/Reservation_Transaction.html" />
         <option value="$PROJECT_DIR$/columbarium-web/WebContent/Forms/Services_Record_Form.html" />
+        <option value="$PROJECT_DIR$/columbarium-web/WebContent/Forms/js/Blocks_Record_Form.js" />
+        <option value="$PROJECT_DIR$/columbarium-web/WebContent/Forms/js/Inventory_Form.js" />
+        <option value="$PROJECT_DIR$/columbarium-web/WebContent/Forms/css/Inventory_Form.css" />
+        <option value="$PROJECT_DIR$/columbarium-web/WebContent/Forms/Inventory_Form.html" />
       </list>
     </option>
   </component>
@@ -718,12 +778,12 @@
       <workItem from="1455728744787" duration="595000" />
       <workItem from="1455771068272" duration="21350000" />
       <workItem from="1455836388268" duration="18759000" />
-      <workItem from="1455859183877" duration="20845000" />
+      <workItem from="1455859183877" duration="21918000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85171000" />
+    <option name="totallyTimeSpent" value="86244000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1029,14 +1089,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/columbarium-web/WebContent/Forms/css/Inventory_Form.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.762069">
-          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/columbarium-web/WebContent/Forms/css/Collection_Transaction.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.41034484">
@@ -1077,14 +1129,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/columbarium-web/WebContent/Forms/js/Blocks_Record_Form.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/columbarium-web/WebContent/Forms/js/Building_Record_Form.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1117,14 +1161,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/columbarium-web/WebContent/Forms/js/Inventory_Form.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/columbarium-web/WebContent/Forms/js/Floor_Record_Form.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1137,22 +1173,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.30858085">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/columbarium-web/WebContent/Forms/Blocks_Record_Form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.346154">
-          <caret line="92" column="40" selection-start-line="92" selection-start-column="40" selection-end-line="92" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/columbarium-web/WebContent/Forms/Building_Record_Form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.346154">
-          <caret line="93" column="49" selection-start-line="93" selection-start-column="49" selection-end-line="93" selection-end-column="49" />
           <folding />
         </state>
       </provider>
@@ -1190,14 +1210,6 @@
     <entry file="file://$PROJECT_DIR$/columbarium-web/WebContent/Forms/Floor_Record_Form.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-13.730769">
-          <caret line="93" column="49" selection-start-line="93" selection-start-column="49" selection-end-line="93" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/columbarium-web/WebContent/Forms/Inventory_Form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.2307692">
           <caret line="93" column="49" selection-start-line="93" selection-start-column="49" selection-end-line="93" selection-end-column="49" />
           <folding />
         </state>
@@ -1246,10 +1258,65 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/columbarium-web/WebContent/Forms/Services_Record_Form.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.1224138">
+        <state vertical-scroll-proportion="-25.038462">
           <caret line="93" column="49" selection-start-line="93" selection-start-column="49" selection-end-line="93" selection-end-column="49" />
           <folding>
             <element signature="n#style#0;n#h5#0;n#div#1;n#div#2;n#div#0;n#div#3;n#div#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/columbarium-web/WebContent/Forms/Building_Record_Form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.65384614">
+          <caret line="93" column="49" selection-start-line="93" selection-start-column="49" selection-end-line="93" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/columbarium-web/WebContent/Forms/Blocks_Record_Form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.8846154">
+          <caret line="142" column="23" selection-start-line="142" selection-start-column="23" selection-end-line="152" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/columbarium-web/WebContent/Forms/js/Inventory_Form.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="3" selection-start-line="20" selection-start-column="3" selection-end-line="20" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/columbarium-web/WebContent/Forms/js/Blocks_Record_Form.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/columbarium-web/WebContent/Forms/css/Inventory_Form.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.8846154">
+          <caret line="30" column="14" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/columbarium-web/WebContent/Forms/Inventory_Form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.49827588">
+          <caret line="310" column="108" selection-start-line="310" selection-start-column="108" selection-end-line="310" selection-end-column="108" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#form#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#2;n#div#3;n#div#0;n#div#1;n#div#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#form#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#div#0;n#div#2;n#div#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
