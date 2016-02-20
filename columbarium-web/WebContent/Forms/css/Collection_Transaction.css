@@ -3,60 +3,18 @@
     src: url(../fonts/KGBlankSpaceSketch.ttf);
 }
 
-#slide-out-l {
-    background-color: #171F0F;
-}
-
-#slide-out-r {
-    background-color: #e3e3e3;
-}
-
-.side-nav .switch label {
-    color: #fff;
-}
-/** Search Navbar Input**/
-
-.side-nav li#nav-search {
-    background-color: #fff;
-    color: rgba(0, 0, 0, 0.85);
-}
-
-.side-nav li#nav-search:hover,
-.side-nav li#nav-search.active {
-    background: #fff;
-}
-
-#slide-out-r li:hover,
-#slide-out-r li.active {
-    background-color: #e3e3e3;
-}
-
-#slide-out-l li:hover,
-#slide-out-r li.active {
-    background-color: #171F0F;
-}
-/** Custom Checkbox **/
-
-.switch label .lever,
-.switch label input[type=checkbox]:checked+.lever {
-    background-color: #E7E8E4;
-    width: 68px;
-}
-
-.switch label .lever:after,
-.switch label input[type=checkbox]:checked+.lever:after {
-    top: 0;
-    height: 15px;
-    background-color: #ffcc00;
-    width: 45px;
-}
-
-.nav-birdifly nav{
+.navbar-leo nav{
     background-color: darkred;
+    color: white;
 }
+
+ul li {
+    font-family: myFirstFont;
+}
+
 
 .aside {
-    margin-left: 20px;
+    margin-left: 300px;
     height: 320px;
     width: 750px;
 }
@@ -82,7 +40,7 @@ h1 {
 
 h2 {
     font-family: myFirstFont;
-    padding-left: 45px;
+    padding-left: 380px;
     font-size: 50px;
 
 }
@@ -135,4 +93,37 @@ h3 {
     margin-top: 20px;
 }
 
+.dropdown-content{
+    background-color: darkred;
+    font-family: myFirstFont;
+    color: #ffffff;
+}
+.dropdown-content li a{
+    background-color: darkred;
+    font-family: myFirstFont;
+    color: #ffffff;
+}
+.dropdown-content li a:hover{
+    background-color: #670000;
+    font-family: myFirstFont;
+    color: #ffffff;
+    text-shadow: 2px 2px #000000;
+}
+
+.header h4 {
+    background: url(../img/black_pattern1.jpg) repeat;
+    color: white;
+    height: 70px;
+    font-family: myFirstFont;
+    padding-left: 20px;
+    padding-top: 10px;
+    font-size: 45px;
+}
+
+.modal-header {
+    background: url(../img/black_pattern1.jpg) repeat;
+    color: white;
+    height: 70px;
+    font-family: myFirstFont;
+}
 

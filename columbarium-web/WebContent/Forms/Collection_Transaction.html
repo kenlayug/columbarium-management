@@ -63,25 +63,68 @@
 </head>
 <body>
 
-<div class="navbar-fixed nav-birdifly">
+<!-- Navbar -->
+<div class="navbar-fixed navbar-leo">
     <nav>
         <div class="nav-wrapper">
-
-            <a href="#" class="brand-logo center">Logo</a>
-
-            <ul id="slide-out-l" class="side-nav left">
-                <li>
-                    <!-- Sidenav Content -->
-                    <!-- kim ayusin mo to ha :DD tnx -->
-                </li>
+            <a href="#!" class="brand-logo left">Logo</a>
+            <ul class="right hide-on-med-and-down">
+                <li><a class="dropdown-button" href="#!" data-beloworigin="true" data-activates="dropdown1">Maintenance<i class="material-icons right">arrow_drop_down</i></a></li>
+                <li><a class="dropdown-button" href="#!" data-beloworigin="true" data-activates="dropdown2">Transaction<i class="material-icons right">arrow_drop_down</i></a></li>
+                <li><a class="dropdown-button" href="#!" data-beloworigin="true" data-activates="dropdown3">Queries<i class="material-icons right">arrow_drop_down</i></a></li>
+                <li><a class="dropdown-button" href="#!" data-beloworigin="true" data-activates="dropdown4">Reports<i class="material-icons right">arrow_drop_down</i></a></li>
+                <li><a class="dropdown-button" href="#!" data-beloworigin="true" data-activates="dropdown5">Utilities<i class="material-icons right">arrow_drop_down</i></a></li>
             </ul>
-
-            <a href="#" data-activates="slide-out-l" class="button-collapse show-on-large"><i class="material-icons">settings</i></a>
-
-            <a href="#" data-activates="slide-out-r" class="button-collapse show-on-large right"><i class="material-icons">search</i></a>
         </div>
     </nav>
 </div>
+
+<!-- Dropdown Maintenance-->
+<ul id="dropdown1" class="dropdown-content">
+    <li><a href="Inventory_Form.html">Inventory</a></li>
+    <li><a href="Services_Record_Form.html">Service</a></li>
+    <li class="divider"></li>
+    <li><a href="Package_Record_Form.html">Package</a></li>
+    <li><a href="Building_Record_Form.html">Building</a></li>
+    <li><a href="Floor_Record_Form.html">Floor</a></li>
+    <li><a href="Blocks_Record_Form.html">Block</a></li>
+    <li><a href="vaults.html">Vaults</a></li>
+    <li><a href="FullBodyCrypts.html">Body Crypts</a></li>
+</ul>
+
+<!-- Dropdown Transaction -->
+<ul id="dropdown2" class="dropdown-content">
+    <li><a href="Reservation_Transaction.html">Reservation</a></li>
+    <li><a href="scheduling.html">Scheduling</a></li>
+    <li class="divider"></li>
+    <li><a href="Collection_Transaction.html">Collection</a></li>
+    <li><a href="FBCOwnership.html">Transferring</a></li>
+</ul>
+
+<!-- Dropdown Queries -->
+<ul id="dropdown3" class="dropdown-content">
+    <li><a href="Maintenance.html">Product</a></li>
+    <li><a href="Employee-Maintenance.html">Employee</a></li>
+    <li class="divider"></li>
+    <li><a href="Customer-Maintenance.html">Customer</a></li>
+</ul>
+
+<!-- Dropdown Reports -->
+<ul id="dropdown4" class="dropdown-content">
+    <li><a href="Maintenance.html">Reservation Record</a></li>
+    <li><a href="Employee-Maintenance.html">Scheduling Record</a></li>
+    <li class="divider"></li>
+    <li><a href="Customer-Maintenance.html">Collection Record</a></li>
+    <li><a href="Customer-Maintenance.html">Transferring Record</a></li>
+</ul>
+
+<!-- Dropdown Utilities -->
+<ul id="dropdown5" class="dropdown-content">
+    <li><a href="Customer.html">Customer</a></li>
+    <li><a href="Employee.html">Employee</a></li>
+    <li class="divider"></li>
+</ul>
+
 
 <!-- Section -->
 <h2>Collection Transaction</h2>
@@ -91,12 +134,16 @@
 
             <!-- Collection Form-->
             <div class = "col s12">
-                <div class = "aside aside z-depth-4" style = "height: 480px;">
-
-
+                <div class = "aside aside z-depth-4" style = "height: 500px;">
                     <div class = "header">
                         <h4>Collection Form</h4>
                     </div>
+
+                    <button data-target = "modal2" class="waves-effect waves-light modal-trigger black left" style = "margin-left: 20px; width: 180px; height: 35px; color: white; margin-top: 0px;">Collection Record</button>
+                    <br>
+                    <br>
+
+
 
                     <!-- Date -->
                     <div class="row" style = "padding-left: 10px;">
@@ -139,71 +186,116 @@
                             </div>
                         </div>
                     </form>
-                    <a class="waves-effect waves-light btn black right" style = "margin-right: 10px; width: 180px;  margin-top: 20px;"><i class="mdi-content-add-circle left"></i>Create</a>
+                    <a class="waves-effect waves-light btn black right" style = "margin-right: 10px; width: 180px;  margin-top: 10px;"><i class="mdi-content-add-circle left"></i>Done</a>
                 </div>
             </div>
         </div>
 
-        <!-- table -->
 
-        <div class = "col s5" style = "width: 50px;">
-            <table class = "striped z-depth-4" style = "width: 500px; margin-top: 20px; margin-left: 20px;">
+        <!-- Modal Structure -->
+        <div id="modal2" class="modal">
+            <div class = "modal-header fixed">
+                <h4 style = "font-size: 40px;">Collection Record</h4>
+            </div>
+            <div class="modal-content">
+                <!-- table -->
+                <div class = "col s5" style = "width: 50px;">
+                    <table class = "striped z-depth-4" style = "width: 650px; margin-top: 20px; margin-left: 20px;">
 
-                <thead>
-                <tr>
-                    <th data-field="id">Collection Code</th>
-                    <th data-field="name">Collection Date</th>
-                    <th data-field="id">Customer Name</th>
-                    <th data-field="name">Customer Status</th>
-                    <th data-field="name">Service Amount</th>
-                    <th data-field="name">Collection Amount</th>
-                </tr>
-                </thead>
+                        <thead>
+                        <tr>
+                            <th data-field="id">Collection Code</th>
+                            <th data-field="name">Collection Date</th>
+                            <th data-field="id">Customer Name</th>
+                            <th data-field="name">Customer Status</th>
+                            <th data-field="name">Service Amount</th>
+                            <th data-field="name">Collection Amount</th>
+                        </tr>
+                        </thead>
 
-                <tbody>
-                <tr>
-                    <td>CC01</td>
-                    <td>May 24, 2016</td>
-                    <td>Grace</td>
-                    <td>5 days left</td>
-                    <td>P 120,000.00</td>
-                    <td>P 5,000.00</td>
-                </tr>
-                <tr>
-                    <td>CC02</td>
-                    <td>May 27, 2016</td>
-                    <td>Ben</td>
-                    <td>8 days left</td>
-                    <td>P 150,000.00</td>
-                    <td>P 10,000.00</td>
-                </tr>
-                <tr>
-                    <td>CC03</td>
-                    <td>February 5, 2016</td>
-                    <td>Ana</td>
-                    <td>Past due since 5 days</td>
-                    <td>P 220,000.00</td>
-                    <td>P 15,000.00</td>
-                </tr>
-                <tr>
-                    <td>CC04</td>
-                    <td>January 20, 2015</td>
-                    <td>Mirriam</td>
-                    <td>Past due since 10 days</td>
-                    <td>P 300,000.00</td>
-                    <td>P 25,000.00</td>
-                </tr>
-                <tr>
-                    <td>CC05</td>
-                    <td>March 24, 2015</td>
-                    <td>Kris</td>
-                    <td>12 hrs left</td>
-                    <td>P 50,000.00</td>
-                    <td>P 5,000.00</td>
-                </tr>
-                </tbody>
-            </table>
+                        <tbody>
+                        <tr>
+                            <td>CC01</td>
+                            <td>May 24, 2016</td>
+                            <td>Grace</td>
+                            <td>5 days left</td>
+                            <td>P 120,000.00</td>
+                            <td>P 5,000.00</td>
+                        </tr>
+                        <tr>
+                            <td>CC02</td>
+                            <td>May 27, 2016</td>
+                            <td>Ben</td>
+                            <td>8 days left</td>
+                            <td>P 150,000.00</td>
+                            <td>P 10,000.00</td>
+                        </tr>
+                        <tr>
+                            <td>CC03</td>
+                            <td>February 5, 2016</td>
+                            <td>Ana</td>
+                            <td>Past due since 5 days</td>
+                            <td>P 220,000.00</td>
+                            <td>P 15,000.00</td>
+                        </tr>
+                        <tr>
+                            <td>CC04</td>
+                            <td>January 20, 2015</td>
+                            <td>Mirriam</td>
+                            <td>Past due since 10 days</td>
+                            <td>P 300,000.00</td>
+                            <td>P 25,000.00</td>
+                        </tr>
+                        <tr>
+                            <td>CC05</td>
+                            <td>March 24, 2015</td>
+                            <td>Kris</td>
+                            <td>12 hrs left</td>
+                            <td>P 50,000.00</td>
+                            <td>P 5,000.00</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+            </div>
+            <div class="modal-footer">
+                <a class="waves-effect waves-light btn black right" style = "margin-right: 10px; width: 180px;"><i class="mdi-content-add-circle left"></i>DEACTIVATE</a>
+            </div>
         </div>
+
+    </div>
+    </div>
+    </div>
 
 
     </div>
