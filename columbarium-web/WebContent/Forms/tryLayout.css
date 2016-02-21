@@ -1,0 +1,139 @@
+@font-face {
+    font-family: myFirstFont;
+    src: url(fonts/KGBlankSpaceSketch.ttf);
+}
+#slide-out, #slide-out li:hover{
+    background-color: #000000;
+}
+#del{
+    margin-left: 20px;
+}
+.data-grid table{
+    width: 30px;
+}
+.nav-birdifly nav{
+    background-color: #000000;
+}
+#dd-btn{
+    margin-top: 0;
+    height: 100%;
+}
+h2{
+    margin-left: 30px;
+    font-family:  myFirstFont;
+}
+#iba tr th{
+    font-size: medium;
+}
+thead tr th{
+    padding-left: 20px;
+    font-family:  myFirstFont;
+    position: relative;
+    color: #000000;
+}
+.mf .modal-trigger{
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+tbody tr td{
+    padding-left: 20px;
+    font-size: 17px;
+    position: relative;
+}
+.modal-trigger{
+    float: right;
+    margin-right: 50px;
+    color: #ffffff;
+    background: #000000;
+    font-family:  myFirstFont;
+
+}
+.dropdown-button{
+    background-color: #000000;
+    font-family: myFirstFont;
+    color: #ff8f00;
+}
+#db-content, #normal-nav, #slide-out li a{
+    background-color: #000000;
+    font-family: myFirstFont;
+    color: #ff8f00;
+}
+#db-iba{
+    color: #ff8f00;
+    background: #000000;
+    font-family:  myFirstFont;
+}
+.modal-trigger:hover, .modal-trigger:active{
+
+    font-family: myFirstFont;
+    box-shadow: none;
+}
+.modal-header{
+    background: url("img/bg2.jpg");
+    padding-top: 15px;
+    padding-bottom: 15px;
+    position: static;
+}
+.modal-header label{
+    font-family:  myFirstFont;
+    color: #000000;
+    font-size: xx-large;
+    padding-left: 15px;
+}
+.h{
+    visibility: hidden;
+}
+th{
+    height: 70px;
+    position: fixed;//para-kahit-magscroll-andun-parin-sa-taas-yung-header-para-sa-table
+}
+
+th, td {
+    padding: 15px;
+    text-align: center;
+}
+#db-iba{
+    background: url("/img/bg1.jpg");
+}
+.dropdown-content{
+    margin-top: 45px;
+    background-color: #000000;
+    font-family: myFirstFont;
+    color: #ff8f00;
+}
+.dropdown-content:hover{
+    margin-top: 45px;
+    background-color: #222222;
+    font-family: myFirstFont;
+    color: #ff8f00;
+}
+.dropdown-content li a{
+    background-color: #000000;
+    font-family: myFirstFont;
+    color: #ff8f00;
+}
+.dropdown-content li a:hover{
+    font-family: myFirstFont;
+    color: #ff8f00;
+    text-shadow: 2px 2px rgba(255, 132, 21, 0.56);
+}
+.search-customer-update input[type=text] {
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+.search-customer-update input[type=text]:focus {
+    width: 100%;
+}
+.row .modal-footer{
+    margin-right: 50px;
+}
+form{
+    margin-left: 10px;
+    margin-right: 10px;
+}
