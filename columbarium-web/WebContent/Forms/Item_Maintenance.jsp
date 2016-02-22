@@ -19,8 +19,8 @@
 
 
     <!-- Import CSS/JS -->
-    <script type="text/javascript" src="js/Inventory_Form.js"></script>
-    <link rel = "stylesheet" href = "css/Inventory_Form.css"/>
+    <script type="text/javascript" src="<%=request.getContextPath()%>/js/Inventory_Form.js"></script>
+    <link rel = "stylesheet" href = "<%=request.getContextPath()%>/css/Inventory_Form.css"/>
 
 
 </head>

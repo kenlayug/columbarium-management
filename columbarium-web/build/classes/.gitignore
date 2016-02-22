@@ -1,3 +1,7 @@
-/struts-item.xml
+/ApplicationResources.properties
 /columbarium/
+/database.properties
+/struts-employee.xml
+/struts-item.xml
 /struts-service.xml
+/struts.xml
