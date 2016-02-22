@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+     "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" 
+     "http://struts.apache.org/dtds/struts-2.0.dtd"> 
+   
+   <struts>
+   
+   	<package name="service" extends="struts-default" namespace="/service"> 
+  		 
+  		<action name="*" class="columbarium.actions.service.InitializeServiceScreenAction">
+  			<result name="success">/Forms/Services_Record_Form1.jsp</result>
+  		</action>
+  		
+  		<action name="create" class="columbarium.actions.service.CreateServiceAction">
+  			<result name="success">/index.html</result>
+  		</action>
+  		
+  		<action name="update" class="columbarium.actions.service.UpdateServiceAction">
+  			<result name="success">/index.html</result>
+  		</action>
+  		
+  		<action name="deactivate" class="columbarium.actions.service.DeactivateServiceAction">
+  			<result name="success">/index.html</result>
+  		</action>
+  	 
+  	</package> 
+   
+   </struts>

@@ -1,0 +1,146 @@
+@font-face {
+    font-family: myFirstFont;
+    src: url(../fonts/KGBlankSpaceSketch.ttf);
+}
+html{
+    background-color: #ffffff;
+}
+.nav-birdifly nav{
+    background-color: darkred;
+}
+h2{
+    margin-left: 30px;
+    font-family:  myFirstFont;
+}
+#db-content, #normal-nav{
+    background-color: darkred;
+    font-family: myFirstFont;
+    color: #ffffff;
+}
+
+.vaults-content {
+    float: left;
+    width: 420px;
+    height: 355px;
+}
+.modal-table{
+    border: none;
+}
+table{
+    margin-top: 20px;
+}
+table, td {
+    border: 1px solid #160b03;
+    width: auto;
+    height: auto;
+    color: #ffffff;
+    background: url("../img/bg.jpg");
+}
+#data td{
+    text-align: center;
+    background: white;
+    border: none;
+    font-family:  myFirstFont;
+}
+#data tr td{
+    color: #000000;
+}
+#iba th{
+    text-align: center;
+    border: none;
+    font-family:  myFirstFont;
+}
+.data-grid{
+    border: none;
+}
+p{
+    font-family:  myFirstFont;
+    font-size: 15px;
+    padding-left: 15px;
+}
+td a{
+    color: #ffffff;
+    margin-left: 25%;
+    margin-right: 25%;
+    padding-right: 20px;
+    text-decoration: none;
+    font-family:  myFirstFont;
+    font-size: 20px;
+}
+td a:hover, td a:active{
+    color: #ffffff;
+    margin-left: 25%;
+    margin-right: 25%;
+    padding-right: 20px;
+    text-decoration: none;
+    font-family:  myFirstFont;
+    font-size: 20px;
+    background-color: transparent;
+    text-decoration: none;
+    cursor: pointer;
+}
+#building-no{
+    margin-top: 35px;
+}
+#building-no li a{
+    background: url("../img/bg.jpg");
+    color: #ffffff;
+    font-family:  myFirstFont;
+    font-size: medium;
+    text-decoration: none;
+    cursor: pointer;
+}
+#building-no li a:hover, #building-no li a:active{
+    background: url("../img/bg.jpg");
+    color: #ffffff;
+
+}
+.h{
+    visibility: hidden;
+}
+.modal-footer .modal-trigger,.modal-footer .modal-trigger:active{
+    background: url("../img/bg.jpg");
+    color: #ffffff;
+    font-family:  myFirstFont;
+}
+.modal-header{
+    background: url("../img/bg.jpg");
+}
+.modal-header label{
+    font-family:  myFirstFont;
+    color: #ffffff;
+    font-size: xx-large;
+}
+.modal-header{
+    padding: 15px;
+}
+.modal-fixed-footer{
+    position: fixed;
+}
+.building-dropdown .dropdown-button{
+    color: #ffffff;
+    font-family:  myFirstFont;
+    font-size: medium;
+    background: url("../img/bg.jpg");
+}
+#unit-type{
+    font-size: medium;
+    font-family:  myFirstFont;
+}
+.dropdown-content{
+    margin-top: 55px;
+    background-color: darkred;
+    font-family: myFirstFont;
+    color: #ffffff;
+}
+.dropdown-content li a{
+    background-color: darkred;
+    font-family: myFirstFont;
+    color: #ffffff;
+}
+.dropdown-content li a:hover{
+    background-color: #670000;
+    font-family: myFirstFont;
+    color: #ffffff;
+    text-shadow: 2px 2px #000000;
+}

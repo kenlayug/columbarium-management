@@ -1,0 +1,141 @@
+@font-face {
+    font-family: myFirstFont;
+    src: url(../fonts/KGBlankSpaceSketch.ttf);
+}
+.nav-birdifly nav{
+    background-color: darkred;
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+.h{
+    visibility: hidden;
+}
+.modal-trigger, .dropdown-button {
+    margin: 0;
+    width: 100%;
+    padding: 0;
+    text-align: center;
+    background-color: #000000;
+    color: white;
+    font-family: myFirstFont;
+    font-size: medium;
+}
+#db-content, #normal-nav{
+    background-color: darkred;
+    font-family: myFirstFont;
+    color: #ffffff;
+}
+.dropdown-content{
+    margin-top: 55px;
+    background-color: darkred;
+    font-family: myFirstFont;
+    color: #ffffff;
+}
+.dropdown-content li a{
+    background-color: darkred;
+    font-family: myFirstFont;
+    color: #ffffff;
+}
+.dropdown-content li a:hover{
+    background-color: #670000;
+    font-family: myFirstFont;
+    color: #ffffff;
+    text-shadow: 2px 2px #000000;
+}
+label{
+    font-size: large;
+    font-family:  myFirstFont;
+}
+form{
+    margin-top: 20px;
+}
+h2{
+    margin-left: 30px;
+    font-family:  myFirstFont;
+}
+.modal-header{
+    background: url("../img/bg.jpg");
+    padding-top: 15px;
+    padding-bottom: 15px;
+    position: static;
+}
+.modal-header label{
+    font-family:  myFirstFont;
+    color: #ffffff;
+    font-size: xx-large;
+    padding-left: 15px;
+}
+#iba tr th{
+    font-size: medium;
+    color: #000000;
+    font-family:  myFirstFont;
+    text-align: center;
+}
+#data tr td{
+    text-align: center;
+}
+tbody tr th{
+    text-align: center;
+}
+.jan{
+    margin-right: 20px;
+}
+.feb{
+    margin-left: 20px;
+}
+.march{
+    margin-right: 20px;
+}
+.april{
+    margin-left: 20px;
+}
+.may{
+    margin-right: 35px;
+}
+.june{
+    margin-left: 40px;
+}
+.july{
+    margin-right: 35px;
+}
+.aug{
+    margin-left: 40px;
+}
+.sep{
+    margin-right: 35px;
+}
+.octo{
+    margin-left: 40px;
+}
+.nov{
+    margin-right: 35px;
+}
+.dec{
+    margin-left: 40px;
+}
+#btn-date{
+    width: 100px;
+}
+#btn-time{
+    margin-left: 0;
+}
+.dropdown-button{
+    width: 150px;
+}
+/* label focus color */
+.input-field input[type=text]:focus + label {
+    color: red;
+}
+/* label underline focus color */
+.input-field input[type=text]:focus {
+    border-bottom: 1px solid red;
+    box-shadow: 0 1px 0 0 red;
+}
+/* valid color */
+.input-field input[type=text].valid {
+    border-bottom: 1px solid red;
+    box-shadow: 0 1px 0 0 red;
+}
+

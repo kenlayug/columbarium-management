@@ -12,6 +12,7 @@ public interface ItemMapper {
 	public void deactivateItem(Item item);
 	
 	public Integer checkIfExisting(Item item);
+	public Integer checkIfExistingById(Item item);
 	
 	public List<Item>getAllItem();
 	public int countAllItem();

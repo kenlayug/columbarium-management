@@ -30,16 +30,12 @@
 			SELECT COUNT(*)
 			FROM tblItem
 			<where>
-				intStatus = 1
-				<choose>
-					<when test="itemId == null">
-						OR itemId = #{itemId}
-					</when>
-					<when test="strItemName != null">
-						OR strItemName LIKE #{strItemName}
-					</when>
-				</choose>
+				intStatus = 1 AND strItemName LIKE #{strItemName}
 			</where>
+		</select>
+		
+		<select id="checkIfExistingById" resultMap="CountItemResultMap">
+			SELECT COUNT(*) FROM tblItem WHERE intStatus = 1 AND itemId = #{itemId}
 		</select>
 		
 		<select id="getItem" resultMap="ItemResultMap">
@@ -60,7 +56,7 @@
 		
 		<select id="getAllItem" resultMap="ItemResultMap">
 			SELECT itemId, strItemName, strItemDesc, deciPrice
-			FROM tblItem ORDER BY strItemName ASC
+			FROM tblItem WHERE intStatus = 1 ORDER BY strItemName ASC
 		</select>
 		
 		<select id="countAllItem" resultMap="CountItemResultMap">

@@ -8,13 +8,20 @@
    	<package name="item" extends="struts-default" namespace="/item"> 
   		 
   		<action name="*" class="columbarium.actions.item.InitializeItemScreenAction">
-  			<result name="success">/Forms/Inventory_Form.jsp</result>
+  			<result name="success">/Forms/Inventory.jsp</result>
   		</action>
   		
   		<action name="create" class="columbarium.actions.item.CreateItemAction">
   			<result name="success">/index.html</result>
   		</action>
+  		
+  		<action name="update" class="columbarium.actions.item.UpdateItemAction">
+  			<result name="success">/index.html</result>
+  		</action>
   		 
+  		<action name="deactivate" class="columbarium.actions.item.DeactivateItemAction">
+  			<result name="success">/index.html</result>
+  		</action>
   	 
   	</package> 
    

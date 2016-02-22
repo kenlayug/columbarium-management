@@ -46,17 +46,17 @@
     </style>
 
     <!-- Import -->
-    <script type="text/javascript" src="../js/Inventory_Form.js"></script>
-    <link rel = "stylesheet" href = "../css/Inventory_Form.css"/>
+    <script type="text/javascript" src="<%=request.getContextPath()%>/js/Inventory_Form.js"></script>
+    <link rel = "stylesheet" href = "<%=request.getContextPath()%>/css/Inventory_Form.css"/>
 
 
     <!-- Magic -->
     <!-- Font Awesome CSS -->
-    <link rel="stylesheet" href="../fonts/font-awesome.min.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/fonts/font-awesome.min.css" type="text/css" media="screen">
     <!-- Include roboto.css to use the Roboto web font, material.css to include the theme and ripples.css to style the ripple effect -->
-    <link href="../css/ripples.min.css" rel="stylesheet">
+    <link href="<%=request.getContextPath()%>/css/ripples.min.css" rel="stylesheet">
 
-    <link href="../css/responsive.css" rel="stylesheet">
+    <link href="<%=request.getContextPath()%>/css/responsive.css" rel="stylesheet">
     <link href="../css/animate.min.css" rel="stylesheet">
 </head>
 <body>

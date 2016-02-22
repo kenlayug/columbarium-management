@@ -131,6 +131,13 @@ public class Item {
 		return itemItem.searchItemByName(item);
 	}
 	
+	public static Item searchItem(String strItemName){
+		Item item = new Item(strItemName);
+		ItemService itemItem = (ItemService)ServletActionContext.getServletContext()
+				.getAttribute("itemService");
+		return itemItem.searchItem(item);
+	}
+	
 	public static int countItem(){
 		ItemService itemItem = (ItemService)ServletActionContext.getServletContext()
 				.getAttribute("itemService");

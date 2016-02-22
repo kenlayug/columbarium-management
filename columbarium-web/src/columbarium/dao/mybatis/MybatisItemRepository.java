@@ -20,9 +20,10 @@ public class MybatisItemRepository extends MybatisClient implements ItemReposito
 		// TODO Auto-generated method stub
 		SqlSession sqlSession = getSqlSessionFactory().openSession();
 		try{
-			
+			System.out.println(item.getStrItemName());
 			ItemMapper itemMapper = sqlSession.getMapper(ItemMapper.class);
 			if (itemMapper.checkIfExisting(item) > 0){
+				System.out.println(itemMapper.checkIfExisting(item));
 				return "failed-existing";
 			}
 			itemMapper.saveItem(item);
@@ -65,7 +66,7 @@ public class MybatisItemRepository extends MybatisClient implements ItemReposito
 		try{
 			
 			ItemMapper itemMapper = sqlSession.getMapper(ItemMapper.class);
-			if (itemMapper.checkIfExisting(item) <= 0){
+			if (itemMapper.checkIfExistingById(item) <= 0){
 				return "failed-does-not-exist";
 			}
 			itemMapper.updateItem(item);
