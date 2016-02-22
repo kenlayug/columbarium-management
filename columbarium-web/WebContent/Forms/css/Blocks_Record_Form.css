@@ -4,15 +4,16 @@
 }
 
 .navbar-leo nav{
-    background-color: darkred;
+    background-color: #ff8f00;
     color: white;
+    font-family: myFirstFont;
 }
 
 
 .aside {
     margin-left: 20px;
-    height: 350px;
-    width: 800px;
+    height: 355px;
+    width: 750px;
 }
 
 h1 {
@@ -28,8 +29,14 @@ h1 {
 h2 {
     font-family: myFirstFont;
     padding-left: 45px;
-    font-size: 50px;
+    font-size: 40px;
 
+}
+
+h4 {
+    font-family: myFirstFont;
+    font-size: 40px;
+    padding-left: 50px;
 }
 
 h5 {
@@ -58,27 +65,27 @@ h6{
 }
 /* label focus color */
 .input-field input[type=text]:focus + label {
-    color: red;
+    color: mediumseagreen;
 }
 /* label underline focus color */
 .input-field input[type=text]:focus {
-    border-bottom: 1px solid red;
-    box-shadow: 0 1px 0 0 red;
+    border-bottom: 1px solid mediumseagreen;
+    box-shadow: 0 1px 0 0 mediumseagreen;
 }
 /* valid color */
 .input-field input[type=text].valid {
-    border-bottom: 1px solid red;
-    box-shadow: 0 1px 0 0 red;
+    border-bottom: 1px solid mediumseagreen;
+    box-shadow: 0 1px 0 0 mediumseagreen;
 }
 
 .header h4 {
-    background: url(../img/black_pattern1.jpg) repeat;
+    background-color: #00897b;
     color: white;
-    height: 70px;
+    height: 50px;
     font-family: myFirstFont;
     padding-left: 20px;
-    padding-top: 10px;
-    font-size: 45px;
+    padding-top: 5px;
+    font-size: 35px;
 }
 
 .modal-header {
@@ -87,23 +94,33 @@ h6{
     height: 70px;
 }
 
-.dropdown-content{
-    background-color: darkred;
-    font-family: myFirstFont;
-    color: #ffffff;
-}
-.dropdown-content li a{
-    background-color: darkred;
-    font-family: myFirstFont;
-    color: #ffffff;
-}
-.dropdown-content li a:hover{
-    background-color: #670000;
-    font-family: myFirstFont;
-    color: #ffffff;
-    text-shadow: 2px 2px #000000;
+ul li a {
+    color:white;
+    font-size: 17px;
 }
 
 
+#dropdown1 li a{
+    color: white;
+    background-color: #ff8f00;
+}
+
+#dropdown2 li a{
+    color: white;
+    background-color: #ff8f00;
+}
+#dropdown3 li a{
+    color: white;
+    background-color: #ff8f00;
+}
+#dropdown4 li a{
+    color: white;
+    background-color: #ff8f00;
+}
+
+#dropdown5 li a{
+    color: white;
+    background-color: #ff8f00;
+}
 
 

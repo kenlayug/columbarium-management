@@ -48,24 +48,24 @@
 <!-- Dropdown Maintenance-->
 <ul id="dropdown1" class="dropdown-content">
     <li><a href="Inventory.html">Inventory</a></li>
-    <li><a href="Services_Record_Form.jsp.html">Service</a></li>
+    <li><a href="Services_Record_Form.html">Service</a></li>
     <li class="divider"></li>
     <li><a href="Package_Record_Form.html">Package</a></li>
-    <li><a href="Building_Record_Form.jsp.html">Building</a></li>
-    <li><a href="Floor_Record_Form.jsp.html">Floor</a></li>
-    <li><a href="Blocks_Record_Form.jsp.html">Block</a></li>
-    <li><a href="vaults.jsp.html">Vaults</a></li>
-    <li><a href="FullBodyCrypts.jsp.html">Body Crypts</a></li>
+    <li><a href="Building_Record_Form.html">Building</a></li>
+    <li><a href="Floor_Record_Form.html">Floor</a></li>
+    <li><a href="Blocks_Record_Form.html">Block</a></li>
+    <li><a href="vaults.html">Vaults</a></li>
+    <li><a href="FullBodyCrypts.html">Body Crypts</a></li>
 </ul>
 
 <!-- Dropdown Transaction -->
 <ul id="dropdown2" class="dropdown-content">
-    <li><a href="Customer.jsp.html">Customer</a></li>
-    <li><a href="Reservation_Transaction.jsp.html">Reservation</a></li>
-    <li><a href="scheduling.jsp.html">Scheduling</a></li>
+    <li><a href="Customer.html">Customer</a></li>
+    <li><a href="Reservation_Transaction.html">Reservation</a></li>
+    <li><a href="scheduling.html">Scheduling</a></li>
     <li class="divider"></li>
-    <li><a href="Collection_Transaction.jsp.html">Collection</a></li>
-    <li><a href="UnitOwnership.jsp.html">Transferring</a></li>
+    <li><a href="Collection_Transaction.html">Collection</a></li>
+    <li><a href="UnitOwnership.html">Transferring</a></li>
 </ul>
 
 <!-- Dropdown Queries -->
@@ -78,50 +78,71 @@
 
 <!-- Dropdown Reports -->
 <ul id="dropdown4" class="dropdown-content">
-    <li><a href="Reservation-Report.jsp.html">Reservation Record</a></li>
-    <li><a href="Employee-Maintenance.jsp.html">Scheduling Record</a></li>
+    <li><a href="Reservation-Report.html">Reservation Record</a></li>
+    <li><a href="scheduling-report.html">Scheduling Record</a></li>
     <li class="divider"></li>
-    <li><a href="Collection-Report.jsp.html">Collection Record</a></li>
-    <li><a href="Customer-Maintenance.jsp.html">Transferring Record</a></li>
+    <li><a href="Collection-Report.html">Collection Record</a></li>
+    <li><a href="transferring-report.html">Transferring Record</a></li>
 </ul>
 
 <!-- Dropdown Utilities -->
 <ul id="dropdown5" class="dropdown-content">
-    <li><a href="Employee.jsp.html">Employee</a></li>
+    <li><a href="Employee.html">Employee</a></li>
     <li class="divider"></li>
 </ul>
 
+<!-- Floating Button -->
+<div class="fixed-action-btn horizontal" style="position: absolute; margin-right: 550px; margin-bottom: 155px;">
+    <button name = "action" class="btn-floating btn-large red"><i class="large material-icons">add</i>
+    </button>
+    <ul>
+        <li><button name = "action" class="btn-floating black"><i class="material-icons">delete</i></button></li>
+        <li><button name = "action" class="btn-floating green darken-1"><i class="material-icons">mode_edit</i></button></li>
+    </ul>
+</div>
 
 <!-- Section -->
+<<<<<<< HEAD:columbarium-web/WebContent/Forms/Inventory.jsp
 <h2>Item Maintenance</h2>
+=======
+<div class = col s12 >
+>>>>>>> 9cc96c6425c0b296418c271d94a19d6dd1c13e43:columbarium-web/WebContent/Forms/Inventory.html
     <div class = "row">
-        <div class = "col s8">
+        <div class = "col s7">
+            <h4>Item Maintenance</h4>
 
             <!-- Create Inventory -->
             <div class = "col s12">
-                <div class = "aside aside z-depth-3" style = "height: 380px;">
+                <div class = "aside aside z-depth-3">
                     <div class = "header">
+<<<<<<< HEAD:columbarium-web/WebContent/Forms/Inventory.jsp
                         <h4>Create Item</h4>
+=======
+                        <h4>Item Form</h4>
+>>>>>>> 9cc96c6425c0b296418c271d94a19d6dd1c13e43:columbarium-web/WebContent/Forms/Inventory.html
                     </div>
 
 
                      <form class = "col s12" action="create" method="post">
                         <div class="row" style = "padding-left: 10px;">
-                            <div class="input-field col s6">
+                            <div class="input-field col s12">
                                 <input id="level" type="text" class="validate" name="item.strItemName">
-                                <label for="level" data-error = "wrong" data-success = "right">Item name:</label>
-                            </div>
-                            <div class="input-field col s6">
-                                <input id="qty" type="text" class="validate" name="item.dblPrice">
-                                <label for="qty">Item Price:</label>
+                                <label for="level" data-error = "wrong" data-success = "right">Item Name</label>
                             </div>
                         </div>
+<<<<<<< HEAD:columbarium-web/WebContent/Forms/Inventory.jsp
+=======
+                    </form>
+
+                    <form class = "col s12">
+>>>>>>> 9cc96c6425c0b296418c271d94a19d6dd1c13e43:columbarium-web/WebContent/Forms/Inventory.html
                         <div class="row">
                             <div class="input-field col s12">
                                 <input id="desc" type="text" class="validate" name="item.strItemDesc">
-                                <label for="desc">Item description:</label>
+                                <label for="desc">Item Description</label>
                             </div>
                         </div>
+<<<<<<< HEAD:columbarium-web/WebContent/Forms/Inventory.jsp
                     <!-- <a class="waves-effect waves-light btn black right" style = "margin-right: 10px; width: 180px;  margin-top: 60px;"><i class="mdi-content-add-circle left"></i>Create</a>
                    -->
                    <button class="btn-large waves-effect waves-light" type="submit" name="action">SUBMIT
@@ -224,9 +245,15 @@
                     </div><!-- 
                     <button data-target = "modal1" class="waves-effect waves-light modal-trigger black right" style = "margin-right: 10px; width: 180px; height: 35px; color: white; margin-top: 20px;"><i class="mdi-content-create left"></i>UPDATE</button>
                	 -->
+=======
+                    </form>
+
+>>>>>>> 9cc96c6425c0b296418c271d94a19d6dd1c13e43:columbarium-web/WebContent/Forms/Inventory.html
                 </div>
             </div>
+        </div>
 
+<<<<<<< HEAD:columbarium-web/WebContent/Forms/Inventory.jsp
             <!-- Deactivate Item -->
             <div class = "col s12">
                 <div class = "aside aside z-depth-3" style = "margin-top: 50px;">
@@ -284,9 +311,25 @@
                    <!--  <button data-target = "modal2" class="waves-effect waves-light modal-trigger black right" style = "margin-right: 10px; width: 180px; height: 35px; color: white; margin-top: 20px;"><i class="mdi-communication-dnd-on left"></i>DEACTIVATE</button>
                 	 -->
                 </div>
+=======
+        <!-- Data Grid -->
+        <div class = "col s5">
+            <div class = "col s4 z-depth-2 " style = "margin-left: 60px; margin-top: 20px; width: 450px; height: 70px;">
+                <nav style = "height: 50px; margin-top: 10px; background-color: #00897b">
+                    <div class="nav-wrapper">
+                        <div>
+                            <div class="input-field"  style = "height: 50px;">
+                                <input id="search" type="search" required>
+                                <label for="search"><i class="material-icons">search</i></label>
+                                <i class="material-icons">close</i>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+>>>>>>> 9cc96c6425c0b296418c271d94a19d6dd1c13e43:columbarium-web/WebContent/Forms/Inventory.html
             </div>
-        </div>
 
+<<<<<<< HEAD:columbarium-web/WebContent/Forms/Inventory.jsp
         <!-- table -->
         <div class = "col s4">
             <table class = "striped z-depth-3" style = "width: 100%;">
@@ -316,14 +359,68 @@
                         </c:if>
                 </tbody>
             </table>
+=======
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <div class = "aside z-depth-2" style = "margin-left: 60px; width: 450px; height: 310px; overflow: auto;">
+                <table class = "highlight z-depth-3" style = "margin-top: 10px; margin-left: 0px; width: 100%; height: 200px;">
+
+                    <thead class = "fixed-header">
+                    <tr>
+                        <th data-field="id">Item Name</th>
+                        <th data-field="name">Item Description</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <tr>
+                        <td>Item One</td>
+                        <td>Description One</td>
+                    </tr>
+
+                    <tr>
+                        <td>Item Two</td>
+                        <td>Description One</td>
+                    </tr>
+
+                    <tr>
+                        <td>Item Three</td>
+                        <td>Description One</td>
+                    </tr>
+
+                    <tr>
+                        <td>Item Four</td>
+                        <td>Description One</td>
+                    </tr>
+
+                    <tr>
+                        <td>Item Five</td>
+                        <td>Description One</td>
+                    </tr>
+                    <tr>
+                        <td>Item Six</td>
+                        <td>Description One</td>
+                    </tr>
+                    <tr>
+                        <td>Item Seven</td>
+                        <td>Description One</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+>>>>>>> 9cc96c6425c0b296418c271d94a19d6dd1c13e43:columbarium-web/WebContent/Forms/Inventory.html
         </div>
 
 
     </div>
-</form>
+</div>
 
 <!-- Footer -->
-<footer class="page-footer" style = "background-color: darkred;">
+<footer class="page-footer" style = "background-color: #ff8f00;">
     <div class="container">
         <div class="row">
             <div class="col l6 s12">

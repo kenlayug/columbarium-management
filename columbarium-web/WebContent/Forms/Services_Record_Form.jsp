@@ -1,21 +1,12 @@
+<<<<<<< HEAD:columbarium-web/WebContent/Forms/Services_Record_Form.jsp
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
 <!DOCTYPE html>
+=======
+ <!DOCTYPE html>
+>>>>>>> 9cc96c6425c0b296418c271d94a19d6dd1c13e43:columbarium-web/WebContent/Forms/Services_Record_Form.html
 <html lang="en">
 <head>
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-    <!-- Latest compiled JavaScript -->
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <title>SAD Forms</title>
 
     <!-- Materialize -->
     <meta charset="UTF-8">
@@ -32,6 +23,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
 
 
+<<<<<<< HEAD:columbarium-web/WebContent/Forms/Services_Record_Form.jsp
 
     <meta name="description" content="Responsive Bootstrap Landing Page Template">
     <meta name="keywords" content="Bootstrap, Landing page, Template, Registration, Landing">
@@ -58,6 +50,12 @@
 
     <link href="<%=request.getContextPath()%>/css/responsive.css" rel="stylesheet">
     <link href="<%=request.getContextPath()%>/css/animate.min.css" rel="stylesheet">
+=======
+    <!-- Import CSS/JS -->
+    <script type="text/javascript" src="js/Services_Record_Form.js"></script>
+    <link rel = "stylesheet" href = "css/Services_Record_Form.css"/>
+
+>>>>>>> 9cc96c6425c0b296418c271d94a19d6dd1c13e43:columbarium-web/WebContent/Forms/Services_Record_Form.html
 </head>
 <body>
 
@@ -79,7 +77,7 @@
 
 <!-- Dropdown Maintenance-->
 <ul id="dropdown1" class="dropdown-content">
-    <li><a href="Inventory_Form.html">Inventory</a></li>
+    <li><a href="Inventory.html">Inventory</a></li>
     <li><a href="Services_Record_Form.html">Service</a></li>
     <li class="divider"></li>
     <li><a href="Package_Record_Form.html">Package</a></li>
@@ -111,10 +109,10 @@
 <!-- Dropdown Reports -->
 <ul id="dropdown4" class="dropdown-content">
     <li><a href="Reservation-Report.html">Reservation Record</a></li>
-    <li><a href="Employee-Maintenance.html">Scheduling Record</a></li>
+    <li><a href="scheduling-report.html">Scheduling Record</a></li>
     <li class="divider"></li>
     <li><a href="Collection-Report.html">Collection Record</a></li>
-    <li><a href="Customer-Maintenance.html">Transferring Record</a></li>
+    <li><a href="transferring-report.html">Transferring Record</a></li>
 </ul>
 
 <!-- Dropdown Utilities -->
@@ -130,12 +128,11 @@
 <form class = col s12 >
     <div class = "row">
         <div class = "col s8">
-
             <!-- Create Service -->
             <div class = "col s12">
                 <div class = "aside aside z-depth-3" style = "height: 465px;">
-                    <div class = "header">
-                        <h4>Create Service</h4>
+                <div class = "header">
+                <h4>Create Service</h4>
                     </div>
 
                     <form class = "col s12">
@@ -307,35 +304,31 @@
                         <h4>Update Service</h4>
                     </div>
 
-                    <div class="row">
-                        <!-- Code -->
-
-                        <div class="row" style = "padding-left: 10px;">
-                            <div class="input-field col s3">
-                                <label>Enter Service Code:</label>
-                            </div>
-                            <div class="input-field col s1">
-                                <input id="dv" type="text" required="" aria-required="true" class="validate">
-                                <label for="dv">####</label>
-                            </div>
-                        </div>
-
-                        <div>
-                            <h5>Service Name:</h5>
-                        </div>
-                        <form action="#" style = "padding-left: 20px;">
-                            <p>
-                                <input type="checkbox" id="test41" />
-                                <label for="test41">Service one</label>
-                            </p>
-                        </form>
+                    <!-- Select Service Name -->
+                    <br>
+                    <div class = "col s6" style = "padding-left: 20px;">
+                        <label>Select Service Name</label>
+                        <select>
+                            <option value="" disabled selected>Service Name:</option>
+                            <option value="1">Service One</option>
+                            <option value="2">Service Two</option>
+                            <option value="3">Service Three</option>
+                        </select>
                     </div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
 
 
                     <!-- Modal Structure -->
                     <div id="modal1" class="modal">
                         <div class = "modal-header fixed">
-                            <h4>Update Service</h4>
+                            <h4 style = "padding-top: 10px;">Update Service</h4>
                         </div>
                         <div class="modal-content">
                             <form class = "col s12">
@@ -367,7 +360,7 @@
                                     </div>
                                 </form>
 
-                                <button data-target = "modal3" class="waves-effect waves-light modal-trigger black left" style = "margin-left: 10px; width: 180px; height: 35px; color: white; margin-top: 0px; font-size: 14px;"><i class="mdi-content-create left"></i>REQUIREMENTS</button>
+                                <button data-target = "modal3" class="waves-effect waves-light modal-trigger black left" style = "margin-left: 10px; width: 180px; height: 35px; color: white; margin-top: 50px; font-size: 14px;"><i class="mdi-content-create left"></i>REQUIREMENTS</button>
                             </div>
                             <br>
                             <br>
@@ -392,45 +385,33 @@
                         <h4>Deactivate Service</h4>
                     </div>
 
-                    <div class="row">
-
-                        <!-- Code -->
-
-                        <div class="row" style = "padding-left: 10px;">
-                            <div class="input-field col s3">
-                                <label>Enter Package Code: </label>
-                            </div>
-                            <div class="input-field col s1">
-                                <input id="d" type="text" required="" aria-required="true" class="validate">
-                                <label for="d">####</label>
-                            </div>
-                        </div>
-
-                        <div>
-                            <h5>Service Name:</h5>
-                        </div>
-                        <form action="#" style = "padding-left: 20px;">
-                            <p>
-                                <input type="checkbox" id="test40" />
-                                <label for="test40">Package one</label>
-                            </p>
-                        </form>
+                    <!-- Select Service Name -->
+                    <br>
+                    <div class = "col s6" style = "padding-left: 20px;">
+                        <label>Select Service Name</label>
+                        <select>
+                            <option value="" disabled selected>Service Name:</option>
+                            <option value="1">Service One</option>
+                            <option value="2">Service Two</option>
+                            <option value="3">Service Three</option>
+                        </select>
                     </div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
 
                     <!-- Modal Structure -->
                     <div id="modal2" class="modal">
                         <div class = "header">
-                            <h4>Deactivate Building</h4>
+                            <h4>Deactivate Service</h4>
                         </div>
                         <div class="modal-content">
-                            <h5 style = "padding-left: 0px;">Service Name:</h5>
-                            <form action="#">
-                                <p>
-                                    <input type="checkbox" id="test4" />
-                                    <label for="test4">Service one</label>
-                                </p>
-                            </form>
-                            <br>
+                            <h6>Are you sure you want to deactivate block?</h6>
                             <br>
                             <br>
                             <br>
@@ -441,7 +422,7 @@
                             <br>
                         </div>
                         <div class="modal-footer">
-                            <a class="waves-effect waves-light btn black right" style = "margin-right: 10px; width: 180px;"><i class="mdi-content-add-circle left"></i>DEACTIVATE</a>
+                            <a class="waves-effect waves-light btn black right" style = "margin-right: 10px; width: 180px;color:white;"><i class="mdi-content-add-circle left"></i>Confirm</a>
                         </div>
                     </div>
                     <button data-target = "modal2" class="waves-effect waves-light modal-trigger black right" style = "margin-right: 10px; width: 180px; height: 35px; color: white; margin-top: 35px;"><i class="mdi-communication-dnd-on left"></i>DEACTIVATE</button>
