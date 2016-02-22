@@ -14,5 +14,8 @@ public interface BuildingMapper {
 	public void createUnit(Unit unit);
 	
 	public int checkIfExistingBuilding(Building building);
+	public int checkIfExistingBlock(Block block);
+	
+	public Floor selectFloorById(Floor floor);
 	
 }
