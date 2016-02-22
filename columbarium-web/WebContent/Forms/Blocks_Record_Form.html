@@ -90,7 +90,7 @@
 
 
 <!-- Floating Button -->
-<div class="fixed-action-btn horizontal" style="position: absolute; margin-right: 550px; margin-bottom: 140px;">
+<div class="fixed-action-btn horizontal" style="position: absolute; margin-right: 550px; margin-bottom: 125px;">
     <button name = "action" class="btn-floating btn-large red"><i class="large material-icons">add</i>
     </button>
     <ul>
@@ -115,16 +115,27 @@
 
                     <form class = "col s12">
                         <div class="row">
-                            <div class="input-field col s6">
-                                <input id="bldngName" type="text" class="validate">
-                                <label for="bldngName">Building Name</label>
+                            <!-- Select Floor Name -->
+                            <div class = "col s6" style = "padding-left: 20px;">
+                                <label>Select Building Name</label>
+                                <select>
+                                    <option value="" disabled selected>Building Name:</option>
+                                    <option value="1">Building One</option>
+                                    <option value="2">Building Two</option>
+                                    <option value="3">Building Three</option>
+                                </select>
                             </div>
-                            <div class="input-field col s6">
-                                <input id="floorNumber" type="text" class="validate">
-                                <label for="floorNumber">Floor Number</label>
+                            <!-- Select Floor Name -->
+                            <div class = "col s6" style = "padding-left: 20px;">
+                                <label>Select Floor Name</label>
+                                <select>
+                                    <option value="" disabled selected>Floor Name:</option>
+                                    <option value="1">Floor One</option>
+                                    <option value="2">Floor Two</option>
+                                    <option value="3">Floor Three</option>
+                                </select>
                             </div>
                         </div>
-
                     </form>
 
                     <form class = "col s12">
