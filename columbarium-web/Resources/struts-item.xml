@@ -11,8 +11,11 @@
   			<result name="success">/Forms/Item_Maintenance.jsp</result>
   		</action>
   		
-  		<action name="create" class="columbarium.actions.item.CreateItemAction">
+  		<action name="create" class="columbarium.actions.item.CreateItemAction" method="execute">
   			<result name="success">/index.html</result>
+  			<result name="failed-existing" type="redirect">/item/</result>
+  			<result name="failed-database">/Forms/database-error.jsp</result>
+  			<result name="input" type="redirect">/item/</result>
   		</action>
   		
   		<action name="update" class="columbarium.actions.item.UpdateItemAction">

@@ -12,6 +12,10 @@
      
      <package name="main" extends="struts-default" namespace="/">
      
+     	<action name="item" class="columbarium.actions.ChainAction">
+     		<result name="success" type="redirect">/item/</result>
+     	</action>
+     
      	<action name="add-employee" class="columbarium.actions.ChainAction">
      		<result name="success" type="redirect">/add-employee/</result>
      	</action>
