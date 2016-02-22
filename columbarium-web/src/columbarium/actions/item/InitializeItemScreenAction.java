@@ -21,7 +21,6 @@ public class InitializeItemScreenAction implements Action{
 	@Override
 	public String execute() throws Exception {
 		// TODO Auto-generated method stub
-		System.out.println(Item.countItem());
 		if (Item.countItem() != 0){
 			setItemList(Item.getAllItems());
 		}

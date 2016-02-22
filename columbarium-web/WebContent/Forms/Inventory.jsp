@@ -1,4 +1,11 @@
+<<<<<<< HEAD:columbarium-web/WebContent/Forms/Inventory.html
  <!DOCTYPE html>
+=======
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+>>>>>>> 172020bb0712b8b96caef5bf8d9bcd4558c2d68a:columbarium-web/WebContent/Forms/Inventory.jsp
 <html lang="en">
 <head>
     <title>SAD Forms</title>
@@ -19,8 +26,8 @@
 
 
     <!-- Import CSS/JS -->
-    <script type="text/javascript" src="js/Inventory_Form.js"></script>
-    <link rel = "stylesheet" href = "css/Inventory_Form.css"/>
+    <script type="text/javascript" src="<%=request.getContextPath()%>/js/Inventory_Form.js"></script>
+    <link rel = "stylesheet" href = "<%=request.getContextPath()%>/css/Inventory_Form.css"/>
 
 
 </head>
@@ -88,42 +95,63 @@
     <li class="divider"></li>
 </ul>
 
+<!-- Floating Button -->
+<div class="fixed-action-btn horizontal" style="position: absolute; margin-right: 550px; margin-bottom: 155px;">
+    <button name = "action" class="btn-floating btn-large red"><i class="large material-icons">add</i>
+    </button>
+    <ul>
+        <li><button name = "action" class="btn-floating black"><i class="material-icons">delete</i></button></li>
+        <li><button name = "action" class="btn-floating green darken-1"><i class="material-icons">mode_edit</i></button></li>
+    </ul>
+</div>
 
 <!-- Section -->
-<h2>Items Maintenance</h2>
-<form class = col s12 >
+<<<<<<< HEAD:columbarium-web/WebContent/Forms/Inventory.jsp
+<h2>Item Maintenance</h2>
+=======
+<div class = col s12 >
+>>>>>>> 9cc96c6425c0b296418c271d94a19d6dd1c13e43:columbarium-web/WebContent/Forms/Inventory.html
     <div class = "row">
-        <div class = "col s8">
+        <div class = "col s7">
+            <h4>Item Maintenance</h4>
 
             <!-- Create Inventory -->
             <div class = "col s12">
-                <div class = "aside aside z-depth-3" style = "height: 380px;">
+                <div class = "aside aside z-depth-3">
                     <div class = "header">
-                        <h4>Create Items</h4>
+<<<<<<< HEAD:columbarium-web/WebContent/Forms/Inventory.jsp
+                        <h4>Create Item</h4>
+=======
+                        <h4>Item Form</h4>
+>>>>>>> 9cc96c6425c0b296418c271d94a19d6dd1c13e43:columbarium-web/WebContent/Forms/Inventory.html
                     </div>
 
 
-                    <form class = "col s12" action="create" method="post">
+                     <form class = "col s12" action="create" method="post">
                         <div class="row" style = "padding-left: 10px;">
-                            <div class="input-field col s6">
+                            <div class="input-field col s12">
                                 <input id="level" type="text" class="validate" name="item.strItemName">
-                                <label for="level" data-error = "wrong" data-success = "right">Item name:</label>
-                            </div>
-                            <div class="input-field col s6">
-                                <input id="qty" type="text" class="validate" name="item.dblPrice">
-                                <label for="qty">Item Price:</label>
+                                <label for="level" data-error = "wrong" data-success = "right">Item Name</label>
                             </div>
                         </div>
+<<<<<<< HEAD:columbarium-web/WebContent/Forms/Inventory.jsp
+=======
                     </form>
+
                     <form class = "col s12">
+>>>>>>> 9cc96c6425c0b296418c271d94a19d6dd1c13e43:columbarium-web/WebContent/Forms/Inventory.html
                         <div class="row">
                             <div class="input-field col s12">
                                 <input id="desc" type="text" class="validate" name="item.strItemDesc">
-                                <label for="desc">Item description:</label>
+                                <label for="desc">Item Description</label>
                             </div>
                         </div>
-                    </form>
-                    <a class="waves-effect waves-light btn black right" style = "margin-right: 10px; width: 180px;  margin-top: 60px;"><i class="mdi-content-add-circle left"></i>Create</a>
+<<<<<<< HEAD:columbarium-web/WebContent/Forms/Inventory.jsp
+                    <!-- <a class="waves-effect waves-light btn black right" style = "margin-right: 10px; width: 180px;  margin-top: 60px;"><i class="mdi-content-add-circle left"></i>Create</a>
+                   -->
+                   <button class="btn-large waves-effect waves-light" type="submit" name="action">SUBMIT
+                   </form> 
+                   
                 </div>
             </div>
 
@@ -133,18 +161,41 @@
             <div class = "col s12">
                 <div class = "aside aside z-depth-3" style = "margin-top: 50px;">
                     <div class = "header">
-                        <h4>Update Items</h4>
+                        <h4>Update Item</h4>
                     </div>
                     <!-- Select Item Name -->
                     <br>
                     <div class = "col s6" style = "padding-left: 20px;">
+                        <form action="update" method="post">
                         <label>Select Item Name</label>
-                        <select>
-                            <option value="" disabled selected>Item Name:</option>
-                            <option value="1">Item One</option>
-                            <option value="2">Item Two</option>
-                            <option value="3">Item Three</option>
+                        <select name="strItemName">
+                        	<c:if test="${itemList == null }">
+                        		<option value="" disabled selected>No items available</option>
+                        	</c:if>
+                        	<c:if test="${itemList != null }">
+	                        	<option value="" disabled selected>Item Name:</option>
+                        		<c:forEach items="${itemList }" var="item">
+		                            <option value="${item.strItemName }">${item.strItemName }</option>
+                        		</c:forEach>
+                        	</c:if>
                         </select>
+                         
+                                    <div class="input-field col s4">
+                                        <input id="name" type="text" class="validate" name="item.strItemName">
+                                        <label for="name">Input new item name:</label>
+                                    </div>
+                                    <div class="input-field col s4">
+                                        <input id="qty1" type="text" class="validate" name="item.dblPrice">
+                                        <label for="qty1">Input new item Price:</label>
+                                    </div>
+                                    <div class="input-field col s4">
+                                        <input id="desc1" type="text" class="validate" name="item.strItemDesc">
+                                        <label for="desc1">Input new item description:</label>
+                                    </div>
+                                <button class="btn-large waves-effect waves-light" type="submit" name="action">SUBMIT
+                            </form>
+                        
+                        
                     </div>
                     <br>
                     <br>
@@ -157,27 +208,28 @@
 
 
                     <!-- Modal Structure -->
-                    <div id="modal1" class="modal">
+                     <div id="modal1" class="modal">
                         <div class = "modal-header">
-                            <h4 style = "padding-top: 10px;">Update Inventory</h4>
+                            <h4 style = "padding-top: 10px;">Update Item</h4>
                         </div>
                         <div class="modal-content">
 
-                            <form class = "col s12">
+                            <form class = "col s12" action="update" method="post">
                                 <div class="row">
                                     <div class="input-field col s4">
-                                        <input id="name" type="text" class="validate">
+                                        <input id="name" type="text" class="validate" name="item.strItemName">
                                         <label for="name">Input new item name:</label>
                                     </div>
                                     <div class="input-field col s4">
-                                        <input id="qty1" type="text" class="validate">
-                                        <label for="qty1">Input new item quantity:</label>
+                                        <input id="qty1" type="text" class="validate" name="item.dblItemPrice">
+                                        <label for="qty1">Input new item Price:</label>
                                     </div>
                                     <div class="input-field col s4">
-                                        <input id="desc1" type="text" class="validate">
+                                        <input id="desc1" type="text" class="validate" name="item.stItemDesc">
                                         <label for="desc1">Input new item description:</label>
                                     </div>
                                 </div>
+                                <button class="btn-large waves-effect waves-light" type="submit" name="action">SUBMIT
                             </form>
                             <br>
                             <br>
@@ -190,32 +242,47 @@
                             <br>
                             <br>
 
-                        </div>
-                        <div class="modal-footer">
+                        </div> 
+                        <!--  <div class="modal-footer">
                             <a class="waves-effect waves-light btn black right" style = "margin-right: 10px; width: 180px;"><i class="mdi-content-add-circle left"></i>Update</a>
-                        </div>
-                    </div>
+                        </div>-->
+                    </div><!-- 
                     <button data-target = "modal1" class="waves-effect waves-light modal-trigger black right" style = "margin-right: 10px; width: 180px; height: 35px; color: white; margin-top: 20px;"><i class="mdi-content-create left"></i>UPDATE</button>
+               	 -->
+=======
+                    </form>
+
+>>>>>>> 9cc96c6425c0b296418c271d94a19d6dd1c13e43:columbarium-web/WebContent/Forms/Inventory.html
                 </div>
             </div>
+        </div>
 
+<<<<<<< HEAD:columbarium-web/WebContent/Forms/Inventory.jsp
             <!-- Deactivate Item -->
             <div class = "col s12">
                 <div class = "aside aside z-depth-3" style = "margin-top: 50px;">
                     <div class = "header">
-                        <h4>Deactivate Items</h4>
+                        <h4>Deactivate Item</h4>
                     </div>
 
                     <!-- Select Item Name -->
                     <br>
                     <div class = "col s6" style = "padding-left: 20px;">
+                    <form action="deactivate" method="post">
                         <label>Select Item Name</label>
-                        <select>
-                            <option value="" disabled selected>Item Name:</option>
-                            <option value="1">Item One</option>
-                            <option value="2">Item Two</option>
-                            <option value="3">Item Three</option>
+                        <select name="strItemName">
+                            <c:if test="${itemList == null }">
+                        		<option value="" disabled selected>No items available</option>
+                        	</c:if>
+                        	<c:if test="${itemList != null }">
+	                        	<option value="" disabled selected>Item Name:</option>
+                        		<c:forEach items="${itemList }" var="item">
+		                            <option value="${item.strItemName }">${item.strItemName }</option>
+                        		</c:forEach>
+                        	</c:if>
                         </select>
+                        <button class="btn-large waves-effect waves-light" type="submit" name="action">Deactivate
+                        </form>
                     </div>
                     <br>
                     <br>
@@ -245,11 +312,28 @@
                             <a class="waves-effect waves-light btn black right" style = "margin-right: 10px; width: 180px;color:white;"><i class="mdi-content-add-circle left"></i>Confirm</a>
                         </div>
                     </div>
-                    <button data-target = "modal2" class="waves-effect waves-light modal-trigger black right" style = "margin-right: 10px; width: 180px; height: 35px; color: white; margin-top: 20px;"><i class="mdi-communication-dnd-on left"></i>DEACTIVATE</button>
+                   <!--  <button data-target = "modal2" class="waves-effect waves-light modal-trigger black right" style = "margin-right: 10px; width: 180px; height: 35px; color: white; margin-top: 20px;"><i class="mdi-communication-dnd-on left"></i>DEACTIVATE</button>
+                	 -->
                 </div>
+=======
+        <!-- Data Grid -->
+        <div class = "col s5">
+            <div class = "col s4 z-depth-2 " style = "margin-left: 60px; margin-top: 20px; width: 450px; height: 70px;">
+                <nav style = "height: 50px; margin-top: 10px; background-color: #00897b">
+                    <div class="nav-wrapper">
+                        <div>
+                            <div class="input-field"  style = "height: 50px;">
+                                <input id="search" type="search" required>
+                                <label for="search"><i class="material-icons">search</i></label>
+                                <i class="material-icons">close</i>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+>>>>>>> 9cc96c6425c0b296418c271d94a19d6dd1c13e43:columbarium-web/WebContent/Forms/Inventory.html
             </div>
-        </div>
 
+<<<<<<< HEAD:columbarium-web/WebContent/Forms/Inventory.jsp
         <!-- table -->
         <div class = "col s4">
             <table class = "striped z-depth-3" style = "width: 100%;">
@@ -258,22 +342,89 @@
                 <tr>
                     <th data-field="id">Item Code</th>
                     <th data-field="name">Item Name</th>
-                    <th data-field="name">Item Quantity</th>
+                    <th data-field="name">Item Price</th>
                     <th data-field="name">Item Description</th>
 
                 </tr>
                 </thead>
                 <tbody>
+                		<c:if test="${itemList == null }">
+                        	<td>No items available</td>
+                        </c:if>
+                        <c:if test="${itemList != null }">
+                       		<c:forEach items="${itemList }" var="item">
+                       		<tr>
+	                            <td>${item.itemId }</td>
+	                            <td>${item.strItemName }</td>
+	                            <td>P ${item.dblPrice }</td>
+	                            <td>${item.strItemDesc }</td>
+                			</tr>
+                       		</c:forEach>
+                        </c:if>
                 </tbody>
             </table>
+=======
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <div class = "aside z-depth-2" style = "margin-left: 60px; width: 450px; height: 310px; overflow: auto;">
+                <table class = "highlight z-depth-3" style = "margin-top: 10px; margin-left: 0px; width: 100%; height: 200px;">
+
+                    <thead class = "fixed-header">
+                    <tr>
+                        <th data-field="id">Item Name</th>
+                        <th data-field="name">Item Description</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <tr>
+                        <td>Item One</td>
+                        <td>Description One</td>
+                    </tr>
+
+                    <tr>
+                        <td>Item Two</td>
+                        <td>Description One</td>
+                    </tr>
+
+                    <tr>
+                        <td>Item Three</td>
+                        <td>Description One</td>
+                    </tr>
+
+                    <tr>
+                        <td>Item Four</td>
+                        <td>Description One</td>
+                    </tr>
+
+                    <tr>
+                        <td>Item Five</td>
+                        <td>Description One</td>
+                    </tr>
+                    <tr>
+                        <td>Item Six</td>
+                        <td>Description One</td>
+                    </tr>
+                    <tr>
+                        <td>Item Seven</td>
+                        <td>Description One</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+>>>>>>> 9cc96c6425c0b296418c271d94a19d6dd1c13e43:columbarium-web/WebContent/Forms/Inventory.html
         </div>
 
 
     </div>
-</form>
+</div>
 
 <!-- Footer -->
-<footer class="page-footer" style = "background-color: darkred;">
+<footer class="page-footer" style = "background-color: #ff8f00;">
     <div class="container">
         <div class="row">
             <div class="col l6 s12">
@@ -293,7 +444,7 @@
     </div>
     <div class="footer-copyright">
         <div class="container">
-            © 2014 Copyright Text
+            Â© 2014 Copyright Text
             <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
         </div>
     </div>

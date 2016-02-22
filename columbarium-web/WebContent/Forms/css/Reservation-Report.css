@@ -3,13 +3,17 @@
     src: url(../fonts/KGBlankSpaceSketch.ttf);
 }
 
-.nav-birdifly nav{
-    background-color: darkred;
+.navbar-leo nav{
+    background-color: #ff8f00;
+    color: white;
+    font-family: myFirstFont;
 }
 
+
 .aside {
-    margin-left: 280px;
-    width: 800px;
+    margin-left: 20px;
+    height: 620px;
+    width: 1300px;
 }
 
 h1 {
@@ -17,29 +21,32 @@ h1 {
     font-family: myFirstFont;
 }
 
-h4{
+h3{
     font-family: myFirstFont;
-    padding-left: 20px;
-    padding-top: 20px;
+    font-size: 10px;
+    padding-left: 30px;
 }
 
 .h{
     visibility: hidden;
 }
-
-p  {
+h2 {
     font-family: myFirstFont;
-    padding-left: 20px;
-    font-size: 10px;
-    padding-top: 0px;
-    color: white;
+    padding-left: 45px;
+    font-size: 40px;
 
+}
+
+h4 {
+    font-family: myFirstFont;
+    font-size: 40px;
+    padding-left: 50px;
 }
 
 h5 {
     font-family: myFirstFont;
     font-size: 20px;
-    padding-left: 20px;
+    padding-left: 10px;
 }
 
 h6{
@@ -47,24 +54,14 @@ h6{
     font-size: x-large;
 }
 
-h3 {
+.modal-header h3 {
     font-family: myFirstFont;
-    padding-top:0px;
+    font-size: 40px;
     padding-left: 20px;
-    font-size: 15px;
 }
-.dropdown-button{
-    background-color: darkred;
-    font-family: myFirstFont;
-    color: #ffffff;
-}
-#db-content, #normal-nav{
-    background-color: darkred;
-    font-family: myFirstFont;
-    color: #ffffff;
-}
-.dropdown-content{
-    margin-top: 55px;
+
+.dropdown-button {
+    margin-left: 10px;
 }
 
 /* label color */
@@ -72,53 +69,73 @@ h3 {
 }
 /* label focus color */
 .input-field input[type=text]:focus + label {
-    color: red;
+    color: mediumseagreen;
 }
 /* label underline focus color */
 .input-field input[type=text]:focus {
-    border-bottom: 1px solid red;
-    box-shadow: 0 1px 0 0 red;
+    border-bottom: 1px solid mediumseagreen;
+    box-shadow: 0 1px 0 0 mediumseagreen;
 }
 /* valid color */
 .input-field input[type=text].valid {
-    border-bottom: 1px solid red;
-    box-shadow: 0 1px 0 0 red;
+    border-bottom: 1px solid mediumseagreen;
+    box-shadow: 0 1px 0 0 mediumseagreen;
 }
 
-.labelpadding {
-    padding-left: 20px;
+
+.header {
+    background-color: #00897b;
+    height: 80px;
 }
 
-.align {
-    padding-left: 20px;
-}
-
-.inputpadding {
-    padding-left: 20px;
-}
-
-.header{
-    background: url(../img/black_pattern1.jpg) repeat;
+.header p {
     color: white;
-    height: 100px;
-    font-size: 40px;
-}
-
-.header h4{
-    color: white;
-    font-size: 40px;
-    padding-top: 10px;
-}
-
-.header p{
+    font-family: myFirstFont;
+    padding-left: 20px;
     font-size: 15px;
+}
+
+.header h4 {
+    color: white;
+    font-family: myFirstFont;
     padding-left: 20px;
+    padding-top: 5px;
+    font-size: 35px;
 }
 
 .modal-header {
-    background: url(../img/black_pattern1.jpg) repeat;
+    background-color: #ff8f00;
     color: white;
     height: 70px;
+}
+
+ul li a {
+    color:white;
+    font-size: 17px;
+}
+
+
+#dropdown1 li a{
+    color: white;
+    background-color: #ff8f00;
+}
+
+#dropdown2 li a{
+    color: white;
+    background-color: #ff8f00;
+}
+#dropdown3 li a{
+    color: white;
+    background-color: #ff8f00;
+}
+#dropdown4 li a{
+    color: white;
+    background-color: #ff8f00;
+}
+
+#dropdown5 li a{
+    color: white;
+    background-color: #ff8f00;
 }
 
 

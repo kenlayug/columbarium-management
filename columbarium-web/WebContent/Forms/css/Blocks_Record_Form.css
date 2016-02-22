@@ -5,14 +5,14 @@
 
 .navbar-leo nav{
     background-color: #ff8f00;
-    color: black;
+    color: white;
     font-family: myFirstFont;
 }
 
 
 .aside {
     margin-left: 20px;
-    height: 250px;
+    height: 355px;
     width: 750px;
 }
 
@@ -31,6 +31,12 @@ h2 {
     padding-left: 45px;
     font-size: 40px;
 
+}
+
+h4 {
+    font-family: myFirstFont;
+    font-size: 40px;
+    padding-left: 50px;
 }
 
 h5 {
@@ -59,17 +65,17 @@ h6{
 }
 /* label focus color */
 .input-field input[type=text]:focus + label {
-    color: red;
+    color: mediumseagreen;
 }
 /* label underline focus color */
 .input-field input[type=text]:focus {
-    border-bottom: 1px solid red;
-    box-shadow: 0 1px 0 0 red;
+    border-bottom: 1px solid mediumseagreen;
+    box-shadow: 0 1px 0 0 mediumseagreen;
 }
 /* valid color */
 .input-field input[type=text].valid {
-    border-bottom: 1px solid red;
-    box-shadow: 0 1px 0 0 red;
+    border-bottom: 1px solid mediumseagreen;
+    box-shadow: 0 1px 0 0 mediumseagreen;
 }
 
 .header h4 {
@@ -88,27 +94,33 @@ h6{
     height: 70px;
 }
 
-.dropdown-content{
-    background-color: #ff8f00;
-    font-family: myFirstFont;
-    color: black;
-}
-.dropdown-content li a{
-    background-color: #ff8f00;
-    font-family: myFirstFont;
-    color: black;
-}
-.dropdown-content li a:hover{
-    background-color: #ff8f00;
-    font-family: myFirstFont;
-    color: black;
-    text-shadow: 2px 2px #000000;
-}
-
 ul li a {
     color:white;
     font-size: 17px;
 }
 
+
+#dropdown1 li a{
+    color: white;
+    background-color: #ff8f00;
+}
+
+#dropdown2 li a{
+    color: white;
+    background-color: #ff8f00;
+}
+#dropdown3 li a{
+    color: white;
+    background-color: #ff8f00;
+}
+#dropdown4 li a{
+    color: white;
+    background-color: #ff8f00;
+}
+
+#dropdown5 li a{
+    color: white;
+    background-color: #ff8f00;
+}
 
 

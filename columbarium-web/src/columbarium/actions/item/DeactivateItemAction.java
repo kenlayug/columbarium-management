@@ -1,38 +1,25 @@
 package columbarium.actions.item;
 
-import java.util.List;
-
 import com.opensymphony.xwork2.Action;
 
 import columbarium.model.Item;
 
-public class UpdateItemAction implements Action{
+public class DeactivateItemAction implements Action{
 
-	private Item item;
 	private String strItemName;
 	
 	public void setStrItemName(String strItemName){
 		this.strItemName = strItemName;
 	}
-	
 	public String getStrItemName(){
-		return this.strItemName;
+		return strItemName;
 	}
 	
-	public Item getItem() {
-		return item;
-	}
-
-	public void setItem(Item item) {
-		this.item = item;
-	}
-
 	@Override
 	public String execute() throws Exception {
 		// TODO Auto-generated method stub
-		Item item = Item.searchItem(getStrItemName());
-		getItem().setItemId(item.getItemId());
-		return getItem().update();
+		Item item = Item.searchItem(strItemName);
+		return item.delete();
 	}
 
 }

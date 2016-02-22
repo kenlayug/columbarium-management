@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
 <html lang="en">
 <head>
     <title>SAD Forms</title>
@@ -18,10 +18,35 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
 
 
+
+    <meta name="description" content="Responsive Bootstrap Landing Page Template">
+    <meta name="keywords" content="Bootstrap, Landing page, Template, Registration, Landing">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Grayrids">
+    <title>SAD Forms</title>
+
+
+    <!-- Import Fonts -->
+    <style>
+        @font-face { font-family: JuneBug; src: url('fonts/KGBlankSpaceSketch.ttf'); }
+    </style>
+
+    <!-- Import -->
+    <script type="text/javascript" src="<%=request.getContextPath()%>/js/Services_Record_Form.js"></script>
+    <link rel = "stylesheet" href = "<%=request.getContextPath()%>/css/Services_Record_Form.css"/>
+
+
+    <!-- Magic -->
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/fonts/font-awesome.min.css" type="text/css" media="screen">
+    <!-- Include roboto.css to use the Roboto web font, material.css to include the theme and ripples.css to style the ripple effect -->
+    <link href="<%=request.getContextPath()%>/css/ripples.min.css" rel="stylesheet">
+
+    <link href="<%=request.getContextPath()%>/css/responsive.css" rel="stylesheet">
+    <link href="<%=request.getContextPath()%>/css/animate.min.css" rel="stylesheet">
     <!-- Import CSS/JS -->
     <script type="text/javascript" src="js/Services_Record_Form.js"></script>
     <link rel = "stylesheet" href = "css/Services_Record_Form.css"/>
-
 </head>
 <body>
 
@@ -412,29 +437,18 @@
 
                 <tbody>
                 <tr>
-                    <td>S001</td>
-                    <td>Cremation</td>
-                    <td>P 30,000.00</td>
-                    <td>Process of burning deceased body into ashes.</td>
-                    <td>I.D. of buyer, Burial Permit, Transfer Permit</td>
-
-                </tr>
-
-                <tr>
-                    <td>S002</td>
-                    <td>Inscription</td>
-                    <td>P 2,000.00</td>
-                    <td>Inscribed text/messages in urns/vault.</td>
-                    <td>Inscription sample, and urn/vault</td>
-
-                </tr>
-
-                <tr>
-                    <td>S003</td>
-                    <td>Body Crypts</td>
-                    <td>P 30,000.00</td>
-                    <td>Provide coffin and vault for the deceased.</td>
-                    <td>Death Certificate, Transfer Permit.</td>
+                	<c:if test="${serviceList == null }">
+                    	<td>No services available</td>
+                	</c:if>
+                	<c:if test="${serviceList != null }">
+                		<c:forEach items="${serviceList }" var="service">
+                			<td>${service.serviceId }</td>
+		                    <td>${service.strServiceName }</td>
+		                    <td>P ${service.dblPrice }</td>
+		                    <td>${service.strServiceDesc }</td>
+		                    <td>N/A</td>
+                		</c:forEach>
+                	</c:if>
                 </tr>
                 </tbody>
             </table>

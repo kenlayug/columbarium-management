@@ -131,4 +131,11 @@ public class Service {
 		return serviceService.searchServiceByName(service);
 	}
 	
+	public static Service searchService(String strServiceName){
+		Service service = new Service(strServiceName);
+		ServiceService serviceService = (ServiceService)ServletActionContext.getServletContext()
+				.getAttribute("serviceService");
+		return serviceService.searchService(service);
+	}
+	
 }

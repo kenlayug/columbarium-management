@@ -1,0 +1,127 @@
+@font-face {
+    font-family: myFirstFont;
+    src: url(../fonts/KGBlankSpaceSketch.ttf);
+}
+
+.navbar-leo nav{
+    background-color: darkred;
+    color: white;
+}
+
+
+.aside {
+    margin-left: 20px;
+    height: 340px;
+    width: 800px;
+}
+
+h1 {
+    padding-left: 100px;
+    font-family: myFirstFont;
+}
+
+.h{
+    visibility: hidden;
+}
+
+h2 {
+    font-family: myFirstFont;
+    padding-left: 45px;
+    font-size: 50px;
+
+}
+
+h6{
+    font-family: myFirstFont;
+    font-size: x-large;
+}
+
+h5 {
+    font-family: myFirstFont;
+    font-size: 20px;
+    padding-left: 10px;
+}
+
+h3 {
+    font-family: myFirstFont;
+    font-size: 50px;
+    padding-left: 10px;
+}
+
+.dropdown-button {
+    margin-left: 10px;
+}
+
+/* label color */
+.input-field label {
+}
+/* label focus color */
+.input-field input[type=text]:focus + label {
+    color: red;
+}
+/* label underline focus color */
+.input-field input[type=text]:focus {
+    border-bottom: 1px solid red;
+    box-shadow: 0 1px 0 0 red;
+}
+/* valid color */
+.input-field input[type=text].valid {
+    border-bottom: 1px solid red;
+    box-shadow: 0 1px 0 0 red;
+}
+
+.header {
+    background:  linear-gradient(rgba(244, 225, 136, 0.58), rgba(243, 216, 80, 0.44)),
+    url("../img/pattern1_karton.jpg");
+    height: 60px;
+    color: black;
+
+}
+
+.header {
+    background: url(../img/black_pattern1.jpg) repeat;
+    height: 70px;
+
+}
+
+.header h4{
+    font-family: myFirstFont;
+    padding-left: 20px;
+    padding-top: 10px;
+    font-size: 45px;
+    color: white;
+
+}
+
+.modal-header {
+    background: url(../img/black_pattern1.jpg) repeat;
+    height: 70px;
+    color: white;
+}
+
+.striped {
+    margin-top: 10px;
+    margin-left: 0px;
+}
+
+.dropdown-content{
+    background-color: darkred;
+    font-family: myFirstFont;
+    color: #ffffff;
+}
+.dropdown-content li a{
+    background-color: darkred;
+    font-family: myFirstFont;
+    color: #ffffff;
+}
+.dropdown-content li a:hover{
+    background-color: #670000;
+    font-family: myFirstFont;
+    color: #ffffff;
+    text-shadow: 2px 2px #000000;
+}
+
+
+
+
+
