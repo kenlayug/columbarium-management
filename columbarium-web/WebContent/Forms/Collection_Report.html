@@ -5,6 +5,7 @@
 
     <!-- Materialize -->
     <meta charset="UTF-8">
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <!--Import jQuery before materialize.js-->
@@ -16,15 +17,15 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
-
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
 
     <!-- Import CSS/JS -->
-    <script type="text/javascript" src="js/Collection_Transaction.js"></script>
-    <link rel = "stylesheet" href = "css/Collection_Transaction.css"/>
-
+    <script type="text/javascript" src="js/Collection-Report.js"></script>
+    <link rel = "stylesheet" href = "css/Collection-Report.css"/>
 </head>
 <body>
-
 <!-- Navbar -->
 <div class="navbar-fixed navbar-leo">
     <nav>
@@ -90,80 +91,27 @@
 
 <!-- Section -->
 <form class = col s12 >
-    <div class = "row">
-        <h2>Collection Transaction</h2>
-        <div class = "col s7">
+    <div class = "col s8">
 
-            <!-- Collection Form-->
-            <div class = "col s12">
-                <div class = "aside aside z-depth-4">
-                    <div class = "header">
-                        <h4>Collection Form</h4>
-                    </div>
-                    <br>
-
-                    <button data-target = "modal2" class="waves-effect waves-light modal-trigger red left" style = "margin-left: 20px; width: 180px; height: 35px; color: white; margin-top: 0px;">Collection Record</button>
-                    <br>
-                    <br>
-
-
-
-                    <!-- Date -->
-                    <div class="row" style = "padding-left: 10px;">
-                        <div class="input-field col s2">
-                            <label>Collection Date:</label>
-                        </div>
-                        <div class="input-field col s3">
-                            <input id="day" type="date" required="" aria-required="true" class="validate">
-                        </div>
-                    </div>
-
-                    <!-- Customer Information -->
-                    <div class = "inputpadding col s12">
-                        <label style = "padding-left: 10px;">Customer Name:</label>
-                        <div class="row">
-                            <div class="input-field col s4">
-                                <input id="fname" type="text" class="validate">
-                                <label for="fname" data-error = "wrong" data-success = "right">First Name</label>
-                            </div>
-                            <div class="input-field col s4">
-                                <input id="mname" type="text" class="validate">
-                                <label for="mname">Middle Name</label>
-                            </div>
-                            <div class="input-field col s4">
-                                <input id="lname" type="text" class="validate">
-                                <label for="lname">Last Name</label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <form class = "col s12">
-                        <div class="row" style = "padding-left: 10px;">
-                            <div class="input-field col s6">
-                                <input id="amt" type="text" class="validate">
-                                <label for="amt">Service Amount:</label>
-                            </div>
-                            <div class="input-field col s6">
-                                <input id="bal" type="text" class="validate">
-                                <label for="bal">Collection Amount:</label>
-                            </div>
-                        </div>
-                    </form>
-                    <a class="waves-effect waves-light btn red right" style = "margin-right: 10px; width: 180px;  margin-top: 10px;"><i class="mdi-content-add-circle left"></i>Done</a>
+        <!-- Collection Report -->
+        <div class = "col s12">
+            <div class = "aside aside z-depth-3">
+                <div class = "header">
+                    <h4>Collection Report</h4>
+                    <p>Contains yearly records of collection transaction.</p>
                 </div>
-            </div>
-        </div>
 
+                <div class = "col s12">
+                    <div class = "row">
+                        <div class = "col s6">
+                <h4 style = "font-size: 35px; padding-left: 30px;">2016-2017</h4>
+                <h3>Total Number of past due accounts: 5</h3>
+                <h3>Total Number of paid accounts on time: 5</h3>
+                <h3>Percentage increased in past due account compare to last year: 1%</h3>
 
-        <!-- Modal Structure -->
-        <div id="modal2" class="modal">
-            <div class = "modal-header fixed">
-                <h4 style = "font-size: 40px;">Collection Record</h4>
-            </div>
-            <div class="modal-content">
                 <!-- table -->
-                <div class = "col s5" style = "width: 50px;">
-                    <table class = "striped z-depth-4" style = "width: 650px; margin-top: 20px; margin-left: 20px;">
+                    <div style = "margin-left: 0px; width: 600px; height: 300px; overflow: auto;">
+                    <table class = "striped z-depth-4" style = "width: 550px; margin-top: 0px; margin-left: 20px;">
 
                         <thead>
                         <tr>
@@ -220,45 +168,79 @@
                         </tbody>
                     </table>
                 </div>
+              </div>
 
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
+                <div class = "col s6">
+                <h4 style = "padding-left: 30px; font-size: 35px;">2015-2016</h4>
+                <h3>Total Number of past due accounts: 5</h3>
+                <h3>Total Number of paid accounts on time: 5</h3>
+                <h3>Percentage increased in past due account compare to last year: 1%</h3>
 
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
+                <!-- table -->
+                    <div style = "margin-left: 0px; width: 600px; height: 300px; overflow: auto;">
+                    <table class = "striped z-depth-4" style = "width: 550px; margin-top: 0px; margin-left: 20px;">
+
+                        <thead>
+                        <tr>
+                            <th data-field="id">Collection Code</th>
+                            <th data-field="name">Collection Date</th>
+                            <th data-field="id">Customer Name</th>
+                            <th data-field="name">Customer Status</th>
+                            <th data-field="name">Service Amount</th>
+                            <th data-field="name">Collection Amount</th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        <tr>
+                            <td>CC01</td>
+                            <td>May 24, 2016</td>
+                            <td>Grace</td>
+                            <td>5 days left</td>
+                            <td>P 120,000.00</td>
+                            <td>P 5,000.00</td>
+                        </tr>
+                        <tr>
+                            <td>CC02</td>
+                            <td>May 27, 2016</td>
+                            <td>Ben</td>
+                            <td>8 days left</td>
+                            <td>P 150,000.00</td>
+                            <td>P 10,000.00</td>
+                        </tr>
+                        <tr>
+                            <td>CC03</td>
+                            <td>February 5, 2016</td>
+                            <td>Ana</td>
+                            <td>Past due since 5 days</td>
+                            <td>P 220,000.00</td>
+                            <td>P 15,000.00</td>
+                        </tr>
+                        <tr>
+                            <td>CC04</td>
+                            <td>January 20, 2015</td>
+                            <td>Mirriam</td>
+                            <td>Past due since 10 days</td>
+                            <td>P 300,000.00</td>
+                            <td>P 25,000.00</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                </div>
+                </div>
+                </div>
+
+
+
+
+
+                <a class="waves-effect waves-light btn black right" style = "margin-right: 30px;  margin-top: 30px;">Confirm</a>
+
+
             </div>
-            <div class="modal-footer">
-                <a class="waves-effect waves-light btn black right" style = "margin-right: 10px; width: 180px;  margin-top: 10px;"><i class="mdi-content-add-circle left"></i>Done</a>
-            </div>
+
         </div>
-
-    </div>
-    </div>
-    </div>
 
 
     </div>

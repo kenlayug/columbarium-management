@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reservation_Report</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+
+    <!-- Import File -->
+    <script type="text/javascript" src="js/Reservation-Report.js"></script>
+    <link rel = "stylesheet" href = "css/Reservation-Report.css"/>
+
+</head>
+<body>
+
+<div class="navbar-fixed navbar-leo">
+    <nav>
+        <div class="nav-wrapper">
+            <ul id="maintenance" class="dropdown-content">
+                <li><a href='Inventory.html' id="db-content"><span>INVENTORY</span></a></li>
+                <li><a href='Services_Record_Form.html' id="db-content"><span>SERVICE</span></a></li>
+                <li><a href='Package_Record_Form.html' id="db-content"><span>PACKAGE</span></a></li>
+                <li><a href='Building_Record_Form.html' id="db-content"><span>BUILDING</span></a></li>
+                <li><a href='Floor_Record_Form.html' id="db-content"><span>FLOOR</span></a></li>
+                <li><a href='Blocks_Record_Form.html' id="db-content"><span>BLOCK</span></a></li>
+                <li><a href="vaults.html" id="db-content"><span>VAULTS</span></a></li>
+                <li><a class="last" href="FullBodyCrypts.html" id="db-content"><span>FULL BODY CRYPTS</span></a></li>
+            </ul>
+            <ul id="transaction" class="dropdown-content">
+                <li><a href='Customer.html' id="db-content"><span>CUSTOMER</span></a></li>
+                <li><a href='Reservation_Transaction.html' id="db-content"><span>RESERVATION</span></a></li>
+                <li><a href='scheduling.html' id="db-content"><span>SCHEDULING</span></a></li>
+                <li><a href='Collection_Transaction.html' id="db-content"><span>COLLECTION</span></a></li>
+                <li><a class="last" href="UnitOwnership.html" id="db-content"><span>TRANSFERRING</span></a></li>
+            </ul>
+            <ul id="utilities" class="dropdown-content">
+                <li><a class="last" href="Employee.html" id="db-content"><span>EMPLOYEE</span></a></li>
+            </ul>
+            <ul id="report" class="dropdown-content">
+                <li><a href='Reservation-Report.html' id="db-content"><span>RESERVATION RECORD</span></a></li>
+                <li><a href='scheduling-report.html' id="db-content"><span>SCHEDULING RECORD</span></a></li>
+                <li><a href='Collection-Report.html' id="db-content"><span>COLLECTION RECORD</span></a></li>
+                <li><a class="last" href="transferring-report.html" id="db-content"><span>TRANSFERRING RECORD</span></a></li>
+            </ul>
+            <nav>
+                <div class="nav-wrapper">
+                    <a href="#!" class="brand-logo">Logo</a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a class="dropdown-button" href="#!" data-activates="maintenance" id="db-content">Maintenance<i class="material-icons right">arrow_drop_down</i></a></li>
+                        <li><a class="dropdown-button" href="#!" data-activates="transaction" id="db-content">Transaction<i class="material-icons right">arrow_drop_down</i></a></li>
+                        <li><a href="#" id="normal-nav">Queries</a></li>
+                        <li><a class="dropdown-button" href="#!" data-activates="report" id="db-content">Reports<i class="material-icons right">arrow_drop_down</i></a></li>
+                        <li><a class="dropdown-button" href="#!" data-activates="utilities" id="db-content">Utilities<i class="material-icons right">arrow_drop_down</i></a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </nav>
+</div>
+
+
+        <!-- Reservation Report -->
+        <div class = "col s12">
+            <div class = "aside aside z-depth-3">
+                <div class = "header">
+                    <h4>Reservation Report</h4>
+                    <p>Contains yearly records of reservation transaction.</p>
+
+                </div>
+
+                <div class = "row">
+                    <div class = "col s6">
+                <h4 style = "font-size: 35px; padding-left: 30px;">2016-2017</h4>
+                <h3>Total Number of Reservation: 7</h3>
+                <h3>Percentage increased compare to last year: 2%</h3>
+
+                <!-- table -->
+                    <div style = "margin-left: 0px; width: 630px; height: 300px; overflow: auto;">
+                    <table class = "striped  z-depth-3" style = "margin-left: 20px; width: 750px;">
+
+                        <thead>
+                        <tr>
+                            <th data-field="name">Vault Code</th>
+                            <th data-field="name">Vault Type</th>
+                            <th data-field="name">Vault Status</th>
+                            <th data-field="name">Number of Content</th>
+                            <th data-field="name">Available Number of Content</th>
+                            <th data-field="name">Vault Content</th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        <tr>
+                            <td>V001</td>
+                            <td>Full Body</td>
+                            <td>Full</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>Deceased one</td>
+
+                        </tr>
+
+                        <tr>
+                            <td>V002</td>
+                            <td>Columbary Vault</td>
+                            <td>Occupied</td>
+                            <td>5</td>
+                            <td>2</td>
+                            <td>Deceased one, Deceased two, Deceased three, Deceased four, Deceased five</td>
+                        </tr>
+
+                        <tr>
+                            <td>V003</td>
+                            <td>Columbary Vault</td>
+                            <td>Vacant</td>
+                            <td>0</td>
+                            <td>6</td>
+                            <td></td>
+
+                        </tr>
+
+                        <tr>
+                            <td>V004</td>
+                            <td>Full Body</td>
+                            <td>Vacant</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td>V005</td>
+                            <td>Full Body</td>
+                            <td>Full</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>Deceased one</td>
+                        </tr>
+                        <tr>
+                            <td>V006</td>
+                            <td>Columbary Vault</td>
+                            <td>Full</td>
+                            <td>6</td>
+                            <td>6</td>
+                            <td>Deceased one, Deceased two, Deceased three, Deceased four,  Deceased five,  Deceased six, Deceased seven</td>
+
+                        </tr>
+                        <tr>
+                            <td>V007</td>
+                            <td>Columbary Vault</td>
+                            <td>Vacant</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>Customer one, Customer two, Customer three</td>
+
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                        </div>
+
+
+
+                <div class = "col s6">
+                <h4 style = "font-size: 35px; padding-left: 30px;">2015-2016</h4>
+                <h3>Total Number of Reservation: 5</h3>
+                <h3>Percentage increased compare to last year: 1%</h3>
+
+                <!-- table -->
+                    <div style = "margin-left: 0px; width: 630px; height: 300px; overflow: auto;">
+                    <table class = "striped  z-depth-3" style = "margin-left: 20px; width: 750px;">
+
+                        <thead>
+                        <tr>
+                            <th data-field="name">Vault Code</th>
+                            <th data-field="name">Vault Type</th>
+                            <th data-field="name">Vault Status</th>
+                            <th data-field="name">Number of Content</th>
+                            <th data-field="name">Available Number of Content</th>
+                            <th data-field="name">Vault Content</th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        <tr>
+                            <td>V001</td>
+                            <td>Full Body</td>
+                            <td>Full</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>Deceased one</td>
+
+                        </tr>
+
+                        <tr>
+                            <td>V002</td>
+                            <td>Columbary Vault</td>
+                            <td>Occupied</td>
+                            <td>5</td>
+                            <td>2</td>
+                            <td>Deceased one, Deceased two, Deceased three, Deceased four, Deceased five</td>
+                        </tr>
+
+                        <tr>
+                            <td>V003</td>
+                            <td>Columbary Vault</td>
+                            <td>Vacant</td>
+                            <td>0</td>
+                            <td>6</td>
+                            <td></td>
+
+                        </tr>
+
+                        <tr>
+                            <td>V004</td>
+                            <td>Full Body</td>
+                            <td>Vacant</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td>V005</td>
+                            <td>Full Body</td>
+                            <td>Full</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>Deceased one</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <button name = "action" class="waves-effect waves-light btn red right" style = "margin-right: 10px; width: 150px;color:white; margin-top: 40px;">Confirm</button>
+
+            </div>
+            </div>
+            </div>
+            </div>
+
+
+<footer class="page-footer" style = "background-color: #ff8f00;">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <h5 class="white-text">Footer Content</h5>
+                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            © 2014 Copyright Text
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+        </div>
+    </div>
+</footer>
+
+
+</body>
+</html>

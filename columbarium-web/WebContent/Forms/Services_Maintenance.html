@@ -1,4 +1,4 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <title>SAD Forms</title>
@@ -18,35 +18,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
 
 
-
-    <meta name="description" content="Responsive Bootstrap Landing Page Template">
-    <meta name="keywords" content="Bootstrap, Landing page, Template, Registration, Landing">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="author" content="Grayrids">
-    <title>SAD Forms</title>
-
-
-    <!-- Import Fonts -->
-    <style>
-        @font-face { font-family: JuneBug; src: url('fonts/KGBlankSpaceSketch.ttf'); }
-    </style>
-
-    <!-- Import -->
-    <script type="text/javascript" src="<%=request.getContextPath()%>/js/Services_Record_Form.js"></script>
-    <link rel = "stylesheet" href = "<%=request.getContextPath()%>/css/Services_Record_Form.css"/>
-
-
-    <!-- Magic -->
-    <!-- Font Awesome CSS -->
-    <link rel="stylesheet" href="<%=request.getContextPath()%>/fonts/font-awesome.min.css" type="text/css" media="screen">
-    <!-- Include roboto.css to use the Roboto web font, material.css to include the theme and ripples.css to style the ripple effect -->
-    <link href="<%=request.getContextPath()%>/css/ripples.min.css" rel="stylesheet">
-
-    <link href="<%=request.getContextPath()%>/css/responsive.css" rel="stylesheet">
-    <link href="<%=request.getContextPath()%>/css/animate.min.css" rel="stylesheet">
     <!-- Import CSS/JS -->
     <script type="text/javascript" src="js/Services_Record_Form.js"></script>
     <link rel = "stylesheet" href = "css/Services_Record_Form.css"/>
+
 </head>
 <body>
 
@@ -112,16 +87,26 @@
     <li class="divider"></li>
 </ul>
 
-
+<!-- Floating Button -->
+<div class="fixed-action-btn horizontal" style="position: absolute; margin-right: 550px; margin-bottom: 80px;">
+    <button name = "action" class="btn-floating btn-large red"><i class="large material-icons">add</i>
+    </button>
+    <ul>
+        <li><button name = "action" class="btn-floating black"><i class="material-icons">delete</i></button></li>
+        <li><button name = "action" class="btn-floating green darken-1"><i class="material-icons">mode_edit</i></button></li>
+    </ul>
+</div>
 
 <!-- Section -->
-<h2>Service Maintenance</h2>
-<form class = col s12 >
+
+<div class = "col s12" >
     <div class = "row">
-        <div class = "col s8">
+        <div class = "col s7">
+            <h2>Service Maintenance</h2>
+
             <!-- Create Service -->
             <div class = "col s12">
-                <div class = "aside aside z-depth-3" style = "height: 465px;">
+                <div class = "aside aside z-depth-3">
                 <div class = "header">
                 <h4>Create Service</h4>
                     </div>
@@ -137,7 +122,6 @@
                                 <label for="price">Service Price:</label>
                             </div>
                         </div>
-
                     </form>
 
                     <div class="row">
@@ -150,25 +134,21 @@
                             </div>
                         </form>
 
-                        <button data-target = "modal3" class="waves-effect waves-light modal-trigger black left" style = "margin-left: 20px; width: 180px; height: 35px; color: white; margin-top: 0px; font-size: 14px;"><i class="mdi-content-create left"></i>REQUIREMENTS</button>
+                        <button data-target = "modal3" class="waves-effect waves-light modal-trigger red left" style = "margin-left: 20px; width: 180px; height: 35px; color: white; margin-bottom: 50px; font-size: 14px;"></i>CHOOSE REQUIREMENTS</button>
                     </div>
-
-
-
-                    <a class="waves-effect waves-light btn black right" style = "margin-right: 10px; width: 180px;  margin-top: 40px;"><i class="mdi-content-add-circle left"></i>Create</a>
                 </div>
+            </div>
             </div>
 
             <!-- Modal Structure -->
             <div id="modal3" class="modal">
                 <div class="modal-content">
-                    <h3>Update Service</h3>
-                    <br>
-                    <form class = "col s12">
 
                         <div class = "col s12">
+                            <h6>List of Requirements</h6>
+                            <br>
                             <div class="row">
-                                <div class = col >
+                                <div class = "col s6" >
                                     <form action="#">
                                         <h6>Columbary Vaults</h6>
                                         <p>
@@ -191,7 +171,7 @@
                                         <br>
 
 
-                                        <h1>Additional Requirements:</h1>
+                                        <h6>Additional Requirements:</h6>
                                         <h1>(Authority to cremate if informant is:)</h1>
                                         <p>
                                             <input type="checkbox" id="test811" />
@@ -215,12 +195,9 @@
                                         </p>
                                     </form>
                                 </div>
-                                <br>
-                                <br>
-                                <div class = col>
+
+                                <div class = "col s6">
                                     <form action="#">
-                                        <br>
-                                        <br>
                                         <h6>Full Body</h6>
                                         <p>
                                             <input type="checkbox" id="test0111" />
@@ -268,198 +245,104 @@
                         <br>
                         <br>
                         <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
 
-                </div>
                 <div class="modal-footer">
-                    <a class="waves-effect waves-light btn black right" style = "margin-right: 10px; width: 180px;"><i class="mdi-content-add-circle left"></i>Update</a>
+                    <button name = "action" class="waves-effect waves-light btn red right" style = "margin-right: 0px; width: 130px;">CONFIRM</button>
                 </div>
             </div>
+        </div>
 
 
-
-            <!-- Update Service -->
-            <div class = "col s12">
-                <div class = "aside aside z-depth-3" style = "margin-top: 50px;">
-                    <div class = "header">
-                        <h4>Update Service</h4>
-                    </div>
-
-                    <!-- Select Service Name -->
-                    <br>
-                    <div class = "col s6" style = "padding-left: 20px;">
-                        <label>Select Service Name</label>
-                        <select>
-                            <option value="" disabled selected>Service Name:</option>
-                            <option value="1">Service One</option>
-                            <option value="2">Service Two</option>
-                            <option value="3">Service Three</option>
-                        </select>
-                    </div>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-
-
-                    <!-- Modal Structure -->
-                    <div id="modal1" class="modal">
-                        <div class = "modal-header fixed">
-                            <h4 style = "padding-top: 10px;">Update Service</h4>
-                        </div>
-                        <div class="modal-content">
-                            <form class = "col s12">
-                                <div class="row">
-                                    <br>
-                                    <br>
-                                    <div class="input-field col s4">
-                                        <input id="name" type="text" class="validate">
-                                        <label for="name">New service name:</label>
-                                    </div>
-                                    <div class="input-field col s4">
-                                        <input id="price1" type="text" class="validate">
-                                        <label for="price1">New service price:</label>
-                                    </div>
-                                    <div class="input-field col s4">
-                                        <input id="desc" type="text" class="validate">
-                                        <label for="desc">New building description:</label>
-                                    </div>
+            <!-- Data Grid -->
+            <div class = "col s5">
+                <div class = "col s4 z-depth-2 " style = "margin-left: 60px; margin-top: 20px; width: 450px; height: 70px;">
+                    <nav style = "height: 50px; margin-top: 10px; background-color: #00897b">
+                        <div class="nav-wrapper">
+                            <div>
+                                <div class="input-field"  style = "height: 50px;">
+                                    <input id="search" type="search" required>
+                                    <label for="search"><i class="material-icons">search</i></label>
+                                    <i class="material-icons">close</i>
                                 </div>
-                            </form>
-
-                            <div class="row">
-                                <form class="col s12">
-                                    <div class="row">
-                                        <div class="input-field col s12">
-                                            <textarea id="textarea2" style = "color:red;" class = "materialize-textarea"></textarea>
-                                            <label for="textarea2">Service Description:</label>
-                                        </div>
-                                    </div>
-                                </form>
-
-                                <button data-target = "modal3" class="waves-effect waves-light modal-trigger black left" style = "margin-left: 10px; width: 180px; height: 35px; color: white; margin-top: 50px; font-size: 14px;"><i class="mdi-content-create left"></i>REQUIREMENTS</button>
                             </div>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-
                         </div>
-                        <div class="modal-footer">
-                            <a class="waves-effect waves-light btn black right" style = "margin-right: 10px; width: 180px;"><i class="mdi-content-add-circle left"></i>Update</a>
-                        </div>
-                    </div>
-                    <button data-target = "modal1" class="waves-effect waves-light modal-trigger black right" style = "margin-right: 10px; width: 180px; height: 35px; color: white; margin-top: 35px;"><i class="mdi-content-create left"></i>UPDATE</button>
+                    </nav>
                 </div>
-            </div>
 
-            <!-- Deactivate Service -->
-            <div class = "col s12">
-                <div class = "aside aside z-depth-3"  style = "margin-top: 50px;">
-                    <div class = "header">
-                        <h4>Deactivate Service</h4>
-                    </div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
 
-                    <!-- Select Service Name -->
-                    <br>
-                    <div class = "col s6" style = "padding-left: 20px;">
-                        <label>Select Service Name</label>
-                        <select>
-                            <option value="" disabled selected>Service Name:</option>
-                            <option value="1">Service One</option>
-                            <option value="2">Service Two</option>
-                            <option value="3">Service Three</option>
-                        </select>
-                    </div>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
+                <div class = "aside z-depth-2" style = "margin-left: 60px; width: 450px; height: 385px; overflow: auto;">
+                    <table class = "highlight z-depth-3" style = "margin-top: 10px; margin-left: 0px; width: 100%; height: 200px;">
 
-                    <!-- Modal Structure -->
-                    <div id="modal2" class="modal">
-                        <div class = "header">
-                            <h4>Deactivate Service</h4>
-                        </div>
-                        <div class="modal-content">
-                            <h6>Are you sure you want to deactivate block?</h6>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                        </div>
-                        <div class="modal-footer">
-                            <a class="waves-effect waves-light btn black right" style = "margin-right: 10px; width: 180px;color:white;"><i class="mdi-content-add-circle left"></i>Confirm</a>
-                        </div>
-                    </div>
-                    <button data-target = "modal2" class="waves-effect waves-light modal-trigger black right" style = "margin-right: 10px; width: 180px; height: 35px; color: white; margin-top: 35px;"><i class="mdi-communication-dnd-on left"></i>DEACTIVATE</button>
+                        <thead class = "fixed-header">
+                        <tr>
+                            <th data-field="id">Building name</th>
+                            <th data-field="name">No. of floors</th>
+                            <th data-field="name">No. of blocks</th>
+                            <th data-field="name">Block/s name</th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        <tr>
+                            <td>Building one</td>
+                            <td>3</td>
+                            <td>6</td>
+                            <td>Block one, Block two, Block three, Block four, Block five, Block six</td>
+                        </tr>
+
+                        <tr>
+                            <td>Building two</td>
+                            <td>5</td>
+                            <td>3</td>
+                            <td>Block one, Block two, Block three</td>
+                        </tr>
+
+                        <tr>
+                            <td>Building three</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+
+                        <tr>
+                            <td>Building four</td>
+                            <td>1</td>
+                            <td>3</td>
+                            <td>Block one, Block two, Block three</td>
+                        </tr>
+
+                        <tr>
+                            <td>Building five</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Building six</td>
+                            <td>3</td>
+                            <td>2</td>
+                            <td>Block one, Block two</td>
+                        </tr>
+                        <tr>
+                            <td>Building seven</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
-            </div>
         </div>
-
-        <!-- table -->
-        <div class = "col s4">
-            <table class = "striped z-depth-3" style = "margin-top: 20px; margin-left: 0px;">
-
-                <thead>
-                <tr>
-                    <th data-field="id">Service Code</th>
-                    <th data-field="name">Service Name</th>
-                    <th data-field="name">Service Price</th>
-                    <th data-field="name">Service Description</th>
-                    <th data-field="name">Service Requirements</th>
-                </tr>
-                </thead>
-
-                <tbody>
-                <tr>
-                	<c:if test="${serviceList == null }">
-                    	<td>No services available</td>
-                	</c:if>
-                	<c:if test="${serviceList != null }">
-                		<c:forEach items="${serviceList }" var="service">
-                			<td>${service.serviceId }</td>
-		                    <td>${service.strServiceName }</td>
-		                    <td>P ${service.dblPrice }</td>
-		                    <td>${service.strServiceDesc }</td>
-		                    <td>N/A</td>
-                		</c:forEach>
-                	</c:if>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-
-
     </div>
-</form>
+
+
+
+
 
 <!-- Footer -->
-<footer class="page-footer" style = "background-color: darkred;">
+<footer class="page-footer" style = "background-color: #ff8f00">
     <div class="container">
         <div class="row">
             <div class="col l6 s12">
@@ -484,6 +367,10 @@
         </div>
     </div>
 </footer>
+
+
+
+
 
 </body>
 </html>
