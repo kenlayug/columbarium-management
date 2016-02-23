@@ -91,8 +91,8 @@
     <button name = "action" class="btn-floating btn-large red"><i class="large material-icons">add</i>
     </button>
     <ul>
-        <li><button name = "action" class="btn-floating black"><i class="material-icons">delete</i></button></li>
-        <li><button name = "action" class="btn-floating green darken-1"><i class="material-icons">mode_edit</i></button></li>
+        <li><button name = "action" class="modal-trigger btn-floating black" href = "#modal2"><i class="material-icons">delete</i></button></li>
+        <li><button name = "action" class="modal-trigger btn-floating green darken-1" href = "#modal1"><i class="material-icons">mode_edit</i></button></li>
     </ul>
 </div>
 
@@ -185,9 +185,20 @@
         <!-- Modal Update -->
         <div id="modal1" class="modal">
             <div class = "modal-header">
-                <h4>Update Block</h4>
+                <h4>Update Package</h4>
             </div>
             <div class="modal-content">
+
+                <div class = "col s6" style = "padding-left: 20px;">
+                    <label>Select Package Name to Update</label>
+                    <select>
+                        <option value="" disabled selected>Package Name:</option>
+                        <option value="1">Package One</option>
+                        <option value="2">Package Two</option>
+                        <option value="3">Package Three</option>
+                    </select>
+                </div>
+
 
                 <div class = "col s12">
                     <div class="row" style = "padding-left: 10px;">
@@ -267,48 +278,19 @@
         <!-- Modal Deactivate -->
         <div id="modal2" class="modal">
             <div class = "modal-header">
-                <h4>Deactivate Block</h4>
+                <h4>Deactivate Package</h4>
             </div>
             <div class="modal-content">
-
-                <form class = "col s12">
-                    <div class="row">
-                        <!-- Select Floor Name -->
-                        <div class = "col s6" style = "padding-left: 20px;">
-                            <label>Select Building Name</label>
-                            <select>
-                                <option value="" disabled selected>Building Name:</option>
-                                <option value="1">Building One</option>
-                                <option value="2">Building Two</option>
-                                <option value="3">Building Three</option>
-                            </select>
-                        </div>
-                        <!-- Select Floor Name -->
-                        <div class = "col s6" style = "padding-left: 20px;">
-                            <label>Select Floor Name</label>
-                            <select>
-                                <option value="" disabled selected>Floor Name:</option>
-                                <option value="1">Floor One</option>
-                                <option value="2">Floor Two</option>
-                                <option value="3">Floor Three</option>
-                            </select>
-                        </div>
-                    </div>
-                </form>
-
-                <form class = "col s12">
-                    <div class="row">
-                        <div class = "col s6" style = "padding-left: 20px;">
-                            <label>Select Block Name to Deactivate:</label>
-                            <select>
-                                <option value="" disabled selected>Block Name:</option>
-                                <option value="1">Block One</option>
-                                <option value="2">Block Two</option>
-                                <option value="3">Block Three</option>
-                            </select>
-                        </div>
-                    </div>
-                </form>
+                <div class = "col s6" style = "padding-left: 20px;">
+                    <label>Select Package Name to Deactivate</label>
+                    <select>
+                        <option value="" disabled selected>Package Name:</option>
+                        <option value="1">Package One</option>
+                        <option value="2">Package Two</option>
+                        <option value="3">Package Three</option>
+                    </select>
+                </div>
+                <br><br><br><br>
             </div>
             <div class="modal-footer">
                 <button name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
