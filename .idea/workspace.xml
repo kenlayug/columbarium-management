@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dd7de87f-0dc6-4bd5-9494-5163b436739e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/columbarium-web/WebContent/Forms/Blocks_Maintenance.html" afterPath="$PROJECT_DIR$/columbarium-web/WebContent/Forms/Blocks_Maintenance.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/columbarium-web/WebContent/Forms/Item_Maintenance.jsp" afterPath="$PROJECT_DIR$/columbarium-web/WebContent/Forms/Item_Maintenance.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/columbarium-web/WebContent/css/Blocks_Record_Form.css" afterPath="$PROJECT_DIR$/columbarium-web/WebContent/css/Blocks_Record_Form.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/columbarium-web/WebContent/css/Inventory_Form.css" afterPath="$PROJECT_DIR$/columbarium-web/WebContent/css/Inventory_Form.css" />
-    </list>
+    <list default="true" id="dd7de87f-0dc6-4bd5-9494-5163b436739e" name="Default" comment="" />
     <ignored path="columbarium-management.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -781,12 +775,12 @@
       <workItem from="1456080122252" duration="8359000" />
       <workItem from="1456099063097" duration="35817000" />
       <workItem from="1456173177949" duration="5862000" />
-      <workItem from="1456181088144" duration="5932000" />
+      <workItem from="1456181088144" duration="6021000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="148571000" />
+    <option name="totallyTimeSpent" value="148660000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
