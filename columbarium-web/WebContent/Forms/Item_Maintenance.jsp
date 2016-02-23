@@ -153,49 +153,54 @@
                 <h4>Update Item</h4>
             </div>
             <div class="modal-content">
+                <form class = "col s12" action="update" method="post">
 
-                <div class = "col s12">
-                    <div class = "col s6" style = "padding-left: 20px;">
-                        <label>Select Item Name to Update:</label>
-                        <select>
-                            <option value="" disabled selected>Item Name:</option>
-                            <option value="1">Item One</option>
-                            <option value="2">Item Two</option>
-                            <option value="3">Item Three</option>
-                        </select>
-                    </div>
-                </div>
+	                <div class = "col s12">
+	                    <div class = "col s6" style = "padding-left: 20px;">
+	                        <label>Select Item Name to Update:</label>
+	                        <c:if test="${itemList == null}">
+	                        	<label>No item available.</label>
+	                        </c:if>
+	                        <c:if test="${itemList != null}">
+		                        <select name="strItemName">
+		                            <option value="" disabled selected>Item Name:</option>
+									<c:forEach items="${itemList }" var="item">
+										<option value="${item.strItemName}">${item.strItemName}</option>
+									</c:forEach>
+		                        </select>
+	                        </c:if>
+	                    </div>
+	                </div>	
 
-                <div class = "col s12">
-                    <div class = "row">
-                        <div style = "padding-left: 10px;">
-                            <div class="input-field col s6">
-                                <input id="itemNameUpdate" type="text" class="validate" name="item.strItemName">
-                                <label for="itemNameUpdate" data-error = "wrong" data-success = "right">New Item Name</label>
-                            </div>
-                        </div>
-                        <div style = "padding-left: 10px;">
-                            <div class="input-field col s6">
-                                <input id="itemPriceUpdate" type="text" class="validate" name="item.strItemName">
-                                <label for="itemPriceUpdate" data-error = "wrong" data-success = "right">New Item Price</label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+	                <div class = "col s12">
+	                    <div class = "row">
+	                        <div style = "padding-left: 10px;">
+	                            <div class="input-field col s6">
+	                                <input id="itemNameUpdate" type="text" class="validate" name="item.strItemName">
+	                                <label for="itemNameUpdate" data-error = "wrong" data-success = "right">New Item Name</label>
+	                            </div>
+	                        </div>
+	                        <div style = "padding-left: 10px;">
+	                            <div class="input-field col s6">
+	                                <input id="itemPriceUpdate" type="text" class="validate" name="item.dblPrice">
+	                                <label for="itemPriceUpdate" data-error = "wrong" data-success = "right">New Item Price</label>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
 
-                <form class = "col s12">
                     <div class="row">
                         <div class="input-field col s12">
                             <input id="descUpdate" type="text" class="validate" name="item.strItemDesc">
                             <label for="descUpdate">New Item Description</label>
                         </div>
                     </div>
-                </form>
 
             </div>
             <div class="modal-footer">
                 <button name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
-                <button name = "action" class="waves-effect waves-light btn red" href = "Blocks_Maintenance.html">Cancel</button>
+                </form>
+                <button class="waves-effect waves-light btn red" href = "Blocks_Maintenance.html">Cancel</button>
             </div>
         </div>
 
@@ -206,23 +211,29 @@
                 <h4>Deactivate Item</h4>
             </div>
             <div class="modal-content">
-
-                <div class = "col s12">
-                    <div class = "col s6" style = "padding-left: 20px;">
-                        <label>Select Item Name to Deactivate:</label>
-                        <select>
-                            <option value="" disabled selected>Item Name:</option>
-                            <option value="1">Item One</option>
-                            <option value="2">Item Two</option>
-                            <option value="3">Item Three</option>
-                        </select>
-                    </div>
-                </div>
+				<form action="deactivate" method="post">
+	                <div class = "col s12">
+	                    <div class = "col s6" style = "padding-left: 20px;">
+	                        <label>Select Item Name to Deactivate:</label>
+	                        <c:if test="${itemList == null}">
+		                       <label>No item available.</label>
+		                    </c:if>
+		                    <c:if test="${itemList != null}">
+								<select name="strItemName">
+									<option value="" disabled selected>Item Name:</option>
+										<c:forEach items="${itemList }" var="item">
+											<option value="${item.strItemName}">${item.strItemName}</option>
+										</c:forEach>
+								</select>
+							</c:if>
+	                    </div>
+	                </div>
             </div>
 
             <div class="modal-footer">
                 <button name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
-                <button name = "action" class="waves-effect waves-light btn red">Cancel</button>
+				</form>
+                <button class="waves-effect waves-light btn red">Cancel</button>
             </div>
         </div>
 

@@ -35,7 +35,7 @@ public class ItemServiceImpl implements ItemService{
 	@Override
 	public String updateItem(Item item) {
 		// TODO Auto-generated method stub
-		return itemRepository.updateItem(item);
+		return itemBusiness.update(item);
 	}
 
 	@Override
