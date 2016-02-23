@@ -18,8 +18,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
 
     <!-- Import CSS/JS -->
-    <script type="text/javascript" src="js/Floor_Record_Form.js"></script>
-    <link rel = "stylesheet" href = "css/Floor_Record_Form.css"/>
+    <script type="text/javascript" src="../js/Floor_Record_Form.js"></script>
+    <link rel = "stylesheet" href = "../css/Floor_Record_Form.css"/>
 
 </head>
 <body>
@@ -89,16 +89,16 @@
     <li><a href="Employee.html">Employee</a></li>
     <li class="divider"></li>
 </ul>
+</div>
 
 <!-- Floating Button -->
-<div class="fixed-action-btn horizontal" style="position: absolute; margin-right: 550px; margin-bottom: 110px;">
+<div class="fixed-action-btn horizontal" style="position: absolute; margin-right: 620px; margin-bottom: 110px;">
     <button name = "action" class="btn-floating btn-large red"><i class="large material-icons">add</i>
     </button>
     <ul>
-        <li><button name = "action" class="btn-floating black"><i class="material-icons">delete</i></button></li>
-        <li><button name = "action" class="btn-floating green darken-1"><i class="material-icons">mode_edit</i></button></li>
+        <li><button name = "action" class="modal-trigger btn-floating black" href = "#modal2"><i class="material-icons">delete</i></button></li>
+        <li><button name = "action" class="modal-trigger btn-floating green darken-1" href = "#modal1"><i class="material-icons">mode_edit</i></button></li>
     </ul>
-</div>
 </div>
 
 
@@ -134,20 +134,99 @@
                     </form>
 
                     <form class = "col s12">
-                                <div class = "col s6">
-                                    <label>Select Building Name</label>
+                       <div class = "col s6">
+                             <label>Select Building Name</label>
                                     <select>
                                         <option value="" disabled selected>Building Name:</option>
                                         <option value="1">Building One</option>
                                         <option value="2">Building Two</option>
                                         <option value="3">Building Three</option>
                                     </select>
-                                    </div>
+                       </div>
                     </form>
                 </div>
                 </div>
             </div>
         </div>
+
+            <!-- Modal Update -->
+            <div id="modal1" class="modal">
+                <div class = "modal-header">
+                    <h4>Update Floor</h4>
+                </div>
+                <div class="modal-content">
+
+                    <form class = "col s12">
+                        <div class="row" style = "padding-left: 10px;">
+                            <h5>Block size per floor:</h5>
+                            <div class="input-field col s6">
+                                <input id="rowUpdate" type="text" class="validate">
+                                <label for="rowUpdate">Row/s:</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input id="colUpdate" type="text" class="validate">
+                                <label for="colUpdate">Column/s:</label>
+                            </div>
+                        </div>
+                    </form>
+
+                    <form class = "col s12">
+                        <div class = "col s6">
+                            <label>Select Building Name</label>
+                            <select>
+                                <option value="" disabled selected>Building Name:</option>
+                                <option value="1">Building One</option>
+                                <option value="2">Building Two</option>
+                                <option value="3">Building Three</option>
+                            </select>
+                        </div>
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
+                    <button name = "action" class="waves-effect waves-light btn red" href = "Blocks_Maintenance.html">Cancel</button>
+                </div>
+            </div>
+
+
+            <!-- Modal Deactivate -->
+            <div id="modal2" class="modal">
+                <div class = "modal-header">
+                    <h4>Deactivate Floor</h4>
+                </div>
+                <div class="modal-content">
+
+
+                    <form class = "col s12">
+                        <div class = "row">
+                        <div class = "col s6">
+                            <label>Select Building Name</label>
+                            <select>
+                                <option value="" disabled selected>Building Name:</option>
+                                <option value="1">Building One</option>
+                                <option value="2">Building Two</option>
+                                <option value="3">Building Three</option>
+                            </select>
+                        </div>
+                        <div class = "col s6">
+                            <label>Select Floor Number to Deactivate</label>
+                            <select>
+                                <option value="" disabled selected>Floor Number:</option>
+                                <option value="1">Floor One</option>
+                                <option value="2">Floor Two</option>
+                                <option value="3">Floor Three</option>
+                            </select>
+                        </div>
+                        </div>
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
+                    <button name = "action" class="waves-effect waves-light btn red">Cancel</button>
+                </div>
+            </div>
 
         <!-- Data Grid -->
         <div class = "col s5">

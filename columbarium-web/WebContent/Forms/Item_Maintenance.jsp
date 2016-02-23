@@ -91,7 +91,7 @@
 </ul>
 
 <!-- Floating Button -->
-<div class="fixed-action-btn horizontal" style="position: absolute; margin-right: 600px; margin-bottom: 155px;">
+<div class="fixed-action-btn horizontal" style="position: absolute; margin-right: 620px; margin-bottom: 155px;">
     <button name = "action" class="btn-floating btn-large red"><i class="large material-icons">add</i>
     </button>
     <ul>

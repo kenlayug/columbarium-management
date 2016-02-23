@@ -19,8 +19,8 @@
 
 
     <!-- Import CSS/JS -->
-    <script type="text/javascript" src="js/Services_Record_Form.js"></script>
-    <link rel = "stylesheet" href = "css/Services_Record_Form.css"/>
+    <script type="text/javascript" src="../js/Services_Record_Form.js"></script>
+    <link rel = "stylesheet" href = "../css/Services_Record_Form.css"/>
 
 </head>
 <body>
@@ -43,7 +43,7 @@
 
 <!-- Dropdown Maintenance-->
 <ul id="dropdown1" class="dropdown-content">
-    <li><a href="Inventory.html">Inventory</a></li>
+    <li><a href="Item_Maintenance.html">Inventory</a></li>
     <li><a href="Services_Record_Form.html">Service</a></li>
     <li class="divider"></li>
     <li><a href="Package_Record_Form.html">Package</a></li>
@@ -88,12 +88,12 @@
 </ul>
 
 <!-- Floating Button -->
-<div class="fixed-action-btn horizontal" style="position: absolute; margin-right: 550px; margin-bottom: 80px;">
+<div class="fixed-action-btn horizontal" style="position: absolute; margin-right: 620px; margin-bottom: 80px;">
     <button name = "action" class="btn-floating btn-large red"><i class="large material-icons">add</i>
     </button>
     <ul>
-        <li><button name = "action" class="btn-floating black"><i class="material-icons">delete</i></button></li>
-        <li><button name = "action" class="btn-floating green darken-1"><i class="material-icons">mode_edit</i></button></li>
+        <li><button name = "action" class="modal-trigger btn-floating black" href = "#modal2"><i class="material-icons">delete</i></button></li>
+        <li><button name = "action" class="modal-trigger btn-floating green darken-1" href = "#modal1"><i class="material-icons">mode_edit</i></button></li>
     </ul>
 </div>
 
@@ -108,18 +108,18 @@
             <div class = "col s12">
                 <div class = "aside aside z-depth-3">
                 <div class = "header">
-                <h4>Create Service</h4>
-                    </div>
+                    <h4>Service Form</h4>
+                </div>
 
                     <form class = "col s12">
                         <div class="row" style = "padding-left: 10px;">
                             <div class="input-field col s6">
-                                <input id="level" type="text" class="validate">
-                                <label for="level">Service Name:</label>
+                                <input id="serviceName" type="text" class="validate">
+                                <label for="serviceName">Service Name:</label>
                             </div>
                             <div class="input-field col s6">
-                                <input id="price" type="text" class="validate">
-                                <label for="price">Service Price:</label>
+                                <input id="servicePrice" type="text" class="validate">
+                                <label for="servicePrice">Service Price:</label>
                             </div>
                         </div>
                     </form>
@@ -128,8 +128,8 @@
                         <form class="col s12">
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <textarea id="textarea1" style = "color:red;" class = "materialize-textarea"></textarea>
-                                    <label for="textarea1">Service Description:</label>
+                                    <textarea id="serviceDesc" style = "color:red;" class = "materialize-textarea"></textarea>
+                                    <label for="serviceDesc">Service Description:</label>
                                 </div>
                             </div>
                         </form>
@@ -140,7 +140,7 @@
             </div>
             </div>
 
-            <!-- Modal Structure -->
+            <!-- Modal Requirements -->
             <div id="modal3" class="modal">
                 <div class = "modal-header">
                     <h4>List of Requirements</h4>
@@ -153,20 +153,20 @@
                                     <form action="#">
                                         <h6>Columbary Vaults</h6>
                                         <p>
-                                            <input type="checkbox" id="test81" />
-                                            <label for="test81">Death Certificate</label>
+                                            <input type="checkbox" id="deathCertificate" />
+                                            <label for="deathCertificate">Death Certificate</label>
                                         </p>
                                         <p>
-                                            <input type="checkbox" id="test1111" />
-                                            <label for="test1111">Transfer Permit</label>
+                                            <input type="checkbox" id="transferPermit" />
+                                            <label for="transferPermit">Transfer Permit</label>
                                         </p>
                                         <p>
-                                            <input type="checkbox" id="test1177" />
-                                            <label for="test1177">Cremation</label>
+                                            <input type="checkbox" id="cremation" />
+                                            <label for="cremation">Cremation</label>
                                         </p>
                                         <p>
-                                            <input type="checkbox" id="test1166" />
-                                            <label for="test1166">I.D. of Informant</label>
+                                            <input type="checkbox" id="informantID2" />
+                                            <label for="informantID2">I.D. of Informant</label>
                                         </p>
 
                                         <br>
@@ -175,24 +175,24 @@
                                         <h6>Additional Requirements:</h6>
                                         <h1>(Authority to cremate if informant is:)</h1>
                                         <p>
-                                            <input type="checkbox" id="test811" />
-                                            <label for="test811">Husband/Wife - Marriage Certificate/ Marriage Contract</label>
+                                            <input type="checkbox" id="marriageContract" />
+                                            <label for="marriageContract">Husband/Wife - Marriage Certificate/ Marriage Contract</label>
                                         </p>
                                         <p>
-                                            <input type="checkbox" id="test11111" />
-                                            <label for="test11111">Parent - Birth Certificate of Deceased (if none, Affidavit of Conformity)</label>
+                                            <input type="checkbox" id="parentCertificate" />
+                                            <label for="parentCertificate">Parent - Birth Certificate of Deceased (if none, Affidavit of Conformity)</label>
                                         </p>
                                         <p>
-                                            <input type="checkbox" id="test11777" />
-                                            <label for="test11777">Brother/Sister - Birth Certificate Deceased & Siblings</label>
+                                            <input type="checkbox" id="bCertificate" />
+                                            <label for="bCertificate">Brother/Sister - Birth Certificate Deceased & Siblings</label>
                                         </p>
                                         <p>
-                                            <input type="checkbox" id="testt" />
-                                            <label for="testt">Relative - Affidavit of Conformity</label>
+                                            <input type="checkbox" id="affidavit" />
+                                            <label for="affidavit">Relative - Affidavit of Conformity</label>
                                         </p>
                                         <p>
-                                            <input type="checkbox" id="testtt" />
-                                            <label for="testtt">I.D of Informant</label>
+                                            <input type="checkbox" id="informantID" />
+                                            <label for="informantID">I.D of Informant</label>
                                         </p>
                                     </form>
                                 </div>
@@ -201,20 +201,20 @@
                                     <form action="#">
                                         <h6>Full Body</h6>
                                         <p>
-                                            <input type="checkbox" id="test0111" />
-                                            <label for="test0111">Death Certificate</label>
+                                            <input type="checkbox" id="deathCertificate2" />
+                                            <label for="deathCertificate2">Death Certificate</label>
                                         </p>
                                         <p>
-                                            <input type="checkbox" id="test122" />
-                                            <label for="test122">Transfer Permit</label>
+                                            <input type="checkbox" id="transferPermit2" />
+                                            <label for="transferPermit2">Transfer Permit</label>
                                         </p>
                                         <p>
-                                            <input type="checkbox" id="test1233" />
-                                            <label for="test1233">Burial Person</label>
+                                            <input type="checkbox" id="burialPerson" />
+                                            <label for="burialPerson">Burial Person</label>
                                         </p>
                                         <p>
-                                            <input type="checkbox" id="test19" />
-                                            <label for="test19">I.D. of Buyer</label>
+                                            <input type="checkbox" id="buyerID" />
+                                            <label for="buyerID">I.D. of Buyer</label>
                                         </p>
                                     </form>
                                 </div>
@@ -250,6 +250,88 @@
                 <div class="modal-footer">
                     <button name = "action" class="waves-effect waves-light btn red right" style = "margin-right: 0px; width: 130px;">CONFIRM</button>
                 </div>
+            </div>
+        </div>
+
+
+        <!-- Modal Update -->
+        <div id="modal1" class="modal">
+            <div class = "modal-header">
+                <h4>Update Service</h4>
+            </div>
+            <div class="modal-content">
+
+                <form class = "col s12">
+                    <div class="row">
+                        <div class = "col s6" style = "padding-left: 20px;">
+                            <label>Select Service Name to Deactivate:</label>
+                            <select>
+                                <option value="" disabled selected>Service Name:</option>
+                                <option value="1">Service One</option>
+                                <option value="2">Service Two</option>
+                                <option value="3">Service Three</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+
+                <form class = "col s12">
+                    <div class="row" style = "padding-left: 10px;">
+                        <div class="input-field col s6">
+                            <input id="serviceNameUpdate" type="text" class="validate">
+                            <label for="serviceNameUpdate">New Service Name</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="servicePriceUpdate" type="text" class="validate">
+                            <label for="servicePriceUpdate">New Service Price</label>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="row">
+                    <form class="col s12">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <textarea id="serviceDescUpdate" style = "color:red;" class = "materialize-textarea"></textarea>
+                                <label for="serviceDescUpdate">New Service Description</label>
+                            </div>
+                        </div>
+                    </form>
+
+                    <button data-target = "modal3" class="waves-effect waves-light modal-trigger red left" style = "margin-left: 20px; width: 180px; height: 35px; color: white; margin-bottom: 50px; font-size: 14px;"></i>CHOOSE REQUIREMENTS</button>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
+                <button name = "action" class="waves-effect waves-light btn red" href = "Blocks_Maintenance.html">Cancel</button>
+            </div>
+        </div>
+
+
+        <!-- Modal Deactivate -->
+        <div id="modal2" class="modal">
+            <div class = "modal-header">
+                <h4>Deactivate Service</h4>
+            </div>
+            <div class="modal-content">
+
+                <form class = "col s12">
+                    <div class="row">
+                        <div class = "col s6" style = "padding-left: 20px;">
+                            <label>Select Service Name to Deactivate:</label>
+                            <select>
+                                <option value="" disabled selected>Service Name:</option>
+                                <option value="1">Service One</option>
+                                <option value="2">Service Two</option>
+                                <option value="3">Service Three</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
+                <button name = "action" class="waves-effect waves-light btn red">Cancel</button>
             </div>
         </div>
 
