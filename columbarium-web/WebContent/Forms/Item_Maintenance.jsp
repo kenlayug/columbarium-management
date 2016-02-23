@@ -93,8 +93,8 @@
     <button name = "action" class="btn-floating btn-large red"><i class="large material-icons">add</i>
     </button>
     <ul>
-        <li><button name = "action" class="btn-floating black"><i class="material-icons">delete</i></button></li>
-        <li><button name = "action" class="btn-floating green darken-1"><i class="material-icons">mode_edit</i></button></li>
+        <li><button name = "action" class="modal-trigger btn-floating black" href = "#modal2"><i class="material-icons">delete</i></button></li>
+        <li><button name = "action" class="modal-trigger btn-floating green darken-1" href = "#modal1"><i class="material-icons">mode_edit</i></button></li>
     </ul>
 </div>
 
@@ -120,15 +120,12 @@
                                 <label for="itemName" data-error = "wrong" data-success = "right">Item Name</label>
                             </div>
                         </div>
-
-
                         <div style = "padding-left: 10px;">
                             <div class="input-field col s6">
                                 <input id="itemPrice" type="text" class="validate" name="item.strItemName">
                                 <label for="itemPrice" data-error = "wrong" data-success = "right">Item Price</label>
                             </div>
                         </div>
-
                     </div>
                     </div>
 
@@ -142,6 +139,85 @@
                     </form>
 
                 </div>
+            </div>
+        </div>
+
+        <!-- Modal Update -->
+        <div id="modal1" class="modal">
+            <div class = "modal-header">
+                <h4>Update Item</h4>
+            </div>
+            <div class="modal-content">
+
+                <div class = "col s12">
+                    <div class = "col s6" style = "padding-left: 20px;">
+                        <label>Select Item Name to Update:</label>
+                        <select>
+                            <option value="" disabled selected>Item Name:</option>
+                            <option value="1">Item One</option>
+                            <option value="2">Item Two</option>
+                            <option value="3">Item Three</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class = "col s12">
+                    <div class = "row">
+                        <div style = "padding-left: 10px;">
+                            <div class="input-field col s6">
+                                <input id="itemNameUpdate" type="text" class="validate" name="item.strItemName">
+                                <label for="itemNameUpdate" data-error = "wrong" data-success = "right">New Item Name</label>
+                            </div>
+                        </div>
+                        <div style = "padding-left: 10px;">
+                            <div class="input-field col s6">
+                                <input id="itemPriceUpdate" type="text" class="validate" name="item.strItemName">
+                                <label for="itemPriceUpdate" data-error = "wrong" data-success = "right">New Item Price</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <form class = "col s12">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="descUpdate" type="text" class="validate" name="item.strItemDesc">
+                            <label for="descUpdate">New Item Description</label>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+            <div class="modal-footer">
+                <button name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
+                <button name = "action" class="waves-effect waves-light btn red" href = "Blocks_Maintenance.html">Cancel</button>
+            </div>
+        </div>
+
+
+        <!-- Modal Deactivate -->
+        <div id="modal2" class="modal">
+            <div class = "modal-header">
+                <h4>Deactivate Item</h4>
+            </div>
+            <div class="modal-content">
+
+                <div class = "col s12">
+                    <div class = "col s6" style = "padding-left: 20px;">
+                        <label>Select Item Name to Deactivate:</label>
+                        <select>
+                            <option value="" disabled selected>Item Name:</option>
+                            <option value="1">Item One</option>
+                            <option value="2">Item Two</option>
+                            <option value="3">Item Three</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
+                <button name = "action" class="waves-effect waves-light btn red">Cancel</button>
             </div>
         </div>
 

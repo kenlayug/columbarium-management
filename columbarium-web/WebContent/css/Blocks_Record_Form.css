@@ -89,9 +89,14 @@ h6{
 }
 
 .modal-header {
-    background: url(../img/black_pattern1.jpg) repeat;
-    color: white;
+    background-color: #00897b;
     height: 70px;
+}
+
+.modal-header h4 {
+    color: white;
+    font-family: myFirstFont;
+    padding-top: 10px;
 }
 
 ul li a {
@@ -122,5 +127,7 @@ ul li a {
     color: white;
     background-color: #ff8f00;
 }
+
+
 
 
