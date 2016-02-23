@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+	<mapper namespace="columbarium.dao.mybatis.mappers.EmployeeMapper">
+	
+	<!-- RESULTMAPS -->
+	
+		<resultMap id="CountEmployeeResultMap" type="java.lang.Integer">
+			<result property="intCountEmployee" column="count(*)"/>
+		</resultMap>
+		
+		<resultMap id="EmployeeIdResultMap" type="java.lang.Integer">
+			<result property="employeeId" column="employeeId"/>
+		</resultMap>
+	
+		<resultMap id="PositionResultMap" type="Position">
+			<id property="positionId" column="positionId"/>
+			<result property="strPositionDesc" column="strPositionDesc"/>
+		</resultMap>
+	
+		<resultMap id="CountPositionResultMap" type="java.lang.Integer">
+			<result property="intCountPosition" column="count(*)"/>
+		</resultMap>
+	
+		<resultMap id="EmployeeResultMap" type="Employee">
+		
+			<id property="employeeId" column="employeeId"/>
+			<result property="name.strFirstName" column="strFirstName"/>
+			<result property="name.strMiddleName" column="strMiddleName"/>
+			<result property="name.strLastName" column="strLastName"/>
+			<result property="birthday" column="datBirth"/>
+			<result property="strGender" column="strGender"/>
+			<result property="strCivilStatus" column="strCivilStatus"/>
+			<association property="position" resultMap="PositionResultMap"/>
+		
+		</resultMap>
+	
+	<!-- END RESULTMAPS -->
+	
+	<!-- SELECT QUERIES -->
+	
+		<select id="getLastEmployeeId" resultMap="EmployeeIdResultMap">
+			
+			SELECT employeeId FROM tblEmployee ORDER BY employeeId DESC LIMIT 1
+			
+		</select>
+	
+		<select id="getEmployee" resultMap="EmployeeResultMap">
+		
+			SELECT e.employeeId, e.strFirstName, e.strMiddleName, e.strLastName,
+				e.datBirth, e.strGender, e.strCivilStatus, p.positionId, p.strPositionDesc
+			FROM tblEmployee e
+				INNER JOIN tblPosition p ON e.positionIdFK = p.positionId
+			<where>
+				e.intStatus = 1
+				<choose>
+					<when test="employeeId != null">
+						OR e.employeeId = #{employeeId}
+					</when>
+					<when test="name.strFirstName != null and name.strLastName != null">
+						OR (e.strFirstName = #{name.strFirstName}
+						AND e.strMiddleName = #{name.strMiddleName}
+						AND e.strLastName = #{name.strLastName})
+					</when>
+				</choose>
+			</where>
+			LIMIT 1
+		</select>
+	
+		<select id="checkIfExisting" resultMap="CountEmployeeResultMap">
+			SELECT COUNT(*)
+			FROM tblEmployee
+			<where>
+				intStatus = 1
+				<choose>
+					<when test="employeeId != null">
+						OR employeeId = #{employeeId}
+					</when>
+					<when test="name != null">
+						OR (strFirstName = #{name.strFirstName}
+						AND strMiddleName = #{name.strMiddleName}
+						AND strLastName = #{name.strLastName})
+					</when>
+				</choose>
+			</where>
+		</select>
+		
+		<select id="checkIfExistingPosition" resultMap="CountPositionResultMap">
+			SELECT COUNT(*)
+			FROM tblPosition
+			WHERE strPositionDesc = #{strPositionDesc}
+		</select>
+		
+		<select id="getPosition" resultMap="PositionResultMap">
+			SELECT * FROM tblPosition
+			WHERE strPositionDesc = #{strPositionDesc}
+			LIMIT 1
+		</select>
+		
+		<select id="getAllPosition" resultMap="PositionResultMap">
+			SELECT * FROM tblPosition ORDER BY strPositionDesc ASC
+		</select>
+		
+		<select id="getAllEmployee" resultMap="EmployeeResultMap">
+			SELECT e.employeeId, e.strFirstName, e.strMiddleName, e.strLastName,
+				e.datBirth, e.strGender, e.strCivilStatus, p.positionId, p.strPositionDesc
+			FROM tblEmployee e
+				INNER JOIN tblPosition p ON e.positionIdFK = p.positionId
+		</select>
+		
+		<select id="countAllEmployee" resultMap="CountEmployeeResultMap">
+			SELECT COUNT(*) FROM tblEmployee
+		</select>
+		
+		<select id="checkPassword" resultMap="CountEmployeeResultMap">
+			SELECT COUNT(*) FROM tblEmployee
+			WHERE strPassword LIKE MD5(#{strPassword})
+				AND employeeId = #{employeeId}
+		</select>
+	
+	<!-- END SELECT QUERIES -->
+	
+	<!-- INSERT QUERIES -->
+	
+		<insert id="saveEmployee">
+			INSERT INTO tblEmployee (strPassword, strFirstName, strMiddleName, strLastName,
+				datBirth, strGender, strCivilStatus, positionIdFK, intStatus)
+			VALUES (MD5(#{strPassword}), #{name.strFirstName}, #{name.strMiddleName},
+				#{name.strLastName}, #{birthday}, #{strGender}, #{strCivilStatus},
+				#{position.positionId}, 1)
+		</insert>
+		
+		<insert id="savePosition" useGeneratedKeys="true" keyProperty="positionId" keyColumn="positionId">
+			INSERT INTO tblPosition (strPositionDesc)
+			VALUES (#{strPositionDesc})
+		</insert>
+		
+	<!-- END INSERT QUERIES -->
+	
+	<!-- UPDATE QUERIES -->
+	
+		<update id="updateEmployee">
+			UPDATE tblEmployee
+			<set>
+			
+				<if test="strPassword != null">strPassword = MD5(#{strPassword}),</if>
+				<if test="name.strFirstName != null">strFirstName = #{name.strFirstName},</if>
+				<if test="name.strMiddleName != null">strMiddleName = #{name.strMiddleName},</if>
+				<if test="name.strLastName != null">strLastName = #{name.strLastName},</if>
+				<if test="birthday != null">datBirth = #{birthday},</if>
+				<if test="strGender != null">strGender = #{strGender},</if>
+				<if test="strCivilStatus != null">strCivilStatus = #{strCivilStatus},</if>
+				<if test="position != null">positionIdFK = #{position.positionId}</if>
+			
+			</set>
+			WHERE employeeId = #{employeeId}
+		</update>
+		
+		<update id="deactivateEmployee">
+			UPDATE tblEmployee
+			SET intStatus = 0
+			WHERE employeeId = #{employeeId}
+		</update>
+	
+	<!-- END UPDATE QUERIES -->
+	
+	</mapper>

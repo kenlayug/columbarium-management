@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+	<mapper namespace="columbarium.dao.mybatis.mappers.ItemMapper">
+	
+	<!-- RESULTMAPS -->
+	
+		<resultMap type="java.lang.Integer" id="CountItemResultMap">
+			<result property="intCountItem" column="COUNT(*)"/>
+		</resultMap>
+		
+		<resultMap type="Item" id="ItemResultMap">
+			<id property="itemId" column="ItemId"/>
+			<result property="strItemName" column="strItemName"/>
+			<result property="strItemDesc" column="strItemDesc"/>
+			<result property="dblPrice" column="deciPrice"/>
+		</resultMap>
+		
+		<resultMap type="java.lang.Integer" id="ItemIdResultMap">
+			<result property="itemId" column="itemId"/>
+		</resultMap>
+	
+	<!-- END RESULTMAPS -->
+	
+	<!-- SELECT QUERIES -->
+	
+		<select id="checkIfExisting" resultMap="CountItemResultMap">
+			SELECT COUNT(*)
+			FROM tblItem
+			<where>
+				intStatus = 1 AND strItemName LIKE #{strItemName}
+			</where>
+		</select>
+		
+		<select id="checkIfExistingById" resultMap="CountItemResultMap">
+			SELECT COUNT(*) FROM tblItem WHERE intStatus = 1 AND itemId = #{itemId}
+		</select>
+		
+		<select id="getItem" resultMap="ItemResultMap">
+			SELECT * FROM tblItem
+			<where>
+				intStatus = 1
+				<choose>
+					<when test="itemId != 0">
+						AND itemId = #{itemId}
+					</when>
+					<when test="strItemName != null">
+						AND strItemName LIKE #{strItemName}
+					</when>
+				</choose>
+			</where>
+			LIMIT 1
+		</select>
+		
+		<select id="getAllItem" resultMap="ItemResultMap">
+			SELECT itemId, strItemName, strItemDesc, deciPrice
+			FROM tblItem WHERE intStatus = 1 ORDER BY strItemName ASC
+		</select>
+		
+		<select id="countAllItem" resultMap="CountItemResultMap">
+			SELECT COUNT(*) FROM tblItem
+		</select>
+		
+		<select id="getLastItemId" resultMap="ItemIdResultMap">
+			SELECT itemId FROM tblItem ORDER BY itemId DESC LIMIT 1
+		</select>
+		
+		<select id="searchItemList" resultMap="ItemResultMap">
+			<bind name="itemName" value="'%' + strItemName + '%'" />
+			SELECT itemId, strItemName, strItemDesc, deciPrice
+			FROM tblItem
+			<where>
+				<choose>
+					<when test="strItemName != null">
+						strItemName LIKE #{itemName}
+					</when>
+					<when test="itemId != 0">
+						OR itemId = #{itemId}
+					</when>
+				</choose>
+			</where>
+		</select>
+	
+	<!-- END SELECT QUERIES -->
+	
+	<!-- INSERT QUERIES -->
+	
+		<insert id="saveItem">
+			INSERT INTO tblItem(strItemName, strItemDesc, deciPrice, intStatus)
+			VALUES (#{strItemName}, #{strItemDesc}, #{dblPrice}, 1)
+		</insert>
+		
+	<!-- END INSERT QUERIES -->
+	
+	<!-- UPDATE QUERIES -->
+	
+		<update id="updateItem">
+			UPDATE tblItem
+			<set>
+				<if test="strItemName != null">strItemName = #{strItemName},</if>
+				<if test="strItemDesc != null">strItemDesc = #{strItemDesc},</if>
+				<if test="dblPrice != 0">deciPrice = #{dblPrice}</if>
+			</set>
+			WHERE itemId = #{itemId}
+		</update>
+		
+		<update id="deactivateItem">
+			UPDATE tblItem
+			<set>
+				intStatus = 0
+			</set>
+			WHERE itemId = #{itemId}
+		</update>
+	
+	<!-- END UPDATE QUERIES -->
+	
+	
+	</mapper>

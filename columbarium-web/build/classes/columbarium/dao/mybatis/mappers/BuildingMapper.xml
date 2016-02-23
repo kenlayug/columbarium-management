@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+	<mapper namespace="columbarium.dao.mybatis.mappers.BuildingMapper">
+	
+	<!-- RESULTMAPS -->
+	
+		<resultMap type="java.lang.Integer" id="CountResultMap">
+			<result property="intCount" column="COUNT(*)" />
+		</resultMap>
+		
+		<resultMap type="Floor" id="FloorResultMap">
+			<result property="floorId" column="floorId"/>
+			<result property="buildingId" column="buildingIdFK"/>
+			<result property="intFloorNo" column="intFloorNo"/>
+			<result property="intLevelNo" column="intLevelNo"/>
+			<result property="intColumnNo" column="intColumnNo"/>
+		</resultMap>
+	
+	<!-- END RESULTMAPS -->
+	
+	<!-- SELECT QUERIES -->
+	
+		<select id="checkIfExistingBuilding" resultMap="CountResultMap">
+			SELECT COUNT(*) FROM tblBldg WHERE strBldgDesc = #{strBuildingName}
+		</select>
+		
+		<select id="checkIfExistingBlock" resultMap="CountResultMap">
+			SELECT COUNT(*) FROM tblBlock WHERE strBlockDesc = #{strBlockName}
+		</select>
+		
+		<select id="selectFloorById" resultMap="FloorResultMap">
+			SELECT * FROM tblFloor WHERE floorId = #{floorId} LIMIT 1
+		</select>
+	
+	<!-- END SELECT QUERIES -->
+	
+	<!-- INSERT QUERIES -->
+	
+		<insert id="createBuilding">
+			INSERT INTO tblBldg (strBldgDesc, strLocation, strBldgType)
+			VALUES (#{strBuildingName}, #{strBuildingLocation}, #{strBuildingType})
+		</insert>
+		
+		<insert id="createFloor">
+			INSERT INTO tblFloor (intFloorNo, bldgIdFK, intLevelNo, intColumnNo)
+			VALUES (
+				(SELECT COUNT(*)+1 FROM tblFloor WHERE bldgIdFK = #{buildingId}),
+				#{buildingId},
+				#{intLevelNo},
+				#{intColumnNo}
+				)
+		</insert>
+		
+		<insert id="createBlock">
+			INSERT INTO tblBlock (strBlockDesc, floorIdFK)
+			VALUES (#{strBlockDesc}, #{floorId})
+		</insert>
+		
+		<insert id="createUnitCategory">
+			INSERT INTO tblUnitCategory (floorIdFK, levelIdFK)
+			VALUES (#{floorId},
+				(SELECT COUNT(*)+1 FROM tblUnitCategory WHERE floorIdFK = #{floorId})
+			)
+		</insert>
+		
+		<!--<insert id="createUnit">
+			INSERT INTO tblUnit (blockIdFK, intColumnNo, unitCategoryIdFK, intUnitStatus)
+				VALUES (#{blockId}, #{intColumnNo}, 
+					(SELECT unitCategoryId FROM tblUnitCategory WHERE floorIdFK = #{floorId}
+						AND levelIdFK),
+					1
+				)
+		</insert>-->
+		
+	<!-- END INSERT QUERIES -->
+	
+	<!-- UPDATE QUERIES -->
+	
+	
+	<!-- END UPDATE QUERIES -->
+	
+	
+	</mapper>
