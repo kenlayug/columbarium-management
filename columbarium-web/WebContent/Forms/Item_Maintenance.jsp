@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,6 +21,7 @@
 
     <!-- Import CSS/JS -->
     <script type="text/javascript" src="<%=request.getContextPath()%>/js/Inventory_Form.js"></script>
+    <script type="text/javascript" src="<%=request.getContextPath()%>/js/experiment-item.js"></script>
     <link rel = "stylesheet" href = "<%=request.getContextPath()%>/css/Inventory_Form.css"/>
 
 
@@ -112,6 +114,7 @@
                     </div>
 
 
+                    <form class = "col s12" method="POST" action="create">
                     <div class = "col s12">
                         <div class = "row">
                         <div style = "padding-left: 10px;">
@@ -122,20 +125,22 @@
                         </div>
                         <div style = "padding-left: 10px;">
                             <div class="input-field col s6">
-                                <input id="itemPrice" type="text" class="validate" name="item.strItemName">
+                                <input id="itemPrice" type="text" class="validate" name="item.dblPrice">
                                 <label for="itemPrice" data-error = "wrong" data-success = "right">Item Price</label>
                             </div>
                         </div>
                     </div>
                     </div>
 
-                    <form class = "col s12">
                         <div class="row">
                             <div class="input-field col s12">
                                 <input id="desc" type="text" class="validate" name="item.strItemDesc">
                                 <label for="desc">Item Description</label>
                             </div>
                         </div>
+                        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+    						<i class="material-icons right">send</i>
+  						</button>
                     </form>
 
                 </div>
@@ -249,43 +254,26 @@
                     <thead class = "fixed-header">
                     <tr>
                         <th data-field="id">Item Name</th>
+                        <th data-field="price">Item Price</th>
                         <th data-field="name">Item Description</th>
                     </tr>
                     </thead>
-
                     <tbody>
-                    <tr>
-                        <td>Item One</td>
-                        <td>Description One</td>
-                    </tr>
-
-                    <tr>
-                        <td>Item Two</td>
-                        <td>Description One</td>
-                    </tr>
-
-                    <tr>
-                        <td>Item Three</td>
-                        <td>Description One</td>
-                    </tr>
-
-                    <tr>
-                        <td>Item Four</td>
-                        <td>Description One</td>
-                    </tr>
-
-                    <tr>
-                        <td>Item Five</td>
-                        <td>Description One</td>
-                    </tr>
-                    <tr>
-                        <td>Item Six</td>
-                        <td>Description One</td>
-                    </tr>
-                    <tr>
-                        <td>Item Seven</td>
-                        <td>Description One</td>
-                    </tr>
+		                <c:if test="${itemList  == null }">
+		                	<tr>
+			                	<td>No available items.</td>
+			            	</tr>
+			            </c:if>
+		                <c:if test="${itemList != null}">
+		                	<c:forEach items="${itemList }" var="item">
+		                		<tr>
+				                    <td>${item.strItemName }</td>
+				                    <td>P ${item.dblPrice }</td>
+				                    <td>${item.strItemDesc }</td>
+			                	</tr>
+		                	</c:forEach>
+		                </c:if>
+                    
                     </tbody>
                 </table>
             </div>
