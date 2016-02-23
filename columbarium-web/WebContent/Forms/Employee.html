@@ -11,9 +11,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
 
     <!-- Import File -->
-    <script type="text/javascript" src = "js/CustomerJS.js"></script>
-    <script type="text/javascript" src = "js/Blocks_Record_Form.js"></script>
-    <link href="css/CustomerCSS.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src = "../js/CustomerJS.js"></script>
+    <script type="text/javascript" src = "../js/Blocks_Record_Form.js"></script>
+    <script type="text/javascript" src = "../js/datepicker.js"></script>
+    <link href="../css/CustomerCSS.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div class="navbar-fixed nav-birdifly">
@@ -133,7 +134,7 @@
                                     <label>Date of Birth:</label>
                                 </div>
                                 <div class="input-field col s3">
-                                    <input id="bday" type="date" required="" aria-required="true" class="validate">
+                                    <input type="date" class="datepicker">
                                 </div>
                             </div>
                             <div class="row">
@@ -164,7 +165,7 @@
                                 <div class="input-field col s4">
                                     <input id="ps" type="password" required="" aria-required="true" class="validate">
                                     <label for="ps">Retype Password</label>
-                                    <a class="waves-effect waves-light btn black right" style = "width: 180px;  margin-top: 20px; margin-bottom: 10px;"><i class="mdi-content-add-circle left"></i>Create</a>
+                                    <a class="waves-effect waves-light btn red right" style = "width: 180px;  margin-top: 20px; margin-bottom: 10px;"><i class="mdi-content-add-circle left"></i>Create</a>
                                 </div>
                             </div>
                         </form>

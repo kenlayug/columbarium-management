@@ -13,7 +13,7 @@
 .aside {
     margin-left: 20px;
     height: 355px;
-    width: 750px;
+    width: 700px;
 }
 
 h1 {
@@ -50,10 +50,15 @@ h6{
     font-size: x-large;
 }
 
-.modal-header h3 {
+.modal-header {
+    background-color: #00897b;
+    height: 70px;
+}
+
+.modal-header h4 {
+    color: white;
     font-family: myFirstFont;
-    font-size: 40px;
-    padding-left: 20px;
+    padding-top: 10px;
 }
 
 .dropdown-button {
@@ -88,11 +93,6 @@ h6{
     font-size: 35px;
 }
 
-.modal-header {
-    background: url(../img/black_pattern1.jpg) repeat;
-    color: white;
-    height: 70px;
-}
 
 ul li a {
     color:white;

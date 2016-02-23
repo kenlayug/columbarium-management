@@ -18,8 +18,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
 
     <!-- Import -->
-    <script type="text/javascript" src="js/Package_Record_Form.js"></script>
-    <link rel = "stylesheet" href = "css/Package_Record_Form.css"/>
+    <script type="text/javascript" src="../js/Package_Record_Form.js"></script>
+    <link rel = "stylesheet" href = "../css/Package_Record_Form.css"/>
 
 </head>
 <body>
@@ -87,12 +87,12 @@
 </ul>
 
 <!-- Floating Button -->
-<div class="fixed-action-btn horizontal" style="position: absolute; margin-right: 550px; margin-bottom: -40px;">
+<div class="fixed-action-btn horizontal" style="position: absolute; margin-right: 620px; margin-bottom: -40px;">
     <button name = "action" class="btn-floating btn-large red"><i class="large material-icons">add</i>
     </button>
     <ul>
-        <li><button name = "action" class="btn-floating black"><i class="material-icons">delete</i></button></li>
-        <li><button name = "action" class="btn-floating green darken-1"><i class="material-icons">mode_edit</i></button></li>
+        <li><button name = "action" class="modal-trigger btn-floating black" href = "#modal2"><i class="material-icons">delete</i></button></li>
+        <li><button name = "action" class="modal-trigger btn-floating green darken-1" href = "#modal1"><i class="material-icons">mode_edit</i></button></li>
     </ul>
 </div>
 
@@ -179,6 +179,122 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <!-- Modal Update -->
+        <div id="modal1" class="modal">
+            <div class = "modal-header">
+                <h4>Update Package</h4>
+            </div>
+            <div class="modal-content">
+
+                <div class = "col s6" style = "padding-left: 20px;">
+                    <label>Select Package Name to Update</label>
+                    <select>
+                        <option value="" disabled selected>Package Name:</option>
+                        <option value="1">Package One</option>
+                        <option value="2">Package Two</option>
+                        <option value="3">Package Three</option>
+                    </select>
+                </div>
+
+
+                <div class = "col s12">
+                    <div class="row" style = "padding-left: 10px;">
+                        <div class="input-field col s6">
+                            <input id="packageName" type="text" class="validate" required = "">
+                            <label for="packageName">New Package Name</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="packagePrice" type="text" class="validate">
+                            <label for="packagePrice">New Package Price</label>
+                        </div>
+                    </div>
+                </div>
+                <div class = "col s12">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="packageDesc" type="text" class="validate">
+                            <label for="packageDesc">New Package Description</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class = "col s12">
+                    <div class="row">
+                        <div class = "col s6">
+                            <div action="#">
+                                <h6>Services</h6>
+                                <p>
+                                    <input type="checkbox" id="cremation" />
+                                    <label for="cremation">Cremation</label>
+                                </p>
+                                <p>
+                                    <input type="checkbox" id="fullBody" />
+                                    <label for="fullBody">Full Body Crypts</label>
+                                </p>
+                                <p>
+                                    <input type="checkbox" id="vaultInscription" />
+                                    <label for="vaultInscription">Vault Inscription</label>
+                                </p>
+                                <p>
+                                    <input type="checkbox" id="urnInscription" />
+                                    <label for="urnInscription">Urn Inscription</label>
+                                </p>
+                            </div>
+                        </div>
+                        <div class = "col s6">
+                            <div action="#">
+                                <h6>Items</h6>
+                                <p>
+                                    <input type="checkbox" id="woodenUrn" />
+                                    <label for="woodenUrn">Wooden urn</label>
+                                </p>
+                                <p>
+                                    <input type="checkbox" id="metalUrn" />
+                                    <label for="metalUrn">Metal urn</label>
+                                </p>
+                                <p>
+                                    <input type="checkbox" id="porcelain" />
+                                    <label for="porcelain">Porcelain</label>
+                                </p>
+                                <p>
+                                    <input type="checkbox" id="pouch" />
+                                    <label for="pouch">Pouch</label>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
+                <button name = "action" class="waves-effect waves-light btn red" href = "Blocks_Maintenance.html">Cancel</button>
+            </div>
+        </div>
+
+
+        <!-- Modal Deactivate -->
+        <div id="modal2" class="modal">
+            <div class = "modal-header">
+                <h4>Deactivate Package</h4>
+            </div>
+            <div class="modal-content">
+                <div class = "col s6" style = "padding-left: 20px;">
+                    <label>Select Package Name to Deactivate</label>
+                    <select>
+                        <option value="" disabled selected>Package Name:</option>
+                        <option value="1">Package One</option>
+                        <option value="2">Package Two</option>
+                        <option value="3">Package Three</option>
+                    </select>
+                </div>
+                <br><br><br><br>
+            </div>
+            <div class="modal-footer">
+                <button name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
+                <button name = "action" class="waves-effect waves-light btn red">Cancel</button>
             </div>
         </div>
 

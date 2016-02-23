@@ -1,13 +1,16 @@
 package columbarium.actions.item;
 
-import java.util.List;
-
 import com.opensymphony.xwork2.Action;
+import com.opensymphony.xwork2.ActionSupport;
 
 import columbarium.model.Item;
 
-public class UpdateItemAction implements Action{
+public class UpdateItemAction extends ActionSupport implements Action{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Item item;
 	private String strItemName;
 	

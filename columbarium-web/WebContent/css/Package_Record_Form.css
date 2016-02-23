@@ -12,14 +12,13 @@
 
 .aside {
     margin-left: 20px;
-    height: 385px;
-    width: 750px;
+    height: 500px;
+    width: 700px;
 }
 
 h1 {
-    padding-left: 0px;
+    padding-left: 100px;
     font-family: myFirstFont;
-    font-size: 15px;
 }
 
 
@@ -91,16 +90,12 @@ h6{
 
 .modal-header {
     background-color: #00897b;
-    color: white;
-    height: 65px;
-
+    height: 70px;
 }
 
-.modal-header h4{
+.modal-header h4 {
     color: white;
     font-family: myFirstFont;
-    font-size: 40px;
-    padding-left: 20px;
     padding-top: 10px;
 }
 

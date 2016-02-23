@@ -10,9 +10,10 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
     <!-- Import File -->
-    <script type="text/javascript" src = "js/calendar.js"></script>
-    <script type="text/javascript" src = "js/Blocks_Record_Form.js"></script>
-    <link href="css/calendar.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src = "../js/calendar.js"></script>
+    <script type="text/javascript" src = "../js/Blocks_Record_Form.js"></script>
+    <script type="text/javascript" src = "../js/datepicker.js"></script>
+    <link href="../css/calendar.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div class="navbar-fixed nav-birdifly">
@@ -978,7 +979,7 @@
                                 <label>Date:</label>
                             </div>
                             <div class="input-field col s3">
-                                <input id="date" type="date" required="" aria-required="true" class="validate">
+                                <input type="date" class="datepicker">
                             </div>
                             <div class="input-field col s3">
                                 <button data-target="modal1" class="btn red modal-trigger" id="btn-date">DATE</button>

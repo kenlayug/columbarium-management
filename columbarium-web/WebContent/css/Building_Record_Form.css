@@ -12,8 +12,8 @@
 
 .aside {
     margin-left: 20px;
-    height: 355px;
-    width: 750px;
+    height: 335px;
+    width: 700px;
 }
 
 h1 {
@@ -89,9 +89,14 @@ h6{
 }
 
 .modal-header {
-    background-color: #ff8f00;
-    color: white;
+    background-color: #00897b;
     height: 70px;
+}
+
+.modal-header h4 {
+    color: white;
+    font-family: myFirstFont;
+    padding-top: 10px;
 }
 
 ul li a {
