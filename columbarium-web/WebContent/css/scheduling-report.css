@@ -2,7 +2,21 @@
     font-family: myFirstFont;
     src: url(../fonts/KGBlankSpaceSketch.ttf);
 }
-
+.dropdown-content{
+    margin-top: 45px;
+    background-color: #ffffff;
+    color: #000000;
+}
+.dropdown-content li a{
+    background-color: #ff8f00;
+    font-family: myFirstFont;
+    color: #ffffff;
+}
+.dropdown-content li a:hover{
+    font-family: myFirstFont;
+    color: #ffffff;
+    text-shadow: 2px 2px #000000;
+}
 .nav-birdifly nav{
     background-color: #ff8f00;
     color: white;
