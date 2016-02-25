@@ -128,4 +128,7 @@ ul li a {
     background-color: #ff8f00;
 }
 
-
+#container {
+    width:960px;
+    margin: 0px auto;
+}
