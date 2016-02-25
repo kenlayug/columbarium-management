@@ -10,78 +10,86 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
     <!-- Import File -->
-    <script type="text/javascript" src = "js/vaults.js"></script>
-    <link href="css/vaults.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src = "../js/vaults.js"></script>
+    <script type="text/javascript" src = "../js/Blocks_Record_Form.js"></script>
+    <script type="text/javascript" src = "../js/datepicker.js"></script>
+    <link href="../css/vaults.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-
 <div class="navbar-fixed nav-birdifly">
-    <nav>
-        <div class="nav-wrapper">
-            <ul id="maintenance" class="dropdown-content">
-                <li><a href='Inventory_Form.html' id="db-content"><span>INVENTORY</span></a></li>
-                <li><a href='Services_Record_Form.html' id="db-content"><span>SERVICE</span></a></li>
-                <li><a href='Package_Record_Form.html' id="db-content"><span>PACKAGE</span></a></li>
-                <li><a href='Building_Record_Form.html' id="db-content"><span>BUILDING</span></a></li>
-                <li><a href='Floor_Record_Form.html' id="db-content"><span>FLOOR</span></a></li>
-                <li><a href='Blocks_Record_Form.html' id="db-content"><span>BLOCK</span></a></li>
-                <li><a href="vaults.html" id="db-content"><span>VAULTS</span></a></li>
-                <li><a class="last" href="FullBodyCrypts.html" id="db-content"><span>FULL BODY CRYPTS</span></a></li>
-            </ul>
-            <ul id="transaction" class="dropdown-content">
-                <li><a href='Customer.html' id="db-content"><span>CUSTOMER</span></a></li>
-                <li><a href='Reservation_Transaction.html' id="db-content"><span>RESERVATION</span></a></li>
-                <li><a href='scheduling.html' id="db-content"><span>SCHEDULING</span></a></li>
-                <li><a href='Collection_Transaction.html' id="db-content"><span>COLLECTION</span></a></li>
-                <li><a class="last" href="UnitOwnership.html" id="db-content"><span>TRANSFERRING</span></a></li>
-            </ul>
-            <ul id="utilities" class="dropdown-content">
-                <li><a class="last" href="Employee.html" id="db-content"><span>EMPLOYEE</span></a></li>
-            </ul>
-            <ul id="report" class="dropdown-content">
-                <li><a href='Reservation-Report.html' id="db-content"><span>RESERVATION RECORD</span></a></li>
-                <li><a href='scheduling-report.html' id="db-content"><span>SCHEDULING RECORD</span></a></li>
-                <li><a href='Collection-Report.html' id="db-content"><span>COLLECTION RECORD</span></a></li>
-                <li><a class="last" href="transferring-report.html" id="db-content"><span>TRANSFERRING RECORD</span></a></li>
-            </ul>
-            <nav>
-                <div class="nav-wrapper">
-                    <a href="#!" class="brand-logo">Logo</a>
-                    <ul class="right hide-on-med-and-down">
-                        <li><a class="dropdown-button" href="#!" data-activates="maintenance" id="db-content">Maintenance<i class="material-icons right">arrow_drop_down</i></a></li>
-                        <li><a class="dropdown-button" href="#!" data-activates="transaction" id="db-content">Transaction<i class="material-icons right">arrow_drop_down</i></a></li>
-                        <li><a href="#" id="normal-nav">Queries</a></li>
-                        <li><a class="dropdown-button" href="#!" data-activates="report" id="db-content">Reports<i class="material-icons right">arrow_drop_down</i></a></li>
-                        <li><a class="dropdown-button" href="#!" data-activates="utilities" id="db-content">Utilities<i class="material-icons right">arrow_drop_down</i></a></li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-    </nav>
+    <div class="responsive">
+        <nav>
+            <div class="nav-wrapper">
+                <ul id="maintenance" class="dropdown-content">
+                    <li><a href='Inventory_Form.html' id="db-content"><span>INVENTORY</span></a></li>
+                    <li><a href='Services_Record_Form.html' id="db-content"><span>SERVICE</span></a></li>
+                    <li><a href='Package_Record_Form.html' id="db-content"><span>PACKAGE</span></a></li>
+                    <li><a href='Building_Record_Form.html' id="db-content"><span>BUILDING</span></a></li>
+                    <li><a href='Floor_Record_Form.html' id="db-content"><span>FLOOR</span></a></li>
+                    <li><a href='Blocks_Record_Form.html' id="db-content"><span>BLOCK</span></a></li>
+                    <li><a href="vaults.html" id="db-content"><span>VAULTS</span></a></li>
+                    <li><a class="last" href="FullBodyCrypts.html" id="db-content"><span>FULL BODY CRYPTS</span></a></li>
+                </ul>
+                <ul id="transaction" class="dropdown-content">
+                    <li><a href='Customer.html' id="db-content"><span>CUSTOMER</span></a></li>
+                    <li><a href='Reservation_Transaction.html' id="db-content"><span>RESERVATION</span></a></li>
+                    <li><a href='scheduling.html' id="db-content"><span>SCHEDULING</span></a></li>
+                    <li><a href='Collection_Transaction.html' id="db-content"><span>COLLECTION</span></a></li>
+                    <li><a class="last" href="UnitOwnership.html" id="db-content"><span>TRANSFERRING</span></a></li>
+                </ul>
+                <ul id="utilities" class="dropdown-content">
+                    <li><a class="last" href="Employee.html" id="db-content"><span>EMPLOYEE</span></a></li>
+                </ul>
+                <ul id="queries" class="dropdown-content">
+                    <li><a href='#' id="db-content"><span>PRODUCT</span></a></li>
+                    <li><a href="#" id="db-content"><span>EMPLOYEE</span></a></li>
+                    <li><a class="last" href="#" id="db-content"><span>CUSTOMER</span></a></li>
+                </ul>
+                <ul id="report" class="dropdown-content">
+                    <li><a href='Reservation-Report.html' id="db-content"><span>RESERVATION RECORD</span></a></li>
+                    <li><a href='scheduling-report.html' id="db-content"><span>SCHEDULING RECORD</span></a></li>
+                    <li><a href='Collection-Report.html' id="db-content"><span>COLLECTION RECORD</span></a></li>
+                    <li><a class="last" href="transferring-report.html" id="db-content"><span>TRANSFERRING RECORD</span></a></li>
+                </ul>
+                <nav>
+                    <div class="nav-wrapper">
+                        <a href="#!" class="brand-logo">Logo</a>
+                        <ul class="right hide-on-med-and-down">
+                            <li><a class="dropdown-button" href="#!" data-activates="maintenance" id="db-content">Maintenance<i class="material-icons right">arrow_drop_down</i></a></li>
+                            <li><a class="dropdown-button" href="#!" data-activates="transaction" id="db-content">Transaction<i class="material-icons right">arrow_drop_down</i></a></li>
+                            <li><a class="dropdown-button" href="#!" data-activates="queries" id="db-content">Queries<i class="material-icons right">arrow_drop_down</i></a></li>
+                            <li><a class="dropdown-button" href="#!" data-activates="report" id="db-content">Reports<i class="material-icons right">arrow_drop_down</i></a></li>
+                            <li><a class="dropdown-button" href="#!" data-activates="utilities" id="db-content">Utilities<i class="material-icons right">arrow_drop_down</i></a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </nav>
+    </div>
 </div>
 
-<h2>FULL BODY CRYPTS</h2>
 <!-- Section -->
-<form class = col s12 >
+<div class = col s12 >
     <div class = "row">
-        <div class = "col s8">
+        <div class = "col s7">
             <div class = "col s12">
+                <h4>FULL BODY CRYPTS</h4>
                 <div class = "aside aside z-depth-3">
                     <div class="modal-header">
-                        <label>CREATE FULL BODY CRYPTS</label>
+                        <label>FULL BODY CRYPTS MAINTENANCE</label>
                     </div>
                     <form action="FullBodyCrypts.html" method="post">
                         <div class="row">
-                            <div class="input-field col s2">
+                            <div class="input-field col s3">
                                 <label>Enter Vault Code: </label>
                             </div>
-                            <div class="input-field col s1">
-                                <input id="fname" type="text" required="" aria-required="true" class="validate">
-                                <label for="fname">####</label>
+                            <div class="input-field col s3">
+                                <input id="vcode" type="text" required="" aria-required="true" class="validate">
+                                <label for="vcode">####</label>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="input-field col s2">
+                            <div class="input-field col s3">
                                 <label>Deceased Name:</label>
                             </div>
                             <div class="input-field col s3">
@@ -101,16 +109,14 @@
                             <div class="input-field col s2">
                                 <label>Date of Birth:</label>
                             </div>
-                            <div class="input-field col s3">
-                                <input id="bday" type="date" required="" aria-required="true" class="validate">
+                            <div class="input-field col s4">
+                                <input type="date" class="datepicker">
                             </div>
-                        </div>
-                        <div class="row">
                             <div class="input-field col s2">
                                 <label>Date of Death:</label>
                             </div>
-                            <div class="input-field col s3">
-                                <input id="bdeath" type="date" required="" aria-required="true" class="validate">
+                            <div class="input-field col s4">
+                                <input type="date" class="datepicker">
                             </div>
                         </div>
                         <div class="row">
@@ -118,95 +124,7 @@
                                 <div class="col s8">mm</div>
                             </div>
                             <div class="col s4">
-                                <a class="waves-effect waves-light btn black right" style = "width: 180px;  margin-top: 20px; margin-bottom: 10px;"><i class="mdi-content-add-circle left"></i>Create</a>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-
-            <div class = "col s12">
-                <div class = "aside aside z-depth-3">
-                    <div class="modal-header">
-                        <label>UPDATE FULL BODY CRYPTS</label>
-                    </div>
-                    <form action="FullBodyCrypts.html" method="post">
-                        <div class="row">
-                            <div class="input-field col s2">
-                                <label>Enter Vault Code: </label>
-                            </div>
-                            <div class="input-field col s1">
-                                <input id="fname" type="text" required="" aria-required="true" class="validate">
-                                <label for="fname">####</label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="input-field col s2">
-                                <label>Deceased Name:</label>
-                            </div>
-                            <div class="input-field col s3">
-                                <input id="fname" type="text" required="" aria-required="true" class="validate">
-                                <label for="fname">First Name</label>
-                            </div>
-                            <div class="input-field col s3">
-                                <input id="mname" type="text">
-                                <label for="mname">Middle Name</label>
-                            </div>
-                            <div class="input-field col s3">
-                                <input id="lname" type="text" required="" aria-required="true" class="validate">
-                                <label for="lname">Last Name</label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="input-field col s2">
-                                <label>Date of Birth:</label>
-                            </div>
-                            <div class="input-field col s3">
-                                <input id="bday" type="date" required="" aria-required="true" class="validate">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="input-field col s2">
-                                <label>Date of Death:</label>
-                            </div>
-                            <div class="input-field col s3">
-                                <input id="bdeath" type="date" required="" aria-required="true" class="validate">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="h">
-                                <div class="col s8">mm</div>
-                            </div>
-                            <div class="col s4">
-                                <a class="waves-effect waves-light btn black right" style = "margin-right: 10px; width: 180px; margin-top: 20px; margin-bottom: 10px"><i class="mdi-content-create left"></i>Update</a>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <div class = "col s12">
-                <div class = "aside aside z-depth-3">
-                    <div class="modal-header">
-                        <label>DEACTIVATE FULL BODY CRYPTS</label>
-                    </div>
-                    <form action="Customer.html" method="post">
-                        <div class="row">
-                            <div class="input-field col s2">
-                                <label>Enter Vault Code: </label>
-                            </div>
-                            <div class="input-field col s1">
-                                <input id="dvo" type="text" required="" aria-required="true" class="validate">
-                                <label for="dvo">####</label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div>
-                                <p>DECEASED NAME:</p>
-                                <p>
-                                    <input type="checkbox" id="test3" checked="checked" />
-                                    <label for="test3" id="del">Name1</label>
-                                </p>
-                                <a class="waves-effect waves-light btn black right" style = "margin-right: 10px; width: 200px; margin-top: 20px; margin-bottom: 10px;"><i class="mdi-communication-dnd-on left"></i>Deactivate</a>
+                                <a class="waves-effect waves-light btn red right" style = "width: 180px;  margin-top: 20px; margin-bottom: 10px;"><i class="mdi-content-add-circle left"></i>Create</a>
                             </div>
                         </div>
                     </form>
@@ -215,173 +133,118 @@
         </div>
 
         <!-- table -->
-        <div class = "col s4">
-            <div class = "col s12">
-                <div class = "aside aside z-depth-3">
-                    <div class="vaults-content">
-                        <ul id="building-no" class="dropdown-content">
-                            <li><a href="#">Building 1</a></li>
-                            <li><a href="#">Building 2</a></li>
-                            <li><a href="#">Building 3</a></li>
-                        </ul>
-                        <ul id="building-floor" class="dropdown-content">
-                            <li><a href="#">Floor 1</a></li>
-                            <li><a href="#">Floor 2</a></li>
-                            <li><a href="#">Floor 3</a></li>
-                        </ul>
-                        <ul id="building-block" class="dropdown-content">
-                            <li><a href="#">Block A</a></li>
-                            <li><a href="#">BLock B</a></li>
-                            <li><a href="#">Block C</a></li>
-                        </ul>
-                        <div class="building-dropdown">
-                            <a class='dropdown-button btn' href='#' data-activates='building-no'>Building No.</a>
-                            <br><a class='dropdown-button btn' href='#' data-activates='building-floor'>Floor No.</a>
-                            <br><a class='dropdown-button btn' href='#' data-activates='building-block'>Block Name</a>
-                        </div>
-                        <table>
-                            <tbody>
-                            <tr>
-                                <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">E1</a></td>
-                                <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">E2</a></td>
-                                <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">E3</a></td>
-                                <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">E4</a></td>
-                                <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">E5</a></td>
-                                <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">E6</a></td>
-                                <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">E7</a></td>
-                            </tr>
-                            <tr>
-                                <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">D1</a></td>
-                                <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">D2</a></td>
-                                <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">D3</a></td>
-                                <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">D4</a></td>
-                                <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">D5</a></td>
-                                <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">D6</a></td>
-                                <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">D7</a></td>
-                            </tr>
-                            <tr>
-                                <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">C1</a></td>
-                                <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">C2</a></td>
-                                <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">C3</a></td>
-                                <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">C4</a></td>
-                                <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">C5</a></td>
-                                <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">C6</a></td>
-                                <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">C7</a></td>
-                            </tr>
-                            <tr>
-                                <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">B1</a></td>
-                                <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">B2</a></td>
-                                <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">B3</a></td>
-                                <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">B4</a></td>
-                                <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">B5</a></td>
-                                <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">B6</a></td>
-                                <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">B7</a></td>
-                            </tr>
-                            <tr>
-                                <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">A1</a></td>
-                                <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">A2</a></td>
-                                <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">A3</a></td>
-                                <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">A4</a></td>
-                                <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">A5</a></td>
-                                <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">A6</a></td>
-                                <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">A7</a></td>
-                            </tr>
-                            </tbody>
-                        </table>
-                        <!-- Modal Structure -->
-                        <div id="modal1" class="modal modal-fixed-footer">
-                            <div class="modal-header">
-                                <label>Vault ID:</label>
+        <div class = "col s5">
+            <div class = "col s4 z-depth-2 " style = "margin-top: 20px; width: 100%;">
+                <div class="responsive">
+                    <div class = "col s12">
+                        <div class="row">
+                            <div class="input-field col s3">
+                                <label>Building No:</label>
                             </div>
-                            <form action="vaults.html" method="post" class="modal-background">
-                                <br><p>Owner: </p>
-                                <p>Deceased Name: </p>
-                                <p>Date of Birth: </p>
-                                <p>Date of Death: </p>
-                            </form>
+                            <div class = "col s9" style = "padding-left: 20px;">
+                                <select>
+                                    <option value="" disabled selected> Select Building No:</option>
+                                    <option value="1">Building 1</option>
+                                    <option value="2">Building 2</option>
+                                    <option value="3">Building 3</option>
+                                </select>
+                            </div>
+                            <div class="input-field col s3">
+                                <label>Floor No:</label>
+                            </div>
+                            <div class = "col s9" style = "padding-left: 20px;">
+                                <select>
+                                    <option value="" disabled selected> Select Floor No:</option>
+                                    <option value="1">Floor 1</option>
+                                    <option value="2">Floor 2</option>
+                                    <option value="3">Floor 3</option>
+                                </select>
+                            </div>
+                            <div class="input-field col s3">
+                                <label>Block Name:</label>
+                            </div>
+                            <div class = "col s9" style = "padding-left: 20px;">
+                                <select>
+                                    <option value="" disabled selected> Select Block Name:</option>
+                                    <option value="1">Block A</option>
+                                    <option value="2">Block B</option>
+                                    <option value="3">Block C</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class = "aside aside z-depth-3">
+                            <div class="vaults-content">
+                                <table style="margin-bottom: 25px">
+                                    <tbody>
+                                    <tr>
+                                        <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">E1</a></td>
+                                        <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">E2</a></td>
+                                        <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">E3</a></td>
+                                        <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">E4</a></td>
+                                        <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">E5</a></td>
+                                        <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">E6</a></td>
+                                        <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">E7</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">D1</a></td>
+                                        <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">D2</a></td>
+                                        <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">D3</a></td>
+                                        <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">D4</a></td>
+                                        <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">D5</a></td>
+                                        <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">D6</a></td>
+                                        <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">D7</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">C1</a></td>
+                                        <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">C2</a></td>
+                                        <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">C3</a></td>
+                                        <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">C4</a></td>
+                                        <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">C5</a></td>
+                                        <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">C6</a></td>
+                                        <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">C7</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">B1</a></td>
+                                        <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">B2</a></td>
+                                        <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">B3</a></td>
+                                        <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">B4</a></td>
+                                        <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">B5</a></td>
+                                        <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">B6</a></td>
+                                        <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">B7</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">A1</a></td>
+                                        <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">A2</a></td>
+                                        <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">A3</a></td>
+                                        <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">A4</a></td>
+                                        <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">A5</a></td>
+                                        <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">A6</a></td>
+                                        <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">A7</a></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <!-- Modal Structure -->
+                                <div id="modal1" class="modal modal-fixed-footer">
+                                    <div class="modal-header">
+                                        <label>Vault ID:</label>
+                                    </div>
+                                    <form action="vaults.html" method="post" class="modal-background">
+                                        <br><p>Owner: </p>
+                                        <p>Deceased Name: </p>
+                                        <p>Date of Birth: </p>
+                                        <p>Date of Death: </p>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class = "col s12">
-                <div class="responsive">
-                    <table  class="data-grid" style = "width: 103%; margin-top: 100px" class="striped">
-                        <thead id="iba">
-                        <tr>
-                            <th data-field="name">Vault Code</th>
-                            <th data-field="name">Owner</th>
-                            <th data-field="gender">Deceased</th>
-                            <th data-field="cv">Date of Birth</th>
-                            <th data-field="cv">Date of Death</th>
-                        </tr>
-                        </thead>
-
-                        <tbody id="data">
-                        <tr>
-                            <td>001</td>
-                            <td>Alvin</td>
-                            <td>Alwin</td>
-                            <td>01/01/1990</td>
-                            <td>02/13/2016</td>
-                        </tr>
-                        <tr>
-                            <td>001</td>
-                            <td>Alvin</td>
-                            <td>Alwin</td>
-                            <td>01/01/1990</td>
-                            <td>02/13/2016</td>
-                        </tr>
-                        <tr>
-                            <td>001</td>
-                            <td>Alvin</td>
-                            <td>Alwin</td>
-                            <td>01/01/1990</td>
-                            <td>02/13/2016</td>
-                        </tr>
-                        <tr>
-                            <td>001</td>
-                            <td>Alvin</td>
-                            <td>Alwin</td>
-                            <td>01/01/1990</td>
-                            <td>02/13/2016</td>
-                        </tr>
-                        <tr>
-                            <td>001</td>
-                            <td>Alvin</td>
-                            <td>Alwin</td>
-                            <td>01/01/1990</td>
-                            <td>02/13/2016</td>
-                        </tr>
-                        <tr>
-                            <td>001</td>
-                            <td>Alvin</td>
-                            <td>Alwin</td>
-                            <td>01/01/1990</td>
-                            <td>02/13/2016</td>
-                        </tr>
-                        <tr>
-                            <td>001</td>
-                            <td>Alvin</td>
-                            <td>Alwin</td>
-                            <td>01/01/1990</td>
-                            <td>02/13/2016</td>
-                        </tr>
-                        <tr>
-                            <td>001</td>
-                            <td>Alvin</td>
-                            <td>Alwin</td>
-                            <td>01/01/1990</td>
-                            <td>02/13/2016</td>
-                        </tr>
-                        </tbody>
-                    </table>
                 </div>
             </div>
         </div>
     </div>
     </div>
-</form>
-<footer class="page-footer" style = "background-color: darkred;">
+</div>
+<footer class="page-footer" style = "background-color: #ffa000;">
     <div class="container">
         <div class="row">
             <div class="col l6 s12">

@@ -1,6 +1,9 @@
 @font-face {
     font-family: myFirstFont;
-    src: url(../fonts/KGBlankSpaceSketch.ttf);
+    src: url(fonts/KGBlankSpaceSketch.ttf);
+}
+#slide-out, #slide-out li:hover{
+    background-color: #000000;
 }
 #del{
     margin-left: 20px;
@@ -9,13 +12,14 @@
     width: 30px;
 }
 .nav-birdifly nav{
-    background-color: #ffa000;
+    background-color: #000000;
 }
 #dd-btn{
     margin-top: 0;
     height: 100%;
 }
-h4{
+h2{
+    margin-left: 30px;
     font-family:  myFirstFont;
 }
 #iba tr th{
@@ -40,23 +44,23 @@ tbody tr td{
     float: right;
     margin-right: 50px;
     color: #ffffff;
-    background: url("../img/bg.jpg");
+    background: #000000;
     font-family:  myFirstFont;
 
 }
 .dropdown-button{
-    background-color: darkred;
+    background-color: #000000;
     font-family: myFirstFont;
-    color: #ffffff;
+    color: #ff8f00;
 }
-#db-content, #normal-nav{
-    background-color: #ffa000;
+#db-content, #normal-nav, #slide-out li a{
+    background-color: #000000;
     font-family: myFirstFont;
-    color: #ffffff;
+    color: #ff8f00;
 }
 #db-iba{
-    color: #ffffff;
-    background: url("../img/bg.jpg");
+    color: #ff8f00;
+    background: #000000;
     font-family:  myFirstFont;
 }
 .modal-trigger:hover, .modal-trigger:active{
@@ -65,14 +69,14 @@ tbody tr td{
     box-shadow: none;
 }
 .modal-header{
-    background-color: #00897b;
+    background: url("img/bg2.jpg");
     padding-top: 15px;
     padding-bottom: 15px;
     position: static;
 }
 .modal-header label{
     font-family:  myFirstFont;
-    color: #ffffff;
+    color: #000000;
     font-size: xx-large;
     padding-left: 15px;
 }
@@ -89,18 +93,29 @@ th, td {
     text-align: center;
 }
 #db-iba{
-    background: url("../img/bg.jpg");
+    background: url("/img/bg1.jpg");
 }
 .dropdown-content{
     margin-top: 45px;
-    background-color: #ffffff;
-    color: #000000;
+    background-color: #000000;
+    font-family: myFirstFont;
+    color: #ff8f00;
+}
+.dropdown-content:hover{
+    margin-top: 45px;
+    background-color: #222222;
+    font-family: myFirstFont;
+    color: #ff8f00;
+}
+.dropdown-content li a{
+    background-color: #000000;
+    font-family: myFirstFont;
+    color: #ff8f00;
 }
 .dropdown-content li a:hover{
-    background-color: #dd8b00;
     font-family: myFirstFont;
-    color: #ffffff;
-    text-shadow: 2px 2px #000000;
+    color: #ff8f00;
+    text-shadow: 2px 2px rgba(255, 132, 21, 0.56);
 }
 .search-customer-update input[type=text] {
     width: 130px;
