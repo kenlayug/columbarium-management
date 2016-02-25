@@ -11,9 +11,8 @@
 
 
 .aside {
-    margin-left: 20px;
     height: 355px;
-    width: 700px;
+    width: 100%;
 }
 
 h1 {
@@ -28,9 +27,8 @@ h1 {
 }
 h2 {
     font-family: myFirstFont;
-    padding-left: 45px;
+    padding-left: 30px;
     font-size: 40px;
-
 }
 
 h4 {

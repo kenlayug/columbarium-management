@@ -30,6 +30,7 @@
 
 <!-- Navbar -->
 <div class="navbar-fixed navbar-leo">
+    <div class = "responsive">
     <nav>
         <div class="nav-wrapper">
             <a href="#!" class="brand-logo left">Logo</a>
@@ -42,6 +43,7 @@
             </ul>
         </div>
     </nav>
+    </div>
 </div>
 
 <!-- Dropdown Maintenance-->
@@ -104,7 +106,7 @@
 <div class = "responsive col s12">
     <div class = "row">
         <div class = "col s7">
-            <h4>Item Maintenance</h4>
+            <h2>Item Maintenance</h2>
 
             <!-- Create Inventory -->
             <div class = "col s12">
@@ -238,8 +240,10 @@
         </div>
 
         <!-- Data Grid -->
-        <div class = "responsive col s5">
-            <div class = "col s4 z-depth-2 " style = "margin-left: 60px; margin-top: 20px; width: 450px; height: 70px;">
+        <div class = "col s5">
+            <div class = "col s4 z-depth-2" style = "margin-top: 20px; width: 100%; height: 70px;">
+               <div class = "responsive">
+
                 <nav style = "height: 50px; margin-top: 10px; background-color: #00897b">
                     <div class="nav-wrapper">
                         <div>
@@ -251,16 +255,18 @@
                         </div>
                     </div>
                 </nav>
+               </div>
             </div>
 
+
             <br>
             <br>
             <br>
             <br>
             <br>
 
-            <div class = "aside z-depth-2" style = "margin-left: 60px; width: 450px; height: 310px; overflow: auto;">
-                <table class = "highlight z-depth-3" style = "margin-top: 10px; margin-left: 0px; width: 100%; height: 200px;">
+            <div class = "aside z-depth-2" style = " width: 100%; height: 340px; overflow: auto;">
+                <table  class="responsive" style = "width: 100%;">
 
                     <thead class = "fixed-header">
                     <tr>
