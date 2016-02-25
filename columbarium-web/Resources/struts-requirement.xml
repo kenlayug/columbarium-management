@@ -38,6 +38,10 @@
   	 	<action name="searchByName" class="columbarium.actions.requirement.SearchRequirementByNameAction">
   	 		<result name="success" type="json"></result>
   	 	</action>
+  	 	
+  	 	<action name="getAllRequirement" class="columbarium.actions.requirement.InitializeRequirementAction">
+  	 		<result name="success" type="json"></result>
+  	 	</action>
   	 
   	</package> 
    

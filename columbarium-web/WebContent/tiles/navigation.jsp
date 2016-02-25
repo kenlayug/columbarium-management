@@ -41,8 +41,9 @@
 	
 	<!-- Dropdown Maintenance-->
 	<ul id="dropdown1" class="dropdown-content">
-	    <li><a href="Item_Maintenance.html">Inventory</a></li>
-	    <li><a href="Services_Maintenance.html">Service</a></li>
+	    <li><a href="<%=request.getContextPath()%>/item">Inventory</a></li>
+	    <li><a href="<%=request.getContextPath()%>/requirement">Requirements</a></li>
+	    <li><a href="<%=request.getContextPath()%>/service">Service</a></li>
 	    <li class="divider"></li>
 	    <li><a href="Package_Maintenance.html">Package</a></li>
 	    <li><a href="Building_Maintenance.html">Building</a></li>

@@ -25,6 +25,7 @@ public class DeactivateRequirementAction extends ActionSupport implements Action
 	
 	public String execute(){
 		strStatus = Requirement.deactivate(getStrRequirementName());
+		System.out.println(strStatus);
 		return "success";
 	}
 	

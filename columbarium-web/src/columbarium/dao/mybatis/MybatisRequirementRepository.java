@@ -93,6 +93,7 @@ public class MybatisRequirementRepository extends MybatisClient implements Requi
 			if (requirementMapper.checkIfExistingRequirement(requirement) > 0){
 				requirementMapper.deactivateRequirement(requirement);
 				sqlSession.commit();
+				System.out.println(requirement.getRequirementId());
 				return "success";
 			}
 			return "failed-does-not-exist";
