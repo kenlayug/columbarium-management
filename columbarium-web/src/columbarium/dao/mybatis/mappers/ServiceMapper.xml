@@ -16,12 +16,21 @@
 			<result property="strServiceName" column="strServiceName"/>
 			<result property="strServiceDesc" column="strServiceDesc"/>
 			<result property="dblPrice" column="deciPrice"/>
+			<collection property="requirementList" ofType="Requirement">
+				<id property="requirementId" column="requirementId"/>
+				<result property="strRequirementName" column="strRequirementName"/>
+				<result property="strRequirementDesc" column="strRequirementDesc"/>
+			</collection>
 		</resultMap>
 		
 		<resultMap type="java.lang.Integer" id="ServiceIdResultMap">
 			<result property="serviceId" column="ServiceId"/>
 		</resultMap>
-	
+		
+		<resultMap type="java.lang.Integer" id="ServiceRequirementCounterResultMap">
+			<result property="intCounter" column="COUNT(*)"/>
+		</resultMap>
+		
 	<!-- END RESULTMAPS -->
 	
 	<!-- SELECT QUERIES -->
@@ -42,10 +51,18 @@
 			</where>
 		</select>
 		
+		<select id="getServiceId" resultMap="ServiceIdResultMap">
+			SELECT serviceId FROM tblService WHERE strServiceName = #{strServiceName}
+		</select>
+		
 		<select id="getService" resultMap="ServiceResultMap">
-			SELECT * FROM tblService
+			SELECT s.*, r.* FROM tblService s
+			LEFT JOIN tblServiceRequirement sr ON s.serviceId = sr.serviceIdFK
+			LEFT JOIN tblRequirement r ON r.requirementId = sr.requirementIdFK
 			<where>
-				intStatus = 1
+				s.intStatus = 1
+				AND sr.intStatus = 1
+				AND r.intStatus = 1
 				<choose>
 					<when test="serviceId != 0">
 						AND serviceId = #{serviceId}
@@ -55,12 +72,18 @@
 					</when>
 				</choose>
 			</where>
-			LIMIT 1
 		</select>
 		
 		<select id="getAllService" resultMap="ServiceResultMap">
-			SELECT serviceId, strServiceName, strServiceDesc, deciPrice
-			FROM tblService ORDER BY strServiceName ASC
+			SELECT s.serviceId, s.strServiceName, s.strServiceDesc, s.deciPrice,
+				r.*
+			FROM tblService s
+			LEFT JOIN tblServiceRequirement sr ON s.serviceId = sr.serviceIdFK
+			LEFT JOIN tblRequirement r ON r.requirementId = sr.requirementIdFK
+			WHERE s.intStatus = 1
+				AND r.intStatus = 1
+				AND sr.intStatus = 1
+			ORDER BY strServiceName ASC
 		</select>
 		
 		<select id="countAllService" resultMap="CountServiceResultMap">
@@ -73,27 +96,44 @@
 		
 		<select id="searchServiceList" resultMap="ServiceResultMap">
 			<bind name="serviceName" value="'%' + strServiceName + '%'" />
-			SELECT serviceId, strServiceName, strServiceDesc, deciPrice
-			FROM tblService
+			SELECT s.serviceId, s.strServiceName, s.strServiceDesc, s.deciPrice,
+				r.*
+			FROM tblService s
+				LEFT JOIN tblServiceRequirement sr ON s.serviceId = sr.serviceIdFK
+				LEFT JOIN tblRequirement r ON r.requirementId = sr.requirementIdFK
 			<where>
+				s.intStatus = 1
+				AND sr.intStatus = 1
+				AND r.intStatus = 1
 				<choose>
-					<when test="strServiceName != null">
-						strServiceName LIKE #{serviceName}
+					<when test="serviceId == 0">
+						AND s.strServiceName LIKE #{serviceName}
 					</when>
 					<when test="serviceId != 0">
-						OR serviceId = #{serviceId}
+						AND s.serviceId = #{serviceId}
 					</when>
 				</choose>
 			</where>
+		</select>
+		
+		<select id="checkIfExistingRequirementInService" resultMap="ServiceRequirementCounterResultMap">
+			SELECT COUNT(*) FROM tblServiceRequirement
+			WHERE serviceIdFK = #{serviceId}
+				AND requirementIdFK = #{requirementId}
 		</select>
 	
 	<!-- END SELECT QUERIES -->
 	
 	<!-- INSERT QUERIES -->
 	
-		<insert id="saveService">
+		<insert id="saveService" useGeneratedKeys="true" keyProperty="id">
 			INSERT INTO tblService(strServiceName, strServiceDesc, deciPrice, intStatus)
 			VALUES (#{strServiceName}, #{strServiceDesc}, #{dblPrice}, 1)
+		</insert>
+		
+		<insert id="saveRequirement">
+			INSERT INTO tblServiceRequirement(serviceIdFK, requirementIdFK, intStatus)
+			VALUES (#{serviceId}, #{requirementId}, 1)
 		</insert>
 		
 	<!-- END INSERT QUERIES -->
@@ -116,6 +156,20 @@
 				intStatus = 0
 			</set>
 			WHERE serviceId = #{serviceId}
+		</update>
+		
+		<update id="removeRequirementFromService">
+			UPDATE tblServiceRequirement
+			SET intStatus = 0
+			WHERE serviceIdFK = #{serviceId}
+				AND requirementIdFK = #{requirementId}
+		</update>
+		
+		<update id="addRequirementFromService">
+			UPDATE tblServiceRequirement
+			SET intStatus = 1
+			WHERE serviceIdFK = #{serviceId}
+				AND requirementIdFK = #{requirementId}
 		</update>
 	
 	<!-- END UPDATE QUERIES -->

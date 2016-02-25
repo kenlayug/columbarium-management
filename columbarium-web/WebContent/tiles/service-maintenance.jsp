@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
      <link rel = "stylesheet" href = "<%=request.getContextPath()%>/css/Services_Record_Form.css"/> 
 
 <!-- Floating Button -->
@@ -65,88 +66,27 @@
                             <br>
                             <div class="row">
                                 <div class = "col s6" >
-                                    <form action="#">
-                                        <h6>Columbary Vaults</h6>
-                                        <p>
-                                            <input type="checkbox" id="deathCertificate" />
-                                            <label for="deathCertificate">Death Certificate</label>
-                                        </p>
-                                        <p>
-                                            <input type="checkbox" id="transferPermit" />
-                                            <label for="transferPermit">Transfer Permit</label>
-                                        </p>
-                                        <p>
-                                            <input type="checkbox" id="cremation" />
-                                            <label for="cremation">Cremation</label>
-                                        </p>
-                                        <p>
-                                            <input type="checkbox" id="informantID2" />
-                                            <label for="informantID2">I.D. of Informant</label>
-                                        </p>
+                                        
+									<c:if test="${requirementList == null}">
+										<h6>No requirement available.</h6>
+									</c:if>
+									<c:if test="${requirementList != null}">
+										<c:forEach items="${requirementList }" var="requirement">
+											<p>
+	                                            <input type="checkbox" id="${requirement.strRequirementName }" />
+	                                            <label for="${requirement.strRequirementName }">${requirement.strRequirementName }</label>
+	                                        </p>
+										</c:forEach>
+									</c:if>
 
-                                        <br>
-
-
-                                        <h6>Additional Requirements:</h6>
-                                        <h1>(Authority to cremate if informant is:)</h1>
-                                        <p>
-                                            <input type="checkbox" id="marriageContract" />
-                                            <label for="marriageContract">Husband/Wife - Marriage Certificate/ Marriage Contract</label>
-                                        </p>
-                                        <p>
-                                            <input type="checkbox" id="parentCertificate" />
-                                            <label for="parentCertificate">Parent - Birth Certificate of Deceased (if none, Affidavit of Conformity)</label>
-                                        </p>
-                                        <p>
-                                            <input type="checkbox" id="bCertificate" />
-                                            <label for="bCertificate">Brother/Sister - Birth Certificate Deceased & Siblings</label>
-                                        </p>
-                                        <p>
-                                            <input type="checkbox" id="affidavit" />
-                                            <label for="affidavit">Relative - Affidavit of Conformity</label>
-                                        </p>
-                                        <p>
-                                            <input type="checkbox" id="informantID" />
-                                            <label for="informantID">I.D of Informant</label>
-                                        </p>
-                                    </form>
+                                        
                                 </div>
 
                                 <div class = "col s6">
-                                    <form action="#">
-                                        <h6>Full Body</h6>
-                                        <p>
-                                            <input type="checkbox" id="deathCertificate2" />
-                                            <label for="deathCertificate2">Death Certificate</label>
-                                        </p>
-                                        <p>
-                                            <input type="checkbox" id="transferPermit2" />
-                                            <label for="transferPermit2">Transfer Permit</label>
-                                        </p>
-                                        <p>
-                                            <input type="checkbox" id="burialPerson" />
-                                            <label for="burialPerson">Burial Person</label>
-                                        </p>
-                                        <p>
-                                            <input type="checkbox" id="buyerID" />
-                                            <label for="buyerID">I.D. of Buyer</label>
-                                        </p>
-                                    </form>
+                                    
                                 </div>
                             </div>
                         </div>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
                         <br>
                         <br>
                         <br>
