@@ -27,7 +27,7 @@
 
 <!-- Navbar -->
 <div class="navbar-fixed navbar-leo">
-    <div class = "responsive">
+    <div class="responsive">
     <nav>
         <div class="nav-wrapper">
             <a href="#!" class="brand-logo left">Logo</a>
@@ -40,18 +40,18 @@
             </ul>
         </div>
     </nav>
-    </div>
+    </div>>
 </div>
 
 <!-- Dropdown Maintenance-->
 <ul id="dropdown1" class="dropdown-content">
-    <li><a href="Item_Maintenance.html">Inventory</a></li>
-    <li><a href="Services_Maintenance.html">Service</a></li>
+    <li><a href="Inventory.html">Inventory</a></li>
+    <li><a href="Services_Record_Form.html">Service</a></li>
     <li class="divider"></li>
-    <li><a href="Package_Maintenance.html">Package</a></li>
-    <li><a href="Building_Maintenance.html">Building</a></li>
-    <li><a href="Floor_Maintenance.html">Floor</a></li>
-    <li><a href="Blocks_Maintenance.html">Block</a></li>
+    <li><a href="Package_Record_Form.html">Package</a></li>
+    <li><a href="Building_Record_Form.html">Building</a></li>
+    <li><a href="Floor_Record_Form.html">Floor</a></li>
+    <li><a href="Blocks_Record_Form.html">Block</a></li>
     <li><a href="vaults.html">Vaults</a></li>
     <li><a href="FullBodyCrypts.html">Body Crypts</a></li>
 </ul>
@@ -76,10 +76,10 @@
 
 <!-- Dropdown Reports -->
 <ul id="dropdown4" class="dropdown-content">
-    <li><a href="Reservation_Report.html">Reservation Record</a></li>
+    <li><a href="Reservation-Report.html">Reservation Record</a></li>
     <li><a href="scheduling-report.html">Scheduling Record</a></li>
     <li class="divider"></li>
-    <li><a href="Collection_Report.html">Collection Record</a></li>
+    <li><a href="Collection-Report.html">Collection Record</a></li>
     <li><a href="transferring-report.html">Transferring Record</a></li>
 </ul>
 
@@ -90,25 +90,22 @@
 </ul>
 
 <!-- Floating Button -->
-<div class="fixed-action-btn horizontal" style="position: absolute; margin-right: 620px; margin-bottom: 125px;">
+<div class="fixed-action-btn horizontal" style="position: absolute; margin-right: 550px; margin-bottom: 125px;">
     <button name = "action" class="btn-floating btn-large red"><i class="large material-icons">add</i>
     </button>
     <ul>
-        <li><button name = "action" class="modal-trigger btn-floating black" href = "#modal2"><i class="material-icons">delete</i></button></li>
-        <li><button name = "action" class="modal-trigger btn-floating green darken-1" href = "#modal1"><i class="material-icons">mode_edit</i></button></li>
+        <li><button name = "action" class="btn-floating black"><i class="material-icons">delete</i></button></li>
+        <li><button name = "action" class="btn-floating green darken-1"><i class="material-icons">mode_edit</i></button></li>
     </ul>
 </div>
 
 <!-- Section -->
-
 <form class = "col s12">
     <div class = "row">
         <div class = "col s7">
-            <div id = "container">
             <h2>Building Maintenance</h2>
 
             <!-- Create Building -->
-
             <div class = "col s12">
                 <div class = "aside aside z-depth-3">
                     <div class = "header">
@@ -147,89 +144,23 @@
                 </div>
             </div>
         </div>
-        </div>
-
-
-        <!-- Modal Update -->
-        <div id="modal1" class="modal">
-            <div class = "modal-header">
-                <h4>Update Building</h4>
-            </div>
-            <div class="modal-content">
-
-                <div class = "col s6" style = "padding-left: 20px;">
-                    <label>Select Building Name to Update</label>
-                    <select>
-                        <option value="" disabled selected>Building Name:</option>
-                        <option value="1">Building One</option>
-                        <option value="2">Building Two</option>
-                        <option value="3">Building Three</option>
-                    </select>
-                </div>
-
-                <form class = "col s12">
-                    <div class="row">
-                        <div class="input-field col s6">
-                            <input id="buildingName" type="text" class="validate">
-                            <label for="buildingName" data-error = "wrong" data-success = "right">Name of Building</label>
-                        </div>
-                        <div class="input-field col s6">
-                            <input id="buildingAddress" type="text" class="validate">
-                            <label for="buildingAddress">Building Address</label>
-                        </div>
-                    </div>
-                </form>
-
-
-
-            </div>
-            <div class="modal-footer">
-                <button name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
-                <button name = "action" class="waves-effect waves-light btn red" href = "Blocks_Maintenance.html">Cancel</button>
-            </div>
-        </div>
-
-
-        <!-- Modal Deactivate -->
-        <div id="modal2" class="modal">
-            <div class = "modal-header">
-                <h4>Deactivate Building</h4>
-            </div>
-            <div class="modal-content">
-
-                <div class = "col s6" style = "padding-left: 20px;">
-                    <label>Select Building Name to Update</label>
-                    <select>
-                        <option value="" disabled selected>Building Name:</option>
-                        <option value="1">Building One</option>
-                        <option value="2">Building Two</option>
-                        <option value="3">Building Three</option>
-                    </select>
-                </div>
-                <br><br><br><br>
-            </div>
-            <div class="modal-footer">
-                <button name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
-                <button name = "action" class="waves-effect waves-light btn red">Cancel</button>
-            </div>
-        </div>
 
         <!-- Data Grid -->
         <div class = "col s5">
-            <div class = "col s4 z-depth-2 " style = "margin-left: 60px; margin-top: 20px; width: 450px; height: 70px;">
-                <div class = "responsive">
-                <nav style = "height: 50px; margin-top: 10px; background-color: #00897b">
-                    <div class="nav-wrapper">
-                        <div>
-                            <div class="input-field"  style = "height: 50px;">
-                                <input id="search" type="search" required>
-                                <label for="search"><i class="material-icons">search</i></label>
-                                <i class="material-icons">close</i>
-                            </div>
+            <div class = "col s4 z-depth-2 " style = "margin-top: 20px; width: 100%; height: 70px;">
+                <div class="responsive">
+                    <nav style = "height: 50px; margin-top: 10px; background-color: #00897b">
+                        <div class="nav-wrapper">
+                            <form>
+                                <div class="input-field"  style = "height: 50px;">
+                                    <input id="search" type="search" required>
+                                    <label for="search"><i class="material-icons">search</i></label>
+                                    <i class="material-icons">close</i>
+                                </div>
+                            </form>
                         </div>
-                    </div>
-                </nav>
-            </div>
+                    </nav>
+                </div>
             </div>
 
             <br>
@@ -238,8 +169,8 @@
             <br>
             <br>
 
-            <div class = "aside z-depth-2" style = "margin-left: 60px; width: 450px; height: 340px; overflow: auto;">
-                <table class = "responsive highlight z-depth-3" style = "margin-top: 10px; margin-left: 0px; width: 100%; height: 200px;">
+            <div class = "aside z-depth-2" style = " width: 100%; height: 340px; overflow: auto;">
+                <table  class="responsive" style = "width: 100%;">
 
                     <thead class = "fixed-header">
                     <tr>

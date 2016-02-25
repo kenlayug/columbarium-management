@@ -12,6 +12,7 @@
 
     <!-- Import File -->
     <script type="text/javascript" src = "../js/CustomerJS.js"></script>
+    <script type="text/javascript" src="../js/Blocks_Record_Form.js"></script>
     <script type="text/javascript" src = "../js/datepicker.js"></script>
     <link href="../css/CustomerCSS.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -66,148 +67,8 @@
             </div>
         </nav>
     </div>
-    <div id="updateCustomer" class="modal">
-        <div class = "modal-header">
-            <h4>Update Block</h4>
-        </div>
-        <div class="modal-content">
-            <div class="modal-header">
-                <label>CUSTOMER MAINTENANCE</label>
-            </div>
-            <form action="Customer.html" method="post">
-                <div class="row">
-                    <div class="input-field col s1">
-                        <label>Name:</label>
-                    </div>
-                    <div class="input-field col s3">
-                        <input id="fname" type="text" required="" aria-required="true" class="validate">
-                        <label for="fname">First Name</label>
-                    </div>
-                    <div class="input-field col s3">
-                        <input id="mname" type="text">
-                        <label for="mname">Middle Name</label>
-                    </div>
-                    <div class="input-field col s3">
-                        <input id="lname" type="text" required="" aria-required="true" class="validate">
-                        <label for="lname">Last Name</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s2">
-                        <label>Gender:</label>
-                    </div>
-                    <div class="input-field col s5">
-                        <p>
-                            <input name="group1" type="radio" id="gender1" />
-                            <label for="gender1">Male</label>
-                            <input name="group1" type="radio" id="gender2" />
-                            <label for="gender2">Female</label>
-                        </p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s2">
-                        <label>Civil Status:</label>
-                    </div>
-                    <div class="input-field col s8">
-                        <p>
-                            <input name="group11" type="radio" id="test1" />
-                            <label for="test1">Single</label>
-                            <input name="group11" type="radio" id="test2" />
-                            <label for="test2">Married</label>
-                            <input name="group11" type="radio" id="test3" />
-                            <label for="test3">Widow/Widower</label>
-                        </p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s2">
-                        <label>Date of Birth:</label>
-                    </div>
-                    <div class="input-field col s3">
-                        <input type="date" class="datepicker">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="h">
-                        <div class="col s8">mm</div>
-                    </div>
-                    <div class="col s4">
-                        <a class="waves-effect waves-light btn red right" style = "width: 180px;  margin-top: 20px; margin-bottom: 10px;"><i class="mdi-content-add-circle left"></i>Create</a>
-                    </div>
-                </div>
-            </form>
-            </form>
-        </div>
-        <div class="modal-footer">
-            <button name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
-            <button name = "action" class="waves-effect waves-light btn red" href = "Blocks_Maintenance.html">Cancel</button>
-        </div>
-    </div>
-
-
-    <!-- Modal Deactivate -->
-    <div id="modal2" class="modal">
-        <div class = "modal-header">
-            <h4>Deactivate Block</h4>
-        </div>
-        <div class="modal-content">
-
-            <form class = "col s12">
-                <div class="row">
-                    <!-- Select Floor Name -->
-                    <div class = "col s6" style = "padding-left: 20px;">
-                        <label>Select Building Name</label>
-                        <select>
-                            <option value="" disabled selected>Building Name:</option>
-                            <option value="1">Building One</option>
-                            <option value="2">Building Two</option>
-                            <option value="3">Building Three</option>
-                        </select>
-                    </div>
-                    <!-- Select Floor Name -->
-                    <div class = "col s6" style = "padding-left: 20px;">
-                        <label>Select Floor Name</label>
-                        <select>
-                            <option value="" disabled selected>Floor Name:</option>
-                            <option value="1">Floor One</option>
-                            <option value="2">Floor Two</option>
-                            <option value="3">Floor Three</option>
-                        </select>
-                    </div>
-                </div>
-            </form>
-
-            <form class = "col s12">
-                <div class="row">
-                    <div class = "col s6" style = "padding-left: 20px;">
-                        <label>Select Block Name to Deactivate:</label>
-                        <select>
-                            <option value="" disabled selected>Block Name:</option>
-                            <option value="1">Block One</option>
-                            <option value="2">Block Two</option>
-                            <option value="3">Block Three</option>
-                        </select>
-                    </div>
-                </div>
-            </form>
-        </div>
-        <div class="modal-footer">
-            <button name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
-            <button name = "action" class="waves-effect waves-light btn red">Cancel</button>
-        </div>
-    </div>
 </div>
-<div class="fixed-action-btn horizontal" style="position: absolute; margin-right: 620px; margin-bottom: 125px;">
-    <div class = "responsive">
-        <button name = "action" class="btn-floating btn-large red"><i class="large material-icons">add</i>
-        </button>
-        <ul>
-            <li><button name = "action" class="btn-floating modal-trigger black" href = "#modal2"><i class="material-icons">delete</i></button></li>
-            <li><button name = "action" class="btn-floating modal-trigger green darken-1" href = "#updateCustomer"><i class="material-icons">mode_edit</i></button></li>
-        </ul>
-    </div>
-</div>
+
 <!-- Section -->
 <div class = col s12 >
     <div class = "row">
@@ -273,15 +134,141 @@
                                 <input type="date" class="datepicker">
                             </div>
                         </div>
+                        <br>
+                        <br>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="fixed-action-btn horizontal" style="position: absolute; margin-right: 620px; margin-bottom: 70px;">
+            <div class = "responsive">
+                <button name = "action" class="btn-floating btn-large red"><i class="large material-icons">add</i>
+                </button>
+                <ul>
+                    <li><button name = "action" class="btn-floating modal-trigger black" href = "#modal2"><i class="material-icons">delete</i></button></li>
+                    <li><button name = "action" class="btn-floating modal-trigger green darken-1" href = "#modal1"><i class="material-icons">mode_edit</i></button></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Modal Update -->
+        <div id="modal1" class="modal">
+            <div class="modal-header">
+                <label>UPDATE CUSTOMER</label>
+            </div>
+            <div class="modal-content">
+                <form class = "col s12">
+                    <div class="row">
+                        <div class="input-field col s1">
+                            <label>Name:</label>
+                        </div>
+                        <div class="input-field col s3">
+                            <input id="ufname" type="text" required="" aria-required="true" class="validate">
+                            <label for="ufname">First Name</label>
+                        </div>
+                        <div class="input-field col s3">
+                            <input id="umname" type="text">
+                            <label for="umname">Middle Name</label>
+                        </div>
+                        <div class="input-field col s3">
+                            <input id="ulname" type="text" required="" aria-required="true" class="validate">
+                            <label for="ulname">Last Name</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s2">
+                            <label>Gender:</label>
+                        </div>
+                        <div class="input-field col s5">
+                            <p>
+                                <input name="ugroup1" type="radio" id="ugender1" />
+                                <label for="ugender1">Male</label>
+                                <input name="ugroup1" type="radio" id="ugender2" />
+                                <label for="ugender2">Female</label>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s2">
+                            <label>Civil Status:</label>
+                        </div>
+                        <div class="input-field col s8">
+                            <p>
+                                <input name="ugroup11" type="radio" id="utest1" />
+                                <label for="utest1">Single</label>
+                                <input name="ugroup11" type="radio" id="utest2" />
+                                <label for="utest2">Married</label>
+                                <input name="ugroup11" type="radio" id="utest3" />
+                                <label for="utest3">Widow/Widower</label>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s2">
+                            <label>Date of Birth:</label>
+                        </div>
+                        <div class="input-field col s3">
+                            <input type="date" class="datepicker">
+                        </div>
+                    </div>
+                </form>
+            <div class="modal-footer">
+                <button name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
+                <button name = "action" class="waves-effect waves-light btn red" href = "Blocks_Maintenance.html">Cancel</button>
+            </div>
+        </div>
+            <!-- Modal Deactivate -->
+            <div id="modal2" class="modal">
+                <div class = "modal-header">
+                    <h4>Deactivate Block</h4>
+                </div>
+                <div class="modal-content">
+
+                    <form class = "col s12">
                         <div class="row">
-                            <div class="h">
-                                <div class="col s8">mm</div>
+                            <!-- Select Floor Name -->
+                            <div class = "col s6" style = "padding-left: 20px;">
+                                <label>Select Building Name</label>
+                                <select>
+                                    <option value="" disabled selected>Building Name:</option>
+                                    <option value="1">Building One</option>
+                                    <option value="2">Building Two</option>
+                                    <option value="3">Building Three</option>
+                                </select>
                             </div>
-                            <div class="col s4">
-                                <a class="waves-effect waves-light btn red right" style = "width: 180px;  margin-top: 20px; margin-bottom: 10px;"><i class="mdi-content-add-circle left"></i>Create</a>
+                            <!-- Select Floor Name -->
+                            <div class = "col s6" style = "padding-left: 20px;">
+                                <label>Select Floor Name</label>
+                                <select>
+                                    <option value="" disabled selected>Floor Name:</option>
+                                    <option value="1">Floor One</option>
+                                    <option value="2">Floor Two</option>
+                                    <option value="3">Floor Three</option>
+                                </select>
                             </div>
                         </div>
                     </form>
+
+                    <form class = "col s12">
+                        <div class="row">
+                            <div class = "col s6" style = "padding-left: 20px;">
+                                <label>Select Block Name to Deactivate:</label>
+                                <select>
+                                    <option value="" disabled selected>Block Name:</option>
+                                    <option value="1">Block One</option>
+                                    <option value="2">Block Two</option>
+                                    <option value="3">Block Three</option>
+                                </select>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
+                    <button name = "action" class="waves-effect waves-light btn red">Cancel</button>
                 </div>
             </div>
         </div>
@@ -308,7 +295,7 @@
             <br>
             <br>
 
-            <div class = "aside z-depth-2" style = "width: 100%; height: 440px; overflow: auto;">
+            <div class = "aside z-depth-2" style = "width: 100%; height: 360px; overflow: auto;">
                     <table  class="responsive" style = "width: 100%;" class="striped">
                         <thead id="iba">
                         <tr>
@@ -380,7 +367,7 @@
         </div>
     </div>
 </div>
-<footer class="page-footer" style = "background-color: #ffa000  ;">
+<footer class="page-footer" style = "background-color: #ff8f00;">
     <div class="container">
         <div class="row">
             <div class="col l6 s12">
@@ -405,6 +392,5 @@
         </div>
     </div>
 </footer>
-
 </body>
 </html>
