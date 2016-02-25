@@ -3,7 +3,7 @@
     src: url(../fonts/KGBlankSpaceSketch.ttf);
 }
 .nav-birdifly nav{
-    background-color: darkred;
+    background-color: #ffa000;
 }
 *{
     padding: 0;
@@ -22,24 +22,18 @@
     font-family: myFirstFont;
     font-size: medium;
 }
-#db-content, #normal-nav{
-    background-color: darkred;
+#db-content{
+    background-color: #ffa000;
     font-family: myFirstFont;
     color: #ffffff;
 }
 .dropdown-content{
     margin-top: 55px;
-    background-color: darkred;
-    font-family: myFirstFont;
-    color: #ffffff;
-}
-.dropdown-content li a{
-    background-color: darkred;
-    font-family: myFirstFont;
-    color: #ffffff;
+    background-color: #ffffff;
+    color: #000000;
 }
 .dropdown-content li a:hover{
-    background-color: #670000;
+    background-color: #ffa000;
     font-family: myFirstFont;
     color: #ffffff;
     text-shadow: 2px 2px #000000;
@@ -51,12 +45,11 @@ label{
 form{
     margin-top: 20px;
 }
-h2{
-    margin-left: 30px;
+h4{
     font-family:  myFirstFont;
 }
 .modal-header{
-    background: url("../img/bg.jpg");
+    background-color: #00897b;
     padding-top: 15px;
     padding-bottom: 15px;
     position: static;
@@ -123,19 +116,5 @@ tbody tr th{
 }
 .dropdown-button{
     width: 150px;
-}
-/* label focus color */
-.input-field input[type=text]:focus + label {
-    color: red;
-}
-/* label underline focus color */
-.input-field input[type=text]:focus {
-    border-bottom: 1px solid red;
-    box-shadow: 0 1px 0 0 red;
-}
-/* valid color */
-.input-field input[type=text].valid {
-    border-bottom: 1px solid red;
-    box-shadow: 0 1px 0 0 red;
 }
 

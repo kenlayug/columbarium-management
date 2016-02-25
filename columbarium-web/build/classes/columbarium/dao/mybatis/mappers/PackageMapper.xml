@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+	<mapper namespace="columbarium.dao.mybatis.mappers.PackageMapper">
+	
+	<!-- RESULTMAPS -->
+	
+		<resultMap type="java.lang.Integer" id="CountPackageResultMap">
+			<result property="intCountPackage" column="COUNT(*)"/>
+		</resultMap>
+		
+		<resultMap type="Package" id="PackageResultMap">
+			<id property="packageId" column="PackageId"/>
+			<result property="strPackageName" column="strPackageName"/>
+			<result property="strPackageDesc" column="strPackageDesc"/>
+			<result property="dblPrice" column="deciPrice"/>
+			<collection property="itemList" column="itemId" ofType="Item"
+				javaType="ArrayList" resultMap="ItemResultMap"/>
+			<collection property="serviceList" column="serviceId" ofType="Service"
+				javaType="ArrayList" resultMap="ServiceResultMap"/>
+		</resultMap>
+		
+		<resultMap type="java.lang.Integer" id="PackageIdResultMap">
+			<result property="packageId" column="packageId"/>
+		</resultMap>
+		
+		<resultMap type="Item" id="ItemResultMap">
+			<id property="itemId" column="ItemId"/>
+			<result property="strItemName" column="strItemName"/>
+			<result property="strItemDesc" column="strItemDesc"/>
+			<result property="dblPrice" column="deciPrice"/>
+		</resultMap>
+		
+		<resultMap type="Service" id="ServiceResultMap">
+			<id property="serviceId" column="serviceId"/>
+			<result property="strServiceName" column="strServiceName"/>
+			<result property="strServiceDesc" column="strServiceDesc"/>
+			<result property="dblPrice" column="deciPrice"/>
+		</resultMap>
+	
+	<!-- END RESULTMAPS -->
+	
+	<!-- SELECT QUERIES -->
+	
+		<select id="checkIfExisting" resultMap="CountPackageResultMap">
+			SELECT COUNT(*)
+			FROM tblPackage
+			<where>
+				intStatus = 1
+				<choose>
+					<when test="packageId == null">
+						OR packageId = #{packageId}
+					</when>
+					<when test="strPackageName != null">
+						OR strPackageName LIKE #{strPackageName}
+					</when>
+				</choose>
+			</where>
+		</select>
+		
+		<select id="getPackage" resultMap="PackageResultMap">
+			SELECT p.*, i.*, s.*
+			FROM tblPackage p
+			INNER JOIN tblPackageItem pi ON p.packageId = pi.packageIdFK
+			INNER JOIN tblItem i ON i.itemId = itemIdFK
+			INNER JOIN tblPackageService ps ON p.packageId = ps.packageIdFK
+			INNER JOIN tblService s ON s.serviceId = ps.serviceIdFK
+			<where>
+				p.intStatus = 1
+				<choose>
+					<when test="packageId != 0">
+						AND p.packageId = #{packageId}
+					</when>
+					<when test="strPackageName != null">
+						AND p.strPackageName LIKE #{strPackageName}
+					</when>
+				</choose>
+			</where>
+			LIMIT 1
+		</select>
+		
+		<select id="getPackageId" resultMap="PackageIdResultMap">
+			SELECT packageId FROM tblPackage WHERE strPackageName LIKE #{strPackageName}
+		</select>
+		
+		<select id="getAllPackage" resultMap="PackageResultMap">
+			SELECT p.packageId, p.strPackageName, p.strPackageDesc, p.deciPrice,
+				i.strItemName, i.strItemDesc, i.deciPrice,
+				s.strServiceName, s.strServiceDesc, s.deciPrice
+			FROM tblPackage p
+			INNER JOIN tblPackageItem pi ON p.packageId = pi.packageIdFK
+			INNER JOIN tblItem i ON i.itemId = itemIdFK
+			INNER JOIN tblPackageService ps ON p.packageId = ps.packageIdFK
+			INNER JOIN tblService s ON s.serviceId = ps.serviceIdFK
+			WHERE p.intStatus = 1
+			ORDER BY strPackageName ASC
+		</select>
+		
+		<select id="countAllPackage" resultMap="CountPackageResultMap">
+			SELECT COUNT(*) FROM tblPackage
+		</select>
+		
+		<select id="getLastPackageId" resultMap="PackageIdResultMap">
+			SELECT packageId FROM tblPackage ORDER BY packageId DESC LIMIT 1
+		</select>
+		
+		<select id="searchPackageList" resultMap="PackageResultMap">
+			<bind name="packageName" value="'%' + strPackageName + '%'" />
+			SELECT p.packageId, p.strPackageName, p.strPackageDesc, p.deciPrice,
+				i.strItemName, i.strItemDesc, i.deciPrice,
+				s.strServiceName, s.strServiceDesc, s.deciPrice
+			FROM tblPackage p
+			INNER JOIN tblPackageItem pi ON p.packageId = pi.packageIdFK
+			INNER JOIN tblItem i ON i.itemId = itemIdFK
+			INNER JOIN tblPackageService ps ON p.packageId = ps.packageIdFK
+			INNER JOIN tblService s ON s.serviceId = ps.serviceIdFK
+			<where>
+				<choose>
+					<when test="strPackageName != null">
+						strPackageName LIKE #{strPackageName}
+					</when>
+					<when test="packageId != 0">
+						OR packageId = #{packageId}
+					</when>
+				</choose>
+			</where>
+		</select>
+		
+		<select id="checkPackageIfExistingService" resultMap="CountPackageResultMap">
+			SELECT COUNT(*) FROM tblPackageService
+			WHERE packageIdFK = #{packageId}
+				AND serviceIdFK = #{serviceId}
+		</select>
+		
+		<select id="checkPackageIfExistingItem" resultMap="CountPackageResultMap">
+			SELECT COUNT(*)
+			FROM tblPackageItem
+			WHERE packageIdFK = #{packageId}
+				AND itemIdFK = #{itemId}
+		</select>
+	
+	<!-- END SELECT QUERIES -->
+	
+	<!-- INSERT QUERIES -->
+	
+		<insert id="savePackage">
+			INSERT INTO tblPackage(strPackageName, strPackageDesc, deciPrice, intStatus)
+			VALUES (#{strPackageName}, #{strPackageDesc}, #{dblPrice}, 1)
+		</insert>
+		
+		<insert id="addServiceToPackage">
+			INSERT INTO tblPackageService(packageIdFK, serviceIdFK)
+			VALUES (
+				#{packageId},
+				(SELECT serviceId FROM tblService WHERE strServiceName LIKE #{service.strServiceName})
+			)
+		</insert>
+		
+		<insert id="addItemToPackage">
+			INSERT INTO tblPackageItem(packageIdFK, itemIdFK)
+			VALUES (
+				#{packageId},
+				(SELECT itemId FROM tblItem WHERE strItemName LIKE #{item.strItemName})
+			)
+		</insert>
+		
+	<!-- END INSERT QUERIES -->
+	
+	<!-- UPDATE QUERIES -->
+	
+		<update id="updatePackage">
+			UPDATE tblPackage
+			<set>
+				<if test="strPackageName != null">strPackageName = #{strPackageName},</if>
+				<if test="strPackageDesc != null">strPackageDesc = #{strPackageDesc},</if>
+				<if test="dblPrice != 0">deciPrice = #{dblPrice}</if>
+			</set>
+			WHERE packageId = #{packageId}
+		</update>
+		
+		<update id="deactivatePackage">
+			UPDATE tblPackage
+			<set>
+				intStatus = 0
+			</set>
+			WHERE packageId = #{packageId}
+		</update>
+	
+	<!-- END UPDATE QUERIES -->
+	
+	
+	</mapper>

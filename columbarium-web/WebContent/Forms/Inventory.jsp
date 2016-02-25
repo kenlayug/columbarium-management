@@ -1,7 +1,11 @@
+<<<<<<< HEAD:columbarium-web/WebContent/Forms/Inventory.html
+ <!DOCTYPE html>
+=======
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+>>>>>>> 172020bb0712b8b96caef5bf8d9bcd4558c2d68a:columbarium-web/WebContent/Forms/Inventory.jsp
 <html lang="en">
 <head>
     <title>SAD Forms</title>

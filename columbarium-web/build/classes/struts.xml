@@ -12,6 +12,15 @@
      
      <package name="main" extends="struts-default" namespace="/">
      
+     	<result-types>
+         	<result-type name="tiles" 
+         	class="org.apache.struts2.views.tiles.TilesResult" />
+      	</result-types>
+     
+     	<action name="tile" class="columbarium.actions.ChainAction">
+     		<result name="success" type="tiles">item-maintenance</result>
+     	</action>
+     
      	<action name="item" class="columbarium.actions.ChainAction">
      		<result name="success" type="redirect">/item/</result>
      	</action>

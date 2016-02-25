@@ -9,14 +9,13 @@
     width: 30px;
 }
 .nav-birdifly nav{
-    background-color: darkred;
+    background-color: #ffa000;
 }
 #dd-btn{
     margin-top: 0;
     height: 100%;
 }
-h2{
-    margin-left: 30px;
+h4{
     font-family:  myFirstFont;
 }
 #iba tr th{
@@ -51,7 +50,7 @@ tbody tr td{
     color: #ffffff;
 }
 #db-content, #normal-nav{
-    background-color: darkred;
+    background-color: #ffa000;
     font-family: myFirstFont;
     color: #ffffff;
 }
@@ -66,7 +65,7 @@ tbody tr td{
     box-shadow: none;
 }
 .modal-header{
-    background: url("../img/bg.jpg");
+    background-color: #00897b;
     padding-top: 15px;
     padding-bottom: 15px;
     position: static;
@@ -94,17 +93,11 @@ th, td {
 }
 .dropdown-content{
     margin-top: 45px;
-    background-color: darkred;
-    font-family: myFirstFont;
-    color: #ffffff;
-}
-.dropdown-content li a{
-    background-color: darkred;
-    font-family: myFirstFont;
-    color: #ffffff;
+    background-color: #ffffff;
+    color: #000000;
 }
 .dropdown-content li a:hover{
-    background-color: #670000;
+    background-color: #dd8b00;
     font-family: myFirstFont;
     color: #ffffff;
     text-shadow: 2px 2px #000000;

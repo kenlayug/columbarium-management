@@ -2,20 +2,11 @@
     font-family: myFirstFont;
     src: url(../fonts/KGBlankSpaceSketch.ttf);
 }
-
-.navbar-leo nav{
-    background-color: #ff8f00;
-    color: white;
-    font-family: myFirstFont;
-}
-
-
 .aside {
     margin-left: 300px;
     height: 355px;
     width: 750px;
 }
-
 h1 {
     padding-left: 100px;
     font-family: myFirstFont;
