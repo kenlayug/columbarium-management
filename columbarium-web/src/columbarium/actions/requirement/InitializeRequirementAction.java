@@ -28,7 +28,7 @@ public class InitializeRequirementAction extends ActionSupport implements Action
 	public String execute(){
 		
 		setRequirementList(Requirement.getAllRequirements());
-		if (getRequirementList().size() == 0){
+		if (getRequirementList() == null || getRequirementList().size() == 0){
 			strStatus = "failed-no-available";
 		}
 		return "success";

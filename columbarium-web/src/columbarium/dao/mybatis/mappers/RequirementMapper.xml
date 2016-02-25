@@ -57,7 +57,7 @@
 				AND strRequirementName = #{requirementName}
 		</select>
 		
-		<select id="countAllRequirements" resultMap="CountRequirementResultMap">
+		<select id="countAllRequirement" resultMap="CountRequirementResultMap">
 			SELECT COUNT(*) FROM tblRequirement WHERE intStatus = 1
 		</select>
 	
