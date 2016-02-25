@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dd7de87f-0dc6-4bd5-9494-5163b436739e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/columbarium-web/WebContent/Forms/Requirements_Maintenance.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/columbarium-web/WebContent/css/Requirements_Maintenance.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/columbarium-web/WebContent/js/Requirements_Maintenance.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/columbarium-web/WebContent/Forms/Blocks_Maintenance.html" afterPath="$PROJECT_DIR$/columbarium-web/WebContent/Forms/Blocks_Maintenance.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/columbarium-web/WebContent/Forms/Requirements_Maintenance.html" afterPath="$PROJECT_DIR$/columbarium-web/WebContent/Forms/Requirements_Maintenance.html" />
     </list>
     <ignored path="columbarium-management.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,8 +27,8 @@
       <file leaf-file-name="Requirements_Maintenance.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/columbarium-web/WebContent/Forms/Requirements_Maintenance.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.0258621">
-              <caret line="156" column="53" selection-start-line="156" selection-start-column="53" selection-end-line="156" selection-end-column="53" />
+            <state vertical-scroll-proportion="0.762069">
+              <caret line="130" column="57" selection-start-line="130" selection-start-column="57" selection-end-line="130" selection-end-column="57" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#div#1;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -729,12 +725,12 @@
       <workItem from="1456173177949" duration="5862000" />
       <workItem from="1456181088144" duration="13992000" />
       <workItem from="1456245432161" duration="4857000" />
-      <workItem from="1456381395624" duration="2133000" />
+      <workItem from="1456381395624" duration="2319000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="163621000" />
+    <option name="totallyTimeSpent" value="163807000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1378" height="744" extended-state="0" />
@@ -1086,8 +1082,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/columbarium-web/WebContent/Forms/Requirements_Maintenance.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.0258621">
-          <caret line="156" column="53" selection-start-line="156" selection-start-column="53" selection-end-line="156" selection-end-column="53" />
+        <state vertical-scroll-proportion="0.762069">
+          <caret line="130" column="57" selection-start-line="130" selection-start-column="57" selection-end-line="130" selection-end-column="57" />
           <folding>
             <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#div#1;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
