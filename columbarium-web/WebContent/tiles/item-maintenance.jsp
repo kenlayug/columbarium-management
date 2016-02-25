@@ -1,14 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
-<!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
-	
-</head>
-<body>
 
 	    <!-- Import CSS/JS -->
 	    <script type="text/javascript" src="<%=request.getContextPath()%>/js/Inventory_Form.js"></script>
@@ -16,12 +8,12 @@
 	
 
 	<!-- Floating Button -->
-	<div class="fixed-action-btn horizontal" style="position: absolute; margin-right: 620px; margin-bottom: 155px;">
-	    <button name = "action" class="btn-floating btn-large red"><i class="large material-icons">add</i>
+	<div class="fixed-action-btn horizontal" style="position: absolute; margin-right: 570px; margin-bottom: 175px;">
+	    <button id="btnCreateItem" name = "action" class="btn-floating btn-large red"><i class="large material-icons">add</i>
 	    </button>
 	    <ul>
-	        <li><button name = "action" class="modal-trigger btn-floating black" href = "#modal2"><i class="material-icons">delete</i></button></li>
-	        <li><button name = "action" class="modal-trigger btn-floating green darken-1" href = "#modal1"><i class="material-icons">mode_edit</i></button></li>
+	        <li><button name = "action" class="modal-trigger btn-floating black" href = "#modalDeactivate"><i class="material-icons">delete</i></button></li>
+	        <li><button name = "action" class="modal-trigger btn-floating green darken-1" href = "#modalUpdate"><i class="material-icons">mode_edit</i></button></li>
 	    </ul>
 	</div>
 	
@@ -39,19 +31,18 @@
 	                    </div>
 	
 	
-	                    <form class = "col s12" method="POST" action="create">
 	                    <div class = "col s12">
 	                        <div class = "row">
 	                        <div style = "padding-left: 10px;">
 	                            <div class="input-field col s6">
 	                                <input id="itemName" type="text" class="validate" name="item.strItemName">
-	                                <label for="itemName" data-error = "wrong" data-success = "right">Item Name</label>
+	                                <label for="itemName">Item Name</label>
 	                            </div>
 	                        </div>
 	                        <div style = "padding-left: 10px;">
 	                            <div class="input-field col s6">
 	                                <input id="itemPrice" type="text" class="validate" name="item.dblPrice">
-	                                <label for="itemPrice" data-error = "wrong" data-success = "right">Item Price</label>
+	                                <label for="itemPrice">Item Price</label>
 	                            </div>
 	                        </div>
 	                    </div>
@@ -59,26 +50,21 @@
 	
 	                        <div class="row">
 	                            <div class="input-field col s12">
-	                                <input id="desc" type="text" class="validate" name="item.strItemDesc">
+	                                <input id="itemDesc" type="text" class="validate" name="item.strItemDesc">
 	                                <label for="desc">Item Description</label>
 	                            </div>
 	                        </div>
-	                        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-	    						<i class="material-icons right">send</i>
-	  						</button>
-	                    </form>
 	
 	                </div>
 	            </div>
 	        </div>
 	
 	        <!-- Modal Update -->
-	        <div id="modal1" class="modal">
+	        <div id="modalUpdate" class="modal">
 	            <div class = "modal-header">
 	                <h4>Update Item</h4>
 	            </div>
 	            <div class="modal-content">
-	                <form class = "col s12" action="update" method="post">
 	
 		                <div class = "col s12">
 		                    <div class = "col s6" style = "padding-left: 20px;">
@@ -87,7 +73,7 @@
 		                        	<label>No item available.</label>
 		                        </c:if>
 		                        <c:if test="${itemList != null}">
-			                        <select name="strItemName" onchange="loadDetails(this.value)">
+			                        <select name="strItemName" id="selectItemUpdate" onchange="placeValue()">
 			                            <option value="" disabled selected>Item Name:</option>
 										<c:forEach items="${itemList }" var="item">
 											<option value="${item.strItemName}">${item.strItemName}</option>
@@ -116,27 +102,26 @@
 	
 	                    <div class="row">
 	                        <div class="input-field col s12">
-	                            <input id="itemdescUpdate" type="text" class="validate" name="item.strItemDesc">
-	                            <label for="itemdescUpdate">New Item Description</label>
+	                            <input id="itemDescUpdate" type="text" class="validate" name="item.strItemDesc">
+	                            <label for="itemDescUpdate">New Item Description</label>
 	                        </div>
 	                    </div>
 	
 	            </div>
 	            <div class="modal-footer">
-	                <button name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
-	                </form>
+	                <button id="btnUpdateItem" type="submit" name="action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
+	                
 	                <button class="waves-effect waves-light btn red" href = "Blocks_Maintenance.html">Cancel</button>
 	            </div>
 	        </div>
 	
 	
 	        <!-- Modal Deactivate -->
-	        <div id="modal2" class="modal">
+	        <div id="modalDeactivate" class="modal">
 	            <div class = "modal-header">
 	                <h4>Deactivate Item</h4>
 	            </div>
 	            <div class="modal-content">
-					<form action="deactivate" method="post">
 		                <div class = "col s12">
 		                    <div class = "col s6" style = "padding-left: 20px;">
 		                        <label>Select Item Name to Deactivate:</label>
@@ -144,7 +129,7 @@
 			                       <label>No item available.</label>
 			                    </c:if>
 			                    <c:if test="${itemList != null}">
-									<select name="strItemName">
+									<select name="strItemName" id="itemNameDeactivate">
 										<option value="" disabled selected>Item Name:</option>
 											<c:forEach items="${itemList }" var="item">
 												<option value="${item.strItemName}">${item.strItemName}</option>
@@ -156,8 +141,8 @@
 	            </div>
 	
 	            <div class="modal-footer">
-	                <button name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
-					</form>
+	                <button id="btnDeactivate" name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
+					
 	                <button class="waves-effect waves-light btn red">Cancel</button>
 	            </div>
 	        </div>
@@ -169,7 +154,7 @@
 	                    <div class="nav-wrapper">
 	                        <div>
 	                            <div class="input-field"  style = "height: 50px;">
-	                                <input id="search" type="search" required>
+	                                <input id="searchItem" type="search">
 	                                <label for="search"><i class="material-icons">search</i></label>
 	                                <i class="material-icons">close</i>
 	                            </div>
@@ -185,7 +170,7 @@
 	            <br>
 	
 	            <div class = "aside z-depth-2" style = "margin-left: 60px; width: 450px; height: 310px; overflow: auto;">
-	                <table class = "highlight z-depth-3" style = "margin-top: 10px; margin-left: 0px; width: 100%; height: 200px;">
+	                <table id="tableItem" class = "highlight z-depth-3" style = "margin-top: 10px; margin-left: 0px; width: 100%; height: 200px;">
 	
 	                    <thead class = "fixed-header">
 	                    <tr>
@@ -194,7 +179,7 @@
 	                        <th data-field="name">Item Description</th>
 	                    </tr>
 	                    </thead>
-	                    <tbody>
+	                    <tbody id="tableItemBody">
 			                <c:if test="${itemList  == null }">
 			                	<tr>
 				                	<td>No available items.</td>
@@ -202,7 +187,7 @@
 				            </c:if>
 			                <c:if test="${itemList != null}">
 			                	<c:forEach items="${itemList }" var="item">
-			                		<tr>
+			                		<tr id="rowItem">
 					                    <td>${item.strItemName }</td>
 					                    <td>P ${item.dblPrice }</td>
 					                    <td>${item.strItemDesc }</td>
@@ -218,6 +203,184 @@
 	
 	    </div>
 	</div>
-
-</body>
-</html>
+	
+	<script type="text/javascript">
+			
+		$("#btnCreateItem").click(function(){
+			var itemName = document.getElementById("itemName").value;
+			var itemPrice = document.getElementById("itemPrice").value;
+			var itemDesc = document.getElementById("itemDesc").value;
+		    $.ajax({
+		        type: "POST",
+		        url: "create",
+		        data: {
+		        	"item.strItemName" : itemName,
+		        	"item.dblPrice" : itemPrice,
+		        	"item.strItemDesc" : itemDesc
+		        },
+		       	dataType: "json",
+		        async: true,
+		        success: function(data){
+		        	if (data.status === "success"){
+		        		alert("Item "+data.item.strItemName+" created!");
+		        		$("#itemName").val("");
+		        		$("#itemPrice").val("");
+		        		$("#itemDesc").val("");
+		        		updateTable();
+		        	}
+		        },
+		        error: function(data){
+		        	
+		        	alert("Error!");
+		        }
+		    });
+	
+		    return false;
+		});
+	
+		$("#btnUpdateItem").click(function(){
+			var itemName = document.getElementById("itemNameUpdate").value;
+			var itemPrice = document.getElementById("itemPriceUpdate").value;
+			var itemDesc = document.getElementById("itemDescUpdate").value;
+			var itemUpdateName = document.getElementById("selectItemUpdate").value;
+		    $.ajax({
+		        type: "POST",
+		        url: "update",
+		        data: {
+		        	"item.strItemName" : itemName,
+		        	"item.dblPrice" : itemPrice,
+		        	"item.strItemDesc" : itemDesc,
+		        	"strItemName" : itemUpdateName
+		        },
+		       	dataType: "json",
+		        async: true,
+		        success: function(data){
+		        	if (data.status === "success"){
+		        		alert("Item "+data.strItemName+" updated!");
+		        		$("#itemNameUpdate").val("");
+		        		$("#itemPriceUpdate").val("");
+		        		$("#itemDescUpdate").val("");
+		        		$("#modalUpdate").closeModal();
+		        		updateTable();
+		        	}
+		        },
+		        error: function(data){
+		        	
+		        	alert("Error!");
+		        }
+		    });
+		
+		    return false;
+		});
+		
+		$("#btnDeactivate").click(function(){
+			
+			var itemNameDeactivate = document.getElementById("itemNameDeactivate").value;
+			$.ajax({
+				type: "POST",
+				url: "deactivate",
+				data: {
+					"strItemName" : itemNameDeactivate
+				},
+				async: true,
+				success: function(data){
+					if (data.status === "success"){
+						updateTable();
+		        		$("#modalDeactivate").closeModal();
+						alert("Item "+data.strItemName+" successfully deactivated.");
+					}
+				},
+				error: function(data){
+					alert("Error...");
+				}
+			});
+			
+		});
+		
+		$("#searchItem").on("change keyup paste",function(){
+			searchItemAndUpdateTable();
+		});
+		
+		function searchItemAndUpdateTable(){
+			var itemName = document.getElementById("searchItem").value;
+			$.ajax({
+				type: "POST",
+				url: "searchItem",
+				data: {
+					"strItemName" : itemName
+				},
+				async: true,
+				success: function(data){
+					
+					var itemList = data.itemList;
+	        		$("#tableItem tbody").remove();
+	        		$.each(itemList, function(i, item){
+		        		tableRow = $("<tr>").append(
+		        				$("<td>").text(item.strItemName),
+		        				$("<td>").text("P "+item.dblPrice),
+		        				$("<td>").text(item.strItemDesc));
+		        		$("#tableItem").append(tableRow);
+	        		});
+					
+				},
+				error: function(data){
+					alert("Error...");
+				}
+			});
+		
+			
+		}
+		
+		function updateTable(){
+			$.ajax({
+				type: "POST",
+				url: "getItemList",
+				dataType: "json",
+				async: true,
+				success: function(data){
+	        		$("#tableItem tbody").remove();
+	        		var tableRow;
+	        		var itemList = data.itemList;
+	        		
+	        		$.each(itemList, function(i, item){
+						
+		        		tableRow = $("<tr>").append(
+		        				$("<td>").text(item.strItemName),
+		        				$("<td>").text("P "+item.dblPrice),
+		        				$("<td>").text(item.strItemDesc));
+		        		$("#tableItem").append(tableRow);
+	        		});
+	        		
+				},
+				error: function(data){
+					alert("Error in updating table");
+				}
+			});
+			
+		}
+		
+		function placeValue(){
+			
+			var itemSelected = document.getElementById("selectItemUpdate").value;
+			
+			$.ajax({
+				type: "POST",
+				url: "getItemInfo",
+				data:{
+					"strItemName" : itemSelected
+				},
+				dataType: "json",
+				async: true,
+				success: function(data){
+					$("#itemNameUpdate").val(data.item.strItemName);
+	        		$("#itemPriceUpdate").val(data.item.dblPrice);
+	        		$("#itemDescUpdate").val(data.item.strItemDesc);
+				},
+				error: function(data){
+					alert("Error...");
+				}
+			});
+			
+		}
+		
+	</script>	

@@ -5,7 +5,7 @@
    
    <struts>
    
-   	<package name="item" extends="struts-default" namespace="/item"> 
+   	<package name="item" extends="struts-default, json-default" namespace="/item"> 
   		 
   		 <result-types>
          	<result-type name="tiles" 
@@ -16,19 +16,28 @@
   			<result name="success" type="tiles">item-maintenance</result>
   		</action>
   		
+  		<action name="getItemList" class="columbarium.actions.item.GetItemListAction">
+  			<result name="success" type="json"></result>
+  		</action>
+  		
+  		<action name="searchItem" class="columbarium.actions.item.SearchItemListAction">
+  			<result name="success" type="json"></result>
+  		</action>
+  		
+  		<action name="getItemInfo" class="columbarium.actions.item.SearchItemAction">
+  			<result name="success" type="json"/>
+  		</action>
+  		
   		<action name="create" class="columbarium.actions.item.CreateItemAction" method="execute">
-  			<result name="success">/index.html</result>
-  			<result name="failed-existing" type="redirect">/item/</result>
-  			<result name="failed-database">/Forms/database-error.jsp</result>
-  			<result name="input" type="redirect">/item/</result>
+  			<result name="success" type="json"></result>
   		</action>
   		
   		<action name="update" class="columbarium.actions.item.UpdateItemAction">
-  			<result name="success">/index.html</result>
+  			<result name="success" type="json"></result>
   		</action>
   		 
   		<action name="deactivate" class="columbarium.actions.item.DeactivateItemAction">
-  			<result name="success">/index.html</result>
+  			<result name="success" type="json"></result>
   		</action>
   	 
   	</package> 

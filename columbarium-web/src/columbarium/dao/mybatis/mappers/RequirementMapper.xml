@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+	<mapper namespace="columbarium.dao.mybatis.mappers.RequirementMapper">
+	
+	<!-- RESULTMAPS -->
+	
+		<resultMap type="Requirement" id="RequirementResultMap">
+			<id property="requirementId" column="requirementId"/>
+			<result property="strRequirementName" column="strRequirementName"/>
+			<result property="strRequirementDesc" column="strRequirementDesc"/>
+		</resultMap>
+		
+		<resultMap type="java.lang.Integer" id="CountRequirementResultMap">
+			<result property="intCountRequirement" column="COUNT(*)"/>
+		</resultMap>
+	
+	<!-- END RESULTMAPS -->
+	
+	<!-- SELECT QUERIES -->
+	
+		<select id="selectRequirement" resultMap="RequirementResultMap">
+			SELECT requirementId, strRequirementName, strRequirementDesc
+			FROM tblRequirement
+			<where>
+				intStatus = 1
+				<if test="strRequirementName == null">
+					<if test="requirementId != null">
+						AND requirementId = #{requirementId}
+					</if>
+				</if>
+				<if test="strRequirementName != null">
+					AND strRequirementName LIKE #{strRequirementName}
+				</if>
+			</where>
+		</select>
+		
+		<select id="checkIfExistingRequirement" resultMap="CountRequirementResultMap">
+			SELECT COUNT(*) FROM tblRequirement
+			WHERE intStatus = 1 AND strRequirementName = #{strRequirementName}
+		</select>
+		
+		<select id="getAllRequirements" resultMap="RequirementResultMap">
+			SELECT requirementId, strRequirementName, strRequirementDesc
+			FROM tblRequirement
+			WHERE intStatus = 1
+			ORDER BY strRequirementName ASC
+		</select>
+		
+		<select id="searchRequirementByName" resultMap="RequirementResultMap">
+			<bind name="requirementName" value="'%' + strRequirementName + '%'" />
+			SELECT requirementId, strRequirementName, strRequirementDesc
+			FROM tblRequirement
+			WHERE intStatus = 1
+				AND strRequirementName = #{requirementName}
+		</select>
+		
+		<select id="countAllRequirement" resultMap="CountRequirementResultMap">
+			SELECT COUNT(*) FROM tblRequirement WHERE intStatus = 1
+		</select>
+	
+	<!-- END SELECT QUERIES -->
+	
+	<!-- INSERT QUERIES -->
+	
+		<insert id="insertRequirement">
+			INSERT INTO tblRequirement(strRequirementName, strRequirementDesc, intStatus)
+			VALUES (#{strRequirementName}, #{strRequirementDesc}, 1)
+		</insert>
+		
+	<!-- END INSERT QUERIES -->
+	
+	<!-- UPDATE QUERIES -->
+	
+		<update id="updateRequirement">
+			UPDATE tblRequirement
+			<set>
+				<if test="strRequirementName != null">
+					strRequirementName = #{strRequirementName},
+				</if>
+				<if test="strRequirementDesc != null">
+					strRequirementDesc = #{strRequirementDesc}
+				</if>
+			</set>
+			WHERE requirementId = #{requirementId}
+		</update>
+		
+		<update id="deactivateRequirement">
+			UPDATE tblRequirement
+			SET intStatus = 0
+			WHERE requirementId = #{requirementId}
+		</update>
+	
+	<!-- END UPDATE QUERIES -->
+	
+	
+	</mapper>

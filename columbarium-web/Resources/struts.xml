@@ -17,34 +17,23 @@
          	class="org.apache.struts2.views.tiles.TilesResult" />
       	</result-types>
      
-     	<action name="tile" class="columbarium.actions.ChainAction">
-     		<result name="success" type="tiles">item-maintenance</result>
-     	</action>
-     
      	<action name="item" class="columbarium.actions.ChainAction">
      		<result name="success" type="redirect">/item/</result>
      	</action>
-     
-     	<action name="add-employee" class="columbarium.actions.ChainAction">
-     		<result name="success" type="redirect">/add-employee/</result>
-     	</action>
-     
-     	<action name="home" class="columbarium.actions.ChainAction">
-     		<result name="success">SAD_forms/about_us.jsp</result>
-     	</action>
-     	
-     	<action name="login" class="columbarium.actions.ChainAction">
-     		<result name="success">/login-employee.jsp</result>
-     	</action>
-     	
-     	<action name="log-in" class="columbarium.actions.login.LoginAccount">
-     		<result name="success">/home-employee.jsp</result>
-     	</action>
+
+		<action name="service" class="columbarium.actions.ChainAction">
+			<result name="success" type="redirect">/service/</result>
+		</action>
+		
+		<action name="requirement" class="columbarium.actions.ChainAction">
+			<result name="success" type="redirect">/requirement/</result>
+		</action>
      
      </package>
      
      <include file="struts-employee.xml"/>
      <include file="struts-item.xml"/>
      <include file="struts-service.xml"/>
+     <include file="struts-requirement.xml"/>
      
  </struts> 

@@ -7,28 +7,34 @@ import javax.servlet.ServletContextListener;
 import columbarium.business.EmployeeBusiness;
 import columbarium.business.ItemBusiness;
 import columbarium.business.PackageBusiness;
+import columbarium.business.RequirementBusiness;
 import columbarium.business.ServiceBusiness;
 import columbarium.business.impl.EmployeeBusinessImpl;
 import columbarium.business.impl.ItemBusinessImpl;
 import columbarium.business.impl.PackageBusinessImpl;
+import columbarium.business.impl.RequirementBusinessImpl;
 import columbarium.business.impl.ServiceBusinessImpl;
 import columbarium.dao.ConnectionManager;
 import columbarium.dao.EmployeeRepository;
 import columbarium.dao.ItemRepository;
 import columbarium.dao.PackageRepository;
+import columbarium.dao.RequirementRepository;
 import columbarium.dao.ServiceRepository;
 import columbarium.dao.mybatis.MybatisConnectionManager;
 import columbarium.dao.mybatis.MybatisEmployeeRepository;
 import columbarium.dao.mybatis.MybatisItemRepository;
 import columbarium.dao.mybatis.MybatisPackageRepository;
+import columbarium.dao.mybatis.MybatisRequirementRepository;
 import columbarium.dao.mybatis.MybatisServiceRepository;
 import columbarium.service.EmployeeService;
 import columbarium.service.ItemService;
 import columbarium.service.ServiceService;
 import columbarium.service.PackageService;
+import columbarium.service.RequirementService;
 import columbarium.service.impl.EmployeeServiceImpl;
 import columbarium.service.impl.ItemServiceImpl;
 import columbarium.service.impl.PackageServiceImpl;
+import columbarium.service.impl.RequirementServiceImpl;
 import columbarium.service.impl.ServiceServiceImpl;
 
 public class MainContextListener implements ServletContextListener{
@@ -88,10 +94,20 @@ public class MainContextListener implements ServletContextListener{
 			((PackageServiceImpl)packageService).setPackageRepository(packageRepository);
 			servletContext.setAttribute("packageService", packageService);
 			
+			//Requirement
+			RequirementRepository requirementRepository =
+					new MybatisRequirementRepository((MybatisConnectionManager)connectionManager);
+			RequirementBusiness requirementBusiness = new RequirementBusinessImpl();
+			((RequirementBusinessImpl)requirementBusiness).setRequirementRepository(requirementRepository);
+			RequirementService requirementService = new RequirementServiceImpl();
+			((RequirementServiceImpl)requirementService).setRequirementBusiness(requirementBusiness);
+			((RequirementServiceImpl)requirementService).setRequirementRepository(requirementRepository);
+			servletContext.setAttribute("requirementService", requirementService);
+			
 			System.out.println("Context Listener initialized...");
 			
 		}catch(Exception e){
-			
+			e.printStackTrace();
 		}
 	}
 
