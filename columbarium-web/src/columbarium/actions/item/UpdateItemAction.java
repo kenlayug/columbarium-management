@@ -13,6 +13,11 @@ public class UpdateItemAction extends ActionSupport implements Action{
 	private static final long serialVersionUID = 1L;
 	private Item item;
 	private String strItemName;
+	private String status;
+	
+	public String getStatus(){
+		return status;
+	}
 	
 	public void setStrItemName(String strItemName){
 		this.strItemName = strItemName;
@@ -35,7 +40,8 @@ public class UpdateItemAction extends ActionSupport implements Action{
 		// TODO Auto-generated method stub
 		Item item = Item.searchItem(getStrItemName());
 		getItem().setItemId(item.getItemId());
-		return getItem().update();
+		status =  getItem().update();
+		return "success";
 	}
 
 }

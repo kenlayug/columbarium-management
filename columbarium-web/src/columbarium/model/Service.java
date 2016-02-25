@@ -13,6 +13,7 @@ public class Service {
 	private String strServiceName;
 	private String strServiceDesc;
 	private double dblPrice;
+	private List<String>requirements;
 	
 	public Service(){
 		
@@ -20,6 +21,18 @@ public class Service {
 	
 	public Service(String strServiceName){
 		this.strServiceName = strServiceName;
+	}
+	
+	public void setRequirements(List<String>requirements){
+		this.requirements = requirements;
+	}
+	
+	public List<String>getRequirements(){
+		return this.requirements;
+	}
+	
+	public void setAddRequirements(String requirement){
+		this.requirements.add(requirement);
 	}
 	
 	public int getServiceId() {

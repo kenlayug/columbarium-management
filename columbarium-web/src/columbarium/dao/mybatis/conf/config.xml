@@ -17,6 +17,7 @@
 		<typeAlias type="columbarium.model.Package" alias="Package"/>
 		<typeAlias type="columbarium.model.Building" alias="Building"/>
 		<typeAlias type="columbarium.model.Floor" alias="Floor"/>
+		<typeAlias type="columbarium.model.Requirement" alias="Requirement"/>
 	
 	</typeAliases>
 	
@@ -44,6 +45,7 @@
 		<mapper resource="columbarium/dao/mybatis/mappers/ItemMapper.xml"/>
 		<mapper resource="columbarium/dao/mybatis/mappers/PackageMapper.xml"/>
 		<mapper resource="columbarium/dao/mybatis/mappers/BuildingMapper.xml"/>
+		<mapper resource="columbarium/dao/mybatis/mappers/RequirementMapper.xml"/>
 	
 	</mappers>
 	

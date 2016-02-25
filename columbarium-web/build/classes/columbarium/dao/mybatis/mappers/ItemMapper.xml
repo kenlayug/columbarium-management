@@ -72,15 +72,17 @@
 			SELECT itemId, strItemName, strItemDesc, deciPrice
 			FROM tblItem
 			<where>
+			intStatus = 1
 				<choose>
 					<when test="strItemName != null">
-						strItemName LIKE #{itemName}
+						AND strItemName LIKE #{itemName}
 					</when>
 					<when test="itemId != 0">
 						OR itemId = #{itemId}
 					</when>
 				</choose>
 			</where>
+			ORDER BY strItemName ASC
 		</select>
 	
 	<!-- END SELECT QUERIES -->
