@@ -39,7 +39,7 @@
 	                    </div>
 							<!-- Floating Button -->
 							<div class="fixed-action-btn horizontal" style="position: absolute; margin-right: 570px; margin-bottom: 175px;">
-								<button id="btnCreateItem" name = "action" type = "submit" class="btn-floating btn-large red"><i class="large material-icons">add</i>
+								<button onclick="createItem()" name = "action" type = "submit" class="btn-floating btn-large red"><i class="large material-icons">add</i>
 								</button>
 								<ul>
 									<li><button name = "action" class="modal-trigger btn-floating black" href = "#modalDeactivate"><i class="material-icons">delete</i></button></li>
@@ -110,9 +110,9 @@
 	                    </div>
 
 					<div class="modal-footer">
-						<button id="btnUpdateItem" type="submit" name="action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
+						<button onclick="updateItem()" type="submit" name="action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
 
-						<button class="waves-effect waves-light btn red" href = "Blocks_Maintenance.html">Cancel</button>
+						<button class="waves-effect waves-light btn red" onclick="$('#modalUpdate').closeModal()">Cancel</button>
 					</div>
 	
 	            </form>
@@ -145,9 +145,9 @@
 	            </div>
 	
 	            <div class="modal-footer">
-	                <button id="btnDeactivate" name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
+	                <button onclick="deactivateItem()" name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
 					
-	                <button class="waves-effect waves-light btn red">Cancel</button>
+	                <button onclick="$('#modalDeactivate').closeModal()" class="waves-effect waves-light btn red">Cancel</button>
 	            </div>
 	        </div>
 	
@@ -210,7 +210,7 @@
 	
 	<script type="text/javascript">
 			
-		$("#btnCreateItem").click(function(){
+		function createItem(){
 			var itemName = document.getElementById("itemName").value;
 			var itemPrice = document.getElementById("itemPrice").value;
 			var itemDesc = document.getElementById("itemDesc").value;
@@ -240,9 +240,9 @@
 		    });
 	
 		    return false;
-		});
+		}
 	
-		$("#btnUpdateItem").click(function(){
+		function updateItem(){
 			var itemName = document.getElementById("itemNameUpdate").value;
 			var itemPrice = document.getElementById("itemPriceUpdate").value;
 			var itemDesc = document.getElementById("itemDescUpdate").value;
@@ -275,9 +275,9 @@
 		    });
 		
 		    return false;
-		});
+		}
 		
-		$("#btnDeactivate").click(function(){
+		function deactivateItem(){
 			
 			var itemNameDeactivate = document.getElementById("itemNameDeactivate").value;
 			$.ajax({
@@ -299,7 +299,7 @@
 				}
 			});
 			
-		});
+		}
 		
 		$("#searchItem").on("change keyup paste",function(){
 			searchItemAndUpdateTable();

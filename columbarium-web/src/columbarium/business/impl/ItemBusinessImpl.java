@@ -30,4 +30,17 @@ public class ItemBusinessImpl implements ItemBusiness{
 		return itemRepository.updateItem(item);
 	}
 
+	@Override
+	public String createItem(Item item) {
+
+		if (item.getStrItemName().length() == 0 ||
+				item.getStrItemName() == null){
+			return "input";
+		}
+		if (Double.parseDouble(item.getDblPrice()) == 0){
+			return "input";
+		}
+		return itemRepository.createItem(item);
+	}
+
 }
