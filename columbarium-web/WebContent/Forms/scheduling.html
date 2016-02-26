@@ -14,6 +14,7 @@
     <script type="text/javascript" src = "../js/Blocks_Record_Form.js"></script>
     <script type="text/javascript" src = "../js/datepicker.js"></script>
     <link href="../css/calendar.css" rel="stylesheet" type="text/css"/>
+    <link href="../css/datepicker.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div class="navbar-fixed nav-birdifly">
@@ -958,7 +959,8 @@
                                 <label>Customer Name:</label>
                             </div>
                             <div class="input-field col s5">
-                                <input id="cname" type="text" required="" aria-required="true" class="validate">
+                                <input id="cname" type="text" required="" aria-required="true" class="validate" required>
+                                <label style="font-family: Arial">Search Customer Name<span style="color: red;">*</span></label>
                             </div>
                         </div>
                         <div class="row">
@@ -980,6 +982,7 @@
                             </div>
                             <div class="input-field col s3">
                                 <input type="date" class="datepicker">
+                                <label style="font-family: Arial">MM/DD/YYYY<span style="color: red;">*</span></label>
                             </div>
                             <div class="input-field col s3">
                                 <button data-target="modal1" class="btn red modal-trigger" id="btn-date">DATE</button>
@@ -1002,11 +1005,8 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="h">
-                                <div class="col s8">mm</div>
-                            </div>
-                            <div class="col s4">
-                                <a class="waves-effect waves-light btn red right" style = "width: 180px;  margin-top: 20px; margin-bottom: 10px;"><i class="mdi-content-add-circle left"></i>Save</a>
+                            <div class="right col s4">
+                                <button class="waves-effect waves-light btn red right" style = "width: 130px;  margin-top: 20px; margin-bottom: 10px;">Save</button>
                             </div>
                         </div>
                     </form>
@@ -1016,11 +1016,11 @@
 
         <!-- table -->
         <div class = "col s5">
-            <div class = "col s4 z-depth-2 " style = "margin-top: 20px; width: 100%; height: 70px; margin-bottom: 20px">
+            <div class = "col s4 z-depth-2 " style = "margin-top: 20px; width: 100%; height: 70px;">
                 <div class="responsive">
-                    <nav style = "height: 50px; margin-top: 10px; background-color: #00897b">
+                    <nav style = "height: 50px; margin-top: -10px; background-color: #00897b">
                         <div class="nav-wrapper">
-                            <form>
+                            <form method="post">
                                 <div class="input-field"  style = "height: 50px;">
                                     <input id="search" type="search" required>
                                     <label for="search"><i class="material-icons">search</i></label>
@@ -1038,67 +1038,56 @@
                 <table  class="responsive" style = "width: 100%;" class="striped">
                     <thead id="iba">
                     <tr>
-                        <th data-field="name">Name</th>
-                        <th data-field="gender">Gender</th>
-                        <th data-field="cv">Civil Status</th>
-                        <th data-field="cv">Date of Birth</th>
+                        <th data-field="name">Service</th>
+                        <th data-field="gender">Date</th>
+                        <th data-field="cv">Time</th>
                     </tr>
                     </thead>
 
-                    <tbody>
+                    <tbody style="text-align: center;">
                     <tr>
-                        <td>Alvin</td>
-                        <td>Male</td>
-                        <td>Single</td>
-                        <td>01/01/1990</td>
+                        <td>Cremation</td>
+                        <td>01/01/16</td>
+                        <td>9:00-11:00 AM</td>
                     </tr>
                     <tr>
-                        <td>Alvin</td>
-                        <td>Male</td>
-                        <td>Single</td>
-                        <td>01/01/1990</td>
+                        <td>Cremation</td>
+                        <td>01/01/16</td>
+                        <td>9:00-11:00 AM</td>
                     </tr>
                     <tr>
-                        <td>Alvin</td>
-                        <td>Male</td>
-                        <td>Single</td>
-                        <td>01/01/1990</td>
+                        <td>Cremation</td>
+                        <td>01/01/16</td>
+                        <td>9:00-11:00 AM</td>
                     </tr>
                     <tr>
-                        <td>Alvin</td>
-                        <td>Male</td>
-                        <td>Single</td>
-                        <td>01/01/1990</td>
+                        <td>Cremation</td>
+                        <td>01/01/16</td>
+                        <td>9:00-11:00 AM</td>
                     </tr>
                     <tr>
-                        <td>Alvin</td>
-                        <td>Male</td>
-                        <td>Single</td>
-                        <td>01/01/1990</td>
+                        <td>Cremation</td>
+                        <td>01/01/16</td>
+                        <td>9:00-11:00 AM</td>
+                    </tr><tr>
+                        <td>Cremation</td>
+                        <td>01/01/16</td>
+                        <td>9:00-11:00 AM</td>
                     </tr>
                     <tr>
-                        <td>Alvin</td>
-                        <td>Male</td>
-                        <td>Single</td>
-                        <td>01/01/1990</td>
+                        <td>Cremation</td>
+                        <td>01/01/16</td>
+                        <td>9:00-11:00 AM</td>
                     </tr>
                     <tr>
-                        <td>Alvin</td>
-                        <td>Male</td>
-                        <td>Single</td>
-                        <td>01/01/1990</td>
+                        <td>Cremation</td>
+                        <td>01/01/16</td>
+                        <td>9:00-11:00 AM</td>
                     </tr>
                     <tr>
-                        <td>Alvin</td>
-                        <td>Male</td>
-                        <td>Single</td>
-                        <td>01/01/1990</td>
-                    </tr>
-                    <tr>
-                        <td>Alvin</td>
-                        <td>Male</td>
-                        <td>Single</td>
-                        <td>01/01/1990</td>
+                        <td>Cremation</td>
+                        <td>01/01/16</td>
+                        <td>9:00-11:00 AM</td>
                     </tr>
                     </tbody>
                 </table>

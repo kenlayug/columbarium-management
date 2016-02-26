@@ -1,7 +1,5 @@
-$(document).ready(function(){
-    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-    $('.modal-trigger').leanModal();
-})(jQuery);
+
+$('#modal1').openModal();
 
 $('.modal-trigger').leanModal({
         dismissible: true, // Modal can be dismissed by clicking outside of the modal
@@ -11,4 +9,4 @@ $('.modal-trigger').leanModal({
         ready: function() { alert('Ready'); }, // Callback for Modal open
         complete: function() { alert('Closed'); } // Callback for Modal close
     }
-)(jQuery);
+);
