@@ -3,6 +3,7 @@ package columbarium.actions.service;
 import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionSupport;
 
+import columbarium.model.Requirement;
 import columbarium.model.Service;
 
 public class CreateServiceAction extends ActionSupport implements Action{
@@ -25,8 +26,14 @@ public class CreateServiceAction extends ActionSupport implements Action{
 	@Override
 	public String execute() throws Exception {
 		// TODO Auto-generated method stub
+		if (getService().getRequirementListByString() != null){
+			for (String strRequirement : getService().getRequirementListByString()) {
+				getService().setAddRequirement(strRequirement);
+			}
+		}
 		strStatus = getService().create();
+		System.out.println(strStatus);
 		return "success";
 	}
-
+	
 }

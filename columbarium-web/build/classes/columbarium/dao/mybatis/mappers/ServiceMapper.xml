@@ -41,11 +41,11 @@
 			<where>
 				intStatus = 1
 				<choose>
-					<when test="serviceId == null">
-						OR serviceId = #{serviceId}
+					<when test="serviceId == 0">
+						AND strServiceName LIKE #{strServiceName}
 					</when>
-					<when test="strServiceName != null">
-						OR strServiceName LIKE #{strServiceName}
+					<when test="serviceId != 0">
+						AND serviceId = #{serviceId}
 					</when>
 				</choose>
 			</where>

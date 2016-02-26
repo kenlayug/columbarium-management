@@ -9,6 +9,11 @@ public class UpdateServiceAction implements Action{
 
 	private String strServiceName;
 	private Service service;
+	private String strStatus;
+	
+	public String getStatus(){
+		return strStatus;
+	}
 	
 	public Service getService() {
 		return service;
@@ -31,7 +36,9 @@ public class UpdateServiceAction implements Action{
 		// TODO Auto-generated method stub
 		Service service = Service.searchService(getStrServiceName());
 		getService().setServiceId(service.getServiceId());
-		return getService().update();
+		getService().setRequirementList(service.getRequirementList());
+		strStatus = getService().update();
+		return "success";
 	}
 
 }

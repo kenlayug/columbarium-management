@@ -7,6 +7,11 @@ import columbarium.model.Service;
 public class DeactivateServiceAction implements Action{
 
 	private String strServiceName;
+	private String strStatus;
+	
+	public String getStatus(){
+		return strStatus;
+	}
 	
 	public String getStrServiceName() {
 		return strServiceName;
@@ -20,7 +25,8 @@ public class DeactivateServiceAction implements Action{
 	public String execute() throws Exception {
 		// TODO Auto-generated method stub
 		Service service = Service.searchService(strServiceName);
-		return service.delete();
+		strStatus = service.delete();
+		return "success";
 	}
 
 }

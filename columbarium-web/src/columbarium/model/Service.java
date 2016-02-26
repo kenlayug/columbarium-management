@@ -15,6 +15,7 @@ public class Service {
 	private String strServiceDesc;
 	private double dblPrice;
 	private List<Requirement>requirementList;
+	private String[]requirementString;
 	
 	public Service(){
 		
@@ -30,6 +31,14 @@ public class Service {
 	
 	public List<Requirement>getRequirementList(){
 		return this.requirementList;
+	}
+	
+	public void setRequirementListByString(String[]arrRequirement){
+		this.requirementString = arrRequirement;
+	}
+	
+	public String[]getRequirementListByString(){
+		return requirementString;
 	}
 	
 	public void setAddRequirement(String strRequirement){
