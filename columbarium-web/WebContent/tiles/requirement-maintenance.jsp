@@ -17,7 +17,7 @@
 	            <h2>Requirement Maintenance</h2>
 	            <!-- Create Requirement -->
 	            <div class = "col s12">
-	                <form class = "wrapper responsive aside aside z-depth-2">
+	                <form class = "wrapper responsive aside aside z-depth-2" id="formCreate">
 	                    <div class = "header">
 	                        <h4 style = "stroke: black; stroke-width: 10px;">Requirement Form</h4>
 	                    </div>
@@ -47,8 +47,8 @@
 								</ul>
 							</div>
 						</div>
-	
 	                </form>
+	
 	            </div>
 	        </div>
 	
@@ -58,7 +58,7 @@
 	                <h4>Update Requirement</h4>
 	            </div>
 	            <div class="modal-content">
-	
+
 	                <div class = "col s12">
 	                    <div class="row">
 	                        <!-- Select Requirement Name -->
@@ -76,7 +76,7 @@
 	                    </div>
 	                </div>
 	
-	                <form style = "padding-left: 10px;">
+	                <form style = "padding-left: 10px;" id="formUpdate">
 	                <div class = "col s6">
 	                    <div class="input-field col s12">
 	                        <input id="requirementNameUpdate" type="text" class="validate" required = "" aria-required = "true">
@@ -191,10 +191,19 @@
 	
 	<script>
 	
+		$("#formCreate").submit(function(e){
+		    return false;
+		});
+		
+		$("#formUpdate").submit(function(e){
+		    return false;
+		});
+	
 		function createRequirement(){
 			
 			var requirementName = document.getElementById("requirementName").value;
 			var requirementDesc = document.getElementById("requirementDesc").value;
+			
 			
 			$.ajax({
 				type: "POST",

@@ -22,7 +22,7 @@ public class RequirementServiceImpl implements RequirementService{
 	
 	@Override
 	public String createRequirement(Requirement requirement) {
-		return requirementRepository.createRequirement(requirement);
+		return requirementBusiness.createRequirement(requirement);
 	}
 
 	@Override
