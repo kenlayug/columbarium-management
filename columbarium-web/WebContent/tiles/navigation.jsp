@@ -47,7 +47,7 @@
 	    <li><a href="<%=request.getContextPath()%>/package">Package</a></li>
 	    <li class="divider"></li>
 	    <li><a href="<%=request.getContextPath()%>/building">Building</a></li>
-	    <li><a href="Floor_Maintenance.html">Floor</a></li>
+	    <li><a href="<%=request.getContextPath()%>/floor">Floor</a></li>
 	    <li><a href="Blocks_Maintenance.html">Block</a></li>
 	    <li><a href="vaults.html">Vaults</a></li>
 	    <li><a href="FullBodyCrypts.html">Body Crypts</a></li>
