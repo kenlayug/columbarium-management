@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 
 import columbarium.dao.BuildingRepository;
 import columbarium.dao.mybatis.mappers.BuildingMapper;
+import columbarium.dao.mybatis.mappers.FloorMapper;
 import columbarium.model.Block;
 import columbarium.model.Building;
 import columbarium.model.Floor;
@@ -47,8 +48,18 @@ public class MybatisBuildingRepository extends MybatisClient implements Building
 		try{
 			
 			BuildingMapper buildingMapper = sqlSession.getMapper(BuildingMapper.class);
+			FloorMapper floorMapper = sqlSession.getMapper(FloorMapper.class);
+			Building building = new Building();
+			building.setBuildingId(floor.getBuildingId());
+			if (floorMapper.selectAllFloorsOfBuilding(building) == null){
+				floor.setIntFloorNo(1);
+			}else{
+				floor.setIntFloorNo(floorMapper.selectAllFloorsOfBuilding(building).size()+1);
+			}
 			buildingMapper.createFloor(floor);
+			floor = buildingMapper.selectLastFloorCreated();
 			for (int intCtr = 0; intCtr < floor.getIntLevelNo(); intCtr++){
+				floor.setCurrentLevel(intCtr+1);
 				buildingMapper.createUnitCategory(floor);
 			}
 			sqlSession.commit();
@@ -96,8 +107,13 @@ public class MybatisBuildingRepository extends MybatisClient implements Building
 		try{
 			
 			BuildingMapper buildingMapper = sqlSession.getMapper(BuildingMapper.class);
+			FloorMapper floorMapper = sqlSession.getMapper(FloorMapper.class);
 			if (buildingMapper.countAllBuilding() > 0){
-				return buildingMapper.getAllBuilding();
+				List<Building>buildingList = buildingMapper.getAllBuilding();
+				for (Building building : buildingList) {
+					building.setFloorList(floorMapper.selectAllFloorsOfBuilding(building));
+				}
+				return buildingList;
 			}
 			
 		}catch(Exception e){

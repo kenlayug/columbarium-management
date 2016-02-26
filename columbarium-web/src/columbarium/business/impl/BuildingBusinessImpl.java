@@ -3,6 +3,7 @@ package columbarium.business.impl;
 import columbarium.business.BuildingBusiness;
 import columbarium.dao.BuildingRepository;
 import columbarium.model.Building;
+import columbarium.model.Floor;
 
 public class BuildingBusinessImpl implements BuildingBusiness{
 
@@ -24,6 +25,22 @@ public class BuildingBusinessImpl implements BuildingBusiness{
 			return "input";
 		}
 		return buildingRepository.createBuilding(building);
+	}
+
+	@Override
+	public String createFloor(Floor floor) {
+
+		if (floor.getIntColumnNo() == 0){
+			return "input";
+		}
+		if (floor.getIntLevelNo() == 0){
+			return "input";
+		}
+		if (floor.getBuildingId() == 0){
+			return "input";
+		}
+		return buildingRepository.createFloor(floor);
+		
 	}
 
 }
