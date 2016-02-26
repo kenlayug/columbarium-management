@@ -107,8 +107,8 @@
                     <select>
                         <option value="" disabled selected>Package Name:</option>
                         <c:if test="${packageList != null }">
-							<c:forEach items="${packageList }" var="package">
-								<option value="${package.strPackageName }">${package.strPackageName}</option>
+							<c:forEach items="${packageList }" var="packageTo">
+								<option value="${packageTo.strPackageName }">${packageTo.strPackageName}</option>
 							</c:forEach>
 						</c:if>
                     </select>
@@ -201,8 +201,8 @@
                     <select>
                         <option value="" disabled selected>Package Name:</option>
 						<c:if test="${packageList != null }">
-							<c:forEach items="${packageList }" var="package">
-								<option value="${package.strPackageName }">${package.strPackageName}</option>
+							<c:forEach items="${packageList }" var="packageTo">
+								<option value="${packageTo.strPackageName }">${packageTo.strPackageName}</option>
 							</c:forEach>
 						</c:if>
                     </select>
@@ -258,11 +258,11 @@
 	                    	<tr><td>No package available.</td></tr>
 	                    </c:if>
 	                    <c:if test="${packageList != null }">
-	                    	<c:forEach items="${packageList }" var="package">
+	                    	<c:forEach items="${packageList }" var="packageTo">
 	                    		<tr>
-			                        <td>${package.strPackageName}</td>
-			                        <td>P ${package.dblPrice }</td>
-			                        <td>${package.strPackageDesc }</td>
+			                        <td>${packageTo.strPackageName}</td>
+			                        <td>P ${packageTo.dblPrice }</td>
+			                        <td>${packageTo.strPackageDesc }</td>
 			                        <td>
 			                        	
 			                        </td>

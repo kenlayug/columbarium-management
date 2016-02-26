@@ -79,6 +79,13 @@ public class MybatisServiceRepositoryTest extends TestCase{
 		MybatisServiceRepository serviceRepository =
 				new MybatisServiceRepository(connectionManager);
 		
+		for (Service service : serviceRepository.getAllService()) {
+			System.out.println(service.getStrServiceName());
+			for (Requirement requirement : service.getRequirementList()) {
+				System.out.println(requirement.getStrRequirementName());
+			}
+		}
+		
 		assertNotNull(serviceRepository.getAllService());
 		
 	}
@@ -121,12 +128,12 @@ public class MybatisServiceRepositoryTest extends TestCase{
 		
 		TestSuite suite = new TestSuite();
 		
-		suite.addTest(new MybatisServiceRepositoryTest("testCreateService"));
-		suite.addTest(new MybatisServiceRepositoryTest("testGetService"));
-		suite.addTest(new MybatisServiceRepositoryTest("testUpdateService"));
+//		suite.addTest(new MybatisServiceRepositoryTest("testCreateService"));
+//		suite.addTest(new MybatisServiceRepositoryTest("testGetService"));
+//		suite.addTest(new MybatisServiceRepositoryTest("testUpdateService"));
 		suite.addTest(new MybatisServiceRepositoryTest("testGetAllService"));
-		suite.addTest(new MybatisServiceRepositoryTest("testDeactivateService"));
-		suite.addTest(new MybatisServiceRepositoryTest("testSearchServiceByName"));
+//		suite.addTest(new MybatisServiceRepositoryTest("testDeactivateService"));
+//		suite.addTest(new MybatisServiceRepositoryTest("testSearchServiceByName"));
 		
 		return suite;
 		
