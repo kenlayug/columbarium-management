@@ -28,6 +28,10 @@
 		<action name="requirement" class="columbarium.actions.ChainAction">
 			<result name="success" type="redirect">/requirement/</result>
 		</action>
+		
+		<action name="package" class="columbarium.actions.ChainAction">
+			<result name="success" type="redirect">/package/</result>
+		</action>
      
      </package>
      
@@ -35,5 +39,6 @@
      <include file="struts-item.xml"/>
      <include file="struts-service.xml"/>
      <include file="struts-requirement.xml"/>
+     <include file="struts-package.xml"/>
      
  </struts> 

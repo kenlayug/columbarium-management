@@ -47,13 +47,8 @@ public class MybatisPackageRepositoryTest extends TestCase{
 		System.out.println(packageTo.getStrPackageName().length());
 		packageTo.setStrPackageDesc("Bonus na to ah?");
 		packageTo.setDblPrice(1500.00);
-		Service service = new Service();
-		service.setServiceId(1);
-		service.setStrServiceName("Cremation");
-		Item item = new Item();
-		item.setStrItemName("Rounded Urn");
-		packageTo.addServiceToPackage(service);
-		packageTo.addItemToPackage(item);
+		packageTo.addServiceToPackage("Cremation");
+		packageTo.addItemToPackage("Plywood");
 		
 		assertEquals("success", packageRepository.createPackage(packageTo));
 		
@@ -68,7 +63,7 @@ public class MybatisPackageRepositoryTest extends TestCase{
 				new MybatisPackageRepository(connectionManager);
 		
 		Package packageTo = new Package();
-		packageTo.setStrPackageName("Cremation with invisible urn");
+		packageTo.setStrPackageName("Cremation with free urn");
 		
 		packageTo = packageRepository.searchPackage(packageTo);
 		for (Service service : packageTo.getServiceList()) {

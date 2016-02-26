@@ -29,11 +29,11 @@
 	        <div class="nav-wrapper">
 	            <a href="#!" class="brand-logo left">Logo</a>
 	            <ul class="right hide-on-med-and-down">
-	                <li><a class="dropdown-button" href="#!" data-beloworigin="true" data-activates="dropdown1">Maintenance<i class="material-icons right">arrow_drop_down</i></a></li>
-	                <li><a class="dropdown-button" href="#!" data-beloworigin="true" data-activates="dropdown2">Transaction<i class="material-icons right">arrow_drop_down</i></a></li>
-	                <li><a class="dropdown-button" href="#!" data-beloworigin="true" data-activates="dropdown3">Queries<i class="material-icons right">arrow_drop_down</i></a></li>
-	                <li><a class="dropdown-button" href="#!" data-beloworigin="true" data-activates="dropdown4">Reports<i class="material-icons right">arrow_drop_down</i></a></li>
-	                <li><a class="dropdown-button" href="#!" data-beloworigin="true" data-activates="dropdown5">Utilities<i class="material-icons right">arrow_drop_down</i></a></li>
+	                <li><a class="dropdown-button" data-beloworigin="true" data-activates="dropdown1">Maintenance<i class="material-icons right">arrow_drop_down</i></a></li>
+	                <li><a class="dropdown-button" data-beloworigin="true" data-activates="dropdown2">Transaction<i class="material-icons right">arrow_drop_down</i></a></li>
+	                <li><a class="dropdown-button" data-beloworigin="true" data-activates="dropdown3">Queries<i class="material-icons right">arrow_drop_down</i></a></li>
+	                <li><a class="dropdown-button" data-beloworigin="true" data-activates="dropdown4">Reports<i class="material-icons right">arrow_drop_down</i></a></li>
+	                <li><a class="dropdown-button" data-beloworigin="true" data-activates="dropdown5">Utilities<i class="material-icons right">arrow_drop_down</i></a></li>
 	            </ul>
 	        </div>
 	    </nav>
@@ -41,11 +41,11 @@
 	
 	<!-- Dropdown Maintenance-->
 	<ul id="dropdown1" class="dropdown-content">
-	    <li><a href="<%=request.getContextPath()%>/item">Inventory</a></li>
-	    <li><a href="<%=request.getContextPath()%>/requirement">Requirements</a></li>
+	    <li><a href="<%=request.getContextPath()%>/item">Item</a></li>
+	    <li><a href="<%=request.getContextPath()%>/requirement">Requirement</a></li>
 	    <li><a href="<%=request.getContextPath()%>/service">Service</a></li>
+	    <li><a href="<%=request.getContextPath()%>/package">Package</a></li>
 	    <li class="divider"></li>
-	    <li><a href="Package_Maintenance.html">Package</a></li>
 	    <li><a href="Building_Maintenance.html">Building</a></li>
 	    <li><a href="Floor_Maintenance.html">Floor</a></li>
 	    <li><a href="Blocks_Maintenance.html">Block</a></li>

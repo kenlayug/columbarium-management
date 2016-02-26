@@ -1,6 +1,5 @@
 package columbarium.model;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.struts2.ServletActionContext;
@@ -12,8 +11,8 @@ public class Package {
 	private int packageId;
 	private String strPackageName;
 	private String strPackageDesc;
-	private List<Service>serviceList = new ArrayList<Service>();
-	private List<Item>itemList = new ArrayList<Item>();
+	private List<Service>serviceList;
+	private List<Item>itemList;
 	private double dblPrice;
 	public double getDblPrice() {
 		return dblPrice;
@@ -51,22 +50,26 @@ public class Package {
 	public void setItemList(List<Item> itemList) {
 		this.itemList = itemList;
 	}
-	public void addItemToPackage(Item item){
+	public void addItemToPackage(String strItemName){
+		Item item = Item.searchItem(strItemName);
 		if(!itemList.contains(item)){
 			this.itemList.add(item);
 		}
 	}
-	public void addServiceToPackage(Service service){
+	public void addServiceToPackage(String strServiceName){
+		Service service = Service.searchService(strServiceName);
 		if(!serviceList.contains(service)){
 			this.serviceList.add(service);
 		}
 	}
-	public void removeServiceToPackage(Service service){
+	public void removeServiceToPackage(String strServiceName){
+		Service service = Service.searchService(strServiceName);
 		if (serviceList.contains(service)){
 			this.serviceList.remove(service);
 		}
 	}
-	public void removeItemToPackage(Item item){
+	public void removeItemToPackage(String strItemName){
+		Item item = Item.searchItem(strItemName);
 		if (itemList.contains(item)){
 			this.itemList.remove(item);
 		}

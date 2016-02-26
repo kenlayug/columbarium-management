@@ -228,9 +228,14 @@
 			                            <td>P ${service.dblPrice }</td>
 			                            <td>${service.strServiceDesc }</td>
 			                            <td>
-											<c:forEach items="${service.requirementList}" var="requirement">
-												${requirement.strRequirementName},
-											</c:forEach>
+			                            	<c:if test="${service.requirementList == null }">
+			                            		No requirement specified.
+			                            	</c:if>
+			                            	<c:if test="${service.requirementList != null }">
+												<c:forEach items="${service.requirementList}" var="requirement">
+													${requirement.strRequirementName},
+												</c:forEach>
+											</c:if>
 			                            </td>
 			                        </tr>
 	                        	</c:forEach>
