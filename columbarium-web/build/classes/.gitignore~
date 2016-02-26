@@ -1,0 +1,14 @@
+/ApplicationResources.properties
+/columbarium/
+<<<<<<< HEAD
+/database.properties
+/struts-building.xml
+/struts-employee.xml
+/struts-item.xml
+/struts-package.xml
+/struts-requirement.xml
+/struts-service.xml
+/struts.xml
+=======
+/struts-package.xml
+>>>>>>> 7ff9293aa2023a0b2772a8fc0fa4318b6ee15301
