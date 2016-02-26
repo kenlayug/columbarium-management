@@ -1,5 +1,7 @@
 package columbarium.dao.mybatis;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 
 import columbarium.dao.BuildingRepository;
@@ -85,6 +87,25 @@ public class MybatisBuildingRepository extends MybatisClient implements Building
 			sqlSession.close();
 		}
 		return "failed-database";
+	}
+
+	@Override
+	public List<Building> getAllBuilding() {
+
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		try{
+			
+			BuildingMapper buildingMapper = sqlSession.getMapper(BuildingMapper.class);
+			if (buildingMapper.countAllBuilding() > 0){
+				return buildingMapper.getAllBuilding();
+			}
+			
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			sqlSession.close();
+		}
+		return null;
 	}
 	
 	

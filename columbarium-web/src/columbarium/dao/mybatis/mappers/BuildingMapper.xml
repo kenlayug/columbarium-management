@@ -13,10 +13,17 @@
 		
 		<resultMap type="Floor" id="FloorResultMap">
 			<result property="floorId" column="floorId"/>
-			<result property="buildingId" column="buildingIdFK"/>
+			<result property="buildingId" column="bldgIdFK"/>
 			<result property="intFloorNo" column="intFloorNo"/>
 			<result property="intLevelNo" column="intLevelNo"/>
 			<result property="intColumnNo" column="intColumnNo"/>
+		</resultMap>
+		
+		<resultMap type="Building" id="BuildingResultMap">
+			<id property="buildingId" column="bldgId"/>
+			<result property="strBuildingName" column="strBldgDesc"/>
+			<result property="strBuildingLocation" column="strLocation"/>
+			<result property="strBuildingType" column="strBldgType"/>
 		</resultMap>
 	
 	<!-- END RESULTMAPS -->
@@ -34,29 +41,41 @@
 		<select id="selectFloorById" resultMap="FloorResultMap">
 			SELECT * FROM tblFloor WHERE floorId = #{floorId} LIMIT 1
 		</select>
+		
+		<select id="getAllBuilding" resultMap="BuildingResultMap">
+			SELECT b.*
+			FROM tblBldg b
+			WHERE b.intStatus = 1
+			ORDER BY b.strBldgDesc ASC
+		</select>
+		
+		<select id="countAllBuilding" resultMap="CountResultMap">
+			SELECT COUNT(*) FROM tblBldg WHERE intStatus = 1
+		</select>
 	
 	<!-- END SELECT QUERIES -->
 	
 	<!-- INSERT QUERIES -->
 	
 		<insert id="createBuilding">
-			INSERT INTO tblBldg (strBldgDesc, strLocation, strBldgType)
-			VALUES (#{strBuildingName}, #{strBuildingLocation}, #{strBuildingType})
+			INSERT INTO tblBldg (strBldgDesc, strLocation, strBldgType, intStatus)
+			VALUES (#{strBuildingName}, #{strBuildingLocation}, #{strBuildingType}, 1)
 		</insert>
 		
 		<insert id="createFloor">
-			INSERT INTO tblFloor (intFloorNo, bldgIdFK, intLevelNo, intColumnNo)
+			INSERT INTO tblFloor (intFloorNo, bldgIdFK, intLevelNo, intColumnNo, intStatus)
 			VALUES (
 				(SELECT COUNT(*)+1 FROM tblFloor WHERE bldgIdFK = #{buildingId}),
 				#{buildingId},
 				#{intLevelNo},
-				#{intColumnNo}
+				#{intColumnNo},
+				1
 				)
 		</insert>
 		
 		<insert id="createBlock">
-			INSERT INTO tblBlock (strBlockDesc, floorIdFK)
-			VALUES (#{strBlockDesc}, #{floorId})
+			INSERT INTO tblBlock (strBlockDesc, floorIdFK, intStatus)
+			VALUES (#{strBlockDesc}, #{floorId}, 1)
 		</insert>
 		
 		<insert id="createUnitCategory">

@@ -46,7 +46,7 @@
 	    <li><a href="<%=request.getContextPath()%>/service">Service</a></li>
 	    <li><a href="<%=request.getContextPath()%>/package">Package</a></li>
 	    <li class="divider"></li>
-	    <li><a href="Building_Maintenance.html">Building</a></li>
+	    <li><a href="<%=request.getContextPath()%>/building">Building</a></li>
 	    <li><a href="Floor_Maintenance.html">Floor</a></li>
 	    <li><a href="Blocks_Maintenance.html">Block</a></li>
 	    <li><a href="vaults.html">Vaults</a></li>
