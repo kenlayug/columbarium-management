@@ -57,4 +57,14 @@ public class RequirementBusinessImpl implements RequirementBusiness{
 		return requirementRepository.searchRequirementByName(requirement);
 	}
 
+	@Override
+	public String createRequirement(Requirement requirement) {
+
+		if (requirement.getStrRequirementName().length() == 0 || 
+				requirement.getStrRequirementName() == null){
+			return "input";
+		}
+		return requirementRepository.createRequirement(requirement);
+	}
+
 }

@@ -16,6 +16,7 @@ public interface BuildingMapper {
 	public void createUnit(Unit unit);
 	
 	public Integer countAllBuilding();
+	public Integer countLevel(Floor floor);
 	
 	public List<Building>getAllBuilding();
 	
@@ -23,5 +24,6 @@ public interface BuildingMapper {
 	public int checkIfExistingBlock(Block block);
 	
 	public Floor selectFloorById(Floor floor);
+	public Floor selectLastFloorCreated();
 	
 }

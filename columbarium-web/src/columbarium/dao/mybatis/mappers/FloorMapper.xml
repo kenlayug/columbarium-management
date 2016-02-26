@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+	<mapper namespace="columbarium.dao.mybatis.mappers.FloorMapper">
+	
+	<!-- RESULTMAPS -->
+	
+		<resultMap type="java.lang.Integer" id="CountResultMap">
+			<result property="intCount" column="COUNT(*)" />
+		</resultMap>
+		
+		<resultMap type="Floor" id="FloorResultMap">
+			<result property="floorId" column="floorId"/>
+			<result property="buildingId" column="bldgIdFK"/>
+			<result property="intFloorNo" column="intFloorNo"/>
+			<result property="intLevelNo" column="intLevelNo"/>
+			<result property="intColumnNo" column="intColumnNo"/>
+		</resultMap>
+	
+	<!-- END RESULTMAPS -->
+	
+	<!-- SELECT QUERIES -->
+		
+		<select id="selectFloorById" resultMap="FloorResultMap">
+			SELECT * FROM tblFloor WHERE floorId = #{floorId} LIMIT 1
+		</select>
+		
+		<select id="selectAllFloorsOfBuilding" resultMap="FloorResultMap">
+			SELECT * FROM tblFloor WHERE bldgIdFK = #{buildingId}
+		</select>
+	
+	<!-- END SELECT QUERIES -->
+	
+	<!-- INSERT QUERIES -->
+		
+		<insert id="createFloor">
+			INSERT INTO tblFloor (intFloorNo, bldgIdFK, intLevelNo, intColumnNo, intStatus)
+			VALUES (
+				(SELECT COUNT(*)+1 FROM tblFloor WHERE bldgIdFK = #{buildingId}),
+				#{buildingId},
+				#{intLevelNo},
+				#{intColumnNo},
+				1
+				)
+		</insert>
+		
+	<!-- END INSERT QUERIES -->
+	
+	<!-- UPDATE QUERIES -->
+	
+	
+	<!-- END UPDATE QUERIES -->
+	
+	
+	</mapper>

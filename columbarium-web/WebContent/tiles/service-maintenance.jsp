@@ -16,7 +16,7 @@
                 <div class = "header">
                     <h4>Service Form</h4>
                 </div>
-                        <form class="row" style = "padding-left: 10px;">
+                        <form class="row" style = "padding-left: 10px;" id="formCreate">
                             <div class="input-field col s6">
                                 <input id="serviceName" type="text" class="validate" required = "" aria-required = "true" pattern = "[A-Za-z0-9\s]{1,29}">
                                 <label for="serviceName" data-error = "Check format field." data-success = "">Service Name <span style = "color: red;">*</span></label>
@@ -252,6 +252,10 @@
     
     <script>
 
+	    $("#formCreate").submit(function(e){
+		    return false;
+		});
+    
 	    $(document).ready(function(){
 	        // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
 	        $('.modal-trigger').leanModal();
