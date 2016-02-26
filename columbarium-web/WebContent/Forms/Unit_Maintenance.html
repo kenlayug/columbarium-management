@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Unit Maintenance</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+
+    <!-- Import File -->
+    <script type="text/javascript" src = "../js/CustomerJS.js"></script>
+    <script type="text/javascript" src = "../js/Blocks_Record_Form.js"></script>
+    <script type="text/javascript" src = "../js/datepicker.js"></script>
+    <link href="../css/CustomerCSS.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div class="navbar-fixed nav-birdifly">
+    <div class="responsive">
+        <nav>
+            <div class="nav-wrapper">
+                <ul id="maintenance" class="dropdown-content">
+                    <li><a href='Inventory_Form.html' id="db-content"><span>INVENTORY</span></a></li>
+                    <li><a href='Services_Record_Form.html' id="db-content"><span>SERVICE</span></a></li>
+                    <li><a href='Package_Record_Form.html' id="db-content"><span>PACKAGE</span></a></li>
+                    <li><a href='Building_Record_Form.html' id="db-content"><span>BUILDING</span></a></li>
+                    <li><a href='Floor_Record_Form.html' id="db-content"><span>FLOOR</span></a></li>
+                    <li><a href='Blocks_Record_Form.html' id="db-content"><span>BLOCK</span></a></li>
+                    <li><a href="vaults.html" id="db-content"><span>VAULTS</span></a></li>
+                    <li><a class="last" href="FullBodyCrypts.html" id="db-content"><span>FULL BODY CRYPTS</span></a></li>
+                </ul>
+                <ul id="transaction" class="dropdown-content">
+                    <li><a href='Customer.html' id="db-content"><span>CUSTOMER</span></a></li>
+                    <li><a href='Reservation_Transaction.html' id="db-content"><span>RESERVATION</span></a></li>
+                    <li><a href='scheduling.html' id="db-content"><span>SCHEDULING</span></a></li>
+                    <li><a href='Collection_Transaction.html' id="db-content"><span>COLLECTION</span></a></li>
+                    <li><a class="last" href="UnitOwnership.html" id="db-content"><span>TRANSFERRING</span></a></li>
+                </ul>
+                <ul id="utilities" class="dropdown-content">
+                    <li><a class="last" href="Employee.html" id="db-content"><span>EMPLOYEE</span></a></li>
+                </ul>
+                <ul id="queries" class="dropdown-content">
+                    <li><a href='#' id="db-content"><span>PRODUCT</span></a></li>
+                    <li><a href="#" id="db-content"><span>EMPLOYEE</span></a></li>
+                    <li><a class="last" href="#" id="db-content"><span>CUSTOMER</span></a></li>
+                </ul>
+                <ul id="report" class="dropdown-content">
+                    <li><a href='Reservation-Report.html' id="db-content"><span>RESERVATION RECORD</span></a></li>
+                    <li><a href='scheduling-report.html' id="db-content"><span>SCHEDULING RECORD</span></a></li>
+                    <li><a href='Collection-Report.html' id="db-content"><span>COLLECTION RECORD</span></a></li>
+                    <li><a class="last" href="transferring-report.html" id="db-content"><span>TRANSFERRING RECORD</span></a></li>
+                </ul>
+                <nav>
+                    <div class="nav-wrapper">
+                        <a href="#!" class="brand-logo">Logo</a>
+                        <ul class="right hide-on-med-and-down">
+                            <li><a class="dropdown-button" href="#!" data-activates="maintenance" id="db-content">Maintenance<i class="material-icons right">arrow_drop_down</i></a></li>
+                            <li><a class="dropdown-button" href="#!" data-activates="transaction" id="db-content">Transaction<i class="material-icons right">arrow_drop_down</i></a></li>
+                            <li><a class="dropdown-button" href="#!" data-activates="queries" id="db-content">Queries<i class="material-icons right">arrow_drop_down</i></a></li>
+                            <li><a class="dropdown-button" href="#!" data-activates="report" id="db-content">Reports<i class="material-icons right">arrow_drop_down</i></a></li>
+                            <li><a class="dropdown-button" href="#!" data-activates="utilities" id="db-content">Utilities<i class="material-icons right">arrow_drop_down</i></a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </nav>
+    </div>
+</div>
+
+<!-- Section -->
+<div class = col s12 >
+    <div class = "row">
+
+        <div class = "col s7">
+            <div class = "col s12">
+                <h4>UNIT</h4>
+                <div class = "aside aside z-depth-3">
+                    <div class="modal-header">
+                        <label>UNIT MAINTENANCE</label>
+                    </div>
+                    <form action="Unit_Maintenance.html" method="post">
+                        <div class="row">
+                            <div class="input-field col s2">
+                                <label>Unit Type:<span style="color: red;">*</span></label>
+                            </div>
+                            <div class="input-field col s8" style="font-family: none">
+                                <p>
+                                    <input name="uType" type="radio" id="fbc" checked="checked"/>
+                                    <label for="fbc">Full Body Crypts</label>
+                                    <input name="uType" type="radio" id="vault" />
+                                    <label for="vault">Vault</label>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s3">
+                                <label>Building No:<span style="color: red;">*</span></label>
+                            </div>
+                            <div class = "col s9" style = "padding-left: 20px;">
+                                <select>
+                                    <option value="" disabled selected> Select Building No:</option>
+                                    <option value="1">Building 1</option>
+                                    <option value="2">Building 2</option>
+                                    <option value="3">Building 3</option>
+                                </select>
+                            </div>
+                            <div class="input-field col s3">
+                                <label>Floor No:<span style="color: red;">*</span></label>
+                            </div>
+                            <div class = "col s9" style = "padding-left: 20px;">
+                                <select>
+                                    <option value="" disabled selected> Select Floor No:</option>
+                                    <option value="1">Floor 1</option>
+                                    <option value="2">Floor 2</option>
+                                    <option value="3">Floor 3</option>
+                                </select>
+                            </div>
+                            <div class="input-field col s3">
+                                <label>Block Name:<span style="color: red;">*</span></label>
+                            </div>
+                            <div class = "col s9" style = "padding-left: 20px;">
+                                <select>
+                                    <option value="" disabled selected> Select Block Name:</option>
+                                    <option value="1">Block A</option>
+                                    <option value="2">Block B</option>
+                                    <option value="3">Block C</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s3">
+                                <label>Unit Code:<span style="color: red;">*</span></label>
+                            </div>
+                            <div class = "col s3" style = "padding-left: 20px;">
+                                <select>
+                                    <option value="" disabled selected> Select Unit Code:</option>
+                                    <option value="1">Unit A1</option>
+                                    <option value="2">Unit A2</option>
+                                    <option value="3">Unit A3</option>
+                                </select>
+                            </div>
+                            <div class="input-field col s2">
+                                <label>Status:<span style="color: red;">*</span></label>
+                            </div>
+                            <div class="input-field col s4" style="font-family: none">
+                                <p>
+                                    <input name="group1" type="radio" id="status1" checked="checked"/>
+                                    <label for="status1">Active</label>
+                                    <input name="group1" type="radio" id="status2" />
+                                    <label for="status2">Inactive</label>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="right modal-footer" style="margin-right: 10px; margin-bottom: 10px; margin-top: 20px">
+                                <button name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Save</button>
+                                <button name = "action" class="waves-effect waves-light btn red">Cancel</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class = "col s5">
+            <div class = "col s4 z-depth-2 " style = "margin-top: 20px; width: 100%; height: 70px;">
+                <div class="responsive">
+                    <nav style = "height: 50px; margin-top: 10px; background-color: #00897b">
+                        <div class="nav-wrapper">
+                            <form>
+                                <div class="input-field"  style = "height: 50px;">
+                                    <input id="search" type="search" required>
+                                    <label for="search"><i class="material-icons">search</i></label>
+                                    <i class="material-icons">close</i>
+                                </div>
+                            </form>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <div class = "aside z-depth-2" style = "width: 100%; height: 455px; overflow: auto;">
+                <table  class="responsive" style = "width: 100%;" class="striped">
+                    <thead id="iba">
+                    <tr>
+                        <th data-field="gender">Building</th>
+                        <th data-field="cv">Floor</th>
+                        <th data-field="cv">Block</th>
+                        <th data-field="cv">Code</th>
+                        <th data-field="cv">Status</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <tr>
+                        <td>A</td>
+                        <td>3</td>
+                        <td>One</td>
+                        <td>E6</td>
+                        <td>Active</td>
+                    </tr>
+                    <tr>
+                        <td>B</td>
+                        <td>2</td>
+                        <td>One</td>
+                        <td>A4</td>
+                        <td>Inactive</td>
+                    </tr>
+                    <tr>
+                        <td>A</td>
+                        <td>3</td>
+                        <td>One</td>
+                        <td>E6</td>
+                        <td>Active</td>
+                    </tr>
+                    <tr>
+                        <td>B</td>
+                        <td>2</td>
+                        <td>One</td>
+                        <td>A4</td>
+                        <td>Inactive</td>
+                    </tr>
+                    <tr>
+                        <td>A</td>
+                        <td>3</td>
+                        <td>One</td>
+                        <td>E6</td>
+                        <td>Active</td>
+                    </tr>
+                    <tr>
+                        <td>B</td>
+                        <td>2</td>
+                        <td>One</td>
+                        <td>A4</td>
+                        <td>Inactive</td>
+                    </tr>
+                    <tr>
+                        <td>A</td>
+                        <td>3</td>
+                        <td>One</td>
+                        <td>E6</td>
+                        <td>Active</td>
+                    </tr>
+                    <tr>
+                        <td>B</td>
+                        <td>2</td>
+                        <td>One</td>
+                        <td>A4</td>
+                        <td>Inactive</td>
+                    </tr>
+                    <tr>
+                        <td>A</td>
+                        <td>3</td>
+                        <td>One</td>
+                        <td>E6</td>
+                        <td>Active</td>
+                    </tr>
+                    <tr>
+                        <td>B</td>
+                        <td>2</td>
+                        <td>One</td>
+                        <td>A4</td>
+                        <td>Inactive</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="page-footer" style = "background-color: #ff8f00;">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <h5 class="white-text">Footer Content</h5>
+                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            © 2014 Copyright Text
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

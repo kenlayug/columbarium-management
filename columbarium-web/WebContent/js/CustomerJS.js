@@ -10,3 +10,18 @@ $('.modal-trigger').leanModal({
     }
 );
 
+<script>
+// just for the demos, avoids form submit
+jQuery.validator.setDefaults({
+        debug: true,
+        success: "valid"
+});
+$( "#myform" ).validate({
+        rules: {
+                gender: {
+                        required: true
+                }
+        }
+});
+</script>
+
