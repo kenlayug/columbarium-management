@@ -5,7 +5,7 @@
 	<link rel = "stylesheet" href = "<%=request.getContextPath()%>/css/Package_Record_Form.css"/>
 
 <!-- Floating Button -->
-	<div class="fixed-action-btn horizontal" style="position: absolute; margin-right: 620px; margin-bottom: -40px;">
+	<div onclick="createPackage()" class="fixed-action-btn horizontal" style="position: absolute; margin-right: 620px; margin-bottom: -40px;">
 	    <button name = "action" class="btn-floating btn-large red"><i class="large material-icons">add</i>
 	    </button>
 	    <ul>
@@ -292,10 +292,40 @@
 	    
 	    function createPackage(){
 	    	
+	    	alert("Here...");
 	    	var packageName = document.getElementById("packageName").value;
 	    	var packagePrice = document.getElementById("packagePrice").value;
 	    	var packageDesc = document.getElementById("packageDesc").value;
-	    	var services = 
+	    	var services = $("input[name='service[]']:checked").map(function() {
+	    		return this.value;
+	    	}).get();
+	    	var items = $("input[name='item[]']:checked").map(function() {
+	    		return this.value;
+	    	}).get();
+	    	
+	    	$.ajax({
+	    		type: "POST",
+	    		url: "create",
+	    		data: {
+	    			"packageTo.strPackageName" : packageName,
+	    			"packageTo.dblPrice" : packagePrice,
+	    			"packageTo.strPackageDesc" : packageDesc,
+	    			"serviceList" : services,
+	    			"itemList" : items
+	    		},
+	    		traditional: true,
+	    		dataType: "json",
+	    		async: true,
+	    		success: function(data){
+	    			alert("saving...");
+	    			if (data.status === "success"){
+	    				alert("Package "+data.packageTo.strPackageName+" is successfully saved.");
+	    			}
+	    		},
+	    		error: function(data){
+	    			alert("error...");
+	    		}
+	    	});
 	    	
 	    }
     

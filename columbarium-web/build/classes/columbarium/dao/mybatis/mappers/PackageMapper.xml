@@ -16,10 +16,18 @@
 			<result property="strPackageName" column="strPackageName"/>
 			<result property="strPackageDesc" column="strPackageDesc"/>
 			<result property="dblPrice" column="deciPrice"/>
-			<collection property="itemList" column="itemId" ofType="Item"
-				javaType="ArrayList" resultMap="ItemResultMap"/>
-			<collection property="serviceList" column="serviceId" ofType="Service"
-				javaType="ArrayList" resultMap="ServiceResultMap"/>
+			<collection property="serviceList" ofType="Service">
+				<id property="serviceId" column="serviceId"/>
+				<result property="strServiceName" column="strServiceName"/>
+				<result property="strServiceDesc" column="strServiceDesc"/>
+				<result property="dblPrice" column="deciPrice"/>
+			</collection>
+			<collection property="itemList" ofType="Item">
+				<id property="itemId" column="itemId"/>
+				<result property="strItemName" column="strItemName"/>
+				<result property="strItemDesc" column="strItemDesc"/>
+				<result property="dblPrice" column="deciPrice"/>
+			</collection>
 		</resultMap>
 		
 		<resultMap type="java.lang.Integer" id="PackageIdResultMap">
@@ -78,7 +86,6 @@
 					</when>
 				</choose>
 			</where>
-			LIMIT 1
 		</select>
 		
 		<select id="getPackageId" resultMap="PackageIdResultMap">
@@ -90,10 +97,10 @@
 				i.strItemName, i.strItemDesc, i.deciPrice,
 				s.strServiceName, s.strServiceDesc, s.deciPrice
 			FROM tblPackage p
-			INNER JOIN tblPackageItem pi ON p.packageId = pi.packageIdFK
-			INNER JOIN tblItem i ON i.itemId = itemIdFK
-			INNER JOIN tblPackageService ps ON p.packageId = ps.packageIdFK
-			INNER JOIN tblService s ON s.serviceId = ps.serviceIdFK
+			LEFT JOIN tblPackageItem pi ON p.packageId = pi.packageIdFK
+			LEFT JOIN tblItem i ON i.itemId = itemIdFK
+			LEFT JOIN tblPackageService ps ON p.packageId = ps.packageIdFK
+			LEFT JOIN tblService s ON s.serviceId = ps.serviceIdFK
 			WHERE p.intStatus = 1
 			ORDER BY strPackageName ASC
 		</select>
@@ -151,18 +158,20 @@
 		</insert>
 		
 		<insert id="addServiceToPackage">
-			INSERT INTO tblPackageService(packageIdFK, serviceIdFK)
+			INSERT INTO tblPackageService(packageIdFK, serviceIdFK, intStatus)
 			VALUES (
 				#{packageId},
-				(SELECT serviceId FROM tblService WHERE strServiceName LIKE #{service.strServiceName})
+				(SELECT serviceId FROM tblService WHERE strServiceName LIKE #{service.strServiceName}),
+				1
 			)
 		</insert>
 		
 		<insert id="addItemToPackage">
-			INSERT INTO tblPackageItem(packageIdFK, itemIdFK)
+			INSERT INTO tblPackageItem(packageIdFK, itemIdFK, intStatus)
 			VALUES (
 				#{packageId},
-				(SELECT itemId FROM tblItem WHERE strItemName LIKE #{item.strItemName})
+				(SELECT itemId FROM tblItem WHERE strItemName LIKE #{item.strItemName}),
+				1
 			)
 		</insert>
 		

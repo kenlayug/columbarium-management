@@ -21,8 +21,7 @@
 	                        <h4>Item Form</h4>
 	                    </div>
 	
-	
-	                    <form class = "col s12">
+
 	                        <div class = "row">
 	                        <div>
 	                            <div class="input-field col s6">
@@ -46,7 +45,6 @@
 									<li><button name = "action" class="modal-trigger btn-floating green darken-1" href = "#modalUpdate"><i class="material-icons">mode_edit</i></button></li>
 								</ul>
 							</div>
-	                    </form>
 	
 	                        <div class="row" style = "padding-left: 10px;">
 	                            <div class="input-field col s12">
@@ -66,7 +64,6 @@
 	            <div class = "modal-header">
 	                <h4>Update Item</h4>
 	            </div>
-	            <form class="modal-content">
 	
 		                <div class = "col s12">
 		                    <div class = "col s6" style = "padding-left: 20px;">
@@ -115,7 +112,6 @@
 						<button class="waves-effect waves-light btn red" onclick="$('#modalUpdate').closeModal()">Cancel</button>
 					</div>
 	
-	            </form>
 
 	        </div>
 	
