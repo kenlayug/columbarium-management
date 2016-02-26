@@ -90,18 +90,6 @@
 </ul>
 
 
-<!-- Floating Button -->
-
-<div class="fixed-action-btn horizontal" style="position: absolute; margin-right: 620px; margin-bottom: 125px;">
-    <div class = "responsive">
-    <button name = "action" class="btn-floating btn-large red"><i class="large material-icons">add</i>
-    </button>
-    <ul>
-        <li><button name = "action" class="btn-floating modal-trigger black" href = "#modal2"><i class="material-icons">delete</i></button></li>
-        <li><button name = "action" class="btn-floating modal-trigger green darken-1" href = "#modal1"><i class="material-icons">mode_edit</i></button></li>
-    </ul>
-    </div>
-</div>
 
 
 <!-- Section -->
@@ -109,7 +97,7 @@
     <div class = "responsive col s12">
         <div class = "row">
         <div class = "col s7">
-            <h4>Block Maintenance</h4>
+            <h2>Block Maintenance</h2>
             <!-- Create Blocks -->
             <div class = "col s12">
                 <div class = "wrapper responsive aside aside z-depth-2">
@@ -121,21 +109,21 @@
                     <form class = "col s12">
                         <div class="row">
                             <!-- Select Floor Name -->
-                            <div class = "col s6" style = "padding-left: 20px;">
+                            <div class = "col s6" style = "padding-left: 10px;">
                                 <label>Select Building Name</label>
                                 <select>
                                     <option value="" disabled selected>Building Name:</option>
-                                    <option value="1">Building One</option>
+                                    <option selected = "selected" value="1">Building One</option>
                                     <option value="2">Building Two</option>
                                     <option value="3">Building Three</option>
                                 </select>
                             </div>
                             <!-- Select Floor Name -->
-                            <div class = "col s6" style = "padding-left: 20px;">
+                            <div class = "col s6" style = "padding-left: 10px;">
                                 <label>Select Floor Name</label>
                                 <select>
                                     <option value="" disabled selected>Floor Name:</option>
-                                    <option value="1">Floor One</option>
+                                    <option selected = "selected" value="1">Floor One</option>
                                     <option value="2">Floor Two</option>
                                     <option value="3">Floor Three</option>
                                 </select>
@@ -146,10 +134,24 @@
                     <form class = "col s12">
                         <div class="row">
                             <div class="input-field col s12">
-                                <input id="blocks_name" type="text" class="validate">
-                                <label for="blocks_name">Block name:</label>
+                                <input id="blocks_name" type="text" class="validate"   required = "" aria-required = "true" pattern="[A-Za-z]{1,29}">
+                                <label for="blocks_name" data-error = "*ex: Address (30 characters max)" data-success = "Block Name accepted.">Block Name <span style = "color: red;">*</span></label>
                             </div>
                         </div>
+
+
+                        <!-- Floating Button -->
+                        <div class="fixed-action-btn horizontal" style="position: absolute; margin-right: 620px; margin-bottom: 125px;">
+                            <div class = "responsive">
+                                <button name = "action" type = "submit" class="btn-floating btn-large red"><i class="large material-icons">add</i>
+                                </button>
+                                <ul>
+                                    <li><button name = "action" class="btn-floating modal-trigger black" href = "#modal2"><i class="material-icons">delete</i></button></li>
+                                    <li><button name = "action" class="btn-floating modal-trigger green darken-1" href = "#modal1"><i class="material-icons">mode_edit</i></button></li>
+                                </ul>
+                            </div>
+                        </div>
+
                     </form>
 
                 </div>
@@ -165,12 +167,12 @@
 
                     <form class = "col s12">
                         <div class="row">
-                            <!-- Select Floor Name -->
+                            <!-- Select Building Name -->
                             <div class = "col s6" style = "padding-left: 20px;">
                                 <label>Select Building Name</label>
                                 <select>
                                     <option value="" disabled selected>Building Name:</option>
-                                    <option value="1">Building One</option>
+                                    <option selected = "selected" value="1">Building One</option>
                                     <option value="2">Building Two</option>
                                     <option value="3">Building Three</option>
                                 </select>
@@ -180,7 +182,7 @@
                                 <label>Select Floor Name</label>
                                 <select>
                                     <option value="" disabled selected>Floor Name:</option>
-                                    <option value="1">Floor One</option>
+                                    <option selected = "selected" value="1">Floor One</option>
                                     <option value="2">Floor Two</option>
                                     <option value="3">Floor Three</option>
                                 </select>
@@ -194,21 +196,21 @@
                                 <label>Select Block Name to update:</label>
                                 <select>
                                     <option value="" disabled selected>Block Name:</option>
-                                    <option value="1">Block One</option>
+                                    <option selected = "selected" value="1">Block One</option>
                                     <option value="2">Block Two</option>
                                     <option value="3">Block Three</option>
                                 </select>
                             </div>
                             <div class="input-field col s6">
-                                <input id="blocksNameUpdate" type="text" class="validate">
-                                <label for="blocksNameUpdate">New Block Name</label>
+                                <input id="blocksNameUpdate" type="text" class="validate" required = "" aria-required = "true" pattern="[A-Za-z]{1,29}">
+                                <label for="blocksNameUpdate" data-error = "*ex: Block (30 characters max)" data-success = "New Block Name accepted.">New Block Name <span style = "color: red;">*</span></label>
                             </div>
                         </div>
+                        <div class="modal-footer">
+                            <button name = "action" type = "submit" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
+                            <button name = "action" class="waves-effect waves-light btn red" href = "Blocks_Maintenance.html">Cancel</button>
+                        </div>
                     </form>
-                </div>
-                <div class="modal-footer">
-                    <button name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
-                    <button name = "action" class="waves-effect waves-light btn red" href = "Blocks_Maintenance.html">Cancel</button>
                 </div>
             </div>
 
@@ -227,7 +229,7 @@
                                 <label>Select Building Name</label>
                                 <select>
                                     <option value="" disabled selected>Building Name:</option>
-                                    <option value="1">Building One</option>
+                                    <option selected = "selected" value="1">Building One</option>
                                     <option value="2">Building Two</option>
                                     <option value="3">Building Three</option>
                                 </select>
@@ -237,7 +239,7 @@
                                 <label>Select Floor Name</label>
                                 <select>
                                     <option value="" disabled selected>Floor Name:</option>
-                                    <option value="1">Floor One</option>
+                                    <option selected = "selected" value="1">Floor One</option>
                                     <option value="2">Floor Two</option>
                                     <option value="3">Floor Three</option>
                                 </select>
@@ -251,23 +253,24 @@
                                 <label>Select Block Name to Deactivate:</label>
                                 <select>
                                     <option value="" disabled selected>Block Name:</option>
-                                    <option value="1">Block One</option>
+                                    <option selected = "selected" value="1">Block One</option>
                                     <option value="2">Block Two</option>
                                     <option value="3">Block Three</option>
                                 </select>
                             </div>
                         </div>
+                        <div class="modal-footer">
+                            <button name = "action" type = "submit" class="waves-effect waves-light btn red" style = "margin-right: 10px; margin-left: 10px; ">Confirm</button>
+                            <button name = "action" class="waves-effect waves-light btn red">Cancel</button>
+                        </div>
                     </form>
                 </div>
-                <div class="modal-footer">
-                    <button name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
-                    <button name = "action" class="waves-effect waves-light btn red">Cancel</button>
-                </div>
+
             </div>
 
             <!-- Data Grid -->
         <div class = "col s5">
-            <div class = "col s4 z-depth-2 " style = "margin-left: 60px; margin-top: 20px; width: 450px; height: 70px;">
+            <div class = "col s4 z-depth-2 " style = "margin-top: 20px; width: 100%; height: 70px;">
               <div class = "responsive">
 
                 <nav style = "height: 50px; margin-top: 10px; background-color: #00897b">
@@ -290,8 +293,8 @@
             <br>
             <br>
 
-            <div class = "aside z-depth-2" style = "margin-left: 60px; width: 450px; height: 340px; overflow: auto;">
-            <table class = "responsive highlight z-depth-3" style = "margin-top: 10px; margin-left: 0px; width: 100%; height: 200px;">
+            <div class = "aside z-depth-2" style = " width: 100%; height: 340px; overflow: auto;">
+            <table class = "responsive"  style = "width: 100%;">
 
 
                 <thead class = "fixed-header">

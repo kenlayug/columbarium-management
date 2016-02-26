@@ -5,57 +5,58 @@
 	    <!-- Import CSS/JS -->
 	    <script type="text/javascript" src="<%=request.getContextPath()%>/js/Inventory_Form.js"></script>
 	    <link rel = "stylesheet" href = "<%=request.getContextPath()%>/css/Inventory_Form.css"/>
-	
+		<script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery.validate.js"></script>
+		<script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery.validate.min.js"></script>
 
-	<!-- Floating Button -->
-	<div class="fixed-action-btn horizontal" style="position: absolute; margin-right: 570px; margin-bottom: 175px;">
-	    <button id="btnCreateItem" name = "action" class="btn-floating btn-large red"><i class="large material-icons">add</i>
-	    </button>
-	    <ul>
-	        <li><button name = "action" class="modal-trigger btn-floating black" href = "#modalDeactivate"><i class="material-icons">delete</i></button></li>
-	        <li><button name = "action" class="modal-trigger btn-floating green darken-1" href = "#modalUpdate"><i class="material-icons">mode_edit</i></button></li>
-	    </ul>
-	</div>
 	
 	<!-- Section -->
 	<div class = "responsive col s12">
 	    <div class = "row">
 	        <div class = "col s7">
-	            <h4>Item Maintenance</h4>
+	            <h2>Item Maintenance</h2>
 	
-	            <!-- Create Inventory -->
+	            <!-- Create Items -->
 	            <div class = "col s12">
-	                <div class = "aside aside z-depth-3">
+	                <form class = "aside aside z-depth-3">
 	                    <div class = "header">
 	                        <h4>Item Form</h4>
 	                    </div>
 	
-	
-	                    <div class = "col s12">
+
 	                        <div class = "row">
 	                        <div style = "padding-left: 10px;">
 	                            <div class="input-field col s6">
-	                                <input id="itemName" type="text" class="validate" name="item.strItemName">
-	                                <label for="itemName">Item Name</label>
+	                                <input id="itemName" type="text" class="validate" name="item.strItemName" required>
+	                                <label for="itemName" data-error = "Check format field." data-success = "">Item Name<span style = "color: red;">*</span></label>
 	                            </div>
 	                        </div>
 	                        <div style = "padding-left: 10px;">
 	                            <div class="input-field col s6">
-	                                <input id="itemPrice" type="text" class="validate" name="item.dblPrice">
-	                                <label for="itemPrice">Item Price</label>
+	                                <input id="itemPrice" type="text" class="validate" name="item.dblPrice" required = "" aria-required = "true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
+	                                <label for="itemPrice" data-error = "Check format field." data-success = "">Item Price<span style = "color: red;">*</span></label>
 	                            </div>
 	                        </div>
 	                    </div>
-	                    </div>
+							<!-- Floating Button -->
+							<div class="fixed-action-btn horizontal" style="position: absolute; margin-right: 570px; margin-bottom: 175px;">
+								<button type = "submit" onclick="createItem()" name = "action"  class="btn-floating btn-large red"><i class="large material-icons">add</i>
+								</button>
+								<ul>
+									<li><button name = "action" class="modal-trigger btn-floating black" href = "#modalDeactivate"><i class="material-icons">delete</i></button></li>
+									<li><button name = "action" class="modal-trigger btn-floating green darken-1" href = "#modalUpdate"><i class="material-icons">mode_edit</i></button></li>
+								</ul>
+							</div>
 	
-	                        <div class="row">
+	                        <div class="row" style = "padding-left: 10px;">
 	                            <div class="input-field col s12">
-	                                <input id="itemDesc" type="text" class="validate" name="item.strItemDesc">
-	                                <label for="desc">Item Description</label>
+	                                <input id="itemDesc" type="text" class="validate" name="item.strItemDesc" pattern = "[A-Za-z0-9\s]{1,29}">
+	                                <label for="itemDesc" data-error = "" data-success = "">Item Description</label>
 	                            </div>
 	                        </div>
-	
-	                </div>
+
+
+	                </form>
+
 	            </div>
 	        </div>
 	
@@ -64,7 +65,6 @@
 	            <div class = "modal-header">
 	                <h4>Update Item</h4>
 	            </div>
-	            <div class="modal-content">
 	
 		                <div class = "col s12">
 		                    <div class = "col s6" style = "padding-left: 20px;">
@@ -73,7 +73,7 @@
 		                        	<label>No item available.</label>
 		                        </c:if>
 		                        <c:if test="${itemList != null}">
-			                        <select name="strItemName" id="selectItemUpdate" onchange="placeValue()">
+			                        <select name="strItemName" id="selectItemUpdate" required = "" aria-required="true" onchange="placeValue()">
 			                            <option value="" disabled selected>Item Name:</option>
 										<c:forEach items="${itemList }" var="item">
 											<option value="${item.strItemName}">${item.strItemName}</option>
@@ -87,32 +87,34 @@
 		                    <div class = "row">
 		                        <div style = "padding-left: 10px;">
 		                            <div class="input-field col s6">
-		                                <input id="itemNameUpdate" type="text" class="validate" name="item.strItemName">
-		                                <label for="itemNameUpdate" data-error = "wrong" data-success = "right">New Item Name</label>
+		                                <input id="itemNameUpdate" type="text" class="validate" name="item.strItemName" required = "" aria-required = "true" pattern = "[A-Za-z0-9\s]{1,29}">
+		                                <label for="itemNameUpdate" data-error = "Check format field." data-success = "">New Item Name</label>
 		                            </div>
 		                        </div>
 		                        <div style = "padding-left: 10px;">
 		                            <div class="input-field col s6">
-		                                <input id="itemPriceUpdate" type="text" class="validate" name="item.dblPrice">
-		                                <label for="itemPriceUpdate" data-error = "wrong" data-success = "right">New Item Price</label>
+		                                <input id="itemPriceUpdate" type="text" class="validate" name="item.dblPrice" required = "" aria-required = "true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
+		                                <label for="itemPriceUpdate" data-error = "Check format field." data-success = "">New Item Price</label>
 		                            </div>
 		                        </div>
 		                    </div>
 		                </div>
 	
-	                    <div class="row">
+	                    <div style = "padding-left: 20px;">
 	                        <div class="input-field col s12">
 	                            <input id="itemDescUpdate" type="text" class="validate" name="item.strItemDesc">
-	                            <label for="itemDescUpdate">New Item Description</label>
+	                            <label for="itemDescUpdate" data-error = "Check format field." data-success = "">New Item Description</label>
 	                        </div>
 	                    </div>
+						<br><br>
+
+					<div class="modal-footer">
+						<button onclick="updateItem()" type="submit" name="action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
+
+						<button class="waves-effect waves-light btn red" onclick="$('#modalUpdate').closeModal()">Cancel</button>
+					</div>
 	
-	            </div>
-	            <div class="modal-footer">
-	                <button id="btnUpdateItem" type="submit" name="action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
-	                
-	                <button class="waves-effect waves-light btn red" href = "Blocks_Maintenance.html">Cancel</button>
-	            </div>
+
 	        </div>
 	
 	
@@ -129,7 +131,7 @@
 			                       <label>No item available.</label>
 			                    </c:if>
 			                    <c:if test="${itemList != null}">
-									<select name="strItemName" id="itemNameDeactivate">
+									<select name="strItemName" id="itemNameDeactivate" required = "" aria-required="true">
 										<option value="" disabled selected>Item Name:</option>
 											<c:forEach items="${itemList }" var="item">
 												<option value="${item.strItemName}">${item.strItemName}</option>
@@ -141,9 +143,9 @@
 	            </div>
 	
 	            <div class="modal-footer">
-	                <button id="btnDeactivate" name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
+	                <button onclick="deactivateItem()" name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
 					
-	                <button class="waves-effect waves-light btn red">Cancel</button>
+	                <button onclick="$('#modalDeactivate').closeModal()" class="waves-effect waves-light btn red">Cancel</button>
 	            </div>
 	        </div>
 	
@@ -170,7 +172,7 @@
 	            <br>
 	
 	            <div class = "aside z-depth-2" style = "margin-left: 60px; width: 450px; height: 310px; overflow: auto;">
-	                <table id="tableItem" class = "highlight z-depth-3" style = "margin-top: 10px; margin-left: 0px; width: 100%; height: 200px;">
+	                <table id="tableItem" class = "responsive" style = "margin-top: 10px; margin-left: 0px; width: 100%; height: 200px;">
 	
 	                    <thead class = "fixed-header">
 	                    <tr>
@@ -206,7 +208,7 @@
 	
 	<script type="text/javascript">
 			
-		$("#btnCreateItem").click(function(){
+		function createItem(){
 			var itemName = document.getElementById("itemName").value;
 			var itemPrice = document.getElementById("itemPrice").value;
 			var itemDesc = document.getElementById("itemDesc").value;
@@ -236,9 +238,9 @@
 		    });
 	
 		    return false;
-		});
+		}
 	
-		$("#btnUpdateItem").click(function(){
+		function updateItem(){
 			var itemName = document.getElementById("itemNameUpdate").value;
 			var itemPrice = document.getElementById("itemPriceUpdate").value;
 			var itemDesc = document.getElementById("itemDescUpdate").value;
@@ -271,9 +273,9 @@
 		    });
 		
 		    return false;
-		});
+		}
 		
-		$("#btnDeactivate").click(function(){
+		function deactivateItem(){
 			
 			var itemNameDeactivate = document.getElementById("itemNameDeactivate").value;
 			$.ajax({
@@ -295,7 +297,7 @@
 				}
 			});
 			
-		});
+		}
 		
 		$("#searchItem").on("change keyup paste",function(){
 			searchItemAndUpdateTable();

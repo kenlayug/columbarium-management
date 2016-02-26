@@ -23,7 +23,7 @@ public class ServiceServiceImpl implements ServiceService{
 	@Override
 	public String createService(Service service) {
 		// TODO Auto-generated method stub
-		return serviceRepository.createService(service);
+		return serviceBusiness.createService(service);
 	}
 
 	@Override

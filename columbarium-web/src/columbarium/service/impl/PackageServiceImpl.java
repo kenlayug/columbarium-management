@@ -23,7 +23,7 @@ public class PackageServiceImpl implements PackageService{
 	@Override
 	public String createPackage(Package packageTo) {
 		// TODO Auto-generated method stub
-		return packageRepository.createPackage(packageTo);
+		return packageBusiness.createPackage(packageTo);
 	}
 
 	@Override

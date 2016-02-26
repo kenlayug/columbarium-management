@@ -6,5 +6,6 @@ public interface ItemBusiness {
 
 	public int getUpdatedItemId();
 	public String update(Item item);
+	public String createItem(Item item);
 	
 }

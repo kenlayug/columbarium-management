@@ -32,21 +32,7 @@ public class CreateItemAction extends ActionSupport implements Action{
 		System.out.println("Here in action...");
 		strStatus = getItem().create();
 		System.out.println(strStatus);
-		return strStatus;
-	}
-	
-	public void validate(){
-		
-		if (item.getStrItemName().length() == 0 || item.getStrItemName() == null){
-
-		}
-		if (item.getStrItemDesc().length() == 0 || item.getStrItemDesc() == null){
-
-		}
-		if (Double.parseDouble(item.getDblPrice()) < 0 || item.getDblPrice() == null){
-
-		}
-		
+		return "success";
 	}
 
 }

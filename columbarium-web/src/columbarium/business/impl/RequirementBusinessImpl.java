@@ -22,6 +22,12 @@ public class RequirementBusinessImpl implements RequirementBusiness{
 		if (requirement == null){
 			return "failed-does-not-exist";
 		}
+		if (requirementUpdate.getStrRequirementDesc().length() == 0){
+			requirementUpdate.setStrRequirementDesc(null);
+		}
+		if(requirementUpdate.getStrRequirementName().length() == 0){
+			requirementUpdate.setStrRequirementName(null);
+		}
 		requirementUpdate.setRequirementId(requirement.getRequirementId());
 		return requirementRepository.updateRequirement(requirementUpdate);
 		
@@ -31,6 +37,7 @@ public class RequirementBusinessImpl implements RequirementBusiness{
 	public String deactivateRequirement(String strRequirement) {
 
 		Requirement requirement = new Requirement(strRequirement);
+		requirement.setRequirementId(requirementRepository.readRequirement(requirement).getRequirementId());
 		return requirementRepository.deactivateRequirement(requirement);
 		
 	}

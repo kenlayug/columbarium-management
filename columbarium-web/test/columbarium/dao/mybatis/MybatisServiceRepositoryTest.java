@@ -2,6 +2,7 @@ package columbarium.dao.mybatis;
 
 import java.util.List;
 
+import columbarium.model.Requirement;
 import columbarium.model.Service;
 import junit.framework.Test;
 import junit.framework.TestCase;
@@ -22,9 +23,10 @@ public class MybatisServiceRepositoryTest extends TestCase{
 				new MybatisServiceRepository(connectionManager);
 		
 		Service service = new Service();
-		service.setStrServiceName("Cremation");
-		service.setStrServiceDesc("Sunog patay.");
+		service.setStrServiceName("Interment");
+		service.setStrServiceDesc("Lagay patay sa loob.");
 		service.setDblPrice(100.00);
+		service.setAddRequirement("Ken Pogi");
 		
 		assertEquals("success", serviceRepository.createService(service));
 		
@@ -39,9 +41,11 @@ public class MybatisServiceRepositoryTest extends TestCase{
 				new MybatisServiceRepository(connectionManager);
 		
 		Service service = new Service();
-		service.setServiceId(1);
-		service.setStrServiceName("Cremation");
-		
+		service.setServiceId(13);
+		service = serviceRepository.searchService(service);
+		for (Requirement requirement : service.getRequirementList()) {
+			System.out.println(requirement.getStrRequirementName());
+		}
 		assertNotNull(serviceRepository.searchService(service));
 
 		
@@ -56,10 +60,12 @@ public class MybatisServiceRepositoryTest extends TestCase{
 				new MybatisServiceRepository(connectionManager);
 		
 		Service service = new Service();
-		service.setServiceId(1);
+		service.setServiceId(13);
 		service.setStrServiceDesc("Ano ba yan?");
 		service.setStrServiceName("Cremation");
 		service.setDblPrice(200.50);
+		service.setRequirementList(serviceRepository.searchService(service).getRequirementList());
+		service.setAddRequirement("O'hara");
 		
 		assertEquals("success",serviceRepository.updateService(service));
 		
@@ -72,6 +78,13 @@ public class MybatisServiceRepositoryTest extends TestCase{
 		
 		MybatisServiceRepository serviceRepository =
 				new MybatisServiceRepository(connectionManager);
+		
+		for (Service service : serviceRepository.getAllService()) {
+			System.out.println(service.getStrServiceName());
+			for (Requirement requirement : service.getRequirementList()) {
+				System.out.println(requirement.getStrRequirementName());
+			}
+		}
 		
 		assertNotNull(serviceRepository.getAllService());
 		
@@ -86,7 +99,7 @@ public class MybatisServiceRepositoryTest extends TestCase{
 				new MybatisServiceRepository(connectionManager);
 		
 		Service service = new Service();
-		service.setServiceId(1);
+		service.setServiceId(13);
 		
 		assertEquals("success", serviceRepository.deactivateService(service));
 		
@@ -101,7 +114,7 @@ public class MybatisServiceRepositoryTest extends TestCase{
 				new MybatisServiceRepository(connectionManager);
 		
 		Service service = new Service();
-		service.setStrServiceName("mati");
+		service.setStrServiceName("cre");
 		
 		List<Service> serviceResult = serviceRepository.searchServiceByName(service);
 		for (Service service2 : serviceResult) {
@@ -115,12 +128,12 @@ public class MybatisServiceRepositoryTest extends TestCase{
 		
 		TestSuite suite = new TestSuite();
 		
-		suite.addTest(new MybatisServiceRepositoryTest("testCreateService"));
-		suite.addTest(new MybatisServiceRepositoryTest("testGetService"));
-		suite.addTest(new MybatisServiceRepositoryTest("testUpdateService"));
+//		suite.addTest(new MybatisServiceRepositoryTest("testCreateService"));
+//		suite.addTest(new MybatisServiceRepositoryTest("testGetService"));
+//		suite.addTest(new MybatisServiceRepositoryTest("testUpdateService"));
 		suite.addTest(new MybatisServiceRepositoryTest("testGetAllService"));
 //		suite.addTest(new MybatisServiceRepositoryTest("testDeactivateService"));
-		suite.addTest(new MybatisServiceRepositoryTest("testSearchServiceByName"));
+//		suite.addTest(new MybatisServiceRepositoryTest("testSearchServiceByName"));
 		
 		return suite;
 		

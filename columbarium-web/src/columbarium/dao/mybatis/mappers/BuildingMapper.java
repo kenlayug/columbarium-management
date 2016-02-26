@@ -1,5 +1,7 @@
 package columbarium.dao.mybatis.mappers;
 
+import java.util.List;
+
 import columbarium.model.Block;
 import columbarium.model.Building;
 import columbarium.model.Floor;
@@ -12,6 +14,10 @@ public interface BuildingMapper {
 	public void createBlock(Block block);
 	public void createUnitCategory(Floor floor);
 	public void createUnit(Unit unit);
+	
+	public Integer countAllBuilding();
+	
+	public List<Building>getAllBuilding();
 	
 	public int checkIfExistingBuilding(Building building);
 	public int checkIfExistingBlock(Block block);

@@ -63,7 +63,9 @@ public class MybatisPackageRepository extends MybatisClient implements PackageRe
 			
 			PackageMapper packageMapper = sqlSession.getMapper(PackageMapper.class);
 			if (packageMapper.checkIfExisting(packageTo) > 0){
-				return packageMapper.getPackage(packageTo);
+				Package package1 = packageMapper.getPackage(packageTo);
+				package1.setItemList(packageMapper.getItemsOfPackage(packageTo));
+				return package1;
 			}
 			
 		}catch(Exception e){
@@ -123,11 +125,16 @@ public class MybatisPackageRepository extends MybatisClient implements PackageRe
 	public List<Package> getAllPackage() {
 		// TODO Auto-generated method stub
 		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		List<Package>packageList;
 		try{
 			
 			PackageMapper packageMapper = sqlSession.getMapper(PackageMapper.class);
 			if (packageMapper.countAllPackage() > 0){
-				return packageMapper.getAllPackage();
+				packageList = packageMapper.getAllPackage();
+				for (Package packageTo : packageList) {
+					packageTo.setItemList(packageMapper.getItemsOfPackage(packageTo));
+				}
+				return packageList;
 			}
 			
 		}catch(Exception e){

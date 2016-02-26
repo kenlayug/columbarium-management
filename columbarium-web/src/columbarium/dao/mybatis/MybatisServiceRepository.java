@@ -5,8 +5,11 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 
 import columbarium.dao.ServiceRepository;
+import columbarium.dao.mybatis.mappers.RequirementMapper;
 import columbarium.dao.mybatis.mappers.ServiceMapper;
+import columbarium.model.Requirement;
 import columbarium.model.Service;
+import columbarium.model.ServiceRequirement;
 
 public class MybatisServiceRepository extends MybatisClient implements ServiceRepository{
 
@@ -22,10 +25,19 @@ public class MybatisServiceRepository extends MybatisClient implements ServiceRe
 		try{
 			
 			ServiceMapper serviceMapper = sqlSession.getMapper(ServiceMapper.class);
+			RequirementMapper requirementMapper = sqlSession.getMapper(RequirementMapper.class);
 			if (serviceMapper.checkIfExisting(service) > 0){
 				return "failed-existing";
 			}
 			serviceMapper.saveService(service);
+			sqlSession.commit();
+			service.setServiceId(serviceMapper.getServiceId(service));
+			for (Requirement requirement : service.getRequirementList()) {
+				requirement = requirementMapper.selectRequirement(requirement);
+				ServiceRequirement serviceRequirement = new ServiceRequirement
+						(service.getServiceId(), requirement.getRequirementId());
+				serviceMapper.saveRequirement(serviceRequirement);
+			}
 			sqlSession.commit();
 			return "success";
 			
@@ -65,9 +77,41 @@ public class MybatisServiceRepository extends MybatisClient implements ServiceRe
 		try{
 			
 			ServiceMapper serviceMapper = sqlSession.getMapper(ServiceMapper.class);
+			RequirementMapper requirementMapper = sqlSession.getMapper(RequirementMapper.class);
 			if (serviceMapper.checkIfExisting(service) <= 0){
 				return "failed-does-not-exist";
 			}
+			
+			Service serviceOriginal = serviceMapper.getService(service);
+			for (Requirement requirementOriginal : serviceOriginal.getRequirementList()) {
+				
+				if (service.getRequirementList().contains(requirementOriginal)){
+					
+				}else{
+					requirementOriginal = requirementMapper.selectRequirement(requirementOriginal);
+					ServiceRequirement serviceRequirement = new ServiceRequirement
+							(service.getServiceId(), requirementOriginal.getRequirementId());
+					serviceMapper.removeRequirementFromService(serviceRequirement);
+				}
+				
+			}//end foreach
+			for (Requirement requirementUpdate : service.getRequirementList()) {
+				
+				if (serviceOriginal.getRequirementList().contains(requirementUpdate)){
+					
+				}else{
+					requirementUpdate = requirementMapper.selectRequirement(requirementUpdate);
+					ServiceRequirement serviceRequirement = new ServiceRequirement
+							(service.getServiceId(), requirementUpdate.getRequirementId());
+					if (serviceMapper.checkIfExistingRequirementInService(serviceRequirement) == 0){
+						serviceMapper.saveRequirement(serviceRequirement);
+					}else{
+						serviceMapper.addRequirementFromService(serviceRequirement);
+					}
+				}
+				
+			}//end foreach
+			
 			serviceMapper.updateService(service);
 			sqlSession.commit();
 			return "success";

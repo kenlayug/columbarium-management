@@ -1,6 +1,7 @@
 package columbarium.model;
 
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.struts2.ServletActionContext;
@@ -13,7 +14,8 @@ public class Service {
 	private String strServiceName;
 	private String strServiceDesc;
 	private double dblPrice;
-	private List<String>requirements;
+	private List<Requirement>requirementList;
+	private String[]requirementString;
 	
 	public Service(){
 		
@@ -23,16 +25,40 @@ public class Service {
 		this.strServiceName = strServiceName;
 	}
 	
-	public void setRequirements(List<String>requirements){
-		this.requirements = requirements;
+	public void setRequirementList(List<Requirement>requirements){
+		this.requirementList = requirements;
 	}
 	
-	public List<String>getRequirements(){
-		return this.requirements;
+	public List<Requirement>getRequirementList(){
+		return this.requirementList;
 	}
 	
-	public void setAddRequirements(String requirement){
-		this.requirements.add(requirement);
+	public void setRequirementListByString(String[]arrRequirement){
+		this.requirementString = arrRequirement;
+	}
+	
+	public String[]getRequirementListByString(){
+		return requirementString;
+	}
+	
+	public void setAddRequirement(String strRequirement){
+		Requirement requirement = new Requirement(strRequirement);
+		if (requirementList == null){
+			requirementList = new ArrayList<Requirement>();
+		}
+		if (!requirementList.contains(requirement)){
+			this.requirementList.add(requirement);
+		}
+	}
+	
+	public void setRemoveRequirement(String strRequirement){
+		Requirement requirement = new Requirement(strRequirement);
+		if (requirementList == null){
+			requirementList = new ArrayList<Requirement>();
+		}
+		if (requirementList.contains(requirement)){
+			this.requirementList.remove(requirement);
+		}
 	}
 	
 	public int getServiceId() {
@@ -110,6 +136,7 @@ public class Service {
 			setStrServiceName(service.getStrServiceName());
 			setStrServiceDesc(service.getStrServiceDesc());
 			setDblPrice(Double.parseDouble(service.getDblPrice()));
+			setRequirementList(service.getRequirementList());
 		}
 	}
 	

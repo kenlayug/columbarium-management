@@ -22,6 +22,8 @@ public class MybatisPackageRepositoryTest extends TestCase{
 				new MybatisPackageRepository(connectionManager);
 		
 		for (Package packageTo : packageRepository.getAllPackage()) {
+			System.out.println(packageTo.getStrPackageName()+"'s Items -- "+packageTo.getItemList().size());
+			System.out.println(packageTo.getStrPackageName()+"'s Services -- "+packageTo.getServiceList().size());
 			for (Service service : packageTo.getServiceList()) {
 				System.out.println(service);
 			}
@@ -47,13 +49,8 @@ public class MybatisPackageRepositoryTest extends TestCase{
 		System.out.println(packageTo.getStrPackageName().length());
 		packageTo.setStrPackageDesc("Bonus na to ah?");
 		packageTo.setDblPrice(1500.00);
-		Service service = new Service();
-		service.setServiceId(1);
-		service.setStrServiceName("Cremation");
-		Item item = new Item();
-		item.setStrItemName("Rounded Urn");
-		packageTo.addServiceToPackage(service);
-		packageTo.addItemToPackage(item);
+		packageTo.addServiceToPackage("Cremation");
+		packageTo.addItemToPackage("Plywood");
 		
 		assertEquals("success", packageRepository.createPackage(packageTo));
 		
@@ -68,7 +65,7 @@ public class MybatisPackageRepositoryTest extends TestCase{
 				new MybatisPackageRepository(connectionManager);
 		
 		Package packageTo = new Package();
-		packageTo.setStrPackageName("Cremation with invisible urn");
+		packageTo.setStrPackageName("All-in-one");
 		
 		packageTo = packageRepository.searchPackage(packageTo);
 		for (Service service : packageTo.getServiceList()) {
@@ -117,11 +114,11 @@ public class MybatisPackageRepositoryTest extends TestCase{
 		
 		TestSuite suite = new TestSuite();
 
-		suite.addTest(new MybatisPackageRepositoryTest("testCreatePackage"));
+//		suite.addTest(new MybatisPackageRepositoryTest("testCreatePackage"));
 		suite.addTest(new MybatisPackageRepositoryTest("testGetAllPackage"));
-		suite.addTest(new MybatisPackageRepositoryTest("testUpdatePackage"));
+//		suite.addTest(new MybatisPackageRepositoryTest("testUpdatePackage"));
 		suite.addTest(new MybatisPackageRepositoryTest("testSearchPackage"));
-		suite.addTest(new MybatisPackageRepositoryTest("testDeactivatePackage"));
+//		suite.addTest(new MybatisPackageRepositoryTest("testDeactivatePackage"));
 		
 		return suite;
 		

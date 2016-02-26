@@ -27,5 +27,15 @@
  		<put-attribute name="title"			value="Requirement Maintenance"/>
  		<put-attribute name="body"			value="/tiles/requirement-maintenance.jsp"/>
  	</definition>
+ 	
+ 	<definition name="package-maintenance" extends="baseLayout">
+ 		<put-attribute name="title"			value="Package Maintenance"/>
+ 		<put-attribute name="body"			value="/tiles/package-maintenance.jsp"/>
+ 	</definition>
+ 	
+ 	<definition name="building-maintenance" extends="baseLayout">
+ 		<put-attribute name="title"			value="Building Maintenance"/>
+ 		<put-attribute name="body"			value="/tiles/building-maintenance.jsp"/>
+ 	</definition>
   
 </tiles-definitions>

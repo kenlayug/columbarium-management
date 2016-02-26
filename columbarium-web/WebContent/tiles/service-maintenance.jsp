@@ -1,16 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-     <link rel = "stylesheet" href = "<%=request.getContextPath()%>/css/Services_Record_Form.css"/> 
-
-<!-- Floating Button -->
-<div class="fixed-action-btn horizontal" style="position: absolute; margin-right: 620px; margin-bottom: 80px;">
-    <button name = "action" class="btn-floating btn-large red"><i class="large material-icons">add</i>
-    </button>
-    <ul>
-        <li><button name = "action" class="modal-trigger btn-floating black" href = "#modal2"><i class="material-icons">delete</i></button></li>
-        <li><button name = "action" class="modal-trigger btn-floating green darken-1" href = "#modal1"><i class="material-icons">mode_edit</i></button></li>
-    </ul>
-</div>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
+     <link rel = "stylesheet" href = "<%=request.getContextPath()%>/css/Services_Record_Form.css"/>
 
 <!-- Section -->
 
@@ -25,38 +16,43 @@
                 <div class = "header">
                     <h4>Service Form</h4>
                 </div>
-
-                    <form class = "col s12">
-                        <div class="row" style = "padding-left: 10px;">
+                        <form class="row" style = "padding-left: 10px;">
                             <div class="input-field col s6">
-                                <input id="serviceName" type="text" class="validate">
-                                <label for="serviceName">Service Name:</label>
+                                <input id="serviceName" type="text" class="validate" required = "" aria-required = "true" pattern = "[A-Za-z0-9\s]{1,29}">
+                                <label for="serviceName" data-error = "Check format field." data-success = "">Service Name <span style = "color: red;">*</span></label>
                             </div>
                             <div class="input-field col s6">
-                                <input id="servicePrice" type="text" class="validate">
-                                <label for="servicePrice">Service Price:</label>
+                                <input id="servicePrice" type="text" class="validate" required = "" aria-required = "true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
+                                <label for="servicePrice" data-error = "Check format field." data-success = "">Service Price <span style = "color: red;">*</span></label>
                             </div>
-                        </div>
-                    </form>
 
+							<!-- Floating Button -->
+							<div class="fixed-action-btn horizontal" style="position: absolute; margin-right: 620px; margin-bottom: 80px;">
+								<button type = "submit" onclick="createService()" name = "action" class="btn-floating btn-large red"><i class="large material-icons">add</i>
+								</button>
+								<ul>
+									<li><button name = "action" class="modal-trigger btn-floating black" href = "#modalDeactivate"><i class="material-icons">delete</i></button></li>
+									<li><button name = "action" class="modal-trigger btn-floating green darken-1" href = "#modalUpdate"><i class="material-icons">mode_edit</i></button></li>
+								</ul>
+							</div>
+                        </form>
                     <div class="row">
-                        <form class="col s12">
-                            <div class="row">
+                            <div class="row" style = "padding-left: 10px;">
                                 <div class="input-field col s12">
-                                    <textarea id="serviceDesc" style = "color:red;" class = "materialize-textarea"></textarea>
-                                    <label for="serviceDesc">Service Description:</label>
+									<input id="serviceDesc" type="text" class="validate" pattern = "[A-Za-z0-9\s]{1,29}">
+                                    <label for="serviceDesc" data-error = "Check format field." data-success = "">Service Description</label>
                                 </div>
                             </div>
-                        </form>
 
-                        <button data-target = "modal3" class="waves-effect waves-light modal-trigger red left" style = "margin-left: 20px; width: 180px; height: 35px; color: white; margin-bottom: 50px; font-size: 14px;"></i>CHOOSE REQUIREMENTS</button>
+                        <button data-target = "modalRequirement" class="waves-effect waves-light modal-trigger red left" style = "margin-left: 20px; width: 180px; height: 35px; color: white; margin-bottom: 50px; font-size: 14px;"></i>CHOOSE REQUIREMENTS</button>
                     </div>
                 </div>
+
             </div>
             </div>
 
             <!-- Modal Requirements -->
-            <div id="modal3" class="modal">
+            <div id="modalRequirement" class="modal">
                 <div class = "modal-header">
                     <h4>List of Requirements</h4>
                 </div>
@@ -65,88 +61,27 @@
                             <br>
                             <div class="row">
                                 <div class = "col s6" >
-                                    <form action="#">
-                                        <h6>Columbary Vaults</h6>
-                                        <p>
-                                            <input type="checkbox" id="deathCertificate" />
-                                            <label for="deathCertificate">Death Certificate</label>
-                                        </p>
-                                        <p>
-                                            <input type="checkbox" id="transferPermit" />
-                                            <label for="transferPermit">Transfer Permit</label>
-                                        </p>
-                                        <p>
-                                            <input type="checkbox" id="cremation" />
-                                            <label for="cremation">Cremation</label>
-                                        </p>
-                                        <p>
-                                            <input type="checkbox" id="informantID2" />
-                                            <label for="informantID2">I.D. of Informant</label>
-                                        </p>
+                                        
+									<c:if test="${requirementList == null}">
+										<h6>No requirement available.</h6>
+									</c:if>
+									<c:if test="${requirementList != null}">
+										<c:forEach items="${requirementList }" var="requirement">
+											<p>
+	                                            <input type="checkbox" id="${requirement.strRequirementName}" name="requirement[]" value="${requirement.strRequirementName }" />
+	                                            <label for="${requirement.strRequirementName }">${requirement.strRequirementName }</label>
+	                                        </p>
+										</c:forEach>
+									</c:if>
 
-                                        <br>
-
-
-                                        <h6>Additional Requirements:</h6>
-                                        <h1>(Authority to cremate if informant is:)</h1>
-                                        <p>
-                                            <input type="checkbox" id="marriageContract" />
-                                            <label for="marriageContract">Husband/Wife - Marriage Certificate/ Marriage Contract</label>
-                                        </p>
-                                        <p>
-                                            <input type="checkbox" id="parentCertificate" />
-                                            <label for="parentCertificate">Parent - Birth Certificate of Deceased (if none, Affidavit of Conformity)</label>
-                                        </p>
-                                        <p>
-                                            <input type="checkbox" id="bCertificate" />
-                                            <label for="bCertificate">Brother/Sister - Birth Certificate Deceased & Siblings</label>
-                                        </p>
-                                        <p>
-                                            <input type="checkbox" id="affidavit" />
-                                            <label for="affidavit">Relative - Affidavit of Conformity</label>
-                                        </p>
-                                        <p>
-                                            <input type="checkbox" id="informantID" />
-                                            <label for="informantID">I.D of Informant</label>
-                                        </p>
-                                    </form>
+                                        
                                 </div>
 
                                 <div class = "col s6">
-                                    <form action="#">
-                                        <h6>Full Body</h6>
-                                        <p>
-                                            <input type="checkbox" id="deathCertificate2" />
-                                            <label for="deathCertificate2">Death Certificate</label>
-                                        </p>
-                                        <p>
-                                            <input type="checkbox" id="transferPermit2" />
-                                            <label for="transferPermit2">Transfer Permit</label>
-                                        </p>
-                                        <p>
-                                            <input type="checkbox" id="burialPerson" />
-                                            <label for="burialPerson">Burial Person</label>
-                                        </p>
-                                        <p>
-                                            <input type="checkbox" id="buyerID" />
-                                            <label for="buyerID">I.D. of Buyer</label>
-                                        </p>
-                                    </form>
+                                    
                                 </div>
                             </div>
                         </div>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
                         <br>
                         <br>
                         <br>
@@ -163,68 +98,65 @@
                         <br>
 
                 <div class="modal-footer">
-                    <button name = "action" class="waves-effect waves-light btn red right" style = "margin-right: 0px; width: 130px;">CONFIRM</button>
+                    <button onclick="$('#modalRequirement').closeModal()" name = "action" class="waves-effect waves-light btn red right" style = "margin-right: 0px; width: 130px;">CONFIRM</button>
                 </div>
             </div>
         </div>
 
 
         <!-- Modal Update -->
-        <div id="modal1" class="modal">
+        <div id="modalUpdate" class="modal">
             <div class = "modal-header">
-                <h4>Update Service</h4>
+                <h4 style = "padding-left: 40px;">Update Service</h4>
             </div>
-            <div class="modal-content">
+            <form class="modal-content">
 
-                <form class = "col s12">
                     <div class="row">
                         <div class = "col s6" style = "padding-left: 20px;">
                             <label>Select Service Name to Deactivate:</label>
-                            <select>
+                            <select id="selectServiceUpdate"  required = "" aria-required="true" onchange="placeServiceUpdate()">
                                 <option value="" disabled selected>Service Name:</option>
-                                <option value="1">Service One</option>
-                                <option value="2">Service Two</option>
-                                <option value="3">Service Three</option>
+								<c:if test="${serviceList != null }">
+									<c:forEach items="${serviceList }" var="service">
+										<option value="${service.strServiceName }">${service.strServiceName}</option>
+									</c:forEach>
+								</c:if>
                             </select>
                         </div>
                     </div>
-                </form>
 
-                <form class = "col s12">
                     <div class="row" style = "padding-left: 10px;">
                         <div class="input-field col s6">
-                            <input id="serviceNameUpdate" type="text" class="validate">
-                            <label for="serviceNameUpdate">New Service Name</label>
+                            <input id="serviceNameUpdate" type="text" class="validate" required = "" aria-required = "true" pattern = "[A-Za-z0-9\s]{1,29}">
+                            <label for="serviceNameUpdate" data-error = "Check format field." data-success = "">New Service Name<span style = "color: red;">*</span></label>
                         </div>
                         <div class="input-field col s6">
-                            <input id="servicePriceUpdate" type="text" class="validate">
-                            <label for="servicePriceUpdate">New Service Price</label>
+                            <input id="servicePriceUpdate" type="text" class="validate" required = "" aria-required = "true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
+                            <label for="servicePriceUpdate" data-error = "Check format field." data-success = "">New Service Price <span style = "color: red;">*</span></label>
                         </div>
                     </div>
-                </form>
 
                 <div class="row">
-                    <form class="col s12">
-                        <div class="row">
+                        <div class="row" style = "padding-left: 10px;">
                             <div class="input-field col s12">
-                                <textarea id="serviceDescUpdate" style = "color:red;" class = "materialize-textarea"></textarea>
-                                <label for="serviceDescUpdate">New Service Description</label>
+								<input id="serviceDescUpdate" type="text" class="validate" pattern = "[A-Za-z0-9\s]{1,29}">
+                                <label for="serviceDescUpdate" data-error = "Check format field." data-success = "">New Service Description</label>
                             </div>
                         </div>
-                    </form>
 
-                    <button data-target = "modal3" class="waves-effect waves-light modal-trigger red left" style = "margin-left: 20px; width: 180px; height: 35px; color: white; margin-bottom: 50px; font-size: 14px;"></i>CHOOSE REQUIREMENTS</button>
+                    <button data-target = "modalRequirement" class="waves-effect waves-light modal-trigger red left" style = "margin-left: 20px; width: 180px; height: 35px; color: white; margin-bottom: 50px; font-size: 14px;"></i>CHOOSE REQUIREMENTS</button>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
-                <button name = "action" class="waves-effect waves-light btn red" href = "Blocks_Maintenance.html">Cancel</button>
-            </div>
+				<div class="modal-footer">
+					<button type = "submit" onclick="updateService()" name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
+					<button onclick="$('#modalUpdate').closeModal()" name = "action" class="waves-effect waves-light btn red" href = "Blocks_Maintenance.html">Cancel</button>
+				</div>
+            </form>
+
         </div>
 
 
         <!-- Modal Deactivate -->
-        <div id="modal2" class="modal">
+        <div id="modalDeactivate" class="modal">
             <div class = "modal-header">
                 <h4>Deactivate Service</h4>
             </div>
@@ -234,19 +166,21 @@
                     <div class="row">
                         <div class = "col s6" style = "padding-left: 20px;">
                             <label>Select Service Name to Deactivate:</label>
-                            <select>
+                            <select id="selectServiceDeactivate" required = "" aria-required="true">
                                 <option value="" disabled selected>Service Name:</option>
-                                <option value="1">Service One</option>
-                                <option value="2">Service Two</option>
-                                <option value="3">Service Three</option>
+								<c:if test="${serviceList != null }">
+									<c:forEach items="${serviceList }" var="service">
+										<option value="${service.strServiceName }">${service.strServiceName}</option>
+									</c:forEach>
+								</c:if>
                             </select>
                         </div>
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
-                <button name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
-                <button name = "action" class="waves-effect waves-light btn red">Cancel</button>
+                <button onclick="deactivateService()" name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
+                <button onclick="$('#modalDeactivate').closeModal()" name = "action" class="waves-effect waves-light btn red">Cancel</button>
             </div>
         </div>
 
@@ -254,6 +188,8 @@
             <!-- Data Grid -->
             <div class = "col s5">
                 <div class = "col s4 z-depth-2 " style = "margin-left: 60px; margin-top: 20px; width: 450px; height: 70px;">
+
+
                     <nav style = "height: 50px; margin-top: 10px; background-color: #00897b">
                         <div class="nav-wrapper">
                             <div>
@@ -274,61 +210,40 @@
                 <br>
 
                 <div class = "aside z-depth-2" style = "margin-left: 60px; width: 450px; height: 385px; overflow: auto;">
-                    <table class = "highlight z-depth-3" style = "margin-top: 10px; margin-left: 0px; width: 100%; height: 200px;">
+                    <table id="tableService" class = "responsive" style = "margin-top: 10px; margin-left: 0px; width: 100%; height: 200px;">
 
                         <thead class = "fixed-header">
                         <tr>
-                            <th data-field="id">Building name</th>
-                            <th data-field="name">No. of floors</th>
-                            <th data-field="name">No. of blocks</th>
-                            <th data-field="name">Block/s name</th>
+                            <th data-field="id">Service Name</th>
+                            <th data-field="name">Service Price</th>
+                            <th data-field="name">Service Description</th>
+                            <th data-field="name">Service Requirement</th>
                         </tr>
                         </thead>
 
                         <tbody>
-                        <tr>
-                            <td>Building one</td>
-                            <td>3</td>
-                            <td>6</td>
-                            <td>Block one, Block two, Block three, Block four, Block five, Block six</td>
-                        </tr>
-
-                        <tr>
-                            <td>Building two</td>
-                            <td>5</td>
-                            <td>3</td>
-                            <td>Block one, Block two, Block three</td>
-                        </tr>
-
-                        <tr>
-                            <td>Building three</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-
-                        <tr>
-                            <td>Building four</td>
-                            <td>1</td>
-                            <td>3</td>
-                            <td>Block one, Block two, Block three</td>
-                        </tr>
-
-                        <tr>
-                            <td>Building five</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td>Building six</td>
-                            <td>3</td>
-                            <td>2</td>
-                            <td>Block one, Block two</td>
-                        </tr>
-                        <tr>
-                            <td>Building seven</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
+	                        <c:if test="${serviceList == null }">
+	                        	<tr><td>No services available.</td></tr>
+	                        </c:if>
+	                        <c:if test="${serviceList != null }">
+	                        	<c:forEach items="${serviceList }" var="service">
+		                        	<tr>
+			                            <td>${service.strServiceName }</td>
+			                            <td>P ${service.dblPrice }</td>
+			                            <td>${service.strServiceDesc }</td>
+			                            <td>
+			                            	<c:if test="${service.requirementList == null }">
+			                            		No requirement specified.
+			                            	</c:if>
+			                            	<c:if test="${service.requirementList != null }">
+												<c:forEach items="${service.requirementList}" var="requirement">
+													${requirement.strRequirementName},
+												</c:forEach>
+											</c:if>
+			                            </td>
+			                        </tr>
+	                        	</c:forEach>
+	                        </c:if>
                         </tbody>
                     </table>
                 </div>
@@ -342,6 +257,169 @@
 	        $('.modal-trigger').leanModal();
 	    });
 
+	    function createService(){
+
+	    	var serviceName = document.getElementById("serviceName").value;
+	    	var servicePrice = document.getElementById("servicePrice").value;
+	    	var serviceDesc = document.getElementById("serviceDesc").value;
+	    	var requirements = $("input[name='requirement[]']:checked").map(function() {
+	    		return this.value;
+	    	}).get();
+			
+			$.ajax({
+				type: "POST",
+				url: "create",
+				traditional: true,
+				data: {
+					"service.strServiceName" : serviceName,
+					"service.dblPrice" : servicePrice,
+					"service.strServiceDesc" : serviceDesc,
+					"service.requirementListByString" : requirements
+				},
+				async: true,
+				dataType: "json",
+				success: function(data){
+					if (data.status === "success"){
+						alert("Service "+data.service.strServiceName+" is successfully saved.");
+						updateTable();
+					}else if (data.status === "input"){
+						alert("Fill up everything first.");
+					}	
+					else{
+						alert("Problem occured.");
+					}
+				},
+				error: function(data){
+					alert("error...");
+				}
+			});
+	    	
+	    }//createService()
+	    
+	    function placeServiceUpdate(){
+	    	
+	    	var selectServiceUpdate = document.getElementById("selectServiceUpdate").value;
+	    	
+	    	$.ajax({
+	    		type: "POST",
+	    		url: "getService",
+	    		data:{
+	    			"strServiceName" : selectServiceUpdate
+	    		},
+	    		dataType: "json",
+	    		async: true,
+	    		success: function(data){
+	    			if (data.service == null){
+	    				alert("error happened...");
+	    			}else{
+	    				
+	    				$("#serviceNameUpdate").val(data.service.strServiceName);
+	    				$("#servicePriceUpdate").val(data.service.dblPrice);
+	    				$("#serviceDescUpdate").val(data.service.strServiceDesc);
+	    				
+	    			}
+	    		},
+	    		error: function(data){
+	    			alert("error...");
+	    		}
+	    	});
+	    	
+	    }//selectServiceUpdate()
+	    
+	    function updateService(){
+	    	
+	    	var serviceNameUpdate = document.getElementById("serviceNameUpdate").value;
+	    	var servicePriceUpdate = document.getElementById("servicePriceUpdate").value;
+	    	var serviceDescUpdate = document.getElementById("serviceDescUpdate").value;
+	    	var selectServiceUpdate = document.getElementById("selectServiceUpdate").value;
+	    	
+	    	$.ajax({
+	    		type: "POST",
+	    		url: "update",
+	    		data: {
+	    			"strServiceName" : selectServiceUpdate,
+	    			"service.strServiceName" : serviceNameUpdate,
+	    			"service.dblPrice" : servicePriceUpdate,
+	    			"service.strDescUpdate" : serviceDescUpdate
+	    		},
+	    		dataType: "json",
+	    		async: true,
+	    		success: function(data){
+	    			if (data.status === "success"){
+	    				alert("Successfully updated.");
+	    				updateTable();
+	    				$('#modalUpdate').closeModal();
+	    			}else{
+	    				alert("error occured...");
+	    			}
+	    		},
+	    		error: function(data){
+	    			alert("error..."+data);
+	    		}
+	    	});
+	    	
+	    }//updateService()
+	    
+	    function deactivateService(){
+	    	
+	    	var selectServiceDeactivate = document.getElementById("selectServiceDeactivate").value;
+	    	
+	    	$.ajax({
+	    		type: "POST",
+	    		url: "deactivate",
+	    		data:{
+	    			"strServiceName" : selectServiceDeactivate
+	    		},
+	    		dataType: "json",
+	    		async: true,
+	    		success: function(data){
+	    			if (data.status === "success"){
+	    				alert("successfully deleted.");
+	    				updateTable();
+	    				$('#modalDeactivate').closeModal();
+	    			}else{
+	    				alert("error occured.");
+	    			}
+	    		},
+	    		error: function(data){
+	    			alert("error...");
+	    		}
+	    	});
+	    	
+	    }
+	    
+	    function updateTable(){
+			
+			$.ajax({
+				type: "POST",
+				url: "getAllService",
+				dataType: "json",
+				async: true,
+				success: function(data){
+					var serviceList = data.serviceList;
+	        		$("#tableService tbody").remove();
+					if (serviceList != null){
+						$.each(serviceList, function(i, service){
+							
+			        		tableRow = $("<tr>").append(
+			        				$("<td>").text(service.strServiceName),
+			        				$("<td>").text(service.dblPrice),
+			        				$("<td>").text(service.strServiceDesc),
+			        				$("<td>").text());
+			        		$("#tableService").append(tableRow);
+		        		});
+					}else{
+						tableRow = $("<tr>").append(
+								$("<td>").text("No services available."));
+						$("#tableService").append(tableRow);
+					}
+				},
+				error: function(data){
+					alert("error in updating table...");
+				}
+			});
+			
+		}//updateTable
     
     </script>
     

@@ -1,21 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
 
 	
+    <script type="text/javascript" src="<%=request.getContextPath()%>/js/Requirements_Maintenance.js"></script>
     <link rel = "stylesheet" href = "<%=request.getContextPath()%>/css/Requirements_Maintenance.css"/>
 
-	<!-- Floating Button -->
-	
-	<div class="fixed-action-btn horizontal" style="position: absolute; margin-right: 620px; margin-bottom: 160px;">
-	    <div class = "responsive">
-	        <button name = "action" class="btn-floating btn-large red"><i class="large material-icons">add</i>
-	        </button>
-	        <ul>
-	            <li><button name = "action" class="btn-floating modal-trigger black" href = "#modal2"><i class="material-icons">delete</i></button></li>
-	            <li><button name = "action" class="btn-floating modal-trigger green darken-1" href = "#modal1"><i class="material-icons">mode_edit</i></button></li>
-	        </ul>
-	    </div>
-	</div>
+
 	
 	
 	<!-- Section -->
@@ -23,84 +14,95 @@
 	<div class = "responsive col s12">
 	    <div class = "row">
 	        <div class = "col s7">
-	            <h4>Requirement Maintenance</h4>
+	            <h2>Requirement Maintenance</h2>
 	            <!-- Create Requirement -->
 	            <div class = "col s12">
-	                <div class = "wrapper responsive aside aside z-depth-2">
+	                <form class = "wrapper responsive aside aside z-depth-2">
 	                    <div class = "header">
 	                        <h4 style = "stroke: black; stroke-width: 10px;">Requirement Form</h4>
 	                    </div>
+	                    
+                        <div class="row" style = "padding-left: 10px;">
+                            <div class="input-field col s6">
+                                <input id="requirementName" type="text" class="validate" required = "" aria-required = "true">
+                                <label for="requirementName">Requirement Name<span style = "color: red;">*</span></label>
+                            </div>
+                        </div>
+                        <div class="row" style = "padding-left: 10px;">
+                            <div class="input-field col s12">
+                                <input id="requirementDesc" type="text" class="validate" required = "" aria-required = "true">
+                                <label for="requirementDesc">Requirement Description</label>
+                            </div>
+                        </div>
+
+						<!-- Floating Button -->
+
+						<div class="fixed-action-btn horizontal" style="position: absolute; margin-right: 620px; margin-bottom: 160px;">
+							<div class = "responsive">
+								<button type = "submit" name = "action" class="btn-floating btn-large red" onclick="createRequirement()"><i class="large material-icons">add</i>
+								</button>
+								<ul>
+									<li><button name = "action" class="btn-floating modal-trigger black" href = "#modalDeactivateRequirement"><i class="material-icons">delete</i></button></li>
+									<li><button name = "action" class="btn-floating modal-trigger green darken-1" href = "#modalUpdateRequirement"><i class="material-icons">mode_edit</i></button></li>
+								</ul>
+							</div>
+						</div>
 	
-	                    <form class = "col s6">
-	                        <div class="row">
-	                            <div class="input-field col s12">
-	                                <input id="reqName" type="text" class="validate">
-	                                <label for="reqName">Requirement Name</label>
-	                            </div>
-	                        </div>
-	                    </form>
-	
-	                    <form class = "col s12">
-	                        <div class="row">
-	                            <div class="input-field col s12">
-	                                <input id="reqDesc" type="text" class="validate">
-	                                <label for="reqDesc">Requirement Description</label>
-	                            </div>
-	                        </div>
-	                    </form>
-	
-	                </div>
+	                </form>
 	            </div>
 	        </div>
 	
 	        <!-- Modal Update -->
-	        <div id="modal1" class="modal">
+	        <div id="modalUpdateRequirement" class="modal">
 	            <div class = "modal-header">
-	                <h4>Update Block</h4>
+	                <h4>Update Requirement</h4>
 	            </div>
 	            <div class="modal-content">
 	
-	                <form class = "col s12">
+	                <div class = "col s12">
 	                    <div class="row">
 	                        <!-- Select Requirement Name -->
 	                        <div class = "col s6" style = "padding-left: 20px;">
 	                            <label>Select Requirement Name to be changed</label>
-	                            <select>
+	                            <select id="selectUpdateRequirement" required = "" aria-required = "true">
 	                                <option value="" disabled selected>Requirement Name:</option>
-	                                <option value="1">Requirement One</option>
-	                                <option value="2">Requirement Two</option>
-	                                <option value="3">Requirement Three</option>
+									<c:if test="${requirementList != null}">
+										<c:forEach items="${requirementList}" var="requirement">
+											<option value="${requirement.strRequirementName}">${requirement.strRequirementName }</option>
+										</c:forEach>
+									</c:if>
 	                            </select>
 	                        </div>
 	                    </div>
-	                </form>
+	                </div>
 	
-	                <div style = "padding-left: 10px;">
+	                <form style = "padding-left: 10px;">
 	                <div class = "col s6">
 	                    <div class="input-field col s12">
-	                        <input id="reqNameUpdate" type="text" class="validate">
-	                        <label for="reqNameUpdate">New Requirement Name</label>
+	                        <input id="requirementNameUpdate" type="text" class="validate" required = "" aria-required = "true">
+	                        <label for="requirementNameUpdate">New Requirement Name</label>
 	                    </div>
 	                </div>
 	
 	                <div class = "col s12">
 	                    <div class="input-field col s12">
-	                        <input id="reqDescUpdate" type="text" class="validate">
-	                        <label for="reqDescUpdate">New Requirement Description</label>
+	                        <input id="requirementDescUpdate" type="text" class="validate">
+	                        <label for="requirementDescUpdate">New Requirement Description</label>
 	                    </div>
 	                </div>
-	                </div>
+
+						<div class="modal-footer">
+							<button type = "submit" onclick="updateRequirement()" name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
+							<button name = "action" class="waves-effect waves-light btn red" href = "Blocks_Maintenance.html">Cancel</button>
+						</div>
+	                </form>
 	
-	            </div>
-	            <div class="modal-footer">
-	                <button name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
-	                <button name = "action" class="waves-effect waves-light btn red" href = "Blocks_Maintenance.html">Cancel</button>
 	            </div>
 	        </div>
 	
 	
 	        <!-- Modal Deactivate -->
-	        <div id="modal2" class="modal">
+	        <div id="modalDeactivateRequirement" class="modal">
 	            <div class = "modal-header">
 	                <h4>Deactivate Requirement</h4>
 	            </div>
@@ -110,11 +112,13 @@
 	                        <!-- Select Requirement Name -->
 	                        <div class = "col s6" style = "padding-left: 20px;">
 	                            <label>Select Requirement Name to be deactivated</label>
-	                            <select>
+	                            <select id="selectDeactivateRequirement" required = "" aria-required = "true">
 	                                <option value="" disabled selected>Requirement Name:</option>
-	                                <option value="1">Requirement One</option>
-	                                <option value="2">Requirement Two</option>
-	                                <option value="3">Requirement Three</option>
+									<c:if test="${requirementList != null}">
+										<c:forEach items="${requirementList}" var="requirement">
+											<option value="${requirement.strRequirementName}">${requirement.strRequirementName}</option>
+										</c:forEach>
+									</c:if>
 	                            </select>
 	                        </div>
 	                    </div>
@@ -123,7 +127,7 @@
 	
 	            </div>
 	            <div class="modal-footer">
-	                <button name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
+	                <button onclick="deactivateRequirement()" name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
 	                <button name = "action" class="waves-effect waves-light btn red">Cancel</button>
 	            </div>
 	        </div>
@@ -154,52 +158,164 @@
 	            <br>
 	
 	            <div class = "aside z-depth-2" style = "margin-left: 60px; width: 450px; height: 340px; overflow: auto;">
-	                <table class = "responsive highlight z-depth-3" style = "margin-top: 10px; margin-left: 0px; width: 100%; height: 200px;">
+	                <table id="tableRequirement" class = "responsive" style = "margin-top: 10px; margin-left: 0px; width: 100%; height: 200px;">
 	
 	
 	                    <thead class = "fixed-header">
 	                    <tr>
-	                        <th data-field="id">Requirement name</th>
+	                        <th data-field="id">Requirement Name</th>
 	                        <th data-field="name">Requirement Description</th>
 	                    </tr>
 	                    </thead>
 	
 	                    <tbody>
-	                    <tr>
-	                        <td>Requirement One</td>
-	                        <td>Description One</td>
-	                    </tr>
-	
-	                    <tr>
-	                        <td>Requirement One</td>
-	                        <td>Description One</td>
-	                    </tr>
-	
-	                    <tr>
-	                        <td>Requirement One</td>
-	                        <td>Description One</td>
-	                    </tr>
-	
-	                    <tr>
-	                        <td>Requirement One</td>
-	                        <td>Description One</td>
-	                    </tr>
-	
-	                    <tr>
-	                        <td>Requirement One</td>
-	                        <td>Description One</td>
-	                    </tr>
-	                    <tr>
-	                        <td>Requirement One</td>
-	                        <td>Description One</td>
-	                    </tr>
-	                    <tr>
-	                        <td>Requirement One</td>
-	                        <td>Description One</td>
-	                    </tr>
+	                    	<c:if test="${requirementList == null }">
+								<tr>
+									<td>No available requirements.</td>
+								<tr>
+							</c:if>
+							<c:if test="${requirementList != null }">
+								<c:forEach items="${requirementList }" var="requirement">
+									<tr>
+										<td>${requirement.strRequirementName}</td>
+										<td>${requirement.strRequirementDesc}</td>
+									</tr>
+								</c:forEach>
+							</c:if>
 	                    </tbody>
 	                </table>
 	            </div>
 	        </div>
 	    </div>
 	</div>
+	
+	<script>
+	
+		function createRequirement(){
+			
+			var requirementName = document.getElementById("requirementName").value;
+			var requirementDesc = document.getElementById("requirementDesc").value;
+			
+			$.ajax({
+				type: "POST",
+				url: "create",
+				async: true,
+				data: {
+					"requirement.strRequirementName" : requirementName,
+					"requirement.strRequirementDesc" : requirementDesc
+				},
+				dataType: "json",
+				success: function (data){
+					if (data.status === "success"){
+						alert("Success in saving "+data.requirement.strRequirementName+".");
+						updateTable();
+						$("#requirementName").val("");
+						$("#requirementDesc").val("");
+					}else if (data.status === "failed-input"){
+						alert("Check your inputs.");
+					}else if (data.status === "failed-existing"){
+						alert("Requirement is already existing.");
+					}
+				},
+				error: function(data){
+					alert("Error...");
+				}
+			});
+			
+		}//createRequirement
+		
+		function updateRequirement(){
+			
+			alert("Here...");
+			var selectRequirementUpdate = document.getElementById("selectUpdateRequirement").value;
+			var requirementNameUpdate = document.getElementById("requirementNameUpdate").value;
+			var requirementDescUpdate = document.getElementById("requirementDescUpdate").value;
+			
+			$.ajax({
+				type: "POST",
+				url: "update",
+				data: {
+					"strRequirementName" : selectRequirementUpdate,
+					"requirement.strRequirementName" : requirementNameUpdate,
+					"requirement.strRequirementDesc" : requirementDescUpdate
+				},
+				dataType: "json",
+				success: function(data){
+					alert("updating...");
+					if (data.status === "success"){
+						alert("Requirement "+data.strRequirementName+" is successfully updated.");
+						updateTable();
+		        		$("#modalUpdateRequirement").closeModal();
+		        		$("#requirementNameUpdate").val("");
+		        		$("#requirementDescUpdate").val("");
+					}else if (data.status === "failed-does-not-exist"){
+						alert("Requirement does not exist.");
+					}else if (data.status === "failed-input"){
+						alert("Fill up anything first.");
+					}else if (data.status === "failed-database"){
+						alert("error in database...");
+					}
+				},
+				error: function(data){
+					alert("error");
+				}
+			});
+			
+		}
+		
+		function deactivateRequirement(){
+			
+			var deactivateRequirementName = document.getElementById("selectDeactivateRequirement").value;
+			
+			$.ajax({
+				type: "POST",
+				url: "deactivate",
+				data: {
+					"strRequirementName" : deactivateRequirementName
+				},
+				dataType: "json",
+				async: true,
+				success: function(data){
+					alert("Requirement "+data.strRequirementName+" is successfully deactivated.");
+					updateTable();
+	        		$("#modalDeactivateRequirement").closeModal();
+				},
+				error: function(data){
+					alert("Error...");
+				}
+			});
+			
+		}
+		
+		function updateTable(){
+			
+			$.ajax({
+				type: "POST",
+				url: "getAllRequirement",
+				dataType: "json",
+				async: true,
+				success: function(data){
+					var requirementList = data.requirementList;
+	        		$("#tableRequirement tbody").remove();
+					if (requirementList != null){
+						$.each(requirementList, function(i, requirement){
+							
+			        		tableRow = $("<tr>").append(
+			        				$("<td>").text(requirement.strRequirementName),
+			        				$("<td>").text(requirement.strRequirementDesc));
+			        		$("#tableRequirement").append(tableRow);
+		        		});
+					}else{
+						tableRow = $("<tr>").append(
+								$("<td>").text("No requirements available."));
+						$("#tableRequirement").append(tableRow);
+					}
+				},
+				error: function(data){
+					alert("error in updating table...");
+				}
+			});
+			
+		}//updateTable
+	
+	</script>
