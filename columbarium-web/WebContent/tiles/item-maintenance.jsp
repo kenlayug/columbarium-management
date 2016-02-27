@@ -5,14 +5,15 @@
 	    <!-- Import CSS/JS -->
 	    <script type="text/javascript" src="<%=request.getContextPath()%>/js/Inventory_Form.js"></script>
 	    <link rel = "stylesheet" href = "<%=request.getContextPath()%>/css/Inventory_Form.css"/>
-	
+		<script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery.validate.js"></script>
+		<script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery.validate.min.js"></script>
 
 	
 	<!-- Section -->
 	<div class = "responsive col s12">
 	    <div class = "row">
 	        <div class = "col s7">
-	            <h4>Item Maintenance</h4>
+	            <h2>Item Maintenance</h2>
 	
 	            <!-- Create Items -->
 	            <div class = "col s12">
@@ -26,20 +27,20 @@
 	                        <div class = "row">
 	                        <div>
 	                            <div class="input-field col s6">
-	                                <input id="itemName" type="text" class="validate" name="item.strItemName" required = "" aria-required = "true" pattern = "[A-Za-z0-9\s]{1,29}">
-	                                <label for="itemName" data-error = "Check format field." data-success = "Item Name accepted.">Item Name<span style = "color: red;">*</span></label>
+	                                <input id="itemName" type="text" class="validate" name="item.strItemName" required>
+	                                <label for="itemName" data-error = "Check format field." data-success = "">Item Name<span style = "color: red;">*</span></label>
 	                            </div>
 	                        </div>
 	                        <div style = "padding-left: 10px;">
 	                            <div class="input-field col s6">
 	                                <input id="itemPrice" type="text" class="validate" name="item.dblPrice" required = "" aria-required = "true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
-	                                <label for="itemPrice" data-error = "Check format field" data-success = "Item Price accepted.">Item Price<span style = "color: red;">*</span></label>
+	                                <label for="itemPrice" data-error = "Check format field." data-success = "">Item Price<span style = "color: red;">*</span></label>
 	                            </div>
 	                        </div>
 	                    </div>
 							<!-- Floating Button -->
 							<div class="fixed-action-btn horizontal" style="position: absolute; margin-right: 570px; margin-bottom: 175px;">
-								<button onclick="createItem()" name = "action" type = "submit" class="btn-floating btn-large red"><i class="large material-icons">add</i>
+								<button type = "submit" onclick="createItem()" name = "action"  class="btn-floating btn-large red"><i class="large material-icons">add</i>
 								</button>
 								<ul>
 									<li><button name = "action" class="modal-trigger btn-floating black" href = "#modalDeactivate"><i class="material-icons">delete</i></button></li>
@@ -51,7 +52,7 @@
 	                        <div class="row" style = "padding-left: 10px;">
 	                            <div class="input-field col s12">
 	                                <input id="itemDesc" type="text" class="validate" name="item.strItemDesc" pattern = "[A-Za-z0-9\s]{1,29}">
-	                                <label for="itemDesc" data-error = "" data-success = "Item Description accepted.">Item Description</label>
+	                                <label for="itemDesc" data-error = "" data-success = "">Item Description</label>
 	                            </div>
 	                        </div>
 
@@ -78,7 +79,7 @@
 			                        <select name="strItemName" id="selectItemUpdate" onchange="placeValue()">
 			                            <option value="" disabled selected>Item Name:</option>
 										<c:forEach items="${itemList }" var="item">
-											<option selected = "selected" value="${item.strItemName}">${item.strItemName}</option>
+											<option value="${item.strItemName}">${item.strItemName}</option>
 										</c:forEach>
 			                        </select>
 		                        </c:if>
@@ -90,24 +91,25 @@
 		                        <div style = "padding-left: 10px;">
 		                            <div class="input-field col s6">
 		                                <input id="itemNameUpdate" type="text" class="validate" name="item.strItemName" required = "" aria-required = "true" pattern = "[A-Za-z0-9\s]{1,29}">
-		                                <label for="itemNameUpdate" data-error = "Check format field." data-success = "New Item Name accepted.">New Item Name</label>
+		                                <label for="itemNameUpdate" data-error = "Check format field." data-success = "">New Item Name</label>
 		                            </div>
 		                        </div>
 		                        <div style = "padding-left: 10px;">
 		                            <div class="input-field col s6">
 		                                <input id="itemPriceUpdate" type="text" class="validate" name="item.dblPrice" required = "" aria-required = "true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
-		                                <label for="itemPriceUpdate" data-error = "Check format field." data-success = "New Item Name accepted.">New Item Price</label>
+		                                <label for="itemPriceUpdate" data-error = "Check format field." data-success = "">New Item Price</label>
 		                            </div>
 		                        </div>
 		                    </div>
 		                </div>
 	
-	                    <div class="row">
+	                    <div style = "padding-left: 20px;">
 	                        <div class="input-field col s12">
-	                            <input id="itemDescUpdate" type="text" class="validate" name="item.strItemDesc" pattern = "[A-Za-z0-9\s]{1,29}">
-	                            <label for="itemDescUpdate" data-error = "Check format field." data-success = "New Item Description accepted.">New Item Description</label>
+	                            <input id="itemDescUpdate" type="text" class="validate" name="item.strItemDesc">
+	                            <label for="itemDescUpdate" data-error = "Check format field." data-success = "">New Item Description</label>
 	                        </div>
 	                    </div>
+						<br><br>
 
 					<div class="modal-footer">
 						<button onclick="updateItem()" type="submit" name="action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
@@ -136,7 +138,7 @@
 									<select name="strItemName" id="itemNameDeactivate">
 										<option value="" disabled selected>Item Name:</option>
 											<c:forEach items="${itemList }" var="item">
-												<option selected = "selected" value="${item.strItemName}">${item.strItemName}</option>
+												<option value="${item.strItemName}">${item.strItemName}</option>
 											</c:forEach>
 									</select>
 								</c:if>
@@ -174,7 +176,7 @@
 	            <br>
 	
 	            <div class = "aside z-depth-2" style = "margin-left: 60px; width: 450px; height: 310px; overflow: auto;">
-	                <table id="tableItem" class = "highlight z-depth-3" style = "margin-top: 10px; margin-left: 0px; width: 100%; height: 200px;">
+	                <table id="tableItem" class = "responsive" style = "margin-top: 10px; margin-left: 0px; width: 100%; height: 200px;">
 	
 	                    <thead class = "fixed-header">
 	                    <tr>

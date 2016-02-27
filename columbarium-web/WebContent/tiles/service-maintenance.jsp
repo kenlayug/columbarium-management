@@ -1,17 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
-     <link rel = "stylesheet" href = "<%=request.getContextPath()%>/css/Services_Record_Form.css"/> 
-
-<!-- Floating Button -->
-<div class="fixed-action-btn horizontal" style="position: absolute; margin-right: 620px; margin-bottom: 80px;">
-    <button onclick="createService()" name = "action" class="btn-floating btn-large red"><i class="large material-icons">add</i>
-    </button>
-    <ul>
-        <li><button name = "action" class="modal-trigger btn-floating black" href = "#modalDeactivate"><i class="material-icons">delete</i></button></li>
-        <li><button name = "action" class="modal-trigger btn-floating green darken-1" href = "#modalUpdate"><i class="material-icons">mode_edit</i></button></li>
-    </ul>
-</div>
+     <link rel = "stylesheet" href = "<%=request.getContextPath()%>/css/Services_Record_Form.css"/>
 
 <!-- Section -->
 
@@ -26,27 +16,38 @@
                 <div class = "header">
                     <h4>Service Form</h4>
                 </div>
-                        <div class="row" style = "padding-left: 10px;">
+                        <form class="row" style = "padding-left: 10px;">
                             <div class="input-field col s6">
-                                <input id="serviceName" type="text" class="validate">
-                                <label for="serviceName">Service Name:</label>
+                                <input id="serviceName" type="text" class="validate" required = "" aria-required = "true" pattern = "[A-Za-z0-9\s]{1,29}">
+                                <label for="serviceName" data-error = "Check format field." data-success = "">Service Name <span style = "color: red;">*</span></label>
                             </div>
                             <div class="input-field col s6">
-                                <input id="servicePrice" type="text" class="validate">
-                                <label for="servicePrice">Service Price:</label>
+                                <input id="servicePrice" type="text" class="validate" required = "" aria-required = "true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
+                                <label for="servicePrice" data-error = "Check format field." data-success = "">Service Price <span style = "color: red;">*</span></label>
                             </div>
-                        </div>
+
+							<!-- Floating Button -->
+							<div class="fixed-action-btn horizontal" style="position: absolute; margin-right: 620px; margin-bottom: 80px;">
+								<button type = "submit" onclick="createService()" name = "action" class="btn-floating btn-large red"><i class="large material-icons">add</i>
+								</button>
+								<ul>
+									<li><button name = "action" class="modal-trigger btn-floating black" href = "#modalDeactivate"><i class="material-icons">delete</i></button></li>
+									<li><button name = "action" class="modal-trigger btn-floating green darken-1" href = "#modalUpdate"><i class="material-icons">mode_edit</i></button></li>
+								</ul>
+							</div>
+                        </form>
                     <div class="row">
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <textarea id="serviceDesc" style = "color:red;" class = "materialize-textarea"></textarea>
-                                    <label for="serviceDesc">Service Description:</label>
+									<input id="serviceDesc" type="text" class="validate" pattern = "[A-Za-z0-9\s]{1,29}">
+                                    <label for="serviceDesc" data-error = "Check format field." data-success = "">Service Description</label>
                                 </div>
                             </div>
 
                         <button data-target = "modalRequirement" class="waves-effect waves-light modal-trigger red left" style = "margin-left: 20px; width: 180px; height: 35px; color: white; margin-bottom: 50px; font-size: 14px;"></i>CHOOSE REQUIREMENTS</button>
                     </div>
                 </div>
+
             </div>
             </div>
 
@@ -106,9 +107,9 @@
         <!-- Modal Update -->
         <div id="modalUpdate" class="modal">
             <div class = "modal-header">
-                <h4>Update Service</h4>
+                <h4 style = "padding-left: 40px;">Update Service</h4>
             </div>
-            <div class="modal-content">
+            <form class="modal-content">
 
                     <div class="row">
                         <div class = "col s6" style = "padding-left: 20px;">
@@ -126,30 +127,31 @@
 
                     <div class="row" style = "padding-left: 10px;">
                         <div class="input-field col s6">
-                            <input id="serviceNameUpdate" type="text" class="validate">
+                            <input id="serviceNameUpdate" type="text" class="validate" required = "" aria-required = "true" pattern = "[A-Za-z0-9\s]{1,29}">
                             <label for="serviceNameUpdate">New Service Name</label>
                         </div>
                         <div class="input-field col s6">
-                            <input id="servicePriceUpdate" type="text" class="validate">
+                            <input id="servicePriceUpdate" type="text" class="validate" required = "" aria-required = "true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
                             <label for="servicePriceUpdate">New Service Price</label>
                         </div>
                     </div>
 
                 <div class="row">
-                        <div class="row">
+                        <div class="row" style = "padding-left: 10px;">
                             <div class="input-field col s12">
-                                <textarea id="serviceDescUpdate" style = "color:red;" class = "materialize-textarea"></textarea>
+								<input id="serviceDescUpdate" type="text" class="validate" pattern = "[A-Za-z0-9\s]{1,29}">
                                 <label for="serviceDescUpdate">New Service Description</label>
                             </div>
                         </div>
 
                     <button data-target = "modalRequirement" class="waves-effect waves-light modal-trigger red left" style = "margin-left: 20px; width: 180px; height: 35px; color: white; margin-bottom: 50px; font-size: 14px;"></i>CHOOSE REQUIREMENTS</button>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button onclick="updateService()" name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
-                <button onclick="$('#modalUpdate').closeModal()" name = "action" class="waves-effect waves-light btn red" href = "Blocks_Maintenance.html">Cancel</button>
-            </div>
+				<div class="modal-footer">
+					<button type = "submit" onclick="updateService()" name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
+					<button onclick="$('#modalUpdate').closeModal()" name = "action" class="waves-effect waves-light btn red" href = "Blocks_Maintenance.html">Cancel</button>
+				</div>
+            </form>
+
         </div>
 
 
