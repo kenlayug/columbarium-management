@@ -12,6 +12,11 @@ h1 {
     font-family: myFirstFont;
 }
 
+.navbar-leo nav{
+    background-color: #ff8f00;
+    color: white;
+    font-family: myFirstFont;
+}
 
 
 .h{

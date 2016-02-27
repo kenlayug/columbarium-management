@@ -61,7 +61,7 @@
 	        </div>
 	
 	        <!-- Modal Update -->
-	        <div id="modalUpdate" class="modal">
+	        <form id="modalUpdate" class="modal">
 	            <div class = "modal-header">
 	                <h4>Update Item</h4>
 	            </div>
@@ -113,9 +113,9 @@
 
 						<button class="waves-effect waves-light btn red" onclick="$('#modalUpdate').closeModal()">Cancel</button>
 					</div>
-	
 
-	        </div>
+
+	        </form>
 	
 	
 	        <!-- Modal Deactivate -->

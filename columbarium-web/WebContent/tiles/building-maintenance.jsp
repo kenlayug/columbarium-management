@@ -11,7 +11,7 @@
 	            <h2>Building Maintenance</h2>
 	
 	            <!-- Create Building -->
-	            <div class = "col s12">
+	            <form class = "col s12">
 	                <div class = "aside aside z-depth-3">
 	                    <div class = "header">
 	                        <h4>Building Form</h4>
@@ -33,27 +33,26 @@
 	
 	                        <div class="row">
 	                            <div class="input-field required col s6">
-	                              <input id="buildingName" type="text" class="validate" required = "" aria-required = "true" pattern = "(?=.*[A-Z]).{1,29}">
-	                              <label for="buildingName" data-error = "*ex: Building (30 characters max)" data-success = "Building Name accepted.">Name of Building <span style = "color: red;">*</span></label>
+	                              <input id="buildingName" type="text" class="validate" required = "" aria-required = "true">
+	                              <label for="buildingName" data-error = "Check format field." data-success = "">Name of Building <span style = "color: red;">*</span></label>
 	                            </div>
 	                            <div class="required input-field col s6">
-	                                <input id="buildingAddress" type="text" class="validate" required = "" aria-required = "true" pattern = "(?=.*[A-Z]).{1,29}">
-	                                <label for="buildingAddress" data-error = "*ex: Address (30 characters max)" data-success = "Building Address accepted.">Building Address <span style = "color: red;">*</span></label>
+	                                <input id="buildingAddress" type="text" class="validate" required = "" aria-required = "true">
+	                                <label for="buildingAddress" data-error = "Check format field." data-success = "">Building Address <span style = "color: red;">*</span></label>
 	                            </div>
 	                        </div>
-	
-	                        <!-- Floating Button -->
-	                        <div class="fixed-action-btn horizontal" style="position: absolute; margin-right: 600px; margin-bottom: 90px;">
-	                            <button onclick="createBuilding()" name = "action" type = "submit" class="btn-floating btn-large red"><i class="large material-icons">add</i>
-	                            </button>
-	                            <ul>
-	                                <li><button name = "action" class="modal-trigger btn-floating black" href = "#modal2"><i class="material-icons">delete</i></button></li>
-	                                <li><button name = "action" class="modal-trigger btn-floating green darken-1" href = "#modal1"><i class="material-icons">mode_edit</i></button></li>
-	                            </ul>
-	                        </div>
-	
 	                </div>
-	            </div>
+
+					<!-- Floating Button -->
+					<div class="fixed-action-btn horizontal" style="position: absolute; margin-right: 600px; margin-bottom: 90px;">
+						<button type = "submit" onclick="createBuilding()" name = "action" class="btn-floating btn-large red"><i class="large material-icons">add</i>
+						</button>
+						<ul>
+							<li><button name = "action" class="modal-trigger btn-floating black" href = "#modal2"><i class="material-icons">delete</i></button></li>
+							<li><button name = "action" class="modal-trigger btn-floating green darken-1" href = "#modal1"><i class="material-icons">mode_edit</i></button></li>
+						</ul>
+					</div>
+	            </form>
 	        </div>
 	
 	        <!-- Modal Update -->
@@ -61,13 +60,13 @@
 	            <div class = "modal-header">
 	                <h4>Update Building</h4>
 	            </div>
-	            <div class="modal-content">
+	            <form class="modal-content">
 	
 	                    <div class="row">
 	                        <!-- Select Building Name -->
 	                        <div class = "col s12" style = "padding-left: 20px;">
 	                            <label>Select Building Name to be Updated</label>
-	                            <select>
+	                            <select required = "" aria-required="true">
 	                                <option value="" disabled selected>Building Name:</option>
 	                                <c:if test="${buildingList != null }">
 	                                	<c:forEach items="${buildingList }" var="building">
@@ -79,21 +78,21 @@
 	                    </div>
 	                    <div class="row"  style = "padding-left: 10px;">
 	                        <div class="input-field col s6">
-	                            <input id="buildingNameUpdate" type="text" class="validate"  required = "" aria-required = "true" pattern = "(?=.*[A-Z]).{1,29}">
-	                            <label for="buildingNameUpdate" data-error = "*ex: Address (30 characters max)" data-success = "New Building Name accepted.">New Building Name <span style = "color: red;">*</span></label>
+	                            <input id="buildingNameUpdate" type="text" class="validate"  required = "" aria-required = "true">
+	                            <label for="buildingNameUpdate" data-error = "Check format field." data-success = "">New Building Name <span style = "color: red;">*</span></label>
 	                        </div>
 	                        <div class="input-field col s6">
-	                            <input id="buildingAddressUpdate" type="text" class="validate"  required = "" aria-required = "true" pattern = "(?=.*[A-Z]).{1,29}">
-	                            <label for="buildingAddressUpdate" data-error = "*ex: Address (30 characters max)" data-success = "New Building Address accepted.">New Building Address <span style = "color: red;">*</span></label>
+	                            <input id="buildingAddressUpdate" type="text" class="validate"  required = "" aria-required = "true">
+	                            <label for="buildingAddressUpdate" data-error = "Check format field." data-success = "">New Building Address <span style = "color: red;">*</span></label>
 	                        </div>
 	                    </div>
 	
 	                    <div class="modal-footer">
-	                        <button name = "action" type = "submit" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
-	                        <button name = "action" class="waves-effect waves-light btn red" href = "Blocks_Maintenance.html">Cancel</button>
+	                        <button type = "submit" name = "action" type = "submit" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
+	                        <button name = "action" class="waves-effect waves-light btn red">Cancel</button>
 	                    </div>
 	
-	            </div>
+	            </form>
 	
 	        </div>
 	
@@ -108,7 +107,7 @@
 	                        <!-- Select Building Name -->
 	                        <div class = "col s6" style = "padding-left: 20px;">
 	                            <label>Select Building Name to be Deactivated</label>
-	                            <select>
+	                            <select required = "" aria-required="true">
 	                                <option value="" disabled selected>Building Name:</option>
 	                                <c:if test="${buildingList != null }">
 	                                	<c:forEach items="${buildingList }" var="building">

@@ -49,8 +49,8 @@
 	    <li><a href="<%=request.getContextPath()%>/building">Building</a></li>
 	    <li><a href="Floor_Maintenance.html">Floor</a></li>
 	    <li><a href="Blocks_Maintenance.html">Block</a></li>
-	    <li><a href="vaults.html">Vaults</a></li>
-	    <li><a href="FullBodyCrypts.html">Body Crypts</a></li>
+	    <li><a href="vaults.html">Unit</a></li>
+
 	</ul>
 	
 	<!-- Dropdown Transaction -->
@@ -60,7 +60,8 @@
 	    <li><a href="scheduling.html">Scheduling</a></li>
 	    <li class="divider"></li>
 	    <li><a href="Collection_Transaction.html">Collection</a></li>
-	    <li><a href="UnitOwnership.html">Transferring</a></li>
+	    <li><a href="UnitOwnership.html">Ownership</a></li>
+		<li><a href="UnitOwnership.html">Manage Unit</a></li>
 	</ul>
 	
 	<!-- Dropdown Queries -->
