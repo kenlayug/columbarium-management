@@ -6,18 +6,7 @@
     <script type="text/javascript" src="<%=request.getContextPath()%>/js/Requirements_Maintenance.js"></script>
     <link rel = "stylesheet" href = "<%=request.getContextPath()%>/css/Requirements_Maintenance.css"/>
 
-		<!-- Floating Button -->
-	
-	<div class="fixed-action-btn horizontal" style="position: absolute; margin-right: 620px; margin-bottom: 160px;">
-	    <div class = "responsive">
-	        <button name = "action" class="btn-floating btn-large red" onclick="createRequirement()"><i class="large material-icons">add</i>
-	        </button>
-	        <ul>
-	            <li><button name = "action" class="btn-floating modal-trigger black" href = "#modalDeactivateRequirement"><i class="material-icons">delete</i></button></li>
-	            <li><button name = "action" class="btn-floating modal-trigger green darken-1" href = "#modalUpdateRequirement"><i class="material-icons">mode_edit</i></button></li>
-	        </ul>
-	    </div>
-	</div>
+
 	
 	
 	<!-- Section -->
@@ -25,28 +14,41 @@
 	<div class = "responsive col s12">
 	    <div class = "row">
 	        <div class = "col s7">
-	            <h4>Requirement Maintenance</h4>
+	            <h2>Requirement Maintenance</h2>
 	            <!-- Create Requirement -->
 	            <div class = "col s12">
-	                <div class = "wrapper responsive aside aside z-depth-2">
+	                <form class = "wrapper responsive aside aside z-depth-2">
 	                    <div class = "header">
 	                        <h4 style = "stroke: black; stroke-width: 10px;">Requirement Form</h4>
 	                    </div>
 	                    
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <input id="requirementName" type="text" class="validate">
-                                <label for="reqName">Requirement Name</label>
+                        <div class="row" style = "padding-left: 10px;">
+                            <div class="input-field col s6">
+                                <input id="requirementName" type="text" class="validate" required = "" aria-required = "true">
+                                <label for="requirementName">Requirement Name<span style = "color: red;">*</span></label>
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row" style = "padding-left: 10px;">
                             <div class="input-field col s12">
-                                <input id="requirementDesc" type="text" class="validate">
+                                <input id="requirementDesc" type="text" class="validate" required = "" aria-required = "true">
                                 <label for="requirementDesc">Requirement Description</label>
                             </div>
                         </div>
+
+						<!-- Floating Button -->
+
+						<div class="fixed-action-btn horizontal" style="position: absolute; margin-right: 620px; margin-bottom: 160px;">
+							<div class = "responsive">
+								<button type = "submit" name = "action" class="btn-floating btn-large red" onclick="createRequirement()"><i class="large material-icons">add</i>
+								</button>
+								<ul>
+									<li><button name = "action" class="btn-floating modal-trigger black" href = "#modalDeactivateRequirement"><i class="material-icons">delete</i></button></li>
+									<li><button name = "action" class="btn-floating modal-trigger green darken-1" href = "#modalUpdateRequirement"><i class="material-icons">mode_edit</i></button></li>
+								</ul>
+							</div>
+						</div>
 	
-	                </div>
+	                </form>
 	            </div>
 	        </div>
 	
@@ -57,12 +59,12 @@
 	            </div>
 	            <div class="modal-content">
 	
-	                <form class = "col s12">
+	                <div class = "col s12">
 	                    <div class="row">
 	                        <!-- Select Requirement Name -->
 	                        <div class = "col s6" style = "padding-left: 20px;">
 	                            <label>Select Requirement Name to be changed</label>
-	                            <select id="selectUpdateRequirement">
+	                            <select id="selectUpdateRequirement" required = "" aria-required = "true">
 	                                <option value="" disabled selected>Requirement Name:</option>
 									<c:if test="${requirementList != null}">
 										<c:forEach items="${requirementList}" var="requirement">
@@ -72,12 +74,12 @@
 	                            </select>
 	                        </div>
 	                    </div>
-	                </form>
+	                </div>
 	
-	                <div style = "padding-left: 10px;">
+	                <form style = "padding-left: 10px;">
 	                <div class = "col s6">
 	                    <div class="input-field col s12">
-	                        <input id="requirementNameUpdate" type="text" class="validate">
+	                        <input id="requirementNameUpdate" type="text" class="validate" required = "" aria-required = "true">
 	                        <label for="requirementNameUpdate">New Requirement Name</label>
 	                    </div>
 	                </div>
@@ -88,12 +90,13 @@
 	                        <label for="requirementDescUpdate">New Requirement Description</label>
 	                    </div>
 	                </div>
-	                </div>
+
+						<div class="modal-footer">
+							<button type = "submit" onclick="updateRequirement()" name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
+							<button name = "action" class="waves-effect waves-light btn red" href = "Blocks_Maintenance.html">Cancel</button>
+						</div>
+	                </form>
 	
-	            </div>
-	            <div class="modal-footer">
-	                <button onclick="updateRequirement()" name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
-	                <button name = "action" class="waves-effect waves-light btn red" href = "Blocks_Maintenance.html">Cancel</button>
 	            </div>
 	        </div>
 	
@@ -109,7 +112,7 @@
 	                        <!-- Select Requirement Name -->
 	                        <div class = "col s6" style = "padding-left: 20px;">
 	                            <label>Select Requirement Name to be deactivated</label>
-	                            <select id="selectDeactivateRequirement">
+	                            <select id="selectDeactivateRequirement" required = "" aria-required = "true">
 	                                <option value="" disabled selected>Requirement Name:</option>
 									<c:if test="${requirementList != null}">
 										<c:forEach items="${requirementList}" var="requirement">
@@ -155,7 +158,7 @@
 	            <br>
 	
 	            <div class = "aside z-depth-2" style = "margin-left: 60px; width: 450px; height: 340px; overflow: auto;">
-	                <table id="tableRequirement" class = "responsive highlight z-depth-3" style = "margin-top: 10px; margin-left: 0px; width: 100%; height: 200px;">
+	                <table id="tableRequirement" class = "responsive" style = "margin-top: 10px; margin-left: 0px; width: 100%; height: 200px;">
 	
 	
 	                    <thead class = "fixed-header">

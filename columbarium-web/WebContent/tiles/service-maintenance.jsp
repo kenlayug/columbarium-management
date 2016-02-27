@@ -37,7 +37,7 @@
 							</div>
                         </form>
                     <div class="row">
-                            <div class="row">
+                            <div class="row" style = "padding-left: 10px;">
                                 <div class="input-field col s12">
 									<input id="serviceDesc" type="text" class="validate" pattern = "[A-Za-z0-9\s]{1,29}">
                                     <label for="serviceDesc" data-error = "Check format field." data-success = "">Service Description</label>
@@ -114,7 +114,7 @@
                     <div class="row">
                         <div class = "col s6" style = "padding-left: 20px;">
                             <label>Select Service Name to Deactivate:</label>
-                            <select id="selectServiceUpdate" onchange="placeServiceUpdate()">
+                            <select id="selectServiceUpdate"  required = "" aria-required="true" onchange="placeServiceUpdate()">
                                 <option value="" disabled selected>Service Name:</option>
 								<c:if test="${serviceList != null }">
 									<c:forEach items="${serviceList }" var="service">
@@ -128,11 +128,11 @@
                     <div class="row" style = "padding-left: 10px;">
                         <div class="input-field col s6">
                             <input id="serviceNameUpdate" type="text" class="validate" required = "" aria-required = "true" pattern = "[A-Za-z0-9\s]{1,29}">
-                            <label for="serviceNameUpdate">New Service Name</label>
+                            <label for="serviceNameUpdate" data-error = "Check format field." data-success = "">New Service Name<span style = "color: red;">*</span></label>
                         </div>
                         <div class="input-field col s6">
                             <input id="servicePriceUpdate" type="text" class="validate" required = "" aria-required = "true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
-                            <label for="servicePriceUpdate">New Service Price</label>
+                            <label for="servicePriceUpdate" data-error = "Check format field." data-success = "">New Service Price <span style = "color: red;">*</span></label>
                         </div>
                     </div>
 
@@ -140,7 +140,7 @@
                         <div class="row" style = "padding-left: 10px;">
                             <div class="input-field col s12">
 								<input id="serviceDescUpdate" type="text" class="validate" pattern = "[A-Za-z0-9\s]{1,29}">
-                                <label for="serviceDescUpdate">New Service Description</label>
+                                <label for="serviceDescUpdate" data-error = "Check format field." data-success = "">New Service Description</label>
                             </div>
                         </div>
 
@@ -166,7 +166,7 @@
                     <div class="row">
                         <div class = "col s6" style = "padding-left: 20px;">
                             <label>Select Service Name to Deactivate:</label>
-                            <select id="selectServiceDeactivate">
+                            <select id="selectServiceDeactivate" required = "" aria-required="true">
                                 <option value="" disabled selected>Service Name:</option>
 								<c:if test="${serviceList != null }">
 									<c:forEach items="${serviceList }" var="service">
@@ -188,6 +188,8 @@
             <!-- Data Grid -->
             <div class = "col s5">
                 <div class = "col s4 z-depth-2 " style = "margin-left: 60px; margin-top: 20px; width: 450px; height: 70px;">
+
+
                     <nav style = "height: 50px; margin-top: 10px; background-color: #00897b">
                         <div class="nav-wrapper">
                             <div>
@@ -208,7 +210,7 @@
                 <br>
 
                 <div class = "aside z-depth-2" style = "margin-left: 60px; width: 450px; height: 385px; overflow: auto;">
-                    <table id="tableService" class = "highlight z-depth-3" style = "margin-top: 10px; margin-left: 0px; width: 100%; height: 200px;">
+                    <table id="tableService" class = "responsive" style = "margin-top: 10px; margin-left: 0px; width: 100%; height: 200px;">
 
                         <thead class = "fixed-header">
                         <tr>

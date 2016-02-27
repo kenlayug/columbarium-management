@@ -17,14 +17,14 @@
 	
 	            <!-- Create Items -->
 	            <div class = "col s12">
-	                <div class = "aside aside z-depth-3">
+	                <form class = "aside aside z-depth-3">
 	                    <div class = "header">
 	                        <h4>Item Form</h4>
 	                    </div>
 	
 
 	                        <div class = "row">
-	                        <div>
+	                        <div style = "padding-left: 10px;">
 	                            <div class="input-field col s6">
 	                                <input id="itemName" type="text" class="validate" name="item.strItemName" required>
 	                                <label for="itemName" data-error = "Check format field." data-success = "">Item Name<span style = "color: red;">*</span></label>
@@ -55,7 +55,7 @@
 	                        </div>
 
 
-	                </div>
+	                </form>
 
 	            </div>
 	        </div>
@@ -73,7 +73,7 @@
 		                        	<label>No item available.</label>
 		                        </c:if>
 		                        <c:if test="${itemList != null}">
-			                        <select name="strItemName" id="selectItemUpdate" onchange="placeValue()">
+			                        <select name="strItemName" id="selectItemUpdate" required = "" aria-required="true" onchange="placeValue()">
 			                            <option value="" disabled selected>Item Name:</option>
 										<c:forEach items="${itemList }" var="item">
 											<option value="${item.strItemName}">${item.strItemName}</option>
@@ -131,7 +131,7 @@
 			                       <label>No item available.</label>
 			                    </c:if>
 			                    <c:if test="${itemList != null}">
-									<select name="strItemName" id="itemNameDeactivate">
+									<select name="strItemName" id="itemNameDeactivate" required = "" aria-required="true">
 										<option value="" disabled selected>Item Name:</option>
 											<c:forEach items="${itemList }" var="item">
 												<option value="${item.strItemName}">${item.strItemName}</option>
