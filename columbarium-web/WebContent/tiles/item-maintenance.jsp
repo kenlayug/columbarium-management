@@ -17,7 +17,7 @@
 	
 	            <!-- Create Items -->
 	            <div class = "col s12">
-	                <form class = "aside aside z-depth-3">
+	                <form class = "aside aside z-depth-3" id="formCreate">
 	                    <div class = "header">
 	                        <h4>Item Form</h4>
 	                    </div>
@@ -208,6 +208,10 @@
 	
 	<script type="text/javascript">
 			
+		$("#formCreate").submit(function(e){
+		    return false;
+		});
+	
 		function createItem(){
 			var itemName = document.getElementById("itemName").value;
 			var itemPrice = document.getElementById("itemPrice").value;

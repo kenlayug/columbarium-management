@@ -5,6 +5,7 @@ import java.util.List;
 import columbarium.business.BuildingBusiness;
 import columbarium.dao.BuildingRepository;
 import columbarium.model.Building;
+import columbarium.model.Floor;
 import columbarium.service.BuildingService;
 
 public class BuildingServiceImpl implements BuildingService{
@@ -28,6 +29,12 @@ public class BuildingServiceImpl implements BuildingService{
 	@Override
 	public List<Building> getAllBuilding() {
 		return buildingRepository.getAllBuilding();
+	}
+
+	@Override
+	public String createFloor(Floor floor) {
+
+		return buildingBusiness.createFloor(floor);
 	}
 
 }

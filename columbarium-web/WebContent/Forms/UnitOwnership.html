@@ -2,17 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Transferring</title>
+    <title>Unit_Ownership</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
-    <!-- Import File -->
+    <script src="../js/jquery.validate.js"></script>
+        <!-- Import File -->
     <script type="text/javascript" src = "../js/vaults.js"></script>
     <script type="text/javascript" src = "../js/Blocks_Record_Form.js"></script>
+    <script type="text/javascript" src = "../js/UnitOwnership.js"></script>
     <link href="../css/vaults.css" rel="stylesheet" type="text/css"/>
+    <link href="../css/datepicker.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 
@@ -71,95 +74,173 @@
 <!-- Section -->
 <form class = col s12 >
     <div class = "row">
-        <div class = "col s7">
-            <div class = "col s12">
-                <h4>UNIT OWNERSHIP</h4>
+        <div class = "col s5" style="height: 500px">
+            <div class = "col s12" style="margin-top: 30px;">
                 <div class = "aside aside z-depth-3">
                     <div class="modal-header">
-                        <label>CREATE UNIT OWNERSHIP</label>
+                        <label style="font-size: large">CREATE UNIT OWNERSHIP</label>
                     </div>
-                    <form action="FullBodyCrypts.html" method="post">
+                    <form action="UnitOwnership.html" method="post">
                         <div class="row">
-                            <div class="input-field col s2">
-                                <label>Enter Vault Code: </label>
+                            <div class="input-field col s3">
+                                <label>Unit Type:</label>
                             </div>
-                            <div class="input-field col s1">
-                                <input id="fname" type="text" required="" aria-required="true" class="validate">
-                                <label for="fname">####</label>
-
+                            <div class="input-field col s8" style="font-family: none">
+                                <p>
+                                    <input name="group11" type="radio" id="test11" checked="checked"/>
+                                    <label for="test11">Full Body Crypts</label>
+                                    <input name="group11" type="radio" id="test21" />
+                                    <label for="test21">Vault</label>
+                                </p>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col s5">
-                                <input type="text" name="search" required="" aria-required="true" class="validate" placeholder="Search Customer Last Name">
+                            <div class="input-field col s3">
+                                <label>Building No:</label>
+                            </div>
+                            <div class = "col s9" style = "padding-left: 20px;">
+                                <select>
+                                    <option value="" disabled selected> Select Building No:</option>
+                                    <option value="1">Building 1</option>
+                                    <option value="2">Building 2</option>
+                                    <option value="3">Building 3</option>
+                                </select>
+                            </div>
+                            <div class="input-field col s3">
+                                <label>Floor No:</label>
+                            </div>
+                            <div class = "col s9" style = "padding-left: 20px;">
+                                <select>
+                                    <option value="" disabled selected> Select Floor No:</option>
+                                    <option value="1">Floor 1</option>
+                                    <option value="2">Floor 2</option>
+                                    <option value="3">Floor 3</option>
+                                </select>
+                            </div>
+                            <div class="input-field col s3">
+                                <label>Block Name:</label>
+                            </div>
+                            <div class = "col s9" style = "padding-left: 20px;">
+                                <select>
+                                    <option value="" disabled selected> Select Block Name:</option>
+                                    <option value="1">Block A</option>
+                                    <option value="2">Block B</option>
+                                    <option value="3">Block C</option>
+                                </select>
                             </div>
                         </div>
-                        <p>Search Result for Customer Last Name</p>
                         <div class="row">
-                            <div class="input-field col s1">
-                                <input type="checkbox" id="test1" checked="checked" />
-                                <label for="test1" id="del">Name1</label>
-                                <input type="checkbox" id="test2" />
-                                <label for="test2" id="del">Name2</label>
+                            <div class="input-field col s12" style="font-family: none">
+                                <p>
+                                    <input name="grpEdit" type="radio" id="create" checked="checked"/>
+                                    <label for="create">Create</label>
+                                    <input name="grpEdit" type="radio" id="update" />
+                                    <label for="update">Update</label>
+                                    <input name="grpEdit" type="radio" id="deactivate" />
+                                    <label for="deactivate">Deactivate</label>
+                                </p>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="h">
-                                <div class="col s8">mm</div>
-                            </div>
-                            <div class="col s4">
-                                <a class="waves-effect waves-light btn red right" style = "width: 180px;  margin-top: 20px; margin-bottom: 10px;"><i class="mdi-content-add-circle left"></i>Save</a>
-                            </div>
-                        </div>
+                        <br><br>
                     </form>
                 </div>
             </div>
         </div>
 
 
-    <div class = "col s5">
+    <div class = "col s7">
         <div class = "col s4 z-depth-2 " style = "margin-top: 20px; width: 100%;">
             <div class="responsive">
                 <div class = "col s12">
-                    <div class="row">
-                        <div class="input-field col s3">
-                            <label>Building No:</label>
-                        </div>
-                        <div class = "col s9" style = "padding-left: 20px;">
-                            <select>
-                                <option value="" disabled selected> Select Building No:</option>
-                                <option value="1">Building 1</option>
-                                <option value="2">Building 2</option>
-                                <option value="3">Building 3</option>
-                            </select>
-                        </div>
-                        <div class="input-field col s3">
-                            <label>Floor No:</label>
-                        </div>
-                        <div class = "col s9" style = "padding-left: 20px;">
-                            <select>
-                                <option value="" disabled selected> Select Floor No:</option>
-                                <option value="1">Floor 1</option>
-                                <option value="2">Floor 2</option>
-                                <option value="3">Floor 3</option>
-                            </select>
-                        </div>
-                        <div class="input-field col s3">
-                            <label>Block Name:</label>
-                        </div>
-                        <div class = "col s9" style = "padding-left: 20px;">
-                            <select>
-                                <option value="" disabled selected> Select Block Name:</option>
-                                <option value="1">Block A</option>
-                                <option value="2">Block B</option>
-                                <option value="3">Block C</option>
-                            </select>
-                        </div>
-                    </div>
                     <div class = "aside aside z-depth-3">
-                        <div class="vaults-content">
-                            <table style="margin-bottom: 25px">
+                        <div class="center vaults-content">
+                            <table style="font-size: small; margin-bottom: 25px;margin-top: 25px">
                                 <tbody>
+                                <tr>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">J1</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">J2</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">J3</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">J4</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">J5</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">J6</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">J7</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">J8</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">J9</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">J10</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">J11</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">J12</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">J13</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">J14</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">J15</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">I1</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">I2</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">I3</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">I4</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">I5</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">I6</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">I7</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">I8</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">I9</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">I10</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">I11</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">I12</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">I13</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">I14</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">I15</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">H1</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">H2</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">H3</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">H4</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">H5</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">H6</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">H7</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">H8</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">H9</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">H10</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">H11</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">H12</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">H13</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">H14</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">H15</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">G1</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">G2</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">G3</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">G4</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">G5</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">G6</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">G7</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">G8</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">G9</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">G10</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">G11</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">G12</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">G13</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">G14</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">G15</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">F1</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">F2</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">F3</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">F4</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">F5</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">F6</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">F7</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">F8</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">F9</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">F10</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">F11</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">F12</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">F13</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">F14</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">F15</a></td>
+                                </tr>
                                 <tr>
                                     <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">E1</a></td>
                                     <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">E2</a></td>
@@ -168,6 +249,14 @@
                                     <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">E5</a></td>
                                     <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">E6</a></td>
                                     <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">E7</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">E8</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">E9</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">E10</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">E11</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">E12</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">E13</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">E14</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">E15</a></td>
                                 </tr>
                                 <tr>
                                     <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">D1</a></td>
@@ -177,6 +266,14 @@
                                     <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">D5</a></td>
                                     <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">D6</a></td>
                                     <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">D7</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">D8</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">D9</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">D10</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">D11</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">D12</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">D13</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">D14</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">D15</a></td>
                                 </tr>
                                 <tr>
                                     <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">C1</a></td>
@@ -186,6 +283,14 @@
                                     <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">C5</a></td>
                                     <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">C6</a></td>
                                     <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">C7</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">C8</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">C9</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">C10</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">C11</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">C12</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">C13</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">C14</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">C15</a></td>
                                 </tr>
                                 <tr>
                                     <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">B1</a></td>
@@ -195,6 +300,14 @@
                                     <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">B5</a></td>
                                     <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">B6</a></td>
                                     <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">B7</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">B8</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">B9</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">B10</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">B11</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">B12</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">B13</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">B14</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">B15</a></td>
                                 </tr>
                                 <tr>
                                     <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">A1</a></td>
@@ -204,45 +317,33 @@
                                     <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">A5</a></td>
                                     <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">A6</a></td>
                                     <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">A7</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">A8</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">A9</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">A10</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">A11</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">A12</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">A13</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">A14</a></td>
+                                    <td><a data-target="modal1" class="waves-effect waves-light modal-trigger" href="#modal1">A15</a></td>
                                 </tr>
                                 </tbody>
                             </table>
                             <!-- Modal Structure -->
                             <div id="modal1" class="modal modal-fixed-footer">
                                 <div class="modal-header">
-                                    <label>Vault ID:</label>
+                                    <label style="font-size: large">UNIT OWNERSHIP</label>
                                 </div>
-                                <br><p>Owner: </p>
-                                <br><p>Number of Urns: </p>
-                                <div class = "col s12">
-                                    <table class="modal-table" style="width: 100%">
-                                        <thead id="iba">
-                                        <tr>
-                                            <th data-field="name" id="unit-modal">Deceased Name</th>
-                                            <th data-field="cv" id="unit-modal">Date of Birth</th>
-                                            <th data-field="cv" id="unit-modal">Date of Death</th>
-                                        </tr>
-                                        </thead>
-
-                                        <tbody id="data">
-                                        <tr>
-                                            <td>Alwin</td>
-                                            <td>01/01/1990</td>
-                                            <td>02/13/2016</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Alwin</td>
-                                            <td>01/01/1990</td>
-                                            <td>02/13/2016</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Alwin</td>
-                                            <td>01/01/1990</td>
-                                            <td>02/13/2016</td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
+                                <form class="cmxform" id="ownershipForm" action="UnitOwnership.html" method="get" autocomplete="off">
+                                    <div class="row">
+                                        <div class="input-field col s3">
+                                            <label>Customer Name:</label>
+                                        </div>
+                                        <div class="input-field col s5">
+                                            <input id="cname" type="text" required="" aria-required="true" class="validate" required>
+                                            <label style="font-family: Arial">Search Customer Name<span style="color: red;">*</span></label>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>

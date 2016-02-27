@@ -42,11 +42,19 @@
 			SELECT * FROM tblFloor WHERE floorId = #{floorId} LIMIT 1
 		</select>
 		
+		<select id="selectLastFloorCreated" resultMap="FloorResultMap">
+			SELECT * FROM tblFloor ORDER BY floorId DESC LIMIT 1
+		</select>
+		
 		<select id="getAllBuilding" resultMap="BuildingResultMap">
 			SELECT b.*
 			FROM tblBldg b
 			WHERE b.intStatus = 1
 			ORDER BY b.strBldgDesc ASC
+		</select>
+		
+		<select id="countLevel" resultMap="CountResultMap">
+			SELECT COUNT(*) FROM tblUnitCategory WHERE floorIdFK = #{floorId}
 		</select>
 		
 		<select id="countAllBuilding" resultMap="CountResultMap">
@@ -65,7 +73,7 @@
 		<insert id="createFloor">
 			INSERT INTO tblFloor (intFloorNo, bldgIdFK, intLevelNo, intColumnNo, intStatus)
 			VALUES (
-				(SELECT COUNT(*)+1 FROM tblFloor WHERE bldgIdFK = #{buildingId}),
+				#{intFloorNo},
 				#{buildingId},
 				#{intLevelNo},
 				#{intColumnNo},
@@ -79,9 +87,9 @@
 		</insert>
 		
 		<insert id="createUnitCategory">
-			INSERT INTO tblUnitCategory (floorIdFK, levelIdFK)
+			INSERT INTO tblUnitCategory (floorIdFK, intLevelNo)
 			VALUES (#{floorId},
-				(SELECT COUNT(*)+1 FROM tblUnitCategory WHERE floorIdFK = #{floorId})
+				#{currentLevel}
 			)
 		</insert>
 		

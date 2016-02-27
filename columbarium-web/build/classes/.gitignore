@@ -1,4 +1,8 @@
 /ApplicationResources.properties
 /columbarium/
 /database.properties
+<<<<<<< HEAD
 /struts-building.xml
+=======
+/struts-floor.xml
+>>>>>>> dc24f184e411efd9f2e9b6c5b153d6a174535bcb
