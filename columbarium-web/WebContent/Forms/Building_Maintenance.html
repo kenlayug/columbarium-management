@@ -89,15 +89,6 @@
     <li class="divider"></li>
 </ul>
 
-<!-- Floating Button -->
-<div class="fixed-action-btn horizontal" style="position: absolute; margin-right: 550px; margin-bottom: 125px;">
-    <button name = "action" class="btn-floating btn-large red"><i class="large material-icons">add</i>
-    </button>
-    <ul>
-        <li><button name = "action" class="modal-trigger btn-floating black" href = "#modal2"><i class="material-icons">delete</i></button></li>
-        <li><button name = "action" class="modal-trigger btn-floating green darken-1" href = "#modal1"><i class="material-icons">mode_edit</i></button></li>
-    </ul>
-</div>
 
 <!-- Section -->
 <form class = "col s12">
@@ -111,14 +102,13 @@
                     <div class = "header">
                         <h4>Building Form</h4>
                     </div>
-
                     <br>
 
                     <!-- Radio Button -->
                     <div class = "align"  style = "padding-left: 20px;">
                         <form action="#">
                             <p>
-                                <input name="group1" type="radio" id="columbaryVault" />
+                                <input name="group1" type="radio" id="columbaryVault" value = "" checked = "checked"/>
                                 <label for="columbaryVault">Columbary Vault</label>
                             </p>
                             <p>
@@ -127,19 +117,31 @@
                             </p>
                         </form>
                     </div>
+                    <br>
 
 
                     <form class = "col s12">
                         <div class="row">
-                            <div class="input-field col s6">
-                                <input id="buildingName" type="text" class="validate">
-                                <label for="buildingName" data-error = "wrong" data-success = "right">Name of Building</label>
+                            <div class="input-field required col s6">
+                              <input id="buildingName" type="text" class="validate" required = "" aria-required = "true" pattern = "(?=.*[A-Z]).{1,29}">
+                              <label for="buildingName" data-error = "*ex: Building (30 characters max)" data-success = "Building Name accepted.">Name of Building <span style = "color: red;">*</span></label>
                             </div>
-                            <div class="input-field col s6">
-                                <input id="buildingAddress" type="text" class="validate">
-                                <label for="buildingAddress">Building Address</label>
+                            <div class="required input-field col s6">
+                                <input id="buildingAddress" type="text" class="validate" required = "" aria-required = "true" pattern = "(?=.*[A-Z]).{1,29}">
+                                <label for="buildingAddress" data-error = "*ex: Address (30 characters max)" data-success = "Building Address accepted.">Building Address <span style = "color: red;">*</span></label>
                             </div>
                         </div>
+
+                        <!-- Floating Button -->
+                        <div class="fixed-action-btn horizontal" style="position: absolute; margin-right: 600px; margin-bottom: 90px;">
+                            <button name = "action" type = "submit" class="btn-floating btn-large red"><i class="large material-icons">add</i>
+                            </button>
+                            <ul>
+                                <li><button name = "action" class="modal-trigger btn-floating black" href = "#modal2"><i class="material-icons">delete</i></button></li>
+                                <li><button name = "action" class="modal-trigger btn-floating green darken-1" href = "#modal1"><i class="material-icons">mode_edit</i></button></li>
+                            </ul>
+                        </div>
+
                     </form>
                 </div>
             </div>
@@ -159,7 +161,7 @@
                             <label>Select Building Name to be Updated</label>
                             <select>
                                 <option value="" disabled selected>Building Name:</option>
-                                <option value="1">Building One</option>
+                                <option selected = "selected" value="1">Building One</option>
                                 <option value="2">Building Two</option>
                                 <option value="3">Building Three</option>
                             </select>
@@ -169,21 +171,23 @@
                 <form class = "col s12">
                     <div class="row"  style = "padding-left: 10px;">
                         <div class="input-field col s6">
-                            <input id="buildingNameUpdate" type="text" class="validate">
-                            <label for="buildingNameUpdate" data-error = "wrong" data-success = "right">New Building Name</label>
+                            <input id="buildingNameUpdate" type="text" class="validate"  required = "" aria-required = "true" pattern = "(?=.*[A-Z]).{1,29}">
+                            <label for="buildingNameUpdate" data-error = "*ex: Address (30 characters max)" data-success = "New Building Name accepted.">New Building Name <span style = "color: red;">*</span></label>
                         </div>
                         <div class="input-field col s6">
-                            <input id="buildingAddressUpdate" type="text" class="validate">
-                            <label for="buildingAddressUpdate">New Building Address</label>
+                            <input id="buildingAddressUpdate" type="text" class="validate"  required = "" aria-required = "true" pattern = "(?=.*[A-Z]).{1,29}">
+                            <label for="buildingAddressUpdate" data-error = "*ex: Address (30 characters max)" data-success = "New Building Address accepted.">New Building Address <span style = "color: red;">*</span></label>
                         </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button name = "action" type = "submit" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
+                        <button name = "action" class="waves-effect waves-light btn red" href = "Blocks_Maintenance.html">Cancel</button>
                     </div>
                 </form>
 
             </div>
-            <div class="modal-footer">
-                <button name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
-                <button name = "action" class="waves-effect waves-light btn red" href = "Blocks_Maintenance.html">Cancel</button>
-            </div>
+
         </div>
 
 
@@ -194,26 +198,26 @@
                 <h4>Deactivate Building</h4>
             </div>
             <div class="modal-content">
-                <form class = "col s6">
-                    <div class="row">
+                <form class = "col s12">
                         <!-- Select Building Name -->
-                        <div class = "col s12" style = "padding-left: 20px;">
+                        <div class = "col s6" style = "padding-left: 20px;">
                             <label>Select Building Name to be Deactivated</label>
                             <select>
                                 <option value="" disabled selected>Building Name:</option>
-                                <option value="1">Building One</option>
+                                <option selected = "selected" value="1">Building One</option>
                                 <option value="2">Building Two</option>
                                 <option value="3">Building Three</option>
                             </select>
                         </div>
+                    <br><br><br><br><br><br><br>
+                    <div class="modal-footer">
+                        <button name = "action" class="waves-effect waves-light btn red">Confirm</button>
+                        <button name = "action" class="waves-effect waves-light btn red" style = "margin-right: 10px;">Cancel</button>
                     </div>
+
                 </form>
-                <br><br><br><br><br><br><br>
             </div>
-            <div class="modal-footer">
-                <button name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
-                <button name = "action" class="waves-effect waves-light btn red" href = "Blocks_Maintenance.html">Cancel</button>
-            </div>
+
         </div>
 
 
