@@ -16,9 +16,6 @@
   			<result name="success" type="tiles">package-maintenance</result>
   		</action>
   		
-  		<action name="create" class="columbarium.actions.packages.CreatePackageAction">
-  			<result name="success" type="json"></result>
-  		</action>
   	 
   	</package> 
    

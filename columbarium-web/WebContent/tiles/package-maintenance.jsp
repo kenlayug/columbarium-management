@@ -5,7 +5,7 @@
 	<link rel = "stylesheet" href = "<%=request.getContextPath()%>/css/Package_Record_Form.css"/>
 
 <!-- Floating Button -->
-	<div class="fixed-action-btn horizontal" style="position: absolute; margin-right: 620px; margin-bottom: -40px;">
+	<div onclick="createPackage()" class="fixed-action-btn horizontal" style="position: absolute; margin-right: 620px; margin-bottom: -40px;">
 	    <button name = "action" class="btn-floating btn-large red"><i class="large material-icons">add</i>
 	    </button>
 	    <ul>
@@ -107,8 +107,8 @@
                     <select>
                         <option value="" disabled selected>Package Name:</option>
                         <c:if test="${packageList != null }">
-							<c:forEach items="${packageList }" var="package">
-								<option value="${package.strPackageName }">${package.strPackageName}</option>
+							<c:forEach items="${packageList }" var="packageTo">
+								<option value="${packageTo.strPackageName }">${packageTo.strPackageName}</option>
 							</c:forEach>
 						</c:if>
                     </select>
@@ -201,8 +201,8 @@
                     <select>
                         <option value="" disabled selected>Package Name:</option>
 						<c:if test="${packageList != null }">
-							<c:forEach items="${packageList }" var="package">
-								<option value="${package.strPackageName }">${package.strPackageName}</option>
+							<c:forEach items="${packageList }" var="packageTo">
+								<option value="${packageTo.strPackageName }">${packageTo.strPackageName}</option>
 							</c:forEach>
 						</c:if>
                     </select>
@@ -258,11 +258,11 @@
 	                    	<tr><td>No package available.</td></tr>
 	                    </c:if>
 	                    <c:if test="${packageList != null }">
-	                    	<c:forEach items="${packageList }" var="package">
+	                    	<c:forEach items="${packageList }" var="packageTo">
 	                    		<tr>
-			                        <td>${package.strPackageName}</td>
-			                        <td>P ${package.dblPrice }</td>
-			                        <td>${package.strPackageDesc }</td>
+			                        <td>${packageTo.strPackageName}</td>
+			                        <td>P ${packageTo.dblPrice }</td>
+			                        <td>${packageTo.strPackageDesc }</td>
 			                        <td>
 			                        	
 			                        </td>
@@ -292,10 +292,40 @@
 	    
 	    function createPackage(){
 	    	
+	    	alert("Here...");
 	    	var packageName = document.getElementById("packageName").value;
 	    	var packagePrice = document.getElementById("packagePrice").value;
 	    	var packageDesc = document.getElementById("packageDesc").value;
-	    	var services = 
+	    	var services = $("input[name='service[]']:checked").map(function() {
+	    		return this.value;
+	    	}).get();
+	    	var items = $("input[name='item[]']:checked").map(function() {
+	    		return this.value;
+	    	}).get();
+	    	
+	    	$.ajax({
+	    		type: "POST",
+	    		url: "create",
+	    		data: {
+	    			"packageTo.strPackageName" : packageName,
+	    			"packageTo.dblPrice" : packagePrice,
+	    			"packageTo.strPackageDesc" : packageDesc,
+	    			"serviceList" : services,
+	    			"itemList" : items
+	    		},
+	    		traditional: true,
+	    		dataType: "json",
+	    		async: true,
+	    		success: function(data){
+	    			alert("saving...");
+	    			if (data.status === "success"){
+	    				alert("Package "+data.packageTo.strPackageName+" is successfully saved.");
+	    			}
+	    		},
+	    		error: function(data){
+	    			alert("error...");
+	    		}
+	    	});
 	    	
 	    }
     

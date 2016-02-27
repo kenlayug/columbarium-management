@@ -1,5 +1,6 @@
 package columbarium.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.struts2.ServletActionContext;
@@ -14,8 +15,8 @@ public class Package {
 	private List<Service>serviceList;
 	private List<Item>itemList;
 	private double dblPrice;
-	public double getDblPrice() {
-		return dblPrice;
+	public String getDblPrice() {
+		return Double.toString(dblPrice);
 	}
 	public void setDblPrice(double dblPrice) {
 		this.dblPrice = dblPrice;
@@ -52,12 +53,18 @@ public class Package {
 	}
 	public void addItemToPackage(String strItemName){
 		Item item = Item.searchItem(strItemName);
+		if (itemList == null){
+			itemList = new ArrayList<Item>();
+		}
 		if(!itemList.contains(item)){
 			this.itemList.add(item);
 		}
 	}
 	public void addServiceToPackage(String strServiceName){
 		Service service = Service.searchService(strServiceName);
+		if (serviceList == null){
+			serviceList = new ArrayList<Service>();
+		}
 		if(!serviceList.contains(service)){
 			this.serviceList.add(service);
 		}

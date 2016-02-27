@@ -22,6 +22,8 @@ public class MybatisPackageRepositoryTest extends TestCase{
 				new MybatisPackageRepository(connectionManager);
 		
 		for (Package packageTo : packageRepository.getAllPackage()) {
+			System.out.println(packageTo.getStrPackageName()+"'s Items -- "+packageTo.getItemList().size());
+			System.out.println(packageTo.getStrPackageName()+"'s Services -- "+packageTo.getServiceList().size());
 			for (Service service : packageTo.getServiceList()) {
 				System.out.println(service);
 			}
@@ -63,7 +65,7 @@ public class MybatisPackageRepositoryTest extends TestCase{
 				new MybatisPackageRepository(connectionManager);
 		
 		Package packageTo = new Package();
-		packageTo.setStrPackageName("Cremation with free urn");
+		packageTo.setStrPackageName("All-in-one");
 		
 		packageTo = packageRepository.searchPackage(packageTo);
 		for (Service service : packageTo.getServiceList()) {
@@ -112,11 +114,11 @@ public class MybatisPackageRepositoryTest extends TestCase{
 		
 		TestSuite suite = new TestSuite();
 
-		suite.addTest(new MybatisPackageRepositoryTest("testCreatePackage"));
+//		suite.addTest(new MybatisPackageRepositoryTest("testCreatePackage"));
 		suite.addTest(new MybatisPackageRepositoryTest("testGetAllPackage"));
-		suite.addTest(new MybatisPackageRepositoryTest("testUpdatePackage"));
+//		suite.addTest(new MybatisPackageRepositoryTest("testUpdatePackage"));
 		suite.addTest(new MybatisPackageRepositoryTest("testSearchPackage"));
-		suite.addTest(new MybatisPackageRepositoryTest("testDeactivatePackage"));
+//		suite.addTest(new MybatisPackageRepositoryTest("testDeactivatePackage"));
 		
 		return suite;
 		

@@ -15,7 +15,7 @@
 			<id property="serviceId" column="serviceId"/>
 			<result property="strServiceName" column="strServiceName"/>
 			<result property="strServiceDesc" column="strServiceDesc"/>
-			<result property="dblPrice" column="deciPrice"/>
+			<result property="dblPrice" column="deciServicePrice"/>
 			<collection property="requirementList" ofType="Requirement">
 				<id property="requirementId" column="requirementId"/>
 				<result property="strRequirementName" column="strRequirementName"/>
@@ -75,7 +75,7 @@
 		</select>
 		
 		<select id="getAllService" resultMap="ServiceResultMap">
-			SELECT s.serviceId, s.strServiceName, s.strServiceDesc, s.deciPrice,
+			SELECT s.serviceId, s.strServiceName, s.strServiceDesc, s.deciServicePrice,
 				r.*
 			FROM tblService s
 			LEFT JOIN tblServiceRequirement sr ON s.serviceId = sr.serviceIdFK
@@ -96,7 +96,7 @@
 		
 		<select id="searchServiceList" resultMap="ServiceResultMap">
 			<bind name="serviceName" value="'%' + strServiceName + '%'" />
-			SELECT s.serviceId, s.strServiceName, s.strServiceDesc, s.deciPrice,
+			SELECT s.serviceId, s.strServiceName, s.strServiceDesc, s.deciServicePrice,
 				r.*
 			FROM tblService s
 				LEFT JOIN tblServiceRequirement sr ON s.serviceId = sr.serviceIdFK
@@ -127,7 +127,7 @@
 	<!-- INSERT QUERIES -->
 	
 		<insert id="saveService" useGeneratedKeys="true" keyProperty="id">
-			INSERT INTO tblService(strServiceName, strServiceDesc, deciPrice, intStatus)
+			INSERT INTO tblService(strServiceName, strServiceDesc, deciServicePrice, intStatus)
 			VALUES (#{strServiceName}, #{strServiceDesc}, #{dblPrice}, 1)
 		</insert>
 		
@@ -145,7 +145,7 @@
 			<set>
 				<if test="strServiceName != null">strServiceName = #{strServiceName},</if>
 				<if test="strServiceDesc != null">strServiceDesc = #{strServiceDesc},</if>
-				<if test="dblPrice != 0">deciPrice = #{dblPrice}</if>
+				<if test="dblPrice != 0">deciServicePrice = #{dblPrice}</if>
 			</set>
 			WHERE serviceId = #{serviceId}
 		</update>
