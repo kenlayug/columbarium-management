@@ -12,31 +12,31 @@
         <div class = "responsive">
 
         <div class = "col s7">
-            <h2>Floor Maintenance</h2>
+            <h2 style = "font-size: 30px;">Floor Maintenance</h2>
 
 
             <!-- Create Floor -->
-            <div class = "col s12">
-                <div class = "aside aside z-depth-3">
+            <form class = "col s12">
+                <div class = "aside aside z-depth-3" style = "height: 380px;">
                     <div class = "responsive">
                     <div class = "header">
-                        <h4>Create Floor</h4>
+                        <h4 style = "font-size: 30px; margin-top: 0px; padding-top: 10px;">Floor Form</h4>
                     </div>
 
-                        <div class="row">
-                            <h5>Block size per floor:</h5>
-                            <div class="input-field col s6">
+                        <div class="row" style = "padding-left: 10px;">
+                            <h5 style = "font-family: arial;">Block size per floor:</h5>
+                            <div class="input-field col s6" style = "padding-left: 20px;">
                                 <input id="floorRow" type="number" class="validate" required = "" aria-required = "true" min = "1" max = "10">
-                                <label for="floorRow" data-error = "1-10 only" data-success = "Row/s accepted.">Row/s:</label>
+                                <label for="floorRow" data-error = "1-10 only" data-success = "">Row/s:<span style = "color: red;">*</span></label>
                             </div>
                             <div class="input-field col s6">
                                 <input id="floorColumn" type="number" class="validate" required = "" aria-required = "true" min = "1" max = "20">
-                                <label for="floorColumn" data-error = "1-20 only" data-success = "Column/s accepted.">Column/s:</label>
+                                <label for="floorColumn" data-error = "1-20 only" data-success = "">Column/s:<span style = "color: red">*</span></label>
                             </div>
                         </div>
                         <br>
                         <!-- Floating Button -->
-                        <div class="fixed-action-btn horizontal" style="position: absolute; margin-right: 620px; margin-bottom: 110px;">
+                        <div class="fixed-action-btn horizontal" style="position: absolute; margin-right: 560px; margin-bottom: 130px;">
                             <button onclick="createFloor()" name = "action" type = "submit" class="btn-floating btn-large red"><i class="large material-icons">add</i>
                             </button>
                             <ul>
@@ -44,10 +44,10 @@
                                 <li><button name = "action" class="modal-trigger btn-floating green darken-1" href = "#modal1"><i class="material-icons">mode_edit</i></button></li>
                             </ul>
                         </div>
-
+						<div style = "padding-left: 10px;">
                        <div class = "col s6">
                              <label>Select Building Name</label>
-                                    <select id="selectBuildingCreate">
+                                    <select id="selectBuildingCreate" required = "" aria-required = "true">
                                         <option value="" disabled selected>Building Name:</option>
                                         <c:if test="${buildingList != null}">
                                         	<c:forEach items="${buildingList}" var="building">
@@ -56,9 +56,14 @@
                                         </c:if>
                                     </select>
                        </div>
+                       </div>
                 </div>
+                <br><br><br><br><br>
+						<i class = "left" style = "margin-bottom: 50px; padding-left: 30px; color: red;">*Required Fields</i>
                 </div>
-            </div>
+
+            </form>
+     
         </div>
 
             <!-- Modal Update -->
@@ -66,20 +71,23 @@
                 <div class = "modal-header">
                     <h4>Update Floor</h4>
                 </div>
-                <div class="modal-content">
+                <form class="modal-content">
 
                         <div class="row">
-                            <h5>Block size per floor:</h5>
-                            <div class="input-field col s6">
-                                <input id="rowUpdate" type="text" class="validate">
-                                <label for="rowUpdate">Row/s:</label>
-                            </div>
-                            <div class="input-field col s6">
-                                <input id="colUpdate" type="text" class="validate">
-                                <label for="colUpdate">Column/s:</label>
+                            <h5 style = "padding-left: 50px; font-family: arial;">Block size per floor:</h5>
+                            <div style = "padding-left: 40px;">
+                            	<div class="input-field col s6">
+                                	<input id="rowUpdate" type="number" class="validate" required = "" aria-required = "true" min = "1" max = "10">
+                                	<label for="rowUpdate" data-error = "*1-10 only" data-success = "">Row/s:</label>
+                            	</div>
+                            	<div class="input-field col s6">
+                                	<input id="colUpdate" type="number" class="validate" required = "" aria-required = "true" min = "1" max = "20">
+                                	<label for="colUpdate" data-error = "*1-20 only">Column/s:</label>
+                            	</div>
                             </div>
                         </div>
-
+						
+						<div style = "padding-left: 40px;">
                         <div class = "col s6">
                             <label>Select Building Name</label>
                             <select>
@@ -89,12 +97,15 @@
                                 <option value="3">Building Three</option>
                             </select>
                         </div>
-
-                </div>
+						</div>
+						
+						 <br><br><br><br><br>
                 <div class="modal-footer">
-                    <button name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
-                    <button name = "action" class="waves-effect waves-light btn red" href = "Blocks_Maintenance.html">Cancel</button>
+                    <button type = "submit" name = "action1" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
+                    <button name = "action" class="waves-effect waves-light btn red">Cancel</button>
                 </div>
+                
+                </form>
             </div>
 
 
@@ -143,7 +154,7 @@
                     <div class="nav-wrapper">
                         <div>
                             <div class="input-field"  style = "height: 50px;">
-                                <input id="search" type="search" required>
+                                <input id="search" type="search">
                                 <label for="search"><i class="material-icons">search</i></label>
                                 <i class="material-icons">close</i>
                             </div>

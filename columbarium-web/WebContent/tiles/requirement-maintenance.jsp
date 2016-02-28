@@ -14,12 +14,12 @@
 	<div class = "responsive col s12">
 	    <div class = "row">
 	        <div class = "col s7">
-	            <h2>Requirement Maintenance</h2>
+	            <h2 style = "font-size: 30px;">Requirement Maintenance</h2>
 	            <!-- Create Requirement -->
 	            <div class = "col s12">
 	                <form class = "wrapper responsive aside aside z-depth-2" id="formCreate">
 	                    <div class = "header">
-	                        <h4 style = "stroke: black; stroke-width: 10px;">Requirement Form</h4>
+	                        <h4 style = "stroke: black; stroke-width: 10px; font-size: 30px; padding-top: 10px; margin-top: 0px;">Requirement Form</h4>
 	                    </div>
 	                    
                         <div class="row" style = "padding-left: 10px;">
@@ -37,7 +37,7 @@
 
 						<!-- Floating Button -->
 
-						<div class="fixed-action-btn horizontal" style="position: absolute; margin-right: 620px; margin-bottom: 160px;">
+						<div class="fixed-action-btn horizontal" style="position: absolute; margin-right: 560px; margin-bottom: 190px;">
 							<div class = "responsive">
 								<button type = "submit" name = "action" class="btn-floating btn-large red" onclick="createRequirement()"><i class="large material-icons">add</i>
 								</button>
@@ -47,6 +47,8 @@
 								</ul>
 							</div>
 						</div>
+					
+						<i class = "left" style = "margin-bottom: 50px; padding-left: 30px; color: red;">*Required Fields</i>
 	                </form>
 	
 	            </div>

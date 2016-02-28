@@ -10,13 +10,12 @@
 <div class = "col s12" >
     <div class = "row">
         <div class = "col s7">
-            <h2>Package Maintenance</h2>
+            <h2 style = "font-size: 30px;padding-left:20px;">Package Maintenance</h2>
 
             <!-- Create Package-->
-            <form class = "col s12">
                 <div class = "wrapper aside aside z-depth-3">
                     <div class = "header">
-                        <h4>Package Form</h4>
+                        <h4 style = "font-size: 30px; padding-top: 10px;">Package Form</h4>
                     </div>
 
 
@@ -45,7 +44,7 @@
                         <div class="row">
                             <div class = "col s6">
                             <div>
-                                <h6>Services</h6>
+                                <h6 style = "font-family: arial;">Services</h6>
                                 	<c:if test="${serviceList == null}">
                                 		<p>
                                 			<h7>No services available</h7>
@@ -65,7 +64,7 @@
                             </div>
                             <div class = "col s6">
                                 <div>
-                                    <h6>Items</h6>
+                                    <h6 style = "font-family: arial;">Items</h6>
                                     <c:if test="${itemList == null}">
                                 		<p>
                                 			<h7>No items available</h7>
@@ -83,18 +82,18 @@
                             </div>
                         </div>
                     </div>
+                    <i class = "left" style = "margin-top: 50px; padding-left: 20px; color: red;">*Required Fields</i>
                 </div>
-
+	
                 <!-- Floating Button -->
-                <div onclick="createPackage()" class="fixed-action-btn horizontal" style="position: absolute; margin-right: 620px; margin-bottom: -40px;">
-                    <button type = "submit" name = "action" class="btn-floating btn-large red"><i class="large material-icons">add</i>
+                <div class="fixed-action-btn horizontal" style="position: absolute; margin-right: 550px; margin-bottom: 10px;">
+                    <button onclick="createPackage()" type = "submit" name = "action" class="btn-floating btn-large red"><i class="large material-icons">add</i>
                     </button>
                     <ul>
                         <li><button name = "action" class="modal-trigger btn-floating black" href = "#modal2"><i class="material-icons">delete</i></button></li>
                         <li><button name = "action" class="modal-trigger btn-floating green darken-1" href = "#modal1"><i class="material-icons">mode_edit</i></button></li>
                     </ul>
                 </div>
-            </form>
         </div>
 
         <!-- Modal Update -->
@@ -287,14 +286,13 @@
 	        // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
 	        $('.modal-trigger').leanModal();
 	    });
-	
-	    $(document).ready(function() {
-	        $('select').material_select();
-	    });
+	    
+	    $("#formCreate").submit(function(e){
+		    return false;
+		});
 	    
 	    function createPackage(){
 	    	
-	    	alert("Here...");
 	    	var packageName = document.getElementById("packageName").value;
 	    	var packagePrice = document.getElementById("packagePrice").value;
 	    	var packageDesc = document.getElementById("packageDesc").value;
@@ -319,13 +317,48 @@
 	    		dataType: "json",
 	    		async: true,
 	    		success: function(data){
-	    			alert("saving...");
 	    			if (data.status === "success"){
 	    				alert("Package "+data.packageTo.strPackageName+" is successfully saved.");
+	    				updateTable();
+	    			}else if(data.status === "input"){
+	    				alert("Fill up everything.");
 	    			}
 	    		},
 	    		error: function(data){
 	    			alert("error...");
+	    		}
+	    	});
+	    	
+	    }
+	    
+	    function updateTable(){
+	    	
+	    	$.ajax({
+	    		type: "POST",
+	    		url: "getAllPackages", 
+	    		dataType: "json",
+	    		async: true,
+	    		success: function(data){
+	    			var packageList = data.packageList;
+	        		$("#tablePackage tbody").remove();
+					if (packageList != null){
+						$.each(packageList, function(i, packageTo){
+							
+			        		tableRow = $("<tr>").append(
+			        				$("<td>").text(packageTo.strPackageName),
+			        				$("<td>").text(packageTo.dblPrice),
+			        				$("<td>").text(packageTo.strPackageDesc),
+			        				$("<td>").text());
+			        		$("#tablePackage").append(tableRow);
+		        		});
+					}else{
+						tableRow = $("<tr>").append(
+								$("<td>").text("No packages available."));
+						$("#tablePackages").append(tableRow);
+					}
+	    		},
+	    		error: function(data){
+	    			alert("error in updating table...");
 	    		}
 	    	});
 	    	

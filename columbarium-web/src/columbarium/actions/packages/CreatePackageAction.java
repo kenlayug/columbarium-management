@@ -43,6 +43,7 @@ public class CreatePackageAction extends ActionSupport implements Action{
 			getPackageTo().addServiceToPackage(strServiceName);
 		}
 		strStatus = getPackageTo().create();
+		System.out.println(strStatus);
 		return "success";
 		
 	}

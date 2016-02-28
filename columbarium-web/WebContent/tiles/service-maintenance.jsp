@@ -8,13 +8,13 @@
 <div class = "col s12" >
     <div class = "row">
         <div class = "col s7">
-            <h2>Service Maintenance</h2>
+            <h2 style = "font-size: 30px;">Service Maintenance</h2>
 
             <!-- Create Service -->
             <div class = "col s12">
                 <div class = "aside aside z-depth-3">
                 <div class = "header">
-                    <h4>Service Form</h4>
+                    <h4 style = "font-size: 30px; padding-top:10px;margin-top: 0px;">Service Form</h4>
                 </div>
                         <form class="row" style = "padding-left: 10px;" id="formCreate">
                             <div class="input-field col s6">
@@ -27,7 +27,7 @@
                             </div>
 
 							<!-- Floating Button -->
-							<div class="fixed-action-btn horizontal" style="position: absolute; margin-right: 620px; margin-bottom: 80px;">
+							<div class="fixed-action-btn horizontal" style="position: absolute; margin-right: 560px; margin-bottom: 130px;">
 								<button type = "submit" onclick="createService()" name = "action" class="btn-floating btn-large red"><i class="large material-icons">add</i>
 								</button>
 								<ul>
@@ -44,8 +44,11 @@
                                 </div>
                             </div>
 
-                        <button data-target = "modalRequirement" class="waves-effect waves-light modal-trigger red left" style = "margin-left: 20px; width: 180px; height: 35px; color: white; margin-bottom: 50px; font-size: 14px;"></i>CHOOSE REQUIREMENTS</button>
-                    </div>
+                        <button data-target = "modalRequirement" class="waves-effect waves-light modal-trigger red left" style = "margin-left: 20px; width: 180px; height: 35px; color: white; margin-bottom: 10px; font-size: 14px;"></i>CHOOSE REQUIREMENTS</button>
+                    <br><br><br>
+                    <i class = "left" style = "margin-bottom: 0px; padding-left: 20px; color: red;">*Required Fields</i>
+                  
+                    </div>		
                 </div>
 
             </div>
@@ -286,11 +289,6 @@
 					if (data.status === "success"){
 						alert("Service "+data.service.strServiceName+" is successfully saved.");
 						updateTable();
-					}else if (data.status === "input"){
-						alert("Fill up everything first.");
-					}	
-					else{
-						alert("Problem occured.");
 					}
 				},
 				error: function(data){

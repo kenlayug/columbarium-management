@@ -32,6 +32,10 @@ public class ServiceBusinessImpl implements ServiceBusiness{
 		if (Double.parseDouble(service.getDblPrice()) == 0){
 			return "input";
 		}
+		if (service.getRequirementList() == null || 
+				service.getRequirementList().size() == 0){
+			return "input";
+		}
 		return serviceRepository.createService(service);
 	}
 

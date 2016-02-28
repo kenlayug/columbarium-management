@@ -13,13 +13,13 @@
 	<div class = "responsive col s12">
 	    <div class = "row">
 	        <div class = "col s7">
-	            <h2>Item Maintenance</h2>
+	            <h2 style = "font-size: 30px;margin-bottom: 10px;">Item Maintenance</h2>
 	
 	            <!-- Create Items -->
 	            <div class = "col s12">
-	                <form class = "aside aside z-depth-3" id="formCreate">
+	                <form class = "aside aside z-depth-3" style = "margin-top: 0px;" id="formCreate">
 	                    <div class = "header">
-	                        <h4>Item Form</h4>
+	                        <h4 style = "font-size: 30px;padding-top: 10px;">Item Form</h4>
 	                    </div>
 	
 
@@ -53,8 +53,8 @@
 	                                <label for="itemDesc" data-error = "" data-success = "">Item Description</label>
 	                            </div>
 	                        </div>
-
-
+						<i class = "left" style = "margin-bottom: 0px; padding-left: 20px; color: red;">*Required Fields</i>
+	                	<br><br><br>
 	                </form>
 
 	            </div>

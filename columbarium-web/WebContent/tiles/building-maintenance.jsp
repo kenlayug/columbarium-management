@@ -8,13 +8,13 @@
     <!-- Section -->
 	    <div class = "row">
 	        <div class = "col s7">
-	            <h2>Building Maintenance</h2>
+	            <h2 style = "font-size: 30px;">Building Maintenance</h2>
 	
 	            <!-- Create Building -->
-	            <form class = "col s12">
+	            <form class = "col s12" id="formCreate">
 	                <div class = "aside aside z-depth-3">
 	                    <div class = "header">
-	                        <h4>Building Form</h4>
+	                        <h4 style = "font-size: 30px; margin-top: 0px; padding-top: 10px;">Building Form</h4>
 	                    </div>
 	                    <br>
 	
@@ -44,7 +44,7 @@
 	                </div>
 
 					<!-- Floating Button -->
-					<div class="fixed-action-btn horizontal" style="position: absolute; margin-right: 600px; margin-bottom: 90px;">
+					<div class="fixed-action-btn horizontal" style="position: absolute; margin-right: 560px; margin-bottom: 175px;">
 						<button type = "submit" onclick="createBuilding()" name = "action" class="btn-floating btn-large red"><i class="large material-icons">add</i>
 						</button>
 						<ul>
@@ -181,6 +181,10 @@
 	    
 	    
 	<script>
+	
+		$("#formCreate").submit(function(e){
+		    return false;
+		});
 	
 		function createBuilding(){
 			
