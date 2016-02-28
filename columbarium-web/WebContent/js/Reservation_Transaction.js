@@ -21,10 +21,3 @@ $(document).ready(function(){
 $(document).ready(function() {
     $('select').material_select();
 });
-
-$(document).ready(function() {
-    // Select - Single
-    $('select:not([multiple])').material_select();
-});
-
-$('select').material_select('destroy');

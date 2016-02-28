@@ -4,15 +4,7 @@
 
 	<link rel = "stylesheet" href = "<%=request.getContextPath()%>/css/Package_Record_Form.css"/>
 
-<!-- Floating Button -->
-	<div onclick="createPackage()" class="fixed-action-btn horizontal" style="position: absolute; margin-right: 620px; margin-bottom: -40px;">
-	    <button name = "action" class="btn-floating btn-large red"><i class="large material-icons">add</i>
-	    </button>
-	    <ul>
-	        <li><button name = "action" class="modal-trigger btn-floating black" href = "#modal2"><i class="material-icons">delete</i></button></li>
-	        <li><button name = "action" class="modal-trigger btn-floating green darken-1" href = "#modal1"><i class="material-icons">mode_edit</i></button></li>
-	    </ul>
-	</div>
+
 
 <!-- Form -->
 <div class = "col s12" >
@@ -21,7 +13,7 @@
             <h2>Package Maintenance</h2>
 
             <!-- Create Package-->
-            <div class = "col s12">
+            <form class = "col s12">
                 <div class = "wrapper aside aside z-depth-3">
                     <div class = "header">
                         <h4>Package Form</h4>
@@ -29,14 +21,14 @@
 
 
                     <div class = "col s12">
-                        <div class="row" style = "padding-left: 10px;">
+                        <div class="row">
                             <div class="input-field col s6">
-                                <input id="packageName" type="text" class="validate" required = "">
-                                <label for="packageName">Package name:</label>
+                                <input id="packageName" type="text" class="validate" required = "" aria-required="true">
+                                <label for="packageName" data-error = "Check format field." data-success = "">Package Name<span style = "color: red;">*</span></label>
                             </div>
                             <div class="input-field col s6">
-                                <input id="packagePrice" type="text" class="validate">
-                                <label for="packagePrice">Package price:</label>
+                                <input id="packagePrice" type="text" class="validate" required = "" aria-required="true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
+                                <label for="packagePrice" data-error = "Check format field." data-success = "">Package Price<span style = "color: red;">*</span></label>
                             </div>
                         </div>
                     </div>
@@ -44,7 +36,7 @@
                         <div class="row">
                             <div class="input-field col s12">
                                 <input id="packageDesc" type="text" class="validate">
-                                <label for="packageDesc">Package description:</label>
+                                <label for="packageDesc">Package Description</label>
                             </div>
                         </div>
                     </div>
@@ -92,11 +84,21 @@
                         </div>
                     </div>
                 </div>
-            </div>
+
+                <!-- Floating Button -->
+                <div onclick="createPackage()" class="fixed-action-btn horizontal" style="position: absolute; margin-right: 620px; margin-bottom: -40px;">
+                    <button type = "submit" name = "action" class="btn-floating btn-large red"><i class="large material-icons">add</i>
+                    </button>
+                    <ul>
+                        <li><button name = "action" class="modal-trigger btn-floating black" href = "#modal2"><i class="material-icons">delete</i></button></li>
+                        <li><button name = "action" class="modal-trigger btn-floating green darken-1" href = "#modal1"><i class="material-icons">mode_edit</i></button></li>
+                    </ul>
+                </div>
+            </form>
         </div>
 
         <!-- Modal Update -->
-        <div id="modal1" class="modal">
+        <form id="modal1" class="modal">
             <div class = "modal-header">
                 <h4>Update Package</h4>
             </div>
@@ -104,7 +106,7 @@
 
                 <div class = "col s6" style = "padding-left: 20px;">
                     <label>Select Package Name to Update</label>
-                    <select>
+                    <select required = "" aria-required = "true">
                         <option value="" disabled selected>Package Name:</option>
                         <c:if test="${packageList != null }">
 							<c:forEach items="${packageList }" var="packageTo">
@@ -116,22 +118,22 @@
 
 
                 <div class = "col s12">
-                    <div class="row" style = "padding-left: 10px;">
+                    <div class="row">
                         <div class="input-field col s6">
-                            <input id="packageName" type="text" class="validate" required = "">
-                            <label for="packageName">New Package Name</label>
+                            <input id="packageNameUpdate" type="text" class="validate" required = "">
+                            <label for="packageNameUpdate">New Package Name</label>
                         </div>
                         <div class="input-field col s6">
-                            <input id="packagePrice" type="text" class="validate">
-                            <label for="packagePrice">New Package Price</label>
+                            <input id="packagePriceUpdate" type="text" class="validate" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
+                            <label for="packagePriceUpdate" data-error = "Check format field." data-success = "">New Package Price</label>
                         </div>
                     </div>
                 </div>
                 <div class = "col s12">
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="packageDesc" type="text" class="validate">
-                            <label for="packageDesc">New Package Description</label>
+                            <input id="packageDescUpdate" type="text" class="validate">
+                            <label for="packageDescUpdate">New Package Description</label>
                         </div>
                     </div>
                 </div>
@@ -184,10 +186,10 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
+                <button type = "submit" name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
                 <button name = "action" class="waves-effect waves-light btn red" href = "Blocks_Maintenance.html">Cancel</button>
             </div>
-        </div>
+        </form>
 
 
         <!-- Modal Deactivate -->
@@ -198,7 +200,7 @@
             <div class="modal-content">
                 <div class = "col s6" style = "padding-left: 20px;">
                     <label>Select Package Name to Deactivate</label>
-                    <select>
+                    <select required = "" aria-required = "true">
                         <option value="" disabled selected>Package Name:</option>
 						<c:if test="${packageList != null }">
 							<c:forEach items="${packageList }" var="packageTo">

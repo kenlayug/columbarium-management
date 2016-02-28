@@ -19,8 +19,12 @@
 
 
     <!-- Import CSS/JS -->
-    <script type="text/javascript" src="js/Collection_Transaction.js"></script>
-    <link rel = "stylesheet" href = "css/Collection_Transaction.css"/>
+    <script type="text/javascript" src="../js/Collection_Transaction.js"></script>
+    <link rel = "stylesheet" href = "../css/Collection_Transaction.css"/>
+
+    <!-- Datepicker -->
+    <script type="text/javascript" src = "../js/datepicker.js"></script>
+    <link rel = "stylesheet" href = "../css/datepicker.css"/>
 
 </head>
 <body>
@@ -95,7 +99,7 @@
         <div class = "col s7">
 
             <!-- Collection Form-->
-            <div class = "col s12">
+            <form class = "col s12">
                 <div class = "aside aside z-depth-4">
                     <div class = "header">
                         <h4>Collection Form</h4>
@@ -110,11 +114,12 @@
 
                     <!-- Date -->
                     <div class="row" style = "padding-left: 10px;">
-                        <div class="input-field col s2">
+                        <div class="input-field col s3">
                             <label>Collection Date:</label>
                         </div>
-                        <div class="input-field col s3">
-                            <input id="day" type="date" required="" aria-required="true" class="validate">
+                        <div class="input-field col s4">
+                            <input type = "date" class = "datepicker" required = "" aria-required="true">
+                            <label>MM/DD/YYYY<span style = "color: red;">*</span></label>
                         </div>
                     </div>
 
@@ -123,16 +128,16 @@
                         <label style = "padding-left: 10px;">Customer Name:</label>
                         <div class="row">
                             <div class="input-field col s4">
-                                <input id="fname" type="text" class="validate">
-                                <label for="fname" data-error = "wrong" data-success = "right">First Name</label>
+                                <input id="fname" type="text" class="validate" required = "" aria-required="true">
+                                <label for="fname" data-error = "wrong" data-success = "right">First Name<span style = "color:red;">*</span></label>
                             </div>
                             <div class="input-field col s4">
-                                <input id="mname" type="text" class="validate">
-                                <label for="mname">Middle Name</label>
+                                <input id="mname" type="text" class="validate" required = "" aria-required="true">
+                                <label for="mname">Middle Name<span style = "color: red;">*</span></label>
                             </div>
                             <div class="input-field col s4">
-                                <input id="lname" type="text" class="validate">
-                                <label for="lname">Last Name</label>
+                                <input id="lname" type="text" class="validate" required = "" aria-required="true">
+                                <label for="lname">Last Name<span style = "color: red;">*</span></label>
                             </div>
                         </div>
                     </div>
@@ -140,18 +145,18 @@
                     <form class = "col s12">
                         <div class="row" style = "padding-left: 10px;">
                             <div class="input-field col s6">
-                                <input id="amt" type="text" class="validate">
-                                <label for="amt">Service Amount:</label>
+                                <input id="amt" type="text" class="validate" required = "" aria-required="true">
+                                <label for="amt">Service Amount:<span style = "color: red;">*</span></label>
                             </div>
                             <div class="input-field col s6">
-                                <input id="bal" type="text" class="validate">
-                                <label for="bal">Collection Amount:</label>
+                                <input id="bal" type="text" class="validate" required = "" aria-required="true">
+                                <label for="bal">Collection Amount:<span style = "color: red;">*</span></label>
                             </div>
                         </div>
                     </form>
-                    <a class="waves-effect waves-light btn red right" style = "margin-right: 10px; width: 180px;  margin-top: 10px;"><i class="mdi-content-add-circle left"></i>Done</a>
+                    <button type = "submit" name = "action" class="waves-effect waves-light btn red right" style = "margin-right: 10px; width: 120px;  margin-top: 10px;">Confirm</button>
                 </div>
-            </div>
+            </form>
         </div>
 
 
