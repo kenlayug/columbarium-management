@@ -182,6 +182,7 @@
 
 $(document).ready(function() {
   $('#datatable').dataTable({
+    "iDisplayLength": 5,
     "oLanguage": {
       "sStripClasses": "",
       "sSearch": "",
@@ -200,3 +201,4 @@ $(document).ready(function() {
     bAutoWidth: false
   });
 });
+
