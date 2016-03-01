@@ -26,3 +26,5 @@ $("#submitCreate").click(function(){
 
     return false;
 });
+
+$('#modal1').closeModal();

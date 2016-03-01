@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+     "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" 
+     "http://struts.apache.org/dtds/struts-2.0.dtd"> 
+   
+   <struts>
+   
+   	<package name="floor" extends="struts-default, json-default" namespace="/floor"> 
+  		 
+  		<result-types>
+         	<result-type name="tiles" 
+         	class="org.apache.struts2.views.tiles.TilesResult" />
+      	</result-types>
+      	
+      	<action name="*" class="columbarium.actions.floor.InitializeFloorScreenAction">
+      		<result name="success" type="tiles">floor-maintenance</result>
+      	</action>
+      	
+      	<action name="create" class="columbarium.actions.floor.CreateFloorAction">
+      		<result name="success" type="json"></result>
+      	</action>
+      	
+      	<action name="getAllBuildingFloors" class="columbarium.actions.floor.InitializeFloorScreenAction">
+      		<result name="success" type="json"></result>
+      	</action>
+  	 
+  	</package> 
+   
+   </struts>

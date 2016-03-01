@@ -3,11 +3,14 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
      <link rel = "stylesheet" href = "<%=request.getContextPath()%>/css/Services_Record_Form.css"/>
 
+	<link rel="stylesheet" href="../css/style.css">
+	<script type="text/javascript" src = "../js/index.js"></script>
+
 <!-- Section -->
 
 <div class = "col s12" >
     <div class = "row">
-        <div class = "col s7">
+        <div class = "col s3">
             <h2 style = "font-size: 30px;">Service Maintenance</h2>
 
             <!-- Create Service -->
@@ -25,17 +28,8 @@
                                 <input id="servicePrice" type="text" class="validate" required = "" aria-required = "true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
                                 <label for="servicePrice" data-error = "Check format field." data-success = "">Service Price <span style = "color: red;">*</span></label>
                             </div>
-
-							<!-- Floating Button -->
-							<div class="fixed-action-btn horizontal" style="position: absolute; margin-right: 560px; margin-bottom: 130px;">
-								<button type = "submit" onclick="createService()" name = "action" class="btn-floating btn-large red"><i class="large material-icons">add</i>
-								</button>
-								<ul>
-									<li><button name = "action" class="modal-trigger btn-floating black" href = "#modalDeactivate"><i class="material-icons">delete</i></button></li>
-									<li><button name = "action" class="modal-trigger btn-floating green darken-1" href = "#modalUpdate"><i class="material-icons">mode_edit</i></button></li>
-								</ul>
-							</div>
                         </form>
+
                     <div class="row">
                             <div class="row" style = "padding-left: 10px;">
                                 <div class="input-field col s12">
@@ -188,70 +182,152 @@
         </div>
 
 
-            <!-- Data Grid -->
-            <div class = "col s5">
-                <div class = "col s4 z-depth-2 " style = "margin-left: 60px; margin-top: 20px; width: 450px; height: 70px;">
-
-
-                    <nav style = "height: 50px; margin-top: 10px; background-color: #00897b">
-                        <div class="nav-wrapper">
-                            <div>
-                                <div class="input-field"  style = "height: 50px;">
-                                    <input id="search" type="search" required>
-                                    <label for="search"><i class="material-icons">search</i></label>
-                                    <i class="material-icons">close</i>
-                                </div>
-                            </div>
-                        </div>
-                    </nav>
-                </div>
-
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-
-                <div class = "aside z-depth-2" style = "margin-left: 60px; width: 450px; height: 385px; overflow: auto;">
-                    <table id="tableService" class = "responsive" style = "margin-top: 10px; margin-left: 0px; width: 100%; height: 200px;">
-
-                        <thead class = "fixed-header">
-                        <tr>
-                            <th data-field="id">Service Name</th>
-                            <th data-field="name">Service Price</th>
-                            <th data-field="name">Service Description</th>
-                            <th data-field="name">Service Requirement</th>
-                        </tr>
-                        </thead>
-
-                        <tbody>
-	                        <c:if test="${serviceList == null }">
-	                        	<tr><td>No services available.</td></tr>
-	                        </c:if>
-	                        <c:if test="${serviceList != null }">
-	                        	<c:forEach items="${serviceList }" var="service">
-		                        	<tr>
-			                            <td>${service.strServiceName }</td>
-			                            <td>P ${service.dblPrice }</td>
-			                            <td>${service.strServiceDesc }</td>
-			                            <td>
-			                            	<c:if test="${service.requirementList == null }">
-			                            		No requirement specified.
-			                            	</c:if>
-			                            	<c:if test="${service.requirementList != null }">
-												<c:forEach items="${service.requirementList}" var="requirement">
-													${requirement.strRequirementName},
-												</c:forEach>
-											</c:if>
-			                            </td>
-			                        </tr>
-	                        	</c:forEach>
-	                        </c:if>
-                        </tbody>
-                    </table>
-                </div>
-        </div>
+		<!-- Data Grid -->
+		<div class = "col s9">
+			<div class="row">
+				<div id="admin" class="col s12" style="margin-top: 20px">
+					<div class="z-depth-2 card material-table">
+						<div class="table-header" style="background-color: #00897b;">
+							<h4 style = "font-size: 30px; color: white; padding-left: 0px;">Building Data Grid</h4>
+							<div class="actions">
+								<a href="#" class="search-toggle waves-effect btn-flat nopadding"><i class="material-icons" style="color: #ffffff;">search</i></a>
+							</div>
+						</div>
+						<table id="datatable">
+							<thead>
+							<tr>
+								<th>Service Name</th>
+								<th>Service Price</th>
+								<th>Service Description</th>
+								<th>Service Requirement</th>
+								<th>Action</th>
+							</tr>
+							</thead>
+							<tbody>
+							<tr>
+								<td>Service One</td>
+								<td>Price One</td>
+								<td>Description One</td>
+								<td>Requirement One</td>
+								<td><button name = "action" class="modal-trigger btn-floating green" href = "#modal1"><i class="material-icons">mode_edit</i></button>
+									<button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button></td>
+							</tr>
+							<tr>
+								<td>Service One</td>
+								<td>Price One</td>
+								<td>Description One</td>
+								<td>Requirement One</td>
+								<td><button name = "action" class="modal-trigger btn-floating green" href = "#modal1"><i class="material-icons">mode_edit</i></button>
+									<button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button></td>
+							</tr>
+							<tr>
+								<td>Service One</td>
+								<td>Price One</td>
+								<td>Description One</td>
+								<td>Requirement One</td>
+								<td><button name = "action" class="modal-trigger btn-floating green" href = "#modal1"><i class="material-icons">mode_edit</i></button>
+									<button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button></td>
+							</tr>
+							<tr>
+								<td>Service One</td>
+								<td>Price One</td>
+								<td>Description One</td>
+								<td>Requirement One</td>
+								<td><button name = "action" class="modal-trigger btn-floating green" href = "#modal1"><i class="material-icons">mode_edit</i></button>
+									<button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button></td>
+							</tr>
+							<tr>
+								<td>Service One</td>
+								<td>Price One</td>
+								<td>Description One</td>
+								<td>Requirement One</td>
+								<td><button name = "action" class="modal-trigger btn-floating green" href = "#modal1"><i class="material-icons">mode_edit</i></button>
+									<button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button></td>
+							</tr>
+							<tr>
+								<td>Service One</td>
+								<td>Price One</td>
+								<td>Description One</td>
+								<td>Requirement One</td>
+								<td><button name = "action" class="modal-trigger btn-floating green" href = "#modal1"><i class="material-icons">mode_edit</i></button>
+									<button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button></td>
+							</tr>
+							<tr>
+								<td>Service One</td>
+								<td>Price One</td>
+								<td>Description One</td>
+								<td>Requirement One</td>
+								<td><button name = "action" class="modal-trigger btn-floating green" href = "#modal1"><i class="material-icons">mode_edit</i></button>
+									<button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button></td>
+							</tr>
+							<tr>
+								<td>Service One</td>
+								<td>Price One</td>
+								<td>Description One</td>
+								<td>Requirement One</td>
+								<td><button name = "action" class="modal-trigger btn-floating green" href = "#modal1"><i class="material-icons">mode_edit</i></button>
+									<button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button></td>
+							</tr>
+							<tr>
+								<td>Service One</td>
+								<td>Price One</td>
+								<td>Description One</td>
+								<td>Requirement One</td>
+								<td><button name = "action" class="modal-trigger btn-floating green" href = "#modal1"><i class="material-icons">mode_edit</i></button>
+									<button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button></td>
+							</tr>
+							<tr>
+								<td>Service One</td>
+								<td>Price One</td>
+								<td>Description One</td>
+								<td>Requirement One</td>
+								<td><button name = "action" class="modal-trigger btn-floating green" href = "#modal1"><i class="material-icons">mode_edit</i></button>
+									<button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button></td>
+							</tr>
+							<tr>
+								<td>Service One</td>
+								<td>Price One</td>
+								<td>Description One</td>
+								<td>Requirement One</td>
+								<td><button name = "action" class="modal-trigger btn-floating green" href = "#modal1"><i class="material-icons">mode_edit</i></button>
+									<button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button></td>
+							</tr>
+							<tr>
+								<td>Service One</td>
+								<td>Price One</td>
+								<td>Description One</td>
+								<td>Requirement One</td>
+								<td><button name = "action" class="modal-trigger btn-floating green" href = "#modal1"><i class="material-icons">mode_edit</i></button>
+									<button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button></td>
+							</tr>
+							<tr>
+								<td>Service One</td>
+								<td>Price One</td>
+								<td>Description One</td>
+								<td>Requirement One</td>
+								<td><button name = "action" class="modal-trigger btn-floating green" href = "#modal1"><i class="material-icons">mode_edit</i></button>
+									<button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button></td>
+							</tr>
+							<tr>
+								<td>Service One</td>
+								<td>Price One</td>
+								<td>Description One</td>
+								<td>Requirement One</td>
+								<td><button name = "action" class="modal-trigger btn-floating green" href = "#modal1"><i class="material-icons">mode_edit</i></button>
+									<button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button></td>
+							</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+			<script src='http://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js'></script>
+			<script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js'></script>
+			<script type="text/javascript" src = "../js/index.js"></script>
+		</div>
     </div>
+	</div>
     
     <script>
 

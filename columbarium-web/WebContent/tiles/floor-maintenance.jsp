@@ -6,12 +6,15 @@
 	<script type="text/javascript" src="<%=request.getContextPath()%>/js/Floor_Record_Form.js"></script>
     <link rel = "stylesheet" href = "<%=request.getContextPath()%>/css/Floor_Record_Form.css"/>
 
+    <link rel="stylesheet" href="../css/style.css">
+    <script type="text/javascript" src = "../js/index.js"></script>
+
     <!-- Section -->
 <div class = "col s12" >
     <div class = "row">
         <div class = "responsive">
 
-        <div class = "col s7">
+        <div class = "col s5">
             <h2 style = "font-size: 30px;">Floor Maintenance</h2>
 
 
@@ -25,7 +28,7 @@
 
                         <div class="row" style = "padding-left: 10px;">
                             <h5 style = "font-family: arial;">Block size per floor:</h5>
-                            <div class="input-field col s6" style = "padding-left: 20px;">
+                            <div class="input-field col s6" style = "padding-left: 10px;">
                                 <input id="floorRow" type="number" class="validate" required = "" aria-required = "true" min = "1" max = "10">
                                 <label for="floorRow" data-error = "1-10 only" data-success = "">Row/s:<span style = "color: red;">*</span></label>
                             </div>
@@ -35,18 +38,13 @@
                             </div>
                         </div>
                         <br>
-                        <!-- Floating Button -->
-                        <div class="fixed-action-btn horizontal" style="position: absolute; margin-right: 560px; margin-bottom: 130px;">
-                            <button onclick="createFloor()" name = "action" type = "submit" class="btn-floating btn-large red"><i class="large material-icons">add</i>
-                            </button>
-                            <ul>
-                                <li><button name = "action" class="modal-trigger btn-floating black" href = "#modal2"><i class="material-icons">delete</i></button></li>
-                                <li><button name = "action" class="modal-trigger btn-floating green darken-1" href = "#modal1"><i class="material-icons">mode_edit</i></button></li>
-                            </ul>
-                        </div>
+
+
+                   <div class = "col s12">
+                       <div class = "row">
 						<div style = "padding-left: 10px;">
-                       <div class = "col s6">
-                             <label>Select Building Name</label>
+                             <div class = "col s6">
+                                    <label>Select Building Name</label>
                                     <select id="selectBuildingCreate" required = "" aria-required = "true">
                                         <option value="" disabled selected>Building Name:</option>
                                         <c:if test="${buildingList != null}">
@@ -55,11 +53,17 @@
                                         	</c:forEach>
                                         </c:if>
                                     </select>
+                            </div>
+                            <div class="input-field col s6">
+                                <input id="floorPrice" type="text" class="validate" required = "" aria-required = "true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
+                                <label for="floorPrice" data-error = "Invalid format.">Floor Price</label>
+                            </div>
                        </div>
                        </div>
+                   </div>
                 </div>
                 <br><br><br><br><br>
-						<i class = "left" style = "margin-bottom: 50px; padding-left: 30px; color: red;">*Required Fields</i>
+						<i class = "left" style = "margin-bottom: 50px; padding-left: 20px; color: red;">*Required Fields</i>
                 </div>
 
             </form>
@@ -74,8 +78,8 @@
                 <form class="modal-content">
 
                         <div class="row">
-                            <h5 style = "padding-left: 50px; font-family: arial;">Block size per floor:</h5>
-                            <div style = "padding-left: 40px;">
+                            <h5 style = "padding-left: 30px; font-family: arial;">Block size per floor:</h5>
+                            <div style = "padding-left: 20px;">
                             	<div class="input-field col s6">
                                 	<input id="rowUpdate" type="number" class="validate" required = "" aria-required = "true" min = "1" max = "10">
                                 	<label for="rowUpdate" data-error = "*1-10 only" data-success = "">Row/s:</label>
@@ -86,18 +90,27 @@
                             	</div>
                             </div>
                         </div>
-						
-						<div style = "padding-left: 40px;">
-                        <div class = "col s6">
-                            <label>Select Building Name</label>
-                            <select>
-                                <option value="" disabled selected>Building Name:</option>
-                                <option selected = "selected" value="1">Building One</option>
-                                <option value="2">Building Two</option>
-                                <option value="3">Building Three</option>
-                            </select>
+
+
+						<div class = "col s12">
+                            <div class = "row">
+						        <div style = "padding-left: 20px;">
+                                    <div class = "col s6">
+                                        <label>Select Building Name</label>
+                                        <select>
+                                            <option value="" disabled selected>Building Name:</option>
+                                            <option selected = "selected" value="1">Building One</option>
+                                            <option value="2">Building Two</option>
+                                            <option value="3">Building Three</option>
+                                        </select>
+                                    </div>
+                                    <div class="input-field col s6">
+                                        <input id="floorPriceUpdate" type="text" class="validate" required = "" aria-required = "true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
+                                        <label for="floorPriceUpdate" data-error = "Invalid format.">Floor Price</label>
+                                    </div>
+						        </div>
+                            </div>
                         </div>
-						</div>
 						
 						 <br><br><br><br><br>
                 <div class="modal-footer">
@@ -115,29 +128,8 @@
                     <h4>Deactivate Floor</h4>
                 </div>
                 <div class="modal-content">
-
-
-                        <div class = "row">
-                        <div class = "col s6">
-                            <label>Select Building Name</label>
-                            <select>
-                                <option value="" disabled selected>Building Name:</option>
-                                <option selected = "selected" value="1">Building One</option>
-                                <option value="2">Building Two</option>
-                                <option value="3">Building Three</option>
-                            </select>
-                        </div>
-                        <div class = "col s6">
-                            <label>Select Floor Number to Deactivate</label>
-                            <select>
-                                <option value="" disabled selected>Floor Number:</option>
-                                <option selected = "selected" value="1">Floor One</option>
-                                <option value="2">Floor Two</option>
-                                <option value="3">Floor Three</option>
-                            </select>
-                        </div>
-                        </div>
-
+                    <p style = "padding-left: 110px; font-size: 20px;">Are you sure you want to deactivate this floor?</p>
+                    <br>
                 </div>
                 <div class="modal-footer">
                     <button name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
@@ -145,61 +137,120 @@
                 </div>
             </div>
 
-        <!-- Data Grid -->
-        <div class = "col s5">
-            <div class = "col s4 z-depth-2" style = "margin-bottom: 20px;margin-top: 20px; width: 100%; height: 70px;">
-             <div class = "responsive">
-
-                <nav style = "height: 50px; margin-top: 10px; background-color: #00897b">
-                    <div class="nav-wrapper">
-                        <div>
-                            <div class="input-field"  style = "height: 50px;">
-                                <input id="search" type="search">
-                                <label for="search"><i class="material-icons">search</i></label>
-                                <i class="material-icons">close</i>
+            <!-- Data Grid -->
+            <div class = "col s7">
+                <div class="row">
+                    <div id="admin" class="col s12" style="margin-top: 20px">
+                        <div class="z-depth-2 card material-table">
+                            <div class="table-header" style="background-color: #00897b;">
+                                <h4 style = "font-size: 30px; color: white; padding-left: 0px;">Building Data Grid</h4>
+                                <div class="actions">
+                                    <a href="#" class="search-toggle waves-effect btn-flat nopadding"><i class="material-icons" style="color: #ffffff;">search</i></a>
+                                </div>
                             </div>
+                            <table id="datatable">
+                                <thead>
+                                <tr>
+                                    <th>Building Name</th>
+                                    <th>Number of Floors</th>
+                                    <th>Action</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>Building One</td>
+                                    <td>5</td>
+                                    <td><button name = "action" class="modal-trigger btn-floating green" href = "#modal1"><i class="material-icons">mode_edit</i></button>
+                                        <button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button></td>
+                                </tr>
+                                <tr>
+                                    <td>Building Two</td>
+                                    <td>3</td>
+                                    <td><button name = "action" class="modal-trigger btn-floating green" href = "#modal1"><i class="material-icons">mode_edit</i></button>
+                                        <button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button></td>
+                                </tr>
+                                <tr>
+                                    <td>Building Three</td>
+                                    <td>6</td>
+                                    <td><button name = "action" class="modal-trigger btn-floating green" href = "#modal1"><i class="material-icons">mode_edit</i></button>
+                                        <button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button></td>
+                                </tr>
+                                <tr>
+                                    <td>Building Four</td>
+                                    <td>2</td>
+                                    <td><button name = "action" class="modal-trigger btn-floating green" href = "#modal1"><i class="material-icons">mode_edit</i></button>
+                                        <button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button></td>
+                                </tr>
+                                <tr>
+                                    <td>Building Five</td>
+                                    <td>8</td>
+                                    <td><button name = "action" class="modal-trigger btn-floating green" href = "#modal1"><i class="material-icons">mode_edit</i></button>
+                                        <button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button></td>
+                                </tr>
+                                <tr>
+                                    <td>Building Six</td>
+                                    <td>4</td>
+                                    <td><button name = "action" class="modal-trigger btn-floating green" href = "#modal1"><i class="material-icons">mode_edit</i></button>
+                                        <button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button></td>
+                                </tr>
+                                <tr>
+                                    <td>Building Seven</td>
+                                    <td>7</td>
+                                    <td><button name = "action" class="modal-trigger btn-floating green" href = "#modal1"><i class="material-icons">mode_edit</i></button>
+                                        <button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button></td>
+                                </tr>
+                                <tr>
+                                    <td>Building Eight</td>
+                                    <td>2</td>
+                                    <td><button name = "action" class="modal-trigger btn-floating green" href = "#modal1"><i class="material-icons">mode_edit</i></button>
+                                        <button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button></td>
+                                </tr>
+                                <tr>
+                                    <td>Building Nine</td>
+                                    <td>5</td>
+                                    <td><button name = "action" class="modal-trigger btn-floating green" href = "#modal1"><i class="material-icons">mode_edit</i></button>
+                                        <button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button></td>
+                                </tr>
+                                <tr>
+                                    <td>Building Ten</td>
+                                    <td>7</td>
+                                    <td><button name = "action" class="modal-trigger btn-floating green" href = "#modal1"><i class="material-icons">mode_edit</i></button>
+                                        <button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button></td>
+                                </tr>
+                                <tr>
+                                    <td>Building Eleven</td>
+                                    <td>3</td>
+                                    <td><button name = "action" class="modal-trigger btn-floating green" href = "#modal1"><i class="material-icons">mode_edit</i></button>
+                                        <button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button></td>
+                                </tr>
+                                <tr>
+                                    <td>Building Twelve</td>
+                                    <td>5</td>
+                                    <td><button name = "action" class="modal-trigger btn-floating green" href = "#modal1"><i class="material-icons">mode_edit</i></button>
+                                        <button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button></td>
+                                </tr>
+                                <tr>
+                                    <td>Building Thirteen</td>
+                                    <td>2</td>
+                                    <td><button name = "action" class="modal-trigger btn-floating green" href = "#modal1"><i class="material-icons">mode_edit</i></button>
+                                        <button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button></td>
+                                </tr>
+                                <tr>
+                                    <td>Building Fourteen</td>
+                                    <td>6</td>
+                                    <td><button name = "action" class="modal-trigger btn-floating green" href = "#modal1"><i class="material-icons">mode_edit</i></button>
+                                        <button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button></td>
+                                </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
-                </nav>
-             </div>
+                </div>
+                <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+                <script src='http://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js'></script>
+                <script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js'></script>
+                <script type="text/javascript" src = "../js/index.js"></script>
             </div>
-
-            <div class = "aside z-depth-2" style = " width: 100%; height: 340px; overflow: auto;">
-                <table id="tableBuilding" class = "responsive" style = "width: 100%;">
-
-
-                    <thead>
-                    <tr>
-                        <th data-field="id">Building Type</th>
-                        <th data-field="id">Building Name</th>
-                        <th data-field="name">Building Location</th>
-                        <th data-field="name">No. of Floors</th>
-                    </tr>
-                    </thead>
-
-                    <tbody>
-                    	<c:if test="${buildingList == null }">
-                    		<tr><td>No building available.</td></tr>
-                    	</c:if>
-                    	<c:if test="${buildingList != null }">
-                    		<c:forEach items="${buildingList }" var="building">
-                    			<tr>
-			                        <td>${building.strBuildingType }</td>
-			                        <td>${building.strBuildingName }</td>
-			                        <td>${building.strBuildingLocation }</td>
-			                        <c:if test="${building.floorList == null }">
-			                        	<td>0</td>
-			                        </c:if>
-			                        <c:if test="${building.floorList != null }">
-			                        	<td>${fn:length(building.floorList)}</td>
-			                        </c:if>
-			                    </tr>
-                    		</c:forEach>
-                    	</c:if>
-                    </tbody>
-                    </table>
-            </div>
-        </div>
 </div>
 </div>
 </div>
