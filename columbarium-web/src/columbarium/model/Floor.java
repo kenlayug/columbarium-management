@@ -3,6 +3,7 @@ package columbarium.model;
 import org.apache.struts2.ServletActionContext;
 
 import columbarium.service.BuildingService;
+import columbarium.service.FloorService;
 
 public class Floor {
 
@@ -13,7 +14,14 @@ public class Floor {
 	private int intLevelNo;
 	private int intColumnNo;
 	private int currentLevel;
+	private FloorType floorType;
 	
+	public void setFloorType(FloorType floorType){
+		this.floorType = floorType;
+	}
+	public FloorType getFloorType(){
+		return this.floorType;
+	}
 	public void setCurrentLevel(int currentLevel){
 		this.currentLevel = currentLevel;
 	}
@@ -42,6 +50,10 @@ public class Floor {
 		this.intFloorNo = intFloorNo;
 		this.intLevelNo = intLevelNo;
 		this.intColumnNo = intColumnNo;
+	}
+	public Floor(int buildingId, int intFloorNo){
+		this.buildingId = buildingId;
+		this.intFloorNo = intFloorNo;
 	}
 	@Override
 	public int hashCode() {
@@ -98,12 +110,10 @@ public class Floor {
 		this.intFloorNo = intFloorNo;
 	}
 	
-	public String create(){
-		
-		BuildingService buildingService = (BuildingService)ServletActionContext.getServletContext()
-				.getAttribute("buildingService");
-		return buildingService.createFloor(this);
-		
+	public String configure(){
+		FloorService floorService = (FloorService)ServletActionContext.getServletContext()
+				.getAttribute("floorService");
+		return floorService.configureFloor(this);
 	}
 	
 }

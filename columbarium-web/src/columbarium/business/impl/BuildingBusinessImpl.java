@@ -3,7 +3,6 @@ package columbarium.business.impl;
 import columbarium.business.BuildingBusiness;
 import columbarium.dao.BuildingRepository;
 import columbarium.model.Building;
-import columbarium.model.Floor;
 
 public class BuildingBusinessImpl implements BuildingBusiness{
 
@@ -24,23 +23,53 @@ public class BuildingBusinessImpl implements BuildingBusiness{
 				building.getStrBuildingLocation() == null){
 			return "input";
 		}
+		if (building.getStrBuildingName().equals(" ")){
+			return "input";
+		}
+		if (building.getStrBuildingLocation().equals(" ")){
+			return "input";
+		}
 		return buildingRepository.createBuilding(building);
 	}
 
 	@Override
-	public String createFloor(Floor floor) {
+	public Building getBuilding(String strBuildingName) {
 
-		if (floor.getIntColumnNo() == 0){
+		if (strBuildingName == null || strBuildingName.length() == 0){
+			return null;
+		}
+		if (strBuildingName.equals(" ")){
+			return null;
+		}
+		Building building = new Building(strBuildingName);
+		return buildingRepository.getBuilding(building);
+	}
+
+	@Override
+	public String updateBuilding(Building building) {
+
+		if (building.getStrBuildingName() == null ||
+				building.getStrBuildingName().length() == 0 ||
+				building.getStrBuildingName().equals(" ")){
 			return "input";
 		}
-		if (floor.getIntLevelNo() == 0){
+		if (building.getStrBuildingLocation() == null ||
+				building.getStrBuildingLocation().length() == 0 ||
+				building.getStrBuildingLocation().equals(" ")){
 			return "input";
 		}
-		if (floor.getBuildingId() == 0){
-			return "input";
-		}
-		return buildingRepository.createFloor(floor);
+		return buildingRepository.updateBuilding(building);
+	}
+
+	@Override
+	public String deactivateBuilding(String strBuildingName) {
 		
+		if (strBuildingName == null || strBuildingName.length() == 0 ||
+				strBuildingName.equals(" ")){
+			return "input";
+		}
+		Building building = new Building(strBuildingName);
+		return buildingRepository.deactivateBuilding(building);
 	}
 
 }

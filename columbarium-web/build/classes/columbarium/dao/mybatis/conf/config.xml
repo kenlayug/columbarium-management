@@ -18,6 +18,8 @@
 		<typeAlias type="columbarium.model.Building" alias="Building"/>
 		<typeAlias type="columbarium.model.Floor" alias="Floor"/>
 		<typeAlias type="columbarium.model.Requirement" alias="Requirement"/>
+		<typeAlias type="columbarium.model.FloorType" alias="FloorType"/>
+		<typeAlias type="columbarium.model.UnitCategory" alias="UnitCategory"/>
 	
 	</typeAliases>
 	

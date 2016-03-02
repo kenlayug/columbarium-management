@@ -3,27 +3,28 @@ package columbarium.actions.floor;
 import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionSupport;
 
-import columbarium.model.Floor;
+import columbarium.model.FloorType;
 
-public class CreateFloorAction extends ActionSupport implements Action{
+public class CreateFloorTypeAction extends ActionSupport implements Action{
 
 	private static final long serialVersionUID = 1L;
-	private Floor floor;
+	private FloorType floorType;
 	private String strStatus;
-	
+
 	public String getStatus(){
 		return strStatus;
 	}
-	public Floor getFloor() {
-		return floor;
+	public FloorType getFloorType() {
+		return floorType;
 	}
-	public void setFloor(Floor floor) {
-		this.floor = floor;
+
+	public void setFloorType(FloorType floorType) {
+		this.floorType = floorType;
 	}
 	
 	public String execute(){
 		
-		System.out.println(strStatus);
+		strStatus = getFloorType().create();
 		return "success";
 		
 	}

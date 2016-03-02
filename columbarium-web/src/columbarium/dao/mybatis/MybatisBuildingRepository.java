@@ -6,8 +6,6 @@ import org.apache.ibatis.session.SqlSession;
 
 import columbarium.dao.BuildingRepository;
 import columbarium.dao.mybatis.mappers.BuildingMapper;
-import columbarium.dao.mybatis.mappers.FloorMapper;
-import columbarium.model.Block;
 import columbarium.model.Building;
 import columbarium.model.Floor;
 
@@ -25,69 +23,17 @@ public class MybatisBuildingRepository extends MybatisClient implements Building
 		try{
 			
 			BuildingMapper buildingMapper = sqlSession.getMapper(BuildingMapper.class);
+			System.out.println(buildingMapper.checkIfExistingBuilding(building));
+			
 			if (buildingMapper.checkIfExistingBuilding(building) > 0){
 				return "failed-existing";
 			}
 			buildingMapper.createBuilding(building);
-			sqlSession.commit();
-			return "success";
-			
-		}catch(Exception e){
-			e.printStackTrace();
-			sqlSession.rollback();
-		}finally{
-			sqlSession.close();
-		}
-		return "failed-database";
-	}
-
-	@Override
-	public String createFloor(Floor floor) {
-		// TODO Auto-generated method stub
-		SqlSession sqlSession = getSqlSessionFactory().openSession();
-		try{
-			
-			BuildingMapper buildingMapper = sqlSession.getMapper(BuildingMapper.class);
-			FloorMapper floorMapper = sqlSession.getMapper(FloorMapper.class);
-			Building building = new Building();
-			building.setBuildingId(floor.getBuildingId());
-			if (floorMapper.selectAllFloorsOfBuilding(building) == null){
-				floor.setIntFloorNo(1);
-			}else{
-				floor.setIntFloorNo(floorMapper.selectAllFloorsOfBuilding(building).size()+1);
+			building = buildingMapper.getBuilding(building);
+			for (int intCtr = 0; intCtr < building.getIntNoOfFloors(); intCtr++){
+				Floor floor = new Floor(building.getBuildingId(), intCtr+1);
+				buildingMapper.createFloor(floor);
 			}
-			buildingMapper.createFloor(floor);
-			floor = buildingMapper.selectLastFloorCreated();
-			for (int intCtr = 0; intCtr < floor.getIntLevelNo(); intCtr++){
-				floor.setCurrentLevel(intCtr+1);
-				buildingMapper.createUnitCategory(floor);
-			}
-			sqlSession.commit();
-			return "success";
-			
-		}catch(Exception e){
-			e.printStackTrace();
-			sqlSession.rollback();
-		}finally{
-			sqlSession.close();
-		}
-		return "failed-database";
-	}
-
-	@Override
-	public String createBlock(Block block) {
-		// TODO Auto-generated method stub
-		SqlSession sqlSession = getSqlSessionFactory().openSession();
-		try{
-			
-			BuildingMapper buildingMapper = sqlSession.getMapper(BuildingMapper.class);
-			if (buildingMapper.checkIfExistingBlock(block) > 0){
-				return "failed-existing";
-			}
-			buildingMapper.createBlock(block);
-			Floor floor = new Floor();
-			floor.setFloorId(block.getFloorId());
-			floor = buildingMapper.selectFloorById(floor);
 			sqlSession.commit();
 			return "success";
 			
@@ -107,12 +53,8 @@ public class MybatisBuildingRepository extends MybatisClient implements Building
 		try{
 			
 			BuildingMapper buildingMapper = sqlSession.getMapper(BuildingMapper.class);
-			FloorMapper floorMapper = sqlSession.getMapper(FloorMapper.class);
 			if (buildingMapper.countAllBuilding() > 0){
 				List<Building>buildingList = buildingMapper.getAllBuilding();
-				for (Building building : buildingList) {
-					building.setFloorList(floorMapper.selectAllFloorsOfBuilding(building));
-				}
 				return buildingList;
 			}
 			
@@ -122,6 +64,71 @@ public class MybatisBuildingRepository extends MybatisClient implements Building
 			sqlSession.close();
 		}
 		return null;
+	}
+
+	@Override
+	public Building getBuilding(Building building) {
+
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		try{
+			
+			BuildingMapper buildingMapper = sqlSession.getMapper(BuildingMapper.class);
+			if (buildingMapper.checkIfExistingBuilding(building) != 0){
+				return buildingMapper.getBuilding(building);
+			}
+			
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			sqlSession.close();
+		}
+		return null;
+	}
+
+	@Override
+	public String updateBuilding(Building building) {
+		
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		try{
+			
+			BuildingMapper buildingMapper = sqlSession.getMapper(BuildingMapper.class);
+			if (buildingMapper.checkIfExistingBuilding(building) > 0){
+				buildingMapper.updateBuilding(building);
+				sqlSession.commit();
+				return "success";
+			}
+			return "failed-does-not-exist";
+			
+		}catch(Exception e){
+			e.printStackTrace();
+			sqlSession.rollback();
+		}finally{
+			sqlSession.close();
+		}
+		return "failed-database";
+	}
+
+	@Override
+	public String deactivateBuilding(Building building) {
+		
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		try{
+			
+			BuildingMapper buildingMapper = sqlSession.getMapper(BuildingMapper.class);
+			if (buildingMapper.checkIfExistingBuilding(building) > 0){
+				buildingMapper.deactivateBuilding(building);
+				sqlSession.commit();
+				return "success";
+			}
+			return "failed-does-not-exist";
+			
+		}catch(Exception e){
+			e.printStackTrace();
+			sqlSession.rollback();
+		}finally{
+			sqlSession.close();
+		}
+		return "failed-database";
 	}
 	
 	

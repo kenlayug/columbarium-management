@@ -20,6 +20,18 @@
       		<result name="success" type="json"></result>
       	</action>
       	
+      	<action name="getBuilding" class="columbarium.actions.building.GetBuildingAction">
+      		<result name="success" type="json"></result>
+      	</action>
+      	
+      	<action name="update" class="columbarium.actions.building.UpdateBuildingAction">
+      		<result name="success" type="json"></result>
+      	</action>
+      	
+      	<action name="deactivate" class="columbarium.actions.building.DeactivateBuildingAction">
+      		<result name="success" type="json"></result>
+      	</action>
+      	
       	<action name="getAllBuilding" class="columbarium.actions.building.GetAllBuildingAction">
       		<result name="success" type="json"></result>
       	</action>
