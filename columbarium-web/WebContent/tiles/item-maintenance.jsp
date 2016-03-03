@@ -7,7 +7,6 @@
 	    <link rel = "stylesheet" href = "<%=request.getContextPath()%>/css/Inventory_Form.css"/>
 
 		<link rel="stylesheet" href="../css/style.css">
-		<script type="text/javascript" src = "../js/index.js"></script>
 
 	<!-- Section -->
 	<div class = "responsive col s12">
@@ -54,23 +53,23 @@
 	        </div>
 	
 	        <!-- Modal Update -->
-	        <form id="modalUpdateItem" class="modal" style = "width: 700px;">
+	        <div id="modalUpdateItem" class="modal" style = "width: 700px;">
 	            <div class = "modal-header">
 	                <h4>Update Item</h4>
 	            </div>
-	
+					<form id="formUpdate">
 		                <div class = "col s12">
 		                    <div class = "row">
 		                        <div style = "padding-left: 10px;">
 		                            <div class="input-field col s6">
-		                                <input id="itemNameUpdate" type="text" class="validate" name="item.strItemName" required = ""  pattern = "[A-Za-z0-9\s]{1,29}">
-		                                <label for="itemNameUpdate" data-error = "Invalid format." data-success = "">New Item Name<span style = "color: red;">*</span></label>
+		                                <input value=" " id="itemNameUpdate" type="text" class="validate" name="item.strItemName" required = ""  pattern = "[A-Za-z0-9\s]{1,29}">
+		                                <label class="active" for="itemNameUpdate" data-error = "Invalid format." data-success = "">New Item Name<span style = "color: red;">*</span></label>
 		                            </div>
 		                        </div>
 		                        <div style = "padding-left: 10px;">
 		                            <div class="input-field col s6">
-		                                <input id="itemPriceUpdate" type="text" class="validate" name="item.dblPrice" required = "" aria-required = "true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
-		                                <label for="itemPriceUpdate" data-error = "Invalid format." data-success = "">New Item Price<span style = "color: red;">*</span></label>
+		                                <input value="0" id="itemPriceUpdate" type="text" class="validate" name="item.dblPrice" required = "" aria-required = "true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
+		                                <label class="active" for="itemPriceUpdate" data-error = "Invalid format." data-success = "">New Item Price<span style = "color: red;">*</span></label>
 		                            </div>
 		                        </div>
 		                    </div>
@@ -78,8 +77,8 @@
 	
 	                    <div style = "padding-left: 20px;">
 	                        <div class="input-field col s12">
-	                            <input id="itemDescUpdate" type="text" class="validate" name="item.strItemDesc">
-	                            <label for="itemDescUpdate" data-error = "Invalid format." data-success = "">New Item Description</label>
+	                            <input value=" " id="itemDescUpdate" type="text" class="validate" name="item.strItemDesc">
+	                            <label class="active" for="itemDescUpdate" data-error = "Invalid format." data-success = "">New Item Description</label>
 	                        </div>
 	                    </div>
 
@@ -87,12 +86,12 @@
 				<br>
 
 					<div class="modal-footer">
-							<button onclick="updateItem()" type="submit" name="action" class="btn red" style = "margin-top: 30px; margin-left: 10px; ">Confirm</button>
-							<button class="btn red modal-close" style = "margin-top: 30px">Cancel</button>
+							<button onclick="updateItem()" type="submit" name="action" class="btn red" style = "margin-top: 30px; margin-left: 10px; ">Confirm</button>	
+				</form>
+							<button class="btn red modal-close" style = "margin-top: 30px" onclick="$('modalUpdateItem').closeModal()">Cancel</button>
 					</div>
 
-
-	        </form>
+	        </div>
 
 
 			<!-- Modal Deactivate -->
@@ -130,113 +129,29 @@
 								</tr>
 								</thead>
 								<tbody>
-								<tr>
-									<td>Item One</td>
-									<td>Price One</td>
-									<td>Description One</td>
-									<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateItem"><i class="material-icons">mode_edit</i></button>
-										<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateItem"><i class="material-icons">delete</i></button></td>
-								</tr>
-								<tr>
-									<td>Item Two</td>
-									<td>Price Two</td>
-									<td>Description Two</td>
-									<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateItem"><i class="material-icons">mode_edit</i></button>
-										<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateItem"><i class="material-icons">delete</i></button></td>
-								</tr>
-								<tr>
-									<td>Item Three</td>
-									<td>Price Three</td>
-									<td>Description Three</td>
-									<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateItem"><i class="material-icons">mode_edit</i></button>
-										<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateItem"><i class="material-icons">delete</i></button></td>
-								</tr>
-								<tr>
-									<td>Item Four</td>
-									<td>Price Four</td>
-									<td>Description Four</td>
-									<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateItem"><i class="material-icons">mode_edit</i></button>
-										<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateItem"><i class="material-icons">delete</i></button></td>
-								</tr>
-								<tr>
-									<td>Item Five</td>
-									<td>Price Five</td>
-									<td>Description Five</td>
-									<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateItem"><i class="material-icons">mode_edit</i></button>
-										<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateItem"><i class="material-icons">delete</i></button></td>
-								</tr>
-								<tr>
-									<td>Item Six</td>
-									<td>Price Six</td>
-									<td>Description Six</td>
-									<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateItem"><i class="material-icons">mode_edit</i></button>
-										<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateItem"><i class="material-icons">delete</i></button></td>
-								</tr>
-								<tr>
-									<td>Item Seven</td>
-									<td>Price Seven</td>
-									<td>Description Seven</td>
-									<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateItem"><i class="material-icons">mode_edit</i></button>
-										<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateItem"><i class="material-icons">delete</i></button></td>
-								</tr>
-								<tr>
-									<td>Item Eight</td>
-									<td>Price Eight</td>
-									<td>Description Eight</td>
-									<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateItem"><i class="material-icons">mode_edit</i></button>
-										<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateItem"><i class="material-icons">delete</i></button></td>
-								</tr>
-								<tr>
-									<td>Item Nine</td>
-									<td>Price Nine</td>
-									<td>Description Nine</td>
-									<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateItem"><i class="material-icons">mode_edit</i></button>
-										<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateItem"><i class="material-icons">delete</i></button></td>
-								</tr>
-								<tr>
-									<td>Item Ten</td>
-									<td>Price Ten</td>
-									<td>Description Ten</td>
-									<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateItem"><i class="material-icons">mode_edit</i></button>
-										<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateItem"><i class="material-icons">delete</i></button></td>
-								</tr>
-								<tr>
-									<td>Item Eleven</td>
-									<td>Price Eleven</td>
-									<td>Description Eleven</td>
-									<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateItem"><i class="material-icons">mode_edit</i></button>
-										<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateItem"><i class="material-icons">delete</i></button></td>
-								</tr>
-								<tr>
-									<td>Item Twelve</td>
-									<td>Price Twelve</td>
-									<td>Description Twelve</td>
-									<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateItem"><i class="material-icons">mode_edit</i></button>
-										<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateItem"><i class="material-icons">delete</i></button></td>
-								</tr>
-								<tr>
-									<td>Item Thirteen</td>
-									<td>Price Thirteen</td>
-									<td>Description Thirteen</td>
-									<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateItem"><i class="material-icons">mode_edit</i></button>
-										<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateItem"><i class="material-icons">delete</i></button></td>
-								</tr>
-								<tr>
-									<td>Item Fourteen</td>
-									<td>Price Fourteen</td>
-									<td>Description Fourteen</td>
-									<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateItem"><i class="material-icons">mode_edit</i></button>
-										<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateItem"><i class="material-icons">delete</i></button></td>
-								</tr>
+								
+									<c:if test="${itemList == null }">
+										<tr><td>No available items.</td></tr>
+									</c:if>
+									
+									<c:if test="${itemList != null }">
+										<c:forEach items="${itemList }" var="item">
+											<tr>
+												<td>${item.strItemName }</td>
+												<td>P ${item.dblPrice }</td>
+												<td>${item.strItemDesc }</td>
+												<td><button name = "action" class="modal-trigger btn-floating green" onclick="openUpdate('${item.strItemName}')"><i class="material-icons">mode_edit</i></button>
+													<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateItem"><i class="material-icons">delete</i></button></td>
+											</tr>
+										</c:forEach>
+									</c:if>
+								
 								</tbody>
 							</table>
 						</div>
 					</div>
 				</div>
 
-				<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-				<script src='http://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js'></script>
-				<script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js'></script>
 				<script type="text/javascript" src = "../js/index.js"></script>
 			</div>
 	
@@ -251,29 +166,12 @@
 					dismissible: false
 				}
 		);
-
-
-	function saveButton()
-	{
-		        var errormessage = "";
-
-				if (document.getElementById('itemName').value == "" || false){
-                    return false;
-                    }
-                if (document.getElementById('itemPrice').value == "" || false){
-                    return false;
-                    }
-		        else
-		            {
-			        var $toastContent = $('<span>Record Save!</span>');
-			        Materialize.toast($toastContent, 5000);
-		            }
-	}
-
-
-<form onsubmit="return validate(this);">
 			
 		$("#formCreate").submit(function(e){
+		    return false;
+		});
+		
+		$("#formUpdate").submit(function(e){
 		    return false;
 		});
 	
@@ -430,19 +328,18 @@
 			
 		}
 		
-		function placeValue(){
-			
-			var itemSelected = document.getElementById("selectItemUpdate").value;
-			
+		function openUpdate(itemName){
+			alert(itemName);
 			$.ajax({
 				type: "POST",
 				url: "getItemInfo",
 				data:{
-					"strItemName" : itemSelected
+					"strItemName" : itemName
 				},
 				dataType: "json",
 				async: true,
 				success: function(data){
+					$('#modalUpdateItem').openModal();
 					$("#itemNameUpdate").val(data.item.strItemName);
 	        		$("#itemPriceUpdate").val(data.item.dblPrice);
 	        		$("#itemDescUpdate").val(data.item.strItemDesc);
