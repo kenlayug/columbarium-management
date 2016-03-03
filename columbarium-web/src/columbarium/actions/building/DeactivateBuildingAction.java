@@ -5,7 +5,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 import columbarium.model.Building;
 
-public class DeactivateBuilding extends ActionSupport implements Action{
+public class DeactivateBuildingAction extends ActionSupport implements Action{
 
 	private static final long serialVersionUID = 1L;
 	private String strBuildingName;
