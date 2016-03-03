@@ -4,19 +4,21 @@ import java.util.List;
 
 import org.apache.struts2.ServletActionContext;
 
+import columbarium.service.BlockService;
 import columbarium.service.FloorService;
 
 public class Floor {
 
 	
-	private int buildingId;
-	private int floorId;
-	private int intFloorNo;
-	private int intLevelNo;
-	private int intColumnNo;
-	private int currentLevel;
-	private List<UnitCategory> unitCategoryList;
-	private FloorType floorType;
+	private int									buildingId;
+	private int									floorId;
+	private int									intFloorNo;
+	private int									intLevelNo;
+	private int									intColumnNo;
+	private int									currentLevel;
+	private List<UnitCategory>					unitCategoryList;
+	private List<Block>							blockList;
+	private FloorType							floorType;
 	
 	public void setFloorType(FloorType floorType){
 		this.floorType = floorType;
@@ -118,6 +120,12 @@ public class Floor {
 		this.intFloorNo = intFloorNo;
 	}
 	
+	public List<Block> getBlockList() {
+		return blockList;
+	}
+	public void setBlockList(List<Block> blockList) {
+		this.blockList = blockList;
+	}
 	public String configure(){
 		FloorService floorService = (FloorService)ServletActionContext.getServletContext()
 				.getAttribute("floorService");
@@ -128,6 +136,12 @@ public class Floor {
 		FloorService floorService = (FloorService)ServletActionContext.getServletContext()
 				.getAttribute("floorService");
 		setUnitCategoryList(floorService.getAllUnitCategoryFromFloor(this));
+	}
+	
+	public void getAllBlocks(){
+		BlockService blockService = (BlockService)ServletActionContext.getServletContext()
+				.getAttribute("blockService");
+		setBlockList(blockService.getAllBlockFromFloor(this));
 	}
 	
 	public String configureUnitPrice(){

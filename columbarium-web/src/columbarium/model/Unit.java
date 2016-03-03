@@ -3,13 +3,29 @@ package columbarium.model;
 public class Unit {
 	
 	private int unitId;
-	private int blockId;
+	private int blockId;//
 	private double dblPrice;
 	private String strUnitType;
 	private int intColumnNo;
 	private int intLevelNo;
 	private int floorId;
 	private int buildingId;
+	private int intStatus;
+	
+	public void setIntStatus(int intStatus){
+		this.intStatus = intStatus;
+	}
+	public String getStatus(){
+		
+		switch(intStatus){
+		case 1: return "Active";
+		case 2: return "Inactive";
+		case 3: return "Reserved";
+		case 4: return "Owned";
+		}
+		return null;
+		
+	}
 	public int getFloorId() {
 		return floorId;
 	}
@@ -55,12 +71,8 @@ public class Unit {
 	public String getStrUnitType() {
 		return strUnitType;
 	}
-	public void setStrUnitType(int intUnitType) {
-		if (intUnitType == 1){
-			this.strUnitType = "Columbarium Vaults";
-		}else{
-			this.strUnitType = "Full Body Crypts";
-		}
+	public void setStrUnitType(String strUnitType) {
+		this.strUnitType = strUnitType;
 	}
 
 }

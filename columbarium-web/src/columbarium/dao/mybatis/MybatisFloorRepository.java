@@ -118,7 +118,9 @@ public class MybatisFloorRepository extends MybatisClient implements FloorReposi
 			floor = floorMapper.getFloor(floor);
 			List<UnitCategory>unitCategoryList = floorMapper.getAllUnitCategoryFromFloor(floor);
 			for (UnitCategory unitCategory : unitCategoryList) {
-				unitCategory.setDblPrice(floorMapper.getUnitCategoryPrice(unitCategory));
+				if (floorMapper.getUnitCategoryPrice(unitCategory) != null){
+					unitCategory.setDblPrice(floorMapper.getUnitCategoryPrice(unitCategory));
+				}
 			}
 			return unitCategoryList;
 			
@@ -139,7 +141,9 @@ public class MybatisFloorRepository extends MybatisClient implements FloorReposi
 			FloorMapper floorMapper = sqlSession.getMapper(FloorMapper.class);
 			for (UnitCategory unitCategory : unitCategoryList) {
 				UnitCategory unitCategoryOrig = floorMapper.getUnitCategory(unitCategory);
-				unitCategoryOrig.setDblPrice(floorMapper.getUnitCategoryPrice(unitCategoryOrig));
+				if (floorMapper.getUnitCategoryPrice(unitCategoryOrig) != null){
+					unitCategoryOrig.setDblPrice(floorMapper.getUnitCategoryPrice(unitCategoryOrig));
+				}
 				if (unitCategoryOrig.getDblPrice() != unitCategory.getDblPrice()){
 					floorMapper.configureUnitCategoryPrice(unitCategory);
 				}

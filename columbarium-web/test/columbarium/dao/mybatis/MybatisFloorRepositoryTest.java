@@ -23,11 +23,11 @@ public class MybatisFloorRepositoryTest extends TestCase{
 		
 		MybatisFloorRepository floorRepository = new MybatisFloorRepository(connectionManager);
 		
-		Floor floor = new Floor(3, 2);
+		Floor floor = new Floor(1, 2);
 		FloorType floorType = new FloorType();
 		floorType.setStrFloorDesc("Columbary Vaults");
-//		floorType.setBoolIsUnit(true);
-//		floorRepository.createFloorType(floorType);
+		floorType.setBoolIsUnit(true);
+		floorRepository.createFloorType(floorType);
 		
 		floor.setFloorType(floorType);
 		floor.setIntColumnNo(5);
@@ -45,7 +45,7 @@ public class MybatisFloorRepositoryTest extends TestCase{
 		
 		MybatisFloorRepository floorRepository = new MybatisFloorRepository(connectionManager);
 		
-		Floor floor = new Floor(3,2);
+		Floor floor = new Floor(1,2);
 		
 		for (UnitCategory unitCategory : floorRepository.getAllUnitCategoryFromFloor(floor)) {
 			System.out.println(unitCategory);
@@ -62,7 +62,7 @@ public class MybatisFloorRepositoryTest extends TestCase{
 		
 		MybatisFloorRepository floorRepository = new MybatisFloorRepository(connectionManager);
 		
-		Floor floor = new Floor(3,2);
+		Floor floor = new Floor(1,2);
 		floor.setUnitCategoryList(floorRepository.getAllUnitCategoryFromFloor(floor));
 		for (UnitCategory unitCategory : floor.getUnitCategoryList()) {
 			System.out.print("Price: ");
@@ -77,9 +77,9 @@ public class MybatisFloorRepositoryTest extends TestCase{
 		
 		TestSuite suite = new TestSuite();
 		
-		suite.addTest(new MybatisFloorRepositoryTest("testConfigureFloor"));
+//		suite.addTest(new MybatisFloorRepositoryTest("testConfigureFloor"));
 		suite.addTest(new MybatisFloorRepositoryTest("testGetAllUnitCategoryFromFloor"));
-//		suite.addTest(new MybatisFloorRepositoryTest("testConfigureUnitCategoryPrice"));
+		suite.addTest(new MybatisFloorRepositoryTest("testConfigureUnitCategoryPrice"));
 		
 		return suite;
 		

@@ -110,9 +110,9 @@ public class MybatisBuildingRepositoryTest extends TestCase{
 		
 		TestSuite suite = new TestSuite();
 		
-//		suite.addTest(new MybatisBuildingRepositoryTest("testCreateBuilding"));
+		suite.addTest(new MybatisBuildingRepositoryTest("testCreateBuilding"));
 		suite.addTest(new MybatisBuildingRepositoryTest("testGetAllBuilding"));
-//		suite.addTest(new MybatisBuildingRepositoryTest("testGetBuilding"));
+		suite.addTest(new MybatisBuildingRepositoryTest("testGetBuilding"));
 //		suite.addTest(new MybatisBuildingRepositoryTest("testUpdateBuilding"));
 //		suite.addTest(new MybatisBuildingRepositoryTest("testDeactivateBuilding"));
 		

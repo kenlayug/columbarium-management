@@ -17,6 +17,7 @@
 			<result property="intFloorNo" column="intFloorNo"/>
 			<result property="intLevelNo" column="intLevelNo"/>
 			<result property="intColumnNo" column="intColumnNo"/>
+			<association property="floorType" resultMap="FloorTypeResultMap"/>
 		</resultMap>
 		
 		<resultMap type="UnitCategory" id="UnitCategoryResultMap">
@@ -69,9 +70,17 @@
 		</select>
 		
 		<select id="getFloor" resultMap="FloorResultMap">
-			SELECT * FROM tblFloor
-			WHERE bldgIdFK = #{buildingId}
-				AND intFloorNo = #{intFloorNo}
+			SELECT f.*, ft.* FROM tblFloor f
+				INNER JOIN tblFloorType ft ON f.floorTypeIdFK = ft.floorTypeId
+			<where>
+				<if test="floorId == 0">
+					f.bldgIdFK = #{buildingId}
+						AND f.intFloorNo = #{intFloorNo}
+				</if>
+				<if test="floorId != 0">
+					f.floorId = #{floorId}
+				</if>
+			</where>
 			LIMIT 1
 		</select>
 		
