@@ -20,37 +20,28 @@
 	                    <div class = "header">
 	                        <h4 style = "font-size: 30px; margin-top: 0px; padding-top: 10px;">Building Form</h4>
 	                    </div>
-	
-	                    <!-- Radio Button -->
-	                    <div id = "align"  style = "padding-left: 20px;">
-							<label for = "align" style = "padding-left: 5px; font-size: 13px;">Building Type</label>
-	                            <p>
-	                                <input name="unitType" type="radio" id="columbaryVault" value = "Columbary Vault" checked = "checked"/>
-	                                <label for="columbaryVault">Columbary Vault</label>
-	                            </p>
-	                            <p>
-	                                <input name="unitType" value="Full Body Crypts" type="radio" id="fullBody" />
-	                                <label for="fullBody">Full Body Crypts</label>
-	                            </p>
-	                    </div>
+
 	                    <br>
 	
 	                        <div class="row" style = "padding-left: 10px;">
-	                            <div class="input-field required col s6">
+	                            <div class="input-field required col s12">
 	                              <input id="buildingName" type="text" class="validate" required = "" aria-required = "true">
 	                              <label for="buildingName" data-error = "Invalid format." data-success = "">Name of Building <span style = "color: red;">*</span></label>
-	                            </div>
-	                            <div class="required input-field col s6">
-	                                <input id="buildingAddress" type="text" class="validate" required = "" aria-required = "true">
-	                                <label for="buildingAddress" data-error = "Invalid format." data-success = "">Building Address <span style = "color: red;">*</span></label>
 	                            </div>
 	                        </div>
 
 						<div style = "padding-left: 10px;">
-						<div class="required input-field col s6">
-							<input id="floorNumber" type="text" class="validate" required = "" aria-required = "true">
-							<label for="floorNumber" data-error = "Invalid format." data-success = "">Number of floor/s to create: <span style = "color: red;">*</span></label>
+							<div class="required input-field col s12">
+								<input id="buildingAddress" type="text" class="validate" required = "" aria-required = "true">
+								<label for="buildingAddress" data-error = "Invalid format." data-success = "">Building Address <span style = "color: red;">*</span></label>
+							</div>
 						</div>
+
+						<div style = "padding-left: 10px;">
+							<div class="required input-field col s12">
+								<input id="floorNumber" type="text" class="validate" required = "" aria-required = "true">
+								<label for="floorNumber" data-error = "Invalid format." data-success = "">Number of floor/s to create: <span style = "color: red;">*</span></label>
+							</div>
 						</div>
 
 

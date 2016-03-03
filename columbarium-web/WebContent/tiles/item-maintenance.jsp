@@ -26,26 +26,27 @@
 	                        <div class = "row">
 	                        <div style = "padding-left: 10px;">
 	                            <div class="input-field col s6">
-	                                <input id="itemName" type="text" class="validate" name="item.strItemName" required>
-	                                <label for="itemName" data-error = "Check format field." data-success = "">Item Name<span style = "color: red;">*</span></label>
+	                                <input id="itemName" type="text" class="validate" name="item.strItemName" required = "" aria-required="true">
+	                                <label for="itemName" data-error = "Invalid format." data-success = "">Item Name<span style = "color: red;">*</span></label>
 	                            </div>
 	                        </div>
 	                        <div style = "padding-left: 10px;">
 	                            <div class="input-field col s6">
 	                                <input id="itemPrice" type="text" class="validate" name="item.dblPrice" required = "" aria-required = "true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
-	                                <label for="itemPrice" data-error = "Check format field." data-success = "">Item Price<span style = "color: red;">*</span></label>
+	                                <label for="itemPrice" data-error = "Invalid Format." data-success = "">Item Price<span style = "color: red;">*</span></label>
 	                            </div>
 	                        </div>
 	                    </div>
 	
 	                        <div class="row" style = "padding-left: 10px;">
 	                            <div class="input-field col s12">
-	                                <input id="itemDesc" type="text" class="validate" name="item.strItemDesc" pattern = "[A-Za-z0-9\s]{1,29}">
-	                                <label for="itemDesc" data-error = "" data-success = "">Item Description</label>
+	                                <input id="itemDesc" type="text" class="validate" name="item.strItemDesc">
+	                                <label for="itemDesc" data-error = "Invalid Format" data-success = "">Item Description</label>
 	                            </div>
 	                        </div>
 						<i class = "left" style = "margin-bottom: 0px; padding-left: 20px; color: red;">*Required Fields</i>
-	                	<br><br><br>
+	                	<br>
+						<button type = "submit" name = "action" class="waves-effect waves-light btn red right" style = "margin-right: 10px;">Create</button>
 	                </form>
 
 	            </div>

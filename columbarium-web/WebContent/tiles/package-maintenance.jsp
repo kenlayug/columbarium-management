@@ -2,120 +2,113 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
 
+    <script type="text/javascript" src="<%=request.getContextPath()%>/js/Package_Record_Form.js"></script>
 	<link rel = "stylesheet" href = "<%=request.getContextPath()%>/css/Package_Record_Form.css"/>
+
 
     <link rel="stylesheet" href="../css/style.css">
     <script type="text/javascript" src = "../js/index.js"></script>
 
 <!-- Form -->
 <div class = "col s12" >
-    <div class = "row">
-        <div class = "col s3">
-            <h2 style = "font-size: 30px;padding-left:20px;">Package Maintenance</h2>
+    <h2 style = "font-size: 30px;padding-left:50px; margin-bottom: 0px;">Package Maintenance</h2>
 
-            <!-- Create Package-->
-                <div class = "wrapper aside aside z-depth-3">
-                    <div class = "header">
-                        <h4 style = "font-size: 30px; padding-top: 10px;">Package Form</h4>
-                    </div>
+        <!-- Modal Create -->
+        <form id="modalCreatePackage" class="modal">
+            <div class = "modal-header">
+                <h4 style = "padding-left: 35px;">Create Package</h4>
+            </div>
+            <div class="modal-content">
 
-
-                    <div class = "col s12">
-                        <div class="row">
-                            <div class="input-field col s6">
-                                <input id="packageName" type="text" class="validate" required = "" aria-required="true">
-                                <label for="packageName" data-error = "Check format field." data-success = "">Package Name<span style = "color: red;">*</span></label>
-                            </div>
-                            <div class="input-field col s6">
-                                <input id="packagePrice" type="text" class="validate" required = "" aria-required="true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
-                                <label for="packagePrice" data-error = "Check format field." data-success = "">Package Price<span style = "color: red;">*</span></label>
-                            </div>
+                <div class = "col s12">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="packageName" type="text" class="validate" required = "" aria-required="true">
+                            <label for="packageName" data-error = "Check format field." data-success = "">Package Name<span style = "color: red;">*</span></label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="packagePrice" type="text" class="validate" required = "" aria-required="true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
+                            <label for="packagePrice" data-error = "Check format field." data-success = "">Package Price<span style = "color: red;">*</span></label>
                         </div>
                     </div>
-                    <div class = "col s12">
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <input id="packageDesc" type="text" class="validate">
-                                <label for="packageDesc">Package Description</label>
-                            </div>
+                </div>
+                <div class = "col s12">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="packageDesc" type="text" class="validate">
+                            <label for="packageDesc">Package Description</label>
                         </div>
                     </div>
+                </div>
 
-                    <div class = "col s12">
-                        <div class="row">
-                            <div class = "col s6">
+                <div class = "col s12">
+                    <div class="row">
+                        <div class = "col s6">
                             <div>
                                 <h6 style = "font-family: arial;">Services</h6>
-                                	<c:if test="${serviceList == null}">
-                                		<p>
-                                			<h7>No services available</h7>
-                                		</p>
-                                	</c:if>
-                                	<c:if test="${serviceList != null }">
-                                		<c:forEach items="${serviceList }" var="service">
-                                			<p>
-			                                    <input type="checkbox" name="service[]" id="${service.strServiceName }" value="${service.strServiceName }" />
-			                                    <label for="${service.strServiceName }">${service.strServiceName}</label>
-			                                </p>
-                                		</c:forEach>
-                                	</c:if>
-                                
-                                
+                                <c:if test="${serviceList == null}">
+                                    <p>
+                                        <h7>No services available</h7>
+                                    </p>
+                                </c:if>
+                                <c:if test="${serviceList != null }">
+                                    <c:forEach items="${serviceList }" var="service">
+                                        <p>
+                                            <input type="checkbox" name="service[]" id="${service.strServiceName }" value="${service.strServiceName }" />
+                                            <label for="${service.strServiceName }">${service.strServiceName}</label>
+                                        </p>
+                                    </c:forEach>
+                                </c:if>
+
+
                             </div>
-                            </div>
-                            <div class = "col s6">
-                                <div>
-                                    <h6 style = "font-family: arial;">Items</h6>
-                                    <c:if test="${itemList == null}">
-                                		<p>
-                                			<h7>No items available</h7>
-                                		</p>
-                                	</c:if>
-                                	<c:if test="${itemList != null }">
-                                		<c:forEach items="${itemList }" var="item">
-                                			<p>
-			                                    <input type="checkbox" name="item[]" id="${item.strItemName }" value="${item.strItemName }" />
-			                                    <label for="${item.strItemName }">${item.strItemName}</label>
-			                                </p>
-                                		</c:forEach>
-                                	</c:if>
-                                </div>
+                        </div>
+                        <div class = "col s6">
+                            <div>
+                                <h6 style = "font-family: arial;">Items</h6>
+                                <c:if test="${itemList == null}">
+                                    <p>
+                                        <h7>No items available</h7>
+                                    </p>
+                                </c:if>
+                                <c:if test="${itemList != null }">
+                                    <c:forEach items="${itemList }" var="item">
+                                        <p>
+                                            <input type="checkbox" name="item[]" id="${item.strItemName }" value="${item.strItemName }" />
+                                            <label for="${item.strItemName }">${item.strItemName}</label>
+                                        </p>
+                                    </c:forEach>
+                                </c:if>
                             </div>
                         </div>
                     </div>
-                    <i class = "left" style = "margin-top: 50px; padding-left: 20px; color: red;">*Required Fields</i>
                 </div>
-        </div>
+                <i class = "left" style = "margin-top: 50px; padding-left: 10px; color: red;">*Required Fields</i>
+                <br><br><br><br><br>
+
+            </div>
+            <div class="modal-footer">
+                <button type = "submit" name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
+                <button name = "action" class="waves-effect waves-light btn red modal-close">Cancel</button>
+            </div>
+        </form>
 
         <!-- Modal Update -->
         <form id="modalUpdatePackage" class="modal">
             <div class = "modal-header">
-                <h4>Update Package</h4>
+                <h4 style = "padding-left: 35px;">Update Package</h4>
             </div>
             <div class="modal-content">
-
-                <div class = "col s6" style = "padding-left: 20px;">
-                    <label>Select Package Name to Update</label>
-                    <select required = "" aria-required = "true">
-                        <option value="" disabled selected>Package Name:</option>
-                        <c:if test="${packageList != null }">
-							<c:forEach items="${packageList }" var="packageTo">
-								<option value="${packageTo.strPackageName }">${packageTo.strPackageName}</option>
-							</c:forEach>
-						</c:if>
-                    </select>
-                </div>
-
 
                 <div class = "col s12">
                     <div class="row">
                         <div class="input-field col s6">
                             <input id="packageNameUpdate" type="text" class="validate" required = "">
-                            <label for="packageNameUpdate">New Package Name</label>
+                            <label for="packageNameUpdate">New Package Name<span style = "color: red;">*</span></label>
                         </div>
                         <div class="input-field col s6">
                             <input id="packagePriceUpdate" type="text" class="validate" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
-                            <label for="packagePriceUpdate" data-error = "Check format field." data-success = "">New Package Price</label>
+                            <label for="packagePriceUpdate" data-error = "Check format field." data-success = "">New Package Price<span style = "color: red;">*</span></label>
                         </div>
                     </div>
                 </div>
@@ -174,32 +167,24 @@
                         </div>
                     </div>
                 </div>
+
+                <i class = "left" style = "margin-top: 50px; padding-left: 10px; color: red;">*Required Fields</i>
+                <br><br><br><br><br>
             </div>
             <div class="modal-footer">
                 <button type = "submit" name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
-                <button name = "action" class="waves-effect waves-light btn red" href = "Blocks_Maintenance.html">Cancel</button>
+                <button name = "action" class="waves-effect waves-light btn red modal-close">Cancel</button>
             </div>
         </form>
 
 
         <!-- Modal Deactivate -->
-        <div id="modalDeactivatePackage" class="modal">
+        <div id="modalDeactivatePackage" class="modal" style = "width: 600px;">
             <div class = "modal-header">
                 <h4>Deactivate Package</h4>
             </div>
             <div class="modal-content">
-                <div class = "col s6" style = "padding-left: 20px;">
-                    <label>Select Package Name to Deactivate</label>
-                    <select required = "" aria-required = "true">
-                        <option value="" disabled selected>Package Name:</option>
-						<c:if test="${packageList != null }">
-							<c:forEach items="${packageList }" var="packageTo">
-								<option value="${packageTo.strPackageName }">${packageTo.strPackageName}</option>
-							</c:forEach>
-						</c:if>
-                    </select>
-                </div>
-                <br><br><br><br>
+                <p style = "padding-left: 90px; font-size: 15px;">Are you sure you want to deactivate this package?</p>
             </div>
             <div class="modal-footer">
                 <button name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
@@ -207,15 +192,31 @@
             </div>
         </div>
 
+    <!-- Modal Package Includes -->
+    <div id="modalPackageIncludes" class="modal">
+        <div class = "modal-header">
+            <h4>Package</h4>
+        </div>
+        <div class="modal-content">
+            <td>Service One, Service Two, and Item Five</td>
+        </div>
+        <div class="modal-footer">
+            <button name = "action" onClick = "Materialize.toast('Data Telah Berubah',4000)" class="modal-close waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
+
+        </div>
+    </div>
+
 
         <!-- Data Grid -->
-        <div class = "col s9">
+        <div class = "col s9" style = "margin-left: 40px; margin-right: 40px; margin-top: 0px;">
             <div class="row">
                 <div id="admin" class="col s12" style="margin-top: 20px">
                     <div class="z-depth-2 card material-table">
                         <div class="table-header" style="background-color: #00897b;">
-                            <h4 style = "font-size: 30px; color: white; padding-left: 0px;">Building Data Grid</h4>
+                            <h4 style = "font-size: 30px; color: white; padding-left: 0px;">Package Data Grid</h4>
+
                             <div class="actions">
+                                <button name = "action" class="modal-trigger btn-floating yellow" style = "margin-right: 10px;" href = "#modalCreatePackage"><i class="material-icons">add</i></button>
                                 <a href="#" class="search-toggle waves-effect btn-flat nopadding"><i class="material-icons" style="color: #ffffff;">search</i></a>
                             </div>
                         </div>
@@ -231,132 +232,72 @@
                             </thead>
                             <tbody>
                             <tr>
-                                <td>Package One</td>
-                                <td>Price One</td>
-                                <td>Description One</td>
-                                <td>Includes One</td>
-                                <td><button name = "action" class="modal-trigger btn-floating yellow" href = "#modalCreatePackage"><i class="material-icons">add</i></button></td>
-                                    <button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdatePackage"><i class="material-icons">mode_edit</i></button>
-                                    <button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivatePackage"><i class="material-icons">delete</i></button></td>
-
-                            </tr>
-                            <tr>
-                                <td>Package Two</td>
-                                <td>Price Two</td>
-                                <td>Description Two</td>
-                                <td>Includes Two</td>
-                                <td><button name = "action" class="modal-trigger btn-floating yellow" href = "#modalCreatePackage"><i class="material-icons">add</i></button></td>
-                                    <button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdatePackage"><i class="material-icons">mode_edit</i></button>
-                                    <button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivatePackage"><i class="material-icons">delete</i></button></td>
-                            </tr>
-                            <tr>
-                                <td>Package Three</td>
-                                <td>Price Three</td>
-                                <td>Description Three</td>
-                                <td>Includes Three</td>
-                                <td><button name = "action" class="modal-trigger btn-floating yellow" href = "#modalCreatePackage"><i class="material-icons">add</i></button></td>
-                                    <button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdatePackage"><i class="material-icons">mode_edit</i></button>
-                                    <button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivatePackage"><i class="material-icons">delete</i></button></td>
-                            </tr>
-                            <tr>
-                                <td>Package Four</td>
-                                <td>Price Four</td>
-                                <td>Description Four</td>
-                                <td>Includes Four</td>
-                                <td><button name = "action" class="modal-trigger btn-floating yellow" href = "#modalCreatePackage"><i class="material-icons">add</i></button></td>
-                                    <button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdatePackage"><i class="material-icons">mode_edit</i></button>
-                                    <button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivatePackage"><i class="material-icons">delete</i></button></td>
-                            </tr>
-                            <tr>
-                                <td>Package Five</td>
-                                <td>Price Five</td>
-                                <td>Description Five</td>
-                                <td>Includes Five</td>
-                                <td><button name = "action" class="modal-trigger btn-floating yellow" href = "#modalCreatePackage"><i class="material-icons">add</i></button></td>
-                                    <button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdatePackage"><i class="material-icons">mode_edit</i></button>
-                                    <button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivatePackage"><i class="material-icons">delete</i></button></td>
-                            </tr>
-                            <tr>
-                                <td>Package Six</td>
-                                <td>Price Six</td>
-                                <td>Description Six</td>
-                                <td>Includes Six</td>
-                                <td><button name = "action" class="modal-trigger btn-floating yellow" href = "#modalCreatePackage"><i class="material-icons">add</i></button></td>
-                                    <button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdatePackage"><i class="material-icons">mode_edit</i></button>
-                                    <button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivatePackage"><i class="material-icons">delete</i></button></td>
-                            </tr>
-                            <tr>
-                                <td>Package Seven</td>
-                                <td>Price Seven</td>
-                                <td>Description Seven</td>
-                                <td>Includes Seven</td>
-                                <td><button name = "action" class="modal-trigger btn-floating yellow" href = "#modalCreatePackage"><i class="material-icons">add</i></button></td>
-                                    <button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdatePackage"><i class="material-icons">mode_edit</i></button>
-                                    <button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivatePackage"><i class="material-icons">delete</i></button></td>
+                                <td>Package Eight</td>
+                                <td>Price Eight</td>
+                                <td>Description Eight</td>
+                                <td><button data-target="modalPackageIncludes" class="red btn modal-trigger">Package</button></td>
+                                <td>
+                                    <button name = "action" data-target="modalUpdatePackage" class="modal-trigger btn-floating green"><i class="material-icons">mode_edit</i></button>
+                                    <button name = "action" data-target="modalDeactivatePackage" class="modal-trigger btn-floating red"><i class="material-icons">delete</i></button></td>
                             </tr>
                             <tr>
                                 <td>Package Eight</td>
                                 <td>Price Eight</td>
                                 <td>Description Eight</td>
-                                <td>Includes Eight</td>
-                                <td><button name = "action" class="modal-trigger btn-floating yellow" href = "#modalCreatePackage"><i class="material-icons">add</i></button></td>
-                                    <button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdatePackage"><i class="material-icons">mode_edit</i></button>
-                                    <button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivatePackage"><i class="material-icons">delete</i></button></td>
+                                <td><button data-target="modalPackageIncludes" class="red btn modal-trigger">Package</button></td>
+                                <td>
+                                    <button name = "action" data-target="modalUpdatePackage" class="modal-trigger btn-floating green"><i class="material-icons">mode_edit</i></button>
+                                    <button name = "action" data-target="modalDeactivatePackage" class="modal-trigger btn-floating red"><i class="material-icons">delete</i></button></td>
                             </tr>
                             <tr>
-                                <td>Package Nine</td>
-                                <td>Price Nine</td>
-                                <td>Description Nine</td>
-                                <td>Includes Nine</td>
-                                <td><button name = "action" class="modal-trigger btn-floating yellow" href = "#modalCreatePackage"><i class="material-icons">add</i></button></td>
-                                    <button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdatePackage"><i class="material-icons">mode_edit</i></button>
-                                    <button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivatePackage"><i class="material-icons">delete</i></button></td>
+                                <td>Package Eight</td>
+                                <td>Price Eight</td>
+                                <td>Description Eight</td>
+                                <td><button data-target="modalPackageIncludes" class="red btn modal-trigger">Package</button></td>
+                                <td>
+                                    <button name = "action" data-target="modalUpdatePackage" class="modal-trigger btn-floating green"><i class="material-icons">mode_edit</i></button>
+                                    <button name = "action" data-target="modalDeactivatePackage" class="modal-trigger btn-floating red"><i class="material-icons">delete</i></button></td>
                             </tr>
                             <tr>
-                                <td>Package Ten</td>
-                                <td>Price Ten</td>
-                                <td>Description Ten</td>
-                                <td>Includes Ten</td>
-                                <td><button name = "action" class="modal-trigger btn-floating yellow" href = "#modalCreatePackage"><i class="material-icons">add</i></button></td>
-                                    <button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdatePackage"><i class="material-icons">mode_edit</i></button>
-                                    <button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivatePackage"><i class="material-icons">delete</i></button></td>
+                                <td>Package Eight</td>
+                                <td>Price Eight</td>
+                                <td>Description Eight</td>
+                                <td><button data-target="modalPackageIncludes" class="red btn modal-trigger">Package</button></td>
+                                <td>
+                                    <button name = "action" data-target="modalUpdatePackage" class="modal-trigger btn-floating green"><i class="material-icons">mode_edit</i></button>
+                                    <button name = "action" data-target="modalDeactivatePackage" class="modal-trigger btn-floating red"><i class="material-icons">delete</i></button></td>
                             </tr>
                             <tr>
-                                <td>Package Eleven</td>
-                                <td>Price Eleven</td>
-                                <td>Description Eleven</td>
-                                <td>Includes Eleven</td>
-                                <td><button name = "action" class="modal-trigger btn-floating yellow" href = "#modalCreatePackage"><i class="material-icons">add</i></button></td>
-                                    <button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdatePackage"><i class="material-icons">mode_edit</i></button>
-                                    <button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivatePackage"><i class="material-icons">delete</i></button></td>
+                                <td>Package Eight</td>
+                                <td>Price Eight</td>
+                                <td>Description Eight</td>
+                                <td><button data-target="modalPackageIncludes" class="red btn modal-trigger">Package</button></td>
+                                <td>
+                                    <button name = "action" data-target="modalUpdatePackage" class="modal-trigger btn-floating green"><i class="material-icons">mode_edit</i></button>
+                                    <button name = "action" data-target="modalDeactivatePackage" class="modal-trigger btn-floating red"><i class="material-icons">delete</i></button></td>
                             </tr>
                             <tr>
-                                <td>Package Twelve</td>
-                                <td>Price Twelve</td>
-                                <td>Description Twelve</td>
-                                <td>Includes Twelve</td>
-                                <td><button name = "action" class="modal-trigger btn-floating yellow" href = "#modalCreatePackage"><i class="material-icons">add</i></button></td>
-                                    <button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdatePackage"><i class="material-icons">mode_edit</i></button>
-                                    <button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivatePackage"><i class="material-icons">delete</i></button></td>
+                                <td>Package Eight</td>
+                                <td>Price Eight</td>
+                                <td>Description Eight</td>
+                                <td><button data-target="modalPackageIncludes" class="red btn modal-trigger">Package</button></td>
+                                <td>
+                                    <button name = "action" data-target="modalUpdatePackage" class="modal-trigger btn-floating green"><i class="material-icons">mode_edit</i></button>
+                                    <button name = "action" data-target="modalDeactivatePackage" class="modal-trigger btn-floating red"><i class="material-icons">delete</i></button></td>
                             </tr>
                             <tr>
-                                <td>Package Thirteen</td>
-                                <td>Price Thirteen</td>
-                                <td>Description Thirteen</td>
-                                <td>Includes Thirteen</td>
-                                <td><button name = "action" class="modal-trigger btn-floating yellow" href = "#modalCreatePackage"><i class="material-icons">add</i></button></td>
-                                    <button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdatePackage"><i class="material-icons">mode_edit</i></button>
-                                    <button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivatePackage"><i class="material-icons">delete</i></button></td>
+                                <td>Package Eight</td>
+                                <td>Price Eight</td>
+                                <td>Description Eight</td>
+                                <td><button data-target="modalPackageIncludes" class="red btn modal-trigger">Package</button></td>
+                                <td>
+                                    <button name = "action" data-target="modalUpdatePackage" class="modal-trigger btn-floating green"><i class="material-icons">mode_edit</i></button>
+                                    <button name = "action" data-target="modalDeactivatePackage" class="modal-trigger btn-floating red"><i class="material-icons">delete</i></button></td>
                             </tr>
-                            <tr>
-                                <td>Package Fourteen</td>
-                                <td>Price Fourteen</td>
-                                <td>Description Fourteen</td>
-                                <td>Includes Fourteen</td>
-                                <td><button name = "action" class="modal-trigger btn-floating yellow" href = "#modalCreatePackage"><i class="material-icons">add</i></button></td>
-                                    <button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdatePackage"><i class="material-icons">mode_edit</i></button>
-                                    <button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivatePackage"><i class="material-icons">delete</i></button></td>
-                            </tr>
+
+
+
+
                             </tbody>
                         </table>
                     </div>
@@ -366,20 +307,15 @@
             <script src='http://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js'></script>
             <script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js'></script>
             <script type="text/javascript" src = "../js/index.js"></script>
+            <script type="text/javascript" src = "../js/Package_Record_Form.js"></script>
         </div>
-    </div>
 </div>
 
 
     </div>
     
     <script>
-    
-	    $(document).ready(function(){
-	        // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-	        $('.modal-trigger').leanModal();
-	    });
-	    
+
 	    $("#formCreate").submit(function(e){
 		    return false;
 		});

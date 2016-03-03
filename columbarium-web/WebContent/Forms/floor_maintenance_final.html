@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SAD</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css'>
+    <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+
+    <!-- Import CSS/JS -->
+    <script type="text/javascript" src="../js/Floor_Record_Form.js"></script>
+    <link rel = "stylesheet" href = "../css/Floor_Record_Form.css"/>
+
+
+</head>
+<body>
+<div class = "col s12">
+    <div class = "row">
+        <div class="navbar-fixed navbar-leo">
+            <div class = "responsive">
+                <nav>
+                    <div class = "responsive">
+                        <div class="nav-wrapper">
+                            <a href="#!" class="brand-logo left">Logo</a>
+                            <ul class="right hide-on-med-and-down">
+                                <li><a class="dropdown-button" href="#!" data-beloworigin="true" data-activates="dropdown1">Maintenance<i class="material-icons right">arrow_drop_down</i></a></li>
+                                <li><a class="dropdown-button" href="#!" data-beloworigin="true" data-activates="dropdown2">Transaction<i class="material-icons right">arrow_drop_down</i></a></li>
+                                <li><a class="dropdown-button" href="#!" data-beloworigin="true" data-activates="dropdown3">Queries<i class="material-icons right">arrow_drop_down</i></a></li>
+                                <li><a class="dropdown-button" href="#!" data-beloworigin="true" data-activates="dropdown4">Reports<i class="material-icons right">arrow_drop_down</i></a></li>
+                                <li><a class="dropdown-button" href="#!" data-beloworigin="true" data-activates="dropdown5">Utilities<i class="material-icons right">arrow_drop_down</i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Dropdown Maintenance-->
+        <ul id="dropdown1" class="dropdown-content">
+            <li><a href="Item_Maintenance.html">Inventory</a></li>
+            <li><a href="Services_Maintenance.html">Service</a></li>
+            <li class="divider"></li>
+            <li><a href="Package_Maintenance.html">Package</a></li>
+            <li><a href="Building_Maintenance.html">Building</a></li>
+            <li><a href="Floor_Maintenance.html">Floor</a></li>
+            <li><a href="Blocks_Maintenance.html">Block</a></li>
+            <li><a href="vaults.html">Vaults</a></li>
+            <li><a href="FullBodyCrypts.html">Body Crypts</a></li>
+        </ul>
+
+        <!-- Dropdown Transaction -->
+        <ul id="dropdown2" class="dropdown-content">
+            <li><a href="Customer.html">Customer</a></li>
+            <li><a href="Reservation_Transaction.html">Reservation</a></li>
+            <li><a href="scheduling.html">Scheduling</a></li>
+            <li class="divider"></li>
+            <li><a href="Collection_Transaction.html">Collection</a></li>
+            <li><a href="UnitOwnership.html">Transferring</a></li>
+        </ul>
+
+        <!-- Dropdown Queries -->
+        <ul id="dropdown3" class="dropdown-content">
+            <li><a href="Maintenance.html">Product</a></li>
+            <li><a href="Employee-Maintenance.html">Employee</a></li>
+            <li class="divider"></li>
+            <li><a href="Customer-Maintenance.html">Customer</a></li>
+        </ul>
+
+        <!-- Dropdown Reports -->
+        <ul id="dropdown4" class="dropdown-content">
+            <li><a href="Reservation_Report.html">Reservation Record</a></li>
+            <li><a href="scheduling-report.html">Scheduling Record</a></li>
+            <li class="divider"></li>
+            <li><a href="Collection_Report.html">Collection Record</a></li>
+            <li><a href="transferring-report.html">Transferring Record</a></li>
+        </ul>
+
+        <!-- Dropdown Utilities -->
+        <ul id="dropdown5" class="dropdown-content">
+            <li><a href="Employee.html">Employee</a></li>
+            <li class="divider"></li>
+        </ul>
+
+        <!-- Section -->
+        <div class = "col s12" >
+            <div class = "row">
+                <div class = "responsive">
+
+                    <div class = "col s5">
+                        <h2>Floor Maintenance</h2>
+
+                        <div style = "overflow: auto;height: 600px;">
+                            <div class = "col s12" style = "float: left; overflow: auto;">
+                                <div class = "aside aside ">
+
+
+                                    <ul class="collapsible popout" data-collapsible="expandable">
+                                        <li>
+                                            <div class="collapsible-header"><i class="material-icons">filter_drama</i>Building One</div>
+                                            <div class="collapsible-body"><p>Ground Floor</p></div>
+                                            <div class="collapsible-body"><p>First Floor</p></div>
+                                            <div class="collapsible-body"><p>Second Floor</p></div>
+                                            <div class="collapsible-body"><p>Third Floor</p></div>
+                                            <div class="collapsible-body"><p>Fourth Floor</p></div>
+                                            <div class="collapsible-body"><p>Fifth Floor</p></div>
+                                        </li>
+                                        <li>
+                                            <div class="collapsible-header"><i class="material-icons">place</i>Building Two</div>
+                                            <div class="collapsible-body"><p>Ground Floor</p></div>
+                                            <div class="collapsible-body"><p>First Floor</p></div>
+                                            <div class="collapsible-body"><p>Second Floor</p></div>
+                                        </li>
+                                        <li>
+                                            <div class="collapsible-header"><i class="material-icons">whatshot</i>Building Three</div>
+                                            <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+                                            <div class="collapsible-body"><p>Ground Floor</p></div>
+                                            <div class="collapsible-body"><p>First Floor</p></div>
+                                        </li>
+                                        <li>
+                                            <div class="collapsible-header"><i class="material-icons">whatshot</i>Building Three</div>
+                                            <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+                                            <div class="collapsible-body"><p>Ground Floor</p></div>
+                                            <div class="collapsible-body"><p>First Floor</p></div>
+                                        </li>
+                                        <li>
+                                            <div class="collapsible-header"><i class="material-icons">whatshot</i>Building Three</div>
+                                            <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+                                            <div class="collapsible-body"><p>Ground Floor</p></div>
+                                            <div class="collapsible-body"><p>First Floor</p></div>
+                                        </li>
+                                        <li>
+                                            <div class="collapsible-header"><i class="material-icons">whatshot</i>Building Three</div>
+                                            <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+                                            <div class="collapsible-body"><p>Ground Floor</p></div>
+                                            <div class="collapsible-body"><p>First Floor</p></div>
+                                        </li>
+                                        <li>
+                                            <div class="collapsible-header"><i class="material-icons">whatshot</i>Building Three</div>
+                                            <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+                                            <div class="collapsible-body"><p>Ground Floor</p></div>
+                                            <div class="collapsible-body"><p>First Floor</p></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class = "col s7">
+            <div class="row">
+                <div id="admin" class="col s12" style="margin-top: 20px">
+                    <div class="z-depth-2 card material-table">
+                        <div class="table-header" style="background-color: #00897b;">
+                            <span class="table-title" style="color:#ffffff; font-family: 'KG Blank Space Sketch';">Customer Data Table</span>
+                            <div class="actions">
+                                <a href="#" class="search-toggle waves-effect btn-flat nopadding"><i class="material-icons" style="color: #ffffff;">search</i></a>
+                            </div>
+                        </div>
+                        <table id="datatable">
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Position</th>
+                                <th>Office</th>
+                                <th>Age</th>
+                                <th>Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Tiger Nixon</td>
+                                <td>System Architect</td>
+                                <td>Edinburgh</td>
+                                <td>61</td>
+                                <td><button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button>
+                                    <button name = "action" class="modal-trigger btn-floating green darken-1" href = "#modal1"><i class="material-icons">mode_edit</i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Garrett Winters</td>
+                                <td>Accountant</td>
+                                <td>Tokyo</td>
+                                <td>63</td>
+                                <td><button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button>
+                                    <button name = "action" class="modal-trigger btn-floating green darken-1" href = "#modal1"><i class="material-icons">mode_edit</i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Ashton Cox</td>
+                                <td>Junior Technical Author</td>
+                                <td>San Francisco</td>
+                                <td>66</td>
+                                <td><button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button>
+                                    <button name = "action" class="modal-trigger btn-floating green darken-1" href = "#modal1"><i class="material-icons">mode_edit</i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Cedric Kelly</td>
+                                <td>Senior Javascript Developer</td>
+                                <td>Edinburgh</td>
+                                <td>22</td>
+                                <td><button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button>
+                                    <button name = "action" class="modal-trigger btn-floating green darken-1" href = "#modal1"><i class="material-icons">mode_edit</i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Airi Satou</td>
+                                <td>Accountant</td>
+                                <td>Tokyo</td>
+                                <td>33</td>
+                                <td><button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button>
+                                    <button name = "action" class="modal-trigger btn-floating green darken-1" href = "#modal1"><i class="material-icons">mode_edit</i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Brielle Williamson</td>
+                                <td>Integration Specialist</td>
+                                <td>New York</td>
+                                <td>61</td>
+                                <td><button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button>
+                                    <button name = "action" class="modal-trigger btn-floating green darken-1" href = "#modal1"><i class="material-icons">mode_edit</i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Herrod Chandler</td>
+                                <td>Sales Assistant</td>
+                                <td>San Francisco</td>
+                                <td>59</td>
+                                <td><button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button>
+                                    <button name = "action" class="modal-trigger btn-floating green darken-1" href = "#modal1"><i class="material-icons">mode_edit</i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Rhona Davidson</td>
+                                <td>Integration Specialist</td>
+                                <td>Tokyo</td>
+                                <td>55</td>
+                                <td><button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button>
+                                    <button name = "action" class="modal-trigger btn-floating green darken-1" href = "#modal1"><i class="material-icons">mode_edit</i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Colleen Hurst</td>
+                                <td>Javascript Developer</td>
+                                <td>San Francisco</td>
+                                <td>39</td>
+                                <td><button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button>
+                                    <button name = "action" class="modal-trigger btn-floating green darken-1" href = "#modal1"><i class="material-icons">mode_edit</i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Timothy Mooney</td>
+                                <td>Office Manager</td>
+                                <td>London</td>
+                                <td>37</td>
+                                <td><button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button>
+                                    <button name = "action" class="modal-trigger btn-floating green darken-1" href = "#modal1"><i class="material-icons">mode_edit</i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Jackson Bradshaw</td>
+                                <td>Director</td>
+                                <td>New York</td>
+                                <td>65</td>
+                                <td><button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button>
+                                    <button name = "action" class="modal-trigger btn-floating green darken-1" href = "#modal1"><i class="material-icons">mode_edit</i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Olivia Liang</td>
+                                <td>Support Engineer</td>
+                                <td>Singapore</td>
+                                <td>64</td>
+                                <td><button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button>
+                                    <button name = "action" class="modal-trigger btn-floating green darken-1" href = "#modal1"><i class="material-icons">mode_edit</i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Bruno Nash</td>
+                                <td>Software Engineer</td>
+                                <td>London</td>
+                                <td>38</td>
+                                <td><button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button>
+                                    <button name = "action" class="modal-trigger btn-floating green darken-1" href = "#modal1"><i class="material-icons">mode_edit</i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Sakura Yamamoto</td>
+                                <td>Support Engineer</td>
+                                <td>Tokyo</td>
+                                <td>37</td>
+                                <td><button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button>
+                                    <button name = "action" class="modal-trigger btn-floating green darken-1" href = "#modal1"><i class="material-icons">mode_edit</i></button></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+            <script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js'></script>
+
+        </div>
+    </div>
+</div>
+            </div>
+        </div>
+</body>
+</html>
