@@ -131,7 +131,13 @@
 								<tbody>
 								
 									<c:if test="${itemList == null }">
-										<tr><td>No available items.</td></tr>
+										<tr>
+											<td>Item One</td>
+											<td>P 200</td>
+											<td>Item One</td>
+											<td><button name = "action" class="modal-trigger btn-floating green" onclick="openUpdate('${item.strItemName}')"><i class="material-icons">mode_edit</i></button>
+												<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateItem"><i class="material-icons">delete</i></button></td>
+										</tr>
 									</c:if>
 									
 									<c:if test="${itemList != null }">
