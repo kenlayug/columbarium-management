@@ -20,6 +20,10 @@ public interface FloorMapper {
 	
 	public void								createUnitCategory(UnitCategory unitCategory);
 	public UnitCategory						getUnitCategory(UnitCategory unitCategory);
+	public List<UnitCategory>				getAllUnitCategoryFromFloor(Floor floor);
 	public int								checkIfExistingUnitCategory(UnitCategory unitCategory);
+	
+	public void								configureUnitCategoryPrice(UnitCategory unitCategory);
+	public Double							getUnitCategoryPrice(UnitCategory unitCategory);
 	
 }

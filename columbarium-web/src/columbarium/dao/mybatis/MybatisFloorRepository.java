@@ -108,4 +108,52 @@ public class MybatisFloorRepository extends MybatisClient implements FloorReposi
 		return null;
 	}
 
+	@Override
+	public List<UnitCategory> getAllUnitCategoryFromFloor(Floor floor) {
+		
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		try{
+			
+			FloorMapper floorMapper = sqlSession.getMapper(FloorMapper.class);
+			floor = floorMapper.getFloor(floor);
+			List<UnitCategory>unitCategoryList = floorMapper.getAllUnitCategoryFromFloor(floor);
+			for (UnitCategory unitCategory : unitCategoryList) {
+				unitCategory.setDblPrice(floorMapper.getUnitCategoryPrice(unitCategory));
+			}
+			return unitCategoryList;
+			
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			sqlSession.close();
+		}
+		return null;
+	}
+
+	@Override
+	public String configureUnitCategoryPrice(List<UnitCategory> unitCategoryList) {
+		
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		try{
+			
+			FloorMapper floorMapper = sqlSession.getMapper(FloorMapper.class);
+			for (UnitCategory unitCategory : unitCategoryList) {
+				UnitCategory unitCategoryOrig = floorMapper.getUnitCategory(unitCategory);
+				unitCategoryOrig.setDblPrice(floorMapper.getUnitCategoryPrice(unitCategoryOrig));
+				if (unitCategoryOrig.getDblPrice() != unitCategory.getDblPrice()){
+					floorMapper.configureUnitCategoryPrice(unitCategory);
+				}
+			}
+			sqlSession.commit();
+			return "success";
+			
+		}catch(Exception e){
+			e.printStackTrace();
+			sqlSession.rollback();
+		}finally{
+			sqlSession.close();
+		}
+		return "failed-database";
+	}
+
 }

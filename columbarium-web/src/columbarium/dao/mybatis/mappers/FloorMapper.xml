@@ -25,6 +25,10 @@
 			<result property="intLevelNo" column="intLevelNo"/>
 		</resultMap>
 		
+		<resultMap type="java.lang.Double" id="UnitCategoryPriceResultMap">
+			<result property="dblPrice" column="deciUnitPrice"/>
+		</resultMap>
+		
 		<resultMap type="FloorType" id="FloorTypeResultMap">
 			<id property="floorTypeId" column="floorTypeId"/>
 			<result property="strFloorDesc" column="strFloorTypeDesc"/>
@@ -57,10 +61,10 @@
 		</select>
 		
 		<select id="getUnitCategory" resultMap="UnitCategoryResultMap">
-			SELECT *
-			FROM tblUnitCategory
-			WHERE floorIdFK = #{floorId}
-				intLevelNo = #{intLevelNo}
+			SELECT uc.*
+			FROM tblUnitCategory uc
+			WHERE uc.floorIdFK = #{floorId}
+				AND uc.intLevelNo = #{intLevelNo}
 			LIMIT 1
 		</select>
 		
@@ -81,6 +85,21 @@
 			SELECT * FROM tblFloorType
 			ORDER BY strFloorTypeDesc ASC
 		</select>
+		
+		<select id="getAllUnitCategoryFromFloor" resultMap="UnitCategoryResultMap">
+			SELECT uc.*
+			FROM tblUnitCategory uc
+			INNER JOIN tblFloor f ON uc.floorIdFK = f.floorId
+			WHERE f.floorId = #{floorId}
+		</select>
+		
+		<select id="getUnitCategoryPrice" resultMap="UnitCategoryPriceResultMap">
+			SELECT deciUnitPrice
+			FROM tblUnitPrice
+			WHERE unitCategoryIdFK = #{unitCategoryId}
+			ORDER BY datAsOf DESC
+			LIMIT 1
+		</select>
 	
 	<!-- END SELECT QUERIES -->
 	
@@ -98,6 +117,11 @@
 				(strFloorTypeDesc, boolIsUnit)
 			VALUES
 				(#{strFloorDesc}, #{boolIsUnit})
+		</insert>
+		
+		<insert id="configureUnitCategoryPrice">
+			INSERT INTO tblUnitPrice (unitCategoryIdFK, deciUnitPrice, datAsOf)
+			VALUES (#{unitCategoryId}, #{dblPrice}, NOW())
 		</insert>
 		
 	<!-- END INSERT QUERIES -->

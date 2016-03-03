@@ -9,4 +9,6 @@ public interface FloorBusiness {
 	
 	public String createFloorType(FloorType floorType);
 	
+	public String configureUnitPrice(Floor floor);
+	
 }

@@ -1,8 +1,9 @@
 package columbarium.model;
 
+import java.util.List;
+
 import org.apache.struts2.ServletActionContext;
 
-import columbarium.service.BuildingService;
 import columbarium.service.FloorService;
 
 public class Floor {
@@ -14,6 +15,7 @@ public class Floor {
 	private int intLevelNo;
 	private int intColumnNo;
 	private int currentLevel;
+	private List<UnitCategory> unitCategoryList;
 	private FloorType floorType;
 	
 	public void setFloorType(FloorType floorType){
@@ -24,6 +26,12 @@ public class Floor {
 	}
 	public void setCurrentLevel(int currentLevel){
 		this.currentLevel = currentLevel;
+	}
+	public List<UnitCategory> getUnitCategoryList() {
+		return unitCategoryList;
+	}
+	public void setUnitCategoryList(List<UnitCategory> unitCategoryList) {
+		this.unitCategoryList = unitCategoryList;
 	}
 	public int getCurrentLevel(){
 		return currentLevel;
@@ -114,6 +122,18 @@ public class Floor {
 		FloorService floorService = (FloorService)ServletActionContext.getServletContext()
 				.getAttribute("floorService");
 		return floorService.configureFloor(this);
+	}
+	
+	public void getAllUnitCategory(){
+		FloorService floorService = (FloorService)ServletActionContext.getServletContext()
+				.getAttribute("floorService");
+		setUnitCategoryList(floorService.getAllUnitCategoryFromFloor(this));
+	}
+	
+	public String configureUnitPrice(){
+		FloorService floorService = (FloorService)ServletActionContext.getServletContext()
+				.getAttribute("floorService");
+		return floorService.configureUnitPrice(this);
 	}
 	
 }

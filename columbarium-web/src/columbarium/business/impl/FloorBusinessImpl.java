@@ -4,6 +4,7 @@ import columbarium.business.FloorBusiness;
 import columbarium.dao.FloorRepository;
 import columbarium.model.Floor;
 import columbarium.model.FloorType;
+import columbarium.model.UnitCategory;
 
 public class FloorBusinessImpl implements FloorBusiness{
 
@@ -43,6 +44,17 @@ public class FloorBusinessImpl implements FloorBusiness{
 			return "input";
 		}
 		return floorRepository.createFloorType(floorType);
+	}
+
+	@Override
+	public String configureUnitPrice(Floor floor) {
+		
+		for (UnitCategory unitCategory : floor.getUnitCategoryList()) {
+			if (unitCategory.getDblPrice() == 0){
+				return "input";
+			}
+		}
+		return floorRepository.configureUnitCategoryPrice(floor.getUnitCategoryList());
 	}
 
 }

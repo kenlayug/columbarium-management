@@ -31,6 +31,15 @@
       	<action name="getAllBuildingFloors" class="columbarium.actions.floor.InitializeFloorScreenAction">
       		<result name="success" type="json"></result>
       	</action>
+      	
+      	<action name="getAllUnitCategoryFromFloor"
+      				class="columbarium.actions.floor.GetAllUnitCategoryFromFloorAction">
+      		<result name="success" type="json"></result>
+      	</action>
+      	
+      	<action name="configureUnitPrice" class="columbarium.actions.floor.ConfigureUnitPriceAction">
+      		<result name="success" type="json"></result>
+      	</action>
   	 
   	</package> 
    
