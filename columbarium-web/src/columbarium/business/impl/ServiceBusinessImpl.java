@@ -25,11 +25,11 @@ public class ServiceBusinessImpl implements ServiceBusiness{
 				service.getStrServiceName() == null){
 			return "input";
 		}
-		if (service.getStrServiceDesc().length() == 0 ||
-				service.getStrServiceDesc() == null){
+		if (Double.parseDouble(service.getDblPrice()) == 0){
 			return "input";
 		}
-		if (Double.parseDouble(service.getDblPrice()) == 0){
+		if (service.getRequirementList() == null || 
+				service.getRequirementList().size() == 0){
 			return "input";
 		}
 		return serviceRepository.createService(service);

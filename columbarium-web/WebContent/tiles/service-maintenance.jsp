@@ -3,53 +3,53 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
      <link rel = "stylesheet" href = "<%=request.getContextPath()%>/css/Services_Record_Form.css"/>
 
+	<link rel="stylesheet" href="../css/style.css">
+	<script type="text/javascript" src = "../js/index.js"></script>
+
 <!-- Section -->
 
 <div class = "col s12" >
     <div class = "row">
-        <div class = "col s7">
-            <h2>Service Maintenance</h2>
+            <h2 style = "font-size: 30px; padding-left: 70px; margin-top: 0px; margin-bottom: 0px;">Service Maintenance</h2>
 
-            <!-- Create Service -->
-            <div class = "col s12">
-                <div class = "aside aside z-depth-3">
-                <div class = "header">
-                    <h4>Service Form</h4>
-                </div>
-                        <form class="row" style = "padding-left: 10px;" id="formCreate">
-                            <div class="input-field col s6">
-                                <input id="serviceName" type="text" class="validate" required = "" aria-required = "true" pattern = "[A-Za-z0-9\s]{1,29}">
-                                <label for="serviceName" data-error = "Check format field." data-success = "">Service Name <span style = "color: red;">*</span></label>
-                            </div>
-                            <div class="input-field col s6">
-                                <input id="servicePrice" type="text" class="validate" required = "" aria-required = "true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
-                                <label for="servicePrice" data-error = "Check format field." data-success = "">Service Price <span style = "color: red;">*</span></label>
-                            </div>
+		<!-- Modal Create -->
+		<div id="modalCreateService" class="modal">
+			<div class = "modal-header">
+				<h4 style = "padding-left: 20px;">Create Service</h4>
+			</div>
+			<div class="modal-content">
 
-							<!-- Floating Button -->
-							<div class="fixed-action-btn horizontal" style="position: absolute; margin-right: 620px; margin-bottom: 80px;">
-								<button type = "submit" onclick="createService()" name = "action" class="btn-floating btn-large red"><i class="large material-icons">add</i>
-								</button>
-								<ul>
-									<li><button name = "action" class="modal-trigger btn-floating black" href = "#modalDeactivate"><i class="material-icons">delete</i></button></li>
-									<li><button name = "action" class="modal-trigger btn-floating green darken-1" href = "#modalUpdate"><i class="material-icons">mode_edit</i></button></li>
-								</ul>
-							</div>
-                        </form>
-                    <div class="row">
-                            <div class="row" style = "padding-left: 10px;">
-                                <div class="input-field col s12">
-									<input id="serviceDesc" type="text" class="validate" pattern = "[A-Za-z0-9\s]{1,29}">
-                                    <label for="serviceDesc" data-error = "Check format field." data-success = "">Service Description</label>
-                                </div>
-                            </div>
+				<form class="row" style = "padding-left: 10px;" id="formCreate">
+					<div class="input-field col s6">
+						<input id="serviceName" type="text" class="validate" required = "" aria-required = "true" pattern = "[A-Za-z0-9\s]{1,29}">
+						<label for="serviceName" data-error = "Check format field." data-success = "">Service Name <span style = "color: red;">*</span></label>
+					</div>
+					<div class="input-field col s6">
+						<input id="servicePrice" type="text" class="validate" required = "" aria-required = "true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
+						<label for="servicePrice" data-error = "Check format field." data-success = "">Service Price <span style = "color: red;">*</span></label>
+					</div>
+				</form>
 
-                        <button data-target = "modalRequirement" class="waves-effect waves-light modal-trigger red left" style = "margin-left: 20px; width: 180px; height: 35px; color: white; margin-bottom: 50px; font-size: 14px;"></i>CHOOSE REQUIREMENTS</button>
-                    </div>
-                </div>
+				<div class="row">
+					<div class="row" style = "padding-left: 10px;">
+						<div class="input-field col s12">
+							<input id="serviceDesc" type="text" class="validate" pattern = "[A-Za-z0-9\s]{1,29}">
+							<label for="serviceDesc" data-error = "Check format field." data-success = "">Service Description</label>
+						</div>
+					</div>
 
-            </div>
-            </div>
+					<button data-target = "modalRequirement" class="waves-effect waves-light modal-trigger red left" style = "margin-left: 20px; width: 180px; height: 35px; color: white; margin-bottom: 10px; font-size: 14px;"></i>CHOOSE REQUIREMENTS</button>
+					<br><br><br>
+					<i class = "left" style = "margin-bottom: 0px; padding-left: 20px; color: red;">*Required Fields</i>
+
+				</div>
+
+			</div>
+			<div class="modal-footer">
+				<button onclick="createService()" name="action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
+				<button name = "action" class="waves-effect waves-light btn red">Cancel</button>
+			</div>
+		</div>
 
             <!-- Modal Requirements -->
             <div id="modalRequirement" class="modal">
@@ -82,20 +82,7 @@
                                 </div>
                             </div>
                         </div>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
+                        <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
                 <div class="modal-footer">
                     <button onclick="$('#modalRequirement').closeModal()" name = "action" class="waves-effect waves-light btn red right" style = "margin-right: 0px; width: 130px;">CONFIRM</button>
@@ -105,33 +92,20 @@
 
 
         <!-- Modal Update -->
-        <div id="modalUpdate" class="modal">
+        <div id="modalUpdateService" class="modal">
             <div class = "modal-header">
                 <h4 style = "padding-left: 40px;">Update Service</h4>
             </div>
-            <form class="modal-content">
-
-                    <div class="row">
-                        <div class = "col s6" style = "padding-left: 20px;">
-                            <label>Select Service Name to Deactivate:</label>
-                            <select id="selectServiceUpdate"  required = "" aria-required="true" onchange="placeServiceUpdate()">
-                                <option value="" disabled selected>Service Name:</option>
-								<c:if test="${serviceList != null }">
-									<c:forEach items="${serviceList }" var="service">
-										<option value="${service.strServiceName }">${service.strServiceName}</option>
-									</c:forEach>
-								</c:if>
-                            </select>
-                        </div>
-                    </div>
+            <form class="modal-content" id="formUpdate">
 
                     <div class="row" style = "padding-left: 10px;">
                         <div class="input-field col s6">
-                            <input id="serviceNameUpdate" type="text" class="validate" required = "" aria-required = "true" pattern = "[A-Za-z0-9\s]{1,29}">
+                        	<input id="serviceToBeUpdate" type="hidden">
+                            <input id="serviceNameUpdate" value=" " type="text" class="validate" required = "" aria-required = "true" pattern = "[A-Za-z0-9\s]{1,29}">
                             <label for="serviceNameUpdate" data-error = "Check format field." data-success = "">New Service Name<span style = "color: red;">*</span></label>
                         </div>
                         <div class="input-field col s6">
-                            <input id="servicePriceUpdate" type="text" class="validate" required = "" aria-required = "true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
+                            <input id="servicePriceUpdate" value=" " type="text" class="validate" required = "" aria-required = "true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
                             <label for="servicePriceUpdate" data-error = "Check format field." data-success = "">New Service Price <span style = "color: red;">*</span></label>
                         </div>
                     </div>
@@ -139,7 +113,7 @@
                 <div class="row">
                         <div class="row" style = "padding-left: 10px;">
                             <div class="input-field col s12">
-								<input id="serviceDescUpdate" type="text" class="validate" pattern = "[A-Za-z0-9\s]{1,29}">
+								<input id="serviceDescUpdate" value=" " type="text" class="validate" pattern = "[A-Za-z0-9\s]{1,29}">
                                 <label for="serviceDescUpdate" data-error = "Check format field." data-success = "">New Service Description</label>
                             </div>
                         </div>
@@ -148,7 +122,7 @@
                 </div>
 				<div class="modal-footer">
 					<button type = "submit" onclick="updateService()" name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
-					<button onclick="$('#modalUpdate').closeModal()" name = "action" class="waves-effect waves-light btn red" href = "Blocks_Maintenance.html">Cancel</button>
+					<button name = "action" class="modal-close waves-effect waves-light btn red" href = "Blocks_Maintenance.html">Cancel</button>
 				</div>
             </form>
 
@@ -156,110 +130,70 @@
 
 
         <!-- Modal Deactivate -->
-        <div id="modalDeactivate" class="modal">
+        <div id="modalDeactivateService" class="modal" style = "width: 600px;">
             <div class = "modal-header">
                 <h4>Deactivate Service</h4>
             </div>
             <div class="modal-content">
-
-                <form class = "col s12">
-                    <div class="row">
-                        <div class = "col s6" style = "padding-left: 20px;">
-                            <label>Select Service Name to Deactivate:</label>
-                            <select id="selectServiceDeactivate" required = "" aria-required="true">
-                                <option value="" disabled selected>Service Name:</option>
-								<c:if test="${serviceList != null }">
-									<c:forEach items="${serviceList }" var="service">
-										<option value="${service.strServiceName }">${service.strServiceName}</option>
-									</c:forEach>
-								</c:if>
-                            </select>
-                        </div>
-                    </div>
-                </form>
+				<input id="serviceToBeDeactivated" type="hidden">
+				<p style = "padding-left: 90px; font-size: 15px;">Are you sure you want to deactivate this service?</p>
             </div>
             <div class="modal-footer">
-                <button onclick="deactivateService()" name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
-                <button onclick="$('#modalDeactivate').closeModal()" name = "action" class="waves-effect waves-light btn red">Cancel</button>
+                <button onclick="deactivateService()" name = "action" class="btn red" style = "margin-left: 10px; ">Confirm</button>
+                <button name = "action" class="modal-close btn red">Cancel</button>
             </div>
         </div>
 
 
-            <!-- Data Grid -->
-            <div class = "col s5">
-                <div class = "col s4 z-depth-2 " style = "margin-left: 60px; margin-top: 20px; width: 450px; height: 70px;">
+		<!-- Data Grid -->
+		<div class = "col s9" style = "margin-left: 40px; margin-top: 0px;">
+			<div class="row">
+				<div id="admin" class="col s12" style="margin-top: 20px">
+					<div class="z-depth-2 card material-table">
+						<div class="table-header" style="background-color: #00897b;">
+							<h4 style = "font-size: 30px; color: white; padding-left: 0px;">Service Data Grid</h4>
+							<div class="actions">
+								<button name = "action" class="modal-trigger btn-floating yellow" style = "margin-right: 10px;" href = "#modalCreateService"><i class="material-icons">add</i></button>
+								<a href="#" class="search-toggle waves-effect btn-flat nopadding"><i class="material-icons" style="color: #ffffff;">search</i></a>
+							</div>
+						</div>
+						<table id="datatable">
+							<thead>
+							<tr>
+								<th>Service Name</th>
+								<th>Service Price</th>
+								<th>Service Description</th>
+								<th>Service Requirement</th>
+								<th>Action</th>
+							</tr>
+							</thead>
+							<tbody>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
 
-
-                    <nav style = "height: 50px; margin-top: 10px; background-color: #00897b">
-                        <div class="nav-wrapper">
-                            <div>
-                                <div class="input-field"  style = "height: 50px;">
-                                    <input id="search" type="search" required>
-                                    <label for="search"><i class="material-icons">search</i></label>
-                                    <i class="material-icons">close</i>
-                                </div>
-                            </div>
-                        </div>
-                    </nav>
-                </div>
-
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-
-                <div class = "aside z-depth-2" style = "margin-left: 60px; width: 450px; height: 385px; overflow: auto;">
-                    <table id="tableService" class = "responsive" style = "margin-top: 10px; margin-left: 0px; width: 100%; height: 200px;">
-
-                        <thead class = "fixed-header">
-                        <tr>
-                            <th data-field="id">Service Name</th>
-                            <th data-field="name">Service Price</th>
-                            <th data-field="name">Service Description</th>
-                            <th data-field="name">Service Requirement</th>
-                        </tr>
-                        </thead>
-
-                        <tbody>
-	                        <c:if test="${serviceList == null }">
-	                        	<tr><td>No services available.</td></tr>
-	                        </c:if>
-	                        <c:if test="${serviceList != null }">
-	                        	<c:forEach items="${serviceList }" var="service">
-		                        	<tr>
-			                            <td>${service.strServiceName }</td>
-			                            <td>P ${service.dblPrice }</td>
-			                            <td>${service.strServiceDesc }</td>
-			                            <td>
-			                            	<c:if test="${service.requirementList == null }">
-			                            		No requirement specified.
-			                            	</c:if>
-			                            	<c:if test="${service.requirementList != null }">
-												<c:forEach items="${service.requirementList}" var="requirement">
-													${requirement.strRequirementName},
-												</c:forEach>
-											</c:if>
-			                            </td>
-			                        </tr>
-	                        	</c:forEach>
-	                        </c:if>
-                        </tbody>
-                    </table>
-                </div>
-        </div>
+			<script type="text/javascript" src = "../js/index.js"></script>
+			
+		</div>
     </div>
+	</div>
     
     <script>
+
+	    $(document).ready(function(){
+	        // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+	        $('.modal-trigger').leanModal({dismissible: false});
+	    });
 
 	    $("#formCreate").submit(function(e){
 		    return false;
 		});
-    
-	    $(document).ready(function(){
-	        // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-	        $('.modal-trigger').leanModal();
-	    });
+	    
+	    $("#formUpdate").submit(function(e){
+		    return false;
+		});
 
 	    function createService(){
 
@@ -284,17 +218,19 @@
 				dataType: "json",
 				success: function(data){
 					if (data.status === "success"){
-						alert("Service "+data.service.strServiceName+" is successfully saved.");
+						Materialize.toast('Service is successfully saved.', 3000, 'rounded');
 						updateTable();
+						$('#modalCreateService').closeModal();
 					}else if (data.status === "input"){
-						alert("Fill up everything first.");
-					}	
-					else{
-						alert("Problem occured.");
+						Materialize.toast('Please check all your inputs.', 3000, 'rounded');
+					}else if (data.status === "failed-existing"){
+						Materialize.toast('Service already exists.', 3000, 'rounded');
+					}else if (data.status === "failed-database"){
+						Materialize.toast('Please check your connection.', 3000, 'rounded');
 					}
 				},
 				error: function(data){
-					alert("error...");
+					Materialize.toast('Error occured.', 3000, 'rounded');
 				}
 			});
 	    	
@@ -331,66 +267,76 @@
 	    }//selectServiceUpdate()
 	    
 	    function updateService(){
-	    	
+	    	Materialize.toast('Updating..', 3000, 'rounded');
 	    	var serviceNameUpdate = document.getElementById("serviceNameUpdate").value;
 	    	var servicePriceUpdate = document.getElementById("servicePriceUpdate").value;
 	    	var serviceDescUpdate = document.getElementById("serviceDescUpdate").value;
-	    	var selectServiceUpdate = document.getElementById("selectServiceUpdate").value;
+	    	var selectServiceUpdate = document.getElementById("serviceToBeUpdate").value;
 	    	
-	    	$.ajax({
-	    		type: "POST",
-	    		url: "update",
-	    		data: {
-	    			"strServiceName" : selectServiceUpdate,
-	    			"service.strServiceName" : serviceNameUpdate,
-	    			"service.dblPrice" : servicePriceUpdate,
-	    			"service.strDescUpdate" : serviceDescUpdate
-	    		},
-	    		dataType: "json",
-	    		async: true,
-	    		success: function(data){
-	    			if (data.status === "success"){
-	    				alert("Successfully updated.");
-	    				updateTable();
-	    				$('#modalUpdate').closeModal();
-	    			}else{
-	    				alert("error occured...");
-	    			}
-	    		},
-	    		error: function(data){
-	    			alert("error..."+data);
-	    		}
-	    	});
+	    	if (serviceNameUpdate == null || serviceNameUpdate == "" || serviceNameUpdate == " " ||
+	    			servicePriceUpdate == null || servicePriceUpdate == 0){
+	    		
+	    	}else{
+	    	
+		    	$.ajax({
+		    		type: "POST",
+		    		url: "update",
+		    		data: {
+		    			"strServiceName" : selectServiceUpdate,
+		    			"service.strServiceName" : serviceNameUpdate,
+		    			"service.dblPrice" : servicePriceUpdate,
+		    			"service.strDescUpdate" : serviceDescUpdate
+		    		},
+		    		dataType: "json",
+		    		async: true,
+		    		success: function(data){
+		    			if (data.status === "success"){
+		    				Materialize.toast('Service is successfully updated.', 3000, 'rounded');
+		    				updateTable();
+		    				$('#modalUpdateService').closeModal();
+		    			}else if(data.status === "input"){
+		    				Materialize.toast('Check all your inputs.', 3000, 'rounded');
+		    			}else if (data.status === "failed-database"){
+		    				Materialize.toast('Please check your connection.', 3000, 'rounded');
+		    			}
+		    		},
+		    		error: function(data){
+		    			Materialize.toast('Error occured.', 3000, 'rounded');
+		    		}
+		    	});
+	    	}
 	    	
 	    }//updateService()
 	    
 	    function deactivateService(){
 	    	
-	    	var selectServiceDeactivate = document.getElementById("selectServiceDeactivate").value;
+	    	var selectServiceDeactivate = document.getElementById("serviceToBeDeactivated").value;
 	    	
 	    	$.ajax({
 	    		type: "POST",
 	    		url: "deactivate",
 	    		data:{
-	    			"strServiceName" : selectServiceDeactivate
+	    			"serviceId" : selectServiceDeactivate
 	    		},
 	    		dataType: "json",
 	    		async: true,
 	    		success: function(data){
 	    			if (data.status === "success"){
-	    				alert("successfully deleted.");
+	    				Materialize.toast('Service is successfully deleted.', 3000, 'rounded');
 	    				updateTable();
-	    				$('#modalDeactivate').closeModal();
-	    			}else{
-	    				alert("error occured.");
+	    				$('#modalDeactivateService').closeModal();
+	    			}else if (data.status === "failed-database"){
+	    				Materialize.toast('Please check your connection.', 3000, 'rounded');
 	    			}
 	    		},
 	    		error: function(data){
-	    			alert("error...");
+	    			Materialize.toast('Please check your connection.', 3000, 'rounded');
 	    		}
 	    	});
 	    	
 	    }
+	    
+	    window.onload = updateTable;
 	    
 	    function updateTable(){
 			
@@ -401,22 +347,28 @@
 				async: true,
 				success: function(data){
 					var serviceList = data.serviceList;
-	        		$("#tableService tbody").remove();
-					if (serviceList != null){
-						$.each(serviceList, function(i, service){
-							
-			        		tableRow = $("<tr>").append(
-			        				$("<td>").text(service.strServiceName),
-			        				$("<td>").text(service.dblPrice),
-			        				$("<td>").text(service.strServiceDesc),
-			        				$("<td>").text());
-			        		$("#tableService").append(tableRow);
+					var table = $('#datatable').DataTable();
+	        		table.clear();
+	        		Materialize.toast('Updating table...', 3000, 'rounded');
+	        		if (serviceList != null){
+		        		$.each(serviceList, function(i, service){
+	
+		        			var addButtons = "<button name = action class= 'modal-trigger btn-floating green' onclick = openUpdate(this.value) value = "+service.serviceId+" ><i class= material-icons >mode_edit</i></button>"+
+		        			"<button name = action class= 'modal-trigger btn-floating red' onclick = openDeactivate(this.value) value = "+service.serviceId+"><i class= material-icons >delete</i></button></td>";
+		        			
+		        			
+		        			table.row.add( [
+		    	        		            service.strServiceName,
+		    	        		            "P "+service.dblPrice,
+		    	        		            service.strServiceDesc,
+		    	        		            ,
+		    	        		            addButtons
+		    	        		            ]);
 		        		});
-					}else{
-						tableRow = $("<tr>").append(
-								$("<td>").text("No services available."));
-						$("#tableService").append(tableRow);
-					}
+	        		}
+	        		
+	        		
+	        		table.draw();
 				},
 				error: function(data){
 					alert("error in updating table...");
@@ -424,6 +376,39 @@
 			});
 			
 		}//updateTable
+		
+		function openUpdate(serviceId){
+			
+			$.ajax({
+	    		type: "POST",
+	    		url: "getService",
+	    		data:{
+	    			"serviceId" : serviceId
+	    		},
+	    		dataType: "json",
+	    		async: true,
+	    		success: function(data){
+	    			if (data.service == null){
+	    				Materialize.toast('Service does not exist.', 3000, 'rounded');
+	    			}else{
+
+	    				$("#serviceToBeUpdate").val(data.service.strServiceName);
+	    				$("#serviceNameUpdate").val(data.service.strServiceName);
+	    				$("#servicePriceUpdate").val(data.service.dblPrice);
+	    				$("#serviceDescUpdate").val(data.service.strServiceDesc);
+	    				$('#modalUpdateService').openModal();
+	    			}
+	    		},
+	    		error: function(data){
+	    			Materialize.toast('Error occured.', 3000, 'rounded');
+	    		}
+	    	});
+		}
+		
+		function openDeactivate(serviceId){
+			$("#serviceToBeDeactivated").val(serviceId);
+			$('#modalDeactivateService').openModal();
+		}
     
     </script>
     

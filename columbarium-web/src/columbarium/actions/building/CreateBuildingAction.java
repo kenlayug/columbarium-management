@@ -7,6 +7,7 @@ import columbarium.model.Building;
 
 public class CreateBuildingAction extends ActionSupport implements Action{
 
+	private static final long serialVersionUID = 1L;
 	private Building building;
 	private String strStatus;
 	public Building getBuilding() {
@@ -22,6 +23,7 @@ public class CreateBuildingAction extends ActionSupport implements Action{
 	public String execute(){
 		
 		strStatus = getBuilding().create();
+		System.out.println(strStatus);
 		return "success";
 	}
 	

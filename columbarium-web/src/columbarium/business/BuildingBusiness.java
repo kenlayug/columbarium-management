@@ -1,11 +1,13 @@
 package columbarium.business;
 
 import columbarium.model.Building;
-import columbarium.model.Floor;
 
 public interface BuildingBusiness {
 
 	public String createBuilding(Building building);
-	public String createFloor(Floor floor);
+	public Building getBuilding(String strBuildingName);
+	public Building getBuildingById(int buildingId);
+	public String updateBuilding(Building building);
+	public String deactivateBuilding(String strBuildingName);
 	
 }

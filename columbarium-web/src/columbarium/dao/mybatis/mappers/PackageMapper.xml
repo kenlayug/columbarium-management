@@ -16,18 +16,6 @@
 			<result property="strPackageName" column="strPackageName"/>
 			<result property="strPackageDesc" column="strPackageDesc"/>
 			<result property="dblPrice" column="deciPackagePrice"/>
-			<collection property="serviceList" ofType="Service">
-				<id property="serviceId" column="serviceId"/>
-				<result property="strServiceName" column="strServiceName"/>
-				<result property="strServiceDesc" column="strServiceDesc"/>
-				<result property="dblPrice" column="deciServicePrice"/>
-			</collection>
-			<collection property="itemList" ofType="Item">
-				<id property="itemId" column="itemId"/>
-				<result property="strItemName" column="strItemName"/>
-				<result property="strItemDesc" column="strItemDesc"/>
-				<result property="dblPrice" column="deciItemPrice"/>
-			</collection>
 		</resultMap>
 		
 		<resultMap id="ItemResultMap" type="Item">
@@ -35,6 +23,18 @@
 			<result property="strItemName" column="strItemName"/>
 			<result property="strItemDesc" column="strItemDesc"/>
 			<result property="dblPrice" column="deciItemPrice"/>
+		</resultMap>
+		
+		<resultMap type="Service" id="ServiceResultMap">
+			<id property="serviceId" column="serviceId"/>
+			<result property="strServiceName" column="strServiceName"/>
+			<result property="strServiceDesc" column="strServiceDesc"/>
+			<result property="dblPrice" column="deciServicePrice"/>
+			<collection property="requirementList" ofType="Requirement">
+				<id property="requirementId" column="requirementId"/>
+				<result property="strRequirementName" column="strRequirementName"/>
+				<result property="strRequirementDesc" column="strRequirementDesc"/>
+			</collection>
 		</resultMap>
 		
 		<resultMap type="java.lang.Integer" id="PackageIdResultMap">
@@ -52,10 +52,10 @@
 				intStatus = 1
 				<choose>
 					<when test="packageId == null">
-						OR packageId = #{packageId}
+						AND strPackageName LIKE #{strPackageName}
 					</when>
-					<when test="strPackageName != null">
-						OR strPackageName LIKE #{strPackageName}
+					<when test="packageId != null">
+						AND packageId = #{packageId}
 					</when>
 				</choose>
 			</where>
@@ -91,20 +91,9 @@
 		</select>
 		
 		<select id="getAllPackage" resultMap="PackageResultMap">
-			SELECT p.packageId, p.strPackageName, p.strPackageDesc, p.deciPackagePrice,
-				i.strItemName, i.strItemDesc, i.deciItemPrice,
-				s.strServiceName, s.strServiceDesc, s.deciServicePrice
+			SELECT p.packageId, p.strPackageName, p.strPackageDesc, p.deciPackagePrice
 			FROM tblPackage p
-			LEFT JOIN tblPackageItem pi ON p.packageId = pi.packageIdFK
-			LEFT JOIN tblItem i ON i.itemId = itemIdFK
-			LEFT JOIN tblPackageService ps ON p.packageId = ps.packageIdFK
-			LEFT JOIN tblService s ON s.serviceId = ps.serviceIdFK
 			WHERE p.intStatus = 1
-				AND i.intStatus = 1
-				AND s.intStatus = 1
-				AND pi.intStatus = 1
-				AND ps.intStatus = 1
-			GROUP BY s.serviceId
 			ORDER BY strPackageName ASC
 		</select>
 		
@@ -113,6 +102,13 @@
 			FROM tblPackageItem pi
 			LEFT JOIN tblItem i ON pi.itemIdFK = i.itemId
 			WHERE pi.packageIdFK = #{packageId}
+		</select>
+		
+		<select id="getServicesOfPackage" resultMap="ServiceResultMap">
+			SELECT s.*
+			FROM tblPackageService ps
+			LEFT JOIN tblService s ON ps.serviceIdFK = s.serviceId
+			WHERE ps.packageIdFK = #{packageId}
 		</select>
 		
 		<select id="countAllPackage" resultMap="CountPackageResultMap">

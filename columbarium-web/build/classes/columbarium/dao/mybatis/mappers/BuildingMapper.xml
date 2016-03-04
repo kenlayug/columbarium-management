@@ -11,19 +11,24 @@
 			<result property="intCount" column="COUNT(*)" />
 		</resultMap>
 		
-		<resultMap type="Floor" id="FloorResultMap">
-			<result property="floorId" column="floorId"/>
-			<result property="buildingId" column="bldgIdFK"/>
-			<result property="intFloorNo" column="intFloorNo"/>
-			<result property="intLevelNo" column="intLevelNo"/>
-			<result property="intColumnNo" column="intColumnNo"/>
-		</resultMap>
-		
 		<resultMap type="Building" id="BuildingResultMap">
 			<id property="buildingId" column="bldgId"/>
 			<result property="strBuildingName" column="strBldgDesc"/>
 			<result property="strBuildingLocation" column="strLocation"/>
-			<result property="strBuildingType" column="strBldgType"/>
+			<result property="intNoOfFloors" column="intNoOfFloors"/>
+			<collection property="floorList" ofType="Floor">
+				<id property="floorId" column="floorId"/>
+				<result property="intFloorNo" column="intFloorNo"/>
+				<result property="intLevelNo" column="intLevelNo"/>
+				<result property="intColumnNo" column="intColumnNo"/>
+				<association property="floorType" resultMap="FloorTypeResultMap"/>
+			</collection>
+		</resultMap>
+		
+		<resultMap type="FloorType" id="FloorTypeResultMap">
+			<id property="floorTypeId" column="floorTypeId"/>
+			<result property="strFloorDesc" column="strFloorDesc"/>
+			<result property="boolIsUnit" column="boolIsUnit"/>
 		</resultMap>
 	
 	<!-- END RESULTMAPS -->
@@ -31,30 +36,41 @@
 	<!-- SELECT QUERIES -->
 	
 		<select id="checkIfExistingBuilding" resultMap="CountResultMap">
-			SELECT COUNT(*) FROM tblBldg WHERE strBldgDesc = #{strBuildingName}
+			SELECT COUNT(*) FROM tblBldg
+			<where>
+				intStatus = 1
+				<if test="buildingId == 0">
+					AND strBldgDesc LIKE #{strBuildingName}
+				</if>
+				<if test="buildingId != 0">
+					AND bldgId = #{buildingId}
+				</if>
+			</where>
 		</select>
 		
-		<select id="checkIfExistingBlock" resultMap="CountResultMap">
-			SELECT COUNT(*) FROM tblBlock WHERE strBlockDesc = #{strBlockName}
-		</select>
-		
-		<select id="selectFloorById" resultMap="FloorResultMap">
-			SELECT * FROM tblFloor WHERE floorId = #{floorId} LIMIT 1
-		</select>
-		
-		<select id="selectLastFloorCreated" resultMap="FloorResultMap">
-			SELECT * FROM tblFloor ORDER BY floorId DESC LIMIT 1
+		<select id="getBuilding" resultMap="BuildingResultMap">
+			SELECT b.*, f.*, ft.*
+			FROM tblBldg b
+			LEFT JOIN tblFloor f ON b.bldgId = f.bldgIdFK
+			LEFT JOIN tblFloorType ft ON ft.floorTypeId = f.floorTypeIdFK
+			<where>
+				b.intStatus = 1
+				<if test="buildingId == 0">
+					AND b.strBldgDesc = #{strBuildingName}
+				</if>
+				<if test="buildingId != 0">
+					AND b.bldgId = #{buildingId}
+				</if>
+			</where>
 		</select>
 		
 		<select id="getAllBuilding" resultMap="BuildingResultMap">
-			SELECT b.*
+			SELECT b.*, f.*, ft.*
 			FROM tblBldg b
+			LEFT JOIN tblFloor f ON b.bldgId = f.bldgIdFK
+			LEFT JOIN tblFloorType ft ON ft.floorTypeId = f.floorTypeIdFK
 			WHERE b.intStatus = 1
 			ORDER BY b.strBldgDesc ASC
-		</select>
-		
-		<select id="countLevel" resultMap="CountResultMap">
-			SELECT COUNT(*) FROM tblUnitCategory WHERE floorIdFK = #{floorId}
 		</select>
 		
 		<select id="countAllBuilding" resultMap="CountResultMap">
@@ -66,46 +82,44 @@
 	<!-- INSERT QUERIES -->
 	
 		<insert id="createBuilding">
-			INSERT INTO tblBldg (strBldgDesc, strLocation, strBldgType, intStatus)
-			VALUES (#{strBuildingName}, #{strBuildingLocation}, #{strBuildingType}, 1)
+			INSERT INTO tblBldg (strBldgDesc, strLocation, intNoOfFloors, intStatus)
+			VALUES (#{strBuildingName}, #{strBuildingLocation}, #{intNoOfFloors}, 1)
 		</insert>
 		
 		<insert id="createFloor">
-			INSERT INTO tblFloor (intFloorNo, bldgIdFK, intLevelNo, intColumnNo, intStatus)
+			INSERT INTO tblFloor (intFloorNo, bldgIdFK, intStatus)
 			VALUES (
 				#{intFloorNo},
 				#{buildingId},
-				#{intLevelNo},
-				#{intColumnNo},
 				1
 				)
 		</insert>
-		
-		<insert id="createBlock">
-			INSERT INTO tblBlock (strBlockDesc, floorIdFK, intStatus)
-			VALUES (#{strBlockDesc}, #{floorId}, 1)
-		</insert>
-		
-		<insert id="createUnitCategory">
-			INSERT INTO tblUnitCategory (floorIdFK, intLevelNo)
-			VALUES (#{floorId},
-				#{currentLevel}
-			)
-		</insert>
-		
-		<!--<insert id="createUnit">
-			INSERT INTO tblUnit (blockIdFK, intColumnNo, unitCategoryIdFK, intUnitStatus)
-				VALUES (#{blockId}, #{intColumnNo}, 
-					(SELECT unitCategoryId FROM tblUnitCategory WHERE floorIdFK = #{floorId}
-						AND levelIdFK),
-					1
-				)
-		</insert>-->
 		
 	<!-- END INSERT QUERIES -->
 	
 	<!-- UPDATE QUERIES -->
 	
+		<update id="updateBuilding">
+			UPDATE tblBldg
+			<set>
+				<if test="strBuildingName != null">
+					strBldgDesc = #{strBuildingName},
+				</if>
+				<if test="strBuildingLocation != null">
+					strLocation = #{strBuildingLocation},
+				</if>
+				<if test="intNoOfFloors != 0">
+					intNoOfFloors = #{intNoOfFloors}
+				</if>
+			</set>
+			WHERE bldgId = #{buildingId}
+		</update>
+		
+		<update id="deactivateBuilding">
+			UPDATE tblBldg
+			SET intStatus = 0
+			WHERE bldgId = #{buildingId}
+		</update>
 	
 	<!-- END UPDATE QUERIES -->
 	

@@ -6,6 +6,7 @@ import columbarium.model.Item;
 import columbarium.model.Package;
 import columbarium.model.PackageItem;
 import columbarium.model.PackageService;
+import columbarium.model.Service;
 
 public interface PackageMapper {
 
@@ -30,5 +31,6 @@ public interface PackageMapper {
 	public int checkPackageIfExistingItem(PackageItem packageItem);
 	
 	public List<Item>getItemsOfPackage(Package packageTo);
+	public List<Service>getServicesOfPackage(Package packageTo);
 	
 }

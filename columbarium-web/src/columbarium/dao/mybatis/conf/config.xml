@@ -18,6 +18,10 @@
 		<typeAlias type="columbarium.model.Building" alias="Building"/>
 		<typeAlias type="columbarium.model.Floor" alias="Floor"/>
 		<typeAlias type="columbarium.model.Requirement" alias="Requirement"/>
+		<typeAlias type="columbarium.model.FloorType" alias="FloorType"/>
+		<typeAlias type="columbarium.model.UnitCategory" alias="UnitCategory"/>
+		<typeAlias type="columbarium.model.Block" alias="Block"/>
+		<typeAlias type="columbarium.model.Unit" alias="Unit"/>
 	
 	</typeAliases>
 	
@@ -47,6 +51,7 @@
 		<mapper resource="columbarium/dao/mybatis/mappers/BuildingMapper.xml"/>
 		<mapper resource="columbarium/dao/mybatis/mappers/RequirementMapper.xml"/>
 		<mapper resource="columbarium/dao/mybatis/mappers/FloorMapper.xml"/>
+		<mapper resource="columbarium/dao/mybatis/mappers/BlockMapper.xml"/>
 	
 	</mappers>
 	

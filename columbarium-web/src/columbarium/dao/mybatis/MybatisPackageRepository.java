@@ -131,8 +131,10 @@ public class MybatisPackageRepository extends MybatisClient implements PackageRe
 			PackageMapper packageMapper = sqlSession.getMapper(PackageMapper.class);
 			if (packageMapper.countAllPackage() > 0){
 				packageList = packageMapper.getAllPackage();
+				System.out.println(packageList.size());
 				for (Package packageTo : packageList) {
 					packageTo.setItemList(packageMapper.getItemsOfPackage(packageTo));
+					packageTo.setServiceList(packageMapper.getServicesOfPackage(packageTo));
 				}
 				return packageList;
 			}

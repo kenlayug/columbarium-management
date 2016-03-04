@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+	<mapper namespace="columbarium.dao.mybatis.mappers.BlockMapper">
+	
+	<!-- RESULTMAPS -->
+	
+		<resultMap type="java.lang.Integer" id="CountResultMap">
+			<result property="intCount" column="COUNT(*)" />
+		</resultMap>
+		
+		<resultMap type="Block" id="BlockResultMap">
+			<id property="blockId" column="blockId"/>
+			<result property="strBlockName" column="strBlockDesc"/>
+			<result property="floorId" column="floorIdFK"/>
+			<collection property="unitList" ofType="Unit">
+				<id property="unitId" column="unitId"/>
+				<result property="strUnitType" column="strUnitType"/>
+				<result property="intLevelNo" column="intLevelNo"/>
+				<result property="intColumnNo" column="intColumnNo"/>
+				<result property="intStatus" column="intUnitStatus"/>
+			</collection>
+		</resultMap>
+	
+	<!-- END RESULTMAPS -->
+	
+	<!-- SELECT QUERIES -->
+		
+		<select id="checkIfExistingBlock" resultMap="CountResultMap">
+			SELECT COUNT(*)
+			FROM tblBlock
+			<where>
+				intStatus = 1
+				<if test="blockId == 0">
+					AND strBlockDesc LIKE #{strBlockName}
+				</if>
+				<if test="blockId != 0">
+					AND blockId = #{blockId}
+				</if>
+			</where>
+		</select>
+		
+		<select id="getBlock" resultMap="BlockResultMap">
+			SELECT b.*, u.*, uc.intLevelNo
+			FROM tblBlock b
+				LEFT JOIN tblUnit u ON b.blockId = u.blockIdFK
+				LEFT JOIN tblUnitCategory uc ON uc.unitCategoryId = u.unitCategoryIdFK
+			<where>
+				intStatus = 1
+				<if test="blockId == 0">
+					AND b.strBlockDesc LIKE #{strBlockName}
+				</if>
+				<if test="blockId != 0">
+					AND b.blockId = #{blockId}
+				</if>
+			</where>
+		</select>
+		
+		<select id="getAllBlockFromFloor" resultMap="BlockResultMap">
+			SELECT b.*, u.*, uc.intLevelNo
+			FROM tblBlock b
+				LEFT JOIN tblUnit u ON b.blockId = u.blockIdFK
+				LEFT JOIN tblUnitCategory uc ON uc.unitCategoryId = u.unitCategoryIdFK
+			<where>
+				intStatus = 1
+					AND b.floorIdFK = #{floorId}
+			</where>
+		</select>
+	
+	<!-- END SELECT QUERIES -->
+	
+	<!-- INSERT QUERIES -->
+		
+		<insert id="createBlock">
+			INSERT INTO tblBlock (strBlockDesc, floorIdFK, intStatus)
+				VALUES (#{strBlockName}, #{floorId}, 1)
+		</insert>
+		
+		<insert id="createUnit">
+			INSERT INTO tblUnit (blockIdFK, intColumnNo, unitCategoryIdFK, strUnitType, intUnitStatus)
+				VALUES (#{blockId},
+					#{intColumnNo}, 
+					(SELECT unitCategoryId FROM tblUnitCategory
+						WHERE floorIdFK = #{floorId} AND intLevelNo = #{intLevelNo}),
+					#{strUnitType},
+					1
+				)
+		</insert>
+		
+	<!-- END INSERT QUERIES -->
+	
+	<!-- UPDATE QUERIES -->
+		
+		<update id="updateBlock">
+			UPDATE tblBlock
+			<set>
+				<if test="strBlockName != null">
+					strBlockDesc = #{strBlockName}
+				</if>
+			</set>
+			WHERE blockId = #{blockId}
+		</update>
+	
+	<!-- END UPDATE QUERIES -->
+	
+	
+	</mapper>

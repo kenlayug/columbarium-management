@@ -3,12 +3,16 @@ package columbarium.service;
 import java.util.List;
 
 import columbarium.model.Building;
-import columbarium.model.Floor;
 
 public interface BuildingService {
 
 	public String createBuilding(Building building);
-	public String createFloor(Floor floor);
+	
+	public Building getBuilding(String strBuildingName);
+	public Building getBuildingById(int buildingId);
+	
+	public String updateBuilding(Building building);
+	public String deactivateBuilding(String strBuildingName);
 	
 	public List<Building>getAllBuilding();
 	

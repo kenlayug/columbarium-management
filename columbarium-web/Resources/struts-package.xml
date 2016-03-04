@@ -19,6 +19,10 @@
   		<action name="create" class="columbarium.actions.packages.CreatePackageAction">
   			<result name="success" type="json"></result>
   		</action>
+  		
+  		<action name="getAllPackages" class="columbarium.actions.packages.InitializePackageAction">
+  			<result name="success" type="json"></result>
+  		</action>
   	 
   	</package> 
    

@@ -5,96 +5,72 @@
 	    <!-- Import CSS/JS -->
 	    <script type="text/javascript" src="<%=request.getContextPath()%>/js/Inventory_Form.js"></script>
 	    <link rel = "stylesheet" href = "<%=request.getContextPath()%>/css/Inventory_Form.css"/>
-		<script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery.validate.js"></script>
-		<script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery.validate.min.js"></script>
 
-	
+		<link rel="stylesheet" href="../css/style.css">
+
 	<!-- Section -->
 	<div class = "responsive col s12">
 	    <div class = "row">
-	        <div class = "col s7">
-	            <h2>Item Maintenance</h2>
+	        <div class = "col s5">
+	            <h2 style = "font-size: 30px;margin-bottom: 10px;">Item Maintenance</h2>
 	
 	            <!-- Create Items -->
 	            <div class = "col s12">
-	                <form class = "aside aside z-depth-3" id="formCreate">
+	                <form class = "aside aside z-depth-3" style = "margin-top: 0px;" id="formCreate">
 	                    <div class = "header">
-	                        <h4>Item Form</h4>
+	                        <h4 style = "font-size: 30px;padding-top: 10px;">Item Form</h4>
 	                    </div>
 	
 
 	                        <div class = "row">
 	                        <div style = "padding-left: 10px;">
 	                            <div class="input-field col s6">
-	                                <input id="itemName" type="text" class="validate" name="item.strItemName" required>
-	                                <label for="itemName" data-error = "Check format field." data-success = "">Item Name<span style = "color: red;">*</span></label>
+	                                <input id="itemName" type="text" class="validate" name="item.strItemName" required = "" aria-required="true" length = "20">
+	                                <label for="itemName" data-error = "Invalid format." data-success = "">Item Name<span style = "color: red;">*</span></label>
 	                            </div>
 	                        </div>
 	                        <div style = "padding-left: 10px;">
 	                            <div class="input-field col s6">
 	                                <input id="itemPrice" type="text" class="validate" name="item.dblPrice" required = "" aria-required = "true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
-	                                <label for="itemPrice" data-error = "Check format field." data-success = "">Item Price<span style = "color: red;">*</span></label>
+	                                <label for="itemPrice" data-error = "Invalid Format." data-success = "">Item Price<span style = "color: red;">*</span></label>
 	                            </div>
 	                        </div>
 	                    </div>
-							<!-- Floating Button -->
-							<div class="fixed-action-btn horizontal" style="position: absolute; margin-right: 570px; margin-bottom: 175px;">
-								<button type = "submit" onclick="createItem()" name = "action"  class="btn-floating btn-large red"><i class="large material-icons">add</i>
-								</button>
-								<ul>
-									<li><button name = "action" class="modal-trigger btn-floating black" href = "#modalDeactivate"><i class="material-icons">delete</i></button></li>
-									<li><button name = "action" class="modal-trigger btn-floating green darken-1" href = "#modalUpdate"><i class="material-icons">mode_edit</i></button></li>
-								</ul>
-							</div>
 	
 	                        <div class="row" style = "padding-left: 10px;">
 	                            <div class="input-field col s12">
-	                                <input id="itemDesc" type="text" class="validate" name="item.strItemDesc" pattern = "[A-Za-z0-9\s]{1,29}">
-	                                <label for="itemDesc" data-error = "" data-success = "">Item Description</label>
+	                                <input id="itemDesc" type="text" class="validate" name="item.strItemDesc">
+	                                <label for="itemDesc" data-error = "Invalid Format" data-success = "">Item Description</label>
 	                            </div>
 	                        </div>
+						<i class = "left" style = "margin-bottom: 0px; padding-left: 20px; color: red;">*Required Fields</i>
+	                	<br>
+						<button onClick = "createItem()" type = "submit" name = "action" class="btn red right" style = "margin-right: 10px;">Create</button>
 
-
-	                </form>
+					</form>
 
 	            </div>
 	        </div>
 	
 	        <!-- Modal Update -->
-	        <form id="modalUpdate" class="modal">
+	        <div id="modalUpdateItem" class="modal" style = "width: 700px;">
 	            <div class = "modal-header">
-	                <h4>Update Item</h4>
+	                <h4 style = "font-size: 30px;">Update Item</h4>
 	            </div>
-	
-		                <div class = "col s12">
-		                    <div class = "col s6" style = "padding-left: 20px;">
-		                        <label>Select Item Name to Update:</label>
-		                        <c:if test="${itemList == null}">
-		                        	<label>No item available.</label>
-		                        </c:if>
-		                        <c:if test="${itemList != null}">
-			                        <select name="strItemName" id="selectItemUpdate" required = "" aria-required="true" onchange="placeValue()">
-			                            <option value="" disabled selected>Item Name:</option>
-										<c:forEach items="${itemList }" var="item">
-											<option value="${item.strItemName}">${item.strItemName}</option>
-										</c:forEach>
-			                        </select>
-		                        </c:if>
-		                    </div>
-		                </div>	
-	
+					<form id="formUpdate">
 		                <div class = "col s12">
 		                    <div class = "row">
 		                        <div style = "padding-left: 10px;">
 		                            <div class="input-field col s6">
-		                                <input id="itemNameUpdate" type="text" class="validate" name="item.strItemName" required = "" aria-required = "true" pattern = "[A-Za-z0-9\s]{1,29}">
-		                                <label for="itemNameUpdate" data-error = "Check format field." data-success = "">New Item Name</label>
+		                            	<input id="itemNameToBeUpdated" type="hidden"/>
+		                                <input value=" " id="itemNameUpdate" type="text" class="validate" name="item.strItemName" required = ""  pattern = "[A-Za-z0-9\s]{1,29}">
+		                                <label class="active" for="itemNameUpdate" data-error = "Invalid format." data-success = "">New Item Name<span style = "color: red;">*</span></label>
 		                            </div>
 		                        </div>
 		                        <div style = "padding-left: 10px;">
 		                            <div class="input-field col s6">
-		                                <input id="itemPriceUpdate" type="text" class="validate" name="item.dblPrice" required = "" aria-required = "true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
-		                                <label for="itemPriceUpdate" data-error = "Check format field." data-success = "">New Item Price</label>
+		                                <input value="0" id="itemPriceUpdate" type="text" class="validate" name="item.dblPrice" required = "" aria-required = "true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
+		                                <label class="active" for="itemPriceUpdate" data-error = "Invalid format." data-success = "">New Item Price<span style = "color: red;">*</span></label>
 		                            </div>
 		                        </div>
 		                    </div>
@@ -102,113 +78,128 @@
 	
 	                    <div style = "padding-left: 20px;">
 	                        <div class="input-field col s12">
-	                            <input id="itemDescUpdate" type="text" class="validate" name="item.strItemDesc">
-	                            <label for="itemDescUpdate" data-error = "Check format field." data-success = "">New Item Description</label>
+	                            <input value=" " id="itemDescUpdate" type="text" class="validate" name="item.strItemDesc">
+	                            <label class="active" for="itemDescUpdate" data-error = "Invalid format." data-success = "">New Item Description</label>
 	                        </div>
 	                    </div>
-						<br><br>
+
+					<i class = "left" style = "margin-bottom: 0px; padding-left: 30px; color: red;">*Required Fields</i>
+					<br>
 
 					<div class="modal-footer">
-						<button onclick="updateItem()" type="submit" name="action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
-
-						<button class="waves-effect waves-light btn red" onclick="$('#modalUpdate').closeModal()">Cancel</button>
+							<button onclick="updateItem()" type="submit" name="action" class="btn red" style = "margin-top: 30px; margin-left: 10px; ">Confirm</button>
+						<button class="btn red modal-close" style = "margin-top: 30px" onclick="$('modalUpdateItem').closeModal()">Cancel</button>
 					</div>
+				</form>
 
 
-	        </form>
-	
-	
-	        <!-- Modal Deactivate -->
-	        <div id="modalDeactivate" class="modal">
-	            <div class = "modal-header">
-	                <h4>Deactivate Item</h4>
-	            </div>
-	            <div class="modal-content">
-		                <div class = "col s12">
-		                    <div class = "col s6" style = "padding-left: 20px;">
-		                        <label>Select Item Name to Deactivate:</label>
-		                        <c:if test="${itemList == null}">
-			                       <label>No item available.</label>
-			                    </c:if>
-			                    <c:if test="${itemList != null}">
-									<select name="strItemName" id="itemNameDeactivate" required = "" aria-required="true">
-										<option value="" disabled selected>Item Name:</option>
-											<c:forEach items="${itemList }" var="item">
-												<option value="${item.strItemName}">${item.strItemName}</option>
-											</c:forEach>
-									</select>
-								</c:if>
-		                    </div>
-		                </div>
-	            </div>
-	
-	            <div class="modal-footer">
-	                <button onclick="deactivateItem()" name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
-					
-	                <button onclick="$('#modalDeactivate').closeModal()" class="waves-effect waves-light btn red">Cancel</button>
-	            </div>
 	        </div>
-	
-	        <!-- Data Grid -->
-	        <div class = "responsive col s5">
-	            <div class = "col s4 z-depth-2 " style = "margin-left: 60px; margin-top: 20px; width: 450px; height: 70px;">
-	                <nav style = "height: 50px; margin-top: 10px; background-color: #00897b">
-	                    <div class="nav-wrapper">
-	                        <div>
-	                            <div class="input-field"  style = "height: 50px;">
-	                                <input id="searchItem" type="search">
-	                                <label for="search"><i class="material-icons">search</i></label>
-	                                <i class="material-icons">close</i>
-	                            </div>
-	                        </div>
-	                    </div>
-	                </nav>
-	            </div>
-	
-	            <br>
-	            <br>
-	            <br>
-	            <br>
-	            <br>
-	
-	            <div class = "aside z-depth-2" style = "margin-left: 60px; width: 450px; height: 310px; overflow: auto;">
-	                <table id="tableItem" class = "responsive" style = "margin-top: 10px; margin-left: 0px; width: 100%; height: 200px;">
-	
-	                    <thead class = "fixed-header">
-	                    <tr>
-	                        <th data-field="id">Item Name</th>
-	                        <th data-field="price">Item Price</th>
-	                        <th data-field="name">Item Description</th>
-	                    </tr>
-	                    </thead>
-	                    <tbody id="tableItemBody">
-			                <c:if test="${itemList  == null }">
-			                	<tr>
-				                	<td>No available items.</td>
-				            	</tr>
-				            </c:if>
-			                <c:if test="${itemList != null}">
-			                	<c:forEach items="${itemList }" var="item">
-			                		<tr id="rowItem">
-					                    <td>${item.strItemName }</td>
-					                    <td>P ${item.dblPrice }</td>
-					                    <td>${item.strItemDesc }</td>
-				                	</tr>
-			                	</c:forEach>
-			                </c:if>
-	                    
-	                    </tbody>
-	                </table>
-	            </div>
-	        </div>
+
+
+			<!-- Modal Deactivate -->
+			<div id="modalDeactivateItem" class="modal" style = "width: 600px;">
+				<div class = "modal-header">
+					<h4 style = "font-size: 30px;">Deactivate Item</h4>
+				</div>
+				<div class="modal-content">
+					<p style = "padding-left: 90px; font-size: 15px;">Are you sure you want to deactivate this item?</p>
+				</div>
+				<input id="itemToBeDeactivated" type="hidden"/>
+				<div class="modal-footer">
+					<button onclick = "deactivateItem()" name = "action" class="btn red" style = "margin-left: 10px; ">Confirm</button>
+					<button name = "action" class="btn red">Cancel</button>
+				</div>
+			</div>
+
+			<!--ganto ung declaration sa btn ken	<button class="modal-trigger btn red" href = "#modalSuccessMessage">btnSuccess</button>    -->
+			<!-- Modal Success -->
+			<div id="modalSuccessMessage" class="modal" style = "width: 350px; height: 155px;">
+				<div class = "modal-header" style = "height: 50px;">
+					<div class = "row">
+						<div class = "col s10">
+							<h4 style = "padding-left: 10px; font-size: 25px;">Success Message</h4>
+						</div>
+						<div class = "col s2">
+							<a class="btn-floating btn-small modal-close black right" style = "margin-top: 5px; margin-right: 5px; padding-bottom: 10px;"><i class="material-icons" style = "padding-bottom: 5px;">&#10006</i></a>
+						</div>
+					</div>
+				</div>
+				<div class="modal-content">
+					<p style = "padding-top: 0px; padding-left: 50px; font-size: 16px; font-family: arial;">Record has been saved.</p>
+				</div>
+			</div>
+
+
+			<!-- Data Grid -->
+			<div class = "col s7">
+				<div class="row">
+					<div id="admin" class="col s12" style="margin-top: 20px">
+						<div class="z-depth-2 card material-table">
+							<div class="table-header" style="background-color: #00897b;">
+								<h4 style = "font-size: 30px; color: white; padding-left: 0px;">Building Data Grid</h4>
+								<div class="actions">
+									<a href="#" class="search-toggle btn-flat nopadding"><i class="material-icons" style="color: #ffffff;">search</i></a>
+								</div>
+							</div>
+							<table id="datatable">
+								<thead>
+								<tr>
+									<th>Item Name</th>
+									<th>Item Price</th>
+									<th>Item Description</th>
+									<th>Action</th>
+								</tr>
+								</thead>
+								<tbody>
+								
+									<c:if test="${itemList == null }">
+										<tr>
+											<td>Item One</td>
+											<td>P 200</td>
+											<td>Item One</td>
+											<td><button name = "action" class="modal-trigger btn-floating green" onclick="openUpdate('${item.strItemName}')"><i class="material-icons">mode_edit</i></button>
+												<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateItem"><i class="material-icons">delete</i></button></td>
+										</tr>
+									</c:if>
+									
+									<c:if test="${itemList != null }">
+										<c:forEach items="${itemList }" var="item">
+											<tr>
+												<td>${item.strItemName }</td>
+												<td>P ${item.dblPrice }</td>
+												<td>${item.strItemDesc }</td>
+												<td><button name = "action" class="modal-trigger btn-floating green" onclick="openUpdate('${item.strItemName}')"><i class="material-icons">mode_edit</i></button>
+													<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateItem"><i class="material-icons">delete</i></button></td>
+											</tr>
+										</c:forEach>
+									</c:if>
+								
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+
+				<script type="text/javascript" src = "../js/index.js"></script>
+			</div>
 	
 	
 	    </div>
 	</div>
 	
 	<script type="text/javascript">
+
+
+		$(document).ready(function(){
+			// the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+			$('.modal-trigger').leanModal({dismissible: false});
+		});
 			
 		$("#formCreate").submit(function(e){
+		    return false;
+		});
+		
+		$("#formUpdate").submit(function(e){
 		    return false;
 		});
 	
@@ -216,72 +207,92 @@
 			var itemName = document.getElementById("itemName").value;
 			var itemPrice = document.getElementById("itemPrice").value;
 			var itemDesc = document.getElementById("itemDesc").value;
-		    $.ajax({
-		        type: "POST",
-		        url: "create",
-		        data: {
-		        	"item.strItemName" : itemName,
-		        	"item.dblPrice" : itemPrice,
-		        	"item.strItemDesc" : itemDesc
-		        },
-		       	dataType: "json",
-		        async: true,
-		        success: function(data){
-		        	if (data.status === "success"){
-		        		alert("Item "+data.item.strItemName+" created!");
-		        		$("#itemName").val("");
-		        		$("#itemPrice").val("");
-		        		$("#itemDesc").val("");
-		        		updateTable();
-		        	}
-		        },
-		        error: function(data){
-		        	
-		        	alert("Error!");
-		        }
-		    });
+			
+			if (itemName == null || itemName == " " || itemName == "" ||
+					itemPrice == 0 || itemPrice == null){
+				
+			}else{
+			
+			    $.ajax({
+			        type: "POST",
+			        url: "create",
+			        data: {
+			        	"item.strItemName" : itemName,
+			        	"item.dblPrice" : itemPrice,
+			        	"item.strItemDesc" : itemDesc
+			        },
+			       	dataType: "json",
+			        async: true,
+			        success: function(data){
+			        	if (data.status === "success"){
+			        		Materialize.toast('Item successfully saved.', 3000, 'rounded');
+			        		$("#itemName").val("");
+			        		$("#itemPrice").val("");
+			        		$("#itemDesc").val("");
+			        		updateTable();
+			        	}else if(data.status === "input"){
+			        		Materialize.toast('Check all your inputs.', 3000, 'rounded');
+			        	}else if(data.status === "failed-existing"){
+			        		Materialize.toast('Item already exists.', 3000, 'rounded');
+			        	}else if(data.status === "failed-database"){
+			        		Materialize.toast('Please check your connection.', 3000, 'rounded');
+			        	}
+			        },
+			        error: function(data){
+			        	Materialize.toast('Error occured.', 3000, 'rounded');
+			        }
+			    });
+			}
 	
-		    return false;
 		}
 	
 		function updateItem(){
 			var itemName = document.getElementById("itemNameUpdate").value;
 			var itemPrice = document.getElementById("itemPriceUpdate").value;
 			var itemDesc = document.getElementById("itemDescUpdate").value;
-			var itemUpdateName = document.getElementById("selectItemUpdate").value;
-		    $.ajax({
-		        type: "POST",
-		        url: "update",
-		        data: {
-		        	"item.strItemName" : itemName,
-		        	"item.dblPrice" : itemPrice,
-		        	"item.strItemDesc" : itemDesc,
-		        	"strItemName" : itemUpdateName
-		        },
-		       	dataType: "json",
-		        async: true,
-		        success: function(data){
-		        	if (data.status === "success"){
-		        		alert("Item "+data.strItemName+" updated!");
-		        		$("#itemNameUpdate").val("");
-		        		$("#itemPriceUpdate").val("");
-		        		$("#itemDescUpdate").val("");
-		        		$("#modalUpdate").closeModal();
-		        		updateTable();
-		        	}
-		        },
-		        error: function(data){
-		        	
-		        	alert("Error!");
-		        }
-		    });
-		
-		    return false;
+			var itemUpdateName = document.getElementById("itemNameToBeUpdated").value;
+			
+			if (itemName == null || itemName == "" || itemName == " " ||
+					itemPrice == 0 || itemPrice == null){
+				
+			}else{
+			    $.ajax({
+			        type: "POST",
+			        url: "update",
+			        data: {
+			        	"item.strItemName" : itemName,
+			        	"item.dblPrice" : itemPrice,
+			        	"item.strItemDesc" : itemDesc,
+			        	"strItemName" : itemUpdateName
+			        },
+			       	dataType: "json",
+			        async: true,
+			        success: function(data){
+			        	if (data.status === "success"){
+			        		Materialize.toast('Item successfully updated.', 3000, 'rounded');
+			        		$("#itemNameUpdate").val("");
+			        		$("#itemPriceUpdate").val("");
+			        		$("#itemDescUpdate").val("");
+			        		$('#modalUpdateItem').closeModal();
+			        		updateTable();
+			        	}else if (data.status === "input"){
+			        		Materialize.toast('Please check your inputs.', 3000, 'rounded');
+			        	}else if (data.status === "failed-does-not-exist"){
+			        		Materialize.toast('Item does not exist.', 3000, 'rounded');
+			        	}else if (data.status === "failed-database"){
+			        		Materialize.toast('Please check your connection.', 3000, 'rounded');
+			        	}
+			        },
+			        error: function(data){
+			        	Materialize.toast('Error occured.', 3000, 'rounded');
+			        }
+			    });
+			}
 		}
 		
 		function deactivateItem(){
 			
-			var itemNameDeactivate = document.getElementById("itemNameDeactivate").value;
+			var itemNameDeactivate = document.getElementById("itemToBeDeactivated").value;
 			$.ajax({
 				type: "POST",
 				url: "deactivate",
@@ -292,92 +303,81 @@
 				success: function(data){
 					if (data.status === "success"){
 						updateTable();
-		        		$("#modalDeactivate").closeModal();
-						alert("Item "+data.strItemName+" successfully deactivated.");
+		        		$('#modalDeactivateItem').closeModal();
+		        		Materialize.toast('Item successfully deactivated.', 3000, 'rounded');
+					}else if (data.status === "failed-does-not-exist"){
+						Materialize.toast('Item does not exist.', 3000, 'rounded');
+					}else if (data.status === "failed-database"){
+						Materialize.toast('Please check your connection.', 3000, 'rounded');
 					}
 				},
 				error: function(data){
-					alert("Error...");
+					Materialize.toast('Error occured.', 3000, 'rounded');
 				}
 			});
 			
 		}
 		
-		$("#searchItem").on("change keyup paste",function(){
-			searchItemAndUpdateTable();
-		});
-		
-		function searchItemAndUpdateTable(){
-			var itemName = document.getElementById("searchItem").value;
-			$.ajax({
-				type: "POST",
-				url: "searchItem",
-				data: {
-					"strItemName" : itemName
-				},
-				async: true,
-				success: function(data){
-					
-					var itemList = data.itemList;
-	        		$("#tableItem tbody").remove();
-	        		$.each(itemList, function(i, item){
-		        		tableRow = $("<tr>").append(
-		        				$("<td>").text(item.strItemName),
-		        				$("<td>").text("P "+item.dblPrice),
-		        				$("<td>").text(item.strItemDesc));
-		        		$("#tableItem").append(tableRow);
-	        		});
-					
-				},
-				error: function(data){
-					alert("Error...");
-				}
-			});
-		
-			
-		}
+		window.onload = updateTable;
 		
 		function updateTable(){
+			
 			$.ajax({
 				type: "POST",
 				url: "getItemList",
 				dataType: "json",
 				async: true,
 				success: function(data){
-	        		$("#tableItem tbody").remove();
-	        		var tableRow;
+	        		var table = $('#datatable').DataTable();
+	        		table.clear().draw();
 	        		var itemList = data.itemList;
 	        		
-	        		$.each(itemList, function(i, item){
-						
-		        		tableRow = $("<tr>").append(
-		        				$("<td>").text(item.strItemName),
-		        				$("<td>").text("P "+item.dblPrice),
-		        				$("<td>").text(item.strItemDesc));
-		        		$("#tableItem").append(tableRow);
-	        		});
+	        		if (itemList == null){
+	        			table.row.add( [
+       		            "item One",
+       		            "P 200",
+       		            "item One",
+       		            addButtons
+       		            ]);
+	        		}else{
+	        		
+		        		$.each(itemList, function(i, item){
+							
+		        			var addButtons = "<button name = action class= 'modal-trigger btn-floating green' onclick= openUpdate('"+item.strItemName+"') ><i class= material-icons >mode_edit</i></button>"+
+		        			"<button name = action class= 'modal-trigger btn-floating red' onclick = openDeactivate('"+item.strItemName+"') ><i class= material-icons >delete</i></button></td>";
+		        			
+		        			
+		        			table.row.add( [
+		    	        		            item.strItemName,
+		    	        		            "P "+item.dblPrice,
+		    	        		            item.strItemDesc,
+		    	        		            addButtons
+		    	        		            ]);
+		        		});
+	        		}
+	        		
+	        		table.draw();
 	        		
 				},
 				error: function(data){
-					alert("Error in updating table");
+	        		Materialize.toast('Error in updating table.', 3000, 'rounded');
 				}
 			});
 			
 		}
 		
-		function placeValue(){
-			
-			var itemSelected = document.getElementById("selectItemUpdate").value;
-			
+		function openUpdate(itemName){
 			$.ajax({
 				type: "POST",
 				url: "getItemInfo",
 				data:{
-					"strItemName" : itemSelected
+					"strItemName" : itemName
 				},
 				dataType: "json",
 				async: true,
 				success: function(data){
+					$('#modalUpdateItem').openModal();
+					$('#itemNameToBeUpdated').val(data.item.strItemName);
 					$("#itemNameUpdate").val(data.item.strItemName);
 	        		$("#itemPriceUpdate").val(data.item.dblPrice);
 	        		$("#itemDescUpdate").val(data.item.strItemDesc);
@@ -389,4 +389,9 @@
 			
 		}
 		
-	</script>	
+		function openDeactivate(itemName){
+			$('#itemToBeDeactivated').val(itemName);
+			$('#modalDeactivateItem').openModal();
+		}
+		
+	</script>

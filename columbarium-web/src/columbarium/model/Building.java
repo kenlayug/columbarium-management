@@ -11,17 +11,26 @@ public class Building {
 	private int buildingId;
 	private String strBuildingName;
 	private String strBuildingLocation;
-	private String strBuildingType;
+	private int intNoOfFloors;
 	private List<Floor>floorList;
 	
 	public Building(){
 		
+	}
+	public Building(String strBuildingName){
+		this.strBuildingName = strBuildingName;
 	}
 	public int getBuildingId() {
 		return buildingId;
 	}
 	public void setBuildingId(int buildingId) {
 		this.buildingId = buildingId;
+	}
+	public void setIntNoOfFloors(int intNoOfFloors){
+		this.intNoOfFloors = intNoOfFloors;
+	}
+	public int getIntNoOfFloors(){
+		return this.intNoOfFloors;
 	}
 	public String getStrBuildingName() {
 		return strBuildingName;
@@ -34,12 +43,6 @@ public class Building {
 	}
 	public void setStrBuildingLocation(String strBuildingLocation) {
 		this.strBuildingLocation = strBuildingLocation;
-	}
-	public String getStrBuildingType() {
-		return strBuildingType;
-	}
-	public void setStrBuildingType(String strBuildingType) {
-		this.strBuildingType = strBuildingType;
 	}
 	public List<Floor> getFloorList() {
 		return floorList;
@@ -63,7 +66,6 @@ public class Building {
 		int result = 1;
 		result = prime * result + ((strBuildingLocation == null) ? 0 : strBuildingLocation.hashCode());
 		result = prime * result + ((strBuildingName == null) ? 0 : strBuildingName.hashCode());
-		result = prime * result + ((strBuildingType == null) ? 0 : strBuildingType.hashCode());
 		return result;
 	}
 	@Override
@@ -92,13 +94,6 @@ public class Building {
 		} else if (!strBuildingName.equals(other.strBuildingName)) {
 			return false;
 		}
-		if (strBuildingType == null) {
-			if (other.strBuildingType != null) {
-				return false;
-			}
-		} else if (!strBuildingType.equals(other.strBuildingType)) {
-			return false;
-		}
 		return true;
 	}
 	
@@ -108,6 +103,30 @@ public class Building {
 				.getAttribute("buildingService");
 		return buildingService.createBuilding(this);
 		
+	}
+	
+	public static Building getBuilding(String strBuildingName){
+		BuildingService buildingService = (BuildingService)ServletActionContext.getServletContext()
+				.getAttribute("buildingService");
+		return buildingService.getBuilding(strBuildingName);
+	}
+	
+	public static Building getBuildingById(int buildingId){
+		BuildingService buildingService = (BuildingService)ServletActionContext.getServletContext()
+				.getAttribute("buildingService");
+		return buildingService.getBuildingById(buildingId);
+	}
+	
+	public String update(){
+		BuildingService buildingService = (BuildingService)ServletActionContext.getServletContext()
+				.getAttribute("buildingService");
+		return buildingService.updateBuilding(this);
+	}
+	
+	public static String deactivateBuilding(String strBuildingName){
+		BuildingService buildingService = (BuildingService)ServletActionContext.getServletContext()
+				.getAttribute("buildingService");
+		return buildingService.deactivateBuilding(strBuildingName);
 	}
 	
 	public static List<Building>getAllBuilding(){

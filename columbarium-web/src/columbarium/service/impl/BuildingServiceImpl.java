@@ -5,7 +5,6 @@ import java.util.List;
 import columbarium.business.BuildingBusiness;
 import columbarium.dao.BuildingRepository;
 import columbarium.model.Building;
-import columbarium.model.Floor;
 import columbarium.service.BuildingService;
 
 public class BuildingServiceImpl implements BuildingService{
@@ -32,9 +31,23 @@ public class BuildingServiceImpl implements BuildingService{
 	}
 
 	@Override
-	public String createFloor(Floor floor) {
+	public Building getBuilding(String strBuildingName) {
+		return buildingBusiness.getBuilding(strBuildingName);
+	}
 
-		return buildingBusiness.createFloor(floor);
+	@Override
+	public String updateBuilding(Building building) {
+		return buildingBusiness.updateBuilding(building);
+	}
+
+	@Override
+	public String deactivateBuilding(String strBuildingName) {
+		return buildingBusiness.deactivateBuilding(strBuildingName);
+	}
+
+	@Override
+	public Building getBuildingById(int buildingId) {
+		return buildingBusiness.getBuildingById(buildingId);
 	}
 
 }

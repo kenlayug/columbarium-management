@@ -1,21 +1,39 @@
 package columbarium.model;
 
+import java.util.List;
+
 import org.apache.struts2.ServletActionContext;
 
-import columbarium.service.BuildingService;
+import columbarium.service.BlockService;
+import columbarium.service.FloorService;
 
 public class Floor {
 
 	
-	private int buildingId;
-	private int floorId;
-	private int intFloorNo;
-	private int intLevelNo;
-	private int intColumnNo;
-	private int currentLevel;
+	private int									buildingId;
+	private int									floorId;
+	private int									intFloorNo;
+	private int									intLevelNo;
+	private int									intColumnNo;
+	private int									currentLevel;
+	private List<UnitCategory>					unitCategoryList;
+	private List<Block>							blockList;
+	private FloorType							floorType;
 	
+	public void setFloorType(FloorType floorType){
+		this.floorType = floorType;
+	}
+	public FloorType getFloorType(){
+		return this.floorType;
+	}
 	public void setCurrentLevel(int currentLevel){
 		this.currentLevel = currentLevel;
+	}
+	public List<UnitCategory> getUnitCategoryList() {
+		return unitCategoryList;
+	}
+	public void setUnitCategoryList(List<UnitCategory> unitCategoryList) {
+		this.unitCategoryList = unitCategoryList;
 	}
 	public int getCurrentLevel(){
 		return currentLevel;
@@ -42,6 +60,10 @@ public class Floor {
 		this.intFloorNo = intFloorNo;
 		this.intLevelNo = intLevelNo;
 		this.intColumnNo = intColumnNo;
+	}
+	public Floor(int buildingId, int intFloorNo){
+		this.buildingId = buildingId;
+		this.intFloorNo = intFloorNo;
 	}
 	@Override
 	public int hashCode() {
@@ -98,12 +120,34 @@ public class Floor {
 		this.intFloorNo = intFloorNo;
 	}
 	
-	public String create(){
-		
-		BuildingService buildingService = (BuildingService)ServletActionContext.getServletContext()
-				.getAttribute("buildingService");
-		return buildingService.createFloor(this);
-		
+	public List<Block> getBlockList() {
+		return blockList;
+	}
+	public void setBlockList(List<Block> blockList) {
+		this.blockList = blockList;
+	}
+	public String configure(){
+		FloorService floorService = (FloorService)ServletActionContext.getServletContext()
+				.getAttribute("floorService");
+		return floorService.configureFloor(this);
+	}
+	
+	public void getAllUnitCategory(){
+		FloorService floorService = (FloorService)ServletActionContext.getServletContext()
+				.getAttribute("floorService");
+		setUnitCategoryList(floorService.getAllUnitCategoryFromFloor(this));
+	}
+	
+	public void getAllBlocks(){
+		BlockService blockService = (BlockService)ServletActionContext.getServletContext()
+				.getAttribute("blockService");
+		setBlockList(blockService.getAllBlockFromFloor(this));
+	}
+	
+	public String configureUnitPrice(){
+		FloorService floorService = (FloorService)ServletActionContext.getServletContext()
+				.getAttribute("floorService");
+		return floorService.configureUnitPrice(this);
 	}
 	
 }

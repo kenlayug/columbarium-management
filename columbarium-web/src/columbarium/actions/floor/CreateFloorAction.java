@@ -23,7 +23,6 @@ public class CreateFloorAction extends ActionSupport implements Action{
 	
 	public String execute(){
 		
-		strStatus = getFloor().create();
 		System.out.println(strStatus);
 		return "success";
 		

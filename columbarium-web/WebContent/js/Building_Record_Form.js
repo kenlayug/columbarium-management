@@ -5,3 +5,4 @@ $(document).ready(function(){
     $('.modal-trigger').leanModal();
 });
 
+$('#modal1').closeModal();
