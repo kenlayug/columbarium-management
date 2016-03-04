@@ -86,10 +86,11 @@
 				<br>
 
 					<div class="modal-footer">
-							<button onclick="updateItem()" type="submit" name="action" class="btn red" style = "margin-top: 30px; margin-left: 10px; ">Confirm</button>	
-				</form>
-							<button class="btn red modal-close" style = "margin-top: 30px" onclick="$('modalUpdateItem').closeModal()">Cancel</button>
+							<button onclick="updateItem()" type="submit" name="action" class="btn red" style = "margin-top: 30px; margin-left: 10px; ">Confirm</button>
+						<button class="btn red modal-close" style = "margin-top: 30px" onclick="$('modalUpdateItem').closeModal()">Cancel</button>
 					</div>
+				</form>
+
 
 	        </div>
 
@@ -107,6 +108,25 @@
 					<button name = "action" class="btn red">Cancel</button>
 				</div>
 			</div>
+
+			<!--ganto ung declaration sa btn ken	<button class="modal-trigger btn red" href = "#modalSuccessMessage">btnSuccess</button>    -->
+			<!-- Modal Success -->
+			<div id="modalSuccessMessage" class="modal" style = "width: 350px; height: 155px;">
+				<div class = "modal-header" style = "height: 50px;">
+					<div class = "row">
+						<div class = "col s10">
+							<h4 style = "padding-left: 10px; font-size: 25px;">Success Message</h4>
+						</div>
+						<div class = "col s2">
+							<a class="btn-floating btn-small modal-close black right" style = "margin-top: 5px; margin-right: 5px; padding-bottom: 10px;"><i class="material-icons" style = "padding-bottom: 5px;">&#10006</i></a>
+						</div>
+					</div>
+				</div>
+				<div class="modal-content">
+					<p style = "padding-top: 0px; padding-left: 50px; font-size: 16px; font-family: arial;">Record has been saved.</p>
+				</div>
+			</div>
+
 
 			<!-- Data Grid -->
 			<div class = "col s7">
@@ -162,10 +182,10 @@
 	<script type="text/javascript">
 
 
-		$('.modal-trigger').leanModal({
-					dismissible: false
-				}
-		);
+		$(document).ready(function(){
+			// the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+			$('.modal-trigger').leanModal({dismissible: false});
+		});
 			
 		$("#formCreate").submit(function(e){
 		    return false;

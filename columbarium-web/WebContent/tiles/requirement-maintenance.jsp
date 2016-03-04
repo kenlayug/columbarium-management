@@ -44,7 +44,7 @@
 	        <!-- Modal Update -->
 	        <div id="modalUpdateRequirement" class="modal" style = "width: 700px;">
 	            <div class = "modal-header">
-	                <h4>Update Requirement</h4>
+	                <h4 style = "font-size: 30px;">Update Requirement</h4>
 	            </div>
 	            <form class="modal-content">
 	
@@ -78,7 +78,7 @@
 			<!-- Modal Deactivate -->
 			<div id="modalDeactivateRequirement" class="modal" style = "width: 600px;">
 				<div class = "modal-header">
-					<h4>Deactivate Requirement</h4>
+					<h4 style = "font-size: 30px;">Deactivate Requirement</h4>
 				</div>
 				<div class="modal-content">
 					<p style = "padding-left: 90px; font-size: 15px;">Are you sure you want to deactivate this item?</p>
