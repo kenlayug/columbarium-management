@@ -19,8 +19,14 @@ public class CreateBlockAction extends ActionSupport implements Action{
 		this.block = block;
 	}
 	
+	public Block getBlock(){
+		return this.block;
+	}
+	
 	public String execute(){
 		
+		System.out.println(getBlock().getFloorId());
+		System.out.println(block.getStrBlockName());
 		strStatus = block.create();
 		return "success";
 		

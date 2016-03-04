@@ -82,7 +82,7 @@
 				                                                        <c:if test="${floor.floorType.boolIsUnit == true }">
 				                                                        	<div class="collapsible-body" style = "background-color: #ffa726">
 					                                                            <p>Create Block
-					                                                                <button value="${floor.floorId }" name = "action" class="modal-trigger btn-floating blue right" style = "margin-right: 10px;" onclick="openCreateBlock(this.value)"><i class="material-icons">add</i></button>
+					                                                                <button value="${floor.floorId }" name = "action" data-target="modalCreateBlock" class="modal-trigger btn-floating blue right" style = "margin-right: 10px;" onclick="openCreateBlock(this.value)"><i class="material-icons">add</i></button>
 					                                                            </p>
 					                                                        </div>
 					                                                        <c:if test="${floor.blockList != null}">
@@ -120,7 +120,7 @@
                 <div class = "modal-header" style = "height: 55px;">
                     <h4 style = "font-size: 30px; padding-left: 20px;">Create Block</h4>
                 </div>
-                <form class="modal-content">
+                <form class="modal-content" id="createBlockForm">
 
                         <div style = "padding-left: 10px;">
                             <div class="input-field col s12">
@@ -409,11 +409,55 @@
 	$('.modal-trigger').leanModal({
         dismissible: false
   	});
+	
+	$("#createBlockForm").submit(function(e){
+	    return false;
+	});
+	
+	function createBlock(){
+		
+		var floorId = document.getElementById("floorIdBlockToCreate").value;
+		var blockName = document.getElementById("blockName").value;
+		
+		if (blockName == null || blockName == " " || blockName == ""){
+			
+		}else{
+
+			Materialize.toast('Here in else -- '+floorId, 3000, 'rounded');
+			$.ajax({
+				type: "POST",
+				url: "create",
+				data: {
+					"block.floorId" : floorId,
+					"block.strBlockName" : blockName
+				},
+				dataType: "json",
+				async: true,
+				success: function(data){
+					if (data.status === "success"){
+						Materialize.toast('Block is successfully created.', 3000, 'rounded');
+						$('#modalCreateBlock').closeModal();
+					}else if (data.status === "failed-existing"){
+						Materialize.toast('Block already exists.', 3000, 'rounded');
+					}else if (data.status === "failed-database"){
+						Materialize.toast('Please check your connection.', 3000, 'rounded');
+					}else if (data.status === "input"){
+						Materialize.toast('Please check all your inputs.', 3000, 'rounded');
+					}
+				},
+				error: function(data){
+					Materialize.toast('Error occured.', 3000, 'rounded');
+				}
+			});
+			
+		}
+		
+	}
 
     function openCreateBlock(floorId){
+    	$('#modalCreateBlock').openModal();
     	Materialize.toast(floorId, 3000, 'rounded');
     	$('#floorIdBlockToCreate').val(floorId);
-    	$('#modalCreateBlock').openModal();
     	
     }
     

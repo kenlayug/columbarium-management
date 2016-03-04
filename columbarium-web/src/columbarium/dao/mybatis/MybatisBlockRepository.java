@@ -29,6 +29,7 @@ public class MybatisBlockRepository extends MybatisClient implements BlockReposi
 			if (blockMapper.checkIfExistingBlock(block) > 0){
 				return "failed-existing";
 			}
+			System.out.println(block.getFloorId());
 			blockMapper.createBlock(block);
 			Block currentBlock = blockMapper.getBlock(block);
 			Floor floor = new Floor();
