@@ -40,6 +40,10 @@
 		<action name="floor" class="columbarium.actions.ChainAction">
 			<result name="success" type="redirect">/floor/</result>
 		</action>
+		
+		<action name="block" class="columbarium.actions.ChainAction">
+			<result name="success" type="redirect">/block/</result>
+		</action>
      
      </package>
      
@@ -50,5 +54,6 @@
      <include file="struts-package.xml"/>
      <include file="struts-building.xml"/>
      <include file="struts-floor.xml"/>
+     <include file="struts-block.xml"/>
      
  </struts> 
