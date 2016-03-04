@@ -345,9 +345,6 @@
 			        success: function(data){
 			        	if (data.status === "success"){
 			        		Materialize.toast('Item successfully updated.', 3000, 'rounded');
-			        		$("#itemNameUpdate").val("");
-			        		$("#itemPriceUpdate").val("");
-			        		$("#itemDescUpdate").val("");
 			        		$('#modalUpdateItem').closeModal();
 			        		updateTable();
 			        	}else if (data.status === "input"){

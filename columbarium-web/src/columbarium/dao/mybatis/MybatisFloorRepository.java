@@ -160,4 +160,26 @@ public class MybatisFloorRepository extends MybatisClient implements FloorReposi
 		return "failed-database";
 	}
 
+	@Override
+	public Floor getFloor(Floor floor) {
+		
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		try{
+			
+			FloorMapper floorMapper = sqlSession.getMapper(FloorMapper.class);
+			if (floorMapper.checkIfExistingFloor(floor) > 0){
+				System.out.println("Here in getFloor dao");
+				floor = floorMapper.getFloor(floor);
+				System.out.println("Floor "+floor.getFloorId()+"in Building "+floor.getBuildingId());
+				return floor;
+			}
+			
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			sqlSession.close();
+		}
+		return null;
+	}
+
 }

@@ -10,6 +10,8 @@ public interface FloorService {
 
 	public String								configureFloor(Floor floor);
 	
+	public Floor								getFloorById(int floorId);
+	
 	public String								createFloorType(FloorType floorType);
 	public List<FloorType>						getAllFloorType();
 	

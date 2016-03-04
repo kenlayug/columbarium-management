@@ -132,6 +132,12 @@ public class Floor {
 		return floorService.configureFloor(this);
 	}
 	
+	public static Floor getFloorById(int floorId){
+		FloorService floorService = (FloorService)ServletActionContext.getServletContext()
+				.getAttribute("floorService");
+		return floorService.getFloorById(floorId);
+	}
+	
 	public void getAllUnitCategory(){
 		FloorService floorService = (FloorService)ServletActionContext.getServletContext()
 				.getAttribute("floorService");

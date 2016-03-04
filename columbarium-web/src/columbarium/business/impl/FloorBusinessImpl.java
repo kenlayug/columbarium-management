@@ -57,4 +57,12 @@ public class FloorBusinessImpl implements FloorBusiness{
 		return floorRepository.configureUnitCategoryPrice(floor.getUnitCategoryList());
 	}
 
+	@Override
+	public Floor getFloorById(int floorId) {
+		
+		Floor floor = new Floor();
+		floor.setFloorId(floorId);
+		return floorRepository.getFloor(floor);
+	}
+
 }

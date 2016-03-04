@@ -47,4 +47,9 @@ public class FloorServiceImpl implements FloorService{
 		return floorBusiness.configureUnitPrice(floor);
 	}
 
+	@Override
+	public Floor getFloorById(int floorId) {
+		return floorBusiness.getFloorById(floorId);
+	}
+
 }

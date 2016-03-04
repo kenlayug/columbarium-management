@@ -43,9 +43,16 @@
 		<select id="checkIfExistingFloor" resultMap="CountResultMap">
 			SELECT COUNT(*)
 			FROM tblFloor
-			WHERE bldgIdFK = #{buildingId}
-				AND intFloorNo = #{intFloorNo}
+			<where>
+				<if test="floorId == 0">
+					bldgIdFK = #{buildingId}
+					AND intFloorNo = #{intFloorNo}
+				</if>
+				<if test="floorId != 0">
+					floorId = #{floorId}
+				</if>
 				AND intStatus = 1
+			</where>
 		</select>
 		
 		<select id="checkIfExistingUnitCategory" resultMap="CountResultMap">
@@ -71,7 +78,7 @@
 		
 		<select id="getFloor" resultMap="FloorResultMap">
 			SELECT f.*, ft.* FROM tblFloor f
-				INNER JOIN tblFloorType ft ON f.floorTypeIdFK = ft.floorTypeId
+				LEFT JOIN tblFloorType ft ON f.floorTypeIdFK = ft.floorTypeId
 			<where>
 				<if test="floorId == 0">
 					f.bldgIdFK = #{buildingId}

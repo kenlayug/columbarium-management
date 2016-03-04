@@ -26,6 +26,7 @@ public class ConfigureFloorAction extends ActionSupport implements Action{
 	public String execute(){
 		
 		strStatus = getFloor().configure();
+		System.out.println(strStatus);
 		return "success";
 		
 	}

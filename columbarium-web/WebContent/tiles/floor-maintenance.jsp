@@ -46,126 +46,45 @@
                 <div class = "col s12">
                     <div class = "aside aside ">
 
-                        <ul class="collapsible popout" data-collapsible="expandable">
-                            <li>
-                                <div class="collapsible-header" style = "background-color: #00897b"><i class="medium material-icons">business</i>
-                                    <label style = "font-family: myFirstFont; font-size: 20px; color: white;">Building One</label>
-                                </div>
-                                <div class="collapsible-body">
-                                    <p>Ground Floor
-                                        <button name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor price is not yet configured."  style = "margin-left: 5px;" href = "#modalPrice"><i class="material-icons">&#8369</i></button>
-                                        <button name = "action" class="btn tooltipped modal-trigger btn-floating black right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor is not yet configured." style = "margin-left: 5px;" href = "#modalConfigure"><i class="material-icons">settings</i></button>
-                                    </p>
-                                </div>
-                                <div class="collapsible-body">
-                                    <p>First Floor
-                                        <button name = "action" class="btn tooltipped modal-trigger btn-floating blue right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor price is configured." style = "margin-left: 5px;" href = "#modalPrice"><i class="material-icons">&#8369</i></button>
-                                        <button name = "action" class="btn tooltipped modal-trigger btn-floating black right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor is not yet configured." style = "margin-left: 5px;" href = "#modalConfigure"><i class="material-icons">settings</i></button>
-                                   </p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="collapsible-header" style = "background-color: #00897b"><i class="material-icons">business</i>
-                                    <label style = "font-family: myFirstFont; font-size: 20px; color: white;">Building Two</label>
-                                </div>
-                                <div class="collapsible-body">
-                                    <p>Ground Floor
-                                        <button name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor price is not yet configured." style = "margin-left: 5px;" href = "#modalPrice"><i class="material-icons">&#8369</i></button>
-                                        <button name = "action" class="btn tooltipped modal-trigger btn-floating green right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor is already configured." style = "margin-left: 5px;" href = "#modalConfigure"><i class="material-icons">settings</i></button>
-                                    </p>
-                                </div>
-                                <div class="collapsible-body">
-                                    <p>First Floor
-                                        <button name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor price is not yet configured." style = "margin-left: 5px;" href = "#modalPrice"><i class="material-icons">&#8369</i></button>
-                                        <button name = "action" class="btn tooltipped modal-trigger btn-floating black right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor is not yet configured." style = "margin-left: 5px;" href = "#modalConfigure"><i class="material-icons">settings</i></button>
-                                    </p>
-                                </div>
-                                <div class="collapsible-body">
-                                    <p>Second Floor
-                                        <button name = "action" class="btn tooltipped modal-trigger btn-floating blue right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor price is configured." style = "margin-left: 5px;" href = "#modalPrice"><i class="material-icons">&#8369</i></button>
-                                        <button name = "action" class="btn tooltipped modal-trigger btn-floating black right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor is not yet configured." style = "margin-left: 5px;" href = "#modalConfigure"><i class="material-icons">settings</i></button>
-                                    </p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="collapsible-header" style = "background-color: #00897b"><i class="material-icons">business</i>
-                                    <label style = "font-family: myFirstFont; font-size: 20px; color: white;">Building Three</label>
-                                </div>
-                                <div class="collapsible-body">
-                                    <p>Ground Floor
-                                        <button name = "action" class="btn tooltipped modal-trigger btn-floating blue right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor price is configured." style = "margin-left: 5px;" href = "#modalPrice"><i class="material-icons">&#8369</i></button>
-                                        <button name = "action" class="btn tooltipped modal-trigger btn-floating black right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor price is not yet configured." style = "margin-left: 5px;" href = "#modalConfigure"><i class="material-icons">settings</i></button>
-                                    </p>
-                                </div>
-                                <div class="collapsible-body">
-                                    <p>First Floor
-                                        <button name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor price is not yet configured." style = "margin-left: 5px;" href = "#modalPrice"><i class="material-icons">&#8369</i></button>
-                                        <button name = "action" class="btn tooltipped modal-trigger btn-floating black right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor is not yet configured." style = "margin-left: 5px;" href = "#modalConfigure"><i class="material-icons">settings</i></button>
-                                    </p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="collapsible-header" style = "background-color: #00897b"><i class="material-icons">business</i>
-                                    <label style = "font-family: myFirstFont; font-size: 20px; color: white;">Building Four</label>
-                                </div>
-                                <div class="collapsible-body">
-                                    <p>Ground Floor
-                                        <button name = "action" class="btn tooltipped modal-trigger btn-floating blue right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor price is configured." style = "margin-left: 5px;" href = "#modalPrice"><i class="material-icons">&#8369</i></button>
-                                        <button name = "action" class="btn tooltipped modal-trigger btn-floating green right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor is already configured." style = "margin-left: 5px;" href = "#modalConfigure"><i class="material-icons">settings</i></button>
-                                    </p>
-                                </div>
-                                <div class="collapsible-body">
-                                    <p>First Floor
-                                        <button name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor price is not yet configured." style = "margin-left: 5px;" href = "#modalPrice"><i class="material-icons">&#8369</i></button>
-                                        <button name = "action" class="btn tooltipped modal-trigger btn-floating black right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor is not yet configured." style = "margin-left: 5px;" href = "#modalConfigure"><i class="material-icons">settings</i></button>
-                                    </p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="collapsible-header" style = "background-color: #00897b"><i class="material-icons">business</i>
-                                    <label style = "font-family: myFirstFont; font-size: 20px; color: white;">Building Five</label>
-                                </div>
-                                <div class="collapsible-body">
-                                    <p>Ground Floor
-                                        <button name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor price is not yet configured." style = "margin-left: 5px;" href = "#modalPrice"><i class="material-icons">&#8369</i></button>
-                                        <button name = "action" class="btn tooltipped modal-trigger btn-floating black right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor is not yet configured." style = "margin-left: 5px;" href = "#modalConfigure"><i class="material-icons">settings</i></button>
-                                    </p>
-                                </div>
-                                <div class="collapsible-body">
-                                    <p>First Floor
-                                        <button name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor price is not yet configured." style = "margin-left: 5px;" href = "#modalPrice"><i class="material-icons">&#8369</i></button>
-                                        <button name = "action" class="btn tooltipped modal-trigger btn-floating green right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor is already configured." style = "margin-left: 5px;" href = "#modalConfigure"><i class="material-icons">settings</i></button>
-                                    </p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="collapsible-header" style = "background-color: #00897b"><i class="material-icons">business</i>
-                                    <label style = "font-family: myFirstFont; font-size: 20px; color: white;">Building Six</label>
-                                </div>
-                                <div class="collapsible-body">
-                                    <p>Ground Floor
-                                        <button name = "action" class="btn tooltipped modal-trigger btn-floating blue right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor price is configured." style = "margin-left: 5px;" href = "#modalPrice"><i class="material-icons">&#8369</i></button>
-                                        <button name = "action" class="btn tooltipped modal-trigger btn-floating green right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor is already configured." style = "margin-left: 5px;" href = "#modalConfigure"><i class="material-icons">settings</i></button>
-                                    </p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="collapsible-header" style = "background-color: #00897b"><i class="material-icons">business</i>
-                                    <label style = "font-family: myFirstFont; font-size: 20px; color: white;">Building Seven</label>
-                                </div>
-                                <div class="collapsible-body">
-                                    <p>Ground Floor
-                                        <button name = "action" class="btn tooltipped modal-trigger btn-floating blue right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor price is configured." style = "margin-left: 5px;" href = "#modalPrice"><i class="material-icons">&#8369</i></button>
-                                        <button name = "action" class="btn tooltipped modal-trigger btn-floating black right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor is not yet configured." style = "margin-left: 5px;" href = "#modalConfigure"><i class="material-icons">settings</i></button>
-                                    </p>
-                                </div>
-                                <div class="collapsible-body">
-                                    <p>First Floor
-                                        <button name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor price is not yet configured." style = "margin-left: 5px;" href = "#modalPrice"><i class="material-icons">&#8369</i></button>
-                                        <button name = "action" class="btn tooltipped modal-trigger btn-floating black right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor is not yet configured." style = "margin-left: 5px;" href = "#modalConfigure"><i class="material-icons">settings</i></button>
-                                    </p>
-                                </div>
-                            </li>
+                        <ul class="collapsible" data-collapsible="accordion">
+                            <c:if test="${buildingList == null }">
+                            	<li>
+	                                <div class="collapsible-header" style = "background-color: #00897b"><i class="medium material-icons">business</i>
+	                                    <label style = "font-family: myFirstFont; font-size: 20px; color: white;">Building One</label>
+	                                </div>
+	                                <div class="collapsible-body">
+	                                    <p>Ground Floor
+	                                        <button name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor price is not yet configured."  style = "margin-left: 5px;" href = "#modalPrice"><i class="material-icons">&#8369</i></button>
+	                                        <button name = "action" class="btn tooltipped modal-trigger btn-floating black right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor is not yet configured." style = "margin-left: 5px;" href = "#modalConfigure"><i class="material-icons">settings</i></button>
+	                                    </p>
+	                                </div>
+	                                <div class="collapsible-body">
+	                                    <p>First Floor
+	                                        <button name = "action" class="btn tooltipped modal-trigger btn-floating blue right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor price is configured." style = "margin-left: 5px;" href = "#modalPrice"><i class="material-icons">&#8369</i></button>
+	                                        <button name = "action" class="btn tooltipped modal-trigger btn-floating black right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor is not yet configured." style = "margin-left: 5px;" href = "#modalConfigure"><i class="material-icons">settings</i></button>
+	                                   </p>
+	                                </div>
+                            	</li>
+                            </c:if>
+                            <c:if test="${buildingList != null }">
+                            	<c:forEach items="${buildingList}" var="building">
+	                            	<li>
+	                            	
+		                                <div class="collapsible-header" style = "background-color: #00897b"><i class="medium material-icons">business</i>
+		                                    <label style = "font-family: myFirstFont; font-size: 20px; color: white;">${building.strBuildingName }</label>
+		                                </div>
+		                                <c:forEach items="${building.floorList}" var="floor">
+			                                <div class="collapsible-body">
+			                                    <p>Floor No. ${floor.intFloorNo}
+			                                        <button value="${floor.floorId}" name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor price is not yet configured."  style = "margin-left: 5px;" ><i class="material-icons">&#8369</i></button>
+			                                        <button value="${floor.floorId}" name = "action" class="btn tooltipped modal-trigger btn-floating black right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor is not yet configured." style = "margin-left: 5px;" onclick="openConfigureFloor(this.value)"><i class="material-icons">settings</i></button>
+			                                    </p>
+			                                </div>
+										</c:forEach>
+										
+	                            	</li>
+	                            </c:forEach>
+                            </c:if>
                         </ul>
                     </div>
                 </div>
@@ -184,11 +103,15 @@
                         <br>
                         <!-- Select Floor Type -->
                         <div class="input-field col s6" style = "padding-left: 40px;">
-                                <select>
+                        	<input id="buildingIdToBeConfigured" type="hidden">
+                        	<input id="floorIdToBeConfigured" type="hidden">
+                                <select id="floorTypeToBeConfigured">
                                         <option value="" disabled selected>Floor Type:</option>
-                                        <option value="1">Type One</option>
-                                        <option value="2">Type Two</option>
-                                        <option value="3">Type Three</option>
+									<c:if test="${floorTypeList != null}">
+										<c:forEach items="${floorTypeList }" var="floor">
+											<option value="${floor.strFloorDesc}">${floor.strFloorDesc }</option>
+										</c:forEach>
+									</c:if>
                                 </select>
                                         <label style = "padding-left: 30px;">Select Floor Type:</label>
                          </div>
@@ -202,56 +125,48 @@
                     <div class="row" style = "padding-left: 20px;">
                         <h5 style = "font-family: arial;">Block size per floor:</h5>
                         <div class="input-field col s6" style = "padding-left: 10px;">
-                            <input id="floorRow" type="number" class="validate" required = "" aria-required = "true" min = "1" max = "10">
-                            <label for="floorRow" data-error = "1-10 only" data-success = "">Row/s:<span style = "color: red;">*</span></label>
+                            <input id="floorRowToBeConfigured" type="number" class="validate" required = "" aria-required = "true" min = "1" max = "10">
+                            <label for="floorRowToBeConfigured" data-error = "1-10 only" data-success = "">Row/s:<span style = "color: red;">*</span></label>
                         </div>
                         <div class="input-field col s6">
-                            <input id="floorColumn" type="number" class="validate" required = "" aria-required = "true" min = "1" max = "20">
-                            <label for="floorColumn" data-error = "1-20 only" data-success = "">Column/s:<span style = "color: red">*</span></label>
+                            <input id="floorColumnToBeConfigured" type="number" class="validate" required = "" aria-required = "true" min = "1" max = "20">
+                            <label for="floorColumnToBeConfigured" data-error = "1-20 only" data-success = "">Column/s:<span style = "color: red">*</span></label>
                         </div>
                     </div>
                 </div>
 
 
                 <!-- Checkbox -->
-             <form class = "col s12">
                  <div class = "row">
                      <div class = "col s6">
                     <div style = "padding-left: 30px;">
                         <label for = "unit" style = "font-size: 20px; color: black;">Is this a unit?</label>
-                        <form action="#">
                             <p>
-                                <input type="checkbox" id="unit"/>
-                                <label for="unit">Yes</label>
+                                <input type="checkbox" id="isUnitToBeConfigured"/>
+                                <label for="isUnitToBeConfigured">Yes</label>
                             </p>
-                        </form>
                     </div>
                      </div>
                      <div class = "col s6">
                          <!-- Radio Button -->
                          <div style = "padding-left: 0px;">
                              <label style = "font-size: 20px; color: black;">Unit Type</label>
-                             <form action="#">
                                  <p>
-                                     <input name="group1" type="radio" id="columbaryVault" checked = "checked" disabled/>
+                                     <input name="unitTypeToBeConfigured" type="radio" value="Columbary Vault" id="columbaryVault" checked = "checked" disabled/>
                                      <label for="columbaryVault">Columbary Vault</label>
                                  </p>
                                  <p>
-                                     <input name="group1" type="radio" id="fullBody" disabled/>
+                                     <input name="unitTypeToBeConfigured" type="radio" value="Columbary Vault" id="fullBody" disabled/>
                                      <label for="fullBody">Full Body</label>
                                  </p>
-                             </form>
                          </div>
                      </div>
                  </div>
-             </form>
                 <br><br>
 
-
-
-
                 <div class="modal-footer">
-                    <button name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
+                    <button onclick="configureFloor()" name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
+                   
                     <button name = "action" class="waves-effect waves-light btn red modal-close">Cancel</button>
                 </div>
             </div>
@@ -265,26 +180,21 @@
                     <div class = "col s12">
                         <div class = "row">
                             <div style = "padding-left: 10px;">
-
+								<form id="formCreateFloorType" action="createFloorType" method="POST">
                                 <div class="input-field col s6">
-                                    <input id="newFloorType" type="text" class="validate" required = "" aria-required = "true">
+                                    <input name="floorType.strFloorDesc" id="newFloorType" type="text" class="validate" required = "" aria-required = "true">
                                     <label for="newFloorType" data-error = "Invalid format." data-success = "">Floor Type Name <span style = "color: red;">*</span></label>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div style = "padding-left: 20px;">
-                        <div class="input-field col s12">
-                            <input id="newFloorDescription" type="text" class="validate" required = "" aria-required = "true">
-                            <label for="newFloorDescription" data-error = "Invalid format." data-success = "">Floor Description<span style = "color: red;">*</span></label>
-                        </div>
-                    </div>
                     <br><br><br>
 
                 </div>
                 <div class="modal-footer">
                     <button name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
+                    </form>
                     <button name = "action" class="waves-effect waves-light btn red modal-close">Cancel</button>
                 </div>
             </div>
@@ -374,82 +284,12 @@
                             <table id="datatable">
                                 <thead>
                                 <tr>
-                                    <th>Floor Level</th>
-                                    <th>Floor Type Description</th>
                                     <th>Building Name</th>
+                                    <th>No. of Floors</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td>Ground Floor</td>
-                                    <td>Full Body</td>
-                                    <td>Building One</td>
-                                </tr>
-                                <tr>
-                                    <td>Ground Floor</td>
-                                    <td>Admin Office</td>
-                                    <td>Building Two</td>
-                                </tr>
-                                <tr>
-                                    <td>Ground Floor</td>
-                                    <td>Columbary Vault</td>
-                                    <td>Building Three</td>
-                                </tr>
-                                <tr>
-                                    <td>Ground Floor</td>
-                                    <td>Cashier</td>
-                                    <td>Building Four</td>
-                                </tr>
-                                <tr>
-                                    <td>Ground Floor</td>
-                                    <td>Full Body</td>
-                                    <td>Building Five</td>
-                                </tr>
-                                <tr>
-                                    <td>Ground Floor</td>
-                                    <td>Full Body</td>
-                                    <td>Building Six</td>
-                                </tr>
-                                <tr>
-                                    <td>Ground Floor</td>
-                                    <td>Full Body</td>
-                                    <td>Building Seven</td>
-                                </tr>
-                                <tr>
-                                    <td>Ground Floor</td>
-                                    <td>Full Body</td>
-                                    <td>Building Eight</td>
-                                </tr>
-                                <tr>
-                                    <td>Ground Floor</td>
-                                    <td>Full Body</td>
-                                    <td>Building Nine</td>
-                                </tr>
-                                <tr>
-                                    <td>Ground Floor</td>
-                                    <td>Full Body</td>
-                                    <td>Building Ten</td>
-                                </tr>
-                                <tr>
-                                    <td>Ground Floor</td>
-                                    <td>Full Body</td>
-                                    <td>Building Eleven</td>
-                                </tr>
-                                <tr>
-                                    <td>Ground Floor</td>
-                                    <td>Full Body</td>
-                                    <td>Building Twelve</td>
-                                </tr>
-                                <tr>
-                                    <td>Ground Floor</td>
-                                    <td>Full Body</td>
-                                    <td>Building Thirteen</td>
-                                </tr>
-                                <tr>
-                                    <td>Ground Floor</td>
-                                    <td>Full Body</td>
-                                    <td>Building Fourteen</td>
-                                </tr>
+                                
                                 </tbody>
                             </table>
                         </div>
@@ -467,8 +307,7 @@
 
 
 	<script>
-
-
+	
         $('.modal-trigger').leanModal({
                     dismissible: false
                 }
@@ -479,8 +318,6 @@
                 accordion : false// A setting that changes the collapsible behavior to expandable instead of the default accordion style
             });
         });
-
-
 
         var checkbox = $("input[type='checkbox']"),
                 radio = $("input[type='radio']");
@@ -524,36 +361,134 @@
 
 		}
 
-		function updateTable(){
-
+    function openConfigureFloor(floorId){
+    	Materialize.toast(floorId, 3000, 'rounded');
+    	
+    	$.ajax({
+    		type: "POST",
+    		url: "getFloorById",
+    		data: {
+    			"floorId" : floorId
+    		},
+    		dataType: "json",
+    		async: true,
+    		success: function(data){
+    			Materialize.toast('Floor Id -- '+data.floor.floorId, 3000, 'rounded');
+    			$('#buildingToBeConfigured').val(data.floor.buildingId);
+    			$('#floorIdToBeConfigured').val(data.floor.floorId);
+    			$('#modalConfigure').openModal();
+    		},
+    		error: function(data){
+    			Materialize.toast('Error occured.', 3000, 'rounded');
+    		}
+    	});
+    	
+    }
+    
+    function configureFloor(){
+    	
+    	var floorType;
+    	var buildingId = document.getElementById("buildingIdToBeConfigured").value;
+    	var floorId = document.getElementById("floorIdToBeConfigured").value;
+    	var isUnit = document.getElementById("isUnitToBeConfigured").checked;
+    	if (isUnit == true){
+    		floorType = $('input[name="unitTypeToBeConfigured"]:checked').val();
+    	}else{
+    		floorType = document.getElementById("floorTypeToBeConfigured").value;
+    	}
+    	var floorColumn = document.getElementById("floorColumnToBeConfigured").value;
+    	var floorRow = document.getElementById("floorRowToBeConfigured").value;
+    	
+    	if (isUnit == true){
+    		if (floorColumn <= 0 || floorRow <= 0){
+    			
+    		}else{
+    			$.ajax({
+    				type: "POST",
+    				url: "configure",
+    				data: {
+    					"floor.buildingId" : buildingId,
+    					"floor.floorType.strFloorDesc" : floorType,
+    					"floor.floorId" : floorId,
+    					"floor.intLevelNo" : floorRow,
+    					"floor.intColumnNo" : floorColumn,
+    					"floor.floorType.boolIsUnit" : isUnit
+    				},//data
+    				dataType: "json",
+    				async: true,
+    				success: function(data){
+    					Materialize.toast(data.status, 3000, 'rounded');
+    				},//success
+    				error: function(data){
+    					Materialize.toast('Error occured.', 3000, 'rounded');
+    				}//error
+    			});//ajax
+    		}//else
+    	}else{
+	   			$.ajax({
+	   				type: "POST",
+	   				url: "configure",
+	   				data: {
+	   					"floor.buildingId" : buildingId,
+	   					"floor.floorType.strFloorDesc" : floorType,
+	   					"floor.floorId" : floorId,
+	   					"floor.floorType.boolIsUnit" : isUnit
+	   				},//data
+	   				dataType: "json",
+	   				async: true,
+	   				success: function(data){
+	   					if (data.status === "success"){
+	   						Materialize.toast('Floor is successfully configured.', 3000, 'rounded');
+	   						$('#modalConfigure').closeModal();
+	   					}else if (data.status === "failed-database"){
+	   						Materialize.toast('Please check your connection.', 3000, 'rounded');
+	   					}else{
+	   						Materialize.toast('Something bad happened.', 3000, 'rounded');
+	   					}
+	   				},//success
+	   				error: function(data){
+	   					Materialize.toast('Error occured.', 3000, 'rounded');
+	   				}//error
+	   			});//ajax
+    		}//else
+    	}
+    	
+        
+    window.onload = updateTable;
+        
+	function updateTable(){
+			
 			$.ajax({
-				type : "POST",
-				url : "getAllBuildingFloors",
+				type: "POST",
+				url: "getAllBuildingFloors",
 				dataType: "json",
 				async: true,
 				success: function(data){
 					var buildingList = data.buildingList;
-	        		$("#tableBuilding tbody").remove();
 					if (buildingList != null){
-						$.each(buildingList, function(i, building){
-
-			        		tableRow = $("<tr>").append(
-			        				$("<td>").text(building.strBuildingName),
-			        				$("<td>").text(building.strBuildingType),
-			        				$("<td>").text(building.strBuildingLocation));
-			        		$("#tableBuilding").append(tableRow);
+						Materialize.toast('Updating table...', 3000, 'rounded');
+						var table = $('#datatable').DataTable();
+		        		table.clear().draw();
+		        	
+		        		$.each(buildingList, function(i, building){
+		        			var addButtons = "<button name = action class= 'modal-trigger btn-floating green' onclick = openUpdate(this.value) value = "+building.buildingId+" ><i class= material-icons >mode_edit</i></button>"+
+		        			"<button name = action class= 'modal-trigger btn-floating red' onclick = openDeactivate(this.value) value = "+building.buildingId+" ><i class= material-icons >delete</i></button></td>";
+		        			
+		        			
+		        			table.row.add( [
+		    	        		            building.strBuildingName,
+		    	        		            building.intNoOfFloors
+		    	        		            ]);
 		        		});
-					}else{
-						tableRow = $("<tr>").append(
-								$("<td>").text("No building available."));
-						$("#tableBuilding").append(tableRow);
+		        		
+		        		table.draw();
 					}
 				},
 				error: function(data){
-					alert("error...");
+					Materialize.toast('Error occured.', 3000, 'rounded');
 				}
 			});
-
+			
 		}
 
 	</script>
