@@ -11,7 +11,7 @@
 
 <!-- Form -->
 <div class = "col s12" >
-    <h2 style = "font-size: 30px;padding-left:50px; margin-bottom: 0px;">Package Maintenance</h2>
+    <h2 style = "font-size: 30px;padding-left:50px; margin-bottom: 0px; margin-top: 0px;">Package Maintenance</h2>
 
         <!-- Modal Create -->
         <form id="modalCreatePackage" class="modal">
@@ -198,10 +198,10 @@
             <h4>Package</h4>
         </div>
         <div class="modal-content">
-            <td>Service One, Service Two, and Item Five</td>
+            <td style = "padding-left: 60px;">Service One, Service Two, and Item Five</td>
         </div>
         <div class="modal-footer">
-            <button name = "action" onClick = "Materialize.toast('Data Telah Berubah',4000)" class="modal-close waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
+            <button name = "action" class="modal-close waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
 
         </div>
     </div>
@@ -294,10 +294,6 @@
                                     <button name = "action" data-target="modalUpdatePackage" class="modal-trigger btn-floating green"><i class="material-icons">mode_edit</i></button>
                                     <button name = "action" data-target="modalDeactivatePackage" class="modal-trigger btn-floating red"><i class="material-icons">delete</i></button></td>
                             </tr>
-
-
-
-
                             </tbody>
                         </table>
                     </div>
@@ -307,7 +303,6 @@
             <script src='http://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js'></script>
             <script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js'></script>
             <script type="text/javascript" src = "../js/index.js"></script>
-            <script type="text/javascript" src = "../js/Package_Record_Form.js"></script>
         </div>
 </div>
 
@@ -315,6 +310,12 @@
     </div>
     
     <script>
+
+        $('.modal-trigger').leanModal({
+                    dismissible: false
+                }
+        );
+
 
 	    $("#formCreate").submit(function(e){
 		    return false;

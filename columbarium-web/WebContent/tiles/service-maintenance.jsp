@@ -10,43 +10,46 @@
 
 <div class = "col s12" >
     <div class = "row">
-        <div class = "col s3">
-            <h2 style = "font-size: 30px;">Service Maintenance</h2>
+            <h2 style = "font-size: 30px; padding-left: 70px; margin-top: 0px; margin-bottom: 0px;">Service Maintenance</h2>
 
-            <!-- Create Service -->
-            <div class = "col s12">
-                <div class = "aside aside z-depth-3">
-                <div class = "header">
-                    <h4 style = "font-size: 30px; padding-top:10px;margin-top: 0px;">Service Form</h4>
-                </div>
-                        <form class="row" style = "padding-left: 10px;" id="formCreate">
-                            <div class="input-field col s6">
-                                <input id="serviceName" type="text" class="validate" required = "" aria-required = "true" pattern = "[A-Za-z0-9\s]{1,29}">
-                                <label for="serviceName" data-error = "Check format field." data-success = "">Service Name <span style = "color: red;">*</span></label>
-                            </div>
-                            <div class="input-field col s6">
-                                <input id="servicePrice" type="text" class="validate" required = "" aria-required = "true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
-                                <label for="servicePrice" data-error = "Check format field." data-success = "">Service Price <span style = "color: red;">*</span></label>
-                            </div>
-                        </form>
+		<!-- Modal Create -->
+		<div id="modalCreateService" class="modal">
+			<div class = "modal-header">
+				<h4 style = "padding-left: 20px;">Create Service</h4>
+			</div>
+			<div class="modal-content">
 
-                    <div class="row">
-                            <div class="row" style = "padding-left: 10px;">
-                                <div class="input-field col s12">
-									<input id="serviceDesc" type="text" class="validate" pattern = "[A-Za-z0-9\s]{1,29}">
-                                    <label for="serviceDesc" data-error = "Check format field." data-success = "">Service Description</label>
-                                </div>
-                            </div>
+				<form class="row" style = "padding-left: 10px;" id="formCreate">
+					<div class="input-field col s6">
+						<input id="serviceName" type="text" class="validate" required = "" aria-required = "true" pattern = "[A-Za-z0-9\s]{1,29}">
+						<label for="serviceName" data-error = "Check format field." data-success = "">Service Name <span style = "color: red;">*</span></label>
+					</div>
+					<div class="input-field col s6">
+						<input id="servicePrice" type="text" class="validate" required = "" aria-required = "true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
+						<label for="servicePrice" data-error = "Check format field." data-success = "">Service Price <span style = "color: red;">*</span></label>
+					</div>
+				</form>
 
-                        <button data-target = "modalRequirement" class="waves-effect waves-light modal-trigger red left" style = "margin-left: 20px; width: 180px; height: 35px; color: white; margin-bottom: 10px; font-size: 14px;"></i>CHOOSE REQUIREMENTS</button>
-                    <br><br><br>
-                    <i class = "left" style = "margin-bottom: 0px; padding-left: 20px; color: red;">*Required Fields</i>
-                  
-                    </div>		
-                </div>
+				<div class="row">
+					<div class="row" style = "padding-left: 10px;">
+						<div class="input-field col s12">
+							<input id="serviceDesc" type="text" class="validate" pattern = "[A-Za-z0-9\s]{1,29}">
+							<label for="serviceDesc" data-error = "Check format field." data-success = "">Service Description</label>
+						</div>
+					</div>
 
-            </div>
-            </div>
+					<button data-target = "modalRequirement" class="waves-effect waves-light modal-trigger red left" style = "margin-left: 20px; width: 180px; height: 35px; color: white; margin-bottom: 10px; font-size: 14px;"></i>CHOOSE REQUIREMENTS</button>
+					<br><br><br>
+					<i class = "left" style = "margin-bottom: 0px; padding-left: 20px; color: red;">*Required Fields</i>
+
+				</div>
+
+			</div>
+			<div class="modal-footer">
+				<button name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
+				<button name = "action" class="waves-effect waves-light btn red">Cancel</button>
+			</div>
+		</div>
 
             <!-- Modal Requirements -->
             <div id="modalRequirement" class="modal">
@@ -79,20 +82,7 @@
                                 </div>
                             </div>
                         </div>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
+                        <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
                 <div class="modal-footer">
                     <button onclick="$('#modalRequirement').closeModal()" name = "action" class="waves-effect waves-light btn red right" style = "margin-right: 0px; width: 130px;">CONFIRM</button>
@@ -102,7 +92,7 @@
 
 
         <!-- Modal Update -->
-        <div id="modalUpdate" class="modal">
+        <div id="modalUpdateService" class="modal">
             <div class = "modal-header">
                 <h4 style = "padding-left: 40px;">Update Service</h4>
             </div>
@@ -153,43 +143,30 @@
 
 
         <!-- Modal Deactivate -->
-        <div id="modalDeactivate" class="modal">
+        <div id="modalDeactivateService" class="modal" style = "width: 600px;">
             <div class = "modal-header">
                 <h4>Deactivate Service</h4>
             </div>
             <div class="modal-content">
 
-                <form class = "col s12">
-                    <div class="row">
-                        <div class = "col s6" style = "padding-left: 20px;">
-                            <label>Select Service Name to Deactivate:</label>
-                            <select id="selectServiceDeactivate" required = "" aria-required="true">
-                                <option value="" disabled selected>Service Name:</option>
-								<c:if test="${serviceList != null }">
-									<c:forEach items="${serviceList }" var="service">
-										<option value="${service.strServiceName }">${service.strServiceName}</option>
-									</c:forEach>
-								</c:if>
-                            </select>
-                        </div>
-                    </div>
-                </form>
+				<p style = "padding-left: 90px; font-size: 15px;">Are you sure you want to deactivate this service?</p>
             </div>
             <div class="modal-footer">
-                <button onclick="deactivateService()" name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
-                <button onclick="$('#modalDeactivate').closeModal()" name = "action" class="waves-effect waves-light btn red">Cancel</button>
+                <button onclick="deactivateService()" name = "action" class="btn red" style = "margin-left: 10px; ">Confirm</button>
+                <button name = "action" class="modal-close btn red">Cancel</button>
             </div>
         </div>
 
 
 		<!-- Data Grid -->
-		<div class = "col s9">
+		<div class = "col s9" style = "margin-left: 40px; margin-top: 0px;">
 			<div class="row">
 				<div id="admin" class="col s12" style="margin-top: 20px">
 					<div class="z-depth-2 card material-table">
 						<div class="table-header" style="background-color: #00897b;">
-							<h4 style = "font-size: 30px; color: white; padding-left: 0px;">Building Data Grid</h4>
+							<h4 style = "font-size: 30px; color: white; padding-left: 0px;">Service Data Grid</h4>
 							<div class="actions">
+								<button name = "action" class="modal-trigger btn-floating yellow" style = "margin-right: 10px;" href = "#modalCreateService"><i class="material-icons">add</i></button>
 								<a href="#" class="search-toggle waves-effect btn-flat nopadding"><i class="material-icons" style="color: #ffffff;">search</i></a>
 							</div>
 						</div>
@@ -209,127 +186,131 @@
 								<td>Price One</td>
 								<td>Description One</td>
 								<td>Requirement One</td>
-								<td><button name = "action" class="modal-trigger btn-floating green" href = "#modal1"><i class="material-icons">mode_edit</i></button>
-									<button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button></td>
+								<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateService"><i class="material-icons">mode_edit</i></button>
+									<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateService"><i class="material-icons">delete</i></button></td>
 							</tr>
 							<tr>
 								<td>Service One</td>
 								<td>Price One</td>
 								<td>Description One</td>
 								<td>Requirement One</td>
-								<td><button name = "action" class="modal-trigger btn-floating green" href = "#modal1"><i class="material-icons">mode_edit</i></button>
-									<button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button></td>
+								<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateService"><i class="material-icons">mode_edit</i></button>
+									<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateService"><i class="material-icons">delete</i></button></td>
 							</tr>
 							<tr>
 								<td>Service One</td>
 								<td>Price One</td>
 								<td>Description One</td>
 								<td>Requirement One</td>
-								<td><button name = "action" class="modal-trigger btn-floating green" href = "#modal1"><i class="material-icons">mode_edit</i></button>
-									<button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button></td>
+								<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateService"><i class="material-icons">mode_edit</i></button>
+									<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateService"><i class="material-icons">delete</i></button></td>
 							</tr>
 							<tr>
 								<td>Service One</td>
 								<td>Price One</td>
 								<td>Description One</td>
 								<td>Requirement One</td>
-								<td><button name = "action" class="modal-trigger btn-floating green" href = "#modal1"><i class="material-icons">mode_edit</i></button>
-									<button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button></td>
+								<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateService"><i class="material-icons">mode_edit</i></button>
+									<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateService"><i class="material-icons">delete</i></button></td>
 							</tr>
 							<tr>
 								<td>Service One</td>
 								<td>Price One</td>
 								<td>Description One</td>
 								<td>Requirement One</td>
-								<td><button name = "action" class="modal-trigger btn-floating green" href = "#modal1"><i class="material-icons">mode_edit</i></button>
-									<button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button></td>
+								<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateService"><i class="material-icons">mode_edit</i></button>
+									<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateService"><i class="material-icons">delete</i></button></td>
 							</tr>
 							<tr>
 								<td>Service One</td>
 								<td>Price One</td>
 								<td>Description One</td>
 								<td>Requirement One</td>
-								<td><button name = "action" class="modal-trigger btn-floating green" href = "#modal1"><i class="material-icons">mode_edit</i></button>
-									<button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button></td>
+								<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateService"><i class="material-icons">mode_edit</i></button>
+									<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateService"><i class="material-icons">delete</i></button></td>
 							</tr>
 							<tr>
 								<td>Service One</td>
 								<td>Price One</td>
 								<td>Description One</td>
 								<td>Requirement One</td>
-								<td><button name = "action" class="modal-trigger btn-floating green" href = "#modal1"><i class="material-icons">mode_edit</i></button>
-									<button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button></td>
+								<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateService"><i class="material-icons">mode_edit</i></button>
+									<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateService"><i class="material-icons">delete</i></button></td>
 							</tr>
 							<tr>
 								<td>Service One</td>
 								<td>Price One</td>
 								<td>Description One</td>
 								<td>Requirement One</td>
-								<td><button name = "action" class="modal-trigger btn-floating green" href = "#modal1"><i class="material-icons">mode_edit</i></button>
-									<button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button></td>
+								<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateService"><i class="material-icons">mode_edit</i></button>
+									<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateService"><i class="material-icons">delete</i></button></td>
 							</tr>
 							<tr>
 								<td>Service One</td>
 								<td>Price One</td>
 								<td>Description One</td>
 								<td>Requirement One</td>
-								<td><button name = "action" class="modal-trigger btn-floating green" href = "#modal1"><i class="material-icons">mode_edit</i></button>
-									<button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button></td>
+								<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateService"><i class="material-icons">mode_edit</i></button>
+									<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateService"><i class="material-icons">delete</i></button></td>
 							</tr>
 							<tr>
 								<td>Service One</td>
 								<td>Price One</td>
 								<td>Description One</td>
 								<td>Requirement One</td>
-								<td><button name = "action" class="modal-trigger btn-floating green" href = "#modal1"><i class="material-icons">mode_edit</i></button>
-									<button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button></td>
+								<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateService"><i class="material-icons">mode_edit</i></button>
+									<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateService"><i class="material-icons">delete</i></button></td>
 							</tr>
 							<tr>
 								<td>Service One</td>
 								<td>Price One</td>
 								<td>Description One</td>
 								<td>Requirement One</td>
-								<td><button name = "action" class="modal-trigger btn-floating green" href = "#modal1"><i class="material-icons">mode_edit</i></button>
-									<button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button></td>
+								<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateService"><i class="material-icons">mode_edit</i></button>
+									<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateService"><i class="material-icons">delete</i></button></td>
 							</tr>
 							<tr>
 								<td>Service One</td>
 								<td>Price One</td>
 								<td>Description One</td>
 								<td>Requirement One</td>
-								<td><button name = "action" class="modal-trigger btn-floating green" href = "#modal1"><i class="material-icons">mode_edit</i></button>
-									<button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button></td>
+								<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateService"><i class="material-icons">mode_edit</i></button>
+									<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateService"><i class="material-icons">delete</i></button></td>
 							</tr>
 							<tr>
 								<td>Service One</td>
 								<td>Price One</td>
 								<td>Description One</td>
 								<td>Requirement One</td>
-								<td><button name = "action" class="modal-trigger btn-floating green" href = "#modal1"><i class="material-icons">mode_edit</i></button>
-									<button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button></td>
+								<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateService"><i class="material-icons">mode_edit</i></button>
+									<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateService"><i class="material-icons">delete</i></button></td>
 							</tr>
 							<tr>
 								<td>Service One</td>
 								<td>Price One</td>
 								<td>Description One</td>
 								<td>Requirement One</td>
-								<td><button name = "action" class="modal-trigger btn-floating green" href = "#modal1"><i class="material-icons">mode_edit</i></button>
-									<button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button></td>
+								<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateService"><i class="material-icons">mode_edit</i></button>
+									<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateService"><i class="material-icons">delete</i></button></td>
 							</tr>
 							</tbody>
 						</table>
 					</div>
 				</div>
 			</div>
+
 			<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 			<script src='http://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js'></script>
 			<script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js'></script>
 			<script type="text/javascript" src = "../js/index.js"></script>
+			<script type="text/javascript" src = "../js/Services_Record_Form.js"></script>
 		</div>
     </div>
 	</div>
     
     <script>
+
+
 
 	    $("#formCreate").submit(function(e){
 		    return false;

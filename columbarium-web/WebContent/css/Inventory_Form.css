@@ -3,6 +3,14 @@
     src: url(../fonts/KGBlankSpaceSketch.ttf);
 }
 
+#toast-container {
+    position: fixed !important;
+    bottom: 100px !important;
+    left: 50px !important;
+    color: black;
+    background-color: white;
+}
+
 .aside {
     height: 330px;
     width: 100%;

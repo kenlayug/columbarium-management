@@ -2,7 +2,6 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
 
-    <script type="text/javascript" src="<%=request.getContextPath()%>/js/Building_Record_Form.js"></script>
 	<link rel = "stylesheet" href = "<%=request.getContextPath()%>/css/Building_Record_Form.css"/>
 
 	<link rel="stylesheet" href="../css/style.css">
@@ -12,7 +11,7 @@
 		<div class = "s12">
 	    <div class = "row">
 	        <div class = "col s5">
-	            <h2 style = "font-size: 30px;">Building Maintenance</h2>
+	            <h2 style = "font-size: 30px; margin-top: 0px; margin-bottom: 20px;">Building Maintenance</h2>
 	
 	            <!-- Create Building -->
 	            <form class = "col s12" id="formCreate">
@@ -20,8 +19,6 @@
 	                    <div class = "header">
 	                        <h4 style = "font-size: 30px; margin-top: 0px; padding-top: 10px;">Building Form</h4>
 	                    </div>
-
-	                    <br>
 	
 	                        <div class="row" style = "padding-left: 10px;">
 	                            <div class="input-field required col s12">
@@ -47,6 +44,8 @@
 
 						<br><br><br><br>
 						<i class = "left" style = "margin-bottom: 50px; padding-left: 20px; color: red;">*Required Fields</i>
+						<br><br><br>
+						<button onClick = "saveButton()" type = "submit" name = "action" class="waves-effect btn red right" style = "margin-top: 30px; margin-right: 10px;">Create</button>
 	                </div>
 	            </form>
 	        </div>
@@ -230,6 +229,11 @@
 	    
 	    
 	<script>
+
+		$('.modal-trigger').leanModal({
+					dismissible: false
+				}
+		);
 	
 		$("#formCreate").submit(function(e){
 		    return false;

@@ -46,14 +46,15 @@
 	                        </div>
 						<i class = "left" style = "margin-bottom: 0px; padding-left: 20px; color: red;">*Required Fields</i>
 	                	<br>
-						<button type = "submit" name = "action" class="waves-effect waves-light btn red right" style = "margin-right: 10px;">Create</button>
-	                </form>
+						<button onClick = "saveButton()" type = "submit" name = "action" class="btn red right" style = "margin-right: 10px;">Create</button>
+
+					</form>
 
 	            </div>
 	        </div>
 	
 	        <!-- Modal Update -->
-	        <form id="modal1" class="modal">
+	        <form id="modalUpdateItem" class="modal" style = "width: 700px;">
 	            <div class = "modal-header">
 	                <h4>Update Item</h4>
 	            </div>
@@ -62,7 +63,7 @@
 		                    <div class = "row">
 		                        <div style = "padding-left: 10px;">
 		                            <div class="input-field col s6">
-		                                <input id="itemNameUpdate" type="text" class="validate" name="item.strItemName" required = "" aria-required = "true" pattern = "[A-Za-z0-9\s]{1,29}">
+		                                <input id="itemNameUpdate" type="text" class="validate" name="item.strItemName" required = ""  pattern = "[A-Za-z0-9\s]{1,29}">
 		                                <label for="itemNameUpdate" data-error = "Invalid format." data-success = "">New Item Name<span style = "color: red;">*</span></label>
 		                            </div>
 		                        </div>
@@ -81,34 +82,32 @@
 	                            <label for="itemDescUpdate" data-error = "Invalid format." data-success = "">New Item Description</label>
 	                        </div>
 	                    </div>
-						<br><br>
+
+					<i class = "left" style = "margin-bottom: 0px; padding-left: 30px; color: red;">*Required Fields</i>
+				<br>
 
 					<div class="modal-footer">
-						<button onclick="updateItem()" type="submit" name="action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
-
-						<button class="waves-effect waves-light btn red modal-close" >Cancel</button>
+							<button onclick="updateItem()" type="submit" name="action" class="btn red" style = "margin-top: 30px; margin-left: 10px; ">Confirm</button>
+							<button class="btn red modal-close" style = "margin-top: 30px">Cancel</button>
 					</div>
 
 
 	        </form>
-	
-	
-	        <!-- Modal Deactivate -->
-	        <div id="modal2" class="modal">
-	            <div class = "modal-header">
-	                <h4>Deactivate Item</h4>
-	            </div>
-	            <div class="modal-content">
-					<p style = "padding-left: 110px; font-size: 20px;">Are you sure you want to deactivate this item?</p>
-					<br>
-	            </div>
-	
-	            <div class="modal-footer">
-	                <button onclick="deactivateItem()" name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
-					
-	                <button class="waves-effect waves-light btn red modal-close">Cancel</button>
-	            </div>
-	        </div>
+
+
+			<!-- Modal Deactivate -->
+			<div id="modalDeactivateItem" class="modal" style = "width: 600px;">
+				<div class = "modal-header">
+					<h4>Deactivate Item</h4>
+				</div>
+				<div class="modal-content">
+					<p style = "padding-left: 90px; font-size: 15px;">Are you sure you want to deactivate this item?</p>
+				</div>
+				<div class="modal-footer">
+					<button name = "action" class="btn red" style = "margin-left: 10px; ">Confirm</button>
+					<button name = "action" class="btn red">Cancel</button>
+				</div>
+			</div>
 
 			<!-- Data Grid -->
 			<div class = "col s7">
@@ -118,7 +117,7 @@
 							<div class="table-header" style="background-color: #00897b;">
 								<h4 style = "font-size: 30px; color: white; padding-left: 0px;">Building Data Grid</h4>
 								<div class="actions">
-									<a href="#" class="search-toggle waves-effect btn-flat nopadding"><i class="material-icons" style="color: #ffffff;">search</i></a>
+									<a href="#" class="search-toggle btn-flat nopadding"><i class="material-icons" style="color: #ffffff;">search</i></a>
 								</div>
 							</div>
 							<table id="datatable">
@@ -135,105 +134,106 @@
 									<td>Item One</td>
 									<td>Price One</td>
 									<td>Description One</td>
-									<td><button name = "action" class="modal-trigger btn-floating green" href = "#modal1"><i class="material-icons">mode_edit</i></button>
-										<button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button></td>
+									<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateItem"><i class="material-icons">mode_edit</i></button>
+										<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateItem"><i class="material-icons">delete</i></button></td>
 								</tr>
 								<tr>
 									<td>Item Two</td>
 									<td>Price Two</td>
 									<td>Description Two</td>
-									<td><button name = "action" class="modal-trigger btn-floating green" href = "#modal1"><i class="material-icons">mode_edit</i></button>
-										<button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button></td>
+									<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateItem"><i class="material-icons">mode_edit</i></button>
+										<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateItem"><i class="material-icons">delete</i></button></td>
 								</tr>
 								<tr>
 									<td>Item Three</td>
 									<td>Price Three</td>
 									<td>Description Three</td>
-									<td><button name = "action" class="modal-trigger btn-floating green" href = "#modal1"><i class="material-icons">mode_edit</i></button>
-										<button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button></td>
+									<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateItem"><i class="material-icons">mode_edit</i></button>
+										<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateItem"><i class="material-icons">delete</i></button></td>
 								</tr>
 								<tr>
 									<td>Item Four</td>
 									<td>Price Four</td>
 									<td>Description Four</td>
-									<td><button name = "action" class="modal-trigger btn-floating green" href = "#modal1"><i class="material-icons">mode_edit</i></button>
-										<button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button></td>
+									<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateItem"><i class="material-icons">mode_edit</i></button>
+										<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateItem"><i class="material-icons">delete</i></button></td>
 								</tr>
 								<tr>
 									<td>Item Five</td>
 									<td>Price Five</td>
 									<td>Description Five</td>
-									<td><button name = "action" class="modal-trigger btn-floating green" href = "#modal1"><i class="material-icons">mode_edit</i></button>
-										<button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button></td>
+									<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateItem"><i class="material-icons">mode_edit</i></button>
+										<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateItem"><i class="material-icons">delete</i></button></td>
 								</tr>
 								<tr>
 									<td>Item Six</td>
 									<td>Price Six</td>
 									<td>Description Six</td>
-									<td><button name = "action" class="modal-trigger btn-floating green" href = "#modal1"><i class="material-icons">mode_edit</i></button>
-										<button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button></td>
+									<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateItem"><i class="material-icons">mode_edit</i></button>
+										<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateItem"><i class="material-icons">delete</i></button></td>
 								</tr>
 								<tr>
 									<td>Item Seven</td>
 									<td>Price Seven</td>
 									<td>Description Seven</td>
-									<td><button name = "action" class="modal-trigger btn-floating green" href = "#modal1"><i class="material-icons">mode_edit</i></button>
-										<button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button></td>
+									<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateItem"><i class="material-icons">mode_edit</i></button>
+										<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateItem"><i class="material-icons">delete</i></button></td>
 								</tr>
 								<tr>
 									<td>Item Eight</td>
 									<td>Price Eight</td>
 									<td>Description Eight</td>
-									<td><button name = "action" class="modal-trigger btn-floating green" href = "#modal1"><i class="material-icons">mode_edit</i></button>
-										<button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button></td>
+									<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateItem"><i class="material-icons">mode_edit</i></button>
+										<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateItem"><i class="material-icons">delete</i></button></td>
 								</tr>
 								<tr>
 									<td>Item Nine</td>
 									<td>Price Nine</td>
 									<td>Description Nine</td>
-									<td><button name = "action" class="modal-trigger btn-floating green" href = "#modal1"><i class="material-icons">mode_edit</i></button>
-										<button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button></td>
+									<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateItem"><i class="material-icons">mode_edit</i></button>
+										<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateItem"><i class="material-icons">delete</i></button></td>
 								</tr>
 								<tr>
 									<td>Item Ten</td>
 									<td>Price Ten</td>
 									<td>Description Ten</td>
-									<td><button name = "action" class="modal-trigger btn-floating green" href = "#modal1"><i class="material-icons">mode_edit</i></button>
-										<button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button></td>
+									<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateItem"><i class="material-icons">mode_edit</i></button>
+										<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateItem"><i class="material-icons">delete</i></button></td>
 								</tr>
 								<tr>
 									<td>Item Eleven</td>
 									<td>Price Eleven</td>
 									<td>Description Eleven</td>
-									<td><button name = "action" class="modal-trigger btn-floating green" href = "#modal1"><i class="material-icons">mode_edit</i></button>
-										<button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button></td>
+									<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateItem"><i class="material-icons">mode_edit</i></button>
+										<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateItem"><i class="material-icons">delete</i></button></td>
 								</tr>
 								<tr>
 									<td>Item Twelve</td>
 									<td>Price Twelve</td>
 									<td>Description Twelve</td>
-									<td><button name = "action" class="modal-trigger btn-floating green" href = "#modal1"><i class="material-icons">mode_edit</i></button>
-										<button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button></td>
+									<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateItem"><i class="material-icons">mode_edit</i></button>
+										<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateItem"><i class="material-icons">delete</i></button></td>
 								</tr>
 								<tr>
 									<td>Item Thirteen</td>
 									<td>Price Thirteen</td>
 									<td>Description Thirteen</td>
-									<td><button name = "action" class="modal-trigger btn-floating green" href = "#modal1"><i class="material-icons">mode_edit</i></button>
-										<button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button></td>
+									<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateItem"><i class="material-icons">mode_edit</i></button>
+										<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateItem"><i class="material-icons">delete</i></button></td>
 								</tr>
 								<tr>
 									<td>Item Fourteen</td>
 									<td>Price Fourteen</td>
 									<td>Description Fourteen</td>
-									<td><button name = "action" class="modal-trigger btn-floating green" href = "#modal1"><i class="material-icons">mode_edit</i></button>
-										<button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button></td>
+									<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateItem"><i class="material-icons">mode_edit</i></button>
+										<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateItem"><i class="material-icons">delete</i></button></td>
 								</tr>
 								</tbody>
 							</table>
 						</div>
 					</div>
 				</div>
+
 				<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 				<script src='http://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js'></script>
 				<script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js'></script>
@@ -245,6 +245,33 @@
 	</div>
 	
 	<script type="text/javascript">
+
+
+		$('.modal-trigger').leanModal({
+					dismissible: false
+				}
+		);
+
+
+	function saveButton()
+	{
+		        var errormessage = "";
+
+				if (document.getElementById('itemName').value == "" || false){
+                    return false;
+                    }
+                if (document.getElementById('itemPrice').value == "" || false){
+                    return false;
+                    }
+		        else
+		            {
+			        var $toastContent = $('<span>Record Save!</span>');
+			        Materialize.toast($toastContent, 5000);
+		            }
+	}
+
+
+<form onsubmit="return validate(this);">
 			
 		$("#formCreate").submit(function(e){
 		    return false;
@@ -427,4 +454,4 @@
 			
 		}
 		
-	</script>	
+	</script>

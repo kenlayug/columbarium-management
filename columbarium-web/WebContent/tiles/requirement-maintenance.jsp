@@ -2,8 +2,6 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
 
-	
-    <script type="text/javascript" src="<%=request.getContextPath()%>/js/Requirements_Maintenance.js"></script>
     <link rel = "stylesheet" href = "<%=request.getContextPath()%>/css/Requirements_Maintenance.css"/>
 
 	<link rel="stylesheet" href="../css/style.css">
@@ -16,6 +14,7 @@
 	    <div class = "row">
 	        <div class = "col s5">
 	            <h2 style = "font-size: 30px;">Requirement Maintenance</h2>
+
 	            <!-- Create Requirement -->
 	            <div class = "col s12">
 	                <form class = "wrapper responsive aside aside z-depth-2" id="formCreate">
@@ -37,6 +36,8 @@
                         </div>
 					
 						<i class = "left" style = "margin-bottom: 50px; padding-left: 20px; color: red;">*Required Fields</i>
+
+						<button type = "submit" name = "action" class="btn red right" style = "margin-right: 10px;">Create</button>
 	                </form>
 	
 	            </div>
@@ -71,25 +72,28 @@
 				<div  style = "margin-top: 30px;">
 				<div class="modal-footer">
 					<button type = "submit" onclick="updateRequirement()" name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
-					<button name = "action" class="waves-effect waves-light btn red modal-close">Cancel</button>
+					<button name = "action" class="modal-close btn red modal-close">Cancel</button>
 				</div>
 				</div>
 	        </div>
-	
-	
-	        <!-- Modal Deactivate -->
-	        <div id="modalDeactivateRequirement" class="modal">
-	            <div class = "modal-header">
-	                <h4>Deactivate Requirement</h4>
-	            </div>
-	            <div class="modal-content">
+
+			<!-- Modal Deactivate -->
+			<div id="modalDeactivateRequirement" class="modal">
+				<div class = "modal-header">
+					<h4>Deactivate Requirement</h4>
+				</div>
+				<div class="modal-content">
 					<p style = "padding-left: 110px; font-size: 20px;">Are you sure you want to deactivate this requirement?</p>
-	            </div>
-	            <div class="modal-footer">
-	                <button onclick="deactivateRequirement()" name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
-	                <button name = "action" class="waves-effect waves-light btn red modal-close">Cancel</button>
-	            </div>
-	        </div>
+					<br>
+				</div>
+
+				<div class="modal-footer">
+					<button onclick="deactivateItem()" name = "action" class="btn red" style = "margin-left: 10px; ">Confirm</button>
+
+					<button class="btn red modal-close">Cancel</button>
+				</div>
+			</div>
+
 
 			<!-- Data Grid -->
 			<div class = "col s7">
@@ -200,30 +204,33 @@
 						</div>
 					</div>
 				</div>
+
 				<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 				<script src='http://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js'></script>
 				<script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js'></script>
 				<script type="text/javascript" src = "../js/index.js"></script>
+				<script type="text/javascript" src = "../js/Requirements_Maintenance.js"></script>
 			</div>
 	    </div>
 	</div>
 	
 	<script>
+
 	
 		$("#formCreate").submit(function(e){
 		    return false;
 		});
-		
+
 		$("#formUpdate").submit(function(e){
 		    return false;
 		});
-	
+
 		function createRequirement(){
-			
+
 			var requirementName = document.getElementById("requirementName").value;
 			var requirementDesc = document.getElementById("requirementDesc").value;
-			
-			
+
+
 			$.ajax({
 				type: "POST",
 				url: "create",
@@ -249,16 +256,16 @@
 					alert("Error...");
 				}
 			});
-			
+
 		}//createRequirement
-		
+
 		function updateRequirement(){
-			
+
 			alert("Here...");
 			var selectRequirementUpdate = document.getElementById("selectUpdateRequirement").value;
 			var requirementNameUpdate = document.getElementById("requirementNameUpdate").value;
 			var requirementDescUpdate = document.getElementById("requirementDescUpdate").value;
-			
+
 			$.ajax({
 				type: "POST",
 				url: "update",
@@ -288,13 +295,13 @@
 					alert("error");
 				}
 			});
-			
+
 		}
-		
+
 		function deactivateRequirement(){
-			
+
 			var deactivateRequirementName = document.getElementById("selectDeactivateRequirement").value;
-			
+
 			$.ajax({
 				type: "POST",
 				url: "deactivate",
@@ -312,11 +319,11 @@
 					alert("Error...");
 				}
 			});
-			
+
 		}
-		
+
 		function updateTable(){
-			
+
 			$.ajax({
 				type: "POST",
 				url: "getAllRequirement",
@@ -327,7 +334,7 @@
 	        		$("#tableRequirement tbody").remove();
 					if (requirementList != null){
 						$.each(requirementList, function(i, requirement){
-							
+
 			        		tableRow = $("<tr>").append(
 			        				$("<td>").text(requirement.strRequirementName),
 			        				$("<td>").text(requirement.strRequirementDesc));
@@ -343,7 +350,7 @@
 					alert("error in updating table...");
 				}
 			});
-			
+
 		}//updateTable
 	
 	</script>

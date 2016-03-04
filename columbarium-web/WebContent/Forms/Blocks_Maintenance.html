@@ -24,6 +24,9 @@
     <script type="text/javascript" src="../js/Blocks_Record_Form.js"></script>
     <link rel = "stylesheet" href = "../css/Blocks_Record_Form.css"/>
 
+    <link rel="stylesheet" href="../css/style.css">
+    <script type="text/javascript" src = "../js/index.js"></script>
+
 </head>
 <body>
 
@@ -96,7 +99,7 @@
 
     <div class = "responsive col s12">
         <div class = "row">
-        <div class = "col s7">
+        <div class = "col s5">
             <h2 style = "font-size: 30px;">Block Maintenance</h2>
             <!-- Create Blocks -->
             <div class = "col s12">
@@ -138,21 +141,10 @@
                                 <label for="blocks_name" data-error = "*ex: Address (30 characters max)" data-success = "Block Name accepted.">Block Name <span style = "color: red;">*</span></label>
                             </div>
                         </div>
-
-
-                        <!-- Floating Button -->
-                        <div class="fixed-action-btn horizontal" style="position: absolute; margin-right: 560px; margin-bottom: 180px;">
-                            <div class = "responsive">
-                                <button name = "action" type = "submit" class="btn-floating btn-large red"><i class="large material-icons">add</i>
-                                </button>
-                                <ul>
-                                    <li><button name = "action" class="btn-floating modal-trigger black" href = "#modal2"><i class="material-icons">delete</i></button></li>
-                                    <li><button name = "action" class="btn-floating modal-trigger green darken-1" href = "#modal1"><i class="material-icons">mode_edit</i></button></li>
-                                </ul>
-                            </div>
-                        </div>
-
                     </form>
+                    <i class = "left" style = "margin-bottom: 0px; padding-left: 20px; color: red;">*Required Fields</i>
+                    <br>
+                    <button onClick = "saveButton()" type = "submit" name = "action" class="waves-effect btn red right" style = "margin-top: 35px; margin-right: 10px;">Create</button>
 
                 </div>
             </div>
@@ -269,91 +261,134 @@
             </div>
 
             <!-- Data Grid -->
-        <div class = "col s5">
-            <div class = "col s4 z-depth-2 " style = "margin-top: 20px; width: 100%; height: 70px;">
-              <div class = "responsive">
-
-                <nav style = "height: 50px; margin-top: 10px; background-color: #00897b">
-                    <div class="nav-wrapper">
-                        <div>
-                            <div class="input-field"  style = "height: 50px;">
-                                <input id="search" type="search" required>
-                                <label for="search"><i class="material-icons">search</i></label>
-                                <i class="material-icons">close</i>
+            <div class = "col s7">
+                <div class="row">
+                    <div id="admin" class="col s12" style="margin-top: 20px">
+                        <div class="z-depth-2 card material-table">
+                            <div class="table-header" style="background-color: #00897b;">
+                                <h4 style = "font-size: 30px; color: white; padding-left: 0px;">Building Data Grid</h4>
+                                <div class="actions">
+                                    <a href="#" class="search-toggle waves-effect btn-flat nopadding"><i class="material-icons" style="color: #ffffff;">search</i></a>
+                                </div>
                             </div>
+                            <table id="datatable">
+                                <thead>
+                                <tr>
+                                    <th>Building Name</th>
+                                    <th>Number of Floor/s</th>
+                                    <th>Number of Blocks</th>
+                                    <th>Block/s Name</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>Building One</td>
+                                    <td>4</td>
+                                    <td>Description One</td>
+                                    <td><button name = "action" class="modal-trigger btn-floating green" href = "#modal1"><i class="material-icons">mode_edit</i></button>
+                                        <button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button></td>
+                                </tr>
+                                <tr>
+                                    <td>Item Two</td>
+                                    <td>Price Two</td>
+                                    <td>Description Two</td>
+                                    <td><button name = "action" class="modal-trigger btn-floating green" href = "#modal1"><i class="material-icons">mode_edit</i></button>
+                                        <button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button></td>
+                                </tr>
+                                <tr>
+                                    <td>Item Three</td>
+                                    <td>Price Three</td>
+                                    <td>Description Three</td>
+                                    <td><button name = "action" class="modal-trigger btn-floating green" href = "#modal1"><i class="material-icons">mode_edit</i></button>
+                                        <button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button></td>
+                                </tr>
+                                <tr>
+                                    <td>Item Four</td>
+                                    <td>Price Four</td>
+                                    <td>Description Four</td>
+                                    <td><button name = "action" class="modal-trigger btn-floating green" href = "#modal1"><i class="material-icons">mode_edit</i></button>
+                                        <button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button></td>
+                                </tr>
+                                <tr>
+                                    <td>Item Five</td>
+                                    <td>Price Five</td>
+                                    <td>Description Five</td>
+                                    <td><button name = "action" class="modal-trigger btn-floating green" href = "#modal1"><i class="material-icons">mode_edit</i></button>
+                                        <button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button></td>
+                                </tr>
+                                <tr>
+                                    <td>Item Six</td>
+                                    <td>Price Six</td>
+                                    <td>Description Six</td>
+                                    <td><button name = "action" class="modal-trigger btn-floating green" href = "#modal1"><i class="material-icons">mode_edit</i></button>
+                                        <button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button></td>
+                                </tr>
+                                <tr>
+                                    <td>Item Seven</td>
+                                    <td>Price Seven</td>
+                                    <td>Description Seven</td>
+                                    <td><button name = "action" class="modal-trigger btn-floating green" href = "#modal1"><i class="material-icons">mode_edit</i></button>
+                                        <button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button></td>
+                                </tr>
+                                <tr>
+                                    <td>Item Eight</td>
+                                    <td>Price Eight</td>
+                                    <td>Description Eight</td>
+                                    <td><button name = "action" class="modal-trigger btn-floating green" href = "#modal1"><i class="material-icons">mode_edit</i></button>
+                                        <button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button></td>
+                                </tr>
+                                <tr>
+                                    <td>Item Nine</td>
+                                    <td>Price Nine</td>
+                                    <td>Description Nine</td>
+                                    <td><button name = "action" class="modal-trigger btn-floating green" href = "#modal1"><i class="material-icons">mode_edit</i></button>
+                                        <button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button></td>
+                                </tr>
+                                <tr>
+                                    <td>Item Ten</td>
+                                    <td>Price Ten</td>
+                                    <td>Description Ten</td>
+                                    <td><button name = "action" class="modal-trigger btn-floating green" href = "#modal1"><i class="material-icons">mode_edit</i></button>
+                                        <button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button></td>
+                                </tr>
+                                <tr>
+                                    <td>Item Eleven</td>
+                                    <td>Price Eleven</td>
+                                    <td>Description Eleven</td>
+                                    <td><button name = "action" class="modal-trigger btn-floating green" href = "#modal1"><i class="material-icons">mode_edit</i></button>
+                                        <button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button></td>
+                                </tr>
+                                <tr>
+                                    <td>Item Twelve</td>
+                                    <td>Price Twelve</td>
+                                    <td>Description Twelve</td>
+                                    <td><button name = "action" class="modal-trigger btn-floating green" href = "#modal1"><i class="material-icons">mode_edit</i></button>
+                                        <button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button></td>
+                                </tr>
+                                <tr>
+                                    <td>Item Thirteen</td>
+                                    <td>Price Thirteen</td>
+                                    <td>Description Thirteen</td>
+                                    <td><button name = "action" class="modal-trigger btn-floating green" href = "#modal1"><i class="material-icons">mode_edit</i></button>
+                                        <button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button></td>
+                                </tr>
+                                <tr>
+                                    <td>Item Fourteen</td>
+                                    <td>Price Fourteen</td>
+                                    <td>Description Fourteen</td>
+                                    <td><button name = "action" class="modal-trigger btn-floating green" href = "#modal1"><i class="material-icons">mode_edit</i></button>
+                                        <button name = "action" class="modal-trigger btn-floating red" href = "#modal2"><i class="material-icons">delete</i></button></td>
+                                </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
-                </nav>
+                </div>
+                <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+                <script src='http://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js'></script>
+                <script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js'></script>
+                <script type="text/javascript" src = "../js/index.js"></script>
             </div>
-            </div>
-
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-
-            <div class = "aside z-depth-2" style = " width: 100%; height: 340px; overflow: auto;">
-            <table class = "responsive"  style = "width: 100%;">
-
-
-                <thead class = "fixed-header">
-                <tr>
-                    <th data-field="id">Building name</th>
-                    <th data-field="name">No. of floors</th>
-                    <th data-field="name">No. of blocks</th>
-                    <th data-field="name">Block/s name</th>
-                </tr>
-                </thead>
-
-                <tbody>
-                <tr>
-                    <td>Building one</td>
-                    <td>3</td>
-                    <td>6</td>
-                    <td>Block one, Block two, Block three, Block four, Block five, Block six</td>
-                </tr>
-
-                <tr>
-                    <td>Building two</td>
-                    <td>5</td>
-                    <td>3</td>
-                    <td>Block one, Block two, Block three</td>
-                </tr>
-
-                <tr>
-                    <td>Building three</td>
-                    <td>0</td>
-                    <td>0</td>
-                </tr>
-
-                <tr>
-                    <td>Building four</td>
-                    <td>1</td>
-                    <td>3</td>
-                    <td>Block one, Block two, Block three</td>
-                </tr>
-
-                <tr>
-                    <td>Building five</td>
-                    <td>0</td>
-                    <td>0</td>
-                </tr>
-                <tr>
-                    <td>Building six</td>
-                    <td>3</td>
-                    <td>2</td>
-                    <td>Block one, Block two</td>
-                </tr>
-                <tr>
-                    <td>Building seven</td>
-                    <td>0</td>
-                    <td>0</td>
-                </tr>
-                </tbody>
-            </table>
-            </div>
-        </div>
         </div>
             </div>
 

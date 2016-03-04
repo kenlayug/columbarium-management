@@ -53,14 +53,14 @@
                                 </div>
                                 <div class="collapsible-body">
                                     <p>Ground Floor
-                                        <button name = "action" class="modal-trigger btn-floating red right" style = "margin-left: 5px;" href = "#modalPrice"><i class="material-icons">&#8369</i></button>
-                                        <button name = "action" class="modal-trigger btn-floating black right" style = "margin-left: 5px;" href = "#modalConfigure"><i class="material-icons">settings</i></button>
+                                        <button name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor price is not yet configured."  style = "margin-left: 5px;" href = "#modalPrice"><i class="material-icons">&#8369</i></button>
+                                        <button name = "action" class="btn tooltipped modal-trigger btn-floating black right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor is not yet configured." style = "margin-left: 5px;" href = "#modalConfigure"><i class="material-icons">settings</i></button>
                                     </p>
                                 </div>
                                 <div class="collapsible-body">
                                     <p>First Floor
-                                        <button name = "action" class="modal-trigger btn-floating blue right" style = "margin-left: 5px;" href = "#modalPrice"><i class="material-icons">&#8369</i></button>
-                                        <button name = "action" class="modal-trigger btn-floating black right" style = "margin-left: 5px;" href = "#modalConfigure"><i class="material-icons">settings</i></button>
+                                        <button name = "action" class="btn tooltipped modal-trigger btn-floating blue right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor price is configured." style = "margin-left: 5px;" href = "#modalPrice"><i class="material-icons">&#8369</i></button>
+                                        <button name = "action" class="btn tooltipped modal-trigger btn-floating black right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor is not yet configured." style = "margin-left: 5px;" href = "#modalConfigure"><i class="material-icons">settings</i></button>
                                    </p>
                                 </div>
                             </li>
@@ -70,20 +70,20 @@
                                 </div>
                                 <div class="collapsible-body">
                                     <p>Ground Floor
-                                        <button name = "action" class="modal-trigger btn-floating red right" style = "margin-left: 5px;" href = "#modalPrice"><i class="material-icons">&#8369</i></button>
-                                        <button name = "action" class="modal-trigger btn-floating green right" style = "margin-left: 5px;" href = "#modalConfigure"><i class="material-icons">settings</i></button>
+                                        <button name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor price is not yet configured." style = "margin-left: 5px;" href = "#modalPrice"><i class="material-icons">&#8369</i></button>
+                                        <button name = "action" class="btn tooltipped modal-trigger btn-floating green right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor is already configured." style = "margin-left: 5px;" href = "#modalConfigure"><i class="material-icons">settings</i></button>
                                     </p>
                                 </div>
                                 <div class="collapsible-body">
                                     <p>First Floor
-                                        <button name = "action" class="modal-trigger btn-floating red right" style = "margin-left: 5px;" href = "#modalPrice"><i class="material-icons">&#8369</i></button>
-                                        <button name = "action" class="modal-trigger btn-floating black right" style = "margin-left: 5px;" href = "#modalConfigure"><i class="material-icons">settings</i></button>
+                                        <button name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor price is not yet configured." style = "margin-left: 5px;" href = "#modalPrice"><i class="material-icons">&#8369</i></button>
+                                        <button name = "action" class="btn tooltipped modal-trigger btn-floating black right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor is not yet configured." style = "margin-left: 5px;" href = "#modalConfigure"><i class="material-icons">settings</i></button>
                                     </p>
                                 </div>
                                 <div class="collapsible-body">
                                     <p>Second Floor
-                                        <button name = "action" class="modal-trigger btn-floating blue right" style = "margin-left: 5px;" href = "#modalPrice"><i class="material-icons">&#8369</i></button>
-                                        <button name = "action" class="modal-trigger btn-floating black right" style = "margin-left: 5px;" href = "#modalConfigure"><i class="material-icons">settings</i></button>
+                                        <button name = "action" class="btn tooltipped modal-trigger btn-floating blue right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor price is configured." style = "margin-left: 5px;" href = "#modalPrice"><i class="material-icons">&#8369</i></button>
+                                        <button name = "action" class="btn tooltipped modal-trigger btn-floating black right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor is not yet configured." style = "margin-left: 5px;" href = "#modalConfigure"><i class="material-icons">settings</i></button>
                                     </p>
                                 </div>
                             </li>
@@ -93,14 +93,14 @@
                                 </div>
                                 <div class="collapsible-body">
                                     <p>Ground Floor
-                                        <button name = "action" class="modal-trigger btn-floating blue right" style = "margin-left: 5px;" href = "#modalPrice"><i class="material-icons">&#8369</i></button>
-                                        <button name = "action" class="modal-trigger btn-floating black right" style = "margin-left: 5px;" href = "#modalConfigure"><i class="material-icons">settings</i></button>
+                                        <button name = "action" class="btn tooltipped modal-trigger btn-floating blue right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor price is configured." style = "margin-left: 5px;" href = "#modalPrice"><i class="material-icons">&#8369</i></button>
+                                        <button name = "action" class="btn tooltipped modal-trigger btn-floating black right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor price is not yet configured." style = "margin-left: 5px;" href = "#modalConfigure"><i class="material-icons">settings</i></button>
                                     </p>
                                 </div>
                                 <div class="collapsible-body">
                                     <p>First Floor
-                                        <button name = "action" class="modal-trigger btn-floating red right" style = "margin-left: 5px;" href = "#modalPrice"><i class="material-icons">&#8369</i></button>
-                                        <button name = "action" class="modal-trigger btn-floating black right" style = "margin-left: 5px;" href = "#modalConfigure"><i class="material-icons">settings</i></button>
+                                        <button name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor price is not yet configured." style = "margin-left: 5px;" href = "#modalPrice"><i class="material-icons">&#8369</i></button>
+                                        <button name = "action" class="btn tooltipped modal-trigger btn-floating black right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor is not yet configured." style = "margin-left: 5px;" href = "#modalConfigure"><i class="material-icons">settings</i></button>
                                     </p>
                                 </div>
                             </li>
@@ -110,14 +110,14 @@
                                 </div>
                                 <div class="collapsible-body">
                                     <p>Ground Floor
-                                        <button name = "action" class="modal-trigger btn-floating blue right" style = "margin-left: 5px;" href = "#modalPrice"><i class="material-icons">&#8369</i></button>
-                                        <button name = "action" class="modal-trigger btn-floating green right" style = "margin-left: 5px;" href = "#modalConfigure"><i class="material-icons">settings</i></button>
+                                        <button name = "action" class="btn tooltipped modal-trigger btn-floating blue right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor price is configured." style = "margin-left: 5px;" href = "#modalPrice"><i class="material-icons">&#8369</i></button>
+                                        <button name = "action" class="btn tooltipped modal-trigger btn-floating green right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor is already configured." style = "margin-left: 5px;" href = "#modalConfigure"><i class="material-icons">settings</i></button>
                                     </p>
                                 </div>
                                 <div class="collapsible-body">
                                     <p>First Floor
-                                        <button name = "action" class="modal-trigger btn-floating red right" style = "margin-left: 5px;" href = "#modalPrice"><i class="material-icons">&#8369</i></button>
-                                        <button name = "action" class="modal-trigger btn-floating black right" style = "margin-left: 5px;" href = "#modalConfigure"><i class="material-icons">settings</i></button>
+                                        <button name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor price is not yet configured." style = "margin-left: 5px;" href = "#modalPrice"><i class="material-icons">&#8369</i></button>
+                                        <button name = "action" class="btn tooltipped modal-trigger btn-floating black right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor is not yet configured." style = "margin-left: 5px;" href = "#modalConfigure"><i class="material-icons">settings</i></button>
                                     </p>
                                 </div>
                             </li>
@@ -127,14 +127,14 @@
                                 </div>
                                 <div class="collapsible-body">
                                     <p>Ground Floor
-                                        <button name = "action" class="modal-trigger btn-floating red right" style = "margin-left: 5px;" href = "#modalPrice"><i class="material-icons">&#8369</i></button>
-                                        <button name = "action" class="modal-trigger btn-floating black right" style = "margin-left: 5px;" href = "#modalConfigure"><i class="material-icons">settings</i></button>
+                                        <button name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor price is not yet configured." style = "margin-left: 5px;" href = "#modalPrice"><i class="material-icons">&#8369</i></button>
+                                        <button name = "action" class="btn tooltipped modal-trigger btn-floating black right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor is not yet configured." style = "margin-left: 5px;" href = "#modalConfigure"><i class="material-icons">settings</i></button>
                                     </p>
                                 </div>
                                 <div class="collapsible-body">
                                     <p>First Floor
-                                        <button name = "action" class="modal-trigger btn-floating red right" style = "margin-left: 5px;" href = "#modalPrice"><i class="material-icons">&#8369</i></button>
-                                        <button name = "action" class="modal-trigger btn-floating green right" style = "margin-left: 5px;" href = "#modalConfigure"><i class="material-icons">settings</i></button>
+                                        <button name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor price is not yet configured." style = "margin-left: 5px;" href = "#modalPrice"><i class="material-icons">&#8369</i></button>
+                                        <button name = "action" class="btn tooltipped modal-trigger btn-floating green right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor is already configured." style = "margin-left: 5px;" href = "#modalConfigure"><i class="material-icons">settings</i></button>
                                     </p>
                                 </div>
                             </li>
@@ -144,8 +144,8 @@
                                 </div>
                                 <div class="collapsible-body">
                                     <p>Ground Floor
-                                        <button name = "action" class="modal-trigger btn-floating blue right" style = "margin-left: 5px;" href = "#modalPrice"><i class="material-icons">&#8369</i></button>
-                                        <button name = "action" class="modal-trigger btn-floating green right" style = "margin-left: 5px;" href = "#modalConfigure"><i class="material-icons">settings</i></button>
+                                        <button name = "action" class="btn tooltipped modal-trigger btn-floating blue right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor price is configured." style = "margin-left: 5px;" href = "#modalPrice"><i class="material-icons">&#8369</i></button>
+                                        <button name = "action" class="btn tooltipped modal-trigger btn-floating green right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor is already configured." style = "margin-left: 5px;" href = "#modalConfigure"><i class="material-icons">settings</i></button>
                                     </p>
                                 </div>
                             </li>
@@ -155,14 +155,14 @@
                                 </div>
                                 <div class="collapsible-body">
                                     <p>Ground Floor
-                                        <button name = "action" class="modal-trigger btn-floating blue right" style = "margin-left: 5px;" href = "#modalPrice"><i class="material-icons">&#8369</i></button>
-                                        <button name = "action" class="modal-trigger btn-floating black right" style = "margin-left: 5px;" href = "#modalConfigure"><i class="material-icons">settings</i></button>
+                                        <button name = "action" class="btn tooltipped modal-trigger btn-floating blue right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor price is configured." style = "margin-left: 5px;" href = "#modalPrice"><i class="material-icons">&#8369</i></button>
+                                        <button name = "action" class="btn tooltipped modal-trigger btn-floating black right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor is not yet configured." style = "margin-left: 5px;" href = "#modalConfigure"><i class="material-icons">settings</i></button>
                                     </p>
                                 </div>
                                 <div class="collapsible-body">
                                     <p>First Floor
-                                        <button name = "action" class="modal-trigger btn-floating red right" style = "margin-left: 5px;" href = "#modalPrice"><i class="material-icons">&#8369</i></button>
-                                        <button name = "action" class="modal-trigger btn-floating black right" style = "margin-left: 5px;" href = "#modalConfigure"><i class="material-icons">settings</i></button>
+                                        <button name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor price is not yet configured." style = "margin-left: 5px;" href = "#modalPrice"><i class="material-icons">&#8369</i></button>
+                                        <button name = "action" class="btn tooltipped modal-trigger btn-floating black right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor is not yet configured." style = "margin-left: 5px;" href = "#modalConfigure"><i class="material-icons">settings</i></button>
                                     </p>
                                 </div>
                             </li>
@@ -444,7 +444,6 @@
 
                 <script src='http://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js'></script>
                 <script type="text/javascript" src = "../js/index.js"></script>
-                <script type="text/javascript" src = "../js/Floor_Record_Form.js"></script>
             </div>
 </div>
 </div>
@@ -452,6 +451,27 @@
 
 
 	<script>
+
+
+        $('.modal-trigger').leanModal({
+                    dismissible: false
+                }
+        );
+
+        $(document).ready(function(){
+            $('.collapsible').collapsible({
+                accordion : false// A setting that changes the collapsible behavior to expandable instead of the default accordion style
+            });
+        });
+
+
+
+        var checkbox = $("input[type='checkbox']"),
+                radio = $("input[type='radio']");
+
+        checkbox.click(function() {
+            radio.attr("disabled", !checkbox.is(":checked"));
+        });
 
 
         function createFloor(){
