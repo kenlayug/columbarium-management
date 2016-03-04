@@ -76,7 +76,7 @@
 		                                <c:forEach items="${building.floorList}" var="floor">
 			                                <div class="collapsible-body">
 			                                    <p>Floor No. ${floor.intFloorNo}
-			                                        <button value="${floor.floorId}" name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor price is not yet configured."  style = "margin-left: 5px;" ><i class="material-icons">&#8369</i></button>
+			                                        <button value="${floor.floorId}" name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor price is not yet configured."  style = "margin-left: 5px;" href="#modalPrice"><i class="material-icons">&#8369</i></button>
 			                                        <button value="${floor.floorId}" name = "action" class="btn tooltipped modal-trigger btn-floating black right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor is not yet configured." style = "margin-left: 5px;" onclick="openConfigureFloor(this.value)"><i class="material-icons">settings</i></button>
 			                                    </p>
 			                                </div>
@@ -417,7 +417,14 @@
     				dataType: "json",
     				async: true,
     				success: function(data){
-    					Materialize.toast(data.status, 3000, 'rounded');
+    					if (data.status === "success"){
+	   						Materialize.toast('Floor is successfully configured.', 3000, 'rounded');
+	   						$('#modalConfigure').closeModal();
+	   					}else if (data.status === "failed-database"){
+	   						Materialize.toast('Please check your connection.', 3000, 'rounded');
+	   					}else{
+	   						Materialize.toast('Something bad happened.', 3000, 'rounded');
+	   					}
     				},//success
     				error: function(data){
     					Materialize.toast('Error occured.', 3000, 'rounded');
