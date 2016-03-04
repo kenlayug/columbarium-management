@@ -45,4 +45,9 @@ public class BuildingServiceImpl implements BuildingService{
 		return buildingBusiness.deactivateBuilding(strBuildingName);
 	}
 
+	@Override
+	public Building getBuildingById(int buildingId) {
+		return buildingBusiness.getBuildingById(buildingId);
+	}
+
 }

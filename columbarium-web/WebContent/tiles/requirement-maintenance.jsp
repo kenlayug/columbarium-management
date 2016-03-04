@@ -219,7 +219,7 @@
 				if (data.status === "success"){
 					Materialize.toast('Requirement is successfully updated.', 3000, 'rounded');
 					updateTable();
-	        		$("#modalUpdateRequirement").closeModal();
+	        		$('#modalUpdateRequirement').closeModal();
 	        		$("#requirementNameUpdate").val("");
 	        		$("#requirementDescUpdate").val("");
 				}else if (data.status === "failed-does-not-exist"){

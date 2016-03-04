@@ -10,6 +10,11 @@ public class DeactivateBuildingAction extends ActionSupport implements Action{
 	private static final long serialVersionUID = 1L;
 	private String strBuildingName;
 	private String strStatus;
+	private int buildingId;
+	
+	public void setBuildingId(int buildingId){
+		this.buildingId = buildingId;
+	}
 	
 	public String getStatus(){
 		return this.strStatus;
@@ -25,7 +30,8 @@ public class DeactivateBuildingAction extends ActionSupport implements Action{
 	
 	public String execute(){
 		
-		strStatus = Building.deactivateBuilding(strBuildingName);
+		strStatus = Building.deactivateBuilding(Building.getBuildingById(buildingId).getStrBuildingName());
+		System.out.println(strStatus);
 		return "success";
 		
 	}

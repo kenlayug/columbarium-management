@@ -23,6 +23,7 @@ public class CreateBuildingAction extends ActionSupport implements Action{
 	public String execute(){
 		
 		strStatus = getBuilding().create();
+		System.out.println(strStatus);
 		return "success";
 	}
 	

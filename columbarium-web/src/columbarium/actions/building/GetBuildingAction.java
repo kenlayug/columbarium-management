@@ -11,6 +11,11 @@ public class GetBuildingAction extends ActionSupport implements Action{
 	private Building building;
 	private String strBuildingName;
 	private String strStatus;
+	private int buildingId;
+	
+	public void setBuildingId(int buildingId){
+		this.buildingId = buildingId;
+	}
 	
 	public String getStatus(){
 		return this.strStatus;
@@ -27,7 +32,7 @@ public class GetBuildingAction extends ActionSupport implements Action{
 	
 	public String execute(){
 		
-		building = Building.getBuilding(strBuildingName);
+		building = Building.getBuildingById(buildingId);
 		if (building != null){
 			strStatus = "success";
 		}else{

@@ -98,7 +98,7 @@ public class MybatisBuildingRepositoryTest extends TestCase{
 				new MybatisBuildingRepository(connectionManager);
 		
 		Building building = new Building();
-		building.setStrBuildingName("Sino Building");
+		building.setStrBuildingName("Building B");
 		
 		building = buildingRepository.getBuilding(building);
 		
@@ -110,11 +110,11 @@ public class MybatisBuildingRepositoryTest extends TestCase{
 		
 		TestSuite suite = new TestSuite();
 		
-		suite.addTest(new MybatisBuildingRepositoryTest("testCreateBuilding"));
-		suite.addTest(new MybatisBuildingRepositoryTest("testGetAllBuilding"));
-		suite.addTest(new MybatisBuildingRepositoryTest("testGetBuilding"));
+//		suite.addTest(new MybatisBuildingRepositoryTest("testCreateBuilding"));
+//		suite.addTest(new MybatisBuildingRepositoryTest("testGetAllBuilding"));
+//		suite.addTest(new MybatisBuildingRepositoryTest("testGetBuilding"));
 //		suite.addTest(new MybatisBuildingRepositoryTest("testUpdateBuilding"));
-//		suite.addTest(new MybatisBuildingRepositoryTest("testDeactivateBuilding"));
+		suite.addTest(new MybatisBuildingRepositoryTest("testDeactivateBuilding"));
 		
 		return suite;
 		
