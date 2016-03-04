@@ -231,39 +231,43 @@
 			var itemPrice = document.getElementById("itemPriceUpdate").value;
 			var itemDesc = document.getElementById("itemDescUpdate").value;
 			var itemUpdateName = document.getElementById("itemNameToBeUpdated").value;
-		    $.ajax({
-		        type: "POST",
-		        url: "update",
-		        data: {
-		        	"item.strItemName" : itemName,
-		        	"item.dblPrice" : itemPrice,
-		        	"item.strItemDesc" : itemDesc,
-		        	"strItemName" : itemUpdateName
-		        },
-		       	dataType: "json",
-		        async: true,
-		        success: function(data){
-		        	if (data.status === "success"){
-		        		Materialize.toast('Item successfully updated.', 3000, 'rounded');
-		        		$("#itemNameUpdate").val("");
-		        		$("#itemPriceUpdate").val("");
-		        		$("#itemDescUpdate").val("");
-		        		$('#modalUpdateItem').closeModal();
-		        		updateTable();
-		        	}else if (data.status === "input"){
-		        		Materialize.toast('Please check your inputs.', 3000, 'rounded');
-		        	}else if (data.status === "failed-does-not-exist"){
-		        		Materialize.toast('Item does not exist.', 3000, 'rounded');
-		        	}else if (data.status === "failed-database"){
-		        		Materialize.toast('Please check your connection.', 3000, 'rounded');
-		        	}
-		        },
-		        error: function(data){
-		        	Materialize.toast('Error occured.', 3000, 'rounded');
-		        }
-		    });
-		
-		    return false;
+			
+			if (itemName == null || itemName == "" || itemName == " " ||
+					itemPrice == 0 || itemPrice == null){
+				
+			}else{
+			    $.ajax({
+			        type: "POST",
+			        url: "update",
+			        data: {
+			        	"item.strItemName" : itemName,
+			        	"item.dblPrice" : itemPrice,
+			        	"item.strItemDesc" : itemDesc,
+			        	"strItemName" : itemUpdateName
+			        },
+			       	dataType: "json",
+			        async: true,
+			        success: function(data){
+			        	if (data.status === "success"){
+			        		Materialize.toast('Item successfully updated.', 3000, 'rounded');
+			        		$("#itemNameUpdate").val("");
+			        		$("#itemPriceUpdate").val("");
+			        		$("#itemDescUpdate").val("");
+			        		$('#modalUpdateItem').closeModal();
+			        		updateTable();
+			        	}else if (data.status === "input"){
+			        		Materialize.toast('Please check your inputs.', 3000, 'rounded');
+			        	}else if (data.status === "failed-does-not-exist"){
+			        		Materialize.toast('Item does not exist.', 3000, 'rounded');
+			        	}else if (data.status === "failed-database"){
+			        		Materialize.toast('Please check your connection.', 3000, 'rounded');
+			        	}
+			        },
+			        error: function(data){
+			        	Materialize.toast('Error occured.', 3000, 'rounded');
+			        }
+			    });
+			}
 		}
 		
 		function deactivateItem(){
@@ -294,44 +298,9 @@
 			
 		}
 		
-		$("#searchItem").on("change keyup paste",function(){
-			searchItemAndUpdateTable();
-		});
-		
-		function searchItemAndUpdateTable(){
-			var itemName = document.getElementById("searchItem").value;
-			$.ajax({
-				type: "POST",
-				url: "searchItem",
-				data: {
-					"strItemName" : itemName
-				},
-				async: true,
-				success: function(data){
-					
-					var itemList = data.itemList;
-	        		$("#tableItem tbody").remove();
-	        		$.each(itemList, function(i, item){
-		        		tableRow = $("<tr>").append(
-		        				$("<td>").text(item.strItemName),
-		        				$("<td>").text("P "+item.dblPrice),
-		        				$("<td>").text(item.strItemDesc));
-		        		$("#tableItem").append(tableRow);
-	        		});
-					
-				},
-				error: function(data){
-					alert("Error...");
-				}
-			});
-		
-			
-		}
-		
 		window.onload = updateTable;
 		
 		function updateTable(){
-			
 			
 			$.ajax({
 				type: "POST",
