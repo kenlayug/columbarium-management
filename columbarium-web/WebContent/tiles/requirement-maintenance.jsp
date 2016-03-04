@@ -6,11 +6,9 @@
 
 	<link rel="stylesheet" href="../css/style.css">
 	<script type="text/javascript" src = "../js/index.js"></script>
-	
-	
-	<!-- Section -->
-	
-	<div class = "responsive col s12">
+
+
+<div class = "responsive col s12">
 	    <div class = "row">
 	        <div class = "col s5">
 	            <h2 style = "font-size: 30px;">Requirement Maintenance</h2>
@@ -44,7 +42,7 @@
 	        </div>
 	
 	        <!-- Modal Update -->
-	        <div id="modalUpdateRequirement" class="modal">
+	        <div id="modalUpdateRequirement" class="modal" style = "width: 700px;">
 	            <div class = "modal-header">
 	                <h4>Update Requirement</h4>
 	            </div>
@@ -64,33 +62,49 @@
 	                        <label for="requirementDescUpdate">New Requirement Description</label>
 	                    </div>
 	                </div>
-
-					<i class = "left" style = "margin-bottom: 50px; padding-left: 20px; color: red;">*Required Fields</i>
 	                </div>
+					<i class = "left" style = "margin-bottom: 50px; padding-left: 20px; color: red;">*Required Fields</i>
+					<br><br>
+
+						<div class="modal-footer">
+							<button type = "submit" onclick="updateRequirement()" name = "action" class="waves-effect waves-light btn red bottom" style = "margin-left: 10px; ">Confirm</button>
+							<button name = "action" class="modal-close btn red modal-close bottom">Cancel</button>
+						</div>
 	            </form>
-				<br><br><br><br>
-				<div  style = "margin-top: 30px;">
-				<div class="modal-footer">
-					<button type = "submit" onclick="updateRequirement()" name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
-					<button name = "action" class="modal-close btn red modal-close">Cancel</button>
-				</div>
-				</div>
+
+
 	        </div>
 
 			<!-- Modal Deactivate -->
-			<div id="modalDeactivateRequirement" class="modal">
+			<div id="modalDeactivateRequirement" class="modal" style = "width: 600px;">
 				<div class = "modal-header">
 					<h4>Deactivate Requirement</h4>
 				</div>
 				<div class="modal-content">
-					<p style = "padding-left: 110px; font-size: 20px;">Are you sure you want to deactivate this requirement?</p>
-					<br>
+					<p style = "padding-left: 90px; font-size: 15px;">Are you sure you want to deactivate this item?</p>
 				</div>
 
 				<div class="modal-footer">
 					<button onclick="deactivateItem()" name = "action" class="btn red" style = "margin-left: 10px; ">Confirm</button>
-
 					<button class="btn red modal-close">Cancel</button>
+				</div>
+			</div>
+
+<!--ganto ung declaration sa btn ken	<button class="modal-trigger btn red" href = "#modalSuccessMessage">btnSuccess</button>    -->
+			<!-- Modal Success -->
+			<div id="modalSuccessMessage" class="modal" style = "width: 350px; height: 155px;">
+				<div class = "modal-header" style = "height: 50px;">
+					<div class = "row">
+						<div class = "col s10">
+							<h4 style = "padding-left: 10px; font-size: 25px;">Success Message</h4>
+						</div>
+						<div class = "col s2">
+							<a class="btn-floating btn-small modal-close black right" style = "margin-top: 5px; margin-right: 5px; padding-bottom: 10px;"><i class="material-icons" style = "padding-bottom: 5px;">&#10006</i></a>
+						</div>
+					</div>
+				</div>
+				<div class="modal-content">
+					<p style = "padding-top: 0px; padding-left: 50px; font-size: 16px; font-family: arial;">Record has been saved.</p>
 				</div>
 			</div>
 
