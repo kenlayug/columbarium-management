@@ -45,7 +45,7 @@
 	                        </div>
 						<i class = "left" style = "margin-bottom: 0px; padding-left: 20px; color: red;">*Required Fields</i>
 	                	<br>
-						<button onClick = "saveButton()" type = "submit" name = "action" class="btn red right" style = "margin-right: 10px;">Create</button>
+						<button onClick = "createItem()" type = "submit" name = "action" class="btn red right" style = "margin-right: 10px;">Create</button>
 
 					</form>
 
@@ -185,32 +185,43 @@
 			var itemName = document.getElementById("itemName").value;
 			var itemPrice = document.getElementById("itemPrice").value;
 			var itemDesc = document.getElementById("itemDesc").value;
-		    $.ajax({
-		        type: "POST",
-		        url: "create",
-		        data: {
-		        	"item.strItemName" : itemName,
-		        	"item.dblPrice" : itemPrice,
-		        	"item.strItemDesc" : itemDesc
-		        },
-		       	dataType: "json",
-		        async: true,
-		        success: function(data){
-		        	if (data.status === "success"){
-		        		alert("Item "+data.item.strItemName+" created!");
-		        		$("#itemName").val("");
-		        		$("#itemPrice").val("");
-		        		$("#itemDesc").val("");
-		        		updateTable();
-		        	}
-		        },
-		        error: function(data){
-		        	
-		        	alert("Error!");
-		        }
-		    });
+			
+			if (itemName == null || itemName == " " || itemName == "" ||
+					itemPrice == 0 || itemPrice == null){
+				
+			}else{
+			
+			    $.ajax({
+			        type: "POST",
+			        url: "create",
+			        data: {
+			        	"item.strItemName" : itemName,
+			        	"item.dblPrice" : itemPrice,
+			        	"item.strItemDesc" : itemDesc
+			        },
+			       	dataType: "json",
+			        async: true,
+			        success: function(data){
+			        	if (data.status === "success"){
+			        		Materialize.toast('Item successfully saved.', 3000, 'rounded');
+			        		$("#itemName").val("");
+			        		$("#itemPrice").val("");
+			        		$("#itemDesc").val("");
+			        		updateTable();
+			        	}else if(data.status === "input"){
+			        		Materialize.toast('Check all your inputs.', 3000, 'rounded');
+			        	}else if(data.status === "failed-existing"){
+			        		Materialize.toast('Item already exists.', 3000, 'rounded');
+			        	}else if(data.status === "failed-database"){
+			        		Materialize.toast('Please check your connection.', 3000, 'rounded');
+			        	}
+			        },
+			        error: function(data){
+			        	Materialize.toast('Error occured.', 3000, 'rounded');
+			        }
+			    });
+			}
 	
-		    return false;
 		}
 	
 		function updateItem(){
@@ -306,25 +317,36 @@
 			
 		}
 		
+		window.onload = updateTable;
+		
 		function updateTable(){
+			
+			
 			$.ajax({
 				type: "POST",
 				url: "getItemList",
 				dataType: "json",
 				async: true,
 				success: function(data){
-	        		$("#tableItem tbody").remove();
-	        		var tableRow;
+	        		var table = $('#datatable').DataTable();
+	        		table.clear().draw();
 	        		var itemList = data.itemList;
 	        		
 	        		$.each(itemList, function(i, item){
 						
-		        		tableRow = $("<tr>").append(
-		        				$("<td>").text(item.strItemName),
-		        				$("<td>").text("P "+item.dblPrice),
-		        				$("<td>").text(item.strItemDesc));
-		        		$("#tableItem").append(tableRow);
+	        			var addButtons = "<button name = action class= 'modal-trigger btn-floating green' onclick= openUpdate('"+item.strItemName+"') ><i class= material-icons >mode_edit</i></button>"+
+	        			"<button name = action class= 'modal-trigger btn-floating red' href = #modalDeactivateItem ><i class= material-icons >delete</i></button></td>";
+	        			
+	        			
+	        			table.row.add( [
+	    	        		            item.strItemName,
+	    	        		            "P "+item.dblPrice,
+	    	        		            item.strItemDesc,
+	    	        		            addButtons
+	    	        		            ]);
 	        		});
+	        		
+	        		table.draw();
 	        		
 				},
 				error: function(data){
