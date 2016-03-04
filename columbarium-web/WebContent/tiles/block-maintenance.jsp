@@ -33,7 +33,13 @@
                                                     </li>
                                                     <li>
                                                         <div class="collapsible-header" style = "background-color: #ffa726">
-                                                            <i class="material-icons">view_module</i>First Floor</div>
+                                                            <i class="material-icons">view_module</i>First Floor
+                                                        </div>
+                                                        <div class="collapsible-body" style = "background-color: #ffa726">
+                                                            <p>Create Block
+                                                                <button name = "action" class="modal-trigger btn-floating blue right" style = "margin-right: 10px;" href = "#modalCreateBlock"><i class="material-icons">add</i></button>
+                                                            </p>
+                                                        </div>
                                                         <div class="collapsible-body">
                                                             <p>Block One
                                                                 <button name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor price is not yet configured."  style = "margin-left: 5px;" href = "#modalDeactivateBlock"><i class="material-icons">not_interested</i></button>
@@ -301,48 +307,28 @@
 
 
             <!-- Modal Create -->
-            <div id="modalCreateBlock" class="modal" style = "width: 600px;">
+            <div id="modalCreateBlock" class="modal" style = "width: 450px;">
                 <div class = "modal-header" style = "height: 55px;">
                     <h4 style = "font-size: 30px; padding-left: 20px;">Create Block</h4>
                 </div>
                 <form class="modal-content">
 
-                    <div class = "col s12">
-                        <div class="row">
-                            <div class="input-field col s6">
-                                <select>
-                                    <option value="" disabled selected>Building Name</option>
-                                    <option value="1">Building One</option>
-                                    <option value="2">Building Two</option>
-                                    <option value="3">Building Three</option>
-                                </select>
-                                <label>Select Building Name</label>
-                            </div>
-                            <div class="input-field col s6">
-                                <select>
-                                    <option value="" disabled selected>Floor Level</option>
-                                    <option value="1">Option 1</option>
-                                    <option value="2">Option 2</option>
-                                    <option value="3">Option 3</option>
-                                </select>
-                                <label>Select Floor level</label>
-                            </div>
-                        </div>
-                    </div>
-
                         <div style = "padding-left: 10px;">
-                            <div class="input-field col s6">
+                            <div class="input-field col s12">
                                 <input id="blockName" type="text" class="validate" required = "" aria-required="true" length = "20">
                                 <label for="blockName" data-error = "Invalid format." data-success = "">Block Name<span style = "color: red;">*</span></label>
                             </div>
                         </div>
+                    <br><br>
 
-                    <br><br><br><br><br><br><br><br><br>
-                    <i class = "left" style = "margin-bottom: 0px; padding-left: 30px; color: red;">*Required Fields</i>
-
-                    <div class="modal-footer">
-                        <button type = "submit" name = "action" class="btn red" style = "margin-top: 20px; margin-left: 20px; ">Confirm</button>
-                        <button name = "action" class="btn red modal-close" style = "margin-top: 20px;">Cancel</button>
+                    <br>
+                    <i class = "left" style = "padding-top: 20px; margin-bottom: 0px; padding-left: 30px; color: red;">*Required Fields</i>
+                    <br>
+                    <div style = "margin-top: 50px;">
+                        <div class="modal-footer">
+                            <button name = "action" class="btn red" style = "margin-left: 10px;">Confirm</button>
+                            <button name = "action" class="btn red modal-close">Cancel</button>
+                        </div>
                     </div>
                 </form>
 
@@ -465,7 +451,6 @@
                             <div class="table-header" style="background-color: #00897b;">
                                 <h4 style = "font-size: 30px; color: white; padding-left: 0px;">Block Data Grid</h4>
                                 <div class="actions">
-                                    <button name = "action" class="modal-trigger btn-floating yellow" style = "margin-right: 10px;" href = "#modalCreateBlock"><i class="material-icons">add</i></button>
                                     <button name = "action" class="modal-trigger btn-floating black" style = "margin-right: 10px;" href = "#modalListOfDeactivatedBlock"><i class="material-icons" style = "color: white">delete</i></button>
                                     <a href="#" class="search-toggle waves-effect btn-flat nopadding"><i class="material-icons" style="color: #ffffff;">search</i></a>
                                 </div>
@@ -606,14 +591,14 @@
 </div>
 
 <script>
-
-	$(document).ready(function(){
-	    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-	    $('.modal-trigger').leanModal();
-	});
 	
 	$(document).ready(function() {
 	    $('input#input_text, textarea#textarea1').characterCounter();
 	});
+
+    $('.modal-trigger').leanModal({
+                dismissible: false
+            }
+    );
 
 </script>
