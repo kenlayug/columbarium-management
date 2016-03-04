@@ -13,40 +13,41 @@
             <h2 style = "font-size: 30px; padding-left: 70px; margin-top: 0px; margin-bottom: 0px;">Service Maintenance</h2>
 
 		<!-- Modal Create -->
-		<div id="modalCreateService" class="modal" style = "width: 700px;">
+		<div id="modalCreateService" class="modal" style = "width: 650px;">
 			<div class = "modal-header" style = "height: 55px;">
 				<h4 style = "padding-left: 20px; font-size: 30px;">Create Service</h4>
 			</div>
-			<div class="modal-content">
+			<form class="modal-content">
 
 				<button name = "action" class="modal-trigger waves-effect waves-light btn red left" style = "margin-left: 20px;" href = "#modalRequirement">Requirement</button>
 				<br><br>
-				<form class="row" style = "padding-left: 10px;" id="formCreate">
+				<div class="row" style = "padding-left: 10px;" id="formCreate">
 					<div class="input-field col s6">
 						<input id="serviceName" type="text" class="validate" required = "" aria-required = "true" pattern = "[A-Za-z0-9\s]{1,29}">
-						<label for="serviceName" data-error = "Check format field." data-success = "">Service Name <span style = "color: red;">*</span></label>
+						<label for="serviceName" data-error = "Invalid Format." data-success = "">Service Name <span style = "color: red;">*</span></label>
 					</div>
 					<div class="input-field col s6">
 						<input id="servicePrice" type="text" class="validate" required = "" aria-required = "true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
-						<label for="servicePrice" data-error = "Check format field." data-success = "">Service Price <span style = "color: red;">*</span></label>
+						<label for="servicePrice" data-error = "Invalid Format." data-success = "">Service Price <span style = "color: red;">*</span></label>
 					</div>
-				</form>
+				</div>
 
 				<div class="row">
 					<div class="row" style = "padding-left: 10px;">
 						<div class="input-field col s12">
-							<input id="serviceDesc" type="text" class="validate" pattern = "[A-Za-z0-9\s]{1,29}">
-							<label for="serviceDesc" data-error = "Check format field." data-success = "">Service Description</label>
+							<input id="serviceDesc" type="text" class="validate">
+							<label for="serviceDesc" data-error = "Invalid Format." data-success = "">Service Description</label>
 							<i class = "left" style = "margin-top: 20px; padding-left: 0px; color: red;">*Required Fields</i>
 						</div>
 					</div>
 				</div>
-			</div>
-			<br>
-			<div class="modal-footer">
-				<button onclick="createService()" name="action" class="waves-effect waves-light btn red" style = "margin-bottom: 20px; margin-left: 10px; margin-right: 20px;">Confirm</button>
-				<button name = "action" class="waves-effect waves-light modal-close btn red" style = "margin-left: 20px;">Cancel</button>
-			</div>
+
+				<div class="modal-footer">
+					<button type = "submit" onclick="createService()" name="action" class="waves-effect waves-light btn red" style = "margin-left: 10px; margin-right: 10px;">Confirm</button>
+					<button name = "action" class="waves-effect waves-light modal-close btn red" style = "margin-left: 20px;">Cancel</button>
+				</div>
+			</form>
+
 		</div>
 
             <!-- Modal Requirements -->

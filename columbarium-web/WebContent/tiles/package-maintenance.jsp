@@ -14,21 +14,22 @@
     <h2 style = "font-size: 30px;padding-left:50px; margin-bottom: 0px; margin-top: 0px;">Package Maintenance</h2>
 
         <!-- Modal Create -->
-        <form id="modalCreatePackage" class="modal">
-            <div class = "modal-header">
-                <h4 style = "padding-left: 35px;">Create Package</h4>
+        <form id="modalCreatePackage" class="modal" style = "width: 700px;">
+            <div class = "modal-header" style = "height: 55px;">
+                <h4 style = "padding-left: 20px; font-size: 30px;">Create Package</h4>
             </div>
             <div class="modal-content">
-
+                <i class = "left" style = "margin-top: 0px; padding-left: 10px; color: red;">*Required Fields</i>
+                <br>
                 <div class = "col s12">
                     <div class="row">
                         <div class="input-field col s6">
                             <input id="packageName" type="text" class="validate" required = "" aria-required="true">
-                            <label for="packageName" data-error = "Check format field." data-success = "">Package Name<span style = "color: red;">*</span></label>
+                            <label for="packageName" data-error = "Invalid format." data-success = "">Package Name<span style = "color: red;">*</span></label>
                         </div>
                         <div class="input-field col s6">
                             <input id="packagePrice" type="text" class="validate" required = "" aria-required="true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
-                            <label for="packagePrice" data-error = "Check format field." data-success = "">Package Price<span style = "color: red;">*</span></label>
+                            <label for="packagePrice" data-error = "Invalid format." data-success = "">Package Price<span style = "color: red;">*</span></label>
                         </div>
                     </div>
                 </div>
@@ -83,39 +84,41 @@
                         </div>
                     </div>
                 </div>
-                <i class = "left" style = "margin-top: 50px; padding-left: 10px; color: red;">*Required Fields</i>
-                <br><br><br><br><br>
+
+                <br>
 
             </div>
             <div class="modal-footer">
-                <button type = "submit" name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
-                <button name = "action" class="waves-effect waves-light btn red modal-close">Cancel</button>
+                <button type = "submit" name = "action" class="btn red" style = "margin-left: 10px; ">Confirm</button>
+                <button name = "action" class="btn red modal-close">Cancel</button>
             </div>
         </form>
 
         <!-- Modal Update -->
-        <form id="modalUpdatePackage" class="modal" style = "width: 400px;">
+        <form id="modalUpdatePackage" class="modal" style = "width: 650px;">
             <div class = "modal-header" style = "height: 55px;">
                 <h4 style = "padding-left: 20px; font-size: 30px;">Update Package</h4>
             </div>
             <div class="modal-content">
+                <i class = "left" style = "margin-top: 0px; padding-left: 10px; color: red;">*Required Fields</i>
+                <br><br>
 
                 <div class = "col s12">
                     <div class="row">
                         <div class="input-field col s6">
-                            <input id="packageNameUpdate" type="text" class="validate" required = "">
-                            <label for="packageNameUpdate">New Package Name<span style = "color: red;">*</span></label>
+                            <input placeholder="Package Name" id="packageNameUpdate" type="text" class="validate" required = "" aria-required="true">
+                            <label for="packageNameUpdate" data-error = "Invalid format." data-success = "">New Package Name<span style = "color: red;">*</span></label>
                         </div>
                         <div class="input-field col s6">
-                            <input id="packagePriceUpdate" type="text" class="validate" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
-                            <label for="packagePriceUpdate" data-error = "Check format field." data-success = "">New Package Price<span style = "color: red;">*</span></label>
+                            <input placeholder="Package Price" id="packagePriceUpdate" type="text" class="validate" required = "" aria-required="true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
+                            <label for="packagePriceUpdate" data-error = "Invalid format." data-success = "">New Package Price<span style = "color: red;">*</span></label>
                         </div>
                     </div>
                 </div>
                 <div class = "col s12">
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="packageDescUpdate" type="text" class="validate">
+                            <input placeholder="Package Description" id="packageDescUpdate" type="text" class="validate">
                             <label for="packageDescUpdate">New Package Description</label>
                         </div>
                     </div>
@@ -167,13 +170,11 @@
                         </div>
                     </div>
                 </div>
-
-                <i class = "left" style = "margin-top: 50px; padding-left: 10px; color: red;">*Required Fields</i>
-                <br><br><br><br><br>
             </div>
+
             <div class="modal-footer">
-                <button type = "submit" name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
-                <button name = "action" class="waves-effect waves-light btn red modal-close">Cancel</button>
+                <button type = "submit" name = "action" class="btn red" style = "margin-left: 10px; ">Confirm</button>
+                <button name = "action" class="btn red modal-close">Cancel</button>
             </div>
         </form>
 
@@ -184,24 +185,24 @@
                 <h4 style = "font-size: 30px; padding-left: 20px;">Deactivate Package</h4>
             </div>
             <div class="modal-content">
-                <p style = "padding-left: 90px; font-size: 15px;">Are you sure you want to deactivate this package?</p>
+                <p style = "padding-left: 30px; font-size: 15px;">Are you sure you want to deactivate this package?</p>
             </div>
             <div class="modal-footer">
-                <button name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
-                <button name = "action" class="waves-effect waves-light btn red">Cancel</button>
+                <button name = "action" class="btn red" style = "margin-left: 10px; ">Confirm</button>
+                <button name = "action" class="modal-close btn red">Cancel</button>
             </div>
         </div>
 
     <!-- Modal Package Includes -->
-    <div id="modalPackageIncludes" class="modal">
-        <div class = "modal-header">
-            <h4>Package</h4>
+    <div id="modalPackageIncludes" class="modal" style = "width: 500px;">
+        <div class = "modal-header" style = "height: 55px;">
+            <h4 style = "font-size: 30px; padding-left: 20px;">Package</h4>
         </div>
         <div class="modal-content">
-            <td style = "padding-left: 60px;">Service One, Service Two, and Item Five</td>
+            <p style = "padding-left: 30px;">Service One, Service Two, and Item Five</p>
         </div>
         <div class="modal-footer">
-            <button name = "action" class="modal-close waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
+            <button name = "action" class="modal-close btn red" style = "margin-left: 10px; ">Confirm</button>
 
         </div>
     </div>
@@ -276,8 +277,9 @@
                     </table>
                 </div>
             </div>
+            <button name = "action" class="btn red modal-close right" style = "margin-bottom: 10px; margin-right: 0px;">DONE</button>
         </div>
-        <button name = "action" class="btn red modal-close right" style = "margin-bottom: 10px; margin-right: 30px;">DONE</button>
+
     </div>
 
 
