@@ -62,6 +62,7 @@
 		                    <div class = "row">
 		                        <div style = "padding-left: 10px;">
 		                            <div class="input-field col s6">
+		                            	<input id="itemNameToBeUpdated" type="hidden"/>
 		                                <input value=" " id="itemNameUpdate" type="text" class="validate" name="item.strItemName" required = ""  pattern = "[A-Za-z0-9\s]{1,29}">
 		                                <label class="active" for="itemNameUpdate" data-error = "Invalid format." data-success = "">New Item Name<span style = "color: red;">*</span></label>
 		                            </div>
@@ -102,8 +103,9 @@
 				<div class="modal-content">
 					<p style = "padding-left: 90px; font-size: 15px;">Are you sure you want to deactivate this item?</p>
 				</div>
+				<input id="itemToBeDeactivated" type="hidden"/>
 				<div class="modal-footer">
-					<button name = "action" class="btn red" style = "margin-left: 10px; ">Confirm</button>
+					<button onclick = "deactivateItem()" name = "action" class="btn red" style = "margin-left: 10px; ">Confirm</button>
 					<button name = "action" class="btn red">Cancel</button>
 				</div>
 			</div>
@@ -228,7 +230,7 @@
 			var itemName = document.getElementById("itemNameUpdate").value;
 			var itemPrice = document.getElementById("itemPriceUpdate").value;
 			var itemDesc = document.getElementById("itemDescUpdate").value;
-			var itemUpdateName = document.getElementById("selectItemUpdate").value;
+			var itemUpdateName = document.getElementById("itemNameToBeUpdated").value;
 		    $.ajax({
 		        type: "POST",
 		        url: "update",
@@ -242,17 +244,22 @@
 		        async: true,
 		        success: function(data){
 		        	if (data.status === "success"){
-		        		alert("Item "+data.strItemName+" updated!");
+		        		Materialize.toast('Item successfully updated.', 3000, 'rounded');
 		        		$("#itemNameUpdate").val("");
 		        		$("#itemPriceUpdate").val("");
 		        		$("#itemDescUpdate").val("");
-		        		$("#modalUpdate").closeModal();
+		        		$('#modalUpdateItem').closeModal();
 		        		updateTable();
+		        	}else if (data.status === "input"){
+		        		Materialize.toast('Please check your inputs.', 3000, 'rounded');
+		        	}else if (data.status === "failed-does-not-exist"){
+		        		Materialize.toast('Item does not exist.', 3000, 'rounded');
+		        	}else if (data.status === "failed-database"){
+		        		Materialize.toast('Please check your connection.', 3000, 'rounded');
 		        	}
 		        },
 		        error: function(data){
-		        	
-		        	alert("Error!");
+		        	Materialize.toast('Error occured.', 3000, 'rounded');
 		        }
 		    });
 		
@@ -261,7 +268,7 @@
 		
 		function deactivateItem(){
 			
-			var itemNameDeactivate = document.getElementById("itemNameDeactivate").value;
+			var itemNameDeactivate = document.getElementById("itemToBeDeactivated").value;
 			$.ajax({
 				type: "POST",
 				url: "deactivate",
@@ -272,12 +279,16 @@
 				success: function(data){
 					if (data.status === "success"){
 						updateTable();
-		        		$("#modalDeactivate").closeModal();
-						alert("Item "+data.strItemName+" successfully deactivated.");
+		        		$('#modalDeactivateItem').closeModal();
+		        		Materialize.toast('Item successfully deactivated.', 3000, 'rounded');
+					}else if (data.status === "failed-does-not-exist"){
+						Materialize.toast('Item does not exist.', 3000, 'rounded');
+					}else if (data.status === "failed-database"){
+						Materialize.toast('Please check your connection.', 3000, 'rounded');
 					}
 				},
 				error: function(data){
-					alert("Error...");
+					Materialize.toast('Error occured.', 3000, 'rounded');
 				}
 			});
 			
@@ -332,32 +343,41 @@
 	        		table.clear().draw();
 	        		var itemList = data.itemList;
 	        		
-	        		$.each(itemList, function(i, item){
-						
-	        			var addButtons = "<button name = action class= 'modal-trigger btn-floating green' onclick= openUpdate('"+item.strItemName+"') ><i class= material-icons >mode_edit</i></button>"+
-	        			"<button name = action class= 'modal-trigger btn-floating red' href = #modalDeactivateItem ><i class= material-icons >delete</i></button></td>";
-	        			
-	        			
+	        		if (itemList == null){
 	        			table.row.add( [
-	    	        		            item.strItemName,
-	    	        		            "P "+item.dblPrice,
-	    	        		            item.strItemDesc,
-	    	        		            addButtons
-	    	        		            ]);
-	        		});
+       		            "item One",
+       		            "P 200",
+       		            "item One",
+       		            addButtons
+       		            ]);
+	        		}else{
+	        		
+		        		$.each(itemList, function(i, item){
+							
+		        			var addButtons = "<button name = action class= 'modal-trigger btn-floating green' onclick= openUpdate('"+item.strItemName+"') ><i class= material-icons >mode_edit</i></button>"+
+		        			"<button name = action class= 'modal-trigger btn-floating red' onclick = openDeactivate('"+item.strItemName+"') ><i class= material-icons >delete</i></button></td>";
+		        			
+		        			
+		        			table.row.add( [
+		    	        		            item.strItemName,
+		    	        		            "P "+item.dblPrice,
+		    	        		            item.strItemDesc,
+		    	        		            addButtons
+		    	        		            ]);
+		        		});
+	        		}
 	        		
 	        		table.draw();
 	        		
 				},
 				error: function(data){
-					alert("Error in updating table");
+	        		Materialize.toast('Error in updating table.', 3000, 'rounded');
 				}
 			});
 			
 		}
 		
 		function openUpdate(itemName){
-			alert(itemName);
 			$.ajax({
 				type: "POST",
 				url: "getItemInfo",
@@ -368,6 +388,7 @@
 				async: true,
 				success: function(data){
 					$('#modalUpdateItem').openModal();
+					$('#itemNameToBeUpdated').val(data.item.strItemName);
 					$("#itemNameUpdate").val(data.item.strItemName);
 	        		$("#itemPriceUpdate").val(data.item.dblPrice);
 	        		$("#itemDescUpdate").val(data.item.strItemDesc);
@@ -377,6 +398,11 @@
 				}
 			});
 			
+		}
+		
+		function openDeactivate(itemName){
+			$('#itemToBeDeactivated').val(itemName);
+			$('#modalDeactivateItem').openModal();
 		}
 		
 	</script>
