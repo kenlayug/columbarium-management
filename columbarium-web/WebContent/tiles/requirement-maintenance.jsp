@@ -5,7 +5,6 @@
     <link rel = "stylesheet" href = "<%=request.getContextPath()%>/css/Requirements_Maintenance.css"/>
 
 	<link rel="stylesheet" href="../css/style.css">
-	<script type="text/javascript" src = "../js/index.js"></script>
 
 
 <div class = "responsive col s12">
@@ -129,121 +128,44 @@
 								</tr>
 								</thead>
 								<tbody>
-								<tr>
-									<td>Requirement One</td>
-									<td>Description One</td>
-									<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateRequirement"><i class="material-icons">mode_edit</i></button>
-										<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateRequirement"><i class="material-icons">delete</i></button></td>
-								</tr>
-								<tr>
-									<td>Requirement One</td>
-									<td>Description One</td>
-									<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateRequirement"><i class="material-icons">mode_edit</i></button>
-										<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateRequirement"><i class="material-icons">delete</i></button></td>
-								</tr>
-								<tr>
-									<td>Requirement One</td>
-									<td>Description One</td>
-									<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateRequirement"><i class="material-icons">mode_edit</i></button>
-										<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateRequirement"><i class="material-icons">delete</i></button></td>
-								</tr>
-								<tr>
-									<td>Requirement One</td>
-									<td>Description One</td>
-									<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateRequirement"><i class="material-icons">mode_edit</i></button>
-										<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateRequirement"><i class="material-icons">delete</i></button></td>
-								</tr>
-								<tr>
-									<td>Requirement One</td>
-									<td>Description One</td>
-									<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateRequirement"><i class="material-icons">mode_edit</i></button>
-										<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateRequirement"><i class="material-icons">delete</i></button></td>
-								</tr>
-								<tr>
-									<td>Requirement One</td>
-									<td>Description One</td>
-									<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateRequirement"><i class="material-icons">mode_edit</i></button>
-										<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateRequirement"><i class="material-icons">delete</i></button></td>
-								</tr>
-								<tr>
-									<td>Requirement One</td>
-									<td>Description One</td>
-									<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateRequirement"><i class="material-icons">mode_edit</i></button>
-										<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateRequirement"><i class="material-icons">delete</i></button></td>
-								</tr>
-								<tr>
-									<td>Requirement One</td>
-									<td>Description One</td>
-									<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateRequirement"><i class="material-icons">mode_edit</i></button>
-										<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateRequirement"><i class="material-icons">delete</i></button></td>
-								</tr>
-								<tr>
-									<td>Requirement One</td>
-									<td>Description One</td>
-									<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateRequirement"><i class="material-icons">mode_edit</i></button>
-										<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateRequirement"><i class="material-icons">delete</i></button></td>
-								</tr>
-								<tr>
-									<td>Requirement One</td>
-									<td>Description One</td>
-									<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateRequirement"><i class="material-icons">mode_edit</i></button>
-										<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateRequirement"><i class="material-icons">delete</i></button></td>
-								</tr>
-								<tr>
-									<td>Requirement One</td>
-									<td>Description One</td>
-									<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateRequirement"><i class="material-icons">mode_edit</i></button>
-										<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateRequirement"><i class="material-icons">delete</i></button></td>
-								</tr>
-								<tr>
-									<td>Requirement One</td>
-									<td>Description One</td>
-									<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateRequirement"><i class="material-icons">mode_edit</i></button>
-										<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateRequirement"><i class="material-icons">delete</i></button></td>
-								</tr>
-								<tr>
-									<td>Requirement One</td>
-									<td>Description One</td>
-									<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateRequirement"><i class="material-icons">mode_edit</i></button>
-										<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateRequirement"><i class="material-icons">delete</i></button></td>
-								</tr>
-								<tr>
-									<td>Requirement One</td>
-									<td>Description One</td>
-									<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateRequirement"><i class="material-icons">mode_edit</i></button>
-										<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateRequirement"><i class="material-icons">delete</i></button></td>
-								</tr>
 								</tbody>
 							</table>
 						</div>
 					</div>
 				</div>
 
-				<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-				<script src='http://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js'></script>
-				<script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js'></script>
 				<script type="text/javascript" src = "../js/index.js"></script>
-				<script type="text/javascript" src = "../js/Requirements_Maintenance.js"></script>
 			</div>
 	    </div>
 	</div>
 	
 	<script>
 
-	
-		$("#formCreate").submit(function(e){
-		    return false;
-		});
+	$(document).ready(function() {
+	    $('select').material_select();
+	});
 
-		$("#formUpdate").submit(function(e){
-		    return false;
-		});
+	$(document).ready(function(){
+	    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+	    $('.modal-trigger').leanModal({dismissible: false});
+	});
 
-		function createRequirement(){
+	$("#formCreate").submit(function(e){
+	    return false;
+	});
 
-			var requirementName = document.getElementById("requirementName").value;
-			var requirementDesc = document.getElementById("requirementDesc").value;
+	$("#formUpdate").submit(function(e){
+	    return false;
+	});
 
+	function createRequirement(){
+
+		var requirementName = document.getElementById("requirementName").value;
+		var requirementDesc = document.getElementById("requirementDesc").value;
+
+		if (requirementName == null || requirementName == "" || requirementName == " "){
+			
+		}else{
 
 			$.ajax({
 				type: "POST",
@@ -256,115 +178,152 @@
 				dataType: "json",
 				success: function (data){
 					if (data.status === "success"){
-						alert("Success in saving "+data.requirement.strRequirementName+".");
+						Materialize.toast('Requirement successfully saved.', 3000, 'rounded');
 						updateTable();
 						$("#requirementName").val("");
 						$("#requirementDesc").val("");
 					}else if (data.status === "failed-input"){
-						alert("Check your inputs.");
+						Materialize.toast('Please check all your inputs.', 3000, 'rounded');
 					}else if (data.status === "failed-existing"){
-						alert("Requirement is already existing.");
+						Materialize.toast('Requirement already exists.', 3000, 'rounded');
+					}else if(data.status === "failed-database"){
+						Materialize.toast('Please check your connection.', 3000, 'rounded');
 					}
 				},
 				error: function(data){
-					alert("Error...");
+					Materialize.toast('Error occured.', 3000, 'rounded');
 				}
 			});
-
-		}//createRequirement
-
-		function updateRequirement(){
-
-			alert("Here...");
-			var selectRequirementUpdate = document.getElementById("selectUpdateRequirement").value;
-			var requirementNameUpdate = document.getElementById("requirementNameUpdate").value;
-			var requirementDescUpdate = document.getElementById("requirementDescUpdate").value;
-
-			$.ajax({
-				type: "POST",
-				url: "update",
-				data: {
-					"strRequirementName" : selectRequirementUpdate,
-					"requirement.strRequirementName" : requirementNameUpdate,
-					"requirement.strRequirementDesc" : requirementDescUpdate
-				},
-				dataType: "json",
-				success: function(data){
-					alert("updating...");
-					if (data.status === "success"){
-						alert("Requirement "+data.strRequirementName+" is successfully updated.");
-						updateTable();
-		        		$("#modalUpdateRequirement").closeModal();
-		        		$("#requirementNameUpdate").val("");
-		        		$("#requirementDescUpdate").val("");
-					}else if (data.status === "failed-does-not-exist"){
-						alert("Requirement does not exist.");
-					}else if (data.status === "failed-input"){
-						alert("Fill up anything first.");
-					}else if (data.status === "failed-database"){
-						alert("error in database...");
-					}
-				},
-				error: function(data){
-					alert("error");
-				}
-			});
-
+			
 		}
 
-		function deactivateRequirement(){
+	}//createRequirement
 
-			var deactivateRequirementName = document.getElementById("selectDeactivateRequirement").value;
+	function updateRequirement(){
 
-			$.ajax({
-				type: "POST",
-				url: "deactivate",
-				data: {
-					"strRequirementName" : deactivateRequirementName
-				},
-				dataType: "json",
-				async: true,
-				success: function(data){
-					alert("Requirement "+data.strRequirementName+" is successfully deactivated.");
+		alert("Here...");
+		var selectRequirementUpdate = document.getElementById("selectUpdateRequirement").value;
+		var requirementNameUpdate = document.getElementById("requirementNameUpdate").value;
+		var requirementDescUpdate = document.getElementById("requirementDescUpdate").value;
+
+		$.ajax({
+			type: "POST",
+			url: "update",
+			data: {
+				"strRequirementName" : selectRequirementUpdate,
+				"requirement.strRequirementName" : requirementNameUpdate,
+				"requirement.strRequirementDesc" : requirementDescUpdate
+			},
+			dataType: "json",
+			success: function(data){
+				alert("updating...");
+				if (data.status === "success"){
+					alert("Requirement "+data.strRequirementName+" is successfully updated.");
 					updateTable();
-	        		$("#modalDeactivateRequirement").closeModal();
-				},
-				error: function(data){
-					alert("Error...");
+	        		$("#modalUpdateRequirement").closeModal();
+	        		$("#requirementNameUpdate").val("");
+	        		$("#requirementDescUpdate").val("");
+				}else if (data.status === "failed-does-not-exist"){
+					alert("Requirement does not exist.");
+				}else if (data.status === "failed-input"){
+					alert("Fill up anything first.");
+				}else if (data.status === "failed-database"){
+					alert("error in database...");
 				}
-			});
+			},
+			error: function(data){
+				alert("error");
+			}
+		});
 
-		}
+	}
 
-		function updateTable(){
+	function deactivateRequirement(){
 
-			$.ajax({
-				type: "POST",
-				url: "getAllRequirement",
-				dataType: "json",
-				async: true,
-				success: function(data){
-					var requirementList = data.requirementList;
-	        		$("#tableRequirement tbody").remove();
-					if (requirementList != null){
-						$.each(requirementList, function(i, requirement){
+		var deactivateRequirementName = document.getElementById("selectDeactivateRequirement").value;
 
-			        		tableRow = $("<tr>").append(
-			        				$("<td>").text(requirement.strRequirementName),
-			        				$("<td>").text(requirement.strRequirementDesc));
-			        		$("#tableRequirement").append(tableRow);
-		        		});
-					}else{
-						tableRow = $("<tr>").append(
-								$("<td>").text("No requirements available."));
-						$("#tableRequirement").append(tableRow);
-					}
-				},
-				error: function(data){
-					alert("error in updating table...");
+		$.ajax({
+			type: "POST",
+			url: "deactivate",
+			data: {
+				"strRequirementName" : deactivateRequirementName
+			},
+			dataType: "json",
+			async: true,
+			success: function(data){
+				alert("Requirement "+data.strRequirementName+" is successfully deactivated.");
+				updateTable();
+        		$("#modalDeactivateRequirement").closeModal();
+			},
+			error: function(data){
+				alert("Error...");
+			}
+		});
+
+	}
+
+	window.onload = updateTable;
+	
+	function updateTable(){
+		$.ajax({
+			type: "POST",
+			url: "getAllRequirement",
+			dataType: "json",
+			async: true,
+			success: function(data){
+    			Materialize.toast('Updating table...', 3000, 'rounded');
+				var table = $('#datatable').DataTable();
+        		table.clear().draw();
+        		var requirementList = data.requirementList;
+        	
+        		$.each(requirementList, function(i, requirement){
+        			Materialize.toast(requirement.strRequirementName, 3000, 'rounded');
+        			var addButtons = "<button name = action class= 'modal-trigger btn-floating green' onclick = alert("+requirement.strRequirementName+") ><i class= material-icons >mode_edit</i></button>"+
+        			"<button name = action class= 'modal-trigger btn-floating red' onclick = openDeactivate('"+requirement.strRequirementName+"') ><i class= material-icons >delete</i></button></td>";
+        			
+        			
+        			table.row.add( [
+    	        		            requirement.strRequirementName,
+    	        		            requirement.strRequirementDesc,
+    	        		            addButtons
+    	        		            ]);
+        		});
+        		
+        		table.draw();
+			},
+			error: function(data){
+				Materialize.toast('Error in updating table.', 3000, 'rounded');
+			}
+		});
+
+	}//updateTable
+	
+	function openUpdate(requirementName){
+		Materialize.toast(requirementName, 3000, 'rounded');
+		$.ajax({
+			type: "POST",
+			url: "read",
+			data: {
+				"strRequirementName" : requirementName
+			},
+			dataType: "json",
+			async: true,
+			success: function(data){
+				if (data.status === "success"){
+
+					$('#modalUpdateRequirement').openModal();
+					$('#requirementToBeUpdated').val(data.requirement.strRequirementName);
+					$('#requirementNameUpdate').val(data.requirement.strRequirementName);
+					$('#requirementDescUpdate').val(data.requirement.strRequirementDesc);
+					
 				}
-			});
-
-		}//updateTable
+			},
+			error: function(data){
+				Materialize.toast('Error occured.', 3000, 'rounded');
+			}
+			
+		});
+		
+	}
 	
 	</script>
