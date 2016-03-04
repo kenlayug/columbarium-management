@@ -14,6 +14,7 @@
     <script type="text/javascript" src = "../js/Blocks_Record_Form.js"></script>
     <script type="text/javascript" src = "../js/datepicker.js"></script>
     <link href="../css/vaults.css" rel="stylesheet" type="text/css"/>
+
 </head>
 <body>
 <div class="navbar-fixed nav-birdifly">
@@ -312,119 +313,242 @@
                                     </tbody>
                                 </table>
                                 <!-- Modal Structure -->
-                                <div id="modal1" class="modal modal-fixed" style="height: 90%; width: 80%;">
+                                <div id="modal1" class="modal modal-fixed" style="height: 90%; width: 90%;">
                                     <div class="modal-header">
                                         <label style="font-size: large">MANAGE UNIT</label>
                                     </div>
-                                    <form class="cmxform" id="ownershipForm" action="UnitOwnership.html" method="get" autocomplete="off">
-                                        <table id="modal-table" style="margin-top: 0; color: black">
-                                            <tr style="background-color: white">
-                                                <td style="background-color: white">
-                                                    <input name="grpEdit" type="radio" id="update" checked="checked"/>
-                                                    <label for="update">Transfer Deceased</label>
-                                                </td>
-                                                <td style="background-color: white">
-                                                    <input name="grpEdit" type="radio" id="deactivate" />
-                                                    <label for="deactivate">Pull Deceased</label>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td style="background-color: white; vertical-align: top">
-                                                    <div id="update-deceased">
-                                                        <div class="row">
-                                                            <h6 style="color: #000000;">Deceased Name/s:</h6>
-                                                            <p>
-                                                                <input type="checkbox" id="dn11" checked="checked"/>
-                                                                <label for="dn11" style="font-family: Arial">Name 1</label>
-                                                            </p>
-                                                            <p>
-                                                                <input type="checkbox" id="dn21"/>
-                                                                <label for="dn21" style="font-family: Arial">Name 2</label>
-                                                            </p>
-                                                            <p>
-                                                                <input type="checkbox" id="dn31"/>
-                                                                <label for="dn31" style="font-family: Arial">Name 3</label>
-                                                            </p>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="input-field col s3">
-                                                                <label>Building Name:</label>
-                                                            </div>
-                                                            <div class = "col s9" style = "padding-left: 20px;">
-                                                                <select>
-                                                                    <option style="color: #000000" value="" disabled selected> Select Building Name:</option>
-                                                                    <option style="color: #000000" value="1">Building A</option>
-                                                                    <option style="color: #000000" value="2">Building B</option>
-                                                                    <option style="color: #000000" value="3">Building C</option>
-                                                                </select>
-                                                            </div>
-                                                            <div class="input-field col s3">
-                                                                <label>Floor No:</label>
-                                                            </div>
-                                                            <div class = "col s9" style = "padding-left: 20px;">
-                                                                <select>
-                                                                    <option value="" disabled selected> Select Floor No:</option>
-                                                                    <option value="1">Floor 1</option>
-                                                                    <option value="2">Floor 2</option>
-                                                                    <option value="3">Floor 3</option>
-                                                                </select>
-                                                            </div>
-                                                            <div class="input-field col s3">
-                                                                <label>Block Name:</label>
-                                                            </div>
-                                                            <div class = "col s9" style = "padding-left: 20px;">
-                                                                <select>
-                                                                    <option value="" disabled selected> Select Block Name:</option>
-                                                                    <option value="1">Block A</option>
-                                                                    <option value="2">Block B</option>
-                                                                    <option value="3">Block C</option>
-                                                                </select>
-                                                            </div>
-                                                            <div class="input-field col s3">
-                                                                <label>Vault Code:</label>
-                                                            </div>
-                                                            <div class = "col s9" style = "padding-left: 20px;">
-                                                                <select>
-                                                                    <option value="" disabled selected> Select Vault Code:</option>
-                                                                    <option value="1">Vault 1</option>
-                                                                    <option value="2">Vault 2</option>
-                                                                    <option value="3">Vault 3</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="modal-footer">
-                                                                <button name = "action" class="waves-effect waves-light btn red">Cancel</button>
-                                                                <button name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; margin-right: 10px">Confirm</button>
-                                                            </div>
+                                    <form class="cmxform" id="ownershipForm" action="Manage-Unit.html" method="get" autocomplete="off">
+                                        <div class="row">
+                                            <div class="input-field col s5">
+                                                <label style="font-size: large"><b>Owner Name:</b> <u>LastName, FirstName Middle Name</u></label>
+                                            </div>
+                                            <div class="input-field col s2">
+                                                <a class="btn-floating btn-medium waves-effect waves-light green" id="tOwnership" href="javascript:toggle1();"><i class="material-icons" style="color: #ffffff;">mode_edit</i></a>
+                                                <a class="btn-floating btn-medium waves-effect waves-light red" id="pOwnership" href="javascript:toggle();"><i class="material-icons" style="color: #ffffff">not_interested</i></a>
+                                            </div>
+                                        </div>
+                                        <script language="javascript">
+                                            function toggle() {
+                                                var ele = document.getElementById("pullOutOwnership");
+                                                var text = document.getElementById("pOwnership");
+                                                if(ele.style.display == "block") {
+                                                    ele.style.display = "none";
+                                                }
+                                                else {
+                                                    ele.style.display = "block";
+                                                }
+                                            }
+                                        </script>
+                                        <script language="javascript">
+                                            function toggle1() {
+                                                var ele = document.getElementById("transferOwnership");
+                                                var text = document.getElementById("tOwnership");
+                                                if(ele.style.display == "block") {
+                                                    ele.style.display = "none";
+                                                }
+                                                else {
+                                                    ele.style.display = "block";
+                                                }
+                                            }
+                                        </script>
+                                        <script language="javascript">
+                                            function toggle2() {
+                                                var ele = document.getElementById("newCustomer");
+                                                var text = document.getElementById("new");
+                                                if(ele.style.display == "block") {
+                                                    ele.style.display = "none";
+                                                }
+                                                else {
+                                                    ele.style.display = "block";
+                                                }
+                                            }
+                                        </script>
+
+                                        <div id="pullOutOwnership" style="display: none">
+                                            <div class="modal-header">
+                                                <label style="font-size: large">Pull Out Ownership</label>
+                                            </div>
+                                            <form class="modal-transfer"method="get" autocomplete="off">
+                                                <div class="row">
+                                                    <div class="input-field col s6">
+                                                        <label>Are You Sure You Want to Pull Out Ownership?</label>
+                                                    </div>
+                                                    <div class="input-field col s5">
+                                                        <button name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; margin-right: 10px">Confirm</button>
+                                                        <button name = "action" class="waves-effect waves-light btn red">Cancel</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                        <div id="transferOwnership" style="display: none">
+                                            <div class="modal-header">
+                                                <label style="font-size: large">Transfer Ownership</label>
+                                            </div>
+                                            <form class="modal-transfer"method="get" autocomplete="off">
+                                                <div class="row">
+                                                    <div class="input-field col s2">
+                                                        <label>Customer Name:</label>
+                                                    </div>
+                                                    <div class="input-field      col s6">
+                                                        <input name="cname" id="cname" type="text" required="" aria-required="true" class="validate" list="nameList">
+                                                        <label for="cname">Customer Name</label>
+                                                    </div>
+                                                    <div class="input-field col s2">
+                                                        <a class="btn-floating btn-medium waves-effect waves-light red" id="new" href="javascript:toggle2();">New</a>
+                                                    </div>
+                                                    <div class="right row">
+                                                        <div class="input-field col s12">
+                                                            <button name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; margin-right: 10px">Confirm</button>
+                                                            <button name = "action" class="waves-effect waves-light btn red">Cancel</button>
                                                         </div>
                                                     </div>
-                                                </td>
-                                                <td style="background-color: white;">
-                                                    <div id="deactivate-ownership">
-                                                        <div class="row" style="margin-top: 0; padding-top: 0;">
-                                                            <h6 style="color: #000000;">Deceased Name/s:</h6>
-                                                            <p>
-                                                                <input type="checkbox" id="ddn11" checked="checked"/>
-                                                                <label for="ddn11" style="font-family: Arial">Name 1</label>
-                                                            </p>
-                                                            <p>
-                                                                <input type="checkbox" id="ddn21"/>
-                                                                <label for="ddn21" style="font-family: Arial">Name 2</label>
-                                                            </p>
-                                                            <p>
-                                                                <input type="checkbox" id="ddn31"/>
-                                                                <label for="ddn31" style="font-family: Arial">Name 3</label>
-                                                            </p>
+                                                </div>
+                                                <datalist id="nameList">
+                                                    <option value="Monkey D. Luffy">
+                                                    <option value="Roronoa Zoro">
+                                                    <option value="Vinsmoke Sanji">
+                                                    <option value="Tony Tony Chopper">
+                                                    <option value="Nico Robin">
+                                                </datalist>
+                                            </form>
+                                        </div>
+
+                                        <div id="newCustomer" style="display: none">
+                                            <div class="modal-header">
+                                                <label style="font-size: large; text-align: center">Add New Customer</label>
+                                            </div>
+                                            <form class="cmxform" action="Manage-Unit.html" method="get" autocomplete="off">
+                                                <div class="row">
+                                                    <div class="input-field col s2">
+                                                        <label>New Customer:</label>
+                                                    </div>
+                                                    <div class="input-field col s3">
+                                                        <input id="cfname" type="text" class="validate">
+                                                        <label for="cfname">First Name</label>
+                                                    </div>
+                                                    <div class="input-field col s3">
+                                                        <input id="cmname" type="text" class="validate">
+                                                        <label for="cmname">Middle Name</label>
+                                                    </div>
+                                                    <div class="input-field col s3">
+                                                        <input id="clname" type="text" class="validate">
+                                                        <label for="clname">Last Name</label>
+                                                    </div>
+                                                </div>
+                                                <div class="right row">
+                                                    <div class="input-field col s12">
+                                                        <button name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; margin-right: 10px">Save</button>
+                                                        <button name = "action" class="waves-effect waves-light btn red">Cancel</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                        <div class = "aside aside z-depth-3">
+                                            <table id="modal-table" style="margin-top: 0; color: black">
+                                                <tr style="background-color: white">
+                                                    <td style="background-color: white">
+                                                        <input name="grpEdit" type="radio" id="update" checked="checked"/>
+                                                        <label for="update">Transfer Deceased</label>
+                                                    </td>
+                                                    <td style="background-color: white">
+                                                        <input name="grpEdit" type="radio" id="deactivate-deceased" />
+                                                        <label for="deactivate-deceased">Pull Out Deceased</label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="background-color: white; vertical-align: top">
+                                                        <div id="update-deceased">
+                                                            <div class="row">
+                                                                <h6 style="color: #000000;">Deceased Name/s:</h6>
+                                                                <p>
+                                                                    <input type="checkbox" id="dn11" checked="checked"/>
+                                                                    <label for="dn11" style="font-family: Arial">Name 1</label>
+                                                                </p>
+                                                                <p>
+                                                                    <input type="checkbox" id="dn21"/>
+                                                                    <label for="dn21" style="font-family: Arial">Name 2</label>
+                                                                </p>
+                                                                <p>
+                                                                    <input type="checkbox" id="dn31"/>
+                                                                    <label for="dn31" style="font-family: Arial">Name 3</label>
+                                                                </p>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="input-field col s3">
+                                                                    <label>Building No:</label>
+                                                                </div>
+                                                                <div class = "col s9" style = "padding-left: 20px;">
+                                                                    <select>
+                                                                        <option value="" disabled selected> Select Building No:</option>
+                                                                        <option value="1">Building 1</option>
+                                                                        <option value="2">Building 2</option>
+                                                                        <option value="3">Building 3</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="input-field col s3">
+                                                                    <label>Floor No:</label>
+                                                                </div>
+                                                                <div class = "col s9" style = "padding-left: 20px;">
+                                                                    <select>
+                                                                        <option value="" disabled selected> Select Floor No:</option>
+                                                                        <option value="1">Floor 1</option>
+                                                                        <option value="2">Floor 2</option>
+                                                                        <option value="3">Floor 3</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="input-field col s3">
+                                                                    <label>Block Name:</label>
+                                                                </div>
+                                                                <div class = "col s9" style = "padding-left: 20px;">
+                                                                    <select>
+                                                                        <option value="" disabled selected> Select Block Name:</option>
+                                                                        <option value="1">Block A</option>
+                                                                        <option value="2">Block B</option>
+                                                                        <option value="3">Block C</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="input-field col s3">
+                                                                    <label>Unit Code:</label>
+                                                                </div>
+                                                                <div class="input-field col s3">
+                                                                    <input id="ucode" type="text" class="validate">
+                                                                    <label for="ucode">Unit Code</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="input-field col s12">
+                                                                <button name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; margin-right: 10px">Confirm</button>
+                                                                <button name = "action" class="waves-effect waves-light btn red">Cancel</button>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td style="background-color: white;">
+                                                        <div id="deactivate-ownership">
+                                                            <div class="row" style="margin-top: 0; padding-top: 0;">
+                                                                <h6 style="color: #000000;">Deceased Name/s:</h6>
+                                                                <p>
+                                                                    <input type="checkbox" id="ddn11" checked="checked"/>
+                                                                    <label for="ddn11" style="font-family: Arial">Name 1</label>
+                                                                </p>
+                                                                <p>
+                                                                    <input type="checkbox" id="ddn21"/>
+                                                                    <label for="ddn21" style="font-family: Arial">Name 2</label>
+                                                                </p>
+                                                                <p>
+                                                                    <input type="checkbox" id="ddn31"/>
+                                                                    <label for="ddn31" style="font-family: Arial">Name 3</label>
+                                                                </p>
+                                                            </div>
                                                         </div>
                                                         <div class="input-field col s12">
-                                                            <button class="waves-effect waves-light btn red right" style = "width: 130px;  margin-top: 20px; margin-bottom: 10px;">No</button>
-                                                            <button class="waves-effect waves-light btn red right" style = "width: 130px;  margin-top: 20px; margin-bottom: 10px; margin-right: 10px">Yes</button>
+                                                            <button name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; margin-right: 10px">Confirm</button>
+                                                            <button name = "action" class="waves-effect waves-light btn red">Cancel</button>
                                                         </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
                                     </form>
                                 </div>
                             </div>

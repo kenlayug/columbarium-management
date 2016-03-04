@@ -12,9 +12,26 @@
     <!-- Import File -->
     <script type="text/javascript" src = "../js/calendar.js"></script>
     <script type="text/javascript" src = "../js/Blocks_Record_Form.js"></script>
+    <script type="text/javascript" src = "../js/vaults.js"></script>
     <script type="text/javascript" src = "../js/datepicker.js"></script>
     <link href="../css/calendar.css" rel="stylesheet" type="text/css"/>
+    <link href="../css/Reservation_Transaction.css" rel="stylesheet" type="text/css"/>
     <link href="../css/datepicker.css" rel="stylesheet" type="text/css"/>
+
+    <script>
+        function showMe (box) {
+
+            var chboxs = document.getElementsByName("c1");
+            var vis = "none";
+            for(var i=0;i<chboxs.length;i++) {
+                if(chboxs[i].checked){
+                    vis = "block";
+                    break;
+                }
+            }
+            document.getElementById(box).style.display = vis;
+        }
+    </script>
 </head>
 <body>
 <div class="navbar-fixed nav-birdifly">
@@ -68,1036 +85,218 @@
         </nav>
     </div>
 </div>
-<form class = col s12 >
+<div class = "col s12" >
     <div class = "row">
-        <div class = "col s7">
+        <div class = "col s8" style="margin-top: 20px;">
             <div class = "col s12">
-                <h4>SCHEDULING</h4>
-                <div class = "aside aside z-depth-3">
+                <div class = "aside aside z-depth-3" style="height: auto !important;">
                     <div class="modal-header">
-                        <label>SCHEDULE SERVICE</label>
+                        <label style="font-size: x-large">Scheduling</label>
                     </div>
-                    <form action="Employee.html" method="post">
-                        <div class="modal" id="modal1">
-                            <form class = "col s12">
-                                <div class = "row">
-                                    <div class = "col s1">
-                                        <div class = "col s12">
-                                            <button data-target="#" class="btn modal-trigger"><</button>
-                                        </div>
+                    <form action="scheduling.html" method="post">
+                        <div id="new" class="modal">
+                            <div class="modal-header">
+                                <label style="font-size: large">Add New Customer</label>
+                            </div>
+                            <form class="cmxform" id="ownershipForm" action="Manage-Unit.html" method="get" autocomplete="off">
+                                <div class="row">
+                                    <div class="input-field col s2">
+                                        <label>New Customer:</label>
                                     </div>
-                                    <div class = "col s10">
-                                        <div class="row">
-                                            <div class = "col s6">
-                                                <label>JANUARY</label>
-                                                <table class="jan">
-                                                    <div clas="jan-mo">
-                                                        <div clas="aside aside z-depth-3">
-                                                            <thead>
-                                                            <tr>
-                                                                <th>SUN</th>
-                                                                <th>MON</th>
-                                                                <th>TUES</th>
-                                                                <th>WED</th>
-                                                                <th>THURS</th>
-                                                                <th>FRI</th>
-                                                                <th>SAT</th>
-                                                            </thead>
-                                                            <tbody>
-                                                            <tr>
-                                                                <th></th>
-                                                                <th></th>
-                                                                <th></th>
-                                                                <th></th>
-                                                                <th></th>
-                                                                <th>1</th>
-                                                                <th>2</th>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>3</th>
-                                                                <th>4</th>
-                                                                <th>5</th>
-                                                                <th>6</th>
-                                                                <th>7</th>
-                                                                <th>8</th>
-                                                                <th>9</th>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>10</th>
-                                                                <th>11</th>
-                                                                <th>12</th>
-                                                                <th>13</th>
-                                                                <th>14</th>
-                                                                <th>15</th>
-                                                                <th>16</th>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>17</th>
-                                                                <th>18</th>
-                                                                <th>19</th>
-                                                                <th>20</th>
-                                                                <th>21</th>
-                                                                <th>22</th>
-                                                                <th>23</th>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>24</th>
-                                                                <th>25</th>
-                                                                <th>26</th>
-                                                                <th>27</th>
-                                                                <th>28</th>
-                                                                <th>29</th>
-                                                                <th>30</th>
-                                                            </tr>
-                                                            </tbody>
-                                                        </div>
-                                                    </div>
-                                                </table>
-                                            </div>
-                                            <div class = "col s6">
-                                                <label>FEBRUARY</label>
-                                                <table class="feb">
-                                                    <div clas="feb-mo">
-                                                        <div clas="aside aside z-depth-3">
-                                                            <thead>
-                                                            <tr>
-                                                                <th>SUN</th>
-                                                                <th>MON</th>
-                                                                <th>TUES</th>
-                                                                <th>WED</th>
-                                                                <th>THURS</th>
-                                                                <th>FRI</th>
-                                                                <th>SAT</th>
-                                                            </thead>
-                                                            <tbody>
-                                                            <tr>
-                                                                <th></th>
-                                                                <th>1</th>
-                                                                <th>2</th>
-                                                                <th>3</th>
-                                                                <th>4</th>
-                                                                <th>5</th>
-                                                                <th>6</th>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>7</th>
-                                                                <th>8</th>
-                                                                <th>9</th>
-                                                                <th>10</th>
-                                                                <th>11</th>
-                                                                <th>12</th>
-                                                                <th>13</th>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>14</th>
-                                                                <th>15</th>
-                                                                <th>16</th>
-                                                                <th>17</th>
-                                                                <th>18</th>
-                                                                <th>19</th>
-                                                                <th>20</th>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>21</th>
-                                                                <th>22</th>
-                                                                <th>23</th>
-                                                                <th>24</th>
-                                                                <th>25</th>
-                                                                <th>26</th>
-                                                                <th>27</th>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>28</th>
-                                                                <th>29</th>
-                                                                <th></th>
-                                                                <th></th>
-                                                                <th></th>
-                                                                <th></th>
-                                                                <th></th>
-                                                            </tr>
-                                                            </tbody>
-                                                        </div>
-                                                    </div>
-                                                </table>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class = "col s6">
-                                                <label>MARCH</label>
-                                                <table class="march">
-                                                    <div clas="march-mo">
-                                                        <div clas="aside aside z-depth-3">
-                                                            <thead>
-                                                            <tr>
-                                                                <th>SUN</th>
-                                                                <th>MON</th>
-                                                                <th>TUES</th>
-                                                                <th>WED</th>
-                                                                <th>THURS</th>
-                                                                <th>FRI</th>
-                                                                <th>SAT</th>
-                                                            </thead>
-                                                            <tbody>
-                                                            <tr>
-                                                                <th></th>
-                                                                <th></th>
-                                                                <th>1</th>
-                                                                <th>2</th>
-                                                                <th>3</th>
-                                                                <th>4</th>
-                                                                <th>5</th>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>6</th>
-                                                                <th>7</th>
-                                                                <th>8</th>
-                                                                <th>9</th>
-                                                                <th>10</th>
-                                                                <th>11</th>
-                                                                <th>12</th>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>13</th>
-                                                                <th>14</th>
-                                                                <th>15</th>
-                                                                <th>16</th>
-                                                                <th>17</th>
-                                                                <th>18</th>
-                                                                <th>19</th>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>20</th>
-                                                                <th>21</th>
-                                                                <th>22</th>
-                                                                <th>23</th>
-                                                                <th>24</th>
-                                                                <th>25</th>
-                                                                <th>26</th>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>27</th>
-                                                                <th>28</th>
-                                                                <th>29</th>
-                                                                <th>30</th>
-                                                                <th>31</th>
-                                                                <th></th>
-                                                                <th></th>
-                                                            </tr>
-                                                            </tbody>
-                                                        </div>
-                                                    </div>
-                                                </table>
-                                            </div>
-                                            <div class = "col s6">
-                                                <label>APRIL</label>
-                                                <table class="april">
-                                                    <div clas="april-mo">
-                                                        <div clas="aside aside z-depth-3">
-                                                            <thead>
-                                                            <tr>
-                                                                <th>SUN</th>
-                                                                <th>MON</th>
-                                                                <th>TUES</th>
-                                                                <th>WED</th>
-                                                                <th>THURS</th>
-                                                                <th>FRI</th>
-                                                                <th>SAT</th>
-                                                            </thead>
-                                                            <tbody>
-                                                            <tr>
-                                                                <th></th>
-                                                                <th></th>
-                                                                <th></th>
-                                                                <th></th>
-                                                                <th></th>
-                                                                <th>1</th>
-                                                                <th>2</th>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>3</th>
-                                                                <th>4</th>
-                                                                <th>5</th>
-                                                                <th>6</th>
-                                                                <th>7</th>
-                                                                <th>8</th>
-                                                                <th>9</th>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>10</th>
-                                                                <th>11</th>
-                                                                <th>12</th>
-                                                                <th>13</th>
-                                                                <th>14</th>
-                                                                <th>15</th>
-                                                                <th>16</th>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>17</th>
-                                                                <th>18</th>
-                                                                <th>19</th>
-                                                                <th>20</th>
-                                                                <th>21</th>
-                                                                <th>22</th>
-                                                                <th>23</th>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>24</th>
-                                                                <th>25</th>
-                                                                <th>26</th>
-                                                                <th>27</th>
-                                                                <th>28</th>
-                                                                <th>29</th>
-                                                                <th>30</th>
-                                                            </tr>
-                                                            </tbody>
-                                                        </div>
-                                                    </div>
-                                                </table>
-                                            </div>
-                                        </div>
+                                    <div class="input-field col s3">
+                                        <input id="cfname" type="text" class="validate">
+                                        <label for="cfname">First Name</label>
                                     </div>
-                                    <div class = "col s1">
-                                        <div class = "col s12">
-                                            <button data-target="modal2" class="btn modal-trigger">></button>
-                                        </div>
+                                    <div class="input-field col s3">
+                                        <input id="cmname" type="text" class="validate">
+                                        <label for="cmname">Middle Name</label>
+                                    </div>
+                                    <div class="input-field col s3">
+                                        <input id="clname" type="text" class="validate">
+                                        <label for="clname">Last Name</label>
                                     </div>
                                 </div>
-                            </form>
-                        </div>
-                        <div class="modal" id="modal2">
-                            <form class = "col s12">
-                                <div class = "row">
-                                    <div class = "col s1">
-                                        <div class = "col s12">
-                                            <button data-target="modal1" class="btn modal-trigger"><</button>
-                                        </div>
-                                    </div>
-                                    <div class = "col s10">
-                                        <div class="row">
-                                            <div class = "col s6">
-                                                <label>MAY</label>
-                                                <table class="may">
-                                                    <div clas="may-mo">
-                                                        <div clas="aside aside z-depth-3">
-                                                            <thead>
-                                                            <tr>
-                                                                <th>SUN</th>
-                                                                <th>MON</th>
-                                                                <th>TUES</th>
-                                                                <th>WED</th>
-                                                                <th>THURS</th>
-                                                                <th>FRI</th>
-                                                                <th>SAT</th>
-                                                            </thead>
-                                                            <tbody>
-                                                            <tr>
-                                                                <th>1</th>
-                                                                <th>2</th>
-                                                                <th>3</th>
-                                                                <th>4</th>
-                                                                <th>5</th>
-                                                                <th>6</th>
-                                                                <th>7</th>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>8</th>
-                                                                <th>9</th>
-                                                                <th>10</th>
-                                                                <th>11</th>
-                                                                <th>12</th>
-                                                                <th>13</th>
-                                                                <th>14</th>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>15</th>
-                                                                <th>16</th>
-                                                                <th>17</th>
-                                                                <th>18</th>
-                                                                <th>19</th>
-                                                                <th>20</th>
-                                                                <th>21</th>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>22</th>
-                                                                <th>23</th>
-                                                                <th>24</th>
-                                                                <th>25</th>
-                                                                <th>26</th>
-                                                                <th>27</th>
-                                                                <th>28</th>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>29</th>
-                                                                <th>30</th>
-                                                                <th>31</th>
-                                                                <th></th>
-                                                                <th></th>
-                                                                <th></th>
-                                                                <th></th>
-                                                            </tr>
-                                                            </tbody>
-                                                        </div>
-                                                    </div>
-                                                </table>
-                                            </div>
-                                            <div class = "col s6">
-                                                <label>JUNE</label>
-                                                <table class="june">
-                                                    <div clas="june-mo">
-                                                        <div clas="aside aside z-depth-3">
-                                                            <thead>
-                                                            <tr>
-                                                                <th>SUN</th>
-                                                                <th>MON</th>
-                                                                <th>TUES</th>
-                                                                <th>WED</th>
-                                                                <th>THURS</th>
-                                                                <th>FRI</th>
-                                                                <th>SAT</th>
-                                                            </thead>
-                                                            <tbody>
-                                                            <tr>
-                                                                <th></th>
-                                                                <th></th>
-                                                                <th></th>
-                                                                <th>1</th>
-                                                                <th>2</th>
-                                                                <th>3</th>
-                                                                <th>4</th>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>5</th>
-                                                                <th>6</th>
-                                                                <th>7</th>
-                                                                <th>8</th>
-                                                                <th>9</th>
-                                                                <th>10</th>
-                                                                <th>11</th>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>12</th>
-                                                                <th>13</th>
-                                                                <th>14</th>
-                                                                <th>15</th>
-                                                                <th>16</th>
-                                                                <th>17</th>
-                                                                <th>18</th>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>19</th>
-                                                                <th>20</th>
-                                                                <th>21</th>
-                                                                <th>22</th>
-                                                                <th>23</th>
-                                                                <th>24</th>
-                                                                <th>25</th>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>26</th>
-                                                                <th>27</th>
-                                                                <th>28</th>
-                                                                <th>29</th>
-                                                                <th>30</th>
-                                                                <th></th>
-                                                                <th></th>
-                                                            </tr>
-                                                            </tbody>
-                                                        </div>
-                                                    </div>
-                                                </table>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class = "col s6">
-                                                <label>JULY</label>
-                                                <table class="july">
-                                                    <div clas="july-mo">
-                                                        <div clas="aside aside z-depth-3">
-                                                            <thead>
-                                                            <tr>
-                                                                <th>SUN</th>
-                                                                <th>MON</th>
-                                                                <th>TUES</th>
-                                                                <th>WED</th>
-                                                                <th>THURS</th>
-                                                                <th>FRI</th>
-                                                                <th>SAT</th>
-                                                            </thead>
-                                                            <tbody>
-                                                            <tr>
-                                                                <th></th>
-                                                                <th></th>
-                                                                <th></th>
-                                                                <th></th>
-                                                                <th></th>
-                                                                <th>1</th>
-                                                                <th>2</th>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>3</th>
-                                                                <th>4</th>
-                                                                <th>5</th>
-                                                                <th>6</th>
-                                                                <th>7</th>
-                                                                <th>8</th>
-                                                                <th>9</th>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>10</th>
-                                                                <th>11</th>
-                                                                <th>12</th>
-                                                                <th>13</th>
-                                                                <th>14</th>
-                                                                <th>15</th>
-                                                                <th>16</th>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>17</th>
-                                                                <th>18</th>
-                                                                <th>19</th>
-                                                                <th>20</th>
-                                                                <th>21</th>
-                                                                <th>22</th>
-                                                                <th>23</th>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>24</th>
-                                                                <th>25</th>
-                                                                <th>26</th>
-                                                                <th>27</th>
-                                                                <th>28</th>
-                                                                <th>29</th>
-                                                                <th>30</th>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>31</th>
-                                                                <th></th>
-                                                                <th></th>
-                                                                <th></th>
-                                                                <th></th>
-                                                                <th></th>
-                                                                <th></th>
-                                                            </tr>
-                                                            </tbody>
-                                                        </div>
-                                                    </div>
-                                                </table>
-                                            </div>
-                                            <div class = "col s6">
-                                                <label>AUGUST</label>
-                                                <table class="aug">
-                                                    <div clas="aug-mo">
-                                                        <div clas="aside aside z-depth-3">
-                                                            <thead>
-                                                            <tr>
-                                                                <th>SUN</th>
-                                                                <th>MON</th>
-                                                                <th>TUES</th>
-                                                                <th>WED</th>
-                                                                <th>THURS</th>
-                                                                <th>FRI</th>
-                                                                <th>SAT</th>
-                                                            </thead>
-                                                            <tbody>
-                                                            <tr>
-                                                                <th></th>
-                                                                <th>1</th>
-                                                                <th>2</th>
-                                                                <th>3</th>
-                                                                <th>4</th>
-                                                                <th>5</th>
-                                                                <th>6</th>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>7</th>
-                                                                <th>8</th>
-                                                                <th>9</th>
-                                                                <th>10</th>
-                                                                <th>11</th>
-                                                                <th>12</th>
-                                                                <th>13</th>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>14</th>
-                                                                <th>15</th>
-                                                                <th>16</th>
-                                                                <th>17</th>
-                                                                <th>18</th>
-                                                                <th>19</th>
-                                                                <th>20</th>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>21</th>
-                                                                <th>22</th>
-                                                                <th>23</th>
-                                                                <th>24</th>
-                                                                <th>25</th>
-                                                                <th>26</th>
-                                                                <th>27</th>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>28</th>
-                                                                <th>29</th>
-                                                                <th>30</th>
-                                                                <th>31</th>
-                                                                <th></th>
-                                                                <th></th>
-                                                                <th></th>
-                                                            </tr>
-                                                            </tbody>
-                                                        </div>
-                                                    </div>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class = "col s1">
-                                        <div class = "col s12">
-                                            <button data-target="modal3" class="btn modal-trigger">></button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="modal" id="modal3">
-                            <form class = "col s12">
-                                <div class = "row">
-                                    <div class = "col s1">
-                                        <div class = "col s12">
-                                            <button data-target="modal1" class="btn modal-trigger"><</button>
-                                        </div>
-                                    </div>
-                                    <div class = "col s10">
-                                        <div class="row">
-                                            <div class = "col s6">
-                                                <label>SEPTEMBER</label>
-                                                <table class="sep">
-                                                    <div clas="sep-mo">
-                                                        <div clas="aside aside z-depth-3">
-                                                            <thead>
-                                                            <tr>
-                                                                <th>SUN</th>
-                                                                <th>MON</th>
-                                                                <th>TUES</th>
-                                                                <th>WED</th>
-                                                                <th>THURS</th>
-                                                                <th>FRI</th>
-                                                                <th>SAT</th>
-                                                            </thead>
-                                                            <tbody>
-                                                            <tr>
-                                                                <th></th>
-                                                                <th></th>
-                                                                <th></th>
-                                                                <th></th>
-                                                                <th>1</th>
-                                                                <th>2</th>
-                                                                <th>3</th>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>4</th>
-                                                                <th>5</th>
-                                                                <th>6</th>
-                                                                <th>7</th>
-                                                                <th>8</th>
-                                                                <th>9</th>
-                                                                <th>10</th>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>11</th>
-                                                                <th>12</th>
-                                                                <th>13</th>
-                                                                <th>14</th>
-                                                                <th>15</th>
-                                                                <th>16</th>
-                                                                <th>17</th>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>18</th>
-                                                                <th>19</th>
-                                                                <th>20</th>
-                                                                <th>21</th>
-                                                                <th>22</th>
-                                                                <th>23</th>
-                                                                <th>24</th>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>25</th>
-                                                                <th>26</th>
-                                                                <th>27</th>
-                                                                <th>28</th>
-                                                                <th>29</th>
-                                                                <th>30</th>
-                                                                <th></th>
-                                                            </tr>
-                                                            </tbody>
-                                                        </div>
-                                                    </div>
-                                                </table>
-                                            </div>
-                                            <div class = "col s6">
-                                                <label>OCTOBER</label>
-                                                <table class="octo">
-                                                    <div clas="octo-mo">
-                                                        <div clas="aside aside z-depth-3">
-                                                            <thead>
-                                                            <tr>
-                                                                <th>SUN</th>
-                                                                <th>MON</th>
-                                                                <th>TUES</th>
-                                                                <th>WED</th>
-                                                                <th>THURS</th>
-                                                                <th>FRI</th>
-                                                                <th>SAT</th>
-                                                            </thead>
-                                                            <tbody>
-                                                            <tr>
-                                                                <th></th>
-                                                                <th></th>
-                                                                <th></th>
-                                                                <th></th>
-                                                                <th></th>
-                                                                <th></th>
-                                                                <th>1</th>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>2</th>
-                                                                <th>3</th>
-                                                                <th>4</th>
-                                                                <th>5</th>
-                                                                <th>6</th>
-                                                                <th>7</th>
-                                                                <th>8</th>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>9</th>
-                                                                <th>10</th>
-                                                                <th>11</th>
-                                                                <th>12</th>
-                                                                <th>13</th>
-                                                                <th>14</th>
-                                                                <th>15</th>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>16</th>
-                                                                <th>17</th>
-                                                                <th>18</th>
-                                                                <th>29</th>
-                                                                <th>20</th>
-                                                                <th>21</th>
-                                                                <th>22</th>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>23</th>
-                                                                <th>24</th>
-                                                                <th>25</th>
-                                                                <th>26</th>
-                                                                <th>27</th>
-                                                                <th>28</th>
-                                                                <th>29</th>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>30</th>
-                                                                <th></th>
-                                                                <th></th>
-                                                                <th></th>
-                                                                <th></th>
-                                                                <th></th>
-                                                                <th></th>
-                                                            </tr>
-                                                            </tbody>
-                                                        </div>
-                                                    </div>
-                                                </table>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class = "col s6">
-                                                <label>NOVEMBER</label>
-                                                <table class="nov">
-                                                    <div clas="nov-mo">
-                                                        <div clas="aside aside z-depth-3">
-                                                            <thead>
-                                                            <tr>
-                                                                <th>SUN</th>
-                                                                <th>MON</th>
-                                                                <th>TUES</th>
-                                                                <th>WED</th>
-                                                                <th>THURS</th>
-                                                                <th>FRI</th>
-                                                                <th>SAT</th>
-                                                            </thead>
-                                                            <tbody>
-                                                            <tr>
-                                                                <th></th>
-                                                                <th></th>
-                                                                <th>1</th>
-                                                                <th>2</th>
-                                                                <th>3</th>
-                                                                <th>4</th>
-                                                                <th>5</th>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>6</th>
-                                                                <th>7</th>
-                                                                <th>8</th>
-                                                                <th>9</th>
-                                                                <th>10</th>
-                                                                <th>11</th>
-                                                                <th>12</th>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>13</th>
-                                                                <th>14</th>
-                                                                <th>15</th>
-                                                                <th>16</th>
-                                                                <th>17</th>
-                                                                <th>18</th>
-                                                                <th>19</th>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>20</th>
-                                                                <th>21</th>
-                                                                <th>22</th>
-                                                                <th>23</th>
-                                                                <th>24</th>
-                                                                <th>25</th>
-                                                                <th>26</th>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>27</th>
-                                                                <th>28</th>
-                                                                <th>29</th>
-                                                                <th>30</th>
-                                                                <th></th>
-                                                                <th></th>
-                                                                <th></th>
-                                                            </tr>
-                                                            </tbody>
-                                                        </div>
-                                                    </div>
-                                                </table>
-                                            </div>
-                                            <div class = "col s6">
-                                                <label>DECEMBER</label>
-                                                <table class="dec">
-                                                    <div clas="dec-mo">
-                                                        <div clas="aside aside z-depth-3">
-                                                            <thead>
-                                                            <tr>
-                                                                <th>SUN</th>
-                                                                <th>MON</th>
-                                                                <th>TUES</th>
-                                                                <th>WED</th>
-                                                                <th>THURS</th>
-                                                                <th>FRI</th>
-                                                                <th>SAT</th>
-                                                            </thead>
-                                                            <tbody>
-                                                            <tr>
-                                                                <th></th>
-                                                                <th></th>
-                                                                <th></th>
-                                                                <th></th>
-                                                                <th>1</th>
-                                                                <th>2</th>
-                                                                <th>3</th>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>4</th>
-                                                                <th>5</th>
-                                                                <th>6</th>
-                                                                <th>7</th>
-                                                                <th>8</th>
-                                                                <th>9</th>
-                                                                <th>10</th>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>11</th>
-                                                                <th>12</th>
-                                                                <th>13</th>
-                                                                <th>14</th>
-                                                                <th>15</th>
-                                                                <th>16</th>
-                                                                <th>17</th>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>18</th>
-                                                                <th>19</th>
-                                                                <th>20</th>
-                                                                <th>21</th>
-                                                                <th>22</th>
-                                                                <th>23</th>
-                                                                <th>24</th>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>25</th>
-                                                                <th>26</th>
-                                                                <th>27</th>
-                                                                <th>28</th>
-                                                                <th>29</th>
-                                                                <th>30</th>
-                                                                <th>31</th>
-                                                            </tr>
-                                                            </tbody>
-                                                        </div>
-                                                    </div>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class = "col s1">
-                                        <div class = "col s12">
-                                            <button data-target="#" class="btn modal-trigger">></button>
-                                        </div>
+                                <div class="right row">
+                                    <div class="input-field col s12">
+                                        <button name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; margin-right: 10px">Save</button>
+                                        <button name = "action" class="waves-effect waves-light btn red">Cancel</button>
                                     </div>
                                 </div>
                             </form>
                         </div>
                         <div class="row">
-                            <div class="input-field col s3">
+                            <div class="input-field col s2">
                                 <label>Customer Name:</label>
                             </div>
-                            <div class="input-field col s5">
-                                <input id="cname" type="text" required="" aria-required="true" class="validate" required>
-                                <label style="font-family: Arial">Search Customer Name<span style="color: red;">*</span></label>
+                            <div class="input-field      col s6">
+                                <input name="cname" id="cname" type="text" required="" aria-required="true" class="validate" list="nameList">
+                                <label for="cname" data-error="No Existing Customer Found!">Customer Name</label>
+                            </div>
+                            <div class="input-field col s2">
+                                <a class="waves-effect waves-light btn red modal-trigger" href="#new">New</a>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s2">
-                                <label>Service:</label>
-                            </div>
-                            <div class = "col s6" style = "padding-left: 20px;">
-                                <select>
-                                    <option value="" disabled selected> Select Service:</option>
-                                    <option value="1">Service 1</option>
-                                    <option value="2">Service 2</option>
-                                    <option value="3">Service 3</option>
-                                </select>
+                                <label>Services:</label>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="input-field col s2">
-                                <label>Date:</label>
+                            <div class="input-field col s4">
+                                <input type="checkbox" id="ser1" name="c1" onclick="showMe('div1')"/>
+                                <label for="ser1">Service 1</label>
+                                <div id="div1" style="display:none">
+                                    <div class="row">
+                                        <div class="input-field col s2">
+                                            <label>Date:</label>
+                                        </div>
+                                        <div class="input-field col s8">
+                                            <input type="date" class="datepicker">
+                                        </div>
+                                        <div class="input-field col s12">
+                                            <legend>Schedule Time:</legend>
+                                            <input name="s1time" type="radio" id="s11"/>
+                                            <label for="s11">9:00 - 11:00 AM</label>
+                                            <input name="s1time" type="radio" id="s12" />
+                                            <label for="s12">12:00 - 2:00 PM</label>
+                                            <input name="s1time" type="radio" id="s13" />
+                                            <label for="s13">3:00 - 5:00 PM</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <input type="checkbox" id="ser2" name="c1" onclick="showMe('div2')"/>
+                                <label for="ser2">Service 2</label>
+                                <div id="div2" style="display:none">
+                                    <div class="row">
+                                        <div class="input-field col s2">
+                                            <label>Date:</label>
+                                        </div>
+                                        <div class="input-field col s8">
+                                            <input type="date" class="datepicker">
+                                        </div>
+                                        <div class="input-field col s12">
+                                            <legend>Schedule Time:</legend>
+                                            <input name="s2time" type="radio" id="s21"/>
+                                            <label for="s21">9:00 - 11:00 AM</label>
+                                            <input name="s2time" type="radio" id="s22" />
+                                            <label for="s22">12:00 - 2:00 PM</label>
+                                            <input name="s2time" type="radio" id="s23" />
+                                            <label for="s23">3:00 - 5:00 PM</label>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="input-field col s3">
-                                <input type="date" class="datepicker">
-                                <label style="font-family: Arial">MM/DD/YYYY<span style="color: red;">*</span></label>
+                            <div class="input-field col s4">
+                                <input type="checkbox" id="ser3" name="c1" onclick="showMe('div3')"/>
+                                <label for="ser3">Service 3</label>
+                                <div id="div3" style="display:none">
+                                    <div class="row">
+                                        <div class="input-field col s2">
+                                            <label>Date:</label>
+                                        </div>
+                                        <div class="input-field col s8">
+                                            <input type="date" class="datepicker">
+                                        </div>
+                                        <div class="input-field col s12">
+                                            <legend>Schedule Time:</legend>
+                                            <input name="s3time" type="radio" id="s31"/>
+                                            <label for="s31">9:00 - 11:00 AM</label>
+                                            <input name="s3time" type="radio" id="s32" />
+                                            <label for="s32">12:00 - 2:00 PM</label>
+                                            <input name="s3time" type="radio" id="s33" />
+                                            <label for="s33">3:00 - 5:00 PM</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <input type="checkbox" id="ser4" name="c1" onclick="showMe('div4')"/>
+                                <label for="ser4">Service 4</label>
+                                <div id="div4" style="display:none">
+                                    <div class="row">
+                                        <div class="input-field col s2">
+                                            <label>Date:</label>
+                                        </div>
+                                        <div class="input-field col s8">
+                                            <input type="date" class="datepicker">
+                                        </div>
+                                        <div class="input-field col s12">
+                                            <legend>Schedule Time:</legend>
+                                            <input name="s4time" type="radio" id="s41"/>
+                                            <label for="s41">9:00 - 11:00 AM</label>
+                                            <input name="s4time" type="radio" id="s42" />
+                                            <label for="s42">12:00 - 2:00 PM</label>
+                                            <input name="s4time" type="radio" id="s43" />
+                                            <label for="s43">3:00 - 5:00 PM</label>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="input-field col s3">
-                                <button data-target="modal1" class="btn red modal-trigger" id="btn-date">DATE</button>
+                            <div class="input-field col s4">
+                                <input type="checkbox" id="ser5" name="c1" onclick="showMe('div5')"/>
+                                <label for="ser5">Service 5</label>
+                                <div id="div5" style="display:none">
+                                    <div class="row">
+                                        <div class="input-field col s2">
+                                            <label>Date:</label>
+                                        </div>
+                                        <div class="input-field col s8">
+                                            <input type="date" class="datepicker">
+                                        </div>
+                                        <div class="input-field col s12">
+                                            <legend>Schedule Time:</legend>
+                                            <input name="s5time" type="radio" id="s51"/>
+                                            <label for="s51">9:00 - 11:00 AM</label>
+                                            <input name="s5time" type="radio" id="s52" />
+                                            <label for="s52">12:00 - 2:00 PM</label>
+                                            <input name="s5time" type="radio" id="s53" />
+                                            <label for="s53">3:00 - 5:00 PM</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <input type="checkbox" id="ser6" name="c1" onclick="showMe('div6')"/>
+                                <label for="ser6">Service 6</label>
+                                <div id="div6" style="display:none">
+                                    <div class="row">
+                                        <div class="input-field col s2">
+                                            <label>Date:</label>
+                                        </div>
+                                        <div class="input-field col s8">
+                                            <input type="date" class="datepicker">
+                                        </div>
+                                        <div class="input-field col s12">
+                                            <legend>Schedule Time:</legend>
+                                            <input name="time" type="radio" id="s61"/>
+                                            <label for="s61">9:00 - 11:00 AM</label>
+                                            <input name="time" type="radio" id="s62" />
+                                            <label for="s62">12:00 - 2:00 PM</label>
+                                            <input name="time" type="radio" id="s63" />
+                                            <label for="s63">3:00 - 5:00 PM</label>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <!-- Select Floor Name -->
-                            <div class="input-field col s2">
-                                <label>Time:</label>
-                            </div>
-                            <div class = "col s6" style = "padding-left: 20px;">
-                                <select>
-                                    <option value="" disabled selected> Select Time:</option>
-                                    <option value="1">Time 1</option>
-                                    <option value="2">Time 2</option>
-                                    <option value="3">Time 3</option>
-                                    <option value="2">Time 4</option>
-                                    <option value="3">Time 5</option>
-                                </select>
-                            </div>
+                        <br>
+                        <div class="right modal-footer" style="margin-right: 20px">
+                            <button name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; margin-right: 10px">Confirm</button>
+                            <button name = "action" class="waves-effect waves-light btn red" style="margin-right: 10px;">Cancel</button>
                         </div>
-                        <div class="row">
-                            <div class="right col s4">
-                                <button class="waves-effect waves-light btn red right" style = "width: 130px;  margin-top: 20px; margin-bottom: 10px;">Save</button>
-                            </div>
-                        </div>
+                        <br><br><br>
+                        <datalist id="nameList">
+                            <option value="Monkey D. Luffy">
+                            <option value="Roronoa Zoro">
+                            <option value="Vinsmoke Sanji">
+                            <option value="Tony Tony Chopper">
+                            <option value="Nico Robin">
+                        </datalist>
                     </form>
                 </div>
             </div>
         </div>
-
-        <!-- table -->
-        <div class = "col s5">
-            <div class = "col s4 z-depth-2 " style = "margin-top: 20px; width: 100%; height: 70px;">
-                <div class="responsive">
-                    <nav style = "height: 50px; margin-top: -10px; background-color: #00897b">
-                        <div class="nav-wrapper">
-                            <form method="post">
-                                <div class="input-field"  style = "height: 50px;">
-                                    <input id="search" type="search" required>
-                                    <label for="search"><i class="material-icons">search</i></label>
-                                    <i class="material-icons">close</i>
-                                </div>
-                            </form>
-                        </div>
-                    </nav>
-                </div>
-            </div>
-            <br>
-            <br>
-            <br>
-            <div class = "aside z-depth-2" style = "width: 100%; height: 470px; overflow: auto;">
-                <table  class="responsive" style = "width: 100%;" class="striped">
-                    <thead id="iba">
-                    <tr>
-                        <th data-field="name">Service</th>
-                        <th data-field="gender">Date</th>
-                        <th data-field="cv">Time</th>
-                    </tr>
-                    </thead>
-
-                    <tbody style="text-align: center;">
-                    <tr>
-                        <td>Cremation</td>
-                        <td>01/01/16</td>
-                        <td>9:00-11:00 AM</td>
-                    </tr>
-                    <tr>
-                        <td>Cremation</td>
-                        <td>01/01/16</td>
-                        <td>9:00-11:00 AM</td>
-                    </tr>
-                    <tr>
-                        <td>Cremation</td>
-                        <td>01/01/16</td>
-                        <td>9:00-11:00 AM</td>
-                    </tr>
-                    <tr>
-                        <td>Cremation</td>
-                        <td>01/01/16</td>
-                        <td>9:00-11:00 AM</td>
-                    </tr>
-                    <tr>
-                        <td>Cremation</td>
-                        <td>01/01/16</td>
-                        <td>9:00-11:00 AM</td>
-                    </tr><tr>
-                        <td>Cremation</td>
-                        <td>01/01/16</td>
-                        <td>9:00-11:00 AM</td>
-                    </tr>
-                    <tr>
-                        <td>Cremation</td>
-                        <td>01/01/16</td>
-                        <td>9:00-11:00 AM</td>
-                    </tr>
-                    <tr>
-                        <td>Cremation</td>
-                        <td>01/01/16</td>
-                        <td>9:00-11:00 AM</td>
-                    </tr>
-                    <tr>
-                        <td>Cremation</td>
-                        <td>01/01/16</td>
-                        <td>9:00-11:00 AM</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
     </div>
-    </div>
-
-    </div>
-</form>
+</div>
 <footer class="page-footer" style = "background-color: #ffa000;">
     <div class="container">
         <div class="row">

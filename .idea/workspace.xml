@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dd7de87f-0dc6-4bd5-9494-5163b436739e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/columbarium-web/WebContent/Forms/Customer.html" afterPath="$PROJECT_DIR$/columbarium-web/WebContent/Forms/Customer.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/columbarium-web/WebContent/js/index.js" afterPath="$PROJECT_DIR$/columbarium-web/WebContent/js/index.js" />
-    </list>
+    <list default="true" id="dd7de87f-0dc6-4bd5-9494-5163b436739e" name="Default" comment="" />
     <ignored path="columbarium-management.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -26,126 +22,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Building_Maintenance.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/columbarium-web/WebContent/Forms/Building_Maintenance.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="156" column="19" selection-start-line="156" selection-start-column="19" selection-end-line="156" selection-end-column="19" />
-              <folding>
-                <element signature="n#style#0;n#span#0;n#label#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#label#0;n#div#1;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#div#1;n#div#1;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#form#1;n#div#1;n#div#1;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#label#0;n#div#0;n#div#0;n#form#1;n#div#1;n#div#1;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#label#0;n#div#1;n#div#0;n#form#1;n#div#1;n#div#1;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#0;n#div#1;n#form#1;n#div#1;n#div#1;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#form#0;n#div#1;n#div#2;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#1;n#div#1;n#form#0;n#div#1;n#div#2;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#3;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#nav#0;n#div#0;n#div#0;n#div#3;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#nav#0;n#div#0;n#div#0;n#div#3;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#3;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#table#0;n#div#1;n#div#3;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Collection_Transaction.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/columbarium-web/WebContent/Forms/Collection_Transaction.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="123" column="26" selection-start-line="123" selection-start-column="26" selection-end-line="123" selection-end-column="26" />
-              <folding>
-                <element signature="n#style#0;n#div#1;n#div#0;n#form#0;n#div#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#label#0;n#div#1;n#div#1;n#div#0;n#form#0;n#div#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#label#0;n#div#0;n#div#0;n#div#2;n#div#0;n#form#0;n#div#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#label#0;n#div#1;n#div#0;n#div#2;n#div#0;n#form#0;n#div#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#label#0;n#div#2;n#div#0;n#div#2;n#div#0;n#form#0;n#div#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#label#0;n#div#0;n#div#0;n#form#0;n#div#0;n#form#0;n#div#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#label#0;n#div#1;n#div#0;n#form#0;n#div#0;n#form#0;n#div#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#1;n#div#0;n#form#0;n#div#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#h4#0;n#div#0;n#div#1;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="building-maintenance.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/columbarium-web/WebContent/tiles/building-maintenance.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.461538">
-              <caret line="96" column="18" selection-start-line="96" selection-start-column="18" selection-end-line="96" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Customer.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Customer.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/columbarium-web/WebContent/Forms/Customer.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.807693">
-              <caret line="63" column="56" selection-start-line="63" selection-start-column="56" selection-end-line="63" selection-end-column="56" />
+            <state vertical-scroll-proportion="0.54745764">
+              <caret line="22" column="53" selection-start-line="22" selection-start-column="53" selection-end-line="22" selection-end-column="53" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/columbarium-web/WebContent/js/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6909091">
-              <caret line="196" column="40" selection-start-line="196" selection-start-column="40" selection-end-line="196" selection-end-column="40" />
-              <folding>
-                <marker date="1456715226196" expanded="true" signature="5729:6035" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="navigation.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/columbarium-web/WebContent/tiles/navigation.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="63" column="61" selection-start-line="63" selection-start-column="61" selection-end-line="63" selection-end-column="61" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Collection_Report.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/columbarium-web/WebContent/Forms/Collection_Report.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="97" column="37" selection-start-line="97" selection-start-column="37" selection-end-line="97" selection-end-column="37" />
-              <folding>
-                <element signature="n#style#0;n#h4#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Reservation_Report.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/columbarium-web/WebContent/Forms/Reservation_Report.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Reservation_Transaction.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/columbarium-web/WebContent/css/Reservation_Transaction.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="18" column="1" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -239,7 +125,7 @@
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="height" value="754" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -266,7 +152,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -385,8 +271,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -722,13 +608,6 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
-      <TestRunner />
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
-      <method />
-    </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -867,14 +746,15 @@
       <workItem from="1456545313188" duration="1443000" />
       <workItem from="1456547802784" duration="15672000" />
       <workItem from="1456714026710" duration="1185000" />
+      <workItem from="1456674821753" duration="699000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="225333000" />
+    <option name="totallyTimeSpent" value="226032000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -917,6 +797,34 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/columbarium-web/WebContent/css/Reservation_Transaction.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="1" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+          <folding>
+            <marker date="1456650395242" expanded="true" signature="11:91" placeholder="{...}" />
+            <marker date="1456650395242" expanded="true" signature="99:163" placeholder="{...}" />
+            <marker date="1456650395242" expanded="true" signature="167:225" placeholder="{...}" />
+            <marker date="1456650395242" expanded="true" signature="242:324" placeholder="{...}" />
+            <marker date="1456650395242" expanded="true" signature="329:356" placeholder="{...}" />
+            <marker date="1456650395242" expanded="true" signature="360:439" placeholder="{...}" />
+            <marker date="1456650395242" expanded="true" signature="444:522" placeholder="{...}" />
+            <marker date="1456650395242" expanded="true" signature="527:605" placeholder="{...}" />
+            <marker date="1456650395242" expanded="true" signature="609:666" placeholder="{...}" />
+            <marker date="1456650395242" expanded="true" signature="685:763" placeholder="{...}" />
+            <marker date="1456650395242" expanded="true" signature="782:808" placeholder="{...}" />
+            <marker date="1456650395242" expanded="true" signature="919:949" placeholder="{...}" />
+            <marker date="1456650395242" expanded="true" signature="1266:1318" placeholder="{...}" />
+            <marker date="1456650395242" expanded="true" signature="1331:1449" placeholder="{...}" />
+            <marker date="1456650395242" expanded="true" signature="1453:1528" placeholder="{...}" />
+            <marker date="1456650395242" expanded="true" signature="1544:1638" placeholder="{...}" />
+            <marker date="1456650395242" expanded="true" signature="1648:1689" placeholder="{...}" />
+            <marker date="1456650395242" expanded="true" signature="1776:1828" placeholder="{...}" />
+            <marker date="1456650395242" expanded="true" signature="1912:2036" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/columbarium-web/WebContent/Forms/Blocks_Maintenance.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1027,13 +935,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3224138">
           <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/columbarium-web/WebContent/css/CustomerCSS.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.029310346">
-          <caret line="83" column="88" selection-start-line="83" selection-start-column="88" selection-end-line="83" selection-end-column="88" />
         </state>
       </provider>
     </entry>
@@ -1193,8 +1094,28 @@
     <entry file="file://$PROJECT_DIR$/columbarium-web/WebContent/css/Reservation_Transaction.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="1" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
-          <folding />
+          <caret line="27" column="1" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
+          <folding>
+            <marker date="1456650395242" expanded="true" signature="11:91" placeholder="{...}" />
+            <marker date="1456650395242" expanded="true" signature="99:163" placeholder="{...}" />
+            <marker date="1456650395242" expanded="true" signature="167:225" placeholder="{...}" />
+            <marker date="1456650395242" expanded="true" signature="242:324" placeholder="{...}" />
+            <marker date="1456650395242" expanded="true" signature="329:356" placeholder="{...}" />
+            <marker date="1456650395242" expanded="true" signature="360:439" placeholder="{...}" />
+            <marker date="1456650395242" expanded="true" signature="444:522" placeholder="{...}" />
+            <marker date="1456650395242" expanded="true" signature="527:605" placeholder="{...}" />
+            <marker date="1456650395242" expanded="true" signature="609:666" placeholder="{...}" />
+            <marker date="1456650395242" expanded="true" signature="685:763" placeholder="{...}" />
+            <marker date="1456650395242" expanded="true" signature="782:808" placeholder="{...}" />
+            <marker date="1456650395242" expanded="true" signature="919:949" placeholder="{...}" />
+            <marker date="1456650395242" expanded="true" signature="1266:1318" placeholder="{...}" />
+            <marker date="1456650395242" expanded="true" signature="1331:1449" placeholder="{...}" />
+            <marker date="1456650395242" expanded="true" signature="1453:1528" placeholder="{...}" />
+            <marker date="1456650395242" expanded="true" signature="1544:1638" placeholder="{...}" />
+            <marker date="1456650395242" expanded="true" signature="1648:1689" placeholder="{...}" />
+            <marker date="1456650395242" expanded="true" signature="1776:1828" placeholder="{...}" />
+            <marker date="1456650395242" expanded="true" signature="1912:2036" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1254,16 +1175,8 @@
     <entry file="file://$PROJECT_DIR$/columbarium-web/WebContent/Forms/Collection_Transaction.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="123" column="26" selection-start-line="123" selection-start-column="26" selection-end-line="123" selection-end-column="26" />
+          <caret line="128" column="26" selection-start-line="128" selection-start-column="26" selection-end-line="128" selection-end-column="26" />
           <folding>
-            <element signature="n#style#0;n#div#1;n#div#0;n#form#0;n#div#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#label#0;n#div#1;n#div#1;n#div#0;n#form#0;n#div#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#label#0;n#div#0;n#div#0;n#div#2;n#div#0;n#form#0;n#div#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#label#0;n#div#1;n#div#0;n#div#2;n#div#0;n#form#0;n#div#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#label#0;n#div#2;n#div#0;n#div#2;n#div#0;n#form#0;n#div#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#label#0;n#div#0;n#div#0;n#form#0;n#div#0;n#form#0;n#div#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#label#0;n#div#1;n#div#0;n#form#0;n#div#0;n#form#0;n#div#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#1;n#div#0;n#form#0;n#div#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#h4#0;n#div#0;n#div#1;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
@@ -1287,30 +1200,74 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/columbarium-web/WebContent/tiles/building-maintenance.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.461538">
+        <state vertical-scroll-proportion="0.0">
           <caret line="96" column="18" selection-start-line="96" selection-start-column="18" selection-end-line="96" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/columbarium-web/WebContent/Forms/Customer.html">
+    <entry file="file://$PROJECT_DIR$/columbarium-web/WebContent/css/CustomerCSS.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.807693">
-          <caret line="63" column="56" selection-start-line="63" selection-start-column="56" selection-end-line="63" selection-end-column="56" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.049152542">
+          <caret line="288" column="0" selection-start-line="288" selection-start-column="0" selection-end-line="298" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/columbarium-web/WebContent/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6909091">
-          <caret line="196" column="40" selection-start-line="196" selection-start-column="40" selection-end-line="196" selection-end-column="40" />
+        <state vertical-scroll-proportion="0.6915584">
+          <caret line="198" column="23" selection-start-line="198" selection-start-column="23" selection-end-line="198" selection-end-column="23" />
           <folding>
-            <marker date="1456715226196" expanded="true" signature="5729:6035" placeholder="..." />
+            <marker date="1456657857168" expanded="true" signature="81:4958" placeholder="{...}" />
+            <marker date="1456657857168" expanded="true" signature="143:294" placeholder="{...}" />
+            <marker date="1456657857168" expanded="true" signature="302:354" placeholder="/*...*/" />
+            <marker date="1456657857168" expanded="true" signature="394:505" placeholder="{&quot;renderer&quot;: 'material'...}" />
+            <marker date="1456657857168" expanded="true" signature="513:545" placeholder="/*...*/" />
+            <marker date="1456657857168" expanded="true" signature="582:717" placeholder="{&quot;sWrapper&quot;: &quot;dataTables_wrapper&quot;...}" />
+            <marker date="1456657857168" expanded="true" signature="725:763" placeholder="/*...*/" />
+            <marker date="1456657857168" expanded="true" signature="865:3981" placeholder="{...}" />
+            <marker date="1456657857168" expanded="true" signature="1092:3289" placeholder="{...}" />
+            <marker date="1456657857168" expanded="true" signature="1167:1327" placeholder="{...}" />
+            <marker date="1456657857168" expanded="true" signature="1386:3281" placeholder="{...}" />
+            <marker date="1456657857168" expanded="true" signature="1453:1505" placeholder="{...}" />
+            <marker date="1456657857168" expanded="true" signature="1511:3271" placeholder="{...}" />
+            <marker date="1456657857168" expanded="true" signature="1598:2437" placeholder="{...}" />
+            <marker date="1456657857168" expanded="true" signature="2467:3259" placeholder="{...}" />
+            <marker date="1456657857168" expanded="true" signature="2500:2700" placeholder="{...}" />
+            <marker date="1456657857168" expanded="true" signature="2737:2962" placeholder="{&quot;href&quot;: '#'...}" />
+            <marker date="1456657857168" expanded="true" signature="3132:3188" placeholder="{...}" />
+            <marker date="1456657857168" expanded="true" signature="3298:3400" placeholder="//..." />
+            <marker date="1456657857168" expanded="true" signature="3432:3741" placeholder="{...}" />
+            <marker date="1456657857168" expanded="true" signature="3442:3672" placeholder="//..." />
+            <marker date="1456657857168" expanded="true" signature="3902:3975" placeholder="{...}" />
+            <marker date="1456657857168" expanded="true" signature="3988:4072" placeholder="/*...*/" />
+            <marker date="1456657857168" expanded="true" signature="4103:4953" placeholder="{...}" />
+            <marker date="1456657857168" expanded="true" signature="4238:4697" placeholder="{&quot;container&quot;: &quot;DTTT btn-group&quot;...}" />
+            <marker date="1456657857168" expanded="true" signature="4298:4381" placeholder="{&quot;normal&quot;: &quot;btn btn-default&quot;...}" />
+            <marker date="1456657857168" expanded="true" signature="4405:4566" placeholder="{&quot;container&quot;: &quot;DTTT_dropdown dropdown-menu&quot;...}" />
+            <marker date="1456657857168" expanded="true" signature="4482:4556" placeholder="{&quot;normal&quot;: &quot;&quot;...}" />
+            <marker date="1456657857168" expanded="true" signature="4585:4632" placeholder="{&quot;info&quot;: &quot;DTTT_print_info&quot;...}" />
+            <marker date="1456657857168" expanded="true" signature="4652:4689" placeholder="{&quot;row&quot;: &quot;active&quot;...}" />
+            <marker date="1456657857168" expanded="true" signature="4824:4945" placeholder="{...}" />
+            <marker date="1456657857168" expanded="true" signature="4848:4937" placeholder="{&quot;container&quot;: &quot;ul&quot;...}" />
+            <marker date="1456657857168" expanded="true" signature="5064:5116" placeholder="{...}" />
+            <marker date="1456657857168" expanded="true" signature="5155:5236" placeholder="{...}" />
+            <marker date="1456657857168" expanded="true" signature="5254:5376" placeholder="{...}" />
+            <marker date="1456657857168" expanded="true" signature="5430:5467" placeholder="{...}" />
+            <marker date="1456657857168" expanded="true" signature="5460:5467" placeholder="{&quot;bAutoWidth&quot;: false...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/columbarium-web/WebContent/Forms/Customer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.54745764">
+          <caret line="22" column="53" selection-start-line="22" selection-start-column="53" selection-end-line="22" selection-end-column="53" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

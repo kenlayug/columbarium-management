@@ -12,7 +12,7 @@
 .h{
     visibility: hidden;
 }
-.modal-trigger, .dropdown-button {
+.dropdown-button {
     margin: 0;
     width: 100%;
     padding: 0;
@@ -38,10 +38,6 @@
     color: #ffffff;
     text-shadow: 2px 2px #000000;
 }
-label{
-    font-size: large;
-    font-family:  myFirstFont;
-}
 form{
     margin-top: 20px;
 }
@@ -59,54 +55,6 @@ h4{
     color: #ffffff;
     font-size: xx-large;
     padding-left: 15px;
-}
-#iba tr th{
-    font-size: medium;
-    color: #000000;
-    font-family:  myFirstFont;
-    text-align: center;
-}
-#data tr td{
-    text-align: center;
-}
-tbody tr th{
-    text-align: center;
-}
-.jan{
-    margin-right: 20px;
-}
-.feb{
-    margin-left: 20px;
-}
-.march{
-    margin-right: 20px;
-}
-.april{
-    margin-left: 20px;
-}
-.may{
-    margin-right: 35px;
-}
-.june{
-    margin-left: 40px;
-}
-.july{
-    margin-right: 35px;
-}
-.aug{
-    margin-left: 40px;
-}
-.sep{
-    margin-right: 35px;
-}
-.octo{
-    margin-left: 40px;
-}
-.nov{
-    margin-right: 35px;
-}
-.dec{
-    margin-left: 40px;
 }
 #btn-date{
     width: 100px;

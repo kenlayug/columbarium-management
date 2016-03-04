@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>At Need</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+
+    <script type="text/javascript" src="../js/Reservation_Transaction.js"></script>
+    <link rel = "stylesheet" href = "../css/Reservation_Transaction.css"/>
+    <link rel = "stylesheet" href = "../css/vaults.css"/>
+</head>
+<body>
+<div class="navbar-fixed nav-birdifly">
+    <div class="responsive">
+        <nav>
+            <div class="nav-wrapper">
+                <ul id="maintenance" class="dropdown-content">
+                    <li><a href='Inventory_Form.html' id="db-content"><span>INVENTORY</span></a></li>
+                    <li><a href='Services_Record_Form.html' id="db-content"><span>SERVICE</span></a></li>
+                    <li><a href='Package_Record_Form.html' id="db-content"><span>PACKAGE</span></a></li>
+                    <li><a href='Building_Record_Form.html' id="db-content"><span>BUILDING</span></a></li>
+                    <li><a href='Floor_Record_Form.html' id="db-content"><span>FLOOR</span></a></li>
+                    <li><a href='Blocks_Record_Form.html' id="db-content"><span>BLOCK</span></a></li>
+                    <li><a href="vaults.html" id="db-content"><span>VAULTS</span></a></li>
+                    <li><a class="last" href="FullBodyCrypts.html" id="db-content"><span>FULL BODY CRYPTS</span></a></li>
+                </ul>
+                <ul id="transaction" class="dropdown-content">
+                    <li><a href='Customer.html' id="db-content"><span>CUSTOMER</span></a></li>
+                    <li><a href='Reservation_Transaction.html' id="db-content"><span>RESERVATION</span></a></li>
+                    <li><a href='scheduling.html' id="db-content"><span>SCHEDULING</span></a></li>
+                    <li><a href='Collection_Transaction.html' id="db-content"><span>COLLECTION</span></a></li>
+                    <li><a class="last" href="UnitOwnership.html" id="db-content"><span>TRANSFERRING</span></a></li>
+                </ul>
+                <ul id="utilities" class="dropdown-content">
+                    <li><a class="last" href="Employee.html" id="db-content"><span>EMPLOYEE</span></a></li>
+                </ul>
+                <ul id="queries" class="dropdown-content">
+                    <li><a href='#' id="db-content"><span>PRODUCT</span></a></li>
+                    <li><a href="#" id="db-content"><span>EMPLOYEE</span></a></li>
+                    <li><a class="last" href="#" id="db-content"><span>CUSTOMER</span></a></li>
+                </ul>
+                <ul id="report" class="dropdown-content">
+                    <li><a href='Reservation-Report.html' id="db-content"><span>RESERVATION RECORD</span></a></li>
+                    <li><a href='scheduling-report.html' id="db-content"><span>SCHEDULING RECORD</span></a></li>
+                    <li><a href='Collection-Report.html' id="db-content"><span>COLLECTION RECORD</span></a></li>
+                    <li><a class="last" href="transferring-report.html" id="db-content"><span>TRANSFERRING RECORD</span></a></li>
+                </ul>
+                <nav>
+                    <div class="nav-wrapper">
+                        <a href="#!" class="brand-logo">Logo</a>
+                        <ul class="right hide-on-med-and-down">
+                            <li><a class="dropdown-button" href="#!" data-activates="maintenance" id="db-content">Maintenance<i class="material-icons right">arrow_drop_down</i></a></li>
+                            <li><a class="dropdown-button" href="#!" data-activates="transaction" id="db-content">Transaction<i class="material-icons right">arrow_drop_down</i></a></li>
+                            <li><a class="dropdown-button" href="#!" data-activates="queries" id="db-content">Queries<i class="material-icons right">arrow_drop_down</i></a></li>
+                            <li><a class="dropdown-button" href="#!" data-activates="report" id="db-content">Reports<i class="material-icons right">arrow_drop_down</i></a></li>
+                            <li><a class="dropdown-button" href="#!" data-activates="utilities" id="db-content">Utilities<i class="material-icons right">arrow_drop_down</i></a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </nav>
+    </div>
+</div>
+<div class = "col s12" >
+    <div class = "row">
+        <div class = "col s8" style="margin-top: 20px;">
+            <div class = "col s12">
+                <div class = "aside aside z-depth-3" style="height: auto !important;">
+                    <div class="modal-header">
+                        <label style="font-size: x-large">At Need Transaction</label>
+                    </div>
+                    <div id="unit" class="modal">
+                        <table style="width: 97%; margin-top: 0;">
+                            <tbody>
+                            <tr>
+                                <td><a class="waves-effect waves-light">J1</a></td>
+                                <td><a class="waves-effect waves-light">J2</a></td>
+                                <td><a class="waves-effect waves-light">J3</a></td>
+                                <td><a class="waves-effect waves-light">J4</a></td>
+                                <td><a class="waves-effect waves-light">J5</a></td>
+                                <td><a class="waves-effect waves-light">J6</a></td>
+                                <td><a class="waves-effect waves-light">J7</a></td>
+                                <td><a class="waves-effect waves-light">J8</a></td>
+                                <td><a class="waves-effect waves-light">J9</a></td>
+                                <td><a class="waves-effect waves-light">J10</a></td>
+                                <td><a class="waves-effect waves-light">J11</a></td>
+                                <td><a class="waves-effect waves-light">J12</a></td>
+                                <td><a class="waves-effect waves-light">J13</a></td>
+                                <td><a class="waves-effect waves-light">J14</a></td>
+                                <td><a class="waves-effect waves-light">J15</a></td>
+                            </tr>
+                            <tr>
+                                <td><a class="waves-effect waves-light">I1</a></td>
+                                <td><a class="waves-effect waves-light">I2</a></td>
+                                <td><a class="waves-effect waves-light">I3</a></td>
+                                <td><a class="waves-effect waves-light">I4</a></td>
+                                <td><a class="waves-effect waves-light">I5</a></td>
+                                <td><a class="waves-effect waves-light">I6</a></td>
+                                <td><a class="waves-effect waves-light">I7</a></td>
+                                <td><a class="waves-effect waves-light">I8</a></td>
+                                <td><a class="waves-effect waves-light">I9</a></td>
+                                <td><a class="waves-effect waves-light">I10</a></td>
+                                <td><a class="waves-effect waves-light">I11</a></td>
+                                <td><a class="waves-effect waves-light">I12</a></td>
+                                <td><a class="waves-effect waves-light">I13</a></td>
+                                <td><a class="waves-effect waves-light">I14</a></td>
+                                <td><a class="waves-effect waves-light">I15</a></td>
+                            </tr>
+                            <tr>
+                                <td><a class="waves-effect waves-light">H1</a></td>
+                                <td><a class="waves-effect waves-light">H2</a></td>
+                                <td><a class="waves-effect waves-light">H3</a></td>
+                                <td><a class="waves-effect waves-light">H4</a></td>
+                                <td><a class="waves-effect waves-light">H5</a></td>
+                                <td><a class="waves-effect waves-light">H6</a></td>
+                                <td><a class="waves-effect waves-light">H7</a></td>
+                                <td><a class="waves-effect waves-light">H8</a></td>
+                                <td><a class="waves-effect waves-light">H9</a></td>
+                                <td><a class="waves-effect waves-light">H10</a></td>
+                                <td><a class="waves-effect waves-light">H11</a></td>
+                                <td><a class="waves-effect waves-light">H12</a></td>
+                                <td><a class="waves-effect waves-light">H13</a></td>
+                                <td><a class="waves-effect waves-light">H14</a></td>
+                                <td><a class="waves-effect waves-light">H15</a></td>
+                            </tr>
+                            <tr>
+                                <td><a class="waves-effect waves-light">G1</a></td>
+                                <td><a class="waves-effect waves-light">G2</a></td>
+                                <td><a class="waves-effect waves-light">G3</a></td>
+                                <td><a class="waves-effect waves-light">G4</a></td>
+                                <td><a class="waves-effect waves-light">G5</a></td>
+                                <td><a class="waves-effect waves-light">G6</a></td>
+                                <td><a class="waves-effect waves-light">G7</a></td>
+                                <td><a class="waves-effect waves-light">G8</a></td>
+                                <td><a class="waves-effect waves-light">G9</a></td>
+                                <td><a class="waves-effect waves-light">G10</a></td>
+                                <td><a class="waves-effect waves-light">G11</a></td>
+                                <td><a class="waves-effect waves-light">G12</a></td>
+                                <td><a class="waves-effect waves-light">G13</a></td>
+                                <td><a class="waves-effect waves-light">G14</a></td>
+                                <td><a class="waves-effect waves-light">G15</a></td>
+                            </tr>
+                            <tr>
+                                <td><a class="waves-effect waves-light">F1</a></td>
+                                <td><a class="waves-effect waves-light">F2</a></td>
+                                <td><a class="waves-effect waves-light">F3</a></td>
+                                <td><a class="waves-effect waves-light">F4</a></td>
+                                <td><a class="waves-effect waves-light">F5</a></td>
+                                <td><a class="waves-effect waves-light">F6</a></td>
+                                <td><a class="waves-effect waves-light">F7</a></td>
+                                <td><a class="waves-effect waves-light">F8</a></td>
+                                <td><a class="waves-effect waves-light">F9</a></td>
+                                <td><a class="waves-effect waves-light">F10</a></td>
+                                <td><a class="waves-effect waves-light">F11</a></td>
+                                <td><a class="waves-effect waves-light">F12</a></td>
+                                <td><a class="waves-effect waves-light">F13</a></td>
+                                <td><a class="waves-effect waves-light">F14</a></td>
+                                <td><a class="waves-effect waves-light">F15</a></td>
+                            </tr>
+                            <tr>
+                                <td><a class="waves-effect waves-light">E1</a></td>
+                                <td><a class="waves-effect waves-light">E2</a></td>
+                                <td><a class="waves-effect waves-light">E3</a></td>
+                                <td><a class="waves-effect waves-light">E4</a></td>
+                                <td><a class="waves-effect waves-light">E5</a></td>
+                                <td><a class="waves-effect waves-light">E6</a></td>
+                                <td><a class="waves-effect waves-light">E7</a></td>
+                                <td><a class="waves-effect waves-light">E8</a></td>
+                                <td><a class="waves-effect waves-light">E9</a></td>
+                                <td><a class="waves-effect waves-light">E10</a></td>
+                                <td><a class="waves-effect waves-light">E11</a></td>
+                                <td><a class="waves-effect waves-light">E12</a></td>
+                                <td><a class="waves-effect waves-light">E13</a></td>
+                                <td><a class="waves-effect waves-light">E14</a></td>
+                                <td><a class="waves-effect waves-light">E15</a></td>
+                            </tr>
+                            <tr>
+                                <td><a class="waves-effect waves-light">D1</a></td>
+                                <td><a class="waves-effect waves-light">D2</a></td>
+                                <td><a class="waves-effect waves-light">D3</a></td>
+                                <td><a class="waves-effect waves-light">D4</a></td>
+                                <td><a class="waves-effect waves-light">D5</a></td>
+                                <td><a class="waves-effect waves-light">D6</a></td>
+                                <td><a class="waves-effect waves-light">D7</a></td>
+                                <td><a class="waves-effect waves-light">D8</a></td>
+                                <td><a class="waves-effect waves-light">D9</a></td>
+                                <td><a class="waves-effect waves-light">D10</a></td>
+                                <td><a class="waves-effect waves-light">D11</a></td>
+                                <td><a class="waves-effect waves-light">D12</a></td>
+                                <td><a class="waves-effect waves-light">D13</a></td>
+                                <td><a class="waves-effect waves-light">D14</a></td>
+                                <td><a class="waves-effect waves-light">D15</a></td>
+                            </tr>
+                            <tr>
+                                <td><a class="waves-effect waves-light">C1</a></td>
+                                <td><a class="waves-effect waves-light">C2</a></td>
+                                <td><a class="waves-effect waves-light">C3</a></td>
+                                <td><a class="waves-effect waves-light">C4</a></td>
+                                <td><a class="waves-effect waves-light">C5</a></td>
+                                <td><a class="waves-effect waves-light">C6</a></td>
+                                <td><a class="waves-effect waves-light">C7</a></td>
+                                <td><a class="waves-effect waves-light">C8</a></td>
+                                <td><a class="waves-effect waves-light">C9</a></td>
+                                <td><a class="waves-effect waves-light">C10</a></td>
+                                <td><a class="waves-effect waves-light">C11</a></td>
+                                <td><a class="waves-effect waves-light">C12</a></td>
+                                <td><a class="waves-effect waves-light">C13</a></td>
+                                <td><a class="waves-effect waves-light">C14</a></td>
+                                <td><a class="waves-effect waves-light">C15</a></td>
+                            </tr>
+                            <tr>
+                                <td><a class="waves-effect waves-light">B1</a></td>
+                                <td><a class="waves-effect waves-light">B2</a></td>
+                                <td><a class="waves-effect waves-light">B3</a></td>
+                                <td><a class="waves-effect waves-light">B4</a></td>
+                                <td><a class="waves-effect waves-light">B5</a></td>
+                                <td><a class="waves-effect waves-light">B6</a></td>
+                                <td><a class="waves-effect waves-light">B7</a></td>
+                                <td><a class="waves-effect waves-light">B8</a></td>
+                                <td><a class="waves-effect waves-light">B9</a></td>
+                                <td><a class="waves-effect waves-light">B10</a></td>
+                                <td><a class="waves-effect waves-light">B11</a></td>
+                                <td><a class="waves-effect waves-light">B12</a></td>
+                                <td><a class="waves-effect waves-light">B13</a></td>
+                                <td><a class="waves-effect waves-light">B14</a></td>
+                                <td><a class="waves-effect waves-light">B15</a></td>
+                            </tr>
+                            <tr>
+                                <td><a class="waves-effect waves-light">A1</a></td>
+                                <td><a class="waves-effect waves-light">A2</a></td>
+                                <td><a class="waves-effect waves-light">A3</a></td>
+                                <td><a class="waves-effect waves-light">A4</a></td>
+                                <td><a class="waves-effect waves-light">A5</a></td>
+                                <td><a class="waves-effect waves-light">A6</a></td>
+                                <td><a class="waves-effect waves-light">A7</a></td>
+                                <td><a class="waves-effect waves-light">A8</a></td>
+                                <td><a class="waves-effect waves-light">A9</a></td>
+                                <td><a class="waves-effect waves-light">A10</a></td>
+                                <td><a class="waves-effect waves-light">A11</a></td>
+                                <td><a class="waves-effect waves-light">A12</a></td>
+                                <td><a class="waves-effect waves-light">A13</a></td>
+                                <td><a class="waves-effect waves-light">A14</a></td>
+                                <td><a class="waves-effect waves-light">A15</a></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <form action="inventory.html" method="post">
+                        <div id="new" class="modal">
+                            <div class="modal-header">
+                                <label style="font-size: large">Add New Customer</label>
+                            </div>
+                            <form class="cmxform" id="ownershipForm" action="inventory.html" method="get" autocomplete="off">
+                                <div class="row">
+                                    <div class="input-field col s1">
+                                        <label>Name:</label>
+                                    </div>
+                                    <div class="input-field col s3">
+                                        <input id="fname" type="text" required="" aria-required="true" class="validate">
+                                        <label for="fname">First Name</label>
+                                    </div>
+                                    <div class="input-field col s3">
+                                        <input id="mname" type="text">
+                                        <label for="mname">Middle Name</label>
+                                    </div>
+                                    <div class="input-field col s3">
+                                        <input id="lname" type="text" required="" aria-required="true" class="validate">
+                                        <label for="lname">Last Name</label>
+                                    </div>
+                                </div>
+                                <div class="right row">
+                                    <div class="input-field col s12">
+                                        <button name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; margin-right: 10px">Save</button>
+                                        <button name = "action" class="waves-effect waves-light btn red">Cancel</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s2">
+                                <label>Name:</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input name="cname" id="cname" type="text" required="" aria-required="true" data-error="No Customer Name Found!" class="validate" list="nameList">
+                                <label for="cname" data-error="No Existing Customer Found!">Customer Name</label>
+                            </div>
+                            <div class="input-field col s2">
+                                <a class="waves-effect waves-light btn red modal-trigger" href="#new">New</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s2">
+                                <label>Unit Type:</label>
+                            </div>
+                            <div class="input-field col s9" style="font-family: none">
+                                <p>
+                                    <input name="group11" type="radio" id="test11" checked="checked"/>
+                                    <label for="test11" style="font-family: Arial">Full Body Crypts</label>
+                                    <input name="group11" type="radio" id="test21" />
+                                    <label for="test21" style="font-family: Arial">Columbary Vault</label>
+                                </p>
+                            </div>
+                            <div class="input-field col s2">
+                                <label>Building Name:</label>
+                            </div>
+                            <div class = "col s4" style = "padding-left: 20px;">
+                                <select>
+                                    <option value="" disabled selected> Select Building Name:</option>
+                                    <option value="1">Building A</option>
+                                    <option value="2">Building B</option>
+                                    <option value="3">Building C</option>
+                                </select>
+                            </div>
+                            <div class="input-field col s2">
+                                <label>Floor No:</label>
+                            </div>
+                            <div class = "col s4" style = "padding-left: 20px;">
+                                <select>
+                                    <option value="" disabled selected> Select Floor No:</option>
+                                    <option value="1">Floor 1</option>
+                                    <option value="2">Floor 2</option>
+                                    <option value="3">Floor 3</option>
+                                </select>
+                            </div>
+                            <div class="input-field col s2">
+                                <label>Block Name:</label>
+                            </div>
+                            <div class = "col s4" style = "padding-left: 20px;">
+                                <select>
+                                    <option value="" disabled selected> Select Block Name:</option>
+                                    <option value="1">Block A</option>
+                                    <option value="2">Block B</option>
+                                    <option value="3">Block C</option>
+                                </select>
+                            </div>
+                            <div class="input-field col s3">
+                                <label>Check Available Unit</label>
+                            </div>
+                            <div class="input-field col s3">
+                                <a class="waves-effect waves-light btn red modal-trigger" href="#unit">Unit</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s2">
+                                <label>Unit Code:</label>
+                            </div>
+                            <div class="input-field col s2">
+                                <input name="uCode" id="uCode" type="text" required="" aria-required="true" class="validate" list="uCodeList" length="3">
+                                <label for="uCode" data-error="No Unit Found!">Code</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class = "col s4" style = "padding-left: 20px;">
+                                <legend>Unit Info:</legend>
+                                <label>Unit Building: <span style="color: green">BuildingA</span></label><br>
+                                <label>Unit Floor: <span style="color: green">Floor2</span></label><br>
+                                <label>Unit Block: <span style="color: green">BlockC</span></label><br>
+                                <label>Unit Code: <span style="color: green">E11</span></label><br>
+                                <label>Unit Price: <span style="color: green">P54,000</span></label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="right modal-footer" style="margin-top: 30px;margin-bottom: 10px;">
+                                <button name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; margin-right: 10px">Confirm</button>
+                                <button name = "action" class="waves-effect waves-light btn red" style="margin-right: 10px;">Cancel</button>
+                            </div>
+                        </div>
+                        <datalist id="nameList">
+                            <option value="Monkey D. Luffy">
+                            <option value="Roronoa Zoro">
+                            <option value="Vinsmoke Sanji">
+                            <option value="Tony Tony Chopper">
+                            <option value="Nico Robin">
+                        </datalist>
+                        <datalist id="uCOdeList">
+                            <option value="A1">
+                            <option value="B1">
+                            <option value="C3">
+                            <option value="D1">
+                            <option value="E2">
+                        </datalist>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="page-footer" style = "background-color: #ffa000;">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <h5 class="white-text">Footer Content</h5>
+                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            © 2014 Copyright Text
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
