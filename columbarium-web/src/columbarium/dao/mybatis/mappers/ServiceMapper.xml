@@ -67,7 +67,7 @@
 					<when test="serviceId != 0">
 						AND serviceId = #{serviceId}
 					</when>
-					<when test="strServiceName != null">
+					<when test="serviceId == 0">
 						AND strServiceName LIKE #{strServiceName}
 					</when>
 				</choose>

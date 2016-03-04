@@ -35,6 +35,7 @@ public class UpdateServiceAction implements Action{
 	public String execute() throws Exception {
 		// TODO Auto-generated method stub
 		Service service = Service.searchService(getStrServiceName());
+		System.out.println(strServiceName);
 		getService().setServiceId(service.getServiceId());
 		getService().setRequirementList(service.getRequirementList());
 		strStatus = getService().update();

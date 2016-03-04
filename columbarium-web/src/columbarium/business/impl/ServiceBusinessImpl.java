@@ -25,10 +25,6 @@ public class ServiceBusinessImpl implements ServiceBusiness{
 				service.getStrServiceName() == null){
 			return "input";
 		}
-		if (service.getStrServiceDesc().length() == 0 ||
-				service.getStrServiceDesc() == null){
-			return "input";
-		}
 		if (Double.parseDouble(service.getDblPrice()) == 0){
 			return "input";
 		}

@@ -41,7 +41,7 @@ public class MybatisServiceRepositoryTest extends TestCase{
 				new MybatisServiceRepository(connectionManager);
 		
 		Service service = new Service();
-		service.setServiceId(13);
+		service.setStrServiceName("Cremation");
 		service = serviceRepository.searchService(service);
 		for (Requirement requirement : service.getRequirementList()) {
 			System.out.println(requirement.getStrRequirementName());
@@ -129,7 +129,7 @@ public class MybatisServiceRepositoryTest extends TestCase{
 		TestSuite suite = new TestSuite();
 		
 //		suite.addTest(new MybatisServiceRepositoryTest("testCreateService"));
-//		suite.addTest(new MybatisServiceRepositoryTest("testGetService"));
+		suite.addTest(new MybatisServiceRepositoryTest("testGetService"));
 //		suite.addTest(new MybatisServiceRepositoryTest("testUpdateService"));
 		suite.addTest(new MybatisServiceRepositoryTest("testGetAllService"));
 //		suite.addTest(new MybatisServiceRepositoryTest("testDeactivateService"));
