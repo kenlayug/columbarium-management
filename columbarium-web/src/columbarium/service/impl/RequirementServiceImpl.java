@@ -26,8 +26,8 @@ public class RequirementServiceImpl implements RequirementService{
 	}
 
 	@Override
-	public Requirement readRequirement(String strRequirementName) {
-		return requirementBusiness.readRequirement(strRequirementName);
+	public Requirement readRequirement(int requirementId) {
+		return requirementBusiness.readRequirement(requirementId);
 	}
 
 	@Override
@@ -36,8 +36,8 @@ public class RequirementServiceImpl implements RequirementService{
 	}
 
 	@Override
-	public String deactivateRequirement(String strRequirementName) {
-		return requirementBusiness.deactivateRequirement(strRequirementName);
+	public String deactivateRequirement(int requirementId) {
+		return requirementBusiness.deactivateRequirement(requirementId);
 	}
 
 	@Override

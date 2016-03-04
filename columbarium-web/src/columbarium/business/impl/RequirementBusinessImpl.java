@@ -34,18 +34,19 @@ public class RequirementBusinessImpl implements RequirementBusiness{
 	}
 
 	@Override
-	public String deactivateRequirement(String strRequirement) {
+	public String deactivateRequirement(int requirementId) {
 
-		Requirement requirement = new Requirement(strRequirement);
-		requirement.setRequirementId(requirementRepository.readRequirement(requirement).getRequirementId());
+		Requirement requirement = new Requirement();
+		requirement.setRequirementId(requirementId);
 		return requirementRepository.deactivateRequirement(requirement);
 		
 	}
 
 	@Override
-	public Requirement readRequirement(String strRequirementName) {
+	public Requirement readRequirement(int requirementId) {
 
-		Requirement requirement = new Requirement(strRequirementName);
+		Requirement requirement = new Requirement();
+		requirement.setRequirementId(requirementId);
 		return requirementRepository.readRequirement(requirement);
 		
 	}

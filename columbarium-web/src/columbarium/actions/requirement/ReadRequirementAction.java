@@ -10,6 +10,11 @@ public class ReadRequirementAction extends ActionSupport implements Action{
 	private static final long serialVersionUID = 1L;
 	private Requirement requirement;
 	private String strStatus;
+	private int requirementId;
+	
+	public void setRequirementId(int requirementId){
+		this.requirementId = requirementId;
+	}
 	
 	public String getStatus(){
 		return strStatus;
@@ -25,7 +30,7 @@ public class ReadRequirementAction extends ActionSupport implements Action{
 
 	public String execute(){
 		
-		getRequirement().read();
+		requirement = Requirement.read(requirementId);
 		if (getRequirement().getRequirementId() == 0){
 			strStatus = "failed-does-not-exist";
 		}

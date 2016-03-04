@@ -27,14 +27,14 @@
                         </div>
                         <div class="row" style = "padding-left: 10px;">
                             <div class="input-field col s12">
-                                <input id="requirementDesc" type="text" class="validate" required = "" aria-required = "true">
+                                <input id="requirementDesc" type="text" class="validate" >
                                 <label for="requirementDesc">Requirement Description</label>
                             </div>
                         </div>
 					
 						<i class = "left" style = "margin-bottom: 50px; padding-left: 20px; color: red;">*Required Fields</i>
 
-						<button type = "submit" name = "action" class="btn red right" style = "margin-right: 10px;">Create</button>
+						<button onclick="createRequirement()" type = "submit" name = "action" class="btn red right" style = "margin-right: 10px;">Create</button>
 	                </form>
 	
 	            </div>
@@ -45,19 +45,20 @@
 	            <div class = "modal-header">
 	                <h4>Update Requirement</h4>
 	            </div>
-	            <form class="modal-content">
+	            <form class="modal-content" id="formUpdate">
 	
 	                <div style = "padding-left: 10px;" id="formUpdate">
 	                <div class = "col s6">
 	                    <div class="input-field col s12">
-	                        <input id="requirementNameUpdate" type="text" class="validate" required = "" aria-required = "true">
+	                    	<input id="requirementToBeUpdated" type="hidden">
+	                        <input id="requirementNameUpdate" value=" " type="text" class="validate" required = "" aria-required = "true">
 	                        <label for="requirementNameUpdate">New Requirement Name<span style = "color: red;">*</span></label>
 	                    </div>
 	                </div>
 	
 	                <div class = "col s12">
 	                    <div class="input-field col s12">
-	                        <input id="requirementDescUpdate" type="text" class="validate">
+	                        <input id="requirementDescUpdate" value=" " type="text" class="validate">
 	                        <label for="requirementDescUpdate">New Requirement Description</label>
 	                    </div>
 	                </div>
@@ -82,9 +83,9 @@
 				<div class="modal-content">
 					<p style = "padding-left: 90px; font-size: 15px;">Are you sure you want to deactivate this item?</p>
 				</div>
-
+					<input id="requirementToBeDeactivated" type="hidden">
 				<div class="modal-footer">
-					<button onclick="deactivateItem()" name = "action" class="btn red" style = "margin-left: 10px; ">Confirm</button>
+					<button onclick="deactivateRequirement()" name = "action" class="btn red" style = "margin-left: 10px; ">Confirm</button>
 					<button class="btn red modal-close">Cancel</button>
 				</div>
 			</div>
@@ -201,8 +202,7 @@
 
 	function updateRequirement(){
 
-		alert("Here...");
-		var selectRequirementUpdate = document.getElementById("selectUpdateRequirement").value;
+		var selectRequirementUpdate = document.getElementById("requirementToBeUpdated").value;
 		var requirementNameUpdate = document.getElementById("requirementNameUpdate").value;
 		var requirementDescUpdate = document.getElementById("requirementDescUpdate").value;
 
@@ -216,23 +216,22 @@
 			},
 			dataType: "json",
 			success: function(data){
-				alert("updating...");
 				if (data.status === "success"){
-					alert("Requirement "+data.strRequirementName+" is successfully updated.");
+					Materialize.toast('Requirement is successfully updated.', 3000, 'rounded');
 					updateTable();
 	        		$("#modalUpdateRequirement").closeModal();
 	        		$("#requirementNameUpdate").val("");
 	        		$("#requirementDescUpdate").val("");
 				}else if (data.status === "failed-does-not-exist"){
-					alert("Requirement does not exist.");
+					Materialize.toast('Requirement does not exist.', 3000, 'rounded');
 				}else if (data.status === "failed-input"){
-					alert("Fill up anything first.");
+					Materialize.toast('Please check all your inputs.', 3000, 'rounded');
 				}else if (data.status === "failed-database"){
-					alert("error in database...");
+					Materialize.toast('Please check your connection.', 3000, 'rounded');
 				}
 			},
 			error: function(data){
-				alert("error");
+				Materialize.toast('Error occured.', 3000, 'rounded');
 			}
 		});
 
@@ -240,23 +239,29 @@
 
 	function deactivateRequirement(){
 
-		var deactivateRequirementName = document.getElementById("selectDeactivateRequirement").value;
-
+		var deactivateRequirementName = document.getElementById("requirementToBeDeactivated").value;
+		Materialize.toast(deactivateRequirementName, 3000, 'rounded');
 		$.ajax({
 			type: "POST",
 			url: "deactivate",
 			data: {
-				"strRequirementName" : deactivateRequirementName
+				"requirementId" : deactivateRequirementName
 			},
 			dataType: "json",
 			async: true,
 			success: function(data){
-				alert("Requirement "+data.strRequirementName+" is successfully deactivated.");
-				updateTable();
-        		$("#modalDeactivateRequirement").closeModal();
+				if (data.status === "success"){
+					Materialize.toast('Requirement is successfully deactivated.', 3000, 'rounded');
+					updateTable();
+	        		$("#modalDeactivateRequirement").closeModal();
+				}else if (data.status === "failed-does-not-exist"){
+					Materialize.toast('Requirement does not exist.', 3000, 'rounded');
+				}else if (data.status === "failed-database"){
+					Materialize.toast('Please check your connection.', 3000, 'rounded');
+				}
 			},
 			error: function(data){
-				alert("Error...");
+				Materialize.toast('Error occured.', 3000, 'rounded');
 			}
 		});
 
@@ -277,9 +282,8 @@
         		var requirementList = data.requirementList;
         	
         		$.each(requirementList, function(i, requirement){
-        			Materialize.toast(requirement.strRequirementName, 3000, 'rounded');
-        			var addButtons = "<button name = action class= 'modal-trigger btn-floating green' onclick = alert("+requirement.strRequirementName+") ><i class= material-icons >mode_edit</i></button>"+
-        			"<button name = action class= 'modal-trigger btn-floating red' onclick = openDeactivate('"+requirement.strRequirementName+"') ><i class= material-icons >delete</i></button></td>";
+        			var addButtons = "<button name = action class= 'modal-trigger btn-floating green' onclick = openUpdate(this.value) value = "+requirement.requirementId+" ><i class= material-icons >mode_edit</i></button>"+
+        			"<button name = action class= 'modal-trigger btn-floating red' onclick = openDeactivate(this.value) value = "+requirement.requirementId+" ><i class= material-icons >delete</i></button></td>";
         			
         			
         			table.row.add( [
@@ -298,18 +302,18 @@
 
 	}//updateTable
 	
-	function openUpdate(requirementName){
-		Materialize.toast(requirementName, 3000, 'rounded');
+	function openUpdate(requirementId){
+		
 		$.ajax({
 			type: "POST",
 			url: "read",
 			data: {
-				"strRequirementName" : requirementName
+				"requirementId" : requirementId
 			},
 			dataType: "json",
 			async: true,
 			success: function(data){
-				if (data.status === "success"){
+				if (data.requirement != null){
 
 					$('#modalUpdateRequirement').openModal();
 					$('#requirementToBeUpdated').val(data.requirement.strRequirementName);
@@ -323,6 +327,13 @@
 			}
 			
 		});
+		
+	}
+	
+	function openDeactivate(serviceId){
+
+		$('#requirementToBeDeactivated').val(serviceId);
+		$('#modalDeactivateRequirement').openModal();
 		
 	}
 	
