@@ -13,12 +13,14 @@
             <h2 style = "font-size: 30px; padding-left: 70px; margin-top: 0px; margin-bottom: 0px;">Service Maintenance</h2>
 
 		<!-- Modal Create -->
-		<div id="modalCreateService" class="modal">
-			<div class = "modal-header">
-				<h4 style = "padding-left: 20px;">Create Service</h4>
+		<div id="modalCreateService" class="modal" style = "width: 700px;">
+			<div class = "modal-header" style = "height: 55px;">
+				<h4 style = "padding-left: 20px; font-size: 30px;">Create Service</h4>
 			</div>
 			<div class="modal-content">
 
+				<button name = "action" class="modal-trigger waves-effect waves-light btn red left" style = "margin-left: 20px;" href = "#modalRequirement">Requirement</button>
+				<br><br>
 				<form class="row" style = "padding-left: 10px;" id="formCreate">
 					<div class="input-field col s6">
 						<input id="serviceName" type="text" class="validate" required = "" aria-required = "true" pattern = "[A-Za-z0-9\s]{1,29}">
@@ -35,26 +37,22 @@
 						<div class="input-field col s12">
 							<input id="serviceDesc" type="text" class="validate" pattern = "[A-Za-z0-9\s]{1,29}">
 							<label for="serviceDesc" data-error = "Check format field." data-success = "">Service Description</label>
+							<i class = "left" style = "margin-top: 20px; padding-left: 0px; color: red;">*Required Fields</i>
 						</div>
 					</div>
-
-					<button data-target = "modalRequirement" class="waves-effect waves-light modal-trigger red left" style = "margin-left: 20px; width: 180px; height: 35px; color: white; margin-bottom: 10px; font-size: 14px;"></i>CHOOSE REQUIREMENTS</button>
-					<br><br><br>
-					<i class = "left" style = "margin-bottom: 0px; padding-left: 20px; color: red;">*Required Fields</i>
-
 				</div>
-
 			</div>
+			<br>
 			<div class="modal-footer">
-				<button onclick="createService()" name="action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
-				<button name = "action" class="waves-effect waves-light btn red">Cancel</button>
+				<button onclick="createService()" name="action" class="waves-effect waves-light btn red" style = "margin-bottom: 20px; margin-left: 10px; margin-right: 20px;">Confirm</button>
+				<button name = "action" class="waves-effect waves-light modal-close btn red" style = "margin-left: 20px;">Cancel</button>
 			</div>
 		</div>
 
             <!-- Modal Requirements -->
-            <div id="modalRequirement" class="modal">
-                <div class = "modal-header">
-                    <h4>List of Requirements</h4>
+            <div id="modalRequirement" class="modal" style = "width: 600px;">
+                <div class = "modal-header" style = "height: 55px;">
+                    <h4 style = "font-size: 30px; padding-left: 20px;">List of Requirements</h4>
                 </div>
                 <div class="modal-content">
                         <div class = "col s12">
@@ -82,19 +80,20 @@
                                 </div>
                             </div>
                         </div>
-                        <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                        <br><br><br><br><br><br><br><br><br><br><br><br>
 
                 <div class="modal-footer">
                     <button onclick="$('#modalRequirement').closeModal()" name = "action" class="waves-effect waves-light btn red right" style = "margin-right: 0px; width: 130px;">CONFIRM</button>
+					<button name = "action" class="waves-effect waves-light modal-close btn red" style = "margin-right: 10px;">Cancel</button>
                 </div>
             </div>
         </div>
 
 
         <!-- Modal Update -->
-        <div id="modalUpdateService" class="modal">
-            <div class = "modal-header">
-                <h4 style = "padding-left: 40px;">Update Service</h4>
+        <div id="modalUpdateService" class="modal" style = "width: 600px;">
+            <div class = "modal-header" style = "height: 55px;">
+                <h4 style = "padding-left: 20px; font-size: 30px;">Update Service</h4>
             </div>
             <form class="modal-content" id="formUpdate">
 
@@ -122,7 +121,7 @@
                 </div>
 				<div class="modal-footer">
 					<button type = "submit" onclick="updateService()" name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
-					<button name = "action" class="modal-close waves-effect waves-light btn red" href = "Blocks_Maintenance.html">Cancel</button>
+					<button name = "action" class="waves-effect waves-light modal-close btn red">Cancel</button>
 				</div>
             </form>
 
@@ -130,17 +129,17 @@
 
 
         <!-- Modal Deactivate -->
-        <div id="modalDeactivateService" class="modal" style = "width: 600px;">
-            <div class = "modal-header">
-                <h4>Deactivate Service</h4>
+        <div id="modalDeactivateService" class="modal" style = "width: 400px;">
+            <div class = "modal-header" style = "height: 55px;">
+                <h4 style = "font-size: 30px; padding-left: 20px;">Deactivate Service</h4>
             </div>
             <div class="modal-content">
 				<input id="serviceToBeDeactivated" type="hidden">
 				<p style = "padding-left: 90px; font-size: 15px;">Are you sure you want to deactivate this service?</p>
             </div>
             <div class="modal-footer">
-                <button onclick="deactivateService()" name = "action" class="btn red" style = "margin-left: 10px; ">Confirm</button>
-                <button name = "action" class="modal-close btn red">Cancel</button>
+                <button onclick="deactivateService()" name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
+                <button name = "action" class="waves-effect waves-light modal-close btn red">Cancel</button>
             </div>
         </div>
 
@@ -153,7 +152,7 @@
 						<div class="table-header" style="background-color: #00897b;">
 							<h4 style = "font-size: 30px; color: white; padding-left: 0px;">Service Data Grid</h4>
 							<div class="actions">
-								<button name = "action" class="modal-trigger btn-floating yellow" style = "margin-right: 10px;" href = "#modalCreateService"><i class="material-icons">add</i></button>
+								<button name = "action" class="waves-effect waves-light modal-trigger btn-floating yellow" style = "margin-right: 10px;" href = "#modalCreateService"><i class="material-icons">add</i></button>
 								<a href="#" class="search-toggle waves-effect btn-flat nopadding"><i class="material-icons" style="color: #ffffff;">search</i></a>
 							</div>
 						</div>
