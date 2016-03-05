@@ -25,7 +25,7 @@
 	                        <div class = "row">
 	                        <div style = "padding-left: 10px;">
 	                            <div class="input-field col s6">
-	                                <input id="itemName" type="text" class="validate" name="item.strItemName" required = "" aria-required="true">
+	                                <input id="itemName" type="text" class="validate" name="item.strItemName" required = "" aria-required="true" length = "20">
 	                                <label for="itemName" data-error = "Invalid format." data-success = "">Item Name<span style = "color: red;">*</span></label>
 	                            </div>
 	                        </div>
@@ -45,7 +45,7 @@
 	                        </div>
 						<i class = "left" style = "margin-bottom: 0px; padding-left: 20px; color: red;">*Required Fields</i>
 	                	<br>
-						<button onClick = "saveButton()" type = "submit" name = "action" class="btn red right" style = "margin-right: 10px;">Create</button>
+						<button onClick = "createItem()" type = "submit" name = "action" class="btn red right" style = "margin-right: 10px;">Create</button>
 
 					</form>
 
@@ -55,13 +55,14 @@
 	        <!-- Modal Update -->
 	        <div id="modalUpdateItem" class="modal" style = "width: 700px;">
 	            <div class = "modal-header">
-	                <h4>Update Item</h4>
+	                <h4 style = "font-size: 30px;">Update Item</h4>
 	            </div>
 					<form id="formUpdate">
 		                <div class = "col s12">
 		                    <div class = "row">
 		                        <div style = "padding-left: 10px;">
 		                            <div class="input-field col s6">
+		                            	<input id="itemNameToBeUpdated" type="hidden"/>
 		                                <input value=" " id="itemNameUpdate" type="text" class="validate" name="item.strItemName" required = ""  pattern = "[A-Za-z0-9\s]{1,29}">
 		                                <label class="active" for="itemNameUpdate" data-error = "Invalid format." data-success = "">New Item Name<span style = "color: red;">*</span></label>
 		                            </div>
@@ -83,7 +84,7 @@
 	                    </div>
 
 					<i class = "left" style = "margin-bottom: 0px; padding-left: 30px; color: red;">*Required Fields</i>
-				<br>
+					<br>
 
 					<div class="modal-footer">
 							<button onclick="updateItem()" type="submit" name="action" class="btn red" style = "margin-top: 30px; margin-left: 10px; ">Confirm</button>
@@ -98,13 +99,14 @@
 			<!-- Modal Deactivate -->
 			<div id="modalDeactivateItem" class="modal" style = "width: 600px;">
 				<div class = "modal-header">
-					<h4>Deactivate Item</h4>
+					<h4 style = "font-size: 30px;">Deactivate Item</h4>
 				</div>
 				<div class="modal-content">
 					<p style = "padding-left: 90px; font-size: 15px;">Are you sure you want to deactivate this item?</p>
 				</div>
+				<input id="itemToBeDeactivated" type="hidden"/>
 				<div class="modal-footer">
-					<button name = "action" class="btn red" style = "margin-left: 10px; ">Confirm</button>
+					<button onclick = "deactivateItem()" name = "action" class="btn red" style = "margin-left: 10px; ">Confirm</button>
 					<button name = "action" class="btn red">Cancel</button>
 				</div>
 			</div>
@@ -151,7 +153,13 @@
 								<tbody>
 								
 									<c:if test="${itemList == null }">
-										<tr><td>No available items.</td></tr>
+										<tr>
+											<td>Item One</td>
+											<td>P 200</td>
+											<td>Item One</td>
+											<td><button name = "action" class="modal-trigger btn-floating green" onclick="openUpdate('${item.strItemName}')"><i class="material-icons">mode_edit</i></button>
+												<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateItem"><i class="material-icons">delete</i></button></td>
+										</tr>
 									</c:if>
 									
 									<c:if test="${itemList != null }">
@@ -199,72 +207,92 @@
 			var itemName = document.getElementById("itemName").value;
 			var itemPrice = document.getElementById("itemPrice").value;
 			var itemDesc = document.getElementById("itemDesc").value;
-		    $.ajax({
-		        type: "POST",
-		        url: "create",
-		        data: {
-		        	"item.strItemName" : itemName,
-		        	"item.dblPrice" : itemPrice,
-		        	"item.strItemDesc" : itemDesc
-		        },
-		       	dataType: "json",
-		        async: true,
-		        success: function(data){
-		        	if (data.status === "success"){
-		        		alert("Item "+data.item.strItemName+" created!");
-		        		$("#itemName").val("");
-		        		$("#itemPrice").val("");
-		        		$("#itemDesc").val("");
-		        		updateTable();
-		        	}
-		        },
-		        error: function(data){
-		        	
-		        	alert("Error!");
-		        }
-		    });
+			
+			if (itemName == null || itemName == " " || itemName == "" ||
+					itemPrice == 0 || itemPrice == null){
+				
+			}else{
+			
+			    $.ajax({
+			        type: "POST",
+			        url: "create",
+			        data: {
+			        	"item.strItemName" : itemName,
+			        	"item.dblPrice" : itemPrice,
+			        	"item.strItemDesc" : itemDesc
+			        },
+			       	dataType: "json",
+			        async: true,
+			        success: function(data){
+			        	if (data.status === "success"){
+			        		Materialize.toast('Item successfully saved.', 3000, 'rounded');
+			        		$("#itemName").val("");
+			        		$("#itemPrice").val("");
+			        		$("#itemDesc").val("");
+			        		updateTable();
+			        	}else if(data.status === "input"){
+			        		Materialize.toast('Check all your inputs.', 3000, 'rounded');
+			        	}else if(data.status === "failed-existing"){
+			        		Materialize.toast('Item already exists.', 3000, 'rounded');
+			        	}else if(data.status === "failed-database"){
+			        		Materialize.toast('Please check your connection.', 3000, 'rounded');
+			        	}
+			        },
+			        error: function(data){
+			        	Materialize.toast('Error occured.', 3000, 'rounded');
+			        }
+			    });
+			}
 	
-		    return false;
 		}
 	
 		function updateItem(){
 			var itemName = document.getElementById("itemNameUpdate").value;
 			var itemPrice = document.getElementById("itemPriceUpdate").value;
 			var itemDesc = document.getElementById("itemDescUpdate").value;
-			var itemUpdateName = document.getElementById("selectItemUpdate").value;
-		    $.ajax({
-		        type: "POST",
-		        url: "update",
-		        data: {
-		        	"item.strItemName" : itemName,
-		        	"item.dblPrice" : itemPrice,
-		        	"item.strItemDesc" : itemDesc,
-		        	"strItemName" : itemUpdateName
-		        },
-		       	dataType: "json",
-		        async: true,
-		        success: function(data){
-		        	if (data.status === "success"){
-		        		alert("Item "+data.strItemName+" updated!");
-		        		$("#itemNameUpdate").val("");
-		        		$("#itemPriceUpdate").val("");
-		        		$("#itemDescUpdate").val("");
-		        		$("#modalUpdate").closeModal();
-		        		updateTable();
-		        	}
-		        },
-		        error: function(data){
-		        	
-		        	alert("Error!");
-		        }
-		    });
-		
-		    return false;
+			var itemUpdateName = document.getElementById("itemNameToBeUpdated").value;
+			
+			if (itemName == null || itemName == "" || itemName == " " ||
+					itemPrice == 0 || itemPrice == null){
+				
+			}else{
+			    $.ajax({
+			        type: "POST",
+			        url: "update",
+			        data: {
+			        	"item.strItemName" : itemName,
+			        	"item.dblPrice" : itemPrice,
+			        	"item.strItemDesc" : itemDesc,
+			        	"strItemName" : itemUpdateName
+			        },
+			       	dataType: "json",
+			        async: true,
+			        success: function(data){
+			        	if (data.status === "success"){
+			        		Materialize.toast('Item successfully updated.', 3000, 'rounded');
+			        		$("#itemNameUpdate").val("");
+			        		$("#itemPriceUpdate").val("");
+			        		$("#itemDescUpdate").val("");
+			        		$('#modalUpdateItem').closeModal();
+			        		updateTable();
+			        	}else if (data.status === "input"){
+			        		Materialize.toast('Please check your inputs.', 3000, 'rounded');
+			        	}else if (data.status === "failed-does-not-exist"){
+			        		Materialize.toast('Item does not exist.', 3000, 'rounded');
+			        	}else if (data.status === "failed-database"){
+			        		Materialize.toast('Please check your connection.', 3000, 'rounded');
+			        	}
+			        },
+			        error: function(data){
+			        	Materialize.toast('Error occured.', 3000, 'rounded');
+			        }
+			    });
+			}
 		}
 		
 		function deactivateItem(){
 			
-			var itemNameDeactivate = document.getElementById("itemNameDeactivate").value;
+			var itemNameDeactivate = document.getElementById("itemToBeDeactivated").value;
 			$.ajax({
 				type: "POST",
 				url: "deactivate",
@@ -275,81 +303,70 @@
 				success: function(data){
 					if (data.status === "success"){
 						updateTable();
-		        		$("#modalDeactivate").closeModal();
-						alert("Item "+data.strItemName+" successfully deactivated.");
+		        		$('#modalDeactivateItem').closeModal();
+		        		Materialize.toast('Item successfully deactivated.', 3000, 'rounded');
+					}else if (data.status === "failed-does-not-exist"){
+						Materialize.toast('Item does not exist.', 3000, 'rounded');
+					}else if (data.status === "failed-database"){
+						Materialize.toast('Please check your connection.', 3000, 'rounded');
 					}
 				},
 				error: function(data){
-					alert("Error...");
+					Materialize.toast('Error occured.', 3000, 'rounded');
 				}
 			});
 			
 		}
 		
-		$("#searchItem").on("change keyup paste",function(){
-			searchItemAndUpdateTable();
-		});
-		
-		function searchItemAndUpdateTable(){
-			var itemName = document.getElementById("searchItem").value;
-			$.ajax({
-				type: "POST",
-				url: "searchItem",
-				data: {
-					"strItemName" : itemName
-				},
-				async: true,
-				success: function(data){
-					
-					var itemList = data.itemList;
-	        		$("#tableItem tbody").remove();
-	        		$.each(itemList, function(i, item){
-		        		tableRow = $("<tr>").append(
-		        				$("<td>").text(item.strItemName),
-		        				$("<td>").text("P "+item.dblPrice),
-		        				$("<td>").text(item.strItemDesc));
-		        		$("#tableItem").append(tableRow);
-	        		});
-					
-				},
-				error: function(data){
-					alert("Error...");
-				}
-			});
-		
-			
-		}
+		window.onload = updateTable;
 		
 		function updateTable(){
+			
 			$.ajax({
 				type: "POST",
 				url: "getItemList",
 				dataType: "json",
 				async: true,
 				success: function(data){
-	        		$("#tableItem tbody").remove();
-	        		var tableRow;
+	        		var table = $('#datatable').DataTable();
+	        		table.clear().draw();
 	        		var itemList = data.itemList;
 	        		
-	        		$.each(itemList, function(i, item){
-						
-		        		tableRow = $("<tr>").append(
-		        				$("<td>").text(item.strItemName),
-		        				$("<td>").text("P "+item.dblPrice),
-		        				$("<td>").text(item.strItemDesc));
-		        		$("#tableItem").append(tableRow);
-	        		});
+	        		if (itemList == null){
+	        			table.row.add( [
+       		            "item One",
+       		            "P 200",
+       		            "item One",
+       		            addButtons
+       		            ]);
+	        		}else{
+	        		
+		        		$.each(itemList, function(i, item){
+							
+		        			var addButtons = "<button name = action class= 'modal-trigger btn-floating green' onclick= openUpdate('"+item.strItemName+"') ><i class= material-icons >mode_edit</i></button>"+
+		        			"<button name = action class= 'modal-trigger btn-floating red' onclick = openDeactivate('"+item.strItemName+"') ><i class= material-icons >delete</i></button></td>";
+		        			
+		        			
+		        			table.row.add( [
+		    	        		            item.strItemName,
+		    	        		            "P "+item.dblPrice,
+		    	        		            item.strItemDesc,
+		    	        		            addButtons
+		    	        		            ]);
+		        		});
+	        		}
+	        		
+	        		table.draw();
 	        		
 				},
 				error: function(data){
-					alert("Error in updating table");
+	        		Materialize.toast('Error in updating table.', 3000, 'rounded');
 				}
 			});
 			
 		}
 		
 		function openUpdate(itemName){
-			alert(itemName);
 			$.ajax({
 				type: "POST",
 				url: "getItemInfo",
@@ -360,6 +377,7 @@
 				async: true,
 				success: function(data){
 					$('#modalUpdateItem').openModal();
+					$('#itemNameToBeUpdated').val(data.item.strItemName);
 					$("#itemNameUpdate").val(data.item.strItemName);
 	        		$("#itemPriceUpdate").val(data.item.dblPrice);
 	        		$("#itemDescUpdate").val(data.item.strItemDesc);
@@ -369,6 +387,11 @@
 				}
 			});
 			
+		}
+		
+		function openDeactivate(itemName){
+			$('#itemToBeDeactivated').val(itemName);
+			$('#modalDeactivateItem').openModal();
 		}
 		
 	</script>

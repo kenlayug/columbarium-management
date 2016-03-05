@@ -42,9 +42,9 @@
 	        </div>
 	
 	        <!-- Modal Update -->
-	        <div id="modalUpdateRequirement" class="modal" style = "width: 700px;">
-	            <div class = "modal-header">
-	                <h4 style = "font-size: 30px;">Update Requirement</h4>
+	        <div id="modalUpdateRequirement" class="modal" style = "width: 600px;">
+	            <div class = "modal-header" style = "height: 55px; margin-bottom: 0px;">
+	                <h4 style = "font-size: 30px; padding-left: 20px;">Update Requirement</h4>
 	            </div>
 	            <form class="modal-content">
 	
@@ -63,12 +63,12 @@
 	                    </div>
 	                </div>
 	                </div>
-					<i class = "left" style = "margin-bottom: 50px; padding-left: 20px; color: red;">*Required Fields</i>
+					<i class = "left" style = "margin-bottom: 50px; padding-left: 30px; color: red;">*Required Fields</i>
 					<br><br>
 
 						<div class="modal-footer">
-							<button type = "submit" onclick="updateRequirement()" name = "action" class="waves-effect waves-light btn red bottom" style = "margin-left: 10px; ">Confirm</button>
-							<button name = "action" class="modal-close btn red modal-close bottom">Cancel</button>
+							<button type = "submit" onclick="updateRequirement()" name = "action" class="waves-effect waves-light btn red bottom" style = "margin-top: 30px; margin-left: 10px; ">Confirm</button>
+							<button name = "action" class="modal-close btn red modal-close bottom" style = "margin-top: 30px;">Cancel</button>
 						</div>
 	            </form>
 
@@ -76,8 +76,8 @@
 	        </div>
 
 			<!-- Modal Deactivate -->
-			<div id="modalDeactivateRequirement" class="modal" style = "width: 600px;">
-				<div class = "modal-header">
+			<div id="modalDeactivateRequirement" class="modal" style = "width: 500px;">
+				<div class = "modal-header" style = "height: 55px;">
 					<h4 style = "font-size: 30px;">Deactivate Requirement</h4>
 				</div>
 				<div class="modal-content">

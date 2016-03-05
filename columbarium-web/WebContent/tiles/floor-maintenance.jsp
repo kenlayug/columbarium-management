@@ -14,34 +14,34 @@
     <div class = "row">
         <div class = "responsive">
 
-        <div class = "col s7">
+        <div class = "col s5">
             <h2 style = "padding-left: 40px; font-size: 30px; margin-top: 0px;">Floor Maintenance</h2>
 
-            <div class = "aside aside z-depth-3" style = "margin-left: 40px; height: 100px; width: 670px;">
+            <div class = "row">
+            <div class = "col s11">
+            <div class = "aside aside z-depth-3" style = "margin-left: 25px; height: 100px; width: 450px;">
                 <div class = "header" style = "height: 35px; background-color: #00897b">
                     <label style = "padding-left: 10px;font-size: 23px; color: white; font-family: myFirstFont;">Legend:</label>
                 </div>
 
-                    <div class = "row">
+                    <div class = "row" style = "margin-top: 10px;">
                         <div class = "col s3">
-                            <label for = "configure">Configured Floor</label><br>
-                            <button id = "configure" name = "action" class="btn-floating green" style = "margin-left: 30px;"><i class="material-icons">settings</i></button>
+                            <button id = "configure" name = "action" class="btn tooltipped btn-floating green" data-position = "bottom" data-delay = "25" data-tooltip = "Configured Floor" style = "margin-left: 30px;"><i class="material-icons">settings</i></button>
                         </div>
                         <div class = "col s3">
-                            <label for = "configure">Not yet Configured Floor</label>
-                            <button id = "notConfigure" name = "action" class="btn-floating black" style = "margin-left: 30px;"><i class="material-icons">settings</i></button>
+                            <button id = "notConfigure" name = "action" class="btn tooltipped btn-floating black" data-position = "bottom" data-delay = "25" data-tooltip = "Not yet Configured Floor" style = "margin-left: 30px;"><i class="material-icons">settings</i></button>
                         </div>
                         <div class = "col s3">
-                            <label for = "configure">Configured Floor Price</label>
-                            <button id = "configuredFloorPrice" name = "action" class="btn-floating blue" style = "margin-left: 30px;"><i class="material-icons medium">&#8369</i></button>
+                            <button id = "configuredFloorPrice" name = "action" class="btn tooltipped btn-floating blue" data-position = "bottom" data-delay = "25" data-tooltip = "Configured Floor Price" style = "margin-left: 30px;"><i class="material-icons medium">&#8369</i></button>
                         </div>
                         <div class = "s3">
-                            <label for = "configure">Not yet Configured Floor Price</label>
-                            <button id = "notConfiguredFloorPrice" name = "action" class="btn-floating red" style = "margin-left: 30px;"><i class="material-icons medium">&#8369</i></button>
+                            <button id = "notConfiguredFloorPrice" name = "action" class="btn tooltipped btn-floating red" data-position = "bottom" data-delay = "25" data-tooltip = "Not yet Configured Floor Price" style = "margin-left: 30px;"><i class="material-icons medium">&#8369</i></button>
                         </div>
                     </div>
             </div>
-            <br>
+            </div>
+            </div>
+
             <div style = "overflow: auto;height: 370px;">
                 <div class = "col s12">
                     <div class = "aside aside ">
@@ -360,79 +360,95 @@
 
 
             <!-- Data Grid -->
-            <div class = "col s5">
+            <div class = "col s7">
                 <div class="row">
                     <div id="admin" class="col s12" style="margin-top: 20px">
                         <div class="z-depth-2 card material-table">
                             <div class="table-header" style="background-color: #00897b;">
-                                <h4 style = "font-size: 30px; color: white; padding-left: 0px;">Building Data Grid</h4>
+                                <h4 style = "font-size: 30px; color: white; padding-left: 0px;">Floor Data Grid</h4>
                                 <div class="actions">
+                                    <button name = "action" class="btn tooltipped modal-trigger btn-floating black" data-position = "bottom" data-delay = "30" data-tooltip = "Deactivated Floors" style = "margin-right: 10px;" href = "#modalCreateService"><i class="material-icons" style = "color: white">delete</i></button>
                                     <a href="#" class="search-toggle waves-effect btn-flat nopadding"><i class="material-icons" style="color: #ffffff;">search</i></a>
                                 </div>
                             </div>
                             <table id="datatable">
                                 <thead>
                                 <tr>
+                                    <th>Floor Level</th>
+                                    <th>Floor Type Description</th>
                                     <th>Building Name</th>
-                                    <th>Number of Floors</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <tr>
+                                    <td>Ground Floor</td>
+                                    <td>Full Body</td>
                                     <td>Building One</td>
-                                    <td>5</td>
                                 </tr>
                                 <tr>
+                                    <td>Ground Floor</td>
+                                    <td>Admin Office</td>
                                     <td>Building Two</td>
-                                    <td>3</td>
                                 </tr>
                                 <tr>
+                                    <td>Ground Floor</td>
+                                    <td>Columbary Vault</td>
                                     <td>Building Three</td>
-                                    <td>6</td>
                                 </tr>
                                 <tr>
+                                    <td>Ground Floor</td>
+                                    <td>Cashier</td>
                                     <td>Building Four</td>
-                                    <td>2</td>
                                 </tr>
                                 <tr>
+                                    <td>Ground Floor</td>
+                                    <td>Full Body</td>
                                     <td>Building Five</td>
-                                    <td>8</td>
                                 </tr>
                                 <tr>
+                                    <td>Ground Floor</td>
+                                    <td>Full Body</td>
                                     <td>Building Six</td>
-                                    <td>4</td>
                                 </tr>
                                 <tr>
+                                    <td>Ground Floor</td>
+                                    <td>Full Body</td>
                                     <td>Building Seven</td>
-                                    <td>7</td>
                                 </tr>
                                 <tr>
+                                    <td>Ground Floor</td>
+                                    <td>Full Body</td>
                                     <td>Building Eight</td>
-                                    <td>2</td>
                                 </tr>
                                 <tr>
+                                    <td>Ground Floor</td>
+                                    <td>Full Body</td>
                                     <td>Building Nine</td>
-                                    <td>5</td>
                                 </tr>
                                 <tr>
+                                    <td>Ground Floor</td>
+                                    <td>Full Body</td>
                                     <td>Building Ten</td>
-                                    <td>7</td>
                                 </tr>
                                 <tr>
+                                    <td>Ground Floor</td>
+                                    <td>Full Body</td>
                                     <td>Building Eleven</td>
-                                    <td>3</td>
                                 </tr>
                                 <tr>
+                                    <td>Ground Floor</td>
+                                    <td>Full Body</td>
                                     <td>Building Twelve</td>
-                                    <td>5</td>
                                 </tr>
                                 <tr>
+                                    <td>Ground Floor</td>
+                                    <td>Full Body</td>
                                     <td>Building Thirteen</td>
-                                    <td>2</td>
                                 </tr>
                                 <tr>
+                                    <td>Ground Floor</td>
+                                    <td>Full Body</td>
                                     <td>Building Fourteen</td>
-                                    <td>6</td>
                                 </tr>
                                 </tbody>
                             </table>
