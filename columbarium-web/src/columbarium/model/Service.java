@@ -178,4 +178,14 @@ public class Service {
 		return serviceService.searchService(service);
 	}
 	
+	public static Service searchServiceById(int serviceId){
+		
+		ServiceService serviceService = (ServiceService)ServletActionContext.getServletContext()
+				.getAttribute("serviceService");
+		Service service = new Service();
+		service.setServiceId(serviceId);
+		return serviceService.searchService(service);
+		
+	}
+	
 }

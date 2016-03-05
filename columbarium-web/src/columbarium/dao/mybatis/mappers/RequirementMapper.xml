@@ -26,12 +26,10 @@
 			FROM tblRequirement
 			<where>
 				intStatus = 1
-				<if test="strRequirementName == null">
-					<if test="requirementId != null">
-						AND requirementId = #{requirementId}
-					</if>
+				<if test="requirementId != 0">
+					AND requirementId = #{requirementId}
 				</if>
-				<if test="strRequirementName != null">
+				<if test="requirementId == 0">
 					AND strRequirementName LIKE #{strRequirementName}
 				</if>
 			</where>

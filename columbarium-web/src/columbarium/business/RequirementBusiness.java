@@ -7,9 +7,9 @@ import columbarium.model.Requirement;
 public interface RequirementBusiness {
 
 	public String createRequirement(Requirement requirement);
-	public Requirement readRequirement(String strRequirementName);
+	public Requirement readRequirement(int requirementId);
 	public String updateRequirement(String strRequirement, Requirement requirementUpdate);
-	public String deactivateRequirement(String strRequirement);
+	public String deactivateRequirement(int requirementId);
 	
 	public List<Requirement>searchRequirementByName(String strRequirementName);
 	

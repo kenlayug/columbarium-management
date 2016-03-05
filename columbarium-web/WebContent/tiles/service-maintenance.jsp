@@ -46,7 +46,7 @@
 
 			</div>
 			<div class="modal-footer">
-				<button name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
+				<button onclick="createService()" name="action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
 				<button name = "action" class="waves-effect waves-light btn red">Cancel</button>
 			</div>
 		</div>
@@ -96,29 +96,16 @@
             <div class = "modal-header">
                 <h4 style = "padding-left: 40px;">Update Service</h4>
             </div>
-            <form class="modal-content">
-
-                    <div class="row">
-                        <div class = "col s6" style = "padding-left: 20px;">
-                            <label>Select Service Name to Deactivate:</label>
-                            <select id="selectServiceUpdate"  required = "" aria-required="true" onchange="placeServiceUpdate()">
-                                <option value="" disabled selected>Service Name:</option>
-								<c:if test="${serviceList != null }">
-									<c:forEach items="${serviceList }" var="service">
-										<option value="${service.strServiceName }">${service.strServiceName}</option>
-									</c:forEach>
-								</c:if>
-                            </select>
-                        </div>
-                    </div>
+            <form class="modal-content" id="formUpdate">
 
                     <div class="row" style = "padding-left: 10px;">
                         <div class="input-field col s6">
-                            <input id="serviceNameUpdate" type="text" class="validate" required = "" aria-required = "true" pattern = "[A-Za-z0-9\s]{1,29}">
+                        	<input id="serviceToBeUpdate" type="hidden">
+                            <input id="serviceNameUpdate" value=" " type="text" class="validate" required = "" aria-required = "true" pattern = "[A-Za-z0-9\s]{1,29}">
                             <label for="serviceNameUpdate" data-error = "Check format field." data-success = "">New Service Name<span style = "color: red;">*</span></label>
                         </div>
                         <div class="input-field col s6">
-                            <input id="servicePriceUpdate" type="text" class="validate" required = "" aria-required = "true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
+                            <input id="servicePriceUpdate" value=" " type="text" class="validate" required = "" aria-required = "true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
                             <label for="servicePriceUpdate" data-error = "Check format field." data-success = "">New Service Price <span style = "color: red;">*</span></label>
                         </div>
                     </div>
@@ -126,7 +113,7 @@
                 <div class="row">
                         <div class="row" style = "padding-left: 10px;">
                             <div class="input-field col s12">
-								<input id="serviceDescUpdate" type="text" class="validate" pattern = "[A-Za-z0-9\s]{1,29}">
+								<input id="serviceDescUpdate" value=" " type="text" class="validate" pattern = "[A-Za-z0-9\s]{1,29}">
                                 <label for="serviceDescUpdate" data-error = "Check format field." data-success = "">New Service Description</label>
                             </div>
                         </div>
@@ -135,7 +122,7 @@
                 </div>
 				<div class="modal-footer">
 					<button type = "submit" onclick="updateService()" name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
-					<button onclick="$('#modalUpdate').closeModal()" name = "action" class="waves-effect waves-light btn red" href = "Blocks_Maintenance.html">Cancel</button>
+					<button name = "action" class="modal-close waves-effect waves-light btn red" href = "Blocks_Maintenance.html">Cancel</button>
 				</div>
             </form>
 
@@ -148,7 +135,7 @@
                 <h4>Deactivate Service</h4>
             </div>
             <div class="modal-content">
-
+				<input id="serviceToBeDeactivated" type="hidden">
 				<p style = "padding-left: 90px; font-size: 15px;">Are you sure you want to deactivate this service?</p>
             </div>
             <div class="modal-footer">
@@ -181,145 +168,32 @@
 							</tr>
 							</thead>
 							<tbody>
-							<tr>
-								<td>Service One</td>
-								<td>Price One</td>
-								<td>Description One</td>
-								<td>Requirement One</td>
-								<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateService"><i class="material-icons">mode_edit</i></button>
-									<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateService"><i class="material-icons">delete</i></button></td>
-							</tr>
-							<tr>
-								<td>Service One</td>
-								<td>Price One</td>
-								<td>Description One</td>
-								<td>Requirement One</td>
-								<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateService"><i class="material-icons">mode_edit</i></button>
-									<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateService"><i class="material-icons">delete</i></button></td>
-							</tr>
-							<tr>
-								<td>Service One</td>
-								<td>Price One</td>
-								<td>Description One</td>
-								<td>Requirement One</td>
-								<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateService"><i class="material-icons">mode_edit</i></button>
-									<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateService"><i class="material-icons">delete</i></button></td>
-							</tr>
-							<tr>
-								<td>Service One</td>
-								<td>Price One</td>
-								<td>Description One</td>
-								<td>Requirement One</td>
-								<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateService"><i class="material-icons">mode_edit</i></button>
-									<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateService"><i class="material-icons">delete</i></button></td>
-							</tr>
-							<tr>
-								<td>Service One</td>
-								<td>Price One</td>
-								<td>Description One</td>
-								<td>Requirement One</td>
-								<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateService"><i class="material-icons">mode_edit</i></button>
-									<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateService"><i class="material-icons">delete</i></button></td>
-							</tr>
-							<tr>
-								<td>Service One</td>
-								<td>Price One</td>
-								<td>Description One</td>
-								<td>Requirement One</td>
-								<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateService"><i class="material-icons">mode_edit</i></button>
-									<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateService"><i class="material-icons">delete</i></button></td>
-							</tr>
-							<tr>
-								<td>Service One</td>
-								<td>Price One</td>
-								<td>Description One</td>
-								<td>Requirement One</td>
-								<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateService"><i class="material-icons">mode_edit</i></button>
-									<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateService"><i class="material-icons">delete</i></button></td>
-							</tr>
-							<tr>
-								<td>Service One</td>
-								<td>Price One</td>
-								<td>Description One</td>
-								<td>Requirement One</td>
-								<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateService"><i class="material-icons">mode_edit</i></button>
-									<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateService"><i class="material-icons">delete</i></button></td>
-							</tr>
-							<tr>
-								<td>Service One</td>
-								<td>Price One</td>
-								<td>Description One</td>
-								<td>Requirement One</td>
-								<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateService"><i class="material-icons">mode_edit</i></button>
-									<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateService"><i class="material-icons">delete</i></button></td>
-							</tr>
-							<tr>
-								<td>Service One</td>
-								<td>Price One</td>
-								<td>Description One</td>
-								<td>Requirement One</td>
-								<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateService"><i class="material-icons">mode_edit</i></button>
-									<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateService"><i class="material-icons">delete</i></button></td>
-							</tr>
-							<tr>
-								<td>Service One</td>
-								<td>Price One</td>
-								<td>Description One</td>
-								<td>Requirement One</td>
-								<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateService"><i class="material-icons">mode_edit</i></button>
-									<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateService"><i class="material-icons">delete</i></button></td>
-							</tr>
-							<tr>
-								<td>Service One</td>
-								<td>Price One</td>
-								<td>Description One</td>
-								<td>Requirement One</td>
-								<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateService"><i class="material-icons">mode_edit</i></button>
-									<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateService"><i class="material-icons">delete</i></button></td>
-							</tr>
-							<tr>
-								<td>Service One</td>
-								<td>Price One</td>
-								<td>Description One</td>
-								<td>Requirement One</td>
-								<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateService"><i class="material-icons">mode_edit</i></button>
-									<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateService"><i class="material-icons">delete</i></button></td>
-							</tr>
-							<tr>
-								<td>Service One</td>
-								<td>Price One</td>
-								<td>Description One</td>
-								<td>Requirement One</td>
-								<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateService"><i class="material-icons">mode_edit</i></button>
-									<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateService"><i class="material-icons">delete</i></button></td>
-							</tr>
 							</tbody>
 						</table>
 					</div>
 				</div>
 			</div>
 
-			<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-			<script src='http://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js'></script>
-			<script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js'></script>
 			<script type="text/javascript" src = "../js/index.js"></script>
-			<script type="text/javascript" src = "../js/Services_Record_Form.js"></script>
+			
 		</div>
     </div>
 	</div>
     
     <script>
 
-
+	    $(document).ready(function(){
+	        // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+	        $('.modal-trigger').leanModal({dismissible: false});
+	    });
 
 	    $("#formCreate").submit(function(e){
 		    return false;
 		});
-    
-	    $(document).ready(function(){
-	        // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-	        $('.modal-trigger').leanModal();
-	    });
+	    
+	    $("#formUpdate").submit(function(e){
+		    return false;
+		});
 
 	    function createService(){
 
@@ -344,12 +218,19 @@
 				dataType: "json",
 				success: function(data){
 					if (data.status === "success"){
-						alert("Service "+data.service.strServiceName+" is successfully saved.");
+						Materialize.toast('Service is successfully saved.', 3000, 'rounded');
 						updateTable();
+						$('#modalCreateService').closeModal();
+					}else if (data.status === "input"){
+						Materialize.toast('Please check all your inputs.', 3000, 'rounded');
+					}else if (data.status === "failed-existing"){
+						Materialize.toast('Service already exists.', 3000, 'rounded');
+					}else if (data.status === "failed-database"){
+						Materialize.toast('Please check your connection.', 3000, 'rounded');
 					}
 				},
 				error: function(data){
-					alert("error...");
+					Materialize.toast('Error occured.', 3000, 'rounded');
 				}
 			});
 	    	
@@ -386,66 +267,76 @@
 	    }//selectServiceUpdate()
 	    
 	    function updateService(){
-	    	
+	    	Materialize.toast('Updating..', 3000, 'rounded');
 	    	var serviceNameUpdate = document.getElementById("serviceNameUpdate").value;
 	    	var servicePriceUpdate = document.getElementById("servicePriceUpdate").value;
 	    	var serviceDescUpdate = document.getElementById("serviceDescUpdate").value;
-	    	var selectServiceUpdate = document.getElementById("selectServiceUpdate").value;
+	    	var selectServiceUpdate = document.getElementById("serviceToBeUpdate").value;
 	    	
-	    	$.ajax({
-	    		type: "POST",
-	    		url: "update",
-	    		data: {
-	    			"strServiceName" : selectServiceUpdate,
-	    			"service.strServiceName" : serviceNameUpdate,
-	    			"service.dblPrice" : servicePriceUpdate,
-	    			"service.strDescUpdate" : serviceDescUpdate
-	    		},
-	    		dataType: "json",
-	    		async: true,
-	    		success: function(data){
-	    			if (data.status === "success"){
-	    				alert("Successfully updated.");
-	    				updateTable();
-	    				$('#modalUpdate').closeModal();
-	    			}else{
-	    				alert("error occured...");
-	    			}
-	    		},
-	    		error: function(data){
-	    			alert("error..."+data);
-	    		}
-	    	});
+	    	if (serviceNameUpdate == null || serviceNameUpdate == "" || serviceNameUpdate == " " ||
+	    			servicePriceUpdate == null || servicePriceUpdate == 0){
+	    		
+	    	}else{
+	    	
+		    	$.ajax({
+		    		type: "POST",
+		    		url: "update",
+		    		data: {
+		    			"strServiceName" : selectServiceUpdate,
+		    			"service.strServiceName" : serviceNameUpdate,
+		    			"service.dblPrice" : servicePriceUpdate,
+		    			"service.strDescUpdate" : serviceDescUpdate
+		    		},
+		    		dataType: "json",
+		    		async: true,
+		    		success: function(data){
+		    			if (data.status === "success"){
+		    				Materialize.toast('Service is successfully updated.', 3000, 'rounded');
+		    				updateTable();
+		    				$('#modalUpdateService').closeModal();
+		    			}else if(data.status === "input"){
+		    				Materialize.toast('Check all your inputs.', 3000, 'rounded');
+		    			}else if (data.status === "failed-database"){
+		    				Materialize.toast('Please check your connection.', 3000, 'rounded');
+		    			}
+		    		},
+		    		error: function(data){
+		    			Materialize.toast('Error occured.', 3000, 'rounded');
+		    		}
+		    	});
+	    	}
 	    	
 	    }//updateService()
 	    
 	    function deactivateService(){
 	    	
-	    	var selectServiceDeactivate = document.getElementById("selectServiceDeactivate").value;
+	    	var selectServiceDeactivate = document.getElementById("serviceToBeDeactivated").value;
 	    	
 	    	$.ajax({
 	    		type: "POST",
 	    		url: "deactivate",
 	    		data:{
-	    			"strServiceName" : selectServiceDeactivate
+	    			"serviceId" : selectServiceDeactivate
 	    		},
 	    		dataType: "json",
 	    		async: true,
 	    		success: function(data){
 	    			if (data.status === "success"){
-	    				alert("successfully deleted.");
+	    				Materialize.toast('Service is successfully deleted.', 3000, 'rounded');
 	    				updateTable();
-	    				$('#modalDeactivate').closeModal();
-	    			}else{
-	    				alert("error occured.");
+	    				$('#modalDeactivateService').closeModal();
+	    			}else if (data.status === "failed-database"){
+	    				Materialize.toast('Please check your connection.', 3000, 'rounded');
 	    			}
 	    		},
 	    		error: function(data){
-	    			alert("error...");
+	    			Materialize.toast('Please check your connection.', 3000, 'rounded');
 	    		}
 	    	});
 	    	
 	    }
+	    
+	    window.onload = updateTable;
 	    
 	    function updateTable(){
 			
@@ -456,22 +347,28 @@
 				async: true,
 				success: function(data){
 					var serviceList = data.serviceList;
-	        		$("#tableService tbody").remove();
-					if (serviceList != null){
-						$.each(serviceList, function(i, service){
-							
-			        		tableRow = $("<tr>").append(
-			        				$("<td>").text(service.strServiceName),
-			        				$("<td>").text(service.dblPrice),
-			        				$("<td>").text(service.strServiceDesc),
-			        				$("<td>").text());
-			        		$("#tableService").append(tableRow);
+					var table = $('#datatable').DataTable();
+	        		table.clear();
+	        		Materialize.toast('Updating table...', 3000, 'rounded');
+	        		if (serviceList != null){
+		        		$.each(serviceList, function(i, service){
+	
+		        			var addButtons = "<button name = action class= 'modal-trigger btn-floating green' onclick = openUpdate(this.value) value = "+service.serviceId+" ><i class= material-icons >mode_edit</i></button>"+
+		        			"<button name = action class= 'modal-trigger btn-floating red' onclick = openDeactivate(this.value) value = "+service.serviceId+"><i class= material-icons >delete</i></button></td>";
+		        			
+		        			
+		        			table.row.add( [
+		    	        		            service.strServiceName,
+		    	        		            "P "+service.dblPrice,
+		    	        		            service.strServiceDesc,
+		    	        		            ,
+		    	        		            addButtons
+		    	        		            ]);
 		        		});
-					}else{
-						tableRow = $("<tr>").append(
-								$("<td>").text("No services available."));
-						$("#tableService").append(tableRow);
-					}
+	        		}
+	        		
+	        		
+	        		table.draw();
 				},
 				error: function(data){
 					alert("error in updating table...");
@@ -479,6 +376,39 @@
 			});
 			
 		}//updateTable
+		
+		function openUpdate(serviceId){
+			
+			$.ajax({
+	    		type: "POST",
+	    		url: "getService",
+	    		data:{
+	    			"serviceId" : serviceId
+	    		},
+	    		dataType: "json",
+	    		async: true,
+	    		success: function(data){
+	    			if (data.service == null){
+	    				Materialize.toast('Service does not exist.', 3000, 'rounded');
+	    			}else{
+
+	    				$("#serviceToBeUpdate").val(data.service.strServiceName);
+	    				$("#serviceNameUpdate").val(data.service.strServiceName);
+	    				$("#servicePriceUpdate").val(data.service.dblPrice);
+	    				$("#serviceDescUpdate").val(data.service.strServiceDesc);
+	    				$('#modalUpdateService').openModal();
+	    			}
+	    		},
+	    		error: function(data){
+	    			Materialize.toast('Error occured.', 3000, 'rounded');
+	    		}
+	    	});
+		}
+		
+		function openDeactivate(serviceId){
+			$("#serviceToBeDeactivated").val(serviceId);
+			$('#modalDeactivateService').openModal();
+		}
     
     </script>
     

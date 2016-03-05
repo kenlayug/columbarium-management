@@ -7,14 +7,3 @@ $(document).ready(function(){
     $('.modal-trigger').leanModal({dismissible: false});
 });
 
-
-    setInterval(function() {
-        i++;
-        $('a').attr('data-toast-inner', i);
-    }, 1000);
-
-    $('a').on('click', function(e) {
-        setTimeout(function() {
-            $('#toast').empty().html($('a[href*="toast"]').attr('data-toast-inner'));
-        }, 500)
-    })

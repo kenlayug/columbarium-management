@@ -91,15 +91,11 @@ public class Requirement {
 		return requirementService.createRequirement(this);
 	}
 	
-	public void read(){
+	public static Requirement read(int requirementId){
 		RequirementService requirementService = (RequirementService)ServletActionContext.getServletContext()
 				.getAttribute("requirementService");
-		Requirement requirement = requirementService.readRequirement(getStrRequirementName());
-		if (requirement != null){
-			setRequirementId(requirement.getRequirementId());
-			setStrRequirementName(requirement.getStrRequirementName());
-			setStrRequirementDesc(requirement.getStrRequirementDesc());
-		}
+		Requirement requirement = requirementService.readRequirement(requirementId);
+		return requirement;
 	}
 	
 	public String update(String strRequirementName){
@@ -108,10 +104,10 @@ public class Requirement {
 		return requirementService.updateRequirement(strRequirementName, this);
 	}
 	
-	public static String deactivate(String strRequirementName){
+	public static String deactivate(int requirementId){
 		RequirementService requirementService = (RequirementService)ServletActionContext.getServletContext()
 				.getAttribute("requirementService");
-		return requirementService.deactivateRequirement(strRequirementName);
+		return requirementService.deactivateRequirement(requirementId);
 	}
 	
 	public static List<Requirement>getAllRequirements(){

@@ -9,6 +9,11 @@ public class GetServiceInfoAction extends ActionSupport implements Action{
 
 	private Service service;
 	private String strServiceName;
+	private int serviceId;
+	
+	public void setServiceId(int serviceId){
+		this.serviceId = serviceId;
+	}
 	
 	public Service getService() {
 		return service;
@@ -28,7 +33,7 @@ public class GetServiceInfoAction extends ActionSupport implements Action{
 
 	public String execute(){
 		
-		setService(Service.searchService(strServiceName));
+		setService(Service.searchServiceById(serviceId));
 		return "success";
 		
 	}
