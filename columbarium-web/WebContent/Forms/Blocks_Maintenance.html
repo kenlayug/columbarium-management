@@ -441,19 +441,20 @@
             </div>
 
             <!-- Modal Update -->
-            <div id="modalUpdateBlock" class="modal" style = "width: 600px;">
-                <div class = "modal-header">
-                    <h4 style = "font-size: 30px;">Update Block</h4>
+            <div id="modalUpdateBlock" class="modal" style = "width: 400px;">
+                <div class = "modal-header" style = "height: 55px;">
+                    <h4 style = "padding-left: 20px; font-size: 30px;">Update Block</h4>
                 </div>
                 <div class="modal-content">
                     <div style = "padding-left: 10px;">
-                        <div class="input-field col s6">
+                        <div class="input-field col s12">
                             <input id="newBlockName" type="text" class="validate" required = "" aria-required = "true" length = "20">
                             <label class = "active" for="newBlockName" data-error = "Invalid format." data-success = "">New Block Name <span style = "color: red;">*</span></label>
                         </div>
                     </div>
+                    <i class = "left" style = "margin-bottom: 0px; padding-left: 20px; color: red;">*Required Fields</i>
                 </div>
-
+                <br><br><br><br>
                 <div class="modal-footer">
                     <button name = "action" class="btn red" style = "margin-left: 10px; ">Confirm</button>
                     <button name = "action" class="btn red modal-close">Cancel</button>
@@ -461,12 +462,12 @@
             </div>
 
             <!-- Modal Deactivate -->
-            <div id="modalDeactivateBlock" class="modal" style = "width: 600px;">
-                <div class = "modal-header">
-                    <h4 style = "font-size: 30px;">Deactivate Block</h4>
+            <div id="modalDeactivateBlock" class="modal" style = "width: 400px;">
+                <div class = "modal-header" style = "height: 55px;">
+                    <h4 style = "padding-left: 20px; font-size: 30px;">Deactivate Block</h4>
                 </div>
                 <div class="modal-content">
-                    <p style = "padding-left: 90px; font-size: 15px;">Are you sure you want to deactivate this block?</p>
+                    <p style = "padding-left: 20px; font-size: 15px;">Are you sure you want to deactivate this block?</p>
                 </div>
 
                 <div class="modal-footer">
@@ -476,117 +477,76 @@
             </div>
 
             <!-- Modal List of Deactivated Blocks -->
-            <div id="modalListOfDeactivatedBlock" class="modal" style = "width: 600px;">
-                <div class = "modal-header">
-                    <h4 style = "font-size: 30px;">Deactivate Block</h4>
-                </div>
+            <div id="modalListOfDeactivatedBlock" class="modal" style = "height: 1200px; width: 600px;">
                 <div class="modal-content">
-                    <!-- Data Grid -->
-                    <div class = "col s8">
-                        <div class="row">
-                            <div id="admin2" class="col s12" style="margin-top: 20px">
-                                <div class="z-depth-2 card material-table">
-                                    <div class="table-header" style="background-color: #00897b;">
-                                        <h4 style = "font-size: 30px; color: white; padding-left: 0px;">Block Data Grid</h4>
-                                        <div class="actions">
-                                            <button name = "action" class="modal-trigger btn-floating yellow" style = "margin-right: 10px;" href = "#modalCreateBlock"><i class="material-icons">add</i></button>
-                                            <button name = "action" class="modal-trigger btn-floating black" style = "margin-right: 10px;" href = "#modalListOfDeactivatedBlock"><i class="material-icons" style = "color: white">delete</i></button>
-                                            <a href="#" class="search-toggle waves-effect btn-flat nopadding"><i class="material-icons" style="color: #ffffff;">search</i></a>
-                                        </div>
+                    <!-- Data Grid Deactivated Block/s-->
+                            <div id="admin2" class="col s12" style="margin-top: 0px">
+                                <div class="z-depth-2 card material-table" style="margin-top: 0px">
+                                    <div class="table-header" style="height: 55px; background-color: #00897b;">
+                                        <h4 style = "padding-top: 10px; font-size: 30px; color: white; padding-left: 0px;">Deactivated Block/s</h4>
                                     </div>
                                     <table id="datatable2">
                                         <thead>
                                         <tr>
                                             <th>Block Name</th>
-                                            <th>Block Type</th>
-                                            <th>Building Name</th>
-                                            <th>Floor number</th>
-                                            <th>Block Row/s</th>
-                                            <th>Block Column/s</th>
+                                            <th>Action</th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                         <tr>
                                             <td>Block One</td>
-                                            <td>Full Body</td>
-                                            <td>Building One</td>
-                                            <td>First Floor</td>
-                                            <td>5</td>
-                                            <td>6</td>
+                                            <td>
+                                                <button name = "action" class="btn red modal-close">Activate</button>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>Block Two</td>
-                                            <td>Full Body</td>
-                                            <td>Building One</td>
-                                            <td>First Floor</td>
-                                            <td>5</td>
-                                            <td>6</td>
+                                            <td>
+                                                <button name = "action" class="btn red modal-close">Activate</button>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>Block Three</td>
-                                            <td>Columbary Vault</td>
-                                            <td>Building One</td>
-                                            <td>First Floor</td>
-                                            <td>5</td>
-                                            <td>6</td>
+                                            <td>
+                                                <button name = "action" class="btn red modal-close">Activate</button>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>Block Four</td>
-                                            <td>Full Body</td>
-                                            <td>Building One</td>
-                                            <td>First Floor</td>
-                                            <td>5</td>
-                                            <td>6</td>
+                                            <td>
+                                                <button name = "action" class="btn red modal-close">Activate</button>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>Block Five</td>
-                                            <td>Columbary Vault</td>
-                                            <td>Building One</td>
-                                            <td>First Floor</td>
-                                            <td>5</td>
-                                            <td>6</td>
+                                            <td>
+                                                <button name = "action" class="btn red modal-close">Activate</button>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>Block Six</td>
-                                            <td>Full Body</td>
-                                            <td>Building One</td>
-                                            <td>First Floor</td>
-                                            <td>5</td>
-                                            <td>6</td>
+                                            <td>
+                                                <button name = "action" class="btn red modal-close">Activate</button>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>Block Seven</td>
-                                            <td>Columbary Vault</td>
-                                            <td>Building One</td>
-                                            <td>First Floor</td>
-                                            <td>5</td>
-                                            <td>6</td>
+                                            <td>
+                                                <button name = "action" class="btn red modal-close">Activate</button>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>Block Eight</td>
-                                            <td>Full Body</td>
-                                            <td>Building One</td>
-                                            <td>First Floor</td>
-                                            <td>5</td>
-                                            <td>6</td>
+                                            <td>
+                                                <button name = "action" class="btn red modal-close">Activate</button>
+                                            </td>
                                         </tr>
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
                         </div>
-                        <script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js'></script>
-
-
-                        <script src='http://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js'></script>
-                        <script type="text/javascript" src = "../js/index.js"></script>
-                    </div>
-                </div>
-
-                <div class="modal-footer">
-                    <button name = "action" class="btn red" style = "margin-left: 10px; ">Confirm</button>
-                    <button name = "action" class="btn red modal-close">Cancel</button>
-                </div>
+                <button name = "action" class="btn red modal-close right" style = "margin-bottom: 10px; margin-right: 30px;">DONE</button>
             </div>
 
             <!-- Data Grid -->

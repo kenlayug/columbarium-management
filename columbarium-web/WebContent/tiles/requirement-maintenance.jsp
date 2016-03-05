@@ -41,7 +41,7 @@
 	        </div>
 	
 	        <!-- Modal Update -->
-	        <div id="modalUpdateRequirement" class="modal" style = "width: 600px;">
+	        <div id="modalUpdateRequirement" class="modal" style = "width: 400px;">
 	            <div class = "modal-header" style = "height: 55px; margin-bottom: 0px;">
 	                <h4 style = "font-size: 30px; padding-left: 20px;">Update Requirement</h4>
 	            </div>
@@ -76,9 +76,9 @@
 	        </div>
 
 			<!-- Modal Deactivate -->
-			<div id="modalDeactivateRequirement" class="modal" style = "width: 500px;">
+			<div id="modalDeactivateRequirement" class="modal" style = "width: 400px;">
 				<div class = "modal-header" style = "height: 55px;">
-					<h4 style = "font-size: 30px;">Deactivate Requirement</h4>
+					<h4 style = "padding-left: 20px; font-size: 30px;">Deactivate Requirement</h4>
 				</div>
 				<div class="modal-content">
 					<p style = "padding-left: 90px; font-size: 15px;">Are you sure you want to deactivate this item?</p>
@@ -108,6 +108,79 @@
 				</div>
 			</div>
 
+			<!-- Modal List of Deactivated Requirement -->
+			<div id="modalListOfDeactivatedRequirement" class="modal" style = "height: 1200px; width: 600px;">
+				<div class="modal-content">
+					<!-- Data Grid Deactivated Requirement/s-->
+					<div id="admin2" class="col s12" style="margin-top: 0px">
+						<div class="z-depth-2 card material-table" style="margin-top: 0px">
+							<div class="table-header" style="height: 55px; background-color: #00897b;">
+								<h4 style = "padding-top: 10px; font-size: 30px; color: white; padding-left: 0px;">Deactivated Requirement/s</h4>
+							</div>
+							<table id="datatable2">
+								<thead>
+								<tr>
+									<th>Requirement Name</th>
+									<th>Action</th>
+								</tr>
+								</thead>
+								<tbody>
+								<tr>
+									<td>Requirement One</td>
+									<td>
+										<button name = "action" class="btn red modal-close">Activate</button>
+									</td>
+								</tr>
+								<tr>
+									<td>Requirement Two</td>
+									<td>
+										<button name = "action" class="btn red modal-close">Activate</button>
+									</td>
+								</tr>
+								<tr>
+									<td>Requirement Three</td>
+									<td>
+										<button name = "action" class="btn red modal-close">Activate</button>
+									</td>
+								</tr>
+								<tr>
+									<td>Requirement Three</td>
+									<td>
+										<button name = "action" class="btn red modal-close">Activate</button>
+									</td>
+								</tr>
+								<tr>
+									<td>Requirement Four</td>
+									<td>
+										<button name = "action" class="btn red modal-close">Activate</button>
+									</td>
+								</tr>
+								<tr>
+									<td>Requirement Five</td>
+									<td>
+										<button name = "action" class="btn red modal-close">Activate</button>
+									</td>
+								</tr>
+								<tr>
+									<td>Requirement Six</td>
+									<td>
+										<button name = "action" class="btn red modal-close">Activate</button>
+									</td>
+								</tr>
+								<tr>
+									<td>Requirement Seven</td>
+									<td>
+										<button name = "action" class="btn red modal-close">Activate</button>
+									</td>
+								</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				<button name = "action" class="btn red modal-close right" style = "margin-bottom: 10px; margin-right: 30px;">DONE</button>
+			</div>
+
 
 			<!-- Data Grid -->
 			<div class = "col s7">
@@ -117,6 +190,7 @@
 							<div class="table-header" style="background-color: #00897b;">
 								<h4 style = "font-size: 30px; color: white; padding-left: 0px;">Building Data Grid</h4>
 								<div class="actions">
+									<button name = "action" class="modal-trigger btn-floating black" style = "margin-right: 10px;" href = "#modalListOfDeactivatedRequirement"><i class="material-icons" style = "color: white">delete</i></button>
 									<a href="#" class="search-toggle waves-effect btn-flat nopadding"><i class="material-icons" style="color: #ffffff;">search</i></a>
 								</div>
 							</div>

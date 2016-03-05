@@ -94,9 +94,9 @@
         </form>
 
         <!-- Modal Update -->
-        <form id="modalUpdatePackage" class="modal">
-            <div class = "modal-header">
-                <h4 style = "padding-left: 35px;">Update Package</h4>
+        <form id="modalUpdatePackage" class="modal" style = "width: 400px;">
+            <div class = "modal-header" style = "height: 55px;">
+                <h4 style = "padding-left: 20px; font-size: 30px;">Update Package</h4>
             </div>
             <div class="modal-content">
 
@@ -179,9 +179,9 @@
 
 
         <!-- Modal Deactivate -->
-        <div id="modalDeactivatePackage" class="modal" style = "width: 600px;">
-            <div class = "modal-header">
-                <h4>Deactivate Package</h4>
+        <div id="modalDeactivatePackage" class="modal" style = "width: 400px;">
+            <div class = "modal-header" style = "height: 55px;">
+                <h4 style = "font-size: 30px; padding-left: 20px;">Deactivate Package</h4>
             </div>
             <div class="modal-content">
                 <p style = "padding-left: 90px; font-size: 15px;">Are you sure you want to deactivate this package?</p>
@@ -207,7 +207,82 @@
     </div>
 
 
-        <!-- Data Grid -->
+    <!-- Modal List of Deactivated Package -->
+    <div id="modalListOfDeactivatedPackage" class="modal" style = "height: 1200px; width: 600px;">
+        <div class="modal-content">
+            <!-- Data Grid Deactivated Package/s-->
+            <div id="admin2" class="col s12" style="margin-top: 0px">
+                <div class="z-depth-2 card material-table" style="margin-top: 0px">
+                    <div class="table-header" style="height: 55px; background-color: #00897b;">
+                        <h4 style = "padding-top: 10px; font-size: 30px; color: white; padding-left: 0px;">Deactivated Package/s</h4>
+                    </div>
+                    <table id="datatable2">
+                        <thead>
+                        <tr>
+                            <th>Package Name</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Package One</td>
+                            <td>
+                                <button name = "action" class="btn red modal-close">Activate</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Package Two</td>
+                            <td>
+                                <button name = "action" class="btn red modal-close">Activate</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Package Three</td>
+                            <td>
+                                <button name = "action" class="btn red modal-close">Activate</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Package Three</td>
+                            <td>
+                                <button name = "action" class="btn red modal-close">Activate</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Package Four</td>
+                            <td>
+                                <button name = "action" class="btn red modal-close">Activate</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Package Five</td>
+                            <td>
+                                <button name = "action" class="btn red modal-close">Activate</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Package Six</td>
+                            <td>
+                                <button name = "action" class="btn red modal-close">Activate</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Package Seven</td>
+                            <td>
+                                <button name = "action" class="btn red modal-close">Activate</button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <button name = "action" class="btn red modal-close right" style = "margin-bottom: 10px; margin-right: 30px;">DONE</button>
+    </div>
+
+
+
+    <!-- Data Grid -->
         <div class = "col s9" style = "margin-left: 40px; margin-right: 40px; margin-top: 0px;">
             <div class="row">
                 <div id="admin" class="col s12" style="margin-top: 20px">
@@ -217,6 +292,7 @@
 
                             <div class="actions">
                                 <button name = "action" class="modal-trigger btn-floating yellow" style = "margin-right: 10px;" href = "#modalCreatePackage"><i class="material-icons">add</i></button>
+                                <button name = "action" class="modal-trigger btn-floating black" style = "margin-right: 10px;" href = "#modalListOfDeactivatedPackage"><i class="material-icons" style = "color: white">delete</i></button>
                                 <a href="#" class="search-toggle waves-effect btn-flat nopadding"><i class="material-icons" style="color: #ffffff;">search</i></a>
                             </div>
                         </div>
