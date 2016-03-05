@@ -9,7 +9,12 @@ public class UpdateBuildingAction extends ActionSupport implements Action{
 
 	private static final long serialVersionUID = 1L;
 	private Building building;
+	private String strBuildingName;
 	private String strStatus;
+	
+	public void setStrBuildingName(String strBuildingName){
+		this.strBuildingName = strBuildingName;
+	}
 	
 	public Building getBuilding() {
 		return building;
@@ -17,7 +22,7 @@ public class UpdateBuildingAction extends ActionSupport implements Action{
 	public void setBuilding(Building building) {
 		this.building = building;
 	}
-	public String getStrStatus() {
+	public String getStatus() {
 		return strStatus;
 	}
 	public void setStrStatus(String strStatus) {
@@ -26,7 +31,10 @@ public class UpdateBuildingAction extends ActionSupport implements Action{
 	
 	public String execute(){
 		
+		System.out.println("HERE IN UPDATE");
+		building.setBuildingId(Building.getBuilding(strBuildingName).getBuildingId());
 		strStatus = building.update();
+		System.out.println(strStatus);
 		return "success";
 		
 	}

@@ -69,7 +69,16 @@ public class BuildingBusinessImpl implements BuildingBusiness{
 			return "input";
 		}
 		Building building = new Building(strBuildingName);
+		building = buildingRepository.getBuilding(building);
 		return buildingRepository.deactivateBuilding(building);
+	}
+
+	@Override
+	public Building getBuildingById(int buildingId) {
+		
+		Building building = new Building();
+		building.setBuildingId(buildingId);
+		return buildingRepository.getBuilding(building);
 	}
 
 }

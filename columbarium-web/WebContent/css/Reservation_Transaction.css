@@ -95,7 +95,7 @@ p {
 }
 
 .modal-header {
-    background: url(../img/black_pattern1.jpg) repeat;
+    background-color: #00897b;
     color: white;
     height: 70px;
 }

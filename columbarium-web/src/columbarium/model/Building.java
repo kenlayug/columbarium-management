@@ -111,6 +111,12 @@ public class Building {
 		return buildingService.getBuilding(strBuildingName);
 	}
 	
+	public static Building getBuildingById(int buildingId){
+		BuildingService buildingService = (BuildingService)ServletActionContext.getServletContext()
+				.getAttribute("buildingService");
+		return buildingService.getBuildingById(buildingId);
+	}
+	
 	public String update(){
 		BuildingService buildingService = (BuildingService)ServletActionContext.getServletContext()
 				.getAttribute("buildingService");

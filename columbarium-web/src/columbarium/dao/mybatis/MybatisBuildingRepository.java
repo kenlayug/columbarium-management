@@ -116,6 +116,8 @@ public class MybatisBuildingRepository extends MybatisClient implements Building
 			
 			BuildingMapper buildingMapper = sqlSession.getMapper(BuildingMapper.class);
 			if (buildingMapper.checkIfExistingBuilding(building) > 0){
+				System.out.println(building.getStrBuildingName());
+				System.out.println(building.getBuildingId());
 				buildingMapper.deactivateBuilding(building);
 				sqlSession.commit();
 				return "success";
