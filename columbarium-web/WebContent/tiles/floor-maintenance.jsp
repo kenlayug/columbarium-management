@@ -93,9 +93,9 @@
 
 
             <!-- Modal Configure -->
-            <div id="modalConfigure" class="modal">
-                <div class = "modal-header">
-                    <h4>Floor Configuration</h4>
+            <div id="modalConfigure" class="modal" style = "width: 700px;">
+                <div class = "modal-header" style = "height: 55px;">
+                    <h4 style = "font-size: 30px; padding-left: 20px;">Floor Configuration</h4>
                 </div>
 
                 <div class = "col s12">
@@ -139,7 +139,7 @@
                 <!-- Checkbox -->
                  <div class = "row">
                      <div class = "col s6">
-                    <div style = "padding-left: 30px;">
+                    <div style = "padding-left: 40px;">
                         <label for = "unit" style = "font-size: 20px; color: black;">Is this a unit?</label>
                             <p>
                                 <input type="checkbox" id="isUnitToBeConfigured"/>
@@ -172,9 +172,9 @@
             </div>
 
             <!-- Modal New Floor Type -->
-            <div id="modalNewFloorType" class="modal">
-                <div class = "modal-header">
-                    <h4>Create Floor Type</h4>
+            <div id="modalNewFloorType" class="modal" style = "width: 500px;">
+                <div class = "modal-header" style = "height: 55px;">
+                    <h4 style = "padding-left: 20px; font-size: 30px;">Create Floor Type</h4>
                 </div>
                 <div class="modal-content">
                     <div class = "col s12">
@@ -200,9 +200,9 @@
             </div>
 
             <!-- Modal Price -->
-            <div id="modalPrice" class="modal">
-                <div class = "modal-header">
-                    <h4>Floor Price</h4>
+            <div id="modalPrice" class="modal" style = "width: 700px;">
+                <div class = "modal-header" style = "height: 55px;">
+                    <h4 style = "padding-left: 20px; font-size: 30px; ">Floor Price</h4>
                 </div>
                 <div class="modal-content">
                     <div class = "col s12">
