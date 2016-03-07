@@ -14,6 +14,183 @@
     <div class = "row">
         <div class = "responsive">
 
+
+            <div style = "overflow: auto;height: 370px;">
+                <div class = "col s12">
+                    <div class = "aside aside ">
+
+                        <ul class="collapsible" data-collapsible="accordion">
+                            <li>
+                                <div class="collapsible-header">
+                                    <i class="material-icons">filter_drama</i>Building One</div>
+                                <div class="collapsible-body">
+                                    <div class="row">
+                                        <div class="col s12 m12">
+                                            <ul class="collapsible" data-collapsible="accordion">
+                                                <li>
+                                                    <div class="collapsible-header">
+                                                        <i class="material-icons">filter_drama</i>First FLoor</div>
+                                                    <div class="collapsible-body">
+                                                        <div class="row">
+                                                            <div class="col s12 m12">
+                                                                <ul class="collapsible" data-collapsible="accordion">
+                                                                    <li>
+                                                                        <div class="collapsible-header">
+                                                                            <i class="material-icons">filter_drama</i>Block A</div>
+                                                                        <div class="collapsible-body" style = "height: 20px;">
+                                                                            <p>Vault 1</p><hr>
+                                                                            <p>Vault 2</p>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div class="collapsible-header">
+                                                                            <i class="material-icons">place</i>Block B</div>
+                                                                        <div class="collapsible-body">
+                                                                            <p>Vault 3</p>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div class="collapsible-header">
+                                                                            <i class="material-icons">whatshot</i>Block C</div>
+                                                                        <div class="collapsible-body">
+                                                                            <p>Vault 4</p>
+                                                                            <p>Vault 5</p>
+                                                                        </div>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="collapsible-header">
+                                                        <i class="material-icons">place</i>Nested Second</div>
+                                                    <div class="collapsible-body">
+                                                        <p>Lorem ipsum dolor sit amet.</p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="collapsible-header">
+                                                        <i class="material-icons">whatshot</i>Nested Third</div>
+                                                    <div class="collapsible-body">
+                                                        <p>Lorem ipsum dolor sit amet.</p>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="collapsible-header">
+                                    <i class="material-icons">place</i>Second</div>
+                                <div class="collapsible-body">
+                                    <div class="container">
+                                        <ul class="collapsible" data-collapsible="accordion">
+                                            <li>
+                                                <div class="collapsible-header">
+                                                    <i class="material-icons">filter_drama</i>Nested First</div>
+                                                <div class="collapsible-body">
+                                                    <p>Lorem ipsum dolor sit amet.</p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="collapsible-header">
+                                                    <i class="material-icons">place</i>Nested Second</div>
+                                                <div class="collapsible-body">
+                                                    <p>Lorem ipsum dolor sit amet.</p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="collapsible-header">
+                                                    <i class="material-icons">whatshot</i>Nested Third</div>
+                                                <div class="collapsible-body">
+                                                    <p>Lorem ipsum dolor sit amet.</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="collapsible-header">
+                                    <i class="material-icons">whatshot</i>Third</div>
+                                <div class="collapsible-body">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col s12 m12">
+                                                <ul class="collapsible" data-collapsible="accordion">
+                                                    <li>
+                                                        <div class="collapsible-header">
+                                                            <i class="material-icons">filter_drama</i>Nested First</div>
+                                                        <div class="collapsible-body">
+                                                            <p>Lorem ipsum dolor sit amet.</p>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="collapsible-header">
+                                                            <i class="material-icons">place</i>Nested Second</div>
+                                                        <div class="collapsible-body">
+                                                            <p>Lorem ipsum dolor sit amet.</p>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="collapsible-header">
+                                                            <i class="material-icons">whatshot</i>Nested Third</div>
+                                                        <div class="collapsible-body">
+                                                            <p>Lorem ipsum dolor sit amet.</p>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="collapsible-header">
+                                    <i class="material-icons">filter_drama</i>Fourth</div>
+                                <div class="collapsible-body">
+                                    <div style="padding:25px">
+                                        <ul class="collapsible" data-collapsible="accordion">
+                                            <li>
+                                                <div class="collapsible-header">
+                                                    <i class="material-icons">filter_drama</i>Nested First</div>
+                                                <div class="collapsible-body">
+                                                    <p>Lorem ipsum dolor sit amet.</p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="collapsible-header">
+                                                    <i class="material-icons">place</i>Nested Second</div>
+                                                <div class="collapsible-body">
+                                                    <p>Lorem ipsum dolor sit amet.</p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="collapsible-header">
+                                                    <i class="material-icons">whatshot</i>Nested Third</div>
+                                                <div class="collapsible-body">
+                                                    <p>Lorem ipsum dolor sit amet.</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
         <div class = "col s5">
             <h2 style = "padding-left: 40px; font-size: 30px; margin-top: 0px;">Floor Maintenance</h2>
 
