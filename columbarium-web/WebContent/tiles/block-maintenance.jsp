@@ -122,13 +122,26 @@
                 </div>
                 <form class="modal-content" id="createBlockForm">
 
-                        <div style = "padding-left: 10px;">
-                            <div class="input-field col s12">
-                            	<input id="floorIdBlockToCreate" type="hidden">
-                                <input id="blockName" type="text" class="validate" required = "" aria-required="true" length = "20">
-                                <label for="blockName" data-error = "Invalid format." data-success = "">Block Name<span style = "color: red;">*</span></label>
-                            </div>
+                    <div style = "padding-left: 10px;">
+                        <div class="input-field col s12">
+                            <input id="floorIdBlockToCreate" type="hidden">
+                            <input id="blockName" type="text" class="validate" required = "" aria-required="true" length = "20">
+                            <label for="blockName" data-error = "Invalid format." data-success = "">Block Name<span style = "color: red;">*</span></label>
                         </div>
+                    </div>
+
+                    <div class="row" style = "padding-left: 20px;">
+                        <h5 style = "font-family: arial;">Block size:</h5>
+                        <div class="input-field col s6" style = "padding-left: 10px;">
+                            <input id="floorLevelToBeConfigured" type="number" class="validate" required = "" aria-required = "true" min = "1" max = "10">
+                            <label for="floorLevelToBeConfigured" data-error = "1-10 only" data-success = "">Level/s:<span style = "color: red;">*</span></label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="floorUnitToBeConfigured" type="number" class="validate" required = "" aria-required = "true" min = "1" max = "20">
+                            <label for="floorUnitToBeConfigured" data-error = "1-20 only" data-success = "">Unit/s:<span style = "color: red">*</span></label>
+                        </div>
+                    </div>
+
                     <br><br>
 
                     <br>
@@ -180,76 +193,77 @@
                 </div>
             </div>
 
-            <!-- Modal List of Deactivated Blocks -->
-            <div id="modalListOfDeactivatedBlock" class="modal" style = "height: 1200px; width: 600px;">
+            <!-- Modal Archive Block-->
+            <div id="modalArchiveBlock" class="modal" style = "height: 1300px; width: 740px;">
                 <div class="modal-content">
                     <!-- Data Grid Deactivated Block/s-->
-                            <div id="admin2" class="col s12" style="margin-top: 0px">
-                                <div class="z-depth-2 card material-table" style="margin-top: 0px">
-                                    <div class="table-header" style="height: 55px; background-color: #00897b;">
-                                        <h4 style = "padding-top: 10px; font-size: 30px; color: white; padding-left: 0px;">Deactivated Block/s</h4>
-                                    </div>
-                                    <table id="datatable2">
-                                        <thead>
-                                        <tr>
-                                            <th>Block Name</th>
-                                            <th>Action</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr>
-                                            <td>Block One</td>
-                                            <td>
-                                                <button name = "action" class="btn red modal-close">Activate</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Block Two</td>
-                                            <td>
-                                                <button name = "action" class="btn red modal-close">Activate</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Block Three</td>
-                                            <td>
-                                                <button name = "action" class="btn red modal-close">Activate</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Block Four</td>
-                                            <td>
-                                                <button name = "action" class="btn red modal-close">Activate</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Block Five</td>
-                                            <td>
-                                                <button name = "action" class="btn red modal-close">Activate</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Block Six</td>
-                                            <td>
-                                                <button name = "action" class="btn red modal-close">Activate</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Block Seven</td>
-                                            <td>
-                                                <button name = "action" class="btn red modal-close">Activate</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Block Eight</td>
-                                            <td>
-                                                <button name = "action" class="btn red modal-close">Activate</button>
-                                            </td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
+                    <div id="admin1" class="col s12" style="margin-top: 0px">
+                        <div class="z-depth-2 card material-table" style="margin-top: 0px">
+                            <div class="table-header" style="height: 45px; background-color: #00897b;">
+                                <h4 style = "padding-top: 10px; font-size: 30px; color: white; padding-left: 0px;">Archive Block/s</h4>
+                                <a href="#" class="search-toggle btn-flat right"><i class="material-icons right" style="margin-left: 270px; color: #ffffff;">search</i></a>
                             </div>
+                            <table id="datatable2">
+                                <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Action</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>Block One</td>
+                                    <td>
+                                        <button name = "action" class="btn red modal-close">Activate</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Block Two</td>
+                                    <td>
+                                        <button name = "action" class="btn red modal-close">Activate</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Block Three</td>
+                                    <td>
+                                        <button name = "action" class="btn red modal-close">Activate</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Block Three</td>
+                                    <td>
+                                        <button name = "action" class="btn red modal-close">Activate</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Block Four</td>
+                                    <td>
+                                        <button name = "action" class="btn red modal-close">Activate</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Block Five</td>
+                                    <td>
+                                        <button name = "action" class="btn red modal-close">Activate</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Block Six</td>
+                                    <td>
+                                        <button name = "action" class="btn red modal-close">Activate</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Block Seven</td>
+                                    <td>
+                                        <button name = "action" class="btn red modal-close">Activate</button>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
                         </div>
+                    </div>
+                </div>
                 <button name = "action" class="btn red modal-close right" style = "margin-bottom: 10px; margin-right: 30px;">DONE</button>
             </div>
 
@@ -261,7 +275,7 @@
                             <div class="table-header" style="background-color: #00897b;">
                                 <h4 style = "font-size: 30px; color: white; padding-left: 0px;">Block Data Grid</h4>
                                 <div class="actions">
-                                    <button name = "action" class="modal-trigger btn-floating black" style = "margin-right: 10px;" href = "#modalListOfDeactivatedBlock"><i class="material-icons" style = "color: white">delete</i></button>
+                                    <button name = "action" class="btn tooltipped modal-trigger btn-floating black" data-position = "bottom" data-delay = "30" data-tooltip = "Deactivated Block/s" style = "margin-right: 10px;" href = "#modalArchiveBlock"><i class="material-icons" style = "color: white">delete</i></button>
                                     <a href="#" class="search-toggle waves-effect btn-flat nopadding"><i class="material-icons" style="color: #ffffff;">search</i></a>
                                 </div>
                             </div>

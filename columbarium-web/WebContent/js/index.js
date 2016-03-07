@@ -204,7 +204,7 @@ $(document).ready(function() {
 
 $(document).ready(function() {
   $('#datatable2').dataTable({
-    "iDisplayLength": 4,
+    "iDisplayLength": 3,
     "oLanguage": {
       "sStripClasses": "",
       "sSearch": "",

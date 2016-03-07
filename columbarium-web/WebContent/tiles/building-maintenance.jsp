@@ -96,79 +96,79 @@
 				</div>
 	        </div>
 
-			<!-- Modal List of Deactivated Building -->
-			<div id="modalListOfDeactivatedBuilding" class="modal" style = "height: 1200px; width: 600px;">
-				<div class="modal-content">
-					<!-- Data Grid Deactivated Building/s-->
-					<div id="admin2" class="col s12" style="margin-top: 0px">
-						<div class="z-depth-2 card material-table" style="margin-top: 0px">
-							<div class="table-header" style="height: 55px; background-color: #00897b;">
-								<h4 style = "padding-top: 10px; font-size: 30px; color: white; padding-left: 0px;">Deactivated Building/s</h4>
-							</div>
-							<table id="datatable2">
-								<thead>
-								<tr>
-									<th>Building Name</th>
-									<th>Action</th>
-								</tr>
-								</thead>
-								<tbody>
-								<tr>
-									<td>Building One</td>
-									<td>
-										<button name = "action" class="btn red modal-close">Activate</button>
-									</td>
-								</tr>
-								<tr>
-									<td>Building Two</td>
-									<td>
-										<button name = "action" class="btn red modal-close">Activate</button>
-									</td>
-								</tr>
-								<tr>
-									<td>Building Three</td>
-									<td>
-										<button name = "action" class="btn red modal-close">Activate</button>
-									</td>
-								</tr>
-								<tr>
-									<td>Building Three</td>
-									<td>
-										<button name = "action" class="btn red modal-close">Activate</button>
-									</td>
-								</tr>
-								<tr>
-									<td>Building Four</td>
-									<td>
-										<button name = "action" class="btn red modal-close">Activate</button>
-									</td>
-								</tr>
-								<tr>
-									<td>Building Five</td>
-									<td>
-										<button name = "action" class="btn red modal-close">Activate</button>
-									</td>
-								</tr>
-								<tr>
-									<td>Building Six</td>
-									<td>
-										<button name = "action" class="btn red modal-close">Activate</button>
-									</td>
-								</tr>
-								<tr>
-									<td>Building Seven</td>
-									<td>
-										<button name = "action" class="btn red modal-close">Activate</button>
-									</td>
-								</tr>
-								</tbody>
-							</table>
-						</div>
-					</div>
+<!-- Modal Archive Building-->
+<div id="modalArchiveBuilding" class="modal" style = "height: 1300px; width: 740px;">
+	<div class="modal-content">
+		<!-- Data Grid Deactivated Building/s-->
+		<div id="admin1" class="col s12" style="margin-top: 0px">
+			<div class="z-depth-2 card material-table" style="margin-top: 0px">
+				<div class="table-header" style="height: 45px; background-color: #00897b;">
+					<h4 style = "padding-top: 10px; font-size: 30px; color: white; padding-left: 0px;">Archive Building/s</h4>
+					<a href="#" class="search-toggle btn-flat right"><i class="material-icons right" style="margin-left: 270px; color: #ffffff;">search</i></a>
 				</div>
-				<button name = "action" class="btn red modal-close right" style = "margin-bottom: 10px; margin-right: 30px;">DONE</button>
+				<table id="datatable2">
+					<thead>
+					<tr>
+						<th>Name</th>
+						<th>Action</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<td>Building One</td>
+						<td>
+							<button name = "action" class="btn red modal-close">Activate</button>
+						</td>
+					</tr>
+					<tr>
+						<td>Building Two</td>
+						<td>
+							<button name = "action" class="btn red modal-close">Activate</button>
+						</td>
+					</tr>
+					<tr>
+						<td>Building Three</td>
+						<td>
+							<button name = "action" class="btn red modal-close">Activate</button>
+						</td>
+					</tr>
+					<tr>
+						<td>Building Three</td>
+						<td>
+							<button name = "action" class="btn red modal-close">Activate</button>
+						</td>
+					</tr>
+					<tr>
+						<td>Building Four</td>
+						<td>
+							<button name = "action" class="btn red modal-close">Activate</button>
+						</td>
+					</tr>
+					<tr>
+						<td>Building Five</td>
+						<td>
+							<button name = "action" class="btn red modal-close">Activate</button>
+						</td>
+					</tr>
+					<tr>
+						<td>Building Six</td>
+						<td>
+							<button name = "action" class="btn red modal-close">Activate</button>
+						</td>
+					</tr>
+					<tr>
+						<td>Building Seven</td>
+						<td>
+							<button name = "action" class="btn red modal-close">Activate</button>
+						</td>
+					</tr>
+					</tbody>
+				</table>
 			</div>
-
+		</div>
+	</div>
+	<button name = "action" class="btn red modal-close right" style = "margin-bottom: 10px; margin-right: 30px;">DONE</button>
+</div>
 	
 	        <!-- Data Grid -->
 			<div class = "col s7">
@@ -178,7 +178,7 @@
 							<div class="table-header" style="background-color: #00897b;">
 								<h4 style = "font-size: 30px; color: white; padding-left: 0px;">Building Data Grid</h4>
 								<div class="actions">
-									<button name = "action" class="modal-trigger btn-floating black" style = "margin-right: 10px;" href = "#modalListOfDeactivatedBuilding"><i class="material-icons" style = "color: white">delete</i></button>
+									<button name = "action" class="btn tooltipped modal-trigger btn-floating black" data-position = "bottom" data-delay = "30" data-tooltip = "Deactivated Building/s" style = "margin-right: 10px;" href = "#modalArchiveBuilding"><i class="material-icons" style = "color: white">delete</i></button>
 									<a href="#" class="search-toggle waves-effect btn-flat nopadding"><i class="material-icons" style="color: #ffffff;">search</i></a>
 								</div>
 							</div>

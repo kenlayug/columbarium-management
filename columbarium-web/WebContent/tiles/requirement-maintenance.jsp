@@ -108,19 +108,20 @@
 				</div>
 			</div>
 
-			<!-- Modal List of Deactivated Requirement -->
-			<div id="modalListOfDeactivatedRequirement" class="modal" style = "height: 1200px; width: 600px;">
+			<!-- Modal Archive Requirement-->
+			<div id="modalArchiveRequirement" class="modal" style = "height: 1300px; width: 780px;">
 				<div class="modal-content">
 					<!-- Data Grid Deactivated Requirement/s-->
-					<div id="admin2" class="col s12" style="margin-top: 0px">
+					<div id="admin1" class="col s12" style="margin-top: 0px">
 						<div class="z-depth-2 card material-table" style="margin-top: 0px">
-							<div class="table-header" style="height: 55px; background-color: #00897b;">
-								<h4 style = "padding-top: 10px; font-size: 30px; color: white; padding-left: 0px;">Deactivated Requirement/s</h4>
+							<div class="table-header" style="height: 45px; background-color: #00897b;">
+								<h4 style = "padding-top: 10px; font-size: 30px; color: white; padding-left: 0px;">Archive Requirement/s</h4>
+								<a href="#" class="search-toggle btn-flat right"><i class="material-icons right" style="margin-left: 220px; color: #ffffff;">search</i></a>
 							</div>
 							<table id="datatable2">
 								<thead>
 								<tr>
-									<th>Requirement Name</th>
+									<th>Name</th>
 									<th>Action</th>
 								</tr>
 								</thead>
@@ -188,9 +189,9 @@
 					<div id="admin" class="col s12" style="margin-top: 20px">
 						<div class="z-depth-2 card material-table">
 							<div class="table-header" style="background-color: #00897b;">
-								<h4 style = "font-size: 30px; color: white; padding-left: 0px;">Building Data Grid</h4>
+								<h4 style = "font-size: 30px; color: white; padding-left: 0px;">Requirement Record</h4>
 								<div class="actions">
-									<button name = "action" class="modal-trigger btn-floating black" style = "margin-right: 10px;" href = "#modalListOfDeactivatedRequirement"><i class="material-icons" style = "color: white">delete</i></button>
+									<button name = "action" class="btn tooltipped modal-trigger btn-floating black" data-position = "bottom" data-delay = "30" data-tooltip = "Deactivated Requirement/s" style = "margin-right: 10px;" href = "#modalArchiveRequirement"><i class="material-icons" style = "color: white">delete</i></button>
 									<a href="#" class="search-toggle waves-effect btn-flat nopadding"><i class="material-icons" style="color: #ffffff;">search</i></a>
 								</div>
 							</div>
