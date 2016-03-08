@@ -14,6 +14,183 @@
     <div class = "row">
         <div class = "responsive">
 
+
+            <div style = "overflow: auto;height: 370px;">
+                <div class = "col s12">
+                    <div class = "aside aside ">
+
+                        <ul class="collapsible" data-collapsible="accordion">
+                            <li>
+                                <div class="collapsible-header">
+                                    <i class="material-icons">filter_drama</i>Building One</div>
+                                <div class="collapsible-body">
+                                    <div class="row">
+                                        <div class="col s12 m12">
+                                            <ul class="collapsible" data-collapsible="accordion">
+                                                <li>
+                                                    <div class="collapsible-header">
+                                                        <i class="material-icons">filter_drama</i>First FLoor</div>
+                                                    <div class="collapsible-body">
+                                                        <div class="row">
+                                                            <div class="col s12 m12">
+                                                                <ul class="collapsible" data-collapsible="accordion">
+                                                                    <li>
+                                                                        <div class="collapsible-header">
+                                                                            <i class="material-icons">filter_drama</i>Block A</div>
+                                                                        <div class="collapsible-body" style = "height: 20px;">
+                                                                            <p>Vault 1</p><hr>
+                                                                            <p>Vault 2</p>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div class="collapsible-header">
+                                                                            <i class="material-icons">place</i>Block B</div>
+                                                                        <div class="collapsible-body">
+                                                                            <p>Vault 3</p>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div class="collapsible-header">
+                                                                            <i class="material-icons">whatshot</i>Block C</div>
+                                                                        <div class="collapsible-body">
+                                                                            <p>Vault 4</p>
+                                                                            <p>Vault 5</p>
+                                                                        </div>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="collapsible-header">
+                                                        <i class="material-icons">place</i>Nested Second</div>
+                                                    <div class="collapsible-body">
+                                                        <p>Lorem ipsum dolor sit amet.</p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="collapsible-header">
+                                                        <i class="material-icons">whatshot</i>Nested Third</div>
+                                                    <div class="collapsible-body">
+                                                        <p>Lorem ipsum dolor sit amet.</p>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="collapsible-header">
+                                    <i class="material-icons">place</i>Second</div>
+                                <div class="collapsible-body">
+                                    <div class="container">
+                                        <ul class="collapsible" data-collapsible="accordion">
+                                            <li>
+                                                <div class="collapsible-header">
+                                                    <i class="material-icons">filter_drama</i>Nested First</div>
+                                                <div class="collapsible-body">
+                                                    <p>Lorem ipsum dolor sit amet.</p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="collapsible-header">
+                                                    <i class="material-icons">place</i>Nested Second</div>
+                                                <div class="collapsible-body">
+                                                    <p>Lorem ipsum dolor sit amet.</p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="collapsible-header">
+                                                    <i class="material-icons">whatshot</i>Nested Third</div>
+                                                <div class="collapsible-body">
+                                                    <p>Lorem ipsum dolor sit amet.</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="collapsible-header">
+                                    <i class="material-icons">whatshot</i>Third</div>
+                                <div class="collapsible-body">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col s12 m12">
+                                                <ul class="collapsible" data-collapsible="accordion">
+                                                    <li>
+                                                        <div class="collapsible-header">
+                                                            <i class="material-icons">filter_drama</i>Nested First</div>
+                                                        <div class="collapsible-body">
+                                                            <p>Lorem ipsum dolor sit amet.</p>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="collapsible-header">
+                                                            <i class="material-icons">place</i>Nested Second</div>
+                                                        <div class="collapsible-body">
+                                                            <p>Lorem ipsum dolor sit amet.</p>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="collapsible-header">
+                                                            <i class="material-icons">whatshot</i>Nested Third</div>
+                                                        <div class="collapsible-body">
+                                                            <p>Lorem ipsum dolor sit amet.</p>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="collapsible-header">
+                                    <i class="material-icons">filter_drama</i>Fourth</div>
+                                <div class="collapsible-body">
+                                    <div style="padding:25px">
+                                        <ul class="collapsible" data-collapsible="accordion">
+                                            <li>
+                                                <div class="collapsible-header">
+                                                    <i class="material-icons">filter_drama</i>Nested First</div>
+                                                <div class="collapsible-body">
+                                                    <p>Lorem ipsum dolor sit amet.</p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="collapsible-header">
+                                                    <i class="material-icons">place</i>Nested Second</div>
+                                                <div class="collapsible-body">
+                                                    <p>Lorem ipsum dolor sit amet.</p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="collapsible-header">
+                                                    <i class="material-icons">whatshot</i>Nested Third</div>
+                                                <div class="collapsible-body">
+                                                    <p>Lorem ipsum dolor sit amet.</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
         <div class = "col s5">
             <h2 style = "padding-left: 40px; font-size: 30px; margin-top: 0px;">Floor Maintenance</h2>
 
@@ -98,77 +275,35 @@
                     <h4 style = "font-size: 30px; padding-left: 20px;">Floor Configuration</h4>
                 </div>
 
-                <div class = "col s12">
-                    <div class = "row">
-                        <br>
-                        <!-- Select Floor Type -->
-                        <div class="input-field col s6" style = "padding-left: 40px;">
-                        	<input id="buildingIdToBeConfigured" type="hidden">
-                        	<input id="floorIdToBeConfigured" type="hidden">
-                                <select id="floorTypeToBeConfigured">
-                                        <option value="" disabled selected>Floor Type:</option>
-									<c:if test="${floorTypeList != null}">
-										<c:forEach items="${floorTypeList }" var="floor">
-											<option value="${floor.strFloorDesc}">${floor.strFloorDesc }</option>
-										</c:forEach>
-									</c:if>
-                                </select>
-                                        <label style = "padding-left: 30px;">Select Floor Type:</label>
-                         </div>
-                         <div class = "col s6">
-                             <button name = "action" class="modal-trigger red waves-effect waves-light btn" style = "margin-left: 120px;" href = "#modalNewFloorType">New Floor Type</button>
-                         </div>
-                    </div>
-                </div>
+          <div class="modal-content">
 
-                <div class="modal-content">
-                    <div class="row" style = "padding-left: 20px;">
-                        <h5 style = "font-family: arial;">Block size per floor:</h5>
-                        <div class="input-field col s6" style = "padding-left: 10px;">
-                            <input id="floorRowToBeConfigured" type="number" class="validate" required = "" aria-required = "true" min = "1" max = "10">
-                            <label for="floorRowToBeConfigured" data-error = "1-10 only" data-success = "">Row/s:<span style = "color: red;">*</span></label>
-                        </div>
-                        <div class="input-field col s6">
-                            <input id="floorColumnToBeConfigured" type="number" class="validate" required = "" aria-required = "true" min = "1" max = "20">
-                            <label for="floorColumnToBeConfigured" data-error = "1-20 only" data-success = "">Column/s:<span style = "color: red">*</span></label>
-                        </div>
-                    </div>
-                </div>
+          <div class = "col s12">
+            <div class = "row">
+              <div style = "padding-left: 20px;">
+              <div class="input-field col s8">
+                  <select multiple>
+                      <option value="" disabled selected>Select Floor Type</option>
+                      <option value="1">Admin Office</option>
+                      <option value="2">Cashier</option>
+                      <option value="3">Columbary Vault</option>
+                      <option value="4">Full Body</option>
+                  </select>
+                  <label>Floor Division</label>
+              </div>
+              </div>
 
+                    <button name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "New Floor Type" style = "margin-left: 5px;" href = "#modalNewFloorType"><i class="material-icons">add</i></button>
 
-                <!-- Checkbox -->
-                 <div class = "row">
-                     <div class = "col s6">
-                    <div style = "padding-left: 40px;">
-                        <label for = "unit" style = "font-size: 20px; color: black;">Is this a unit?</label>
-                            <p>
-                                <input type="checkbox" id="isUnitToBeConfigured"/>
-                                <label for="isUnitToBeConfigured">Yes</label>
-                            </p>
-                    </div>
-                     </div>
-                     <div class = "col s6">
-                         <!-- Radio Button -->
-                         <div style = "padding-left: 0px;">
-                             <label style = "font-size: 20px; color: black;">Unit Type</label>
-                                 <p>
-                                     <input name="unitTypeToBeConfigured" type="radio" value="Columbary Vault" id="columbaryVault" checked = "checked" disabled/>
-                                     <label for="columbaryVault">Columbary Vault</label>
-                                 </p>
-                                 <p>
-                                     <input name="unitTypeToBeConfigured" type="radio" value="Columbary Vault" id="fullBody" disabled/>
-                                     <label for="fullBody">Full Body</label>
-                                 </p>
-                         </div>
-                     </div>
-                 </div>
-                <br><br>
+            </div>
+          </div>
+          <br><br><br>
 
                 <div class="modal-footer">
                     <button onclick="configureFloor()" name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
                    
                     <button name = "action" class="waves-effect waves-light btn red modal-close">Cancel</button>
                 </div>
+            </div>
             </div>
 
             <!-- Modal New Floor Type -->
@@ -181,7 +316,7 @@
                         <div class = "row">
                             <div style = "padding-left: 10px;">
 								<form id="formCreateFloorType" action="createFloorType" method="POST">
-                                <div class="input-field col s6">
+                                <div class="input-field col s12">
                                     <input name="floorType.strFloorDesc" id="newFloorType" type="text" class="validate" required = "" aria-required = "true">
                                     <label for="newFloorType" data-error = "Invalid format." data-success = "">Floor Type Name <span style = "color: red;">*</span></label>
                                 </div>
@@ -269,6 +404,80 @@
             </div>
 
 
+            <!-- Modal Archive Floor-->
+            <div id="modalArchiveFloor" class="modal" style = "height: 1300px; width: 740px;">
+                <div class="modal-content">
+                    <!-- Data Grid Deactivated Floor/s-->
+                    <div id="admin1" class="col s12" style="margin-top: 0px">
+                        <div class="z-depth-2 card material-table" style="margin-top: 0px">
+                            <div class="table-header" style="height: 45px; background-color: #00897b;">
+                                <h4 style = "padding-top: 10px; font-size: 30px; color: white; padding-left: 0px;">Archive Floor/s</h4>
+                                <a href="#" class="search-toggle btn-flat right"><i class="material-icons right" style="margin-left: 270px; color: #ffffff;">search</i></a>
+                            </div>
+                            <table id="datatable2">
+                                <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Action</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>Floor One</td>
+                                    <td>
+                                        <button name = "action" class="btn red modal-close">Activate</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Floor Two</td>
+                                    <td>
+                                        <button name = "action" class="btn red modal-close">Activate</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Floor Three</td>
+                                    <td>
+                                        <button name = "action" class="btn red modal-close">Activate</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Floor Three</td>
+                                    <td>
+                                        <button name = "action" class="btn red modal-close">Activate</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Floor Four</td>
+                                    <td>
+                                        <button name = "action" class="btn red modal-close">Activate</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Floor Five</td>
+                                    <td>
+                                        <button name = "action" class="btn red modal-close">Activate</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Floor Six</td>
+                                    <td>
+                                        <button name = "action" class="btn red modal-close">Activate</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Floor Seven</td>
+                                    <td>
+                                        <button name = "action" class="btn red modal-close">Activate</button>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <button name = "action" class="btn red modal-close right" style = "margin-bottom: 10px; margin-right: 30px;">DONE</button>
+            </div>
+
             <!-- Data Grid -->
             <div class = "col s7">
                 <div class="row">
@@ -277,7 +486,7 @@
                             <div class="table-header" style="background-color: #00897b;">
                                 <h4 style = "font-size: 30px; color: white; padding-left: 0px;">Floor Data Grid</h4>
                                 <div class="actions">
-                                    <button name = "action" class="btn tooltipped modal-trigger btn-floating black" data-position = "bottom" data-delay = "30" data-tooltip = "Deactivated Floors" style = "margin-right: 10px;" href = "#modalCreateService"><i class="material-icons" style = "color: white">delete</i></button>
+                                    <button name = "action" class="btn tooltipped modal-trigger btn-floating black" data-position = "bottom" data-delay = "30" data-tooltip = "Deactivated Floor/s" style = "margin-right: 10px;" href = "#modalArchiveFloor"><i class="material-icons" style = "color: white">delete</i></button>
                                     <a href="#" class="search-toggle waves-effect btn-flat nopadding"><i class="material-icons" style="color: #ffffff;">search</i></a>
                                 </div>
                             </div>
@@ -295,10 +504,8 @@
                         </div>
                     </div>
                 </div>
-                <script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js'></script>
 
 
-                <script src='http://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js'></script>
                 <script type="text/javascript" src = "../js/index.js"></script>
             </div>
 </div>
@@ -307,7 +514,11 @@
 
 
 	<script>
-	
+        $(document).ready(function() {
+            $('select').material_select();
+        });
+
+
         $('.modal-trigger').leanModal({
                     dismissible: false
                 }

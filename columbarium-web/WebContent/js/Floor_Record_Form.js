@@ -19,3 +19,10 @@ var checkbox = $("input[type='checkbox']"),
 checkbox.click(function() {
     radio.attr("disabled", !checkbox.is(":checked"));
 });
+
+
+
+$(document).ready(function() {
+    $('select').material_select();
+});
+

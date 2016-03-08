@@ -144,6 +144,80 @@
             </div>
         </div>
 
+		<!-- Modal Archive Service-->
+		<div id="modalArchiveService" class="modal" style = "height: 1300px; width: 740px;">
+			<div class="modal-content">
+				<!-- Data Grid Deactivated Service/s-->
+				<div id="admin1" class="col s12" style="margin-top: 0px">
+					<div class="z-depth-2 card material-table" style="margin-top: 0px">
+						<div class="table-header" style="height: 45px; background-color: #00897b;">
+							<h4 style = "padding-top: 10px; font-size: 30px; color: white; padding-left: 0px;">Archive Service/s</h4>
+							<a href="#" class="search-toggle btn-flat right"><i class="material-icons right" style="margin-left: 270px; color: #ffffff;">search</i></a>
+						</div>
+						<table id="datatable2">
+							<thead>
+							<tr>
+								<th>Name</th>
+								<th>Action</th>
+							</tr>
+							</thead>
+							<tbody>
+							<tr>
+								<td>Service One</td>
+								<td>
+									<button name = "action" class="btn red modal-close">Activate</button>
+								</td>
+							</tr>
+							<tr>
+								<td>Service Two</td>
+								<td>
+									<button name = "action" class="btn red modal-close">Activate</button>
+								</td>
+							</tr>
+							<tr>
+								<td>Service Three</td>
+								<td>
+									<button name = "action" class="btn red modal-close">Activate</button>
+								</td>
+							</tr>
+							<tr>
+								<td>Service Three</td>
+								<td>
+									<button name = "action" class="btn red modal-close">Activate</button>
+								</td>
+							</tr>
+							<tr>
+								<td>Service Four</td>
+								<td>
+									<button name = "action" class="btn red modal-close">Activate</button>
+								</td>
+							</tr>
+							<tr>
+								<td>Service Five</td>
+								<td>
+									<button name = "action" class="btn red modal-close">Activate</button>
+								</td>
+							</tr>
+							<tr>
+								<td>Service Six</td>
+								<td>
+									<button name = "action" class="btn red modal-close">Activate</button>
+								</td>
+							</tr>
+							<tr>
+								<td>Service Seven</td>
+								<td>
+									<button name = "action" class="btn red modal-close">Activate</button>
+								</td>
+							</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<button name = "action" class="btn red modal-close right" style = "margin-bottom: 10px; margin-right: 30px;">DONE</button>
+		</div>
+
 
 		<!-- Data Grid -->
 		<div class = "col s9" style = "margin-left: 40px; margin-top: 0px;">
@@ -151,9 +225,10 @@
 				<div id="admin" class="col s12" style="margin-top: 20px">
 					<div class="z-depth-2 card material-table">
 						<div class="table-header" style="background-color: #00897b;">
-							<h4 style = "font-size: 30px; color: white; padding-left: 0px;">Service Data Grid</h4>
+							<h4 style = "font-size: 30px; color: white; padding-left: 0px;">Service Record</h4>
 							<div class="actions">
-								<button name = "action" class="waves-effect waves-light modal-trigger btn-floating yellow" style = "margin-right: 10px;" href = "#modalCreateService"><i class="material-icons">add</i></button>
+								<button name = "action" class="btn tooltipped modal-trigger btn-floating yellow" data-position = "bottom" data-delay = "30" data-tooltip = "Create Service" style = "margin-right: 10px;" href = "#modalCreateService"><i class="material-icons">add</i></button>
+								<button name = "action" class="btn tooltipped modal-trigger btn-floating black" data-position = "bottom" data-delay = "30" data-tooltip = "Deactivated Service/s" style = "margin-right: 10px;" href = "#modalArchiveService"><i class="material-icons" style = "color: white">delete</i></button>
 								<a href="#" class="search-toggle waves-effect btn-flat nopadding"><i class="material-icons" style="color: #ffffff;">search</i></a>
 							</div>
 						</div>

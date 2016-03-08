@@ -12,13 +12,13 @@
 	<div class = "responsive col s12">
 	    <div class = "row">
 	        <div class = "col s5">
-	            <h2 style = "font-size: 30px;margin-bottom: 10px;">Item Maintenance</h2>
+	            <h2 style = "font-size: 30px;margin-bottom: 10px; margin-top: 0px;">Item Maintenance</h2>
 	
 	            <!-- Create Items -->
 	            <div class = "col s12">
-	                <form class = "aside aside z-depth-3" style = "margin-top: 0px;" id="formCreate">
+	                <form class = "aside aside z-depth-3" style = "height: 430px; margin-top: 0px;" id="formCreate">
 	                    <div class = "header">
-	                        <h4 style = "font-size: 30px;padding-top: 10px;">Form</h4>
+	                        <h4 style = "font-size: 30px;padding-top: 10px; margin-top: 10px;">Form</h4>
 	                    </div>
 	
 
@@ -36,6 +36,13 @@
 	                            </div>
 	                        </div>
 	                    </div>
+
+						<div class="row" style = "padding-left: 10px;">
+							<div class="input-field col s12">
+								<input id="itemCategory" type="text" class="validate" name="item.strItemCategory" required = "" aria-required= "true">
+								<label for="itemCategory" data-error = "Invalid Format" data-success = "">Item Category <span style = "color: red;">*</span></label>
+							</div>
+						</div>
 	
 	                        <div class="row" style = "padding-left: 10px;">
 	                            <div class="input-field col s12">
@@ -112,19 +119,20 @@
 			</div>
 
 
-			<!-- Modal List of Deactivated Item -->
-			<div id="modalListOfDeactivatedItem" class="modal" style = "height: 1200px; width: 600px;">
+			<!-- Modal Archive Item-->
+			<div id="modalArchiveItem" class="modal" style = "height: 1300px; width: 740px;">
 				<div class="modal-content">
 					<!-- Data Grid Deactivated Item/s-->
-					<div id="admin2" class="col s12" style="margin-top: 0px">
+					<div id="admin1" class="col s12" style="margin-top: 0px">
 						<div class="z-depth-2 card material-table" style="margin-top: 0px">
-							<div class="table-header" style="height: 55px; background-color: #00897b;">
-								<h4 style = "padding-top: 10px; font-size: 30px; color: white; padding-left: 0px;">Deactivated Item/s</h4>
+							<div class="table-header" style="height: 45px; background-color: #00897b;">
+								<h4 style = "padding-top: 10px; font-size: 30px; color: white; padding-left: 0px;">Archive Item/s</h4>
+								<a href="#" class="search-toggle btn-flat right"><i class="material-icons right" style="margin-left: 270px; color: #ffffff;">search</i></a>
 							</div>
 							<table id="datatable2">
 								<thead>
 								<tr>
-									<th>Item Name</th>
+									<th>Name</th>
 									<th>Action</th>
 								</tr>
 								</thead>
@@ -193,18 +201,19 @@
 					<div id="admin" class="col s12" style="margin-top: 20px">
 						<div class="z-depth-2 card material-table">
 							<div class="table-header" style="background-color: #00897b;">
-								<h4 style = "font-size: 30px; color: white; padding-left: 0px;">Item Data Grid</h4>
+								<h4 style = "font-size: 30px; color: white; padding-left: 0px;">Item Record</h4>
 								<div class="actions">
-									<button name = "action" class="modal-trigger btn-floating black" style = "margin-right: 10px;" href = "#modalListOfDeactivatedItem"><i class="material-icons" style = "color: white">delete</i></button>
+									<button name = "action" class="btn tooltipped modal-trigger btn-floating black" data-position = "bottom" data-delay = "30" data-tooltip = "Deactivated Item/s" style = "margin-right: 10px;" href = "#modalArchiveItem"><i class="material-icons" style = "color: white">delete</i></button>
 									<a href="#" class="search-toggle btn-flat nopadding"><i class="material-icons" style="color: #ffffff;">search</i></a>
 								</div>
 							</div>
 							<table id="datatable">
 								<thead>
 								<tr>
-									<th>Item Name</th>
-									<th>Item Price</th>
-									<th>Item Description</th>
+									<th>Name</th>
+									<th>Price</th>
+									<th>Category</th>
+									<th>Description</th>
 									<th>Action</th>
 								</tr>
 								</thead>

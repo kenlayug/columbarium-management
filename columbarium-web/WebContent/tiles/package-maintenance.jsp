@@ -208,19 +208,20 @@
     </div>
 
 
-    <!-- Modal List of Deactivated Package -->
-    <div id="modalListOfDeactivatedPackage" class="modal" style = "height: 1200px; width: 600px;">
+    <!-- Modal Archive Package-->
+    <div id="modalArchivePackage" class="modal" style = "height: 1300px; width: 740px;">
         <div class="modal-content">
             <!-- Data Grid Deactivated Package/s-->
-            <div id="admin2" class="col s12" style="margin-top: 0px">
+            <div id="admin1" class="col s12" style="margin-top: 0px">
                 <div class="z-depth-2 card material-table" style="margin-top: 0px">
-                    <div class="table-header" style="height: 55px; background-color: #00897b;">
-                        <h4 style = "padding-top: 10px; font-size: 30px; color: white; padding-left: 0px;">Deactivated Package/s</h4>
+                    <div class="table-header" style="height: 45px; background-color: #00897b;">
+                        <h4 style = "padding-top: 10px; font-size: 30px; color: white; padding-left: 0px;">Archive Package/s</h4>
+                        <a href="#" class="search-toggle btn-flat right"><i class="material-icons right" style="margin-left: 270px; color: #ffffff;">search</i></a>
                     </div>
                     <table id="datatable2">
                         <thead>
                         <tr>
-                            <th>Package Name</th>
+                            <th>Item Name</th>
                             <th>Action</th>
                         </tr>
                         </thead>
@@ -277,9 +278,8 @@
                     </table>
                 </div>
             </div>
-            <button name = "action" class="btn red modal-close right" style = "margin-bottom: 10px; margin-right: 0px;">DONE</button>
         </div>
-
+        <button name = "action" class="btn red modal-close right" style = "margin-bottom: 10px; margin-right: 30px;">DONE</button>
     </div>
 
 
@@ -293,8 +293,8 @@
                             <h4 style = "font-size: 30px; color: white; padding-left: 0px;">Package Data Grid</h4>
 
                             <div class="actions">
-                                <button name = "action" class="modal-trigger btn-floating yellow" style = "margin-right: 10px;" href = "#modalCreatePackage"><i class="material-icons">add</i></button>
-                                <button name = "action" class="modal-trigger btn-floating black" style = "margin-right: 10px;" href = "#modalListOfDeactivatedPackage"><i class="material-icons" style = "color: white">delete</i></button>
+                                <button name = "action" class="btn tooltipped modal-trigger btn-floating yellow" data-position = "bottom" data-delay = "30" data-tooltip = "Create Package" style = "margin-right: 10px;" href = "#modalCreatePackage"><i class="material-icons">add</i></button>
+                                <button name = "action" class="btn tooltipped modal-trigger btn-floating black" data-position = "bottom" data-delay = "30" data-tooltip = "Deactivated Package/s" style = "margin-right: 10px;" href = "#modalArchivePackage"><i class="material-icons" style = "color: white">delete</i></button>
                                 <a href="#" class="search-toggle waves-effect btn-flat nopadding"><i class="material-icons" style="color: #ffffff;">search</i></a>
                             </div>
                         </div>
