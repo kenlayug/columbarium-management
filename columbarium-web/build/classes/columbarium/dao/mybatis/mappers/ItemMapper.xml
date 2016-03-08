@@ -16,6 +16,12 @@
 			<result property="strItemName" column="strItemName"/>
 			<result property="strItemDesc" column="strItemDesc"/>
 			<result property="dblPrice" column="deciItemPrice"/>
+			<association property="itemCategory" resultMap="ItemCategoryResultMap"/>
+		</resultMap>
+		
+		<resultMap type="ItemCategory" id="ItemCategoryResultMap">
+			<id property="itemCategoryId" column="itemCategoryId"/>
+			<result property="strItemCategoryDesc" column="strItemCategoryDesc"/>
 		</resultMap>
 		
 		<resultMap type="java.lang.Integer" id="ItemIdResultMap">
@@ -40,20 +46,29 @@
 			</where>
 		</select>
 		
+		<select id="checkIfExistingItemCategory" resultMap="CountItemResultMap">
+			SELECT COUNT(*)
+			FROM tblItemCategory
+			WHERE strItemCategoryDesc = #{strItemCategoryDesc}
+		</select>
+		
 		<select id="checkIfExistingById" resultMap="CountItemResultMap">
 			SELECT COUNT(*) FROM tblItem WHERE intStatus = 1 AND itemId = #{itemId}
 		</select>
 		
 		<select id="getItem" resultMap="ItemResultMap">
-			SELECT * FROM tblItem
+			SELECT i.itemId, i.strItemName, i.strItemDesc, i.deciItemPrice,
+				ic.*
+			FROM tblItem i
+			INNER JOIN tblItemCategory ic ON i.itemCategoryIdFK = ic.itemCategoryId
 			<where>
-				intStatus = 1
+				i.intStatus = 1
 				<choose>
 					<when test="itemId != 0">
-						AND itemId = #{itemId}
+						AND i.itemId = #{itemId}
 					</when>
 					<when test="itemId == 0">
-						AND strItemName LIKE #{strItemName}	
+						AND i.strItemName LIKE #{strItemName}	
 					</when>
 				</choose>
 			</where>
@@ -61,8 +76,11 @@
 		</select>
 		
 		<select id="getAllItem" resultMap="ItemResultMap">
-			SELECT itemId, strItemName, strItemDesc, deciItemPrice
-			FROM tblItem WHERE intStatus = 1 ORDER BY strItemName ASC
+			SELECT i.itemId, i.strItemName, i.strItemDesc, i.deciItemPrice,
+				ic.*
+			FROM tblItem i
+			INNER JOIN tblItemCategory ic ON i.itemCategoryIdFK = ic.itemCategoryId
+			WHERE i.intStatus = 1 ORDER BY i.strItemName ASC
 		</select>
 		
 		<select id="countAllItem" resultMap="CountItemResultMap">
@@ -75,20 +93,27 @@
 		
 		<select id="searchItemList" resultMap="ItemResultMap">
 			<bind name="itemName" value="'%' + strItemName + '%'" />
-			SELECT itemId, strItemName, strItemDesc, deciItemPrice
-			FROM tblItem
+			SELECT i.itemId, i.strItemName, i.strItemDesc, i.deciItemPrice,
+				ic.*
+			FROM tblItem i
+			INNER JOIN tblItemCategory ic ON i.itemCategoryIdFK = ic.itemCategoryId
 			<where>
-			intStatus = 1
+			i.intStatus = 1
 				<choose>
-					<when test="strItemName != null">
-						AND strItemName LIKE #{itemName}
+					<when test="itemId == 0">
+						AND i.strItemName LIKE #{itemName}
 					</when>
 					<when test="itemId != 0">
-						OR itemId = #{itemId}
+						AND i.itemId = #{itemId}
 					</when>
 				</choose>
 			</where>
 			ORDER BY strItemName ASC
+		</select>
+		
+		<select id="getAllItemCategory" resultMap="ItemCategoryResultMap">
+			SELECT * FROM tblItemCategory
+			ORDER BY strItemCategoryDesc ASC
 		</select>
 	
 	<!-- END SELECT QUERIES -->
@@ -96,8 +121,16 @@
 	<!-- INSERT QUERIES -->
 	
 		<insert id="saveItem">
-			INSERT INTO tblItem(strItemName, strItemDesc, deciItemPrice, intStatus)
-			VALUES (#{strItemName}, #{strItemDesc}, #{dblPrice}, 1)
+			INSERT INTO tblItem(strItemName, strItemDesc, deciItemPrice, itemCategoryIdFK, intStatus)
+			VALUES (#{strItemName}, #{strItemDesc}, #{dblPrice}, 
+					(SELECT itemCategoryId FROM tblItemCategory
+					WHERE strItemCategoryDesc LIKE #{itemCategory.strItemCategoryDesc})
+					,1)
+		</insert>
+		
+		<insert id="saveItemCategory">
+			INSERT INTO tblItemCategory(strItemCategoryDesc)
+			VALUES (#{strItemCategoryDesc})
 		</insert>
 		
 	<!-- END INSERT QUERIES -->

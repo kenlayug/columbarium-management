@@ -21,7 +21,7 @@ public class MybatisBuildingRepositoryTest extends TestCase{
 				new MybatisBuildingRepository(connectionManager);
 		
 		Building building = new Building();
-		building.setStrBuildingName("Sino Building");
+		building.setStrBuildingName("Ken Layug Bldg");
 		building.setStrBuildingLocation("Sta. Mesa, Manila");
 		building.setIntNoOfFloors(5);
 		
@@ -41,7 +41,6 @@ public class MybatisBuildingRepositoryTest extends TestCase{
 			System.out.println(building.getStrBuildingName());
 			for (Floor floor : building.getFloorList()) {
 				System.out.println(floor.getIntFloorNo());
-				System.out.println(floor.getFloorType());
 			}
 		}
 		
@@ -66,7 +65,6 @@ public class MybatisBuildingRepositoryTest extends TestCase{
 		building = buildingRepository.getBuilding(building);
 		for (Floor floor : building.getFloorList()) {
 			System.out.println(floor.getIntFloorNo());
-			System.out.println(floor.getFloorType());
 		}
 		assertNotNull(buildingRepository.getBuilding(building2));
 		
@@ -110,11 +108,11 @@ public class MybatisBuildingRepositoryTest extends TestCase{
 		
 		TestSuite suite = new TestSuite();
 		
-//		suite.addTest(new MybatisBuildingRepositoryTest("testCreateBuilding"));
-//		suite.addTest(new MybatisBuildingRepositoryTest("testGetAllBuilding"));
+		suite.addTest(new MybatisBuildingRepositoryTest("testCreateBuilding"));
+		suite.addTest(new MybatisBuildingRepositoryTest("testGetAllBuilding"));
 //		suite.addTest(new MybatisBuildingRepositoryTest("testGetBuilding"));
 //		suite.addTest(new MybatisBuildingRepositoryTest("testUpdateBuilding"));
-		suite.addTest(new MybatisBuildingRepositoryTest("testDeactivateBuilding"));
+//		suite.addTest(new MybatisBuildingRepositoryTest("testDeactivateBuilding"));
 		
 		return suite;
 		

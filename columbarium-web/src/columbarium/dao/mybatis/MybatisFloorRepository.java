@@ -7,6 +7,7 @@ import org.apache.ibatis.session.SqlSession;
 import columbarium.dao.FloorRepository;
 import columbarium.dao.mybatis.mappers.FloorMapper;
 import columbarium.model.Floor;
+import columbarium.model.FloorDetail;
 import columbarium.model.FloorType;
 import columbarium.model.UnitCategory;
 
@@ -26,15 +27,12 @@ public class MybatisFloorRepository extends MybatisClient implements FloorReposi
 			FloorMapper floorMapper = sqlSession.getMapper(FloorMapper.class);
 			if (floorMapper.checkIfExistingFloor(floor) > 0){
 				floor.setFloorId(floorMapper.getFloor(floor).getFloorId());
-				floorMapper.configureFloor(floor);
-				for(int intCtr = 0; intCtr < floor.getIntLevelNo(); intCtr++){
-					UnitCategory unitCategory = new UnitCategory(floor.getFloorId(), intCtr+1);
-					if (floorMapper.checkIfExistingUnitCategory(unitCategory) > 0){
-						
-					}else{
-						floorMapper.createUnitCategory(unitCategory);
-					}
+				
+				for (FloorType floorType : floor.getFloorTypeList()) {
+					FloorDetail floorDetail = new FloorDetail(floor.getFloorId(), floorType.getStrFloorDesc());
+					floorMapper.configureFloor(floorDetail);	
 				}
+				
 				sqlSession.commit();
 				return "success";
 			}

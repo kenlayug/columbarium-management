@@ -3,12 +3,13 @@ package columbarium.dao.mybatis.mappers;
 import java.util.List;
 
 import columbarium.model.Floor;
+import columbarium.model.FloorDetail;
 import columbarium.model.FloorType;
 import columbarium.model.UnitCategory;
 
 public interface FloorMapper {
 
-	public void									configureFloor(Floor floor);
+	public void									configureFloor(FloorDetail floorDetail);
 	public Floor								getFloor(Floor floor);
 	
 	public int									checkIfExistingFloor(Floor floor);

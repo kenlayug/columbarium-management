@@ -13,7 +13,16 @@ public class Item {
 	private String strItemName;
 	private String strItemDesc;
 	private double dblPrice;
+	private ItemCategory itemCategory;
 	
+	public ItemCategory getItemCategory() {
+		return itemCategory;
+	}
+
+	public void setItemCategory(ItemCategory itemCategory) {
+		this.itemCategory = itemCategory;
+	}
+
 	public Item(){
 		
 	}

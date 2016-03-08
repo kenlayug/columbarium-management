@@ -15,9 +15,11 @@
 			<id property="floorId" column="floorId"/>
 			<result property="buildingId" column="bldgIdFK"/>
 			<result property="intFloorNo" column="intFloorNo"/>
-			<result property="intLevelNo" column="intLevelNo"/>
-			<result property="intColumnNo" column="intColumnNo"/>
-			<association property="floorType" resultMap="FloorTypeResultMap"/>
+			<collection property="floorTypeList" ofType="FloorType">
+				<id property="floorTypeId" column="floorTypeId"/>
+				<result property="strFloorDesc" column="strFloorTypeDesc"/>
+				<result property="boolIsUnit" column="boolIsUnit"/>
+			</collection>
 		</resultMap>
 		
 		<resultMap type="UnitCategory" id="UnitCategoryResultMap">
@@ -78,7 +80,8 @@
 		
 		<select id="getFloor" resultMap="FloorResultMap">
 			SELECT f.*, ft.* FROM tblFloor f
-				LEFT JOIN tblFloorType ft ON f.floorTypeIdFK = ft.floorTypeId
+				LEFT JOIN tblFloorDetail fd ON f.floorId = fd.floorIdFK
+				LEFT JOIN tblFloorType ft ON fd.floorTypeIdFK = ft.floorTypeId
 			<where>
 				<if test="floorId == 0">
 					f.bldgIdFK = #{buildingId}
@@ -128,6 +131,13 @@
 				(#{floorId}, #{intLevelNo})
 		</insert>
 		
+		<insert id="configureFloor">
+			INSERT INTO tblFloorDetail (floorIdFK, floorTypeIdFk)
+			VALUES (#{floorId},
+					(SELECT floorTypeId FROM tblFloorType WHERE strFloorTypeDesc LIKE #{strFloorType})
+					)
+		</insert>
+		
 		<insert id="createFloorType">
 			INSERT INTO tblFloorType
 				(strFloorTypeDesc, boolIsUnit)
@@ -143,22 +153,7 @@
 	<!-- END INSERT QUERIES -->
 	
 	<!-- UPDATE QUERIES -->
-		
-		<update id="configureFloor">
-			UPDATE tblFloor
-			<set>
-				floorTypeIdFK =
-					(SELECT floorTypeId FROM tblFloorType
-						WHERE strFloorTypeDesc = #{floorType.strFloorDesc}),
-				<if test="intLevelNo != 0">
-					intLevelNo = #{intLevelNo},
-				</if>
-				<if test="intColumnNo != 0">
-					intColumnNo = #{intColumnNo}
-				</if>
-			</set>
-			WHERE floorId = #{floorId}
-		</update>
+	
 	
 	<!-- END UPDATE QUERIES -->
 	

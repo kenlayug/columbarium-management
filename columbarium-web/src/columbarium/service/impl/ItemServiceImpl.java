@@ -5,6 +5,7 @@ import java.util.List;
 import columbarium.business.ItemBusiness;
 import columbarium.dao.ItemRepository;
 import columbarium.model.Item;
+import columbarium.model.ItemCategory;
 import columbarium.service.ItemService;
 
 public class ItemServiceImpl implements ItemService{
@@ -66,6 +67,16 @@ public class ItemServiceImpl implements ItemService{
 	public int countItem() {
 		// TODO Auto-generated method stub
 		return itemRepository.countItem();
+	}
+
+	@Override
+	public String createItemCategory(ItemCategory itemCategory) {
+		return itemBusiness.createItemCategory(itemCategory);
+	}
+
+	@Override
+	public List<ItemCategory> getAllItemCategory() {
+		return itemRepository.getAllItemCategory();
 	}
 
 }

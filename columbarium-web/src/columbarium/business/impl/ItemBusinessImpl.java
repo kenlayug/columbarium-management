@@ -3,6 +3,7 @@ package columbarium.business.impl;
 import columbarium.business.ItemBusiness;
 import columbarium.dao.ItemRepository;
 import columbarium.model.Item;
+import columbarium.model.ItemCategory;
 
 public class ItemBusinessImpl implements ItemBusiness{
 
@@ -34,13 +35,29 @@ public class ItemBusinessImpl implements ItemBusiness{
 	public String createItem(Item item) {
 
 		if (item.getStrItemName().length() == 0 ||
-				item.getStrItemName() == null){
+				item.getStrItemName() == null ||
+				item.getStrItemDesc().trim().equals(" ")){
 			return "input";
 		}
 		if (Double.parseDouble(item.getDblPrice()) == 0){
 			return "input";
 		}
+		if (item.getItemCategory().getStrItemCategoryDesc().length() == 0 ||
+				item.getItemCategory().getStrItemCategoryDesc() == null ||
+				item.getItemCategory().getStrItemCategoryDesc() == " "){
+			return "input";
+		}
 		return itemRepository.createItem(item);
+	}
+
+	@Override
+	public String createItemCategory(ItemCategory itemCategory) {
+		if (itemCategory.getStrItemCategoryDesc() == null ||
+				itemCategory.getStrItemCategoryDesc().length() == 0 ||
+				itemCategory.getStrItemCategoryDesc().trim().equals(" ")){
+			return "input";
+		}
+		return itemRepository.createItemCategory(itemCategory);
 	}
 
 }

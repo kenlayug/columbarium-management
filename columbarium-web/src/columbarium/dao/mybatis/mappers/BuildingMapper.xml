@@ -21,7 +21,10 @@
 				<result property="intFloorNo" column="intFloorNo"/>
 				<result property="intLevelNo" column="intLevelNo"/>
 				<result property="intColumnNo" column="intColumnNo"/>
-				<association property="floorType" resultMap="FloorTypeResultMap"/>
+				<collection property="floorTypeList" ofType="FloorType">
+					<id property="floorTypeId" column="floorTypeId"/>
+					<result property="strFloorDesc" column="strFloorTypeDesc"/>
+				</collection>
 			</collection>
 		</resultMap>
 		

@@ -7,6 +7,7 @@ import org.apache.ibatis.session.SqlSession;
 import columbarium.dao.ItemRepository;
 import columbarium.dao.mybatis.mappers.ItemMapper;
 import columbarium.model.Item;
+import columbarium.model.ItemCategory;
 
 public class MybatisItemRepository extends MybatisClient implements ItemRepository{
 
@@ -176,6 +177,46 @@ public class MybatisItemRepository extends MybatisClient implements ItemReposito
 			sqlSession.close();
 		}
 		return 0;
+	}
+
+	@Override
+	public String createItemCategory(ItemCategory itemCategory) {
+		
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		try{
+			
+			ItemMapper itemMapper = sqlSession.getMapper(ItemMapper.class);
+			if (itemMapper.checkIfExistingItemCategory(itemCategory) > 0){
+				return "failed-existing";
+			}
+			itemMapper.saveItemCategory(itemCategory);
+			sqlSession.commit();
+			return "success";
+			
+		}catch(Exception e){
+			e.printStackTrace();
+			sqlSession.rollback();
+		}finally{
+			sqlSession.close();
+		}
+		return "failed-database";
+	}
+
+	@Override
+	public List<ItemCategory> getAllItemCategory() {
+		
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		try{
+			
+			ItemMapper itemMapper = sqlSession.getMapper(ItemMapper.class);
+			return itemMapper.getAllItemCategory();
+			
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			sqlSession.close();
+		}
+		return null;
 	}
 
 }

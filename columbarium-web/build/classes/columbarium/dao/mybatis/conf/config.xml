@@ -22,6 +22,7 @@
 		<typeAlias type="columbarium.model.UnitCategory" alias="UnitCategory"/>
 		<typeAlias type="columbarium.model.Block" alias="Block"/>
 		<typeAlias type="columbarium.model.Unit" alias="Unit"/>
+		<typeAlias type="columbarium.model.ItemCategory" alias="ItemCategory"/>
 	
 	</typeAliases>
 	
