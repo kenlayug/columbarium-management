@@ -30,7 +30,13 @@
 			SELECT COUNT(*)
 			FROM tblItem
 			<where>
-				intStatus = 1 AND strItemName LIKE #{strItemName}
+				intStatus = 1 
+				<if test="itemId == 0">
+					AND strItemName LIKE #{strItemName}
+				</if>
+				<if test="itemId != 0">
+					AND itemId = #{itemId}
+				</if>
 			</where>
 		</select>
 		
@@ -46,12 +52,12 @@
 					<when test="itemId != 0">
 						AND itemId = #{itemId}
 					</when>
-					<when test="strItemName != null">
-						AND strItemName LIKE #{strItemName}
+					<when test="itemId == 0">
+						AND strItemName LIKE #{strItemName}	
 					</when>
 				</choose>
 			</where>
-			LIMIT 1
+			LIMIT 1	
 		</select>
 		
 		<select id="getAllItem" resultMap="ItemResultMap">

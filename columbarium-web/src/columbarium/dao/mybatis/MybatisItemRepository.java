@@ -109,6 +109,7 @@ public class MybatisItemRepository extends MybatisClient implements ItemReposito
 			
 			ItemMapper itemMapper = sqlSession.getMapper(ItemMapper.class);
 			if (itemMapper.checkIfExisting(item) <= 0){
+				System.out.println("Deactivate -- "+item.getItemId());
 				return "failed-does-not-exist";
 			}
 			itemMapper.deactivateItem(item);

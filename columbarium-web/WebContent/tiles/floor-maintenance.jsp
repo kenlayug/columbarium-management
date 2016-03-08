@@ -42,7 +42,7 @@
             </div>
             </div>
 
-            <div style = "overflow: auto;height: 370px;">
+            <div style = "overflow: auto;height: 470px;">
                 <div class = "col s12">
                     <div class = "aside aside ">
 

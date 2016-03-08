@@ -8,6 +8,11 @@ public class DeactivateItemAction implements Action{
 
 	private String strItemName;
 	private String strStatus;
+	private int itemId;
+	
+	public void setItemId(int itemId){
+		this.itemId = itemId;
+	}
 	
 	public String getStatus(){
 		return strStatus;
@@ -23,7 +28,8 @@ public class DeactivateItemAction implements Action{
 	@Override
 	public String execute() throws Exception {
 		// TODO Auto-generated method stub
-		Item item = Item.searchItem(strItemName);
+		Item item = new Item();
+		item.setItemId(itemId);
 		strStatus = item.delete();
 		return "success";
 	}

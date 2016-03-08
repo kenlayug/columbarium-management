@@ -16,7 +16,7 @@
 	            <div class = "col s12">
 	                <form class = "wrapper responsive aside aside z-depth-2" id="formCreate">
 	                    <div class = "header">
-	                        <h4 style = "stroke: black; stroke-width: 10px; font-size: 30px; padding-top: 10px; margin-top: 0px;">Requirement Form</h4>
+	                        <h4 style = "stroke: black; stroke-width: 10px; font-size: 30px; padding-top: 10px; margin-top: 0px;">Form</h4>
 	                    </div>
 	                    
                         <div class="row" style = "padding-left: 10px;">
@@ -188,7 +188,7 @@
 					<div id="admin" class="col s12" style="margin-top: 20px">
 						<div class="z-depth-2 card material-table">
 							<div class="table-header" style="background-color: #00897b;">
-								<h4 style = "font-size: 30px; color: white; padding-left: 0px;">Building Data Grid</h4>
+								<h4 style = "font-size: 30px; color: white; padding-left: 0px;">Requirement Data Grid</h4>
 								<div class="actions">
 									<button name = "action" class="modal-trigger btn-floating black" style = "margin-right: 10px;" href = "#modalListOfDeactivatedRequirement"><i class="material-icons" style = "color: white">delete</i></button>
 									<a href="#" class="search-toggle waves-effect btn-flat nopadding"><i class="material-icons" style="color: #ffffff;">search</i></a>

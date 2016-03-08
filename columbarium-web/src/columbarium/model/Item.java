@@ -138,6 +138,14 @@ public class Item {
 		return itemItem.searchItem(item);
 	}
 	
+	public static Item searchItemById(int itemId){
+		Item item = new Item();
+		item.setItemId(itemId);
+		ItemService itemItem = (ItemService)ServletActionContext.getServletContext()
+				.getAttribute("itemService");
+		return itemItem.searchItem(item);
+	}
+	
 	public static int countItem(){
 		ItemService itemItem = (ItemService)ServletActionContext.getServletContext()
 				.getAttribute("itemService");

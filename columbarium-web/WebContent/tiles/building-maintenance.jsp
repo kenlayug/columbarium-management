@@ -17,7 +17,7 @@
 	            <form class = "col s12" id="formCreate">
 	                <div class = "aside aside z-depth-3" style = "height: 400px;">
 	                    <div class = "header">
-	                        <h4 style = "font-size: 30px; margin-top: 0px; padding-top: 10px;">Building Form</h4>
+	                        <h4 style = "font-size: 30px; margin-top: 0px; padding-top: 10px;">Form</h4>
 	                    </div>
 	
 	                        <div class="row" style = "padding-left: 10px;">

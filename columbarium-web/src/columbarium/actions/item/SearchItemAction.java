@@ -13,6 +13,11 @@ public class SearchItemAction extends ActionSupport implements Action{
 	private static final long serialVersionUID = 1L;
 	private Item item;
 	private String strItemName;
+	private int itemId;
+	
+	public void setItemId(int itemId){
+		this.itemId = itemId;
+	}
 	
 	public void setStrItemName(String strItemName){
 		this.strItemName = strItemName;
@@ -32,7 +37,8 @@ public class SearchItemAction extends ActionSupport implements Action{
 	
 	public String execute(){
 		
-		setItem(Item.searchItem(strItemName));
+		setItem(Item.searchItemById(itemId));
+		System.out.println(itemId);
 		return "success";
 		
 	}

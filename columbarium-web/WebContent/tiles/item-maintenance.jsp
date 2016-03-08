@@ -18,7 +18,7 @@
 	            <div class = "col s12">
 	                <form class = "aside aside z-depth-3" style = "margin-top: 0px;" id="formCreate">
 	                    <div class = "header">
-	                        <h4 style = "font-size: 30px;padding-top: 10px;">Item Form</h4>
+	                        <h4 style = "font-size: 30px;padding-top: 10px;">Form</h4>
 	                    </div>
 	
 
@@ -102,32 +102,15 @@
 					<h4 style = "padding-left: 20px; font-size: 30px;">Deactivate Item</h4>
 				</div>
 				<div class="modal-content">
-					<p style = "padding-left: 90px; font-size: 15px;">Are you sure you want to deactivate this item?</p>
+					<p style = "padding-left: 30px; font-size: 15px;">Are you sure you want to deactivate this item?</p>
 				</div>
 				<input id="itemToBeDeactivated" type="hidden"/>
 				<div class="modal-footer">
 					<button onclick = "deactivateItem()" name = "action" class="btn red" style = "margin-left: 10px; ">Confirm</button>
-					<button name = "action" class="btn red">Cancel</button>
+					<button name = "action" class="btn red modal-close">Cancel</button>
 				</div>
 			</div>
 
-			<!--ganto ung declaration sa btn ken	<button class="modal-trigger btn red" href = "#modalSuccessMessage">btnSuccess</button>    -->
-			<!-- Modal Success -->
-			<div id="modalSuccessMessage" class="modal" style = "width: 350px; height: 155px;">
-				<div class = "modal-header" style = "height: 50px;">
-					<div class = "row">
-						<div class = "col s10">
-							<h4 style = "padding-left: 10px; font-size: 25px;">Success Message</h4>
-						</div>
-						<div class = "col s2">
-							<a class="btn-floating btn-small modal-close black right" style = "margin-top: 5px; margin-right: 5px; padding-bottom: 10px;"><i class="material-icons" style = "padding-bottom: 5px;">&#10006</i></a>
-						</div>
-					</div>
-				</div>
-				<div class="modal-content">
-					<p style = "padding-top: 0px; padding-left: 50px; font-size: 16px; font-family: arial;">Record has been saved.</p>
-				</div>
-			</div>
 
 			<!-- Modal List of Deactivated Item -->
 			<div id="modalListOfDeactivatedItem" class="modal" style = "height: 1200px; width: 600px;">
@@ -210,7 +193,7 @@
 					<div id="admin" class="col s12" style="margin-top: 20px">
 						<div class="z-depth-2 card material-table">
 							<div class="table-header" style="background-color: #00897b;">
-								<h4 style = "font-size: 30px; color: white; padding-left: 0px;">Building Data Grid</h4>
+								<h4 style = "font-size: 30px; color: white; padding-left: 0px;">Item Data Grid</h4>
 								<div class="actions">
 									<button name = "action" class="modal-trigger btn-floating black" style = "margin-right: 10px;" href = "#modalListOfDeactivatedItem"><i class="material-icons" style = "color: white">delete</i></button>
 									<a href="#" class="search-toggle btn-flat nopadding"><i class="material-icons" style="color: #ffffff;">search</i></a>
@@ -369,7 +352,7 @@
 				type: "POST",
 				url: "deactivate",
 				data: {
-					"strItemName" : itemNameDeactivate
+					"itemId" : itemNameDeactivate
 				},
 				async: true,
 				success: function(data){
@@ -415,8 +398,8 @@
 	        		
 		        		$.each(itemList, function(i, item){
 							
-		        			var addButtons = "<button name = action class= 'modal-trigger btn-floating green' onclick= openUpdate('"+item.strItemName+"') ><i class= material-icons >mode_edit</i></button>"+
-		        			"<button name = action class= 'modal-trigger btn-floating red' onclick = openDeactivate('"+item.strItemName+"') ><i class= material-icons >delete</i></button></td>";
+		        			var addButtons = "<button value = "+item.itemId+" name = action class= 'modal-trigger btn-floating green' onclick= openUpdate(this.value) ><i class= material-icons >mode_edit</i></button>"+
+		        			"<button name = action value = "+item.itemId+" class= 'modal-trigger btn-floating red' onclick = openDeactivate(this.value) ><i class= material-icons >delete</i></button></td>";
 		        			
 		        			
 		        			table.row.add( [
@@ -438,12 +421,12 @@
 			
 		}
 		
-		function openUpdate(itemName){
+		function openUpdate(itemId){
 			$.ajax({
 				type: "POST",
 				url: "getItemInfo",
 				data:{
-					"strItemName" : itemName
+					"itemId" : itemId
 				},
 				dataType: "json",
 				async: true,
@@ -461,8 +444,8 @@
 			
 		}
 		
-		function openDeactivate(itemName){
-			$('#itemToBeDeactivated').val(itemName);
+		function openDeactivate(itemId){
+			$('#itemToBeDeactivated').val(itemId);
 			$('#modalDeactivateItem').openModal();
 		}
 		
