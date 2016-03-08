@@ -53,7 +53,9 @@ public class Floor {
 	public List<FloorType> getFloorTypeList(){
 		return this.floorTypeList;
 	}
-	public void addFloorType(FloorType floorType){
+	public void addFloorType(String strFloorType){
+		FloorType floorType = new FloorType();
+		floorType.setStrFloorDesc(strFloorType);
 		if (floorTypeList == null){
 			floorTypeList = new ArrayList<FloorType>();
 		}
@@ -61,7 +63,9 @@ public class Floor {
 			floorTypeList.add(floorType);
 		}
 	}
-	public void removeFloorType(FloorType floorType){
+	public void removeFloorType(String strFloorType){
+		FloorType floorType = new FloorType();
+		floorType.setStrFloorDesc(strFloorType);
 		if (floorTypeList != null){
 			if (floorTypeList.contains(floorType)){
 				floorTypeList.remove(floorType);

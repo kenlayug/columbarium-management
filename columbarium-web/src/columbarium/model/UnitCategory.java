@@ -5,15 +5,15 @@ import java.text.DecimalFormat;
 public class UnitCategory {
 
 	private int unitCategoryId;
-	private int floorId;
+	private int blockId;
 	private int intLeveNo;
 	private double dblPrice;
 	
 	public UnitCategory(){
 		
 	}
-	public UnitCategory(int floorId, int intLevelNo){
-		this.floorId = floorId;
+	public UnitCategory(int blockId, int intLevelNo){
+		this.blockId = blockId;
 		this.intLeveNo = intLevelNo;
 	}
 	public double getDblPrice() {
@@ -31,11 +31,11 @@ public class UnitCategory {
 	public void setUnitCategoryId(int unitCategoryId){
 		this.unitCategoryId = unitCategoryId;
 	}
-	public int getFloorId() {
-		return floorId;
+	public int getBlockId() {
+		return blockId;
 	}
-	public void setFloorId(int floorId) {
-		this.floorId = floorId;
+	public void setBlockId(int blockId) {
+		this.blockId = blockId;
 	}
 	public int getIntLevelNo() {
 		return intLeveNo;

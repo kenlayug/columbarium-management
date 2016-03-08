@@ -36,10 +36,10 @@ public class ConfigureUnitPriceAction extends ActionSupport implements Action{
 	public String execute(){
 		
 		int intCtr = 0;
-		for (UnitCategory unitCategory : floor.getUnitCategoryList()) {
-			unitCategory.setDblPrice(priceList[intCtr]);
-			intCtr++;
-		}
+//		for (UnitCategory unitCategory : floor.getUnitCategoryList()) {
+//			unitCategory.setDblPrice(priceList[intCtr]);
+//			intCtr++;
+//		}
 		strStatus = floor.configureUnitPrice();
 		return "success";
 		

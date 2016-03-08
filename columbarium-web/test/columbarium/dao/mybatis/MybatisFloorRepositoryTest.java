@@ -23,12 +23,14 @@ public class MybatisFloorRepositoryTest extends TestCase{
 		
 		MybatisFloorRepository floorRepository = new MybatisFloorRepository(connectionManager);
 		
-		Floor floor = new Floor(2, 3);
+		Floor floor = new Floor(1, 3);
+//		floor.addFloorType("Columbary Vaults");
+		floor.addFloorType("Full Body Crypt");
+		
 		FloorType floorType = new FloorType();
-		floorType.setStrFloorDesc("Columbary Vaults");
+		floorType.setStrFloorDesc("Full Body Crypt");
 		floorType.setBoolIsUnit(true);
 		floorRepository.createFloorType(floorType);
-		floor.addFloorType(floorType);
 		
 		assertEquals("success", floorRepository.configureFloor(floor));
 		

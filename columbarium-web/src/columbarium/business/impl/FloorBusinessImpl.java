@@ -17,20 +17,8 @@ public class FloorBusinessImpl implements FloorBusiness{
 	@Override
 	public String configureFloor(Floor floor) {
 		
-		if (floor.getFloorType().getStrFloorDesc() == null ||
-				floor.getFloorType().getStrFloorDesc().length() == 0){
+		if (floor.getFloorTypeList().size() == 0){
 			return "input";
-		}
-		floor.setFloorType(floorRepository.getFloorType(floor.getFloorType()));
-		if (floor.getFloorType().getBoolIsUnit()){
-			
-			if (floor.getIntColumnNo() == 0){
-				return "input";
-			}
-			if (floor.getIntLevelNo() == 0){
-				return "input";
-			}
-			
 		}
 		return floorRepository.configureFloor(floor);
 	}
@@ -49,12 +37,13 @@ public class FloorBusinessImpl implements FloorBusiness{
 	@Override
 	public String configureUnitPrice(Floor floor) {
 		
-		for (UnitCategory unitCategory : floor.getUnitCategoryList()) {
-			if (unitCategory.getDblPrice() == 0){
-				return "input";
-			}
-		}
-		return floorRepository.configureUnitCategoryPrice(floor.getUnitCategoryList());
+//		for (UnitCategory unitCategory : floor.getUnitCategoryList()) {
+//			if (unitCategory.getDblPrice() == 0){
+//				return "input";
+//			}
+//		}
+//		return floorRepository.configureUnitCategoryPrice(floor.getUnitCategoryList());
+		return null;
 	}
 
 	@Override

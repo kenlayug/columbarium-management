@@ -20,6 +20,9 @@ public class BlockBusinessImpl implements BlockBusiness{
 				block.getStrBlockName().equals(" ")){
 			return "input";
 		}
+		if (block.getIntColumnNo() == 0 || block.getIntColumnNo() == 0){
+			return "input";
+		}
 		
 		return blockRepository.createBlock(block);
 	}

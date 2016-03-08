@@ -33,6 +33,8 @@ public class MybatisFloorRepository extends MybatisClient implements FloorReposi
 					System.out.println(floorType.getStrFloorDesc());
 					if (floorMapper.checkIfExistingFloorDetail(floorDetail) <= 0){
 						floorMapper.configureFloor(floorDetail);
+					}else if(floorMapper.checkIfExistingFloorDetailDeactivate(floorDetail) > 0){
+						floorMapper.activateFloorTypeFromFloor(floorDetail);
 					}
 				}
 				List<FloorType> floorTypeListPrev = floorMapper.selectAllFloorTypeForFloor(floor);
@@ -42,8 +44,7 @@ public class MybatisFloorRepository extends MybatisClient implements FloorReposi
 						FloorDetail floorDetail = new FloorDetail(floor.getFloorId(), floorType.getStrFloorDesc());
 						floorMapper.removeFloorTypeFromFloor(floorDetail);
 					}
-				}
-				
+				}				
 				sqlSession.commit();
 				return "success";
 			}

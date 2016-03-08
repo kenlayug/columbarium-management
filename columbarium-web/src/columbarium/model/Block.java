@@ -11,6 +11,9 @@ public class Block {
 	private int floorId;
 	private int blockId;
 	private String strBlockName;
+	private int intColumnNo;
+	private int intLevelNo;
+	private String strUnitType;
 	private List<Unit>unitList;
 	
 	public Block(){
@@ -20,6 +23,24 @@ public class Block {
 		this.floorId = floorId;
 		this.blockId = blockId;
 		this.strBlockName = strBlockName;
+	}
+	public void setStrUnitType(String strUnitType){
+		this.strUnitType = strUnitType;
+	}
+	public String getStrUnitType(){
+		return this.strUnitType;
+	}
+	public int getIntColumnNo() {
+		return intColumnNo;
+	}
+	public void setIntColumnNo(int intColumnNo) {
+		this.intColumnNo = intColumnNo;
+	}
+	public int getIntLevelNo() {
+		return intLevelNo;
+	}
+	public void setIntLevelNo(int intLevelNo) {
+		this.intLevelNo = intLevelNo;
 	}
 	public int getFloorId() {
 		return floorId;

@@ -10,6 +10,7 @@ import columbarium.dao.mybatis.mappers.FloorMapper;
 import columbarium.model.Block;
 import columbarium.model.Floor;
 import columbarium.model.Unit;
+import columbarium.model.UnitCategory;
 
 public class MybatisBlockRepository extends MybatisClient implements BlockRepository{
 
@@ -35,9 +36,10 @@ public class MybatisBlockRepository extends MybatisClient implements BlockReposi
 			Floor floor = new Floor();
 			floor.setFloorId(block.getFloorId());
 			floor = floorMapper.getFloor(floor);
-			for(int intColumn = 0; intColumn < floor.getIntColumnNo(); intColumn++){
-				
-				for (int intLevel = 0; intLevel < floor.getIntLevelNo(); intLevel++){
+			for (int intLevel = 0; intLevel < block.getIntLevelNo(); intLevel++){
+				UnitCategory unitCategory = new UnitCategory(currentBlock.getBlockId(), intLevel+1);
+				blockMapper.createUnitCategory(unitCategory);
+				for(int intColumn = 0; intColumn < block.getIntColumnNo(); intColumn++){
 					
 					Unit unit = new Unit();
 					unit.setBlockId(currentBlock.getBlockId());
@@ -45,7 +47,7 @@ public class MybatisBlockRepository extends MybatisClient implements BlockReposi
 					unit.setFloorId(floor.getFloorId());
 					unit.setIntColumnNo(intColumn+1);
 					unit.setIntLevelNo(intLevel+1);
-					unit.setStrUnitType(floor.getFloorType().getStrFloorDesc());
+					unit.setStrUnitType(block.getStrUnitType());
 					blockMapper.createUnit(unit);
 					
 				}//for intLevel

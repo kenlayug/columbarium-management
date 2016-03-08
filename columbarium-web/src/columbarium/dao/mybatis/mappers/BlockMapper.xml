@@ -15,6 +15,8 @@
 			<id property="blockId" column="blockId"/>
 			<result property="strBlockName" column="strBlockDesc"/>
 			<result property="floorId" column="floorIdFK"/>
+			<result property="intColumnNo" column="intColumnNo"/>
+			<result property="intLevelNo" column="intLevelNo"/>
 			<collection property="unitList" ofType="Unit">
 				<id property="unitId" column="unitId"/>
 				<result property="strUnitType" column="strUnitType"/>
@@ -74,8 +76,15 @@
 	<!-- INSERT QUERIES -->
 		
 		<insert id="createBlock">
-			INSERT INTO tblBlock (strBlockDesc, floorIdFK, intStatus)
-				VALUES (#{strBlockName}, #{floorId}, 1)
+			INSERT INTO tblBlock (strBlockDesc, floorIdFK, intColumnNo, intLevelNo, intStatus)
+				VALUES (#{strBlockName}, #{floorId}, #{intColumnNo}, #{intLevelNo}, 1)
+		</insert>
+		
+		<insert id="createUnitCategory">
+			INSERT INTO tblUnitCategory
+				(blockIdFK, intLevelNo)
+			VALUES
+				(#{blockId}, #{intLevelNo})
 		</insert>
 		
 		<insert id="createUnit">
@@ -83,7 +92,7 @@
 				VALUES (#{blockId},
 					#{intColumnNo}, 
 					(SELECT unitCategoryId FROM tblUnitCategory
-						WHERE floorIdFK = #{floorId} AND intLevelNo = #{intLevelNo}),
+						WHERE blockIdFK = #{blockId} AND intLevelNo = #{intLevelNo}),
 					#{strUnitType},
 					1
 				)

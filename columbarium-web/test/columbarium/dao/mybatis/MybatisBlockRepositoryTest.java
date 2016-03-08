@@ -22,8 +22,11 @@ public class MybatisBlockRepositoryTest extends TestCase{
 				new MybatisBlockRepository(connectionManager);
 		
 		Block block = new Block();
-		block.setFloorId(2);
+		block.setFloorId(3);
 		block.setStrBlockName("Block B");
+		block.setStrUnitType("Full Body Crpyts");
+		block.setIntLevelNo(5);
+		block.setIntColumnNo(5);
 		
 		assertEquals("success", blockRepository.createBlock(block));
 		
@@ -38,7 +41,7 @@ public class MybatisBlockRepositoryTest extends TestCase{
 				new MybatisBlockRepository(connectionManager);
 		
 		Block block = new Block();
-		block.setStrBlockName("Block A");
+		block.setStrBlockName("Block B");
 		block = blockRepository.getBlock(block);
 		
 		for (Unit unit : block.getUnitList()) {
@@ -91,8 +94,8 @@ public class MybatisBlockRepositoryTest extends TestCase{
 		
 		suite.addTest(new MybatisBlockRepositoryTest("testCreateBlock"));
 		suite.addTest(new MybatisBlockRepositoryTest("testGetBlock"));
-		suite.addTest(new MybatisBlockRepositoryTest("testGetAllBlocksFromFloor"));
-		suite.addTest(new MybatisBlockRepositoryTest("testUpdateBlock"));
+//		suite.addTest(new MybatisBlockRepositoryTest("testGetAllBlocksFromFloor"));
+//		suite.addTest(new MybatisBlockRepositoryTest("testUpdateBlock"));
 		
 		return suite;
 		

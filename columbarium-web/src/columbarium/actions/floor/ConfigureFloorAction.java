@@ -10,6 +10,7 @@ public class ConfigureFloorAction extends ActionSupport implements Action{
 	private static final long serialVersionUID = 1L;
 	private Floor floor;
 	private String strStatus;
+	private String[]floorTypeList;
 	
 	public String getStatus(){
 		return this.strStatus;
@@ -25,6 +26,9 @@ public class ConfigureFloorAction extends ActionSupport implements Action{
 	
 	public String execute(){
 		
+		for (String floorType : floorTypeList) {
+			floor.addFloorType(floorType);
+		}
 		strStatus = getFloor().configure();
 		System.out.println(strStatus);
 		return "success";

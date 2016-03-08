@@ -126,23 +126,30 @@
 				(SELECT floorTypeId FROM tblFloorType WHERE strFloorTypeDesc LIKE #{strFloorType})
 		</select>
 		
+		<select id="checkIfExistingFloorDetailDeactivate" resultMap="CountResultMap">
+			SELECT COUNT(*) FROM tblFloorDetail
+			WHERE floorIdFK = #{floorId} AND floorTypeIdFK = 
+				(SELECT floorTypeId FROM tblFloorType WHERE strFloorTypeDesc LIKE #{strFloorType})
+				AND intStatus = 0
+		</select>
+		
 		<select id="selectAllFloorTypeForFloor" resultMap="FloorTypeResultMap">
 			SELECT ft.* FROM tblFloorDetail fd
 			INNER JOIN tblFloor f ON f.floorId = fd.floorIdFK
 			INNER JOIN tblFloorType ft ON ft.floorTypeId = fd.floorTypeIdFK
-			WHERE fd.floorIdFK = #{floorId}
+			WHERE fd.floorIdFK = #{floorId} AND fd.intStatus = 1
+		</select>
+		
+		<select id="selectAllDeactivatedFloorTypeForFloor" resultMap="FloorTypeResultMap">
+			SELECT ft.* FROM tblFloorDetail fd
+			INNER JOIN tblFloor f ON f.floorId = fd.floorIdFK
+			INNER JOIN tblFloorType ft ON ft.floorTypeId = fd.floorTypeIdFK
+			WHERE fd.floorIdFK = #{floorId} AND fd.intStatus = 0
 		</select>
 	
 	<!-- END SELECT QUERIES -->
 	
 	<!-- INSERT QUERIES -->
-		
-		<insert id="createUnitCategory">
-			INSERT INTO tblUnitCategory
-				(floorIdFK, intLevelNo)
-			VALUES
-				(#{floorId}, #{intLevelNo})
-		</insert>
 		
 		<insert id="configureFloor">
 			INSERT INTO tblFloorDetail (floorIdFK, floorTypeIdFk, intStatus)
@@ -171,6 +178,14 @@
 		<update id="removeFloorTypeFromFloor">
 			UPDATE tblFloorDetail
 			SET intStatus = 0
+			WHERE floorIdFK = #{floorId}
+				AND floorTypeIdFK = (SELECT floorTypeId FROM tblFloorType
+					WHERE strFloorTypeDesc LIKE #{strFloorType})
+		</update>
+		
+		<update id="activateFloorTypeFromFloor">
+			UPDATE tblFloorDetail
+			SET intStatus = 1
 			WHERE floorIdFK = #{floorId}
 				AND floorTypeIdFK = (SELECT floorTypeId FROM tblFloorType
 					WHERE strFloorTypeDesc LIKE #{strFloorType})
