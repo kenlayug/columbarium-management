@@ -13,6 +13,10 @@ public interface FloorMapper {
 	public Floor								getFloor(Floor floor);
 	
 	public int									checkIfExistingFloor(Floor floor);
+	public int									checkIfExistingFloorDetail(FloorDetail floorDetail);
+	
+	public List<FloorType>						selectAllFloorTypeForFloor(Floor floor);
+	public void									removeFloorTypeFromFloor(FloorDetail floorDetail);
 	
 	public void									createFloorType(FloorType floorType);
 	public FloorType							getFloorType(FloorType floorType);

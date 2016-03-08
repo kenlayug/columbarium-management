@@ -55,7 +55,8 @@
 			SELECT b.*, f.*, ft.*
 			FROM tblBldg b
 			LEFT JOIN tblFloor f ON b.bldgId = f.bldgIdFK
-			LEFT JOIN tblFloorType ft ON ft.floorTypeId = f.floorTypeIdFK
+			LEFT JOIN tblFloorDetail fd ON f.floorId = fd.floorIdFK
+			LEFT JOIN tblFloorType ft ON ft.floorTypeId = fd.floorTypeIdFK
 			<where>
 				b.intStatus = 1
 				<if test="buildingId == 0">
@@ -71,7 +72,8 @@
 			SELECT b.*, f.*, ft.*
 			FROM tblBldg b
 			LEFT JOIN tblFloor f ON b.bldgId = f.bldgIdFK
-			LEFT JOIN tblFloorType ft ON ft.floorTypeId = f.floorTypeIdFK
+			LEFT JOIN tblFloorDetail fd ON f.floorId = fd.floorIdFK
+			LEFT JOIN tblFloorType ft ON ft.floorTypeId = fd.floorTypeIdFK
 			WHERE b.intStatus = 1
 			ORDER BY b.strBldgDesc ASC
 		</select>

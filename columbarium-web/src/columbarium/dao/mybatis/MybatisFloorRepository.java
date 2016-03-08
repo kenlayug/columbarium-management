@@ -30,7 +30,18 @@ public class MybatisFloorRepository extends MybatisClient implements FloorReposi
 				
 				for (FloorType floorType : floor.getFloorTypeList()) {
 					FloorDetail floorDetail = new FloorDetail(floor.getFloorId(), floorType.getStrFloorDesc());
-					floorMapper.configureFloor(floorDetail);	
+					System.out.println(floorType.getStrFloorDesc());
+					if (floorMapper.checkIfExistingFloorDetail(floorDetail) <= 0){
+						floorMapper.configureFloor(floorDetail);
+					}
+				}
+				List<FloorType> floorTypeListPrev = floorMapper.selectAllFloorTypeForFloor(floor);
+				for (FloorType floorType : floorTypeListPrev) {
+					if (!floor.getFloorTypeList().contains(floorType)){
+						System.out.println(!floor.getFloorTypeList().contains(floorType));
+						FloorDetail floorDetail = new FloorDetail(floor.getFloorId(), floorType.getStrFloorDesc());
+						floorMapper.removeFloorTypeFromFloor(floorDetail);
+					}
 				}
 				
 				sqlSession.commit();
