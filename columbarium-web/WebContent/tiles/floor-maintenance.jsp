@@ -100,54 +100,27 @@
 
           <div class="modal-content">
               <button name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "New Floor Type" style = "margin-left: 5px;" href = "#modalNewFloorType"><i class="material-icons">add</i></button>
-
-          <form class = "col s12">
+			<input type="hidden" id="buildingIdToBeConfigured">
+			<input type="hidden" id="floorIdToBeConfigured">
             <div class = "row">
                 <h3 style = "font-size: 18px; padding-left: 20px;">Select Floor Type</h3>
-              <div class = "col s6" style = "padding-left: 20px;">
-                  <form action="#">
-                      <p>
-                          <input type="checkbox" id="floorTypeOne" required/>
-                          <label for="floorTypeOne">Floor Type One</label>
-                      </p>
-                      <p>
-                          <input type="checkbox" id="floorTypeTwo" />
-                          <label for="floorTypeTwo">Floor Type Two</label>
-                      </p>
-                      <p>
-                          <input type="checkbox" id="floorTypeThree" />
-                          <label for="floorTypeThree">Floor Type Three</label>
-                      </p>
+              <div class = "col s6" style = "padding-left: 20px;" id="firstDivFloorType">
+                     
 
-                      <div class="modal-footer">
+                      
+              </div>
+                <div class = "col s6" style = "padding-left: 20px;" id="secondDivFloorType">
+                        
+                    <br>
+                </div>
+
+			<div class="modal-footer">
                           <button type = "submit" onclick="configureFloor()" name = "action" class="btn red" style = "margin-left: 10px; ">Confirm</button>
 
                           <button name = "action" class="btn red modal-close">Cancel</button>
                       </div>
-                  </form>
-              </div>
-                <div class = "col s6" style = "padding-left: 20px;">
-                    <form action="#">
-                        <p>
-                            <input type="checkbox" id="floorTypeFour" />
-                            <label for="floorTypeFour">Floor Type Four</label>
-                        </p>
-                        <p>
-                            <input type="checkbox" id="floorTypeFive"/>
-                            <label for="floorTypeFive">Floor Type Five</label>
-                        </p>
-                        <p>
-                            <input type="checkbox" id="floorTypeSix"/>
-                            <label for="floorTypeSix">Floor Type Six</label>
-                        </p>
-                    </form>
-                    <br>
-                </div>
-
-
 
             </div>
-          </form>
 
 
             </div>
@@ -468,13 +441,28 @@
     		success : function(data){
     			var floorTypeList = data.floorTypeList;
     			//var selectFloorType = document.getElementById("selectFloorType");
-    	    	Materialize.toast('Updating floor type select...k', 3000, 'rounded');
-    			$('#selectFloorType').children('option:not(:first)').remove();
+    	    	Materialize.toast('Updating floor type select...', 3000, 'rounded');
+    			var boolFirstDiv = 1;
+    			$('#firstDivFloorType').empty();
+    			$('#secondDivFloorType').empty();
 				$.each(floorTypeList, function(i, floorType){
-					 $('#selectFloorType')
-			         .append($("<option></option>")
-			         .attr("value",floorType.strFloorDesc)
-			         .text(floorType.strFloorDesc));
+					if (boolFirstDiv == 1){
+						var radioBtn = $('<input type="checkbox" name="floorType[]" id="'+floorType.strFloorDesc+'" value="'+floorType.strFloorDesc+'" />');
+						var label = $('<label for="'+floorType.strFloorDesc+'">'+floorType.strFloorDesc+'</label><br>');
+					    radioBtn.appendTo('#firstDivFloorType');
+					    label.appendTo('#firstDivFloorType');
+						 if ((i+1)%5 === 0){
+							 boolFirstDiv = 0;
+						 }
+					}else{
+						var radioBtn = $('<input type="checkbox" name="floorType[]" id="'+floorType.strFloorDesc+'" value="'+floorType.strFloorDesc+'" />');
+						var label = $('<label for="'+floorType.strFloorDesc+'">'+floorType.strFloorDesc+'</label><br>');
+					    radioBtn.appendTo('#secondDivFloorType');
+					    label.appendTo('#secondDivFloorType');
+						 if ((i+1)%5 === 0){
+							 boolFirstDiv = 1;
+						 }
+					}
         		});
     			$('select').material_select();
     		},
@@ -514,74 +502,36 @@
     	var floorType;
     	var buildingId = document.getElementById("buildingIdToBeConfigured").value;
     	var floorId = document.getElementById("floorIdToBeConfigured").value;
-    	var isUnit = document.getElementById("isUnitToBeConfigured").checked;
-    	if (isUnit == true){
-    		floorType = $('input[name="unitTypeToBeConfigured"]:checked').val();
-    	}else{
-    		floorType = document.getElementById("floorTypeToBeConfigured").value;
-    	}
-    	var floorColumn = document.getElementById("floorColumnToBeConfigured").value;
-    	var floorRow = document.getElementById("floorRowToBeConfigured").value;
-    	
-    	if (isUnit == true){
-    		if (floorColumn <= 0 || floorRow <= 0){
-    			
-    		}else{
-    			$.ajax({
-    				type: "POST",
-    				url: "configure",
-    				data: {
-    					"floor.buildingId" : buildingId,
-    					"floor.floorType.strFloorDesc" : floorType,
-    					"floor.floorId" : floorId,
-    					"floor.intLevelNo" : floorRow,
-    					"floor.intColumnNo" : floorColumn,
-    					"floor.floorType.boolIsUnit" : isUnit
-    				},//data
-    				dataType: "json",
-    				async: true,
-    				success: function(data){
-    					if (data.status === "success"){
-	   						Materialize.toast('Floor is successfully configured.', 3000, 'rounded');
-	   						$('#modalConfigure').closeModal();
-	   					}else if (data.status === "failed-database"){
-	   						Materialize.toast('Please check your connection.', 3000, 'rounded');
-	   					}else{
-	   						Materialize.toast('Something bad happened.', 3000, 'rounded');
-	   					}
-    				},//success
-    				error: function(data){
-    					Materialize.toast('Error occured.', 3000, 'rounded');
-    				}//error
-    			});//ajax
-    		}//else
-    	}else{
-	   			$.ajax({
-	   				type: "POST",
-	   				url: "configure",
-	   				data: {
-	   					"floor.buildingId" : buildingId,
-	   					"floor.floorType.strFloorDesc" : floorType,
-	   					"floor.floorId" : floorId,
-	   					"floor.floorType.boolIsUnit" : isUnit
-	   				},//data
-	   				dataType: "json",
-	   				async: true,
-	   				success: function(data){
-	   					if (data.status === "success"){
-	   						Materialize.toast('Floor is successfully configured.', 3000, 'rounded');
-	   						$('#modalConfigure').closeModal();
-	   					}else if (data.status === "failed-database"){
-	   						Materialize.toast('Please check your connection.', 3000, 'rounded');
-	   					}else{
-	   						Materialize.toast('Something bad happened.', 3000, 'rounded');
-	   					}
-	   				},//success
-	   				error: function(data){
-	   					Materialize.toast('Error occured.', 3000, 'rounded');
-	   				}//error
-	   			});//ajax
-    		}//else
+    	var floorType = $("input[name='floorType[]']:checked").map(function() {
+    		return this.value;
+    	}).get();
+    	Materialize.toast('Configuring floor...', 3000, 'rounded');
+ 			$.ajax({
+ 				type: "POST",
+ 				url: "configure",
+ 				traditional: true,
+ 				data: {
+ 					"floor.buildingId" : buildingId,
+ 					"floor.floorId" : floorId,
+ 					"floorTypeList" : floorType
+ 				},//data
+ 				dataType: "json",
+ 				async: true,
+ 				success: function(data){
+ 					if (data.status === "success"){
+ 						Materialize.toast('Floor is successfully configured.', 3000, 'rounded');
+ 						$('#modalConfigure').closeModal();
+ 					}else if (data.status === "failed-database"){
+ 						Materialize.toast('Please check your connection.', 3000, 'rounded');
+ 					}else{
+ 						Materialize.toast('Something bad happened.', 3000, 'rounded');
+ 					}
+ 				},//success
+ 				error: function(data){
+ 					Materialize.toast('Error occured.', 3000, 'rounded');
+ 				}//error
+ 			});//ajax
+ 			
     	}
     	
         

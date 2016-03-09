@@ -24,10 +24,15 @@ public class ConfigureFloorAction extends ActionSupport implements Action{
 		this.floor = floor;
 	}
 	
+	public void setFloorTypeList(String[]floorTypeList){
+		this.floorTypeList = floorTypeList;
+	}
+	
 	public String execute(){
 		
 		for (String floorType : floorTypeList) {
 			floor.addFloorType(floorType);
+			System.out.println(floorType);
 		}
 		strStatus = getFloor().configure();
 		System.out.println(strStatus);
