@@ -37,13 +37,20 @@
 	                        </div>
 	                    </div>
 
-						<div class="row" style = "padding-left: 10px;">
-							<div class="input-field col s12">
-								<input id="itemCategory" type="text" class="validate" name="item.strItemCategory" required = "" aria-required= "true">
-								<label for="itemCategory" data-error = "Invalid Format" data-success = "">Item Category <span style = "color: red;">*</span></label>
-							</div>
+					<div class = "row">
+						<div class="input-field col s6">
+							<select>
+								<option value="" disabled selected>Item Category</option>
+								<option value="1">Category One</option>
+								<option value="2">Category Two</option>
+								<option value="3">Category Three</option>
+							</select>
+							<label>Select Item Category</label>
 						</div>
-	
+						<button type = "submit" name = "action" class="modal-trigger btn red right" style = "margin-top: 10px; margin-right: 10px;" href = "#modalItemCategory">Item Category</button>
+					</div>
+
+
 	                        <div class="row" style = "padding-left: 10px;">
 	                            <div class="input-field col s12">
 	                                <input id="itemDesc" type="text" class="validate" name="item.strItemDesc">
@@ -118,6 +125,27 @@
 				</div>
 			</div>
 
+			<!-- Modal Item Category -->
+			<div id="modalItemCategory" class="modal" style = "width: 400px;">
+				<div class = "modal-header" style = "height: 55px;">
+					<h4 style = "padding-left: 20px; font-size: 30px;">Item Category</h4>
+				</div>
+				<form class="modal-content">
+					<div style = "padding-left: 10px;">
+						<div class="input-field col s6">
+							<input id="itemCategory" type="text" class="validate" name="item.strItemCategory" required = "" aria-required="true" length = "20">
+							<label for="itemCategory" data-error = "Invalid format." data-success = "">Item Category<span style = "color: red;">*</span></label>
+							<i class = "left" style = "margin-top: 30px; padding-left: 20px; color: red;">*Required Fields</i>
+						</div>
+						<br>
+					</div>
+					<div class="modal-footer">
+						<button name = "action" class="btn red" style = "margin-left: 10px; ">Confirm</button>
+						<button name = "action" class="btn red modal-close">Cancel</button>
+					</div>
+				</form>
+
+			</div>
 
 			<!-- Modal Archive Item-->
 			<div id="modalArchiveItem" class="modal" style = "height: 1300px; width: 740px;">
