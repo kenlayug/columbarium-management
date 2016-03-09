@@ -36,12 +36,11 @@
 			SELECT COUNT(*)
 			FROM tblItem
 			<where>
-				intStatus = 1 
 				<if test="itemId == 0">
-					AND strItemName LIKE #{strItemName}
+					strItemName LIKE #{strItemName}
 				</if>
 				<if test="itemId != 0">
-					AND itemId = #{itemId}
+					itemId = #{itemId}
 				</if>
 			</where>
 		</select>

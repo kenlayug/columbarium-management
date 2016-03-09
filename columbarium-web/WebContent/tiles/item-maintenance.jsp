@@ -6,7 +6,7 @@
 
 	    <link rel = "stylesheet" href = "<%=request.getContextPath()%>/css/Inventory_Form.css"/>
 
-		<link rel="stylesheet" href="../css/style.css">
+		<link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css">
 
 	<!-- Section -->
 	<div class = "responsive col s12">
@@ -277,7 +277,7 @@
 					</div>
 				</div>
 
-				<script type="text/javascript" src = "../js/index.js"></script>
+				<script type="text/javascript" src = "<%=request.getContextPath()%>/js/index.js"></script>
 			</div>
 	
 	
