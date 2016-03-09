@@ -39,6 +39,14 @@
   		<action name="deactivate" class="columbarium.actions.item.DeactivateItemAction">
   			<result name="success" type="json"></result>
   		</action>
+  		
+  		<action name="getAllItemCategory" class="columbarium.actions.item.GetAllItemCategoryAction">
+  			<result name="success" type="json"></result>
+  		</action>
+  		
+  		<action name="createItemCategory" class="columbarium.actions.item.CreateItemCategoryAction">
+  			<result name="success" type="json"></result>
+  		</action>
   	 
   	</package> 
    

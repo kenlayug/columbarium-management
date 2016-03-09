@@ -39,11 +39,13 @@
 
 					<div class = "row">
 						<div class="input-field col s6">
-							<select>
+							<select id="selectItemCategory">
 								<option value="" disabled selected>Item Category</option>
-								<option value="1">Category One</option>
-								<option value="2">Category Two</option>
-								<option value="3">Category Three</option>
+								<c:if test="${itemCategoryList != null}">
+									<c:forEach items="${itemCategoryList }" var="itemCategory">
+										<option value="${itemCategory.strItemCategoryDesc }">${itemCategory.strItemCategoryDesc }</option>
+									</c:forEach>
+								</c:if>
 							</select>
 							<label>Select Item Category</label>
 						</div>
@@ -130,17 +132,17 @@
 				<div class = "modal-header" style = "height: 55px;">
 					<h4 style = "padding-left: 20px; font-size: 30px;">Item Category</h4>
 				</div>
-				<form class="modal-content">
+				<form class="modal-content" id="formCreateItemCategory">
 					<div style = "padding-left: 10px;">
 						<div class="input-field col s6">
-							<input id="itemCategory" type="text" class="validate" name="item.strItemCategory" required = "" aria-required="true" length = "20">
-							<label for="itemCategory" data-error = "Invalid format." data-success = "">Item Category<span style = "color: red;">*</span></label>
+							<input id="itemCategoryDesc" type="text" class="validate" name="item.strItemCategory" required = "" aria-required="true" length = "20">
+							<label for="itemCategoryDesc" data-error = "Invalid format." data-success = "">Item Category<span style = "color: red;">*</span></label>
 							<i class = "left" style = "margin-top: 30px; padding-left: 20px; color: red;">*Required Fields</i>
 						</div>
 						<br>
 					</div>
 					<div class="modal-footer">
-						<button name = "action" class="btn red" style = "margin-left: 10px; ">Confirm</button>
+						<button onclick="createItemCategory()" name = "action" class="btn red" style = "margin-left: 10px; ">Confirm</button>
 						<button name = "action" class="btn red modal-close">Cancel</button>
 					</div>
 				</form>
@@ -294,6 +296,10 @@
 		    return false;
 		});
 		
+		$("#formCreateItemCategory").submit(function(e){
+		    return false;
+		});
+		
 		$("#formUpdate").submit(function(e){
 		    return false;
 		});
@@ -302,9 +308,11 @@
 			var itemName = document.getElementById("itemName").value;
 			var itemPrice = document.getElementById("itemPrice").value;
 			var itemDesc = document.getElementById("itemDesc").value;
+			var itemCategory = document.getElementById("selectItemCategory").value;
 			
 			if (itemName == null || itemName == " " || itemName == "" ||
-					itemPrice == 0 || itemPrice == null){
+					itemPrice == 0 || itemPrice == null || 
+					itemCategory == null || itemCategory == ""){
 				
 			}else{
 			
@@ -314,7 +322,8 @@
 			        data: {
 			        	"item.strItemName" : itemName,
 			        	"item.dblPrice" : itemPrice,
-			        	"item.strItemDesc" : itemDesc
+			        	"item.strItemDesc" : itemDesc,
+			        	"item.itemCategory.strItemCategoryDesc" : itemCategory
 			        },
 			       	dataType: "json",
 			        async: true,
@@ -442,6 +451,7 @@
 		        			table.row.add( [
 		    	        		            item.strItemName,
 		    	        		            "P "+item.dblPrice,
+		    	        		            item.itemCategory.strItemCategoryDesc,
 		    	        		            item.strItemDesc,
 		    	        		            addButtons
 		    	        		            ]);
@@ -484,6 +494,71 @@
 		function openDeactivate(itemId){
 			$('#itemToBeDeactivated').val(itemId);
 			$('#modalDeactivateItem').openModal();
+		}
+		
+		function createItemCategory(){
+			
+			var itemCategoryDesc = document.getElementById("itemCategoryDesc").value;
+			
+			if (itemCategoryDesc == null || itemCategoryDesc == "" || itemCategoryDesc == " "){
+				
+			}else{
+				
+				$.ajax({
+					type: "POST",
+					url: "createItemCategory",
+					data: {
+						"itemCategory.strItemCategoryDesc": itemCategoryDesc
+					},
+					dataType: "json",
+					async: true,
+					success: function(data){
+						if (data.status === "success"){
+							Materialize.toast('Item Category is successfully created.', 3000, 'rounded');
+							updateSelectItemCategory();
+							$('modalItemCategory').closeModal();
+						}else if (data.status === "input"){
+							Materialize.toast('Please check all your inputs.', 3000, 'rounded');
+						}else if (data.status === "failed-database"){
+							Materialize.toast('Please check your connection.', 3000, 'rounded');
+						}else if (data.status === "failed-existing"){
+							Materialize.toast('Item Category already exists.', 3000, 'rounded');
+						}
+					},
+					error: function(data){
+						Materialize.toast('Error in creating item category.', 3000, 'rounded');
+					}
+				});
+				
+			}
+			
+		}
+		
+		function updateSelectItemCategory(){
+			
+			var selectItemCategory = document.getElementById("selectItemCategory");
+			
+			$.ajax({
+				type: "POST",
+				url: "getAllItemCategory",
+				dataType: "json",
+				async: true,
+				success: function(data){
+					var itemCategoryList = data.itemCategoryList;
+					$('#selectItemCategory').html('');
+					$.each(itemCategoryList, function(i, itemCategory){
+						var option = document.createElement('option');
+						option.appendChild(document.createTextNode(itemCategory.strItemCategoryDesc));
+						option.value = itemCategory.strItemCategoryDesc;
+						selectItemCategory.appendChild(option);
+	        		});
+				},
+				error: function(data){
+					Materialize.toast('Error in updating select.', 3000, 'rounded');
+				}
+			});
+			
+			
 		}
 		
 	</script>
