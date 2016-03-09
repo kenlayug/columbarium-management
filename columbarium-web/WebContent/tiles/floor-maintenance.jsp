@@ -104,7 +104,7 @@
             <div class = "row">
               <div style = "padding-left: 20px;">
               <div class="input-field col s8">
-                  <select multiple>
+                  <select multiple id="selectFloorType">
                       <option value="" disabled selected>Select Floor Type</option>
                       <option value="1">Admin Office</option>
                       <option value="2">Cashier</option>
@@ -140,8 +140,8 @@
                             <div style = "padding-left: 10px;">
 								<form id="formCreateFloorType" action="createFloorType" method="POST">
                                 <div class="input-field col s12">
-                                    <input name="floorType.strFloorDesc" id="newFloorType" type="text" class="validate" required = "" aria-required = "true">
-                                    <label for="newFloorType" data-error = "Invalid format." data-success = "">Floor Type Name <span style = "color: red;">*</span></label>
+                                    <input name="floorType.strFloorDesc" id="newFloorTypeDesc" type="text" class="validate" required = "" aria-required = "true">
+                                    <label for="newFloorTypeDesc" data-error = "Invalid format." data-success = "">Floor Type Name <span style = "color: red;">*</span></label>
                                 </div>
                             </div>
                         </div>
@@ -151,7 +151,7 @@
 
                 </div>
                 <div class="modal-footer">
-                    <button name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
+                    <button onclick="createFloorType()" name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
                     </form>
                     <button name = "action" class="waves-effect waves-light btn red modal-close">Cancel</button>
                 </div>
@@ -346,6 +346,10 @@
                     dismissible: false
                 }
         );
+        
+        $("#formCreateFloorType").submit(function(e){
+    	    return false;
+    	});
 
         $(document).ready(function(){
             $('.collapsible').collapsible({
@@ -394,6 +398,68 @@
 			});
 
 		}
+        
+    function createFloorType(){
+    	
+    	var floorTypeDesc = document.getElementById("newFloorTypeDesc").value;
+    	
+    	if (!(floorTypeDesc == null || floorTypeDesc == "" || floorTypeDesc == " ")){
+    		
+    		$.ajax({
+    			type : "POST",
+    			url : "createFloorType",
+    			data : {
+    				"floorType.strFloorDesc" : floorTypeDesc
+    			},
+    			async : true,
+    			dataType : "json",
+    			success : function(data){
+    				if (data.status === "success"){
+    					Materialize.toast('Floor Type is successfully created.', 3000, 'rounded');
+    					$('#modalNewFloorType').closeModal();
+    					updateFloorTypeSelect();
+    				}else if (data.status === "input"){
+    					Materialize.toast('Please check all your input.', 3000, 'rounded');
+    				}else if (data.status === "failed-existing"){
+    					Materialize.toast('Floor type already exists.', 3000, 'rounded');
+    				}else if (data.status === "failed-database"){
+    					Materialize.toast('Please check your connection.', 3000, 'rounded');
+    				}
+    			},
+    			error : function(data){
+    				Materialize.toast('Error in creating floor type.', 3000, 'rounded');
+    			}
+    		});
+    		
+    	}
+    	
+    }
+    
+    function updateFloorTypeSelect(){
+    	$.ajax({
+    		type : "POST",
+    		url : "getAllFloorType",
+    		dataType : "json",
+    		async : true,
+    		success : function(data){
+    			var floorTypeList = data.floorTypeList;
+    			//var selectFloorType = document.getElementById("selectFloorType");
+    	    	Materialize.toast('Updating floor type select...k', 3000, 'rounded');
+    			$('#selectFloorType').children('option:not(:first)').remove();
+				$.each(floorTypeList, function(i, floorType){
+					 $('#selectFloorType')
+			         .append($("<option></option>")
+			         .attr("value",floorType.strFloorDesc)
+			         .text(floorType.strFloorDesc));
+        		});
+    			$('select').material_select();
+    		},
+    		error : function(data){
+    			Materialize.toast('Error in updating select floor type.', 3000, 'rounded');
+    		}
+    	});
+    	
+    }
 
     function openConfigureFloor(floorId){
     	Materialize.toast(floorId, 3000, 'rounded');
@@ -496,6 +562,8 @@
     	
         
     window.onload = updateTable;
+
+    window.onload = updateFloorTypeSelect;
         
 	function updateTable(){
 			

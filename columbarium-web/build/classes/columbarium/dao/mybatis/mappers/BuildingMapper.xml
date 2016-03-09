@@ -75,7 +75,7 @@
 			LEFT JOIN tblFloorDetail fd ON f.floorId = fd.floorIdFK
 			LEFT JOIN tblFloorType ft ON ft.floorTypeId = fd.floorTypeIdFK
 			WHERE b.intStatus = 1
-			ORDER BY b.strBldgDesc ASC
+			ORDER BY b.strBldgDesc, f.intFloorNo ASC
 		</select>
 		
 		<select id="countAllBuilding" resultMap="CountResultMap">
