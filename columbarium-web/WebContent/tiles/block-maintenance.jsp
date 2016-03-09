@@ -79,7 +79,7 @@
 				                                                        <div class="collapsible-header" style = "background-color: #ffa726">
 				                                                            <i class="material-icons">view_module</i>Floor No. ${floor.intFloorNo}
 				                                                        </div>
-				                                                        <c:if test="${floor.floorType.boolIsUnit == true }">
+				                                                      
 				                                                        	<div class="collapsible-body" style = "background-color: #ffa726">
 					                                                            <p>Create Block
 					                                                                <button value="${floor.floorId }" name = "action" data-target="modalCreateBlock" class="modal-trigger btn-floating blue right" style = "margin-right: 10px;" onclick="openCreateBlock(this.value)"><i class="material-icons">add</i></button>
@@ -95,7 +95,7 @@
 							                                                        </div>
 					                                                        	</c:forEach>
 					                                                        </c:if>
-				                                                        </c:if>
+				                                                        
 				                                                    </li>
 		                                                		</c:forEach>
 		                                                	</c:if>

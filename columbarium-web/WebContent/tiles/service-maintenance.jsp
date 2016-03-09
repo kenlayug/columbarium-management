@@ -14,7 +14,7 @@
             <h2 style = "padding-bottom: 20px; font-size: 30px; padding-left: 30px; margin-top: 0px; margin-bottom: 0px;">Service Maintenance</h2>
 
 		<!-- Create Service -->
-		<form class = "col s12">
+		<form class = "col s12" id="formCreate">
 			<div class = "aside aside z-depth-3" style = "height: 440px;">
 				<div class = "header">
 					<h4 style = "font-size: 30px; margin-top: 0px; padding-top: 10px;">Form</h4>
@@ -40,7 +40,7 @@
 					</div>
 				</div>
 
-				<button onclick = "createBuilding()" type = "submit" name = "action" class="btn red right" style = "margin-top: -20px; margin-right: 10px;">Create</button>
+				<button onclick = "createService()" type = "submit" name = "action" class="btn red right" style = "margin-top: -20px; margin-right: 10px;">Create</button>
 			</div>
 		</form>
 		</div>
