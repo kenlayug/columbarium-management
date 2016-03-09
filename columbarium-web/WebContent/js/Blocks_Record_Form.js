@@ -25,3 +25,9 @@ $(document).ready(function() {
 $(document).ready(function() {
     $('input#input_text, textarea#textarea1').characterCounter();
 });
+
+$(document).ready(function(){
+    $('.collapsible').collapsible({
+        accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+    });
+});

@@ -53,11 +53,7 @@ table, td {
 .data-grid{
     border: none;
 }
-p{
-    font-family:  myFirstFont;
-    font-size: 15px;
-    padding-left: 15px;
-}
+
 td a{
     color: #ffffff;
     margin-left: 25%;
