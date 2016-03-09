@@ -10,45 +10,41 @@
 
 <div class = "col s12" >
     <div class = "row">
-            <h2 style = "font-size: 30px; padding-left: 70px; margin-top: 0px; margin-bottom: 0px;">Service Maintenance</h2>
+		<div class = "col s4">
+            <h2 style = "padding-bottom: 20px; font-size: 30px; padding-left: 30px; margin-top: 0px; margin-bottom: 0px;">Service Maintenance</h2>
 
-		<!-- Modal Create -->
-		<div id="modalCreateService" class="modal" style = "width: 650px;">
-			<div class = "modal-header" style = "height: 55px;">
-				<h4 style = "padding-left: 20px; font-size: 30px;">Create Service</h4>
-			</div>
-			<form class="modal-content">
+		<!-- Create Service -->
+		<form class = "col s12">
+			<div class = "aside aside z-depth-3" style = "height: 440px;">
+				<div class = "header">
+					<h4 style = "font-size: 30px; margin-top: 0px; padding-top: 10px;">Form</h4>
+				</div>
 
-				<button name = "action" class="modal-trigger waves-effect waves-light btn red left" style = "margin-left: 20px;" href = "#modalRequirement">Requirement</button>
+				<button name = "action" class="modal-trigger btn red left" style = "margin-left: 20px;" href = "#modalRequirement">Requirement</button>
 				<br><br>
 				<div class="row" style = "padding-left: 10px;" id="formCreate">
-					<div class="input-field col s6">
+					<div class="input-field col s12">
 						<input id="serviceName" type="text" class="validate" required = "" aria-required = "true" pattern = "[A-Za-z0-9\s]{1,29}">
 						<label for="serviceName" data-error = "Invalid Format." data-success = "">Service Name <span style = "color: red;">*</span></label>
 					</div>
-					<div class="input-field col s6">
+					<div class="input-field col s12">
 						<input id="servicePrice" type="text" class="validate" required = "" aria-required = "true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
 						<label for="servicePrice" data-error = "Invalid Format." data-success = "">Service Price <span style = "color: red;">*</span></label>
 					</div>
-				</div>
-
-				<div class="row">
-					<div class="row" style = "padding-left: 10px;">
+					<div class="row" style = "padding-left: 0px;">
 						<div class="input-field col s12">
 							<input id="serviceDesc" type="text" class="validate">
 							<label for="serviceDesc" data-error = "Invalid Format." data-success = "">Service Description</label>
-							<i class = "left" style = "margin-top: 20px; padding-left: 0px; color: red;">*Required Fields</i>
+							<i class = "left" style = "margin-top: 10px; padding-left: 0px; color: red;">*Required Fields</i>
 						</div>
 					</div>
 				</div>
 
-				<div class="modal-footer">
-					<button type = "submit" onclick="createService()" name="action" class="waves-effect waves-light btn red" style = "margin-left: 10px; margin-right: 10px;">Confirm</button>
-					<button name = "action" class="waves-effect waves-light modal-close btn red" style = "margin-left: 20px;">Cancel</button>
-				</div>
-			</form>
-
+				<button onclick = "createBuilding()" type = "submit" name = "action" class="btn red right" style = "margin-top: -20px; margin-right: 10px;">Create</button>
+			</div>
+		</form>
 		</div>
+
 
             <!-- Modal Requirements -->
             <div id="modalRequirement" class="modal" style = "width: 600px;">
@@ -145,14 +141,14 @@
         </div>
 
 		<!-- Modal Archive Service-->
-		<div id="modalArchiveService" class="modal" style = "height: 1300px; width: 740px;">
+		<div id="modalArchiveService" class="modal" style = "height: 400px; width: 600px;">
 			<div class="modal-content">
 				<!-- Data Grid Deactivated Service/s-->
 				<div id="admin1" class="col s12" style="margin-top: 0px">
 					<div class="z-depth-2 card material-table" style="margin-top: 0px">
 						<div class="table-header" style="height: 45px; background-color: #00897b;">
 							<h4 style = "padding-top: 10px; font-size: 30px; color: white; padding-left: 0px;">Archive Service/s</h4>
-							<a href="#" class="search-toggle btn-flat right"><i class="material-icons right" style="margin-left: 270px; color: #ffffff;">search</i></a>
+							<a href="#" class="search-toggle btn-flat right"><i class="material-icons right" style="margin-left: 150px; color: #ffffff;">search</i></a>
 						</div>
 						<table id="datatable2">
 							<thead>
@@ -220,14 +216,13 @@
 
 
 		<!-- Data Grid -->
-		<div class = "col s9" style = "margin-left: 40px; margin-top: 0px;">
+		<div class = "col s8" style = "margin-left: 0px; margin-top: 0px;">
 			<div class="row">
 				<div id="admin" class="col s12" style="margin-top: 20px">
 					<div class="z-depth-2 card material-table">
 						<div class="table-header" style="background-color: #00897b;">
 							<h4 style = "font-size: 30px; color: white; padding-left: 0px;">Service Record</h4>
 							<div class="actions">
-								<button name = "action" class="btn tooltipped modal-trigger btn-floating yellow" data-position = "bottom" data-delay = "30" data-tooltip = "Create Service" style = "margin-right: 10px;" href = "#modalCreateService"><i class="material-icons">add</i></button>
 								<button name = "action" class="btn tooltipped modal-trigger btn-floating black" data-position = "bottom" data-delay = "30" data-tooltip = "Deactivated Service/s" style = "margin-right: 10px;" href = "#modalArchiveService"><i class="material-icons" style = "color: white">delete</i></button>
 								<a href="#" class="search-toggle waves-effect btn-flat nopadding"><i class="material-icons" style="color: #ffffff;">search</i></a>
 							</div>
@@ -235,10 +230,10 @@
 						<table id="datatable">
 							<thead>
 							<tr>
-								<th>Service Name</th>
-								<th>Service Price</th>
-								<th>Service Description</th>
-								<th>Service Requirement</th>
+								<th>Name</th>
+								<th>Price</th>
+								<th>Description</th>
+								<th>Requirement</th>
 								<th>Action</th>
 							</tr>
 							</thead>
