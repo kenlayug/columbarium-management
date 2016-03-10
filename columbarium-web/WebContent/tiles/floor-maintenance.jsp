@@ -225,14 +225,14 @@
 
 
             <!-- Modal Archive Floor-->
-            <div id="modalArchiveFloor" class="modal" style = "height: 1300px; width: 740px;">
+            <div id="modalArchiveFloor" class="modal" style = "height: 400px; width: 600px;">
                 <div class="modal-content">
                     <!-- Data Grid Deactivated Floor/s-->
                     <div id="admin1" class="col s12" style="margin-top: 0px">
                         <div class="z-depth-2 card material-table" style="margin-top: 0px">
                             <div class="table-header" style="height: 45px; background-color: #00897b;">
                                 <h4 style = "padding-top: 10px; font-size: 30px; color: white; padding-left: 0px;">Archive Floor/s</h4>
-                                <a href="#" class="search-toggle btn-flat right"><i class="material-icons right" style="margin-left: 270px; color: #ffffff;">search</i></a>
+                                <a href="#" class="search-toggle btn-flat right"><i class="material-icons right" style="margin-left: 150px; color: #ffffff;">search</i></a>
                             </div>
                             <table id="datatable2">
                                 <thead>
