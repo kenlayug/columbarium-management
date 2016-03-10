@@ -342,7 +342,7 @@
 			var noOfFloors = document.getElementById("floorNumber").value;
 			if (buildingName == null || buildingName == "" || buildingName == " " ||
 					buildingAddress == null || buildingAddress == "" || buildingAddress == " " ||
-					noOfFloors == 0 || noOfFloors == null){
+					noOfFloors == 0 || noOfFloors == null || noOfFloors > 10){
 
 			}else{
 				$.ajax({
@@ -464,8 +464,8 @@
 		        		table.clear().draw();
 		        	
 		        		$.each(buildingList, function(i, building){
-		        			var addButtons = "<button name = action class= 'modal-trigger btn-floating blue' onclick = openUpdate(this.value) value = "+building.buildingId+" ><i class= material-icons style = "color: black;">mode_edit</i></button>"+
-		        			"<button name = action class= 'modal-trigger btn-floating red' onclick = openDeactivate(this.value) value = "+building.buildingId+" ><i class= material-icons style = "color: black;">not_interested</i></button></td>";
+		        			var addButtons = "<button name = action class= 'modal-trigger btn-floating blue' onclick = openUpdate(this.value) value = "+building.buildingId+" ><i class= material-icons style = 'color: black;'>mode_edit</i></button>"+
+		        			"<button name = action class= 'modal-trigger btn-floating red' onclick = openDeactivate(this.value) value = "+building.buildingId+" ><i class= material-icons style = 'color: black;'>not_interested</i></button></td>";
 		        			
 		        			
 		        			table.row.add( [

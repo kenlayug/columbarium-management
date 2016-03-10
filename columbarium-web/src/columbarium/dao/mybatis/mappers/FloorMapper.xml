@@ -15,11 +15,6 @@
 			<id property="floorId" column="floorId"/>
 			<result property="buildingId" column="bldgIdFK"/>
 			<result property="intFloorNo" column="intFloorNo"/>
-			<collection property="floorTypeList" ofType="FloorType">
-				<id property="floorTypeId" column="floorTypeId"/>
-				<result property="strFloorDesc" column="strFloorTypeDesc"/>
-				<result property="boolIsUnit" column="boolIsUnit"/>
-			</collection>
 		</resultMap>
 		
 		<resultMap type="UnitCategory" id="UnitCategoryResultMap">
@@ -79,9 +74,7 @@
 		</select>
 		
 		<select id="getFloor" resultMap="FloorResultMap">
-			SELECT f.*, ft.* FROM tblFloor f
-				LEFT JOIN tblFloorDetail fd ON f.floorId = fd.floorIdFK
-				LEFT JOIN tblFloorType ft ON fd.floorTypeIdFK = ft.floorTypeId
+			SELECT f.* FROM tblFloor f
 			<where>
 				<if test="floorId == 0">
 					f.bldgIdFK = #{buildingId}
@@ -91,7 +84,13 @@
 					f.floorId = #{floorId}
 				</if>
 			</where>
-			LIMIT 1
+		</select>
+		
+		<select id="getFloorTypeOfFloor" resultMap="FloorTypeResultMap">
+			SELECT ft.*
+			FROM tblFloorType ft
+				INNER JOIN tblFloorDetail fd ON fd.floorTypeIdFK = ft.floorTypeId
+			WHERE fd.intStatus = 1 AND fd.floorIdFK = #{floorId}
 		</select>
 		
 		<select id="getFloorType" resultMap="FloorTypeResultMap">

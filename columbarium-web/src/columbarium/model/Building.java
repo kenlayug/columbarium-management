@@ -60,6 +60,17 @@ public class Building {
 			this.floorList.remove(floor);
 		}
 	}
+	public int getNoOfFloorToConfigure(){
+		int intToConfigure = 0;
+		if (floorList != null){
+			for (Floor floor : floorList) {
+				if (floor.getFloorTypeList() == null || floor.getFloorTypeList().size() == 0){
+					intToConfigure++;
+				}
+			}
+		}
+		return intToConfigure;
+	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;

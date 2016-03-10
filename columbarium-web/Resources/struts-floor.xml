@@ -42,6 +42,10 @@
       	
       	<action name="getAllFloorType" class="columbarium.actions.floor.GetAllFloorTypeAction">
       		<result name="success" type="json"></result>
+      	</action>      	
+      	
+      	<action name="getAllBuilding" class="columbarium.actions.building.GetAllBuildingAction">
+      		<result name="success" type="json"></result>
       	</action>
   	 
   	</package> 

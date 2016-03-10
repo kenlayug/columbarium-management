@@ -40,7 +40,7 @@ public class MybatisFloorRepository extends MybatisClient implements FloorReposi
 				List<FloorType> floorTypeListPrev = floorMapper.selectAllFloorTypeForFloor(floor);
 				for (FloorType floorType : floorTypeListPrev) {
 					if (!floor.getFloorTypeList().contains(floorType)){
-						System.out.println(!floor.getFloorTypeList().contains(floorType));
+						System.out.println("to be removed -- "+floorType.getStrFloorDesc());
 						FloorDetail floorDetail = new FloorDetail(floor.getFloorId(), floorType.getStrFloorDesc());
 						floorMapper.removeFloorTypeFromFloor(floorDetail);
 					}
@@ -180,6 +180,7 @@ public class MybatisFloorRepository extends MybatisClient implements FloorReposi
 			if (floorMapper.checkIfExistingFloor(floor) > 0){
 				System.out.println("Here in getFloor dao");
 				floor = floorMapper.getFloor(floor);
+				floor.setFloorTypeList(floorMapper.getFloorTypeOfFloor(floor));
 				System.out.println("Floor "+floor.getFloorId()+"in Building "+floor.getBuildingId());
 				return floor;
 			}

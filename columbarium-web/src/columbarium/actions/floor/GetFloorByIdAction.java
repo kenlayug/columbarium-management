@@ -1,9 +1,11 @@
 package columbarium.actions.floor;
 
+
 import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionSupport;
 
 import columbarium.model.Floor;
+import columbarium.model.FloorType;
 
 public class GetFloorByIdAction extends ActionSupport implements Action{
 
@@ -21,7 +23,6 @@ public class GetFloorByIdAction extends ActionSupport implements Action{
 	
 	public String execute(){
 		
-		System.out.println("HERE IN GETFLOORBYID");
 		floor = Floor.getFloorById(floorId);
 		return "success";
 		

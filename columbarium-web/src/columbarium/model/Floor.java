@@ -53,6 +53,9 @@ public class Floor {
 	public List<FloorType> getFloorTypeList(){
 		return this.floorTypeList;
 	}
+	public int getFloorType(){
+		return floorTypeList.size();
+	}
 	public void addFloorType(String strFloorType){
 		FloorType floorType = new FloorType();
 		floorType.setStrFloorDesc(strFloorType);

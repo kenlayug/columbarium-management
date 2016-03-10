@@ -44,8 +44,7 @@
 
             <div style = "overflow: auto;height: 470px;">
                 <div class = "col s12">
-                    <div class = "aside aside ">
-
+                    <div class = "aside aside " id="buildingSet">
                         <ul class="collapsible" data-collapsible="accordion">
                             <c:if test="${buildingList == null }">
                             	<li>
@@ -69,15 +68,19 @@
                             <c:if test="${buildingList != null }">
                             	<c:forEach items="${buildingList}" var="building">
 	                            	<li>
-	                            	
 		                                <div class="collapsible-header" style = "background-color: #00897b"><i class="medium material-icons">business</i>
 		                                    <label style = "font-family: myFirstFont; font-size: 20px; color: white;">${building.strBuildingName }</label>
 		                                </div>
 		                                <c:forEach items="${building.floorList}" var="floor">
 			                                <div class="collapsible-body">
 			                                    <p>Floor No. ${floor.intFloorNo}
+			                                    	<c:if test="${floor.floorType == 0 }">
+			                                        	<button value="${floor.floorId}" name = "action" class="btn tooltipped modal-trigger btn-floating black right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor is not yet configured." style = "margin-left: 5px;" onclick="openConfigureFloor(this.value)"><i class="material-icons">settings</i></button>
+			                                        </c:if>
+			                                        <c:if test="${floor.floorType != 0}">
+			                                        	<button value="${floor.floorId}" name = "action" class="btn tooltipped modal-trigger btn-floating green right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor is configured." style = "margin-left: 5px;" onclick="openConfigureFloor(this.value)"><i class="material-icons">settings</i></button>
+			                                        </c:if>
 			                                        <button value="${floor.floorId}" name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor price is not yet configured."  style = "margin-left: 5px;" href="#modalPrice"><i class="material-icons">&#8369</i></button>
-			                                        <button value="${floor.floorId}" name = "action" class="btn tooltipped modal-trigger btn-floating black right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor is not yet configured." style = "margin-left: 5px;" onclick="openConfigureFloor(this.value)"><i class="material-icons">settings</i></button>
 			                                    </p>
 			                                </div>
 										</c:forEach>
@@ -102,6 +105,7 @@
               <button name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "New Floor Type" style = "margin-left: 5px;" href = "#modalNewFloorType"><i class="material-icons">add</i></button>
 			<input type="hidden" id="buildingIdToBeConfigured">
 			<input type="hidden" id="floorIdToBeConfigured">
+			<input type="hidden" id="floorTypes" name="floorType[]">
             <div class = "row">
                 <h3 style = "font-size: 18px; padding-left: 20px;">Select Floor Type</h3>
               <div class = "col s6" style = "padding-left: 20px;" id="firstDivFloorType">
@@ -315,6 +319,7 @@
                                 <tr>
                                     <th>Building Name</th>
                                     <th>No. of Floors</th>
+                                    <th>No. of Floor/s to be configured</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -432,7 +437,7 @@
     	
     }
     
-    function updateFloorTypeSelect(){
+    function updateFloorTypeSelect(floorTypeListChecked){
     	$.ajax({
     		type : "POST",
     		url : "getAllFloorType",
@@ -440,14 +445,21 @@
     		async : true,
     		success : function(data){
     			var floorTypeList = data.floorTypeList;
-    			//var selectFloorType = document.getElementById("selectFloorType");
-    	    	Materialize.toast('Updating floor type select...', 3000, 'rounded');
     			var boolFirstDiv = 1;
     			$('#firstDivFloorType').empty();
     			$('#secondDivFloorType').empty();
 				$.each(floorTypeList, function(i, floorType){
+					var checked = '';
+					if (floorTypeListChecked != null){
+						$.each(floorTypeListChecked, function(o, floorTypeChecked){
+							
+							if (floorType.strFloorDesc == floorTypeChecked.strFloorDesc){
+								checked = ' checked="checked"';
+							}
+						});
+					}
 					if (boolFirstDiv == 1){
-						var radioBtn = $('<input type="checkbox" name="floorType[]" id="'+floorType.strFloorDesc+'" value="'+floorType.strFloorDesc+'" />');
+						var radioBtn = $('<input type="checkbox" name="floorType[]" id="'+floorType.strFloorDesc+'" value="'+floorType.strFloorDesc+'"'+checked+' />');
 						var label = $('<label for="'+floorType.strFloorDesc+'">'+floorType.strFloorDesc+'</label><br>');
 					    radioBtn.appendTo('#firstDivFloorType');
 					    label.appendTo('#firstDivFloorType');
@@ -455,7 +467,7 @@
 							 boolFirstDiv = 0;
 						 }
 					}else{
-						var radioBtn = $('<input type="checkbox" name="floorType[]" id="'+floorType.strFloorDesc+'" value="'+floorType.strFloorDesc+'" />');
+						var radioBtn = $('<input type="checkbox" name="floorType[]" id="'+floorType.strFloorDesc+'" value="'+floorType.strFloorDesc+'"'+checked+' />');
 						var label = $('<label for="'+floorType.strFloorDesc+'">'+floorType.strFloorDesc+'</label><br>');
 					    radioBtn.appendTo('#secondDivFloorType');
 					    label.appendTo('#secondDivFloorType');
@@ -463,6 +475,8 @@
 							 boolFirstDiv = 1;
 						 }
 					}
+					
+					
         		});
     			$('select').material_select();
     		},
@@ -488,6 +502,7 @@
     			Materialize.toast('Floor Id -- '+data.floor.floorId, 3000, 'rounded');
     			$('#buildingToBeConfigured').val(data.floor.buildingId);
     			$('#floorIdToBeConfigured').val(data.floor.floorId);
+    			updateFloorTypeSelect(data.floor.floorTypeList);
     			$('#modalConfigure').openModal();
     		},
     		error: function(data){
@@ -502,16 +517,17 @@
     	var floorType;
     	var buildingId = document.getElementById("buildingIdToBeConfigured").value;
     	var floorId = document.getElementById("floorIdToBeConfigured").value;
-    	var floorType = $("input[name='floorType[]']:checked").map(function() {
+    	var floorType = null;
+    	floorType = $("input[name='floorType[]']:checked").map(function() {
+    		Materialize.toast(this.value, 3000, 'rounded');
     		return this.value;
     	}).get();
-    	Materialize.toast('Configuring floor...', 3000, 'rounded');
+    	
  			$.ajax({
  				type: "POST",
  				url: "configure",
  				traditional: true,
  				data: {
- 					"floor.buildingId" : buildingId,
  					"floor.floorId" : floorId,
  					"floorTypeList" : floorType
  				},//data
@@ -535,10 +551,13 @@
     	}
     	
         
-    window.onload = updateTable;
-
-    window.onload = updateFloorTypeSelect;
-        
+    window.onload = windowOnLoad;
+    
+    function windowOnLoad(){
+    	updateTable();
+    	updateFloorTypeSelect(null);
+    }
+    
 	function updateTable(){
 			
 			$.ajax({
@@ -554,13 +573,11 @@
 		        		table.clear().draw();
 		        	
 		        		$.each(buildingList, function(i, building){
-		        			var addButtons = "<button name = action class= 'modal-trigger btn-floating blue' onclick = openUpdate(this.value) value = "+building.buildingId+" ><i class= material-icons style = "color: black;">mode_edit</i></button>"+
-		        			"<button name = action class= 'modal-trigger btn-floating red' onclick = openDeactivate(this.value) value = "+building.buildingId+" ><i class= material-icons style = "color: black;">not_interested</i></button></td>";
-		        			
 		        			
 		        			table.row.add( [
 		    	        		            building.strBuildingName,
-		    	        		            building.intNoOfFloors
+		    	        		            building.intNoOfFloors,
+		    	        		            building.noOfFloorToConfigure
 		    	        		            ]);
 		        		});
 		        		

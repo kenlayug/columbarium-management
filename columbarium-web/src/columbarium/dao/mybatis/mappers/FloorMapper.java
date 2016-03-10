@@ -11,6 +11,7 @@ public interface FloorMapper {
 
 	public void									configureFloor(FloorDetail floorDetail);
 	public Floor								getFloor(Floor floor);
+	public List<FloorType>						getFloorTypeOfFloor(Floor floor);
 	
 	public int									checkIfExistingFloor(Floor floor);
 	public int									checkIfExistingFloorDetail(FloorDetail floorDetail);
