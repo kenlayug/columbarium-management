@@ -444,8 +444,8 @@
 	        		
 		        		$.each(itemList, function(i, item){
 							
-		        			var addButtons = "<button value = "+item.itemId+" name = action class= 'modal-trigger btn-floating blue' onclick= openUpdate(this.value) ><i class= material-icons style = "color: black;">mode_edit</i></button>"+
-		        			"<button name = action value = "+item.itemId+" class= 'modal-trigger btn-floating red' onclick = openDeactivate(this.value) ><i class= material-icons style = "color: black;">not_interested</i></button></td>";
+		        			var addButtons = "<button value = "+item.itemId+" name = action class= 'modal-trigger btn-floating blue' onclick= openUpdate(this.value) ><i class= material-icons style = 'color: black;''>mode_edit</i></button>"+
+		        			"<button name = action value = "+item.itemId+" class= 'modal-trigger btn-floating red' onclick = openDeactivate(this.value) ><i class= material-icons style = 'color: black;'>not_interested</i></button></td>";
 		        			
 		        			
 		        			table.row.add( [

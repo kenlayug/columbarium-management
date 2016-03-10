@@ -357,8 +357,8 @@
         		var requirementList = data.requirementList;
         	
         		$.each(requirementList, function(i, requirement){
-        			var addButtons = "<button name = action class= 'modal-trigger btn-floating blue' onclick = openUpdate(this.value) value = "+requirement.requirementId+" ><i class= material-icons  style = "color: black;" >mode_edit</i></button>"+
-        			"<button name = action class= 'modal-trigger btn-floating red' onclick = openDeactivate(this.value) value = "+requirement.requirementId+" ><i class= material-icons style = "color: black;" >not_interested</i></button></td>";
+        			var addButtons = "<button name = action class= 'modal-trigger btn-floating blue' onclick = openUpdate(this.value) value = "+requirement.requirementId+" ><i class= material-icons  style = 'color: black;' >mode_edit</i></button>"+
+        			"<button name = action class= 'modal-trigger btn-floating red' onclick = openDeactivate(this.value) value = "+requirement.requirementId+" ><i class= material-icons style = 'color: black;' >not_interested</i></button></td>";
         			
         			
         			table.row.add( [

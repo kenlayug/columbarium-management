@@ -38,12 +38,11 @@
 		<select id="checkIfExistingRequirement" resultMap="CountRequirementResultMap">
 			SELECT COUNT(*) FROM tblRequirement
 			<where>
-				intStatus = 1 
 				<if test="requirementId == 0">
-					AND strRequirementName = #{strRequirementName}
+					strRequirementName = #{strRequirementName}
 				</if>
 				<if test="requirementId != 0">
-					AND requirementId = #{requirementId}
+					requirementId = #{requirementId}
 				</if>
 			</where>
 		</select>
