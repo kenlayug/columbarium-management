@@ -445,13 +445,13 @@
 	
 		        			var addButtons = "<button name = action class= 'modal-trigger btn-floating blue' onclick = openUpdate(this.value) value = "+service.serviceId+" ><i class= material-icons style = 'color: black;'>mode_edit</i></button>"+
 		        			"<button name = action class= 'modal-trigger btn-floating red' onclick = openDeactivate(this.value) value = "+service.serviceId+"><i class= material-icons style = 'color: black;'>not_interested</i></button></td>";
-		        			
+		        			var viewRequirementButton = "<button name = 'action' class='btn tooltipped modal-trigger btn-floating yellow right' data-position = 'bottom' data-delay = '30' data-tooltip = 'View Requirement/s' style = 'margin-right: 10px;' ><i class='material-icons' style = 'color: black;'>pageview</i></button>";
 		        			
 		        			table.row.add( [
 		    	        		            service.strServiceName,
 		    	        		            "P "+service.dblPrice,
 		    	        		            service.strServiceDesc,
-		    	        		            ,
+		    	        		            viewRequirementButton,
 		    	        		            addButtons
 		    	        		            ]);
 		        		});
@@ -498,6 +498,10 @@
 		function openDeactivate(serviceId){
 			$("#serviceToBeDeactivated").val(serviceId);
 			$('#modalDeactivateService').openModal();
+		}
+		
+		function openViewRequirement(serviceId){
+			
 		}
     
     </script>
