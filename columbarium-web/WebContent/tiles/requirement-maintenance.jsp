@@ -116,7 +116,7 @@
 						<div class="z-depth-2 card material-table" style="margin-top: 0px">
 							<div class="table-header" style="height: 45px; background-color: #00897b;">
 								<h4 style = "padding-top: 10px; font-size: 30px; color: white; padding-left: 0px;">Archive Requirement/s</h4>
-								<a href="#" class="search-toggle btn-flat right"><i class="material-icons right" style="margin-left: 150px; color: #ffffff;">search</i></a>
+								<a href="#" class="search-toggle btn-flat right"><i class="material-icons right" style="margin-left: 60px; color: #ffffff;">search</i></a>
 							</div>
 							<table id="datatable2">
 								<thead>
@@ -357,8 +357,8 @@
         		var requirementList = data.requirementList;
         	
         		$.each(requirementList, function(i, requirement){
-        			var addButtons = "<button name = action class= 'modal-trigger btn-floating green' onclick = openUpdate(this.value) value = "+requirement.requirementId+" ><i class= material-icons >mode_edit</i></button>"+
-        			"<button name = action class= 'modal-trigger btn-floating red' onclick = openDeactivate(this.value) value = "+requirement.requirementId+" ><i class= material-icons >delete</i></button></td>";
+        			var addButtons = "<button name = action class= 'modal-trigger btn-floating blue' onclick = openUpdate(this.value) value = "+requirement.requirementId+" ><i class= material-icons  style = "color: black;" >mode_edit</i></button>"+
+        			"<button name = action class= 'modal-trigger btn-floating red' onclick = openDeactivate(this.value) value = "+requirement.requirementId+" ><i class= material-icons style = "color: black;" >not_interested</i></button></td>";
         			
         			
         			table.row.add( [

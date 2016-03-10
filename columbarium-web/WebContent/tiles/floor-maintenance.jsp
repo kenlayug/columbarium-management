@@ -304,7 +304,7 @@
                     <div id="admin" class="col s12" style="margin-top: 20px">
                         <div class="z-depth-2 card material-table">
                             <div class="table-header" style="background-color: #00897b;">
-                                <h4 style = "font-size: 30px; color: white; padding-left: 0px;">Floor Data Grid</h4>
+                                <h4 style = "font-size: 30px; color: white; padding-left: 0px;">Floor Record</h4>
                                 <div class="actions">
                                     <button name = "action" class="btn tooltipped modal-trigger btn-floating black" data-position = "bottom" data-delay = "30" data-tooltip = "Deactivated Floor/s" style = "margin-right: 10px;" href = "#modalArchiveFloor"><i class="material-icons" style = "color: white">delete</i></button>
                                     <a href="#" class="search-toggle waves-effect btn-flat nopadding"><i class="material-icons" style="color: #ffffff;">search</i></a>
@@ -554,8 +554,8 @@
 		        		table.clear().draw();
 		        	
 		        		$.each(buildingList, function(i, building){
-		        			var addButtons = "<button name = action class= 'modal-trigger btn-floating green' onclick = openUpdate(this.value) value = "+building.buildingId+" ><i class= material-icons >mode_edit</i></button>"+
-		        			"<button name = action class= 'modal-trigger btn-floating red' onclick = openDeactivate(this.value) value = "+building.buildingId+" ><i class= material-icons >delete</i></button></td>";
+		        			var addButtons = "<button name = action class= 'modal-trigger btn-floating blue' onclick = openUpdate(this.value) value = "+building.buildingId+" ><i class= material-icons style = "color: black;">mode_edit</i></button>"+
+		        			"<button name = action class= 'modal-trigger btn-floating red' onclick = openDeactivate(this.value) value = "+building.buildingId+" ><i class= material-icons style = "color: black;">not_interested</i></button></td>";
 		        			
 		        			
 		        			table.row.add( [

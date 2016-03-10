@@ -11,90 +11,123 @@
 
 <!-- Form -->
 <div class = "col s12" >
-    <h2 style = "font-size: 30px;padding-left:50px; margin-bottom: 0px; margin-top: 0px;">Package Maintenance</h2>
+    <div class = "row">
 
-        <!-- Modal Create -->
-        <form id="modalCreatePackage" class="modal" style = "width: 700px;">
+
+
+    <!-- Create Package -->
+    <form class = "col s4" id="formCreate">
+        <h2 style = "font-size: 30px; padding-left:30px; margin-bottom: 20px; margin-top: 0px;">Package Maintenance</h2>
+        <div class = "aside aside z-depth-3" style = "height: 450px; margin-left: 20px;">
+            <div class = "header">
+                <h4 style = "font-size: 30px; margin-top: 0px; padding-top: 10px;">Form</h4>
+            </div>
+
+            <i class = "left" style = "margin-top: 0px; padding-left: 20px; color: red;">*Required Fields</i>
+            <br>
+            <div class = "col s12">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="packageName" type="text" class="validate" required = "" aria-required="true">
+                        <label for="packageName" data-error = "Invalid format." data-success = "">Package Name<span style = "color: red;">*</span></label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input id="packagePrice" type="text" class="validate" required = "" aria-required="true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
+                        <label for="packagePrice" data-error = "Invalid format." data-success = "">Package Price<span style = "color: red;">*</span></label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input id="packageDesc" type="text" class="validate">
+                        <label for="packageDesc">Package Description</label>
+                    </div>
+                    <button type = "submit" name = "action" class="modal-trigger btn red left" style = "margin-left: 10px; margin-top: 10px; margin-right: 10px;" href = "#modalItem">Item/s</button>
+                    <button type = "submit" name = "action" class="modal-trigger btn red left" style = "margin-top: 10px; margin-right: 10px;" href = "#modalService">Service/s</button>
+                </div>
+
+            </div>
+
+            <button onclick = "createBuilding()" type = "submit" name = "action" class="btn red right" style = "margin-top: 20px; margin-right: 10px;">Create</button>
+        </div>
+    </form>
+
+
+        <!-- Modal Service -->
+        <div id="modalItem" class="modal" style = "width: 500px;">
             <div class = "modal-header" style = "height: 55px;">
-                <h4 style = "padding-left: 20px; font-size: 30px;">Create Package</h4>
+                <h4 style = "font-size: 30px; padding-left: 20px;">Item Inclusion/s</h4>
             </div>
-            <div class="modal-content">
-                <i class = "left" style = "margin-top: 0px; padding-left: 10px; color: red;">*Required Fields</i>
-                <br>
+            <form class="modal-content">
                 <div class = "col s12">
-                    <div class="row">
-                        <div class="input-field col s6">
-                            <input id="packageName" type="text" class="validate" required = "" aria-required="true">
-                            <label for="packageName" data-error = "Invalid format." data-success = "">Package Name<span style = "color: red;">*</span></label>
-                        </div>
-                        <div class="input-field col s6">
-                            <input id="packagePrice" type="text" class="validate" required = "" aria-required="true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
-                            <label for="packagePrice" data-error = "Invalid format." data-success = "">Package Price<span style = "color: red;">*</span></label>
-                        </div>
+
+                        <h6 style = "font-family: arial;">Items</h6>
+                        <c:if test="${itemList == null}">
+                            <p>
+                                <h7>No items available</h7>
+                            </p>
+                        </c:if>
+                        <c:if test="${itemList != null }">
+                            <c:forEach items="${itemList }" var="item">
+                                <p>
+                                    <input type="checkbox" name="item[]" id="${item.strItemName }" value="${item.strItemName }" />
+                                    <label for="${item.strItemName }">${item.strItemName}</label>
+                                </p>
+                            </c:forEach>
+                        </c:if>
                     </div>
+
+                <br><br><br>
+
+                <div style = "margin-top: 30px;">
+                <div class="modal-footer">
+                    <button name = "action" class="btn red" style = "margin-bottom: 0px; margin-top: 6px; margin-left: 10px; ">Confirm</button>
+                    <button name = "action" class="modal-close btn red" style = "margin-bottom: 0px;">Cancel</button>
                 </div>
-                <div class = "col s12">
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input id="packageDesc" type="text" class="validate">
-                            <label for="packageDesc">Package Description</label>
-                        </div>
-                    </div>
                 </div>
 
-                <div class = "col s12">
-                    <div class="row">
-                        <div class = "col s6">
-                            <div>
-                                <h6 style = "font-family: arial;">Services</h6>
-                                <c:if test="${serviceList == null}">
+            </form>
+
+        </div>
+
+    <!-- Modal Service -->
+    <div id="modalService" class="modal" style = "width: 500px;">
+        <div class = "modal-header" style = "height: 55px;">
+            <h4 style = "font-size: 30px; padding-left: 20px;">Service Inclusion/s</h4>
+        </div>
+        <div class="modal-content">
+            <div class = "col s12">
+                <div class="row">
+                    <div class = "col s6">
+                        <div>
+                            <h6 style = "font-family: arial;">Services</h6>
+                            <c:if test="${serviceList == null}">
+                                <p>
+                                    <h7>No services available</h7>
+                                </p>
+                            </c:if>
+                            <c:if test="${serviceList != null }">
+                                <c:forEach items="${serviceList }" var="service">
                                     <p>
-                                        <h7>No services available</h7>
+                                        <input type="checkbox" name="service[]" id="${service.strServiceName }" value="${service.strServiceName }" />
+                                        <label for="${service.strServiceName }">${service.strServiceName}</label>
                                     </p>
-                                </c:if>
-                                <c:if test="${serviceList != null }">
-                                    <c:forEach items="${serviceList }" var="service">
-                                        <p>
-                                            <input type="checkbox" name="service[]" id="${service.strServiceName }" value="${service.strServiceName }" />
-                                            <label for="${service.strServiceName }">${service.strServiceName}</label>
-                                        </p>
-                                    </c:forEach>
-                                </c:if>
+                                </c:forEach>
+                            </c:if>
 
-
-                            </div>
-                        </div>
-                        <div class = "col s6">
-                            <div>
-                                <h6 style = "font-family: arial;">Items</h6>
-                                <c:if test="${itemList == null}">
-                                    <p>
-                                        <h7>No items available</h7>
-                                    </p>
-                                </c:if>
-                                <c:if test="${itemList != null }">
-                                    <c:forEach items="${itemList }" var="item">
-                                        <p>
-                                            <input type="checkbox" name="item[]" id="${item.strItemName }" value="${item.strItemName }" />
-                                            <label for="${item.strItemName }">${item.strItemName}</label>
-                                        </p>
-                                    </c:forEach>
-                                </c:if>
-                            </div>
+                        <br><br>
                         </div>
                     </div>
+
                 </div>
-
-                <br>
-
             </div>
-            <div class="modal-footer">
-                <button type = "submit" name = "action" class="btn red" style = "margin-left: 10px; ">Confirm</button>
-                <button name = "action" class="btn red modal-close">Cancel</button>
-            </div>
-        </form>
+        </div>
 
-        <!-- Modal Update -->
+        <div class="modal-footer">
+            <button name = "action" class="btn red" style = "margin-left: 10px; ">Confirm</button>
+            <button name = "action" class="modal-close btn red">Cancel</button>
+        </div>
+    </div>
+
+
+    <!-- Modal Update -->
         <form id="modalUpdatePackage" class="modal" style = "width: 650px;">
             <div class = "modal-header" style = "height: 55px;">
                 <h4 style = "padding-left: 20px; font-size: 30px;">Update Package</h4>
@@ -216,7 +249,7 @@
                 <div class="z-depth-2 card material-table" style="margin-top: 0px">
                     <div class="table-header" style="height: 45px; background-color: #00897b;">
                         <h4 style = "padding-top: 10px; font-size: 30px; color: white; padding-left: 0px;">Archive Package/s</h4>
-                        <a href="#" class="search-toggle btn-flat right"><i class="material-icons right" style="margin-left: 150px; color: #ffffff;">search</i></a>
+                        <a href="#" class="search-toggle btn-flat right"><i class="material-icons right" style="margin-left: 140px; color: #ffffff;">search</i></a>
                     </div>
                     <table id="datatable2">
                         <thead>
@@ -278,22 +311,22 @@
                     </table>
                 </div>
             </div>
+            <button name = "action" class="btn red modal-close right" style = "margin-bottom: 10px; margin-right: 0px;">DONE</button>
         </div>
-        <button name = "action" class="btn red modal-close right" style = "margin-bottom: 10px; margin-right: 30px;">DONE</button>
+
     </div>
 
 
 
     <!-- Data Grid -->
-        <div class = "col s9" style = "margin-left: 40px; margin-right: 40px; margin-top: 0px;">
+        <div class = "col s8" style = "margin-left: 0px; margin-right: 0px; margin-top: 0px;">
             <div class="row">
                 <div id="admin" class="col s12" style="margin-top: 20px">
                     <div class="z-depth-2 card material-table">
                         <div class="table-header" style="background-color: #00897b;">
-                            <h4 style = "font-size: 30px; color: white; padding-left: 0px;">Package Data Grid</h4>
+                            <h4 style = "font-size: 30px; color: white; padding-left: 0px;">Package Record</h4>
 
                             <div class="actions">
-                                <button name = "action" class="btn tooltipped modal-trigger btn-floating yellow" data-position = "bottom" data-delay = "30" data-tooltip = "Create Package" style = "margin-right: 10px;" href = "#modalCreatePackage"><i class="material-icons">add</i></button>
                                 <button name = "action" class="btn tooltipped modal-trigger btn-floating black" data-position = "bottom" data-delay = "30" data-tooltip = "Deactivated Package/s" style = "margin-right: 10px;" href = "#modalArchivePackage"><i class="material-icons" style = "color: white">delete</i></button>
                                 <a href="#" class="search-toggle waves-effect btn-flat nopadding"><i class="material-icons" style="color: #ffffff;">search</i></a>
                             </div>
@@ -301,10 +334,10 @@
                         <table id="datatable">
                             <thead>
                             <tr>
-                                <th>Package Name</th>
-                                <th>Package Price</th>
-                                <th>Package Description</th>
-                                <th>Package Includes:</th>
+                                <th>Name</th>
+                                <th>Price</th>
+                                <th>Description</th>
+                                <th>Includes:</th>
                                 <th>Action</th>
                             </tr>
                             </thead>
@@ -313,64 +346,64 @@
                                 <td>Package Eight</td>
                                 <td>Price Eight</td>
                                 <td>Description Eight</td>
-                                <td><button data-target="modalPackageIncludes" class="red btn modal-trigger">Package</button></td>
+                                <td><button data-target="modalPackageIncludes" class="red btn modal-trigger">view</button></td>
                                 <td>
-                                    <button name = "action" data-target="modalUpdatePackage" class="modal-trigger btn-floating green"><i class="material-icons">mode_edit</i></button>
-                                    <button name = "action" data-target="modalDeactivatePackage" class="modal-trigger btn-floating red"><i class="material-icons">delete</i></button></td>
+                                    <button name = "action" data-target="modalUpdatePackage" class="modal-trigger btn-floating blue"><i class="material-icons" style = "color: black;">mode_edit</i></button>
+                                    <button name = "action" data-target="modalDeactivatePackage" class="modal-trigger btn-floating red"><i class="material-icons" style = "color: black;">not_interested</i></button></td>
                             </tr>
                             <tr>
                                 <td>Package Eight</td>
                                 <td>Price Eight</td>
                                 <td>Description Eight</td>
-                                <td><button data-target="modalPackageIncludes" class="red btn modal-trigger">Package</button></td>
+                                <td><button data-target="modalPackageIncludes" class="red btn modal-trigger">view</button></td>
                                 <td>
-                                    <button name = "action" data-target="modalUpdatePackage" class="modal-trigger btn-floating green"><i class="material-icons">mode_edit</i></button>
-                                    <button name = "action" data-target="modalDeactivatePackage" class="modal-trigger btn-floating red"><i class="material-icons">delete</i></button></td>
+                                    <button name = "action" data-target="modalUpdatePackage" class="modal-trigger btn-floating blue"><i class="material-icons" style = "color: black;">mode_edit</i></button>
+                                    <button name = "action" data-target="modalDeactivatePackage" class="modal-trigger btn-floating red"><i class="material-icons" style = "color: black;">not_interested</i></button></td>
                             </tr>
                             <tr>
                                 <td>Package Eight</td>
                                 <td>Price Eight</td>
                                 <td>Description Eight</td>
-                                <td><button data-target="modalPackageIncludes" class="red btn modal-trigger">Package</button></td>
+                                <td><button data-target="modalPackageIncludes" class="red btn modal-trigger">view</button></td>
                                 <td>
-                                    <button name = "action" data-target="modalUpdatePackage" class="modal-trigger btn-floating green"><i class="material-icons">mode_edit</i></button>
-                                    <button name = "action" data-target="modalDeactivatePackage" class="modal-trigger btn-floating red"><i class="material-icons">delete</i></button></td>
+                                    <button name = "action" data-target="modalUpdatePackage" class="modal-trigger btn-floating blue"><i class="material-icons" style = "color: black;">mode_edit</i></button>
+                                    <button name = "action" data-target="modalDeactivatePackage" class="modal-trigger btn-floating red"><i class="material-icons" style = "color: black;">not_interested</i></button></td>
                             </tr>
                             <tr>
                                 <td>Package Eight</td>
                                 <td>Price Eight</td>
                                 <td>Description Eight</td>
-                                <td><button data-target="modalPackageIncludes" class="red btn modal-trigger">Package</button></td>
+                                <td><button data-target="modalPackageIncludes" class="red btn modal-trigger">view</button></td>
                                 <td>
-                                    <button name = "action" data-target="modalUpdatePackage" class="modal-trigger btn-floating green"><i class="material-icons">mode_edit</i></button>
-                                    <button name = "action" data-target="modalDeactivatePackage" class="modal-trigger btn-floating red"><i class="material-icons">delete</i></button></td>
+                                    <button name = "action" data-target="modalUpdatePackage" class="modal-trigger btn-floating blue"><i class="material-icons" style = "color: black;">mode_edit</i></button>
+                                    <button name = "action" data-target="modalDeactivatePackage" class="modal-trigger btn-floating red"><i class="material-icons" style = "color: black;">not_interested</i></button></td>
                             </tr>
                             <tr>
                                 <td>Package Eight</td>
                                 <td>Price Eight</td>
                                 <td>Description Eight</td>
-                                <td><button data-target="modalPackageIncludes" class="red btn modal-trigger">Package</button></td>
+                                <td><button data-target="modalPackageIncludes" class="red btn modal-trigger">view</button></td>
                                 <td>
-                                    <button name = "action" data-target="modalUpdatePackage" class="modal-trigger btn-floating green"><i class="material-icons">mode_edit</i></button>
-                                    <button name = "action" data-target="modalDeactivatePackage" class="modal-trigger btn-floating red"><i class="material-icons">delete</i></button></td>
+                                    <button name = "action" data-target="modalUpdatePackage" class="modal-trigger btn-floating blue"><i class="material-icons" style = "color: black;">mode_edit</i></button>
+                                    <button name = "action" data-target="modalDeactivatePackage" class="modal-trigger btn-floating red"><i class="material-icons" style = "color: black;">not_interested</i></button></td>
                             </tr>
                             <tr>
                                 <td>Package Eight</td>
                                 <td>Price Eight</td>
                                 <td>Description Eight</td>
-                                <td><button data-target="modalPackageIncludes" class="red btn modal-trigger">Package</button></td>
+                                <td><button data-target="modalPackageIncludes" class="red btn modal-trigger">view</button></td>
                                 <td>
-                                    <button name = "action" data-target="modalUpdatePackage" class="modal-trigger btn-floating green"><i class="material-icons">mode_edit</i></button>
-                                    <button name = "action" data-target="modalDeactivatePackage" class="modal-trigger btn-floating red"><i class="material-icons">delete</i></button></td>
+                                    <button name = "action" data-target="modalUpdatePackage" class="modal-trigger btn-floating blue"><i class="material-icons" style = "color: black;">mode_edit</i></button>
+                                    <button name = "action" data-target="modalDeactivatePackage" class="modal-trigger btn-floating red"><i class="material-icons" style = "color: black;">not_interested</i></button></td>
                             </tr>
                             <tr>
                                 <td>Package Eight</td>
                                 <td>Price Eight</td>
                                 <td>Description Eight</td>
-                                <td><button data-target="modalPackageIncludes" class="red btn modal-trigger">Package</button></td>
+                                <td><button data-target="modalPackageIncludes" class="red btn modal-trigger">view</button></td>
                                 <td>
-                                    <button name = "action" data-target="modalUpdatePackage" class="modal-trigger btn-floating green"><i class="material-icons">mode_edit</i></button>
-                                    <button name = "action" data-target="modalDeactivatePackage" class="modal-trigger btn-floating red"><i class="material-icons">delete</i></button></td>
+                                    <button name = "action" data-target="modalUpdatePackage" class="modal-trigger btn-floating blue"><i class="material-icons" style = "color: black;">mode_edit</i></button>
+                                    <button name = "action" data-target="modalDeactivatePackage" class="modal-trigger btn-floating red"><i class="material-icons" style = "color: black;">not_interested</i></button></td>
                             </tr>
                             </tbody>
                         </table>
@@ -384,7 +417,7 @@
         </div>
 </div>
 
-
+</div>
     </div>
     
     <script>

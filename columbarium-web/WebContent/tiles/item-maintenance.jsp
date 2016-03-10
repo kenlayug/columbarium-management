@@ -254,8 +254,8 @@
 											<td>Item One</td>
 											<td>P 200</td>
 											<td>Item One</td>
-											<td><button name = "action" class="modal-trigger btn-floating green" onclick="openUpdate('${item.strItemName}')"><i class="material-icons">mode_edit</i></button>
-												<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateItem"><i class="material-icons">delete</i></button></td>
+											<td><button name = "action" class="modal-trigger btn-floating blue" onclick="openUpdate('${item.strItemName}')"><i class="material-icons" style = "color: black;">mode_edit</i></button>
+												<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateItem"><i class="material-icons" style = "color: black;">not_interested</i></button></td>
 										</tr>
 									</c:if>
 									
@@ -265,8 +265,8 @@
 												<td>${item.strItemName }</td>
 												<td>P ${item.dblPrice }</td>
 												<td>${item.strItemDesc }</td>
-												<td><button name = "action" class="modal-trigger btn-floating green" onclick="openUpdate('${item.strItemName}')"><i class="material-icons">mode_edit</i></button>
-													<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateItem"><i class="material-icons">delete</i></button></td>
+												<td><button name = "action" class="modal-trigger btn-floating blue" onclick="openUpdate('${item.strItemName}')"><i class="material-icons" style = "color: black;">mode_edit</i></button>
+													<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateItem"><i class="material-icons" style = "color: black;">not_interested</i></button></td>
 											</tr>
 										</c:forEach>
 									</c:if>
@@ -444,8 +444,8 @@
 	        		
 		        		$.each(itemList, function(i, item){
 							
-		        			var addButtons = "<button value = "+item.itemId+" name = action class= 'modal-trigger btn-floating green' onclick= openUpdate(this.value) ><i class= material-icons >mode_edit</i></button>"+
-		        			"<button name = action value = "+item.itemId+" class= 'modal-trigger btn-floating red' onclick = openDeactivate(this.value) ><i class= material-icons >delete</i></button></td>";
+		        			var addButtons = "<button value = "+item.itemId+" name = action class= 'modal-trigger btn-floating blue' onclick= openUpdate(this.value) ><i class= material-icons style = "color: black;">mode_edit</i></button>"+
+		        			"<button name = action value = "+item.itemId+" class= 'modal-trigger btn-floating red' onclick = openDeactivate(this.value) ><i class= material-icons style = "color: black;">not_interested</i></button></td>";
 		        			
 		        			
 		        			table.row.add( [

@@ -273,7 +273,7 @@
                     <div id="admin" class="col s12" style="margin-top: 20px">
                         <div class="z-depth-2 card material-table">
                             <div class="table-header" style="background-color: #00897b;">
-                                <h4 style = "font-size: 30px; color: white; padding-left: 0px;">Block Data Grid</h4>
+                                <h4 style = "font-size: 30px; color: white; padding-left: 0px;">Block Record</h4>
                                 <div class="actions">
                                     <button name = "action" class="btn tooltipped modal-trigger btn-floating black" data-position = "bottom" data-delay = "30" data-tooltip = "Deactivated Block/s" style = "margin-right: 10px;" href = "#modalArchiveBlock"><i class="material-icons" style = "color: white">delete</i></button>
                                     <a href="#" class="search-toggle waves-effect btn-flat nopadding"><i class="material-icons" style="color: #ffffff;">search</i></a>
@@ -282,12 +282,12 @@
                             <table id="datatable">
                                 <thead>
                                 <tr>
-                                    <th>Block Name</th>
-                                    <th>Block Type</th>
-                                    <th>Building Name</th>
-                                    <th>Floor number</th>
-                                    <th>Block Row/s</th>
-                                    <th>Block Column/s</th>
+                                    <th>Name</th>
+                                    <th>Type</th>
+                                    <th>Name</th>
+                                    <th>Floor Number</th>
+                                    <th>Row/s</th>
+                                    <th>Column/s</th>
                                 </tr>
                                 </thead>
                                 <tbody>
