@@ -93,39 +93,63 @@
 
 
             <!-- Modal Configure -->
-            <div id="modalConfigure" class="modal" style = "width: 700px;">
+            <div id="modalConfigure" class="modal" style = "width: 800px;">
                 <div class = "modal-header" style = "height: 55px;">
                     <h4 style = "font-size: 30px; padding-left: 20px;">Floor Configuration</h4>
                 </div>
 
           <div class="modal-content">
+              <button name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "New Floor Type" style = "margin-left: 5px;" href = "#modalNewFloorType"><i class="material-icons">add</i></button>
 
-          <div class = "col s12">
+          <form class = "col s12">
             <div class = "row">
-              <div style = "padding-left: 20px;">
-              <div class="input-field col s8">
-                  <select multiple id="selectFloorType">
-                      <option value="" disabled selected>Select Floor Type</option>
-                      <option value="1">Admin Office</option>
-                      <option value="2">Cashier</option>
-                      <option value="3">Columbary Vault</option>
-                      <option value="4">Full Body</option>
-                  </select>
-                  <label>Floor Division</label>
-              </div>
-              </div>
+                <h3 style = "font-size: 18px; padding-left: 20px;">Select Floor Type</h3>
+              <div class = "col s6" style = "padding-left: 20px;">
+                  <form action="#">
+                      <p>
+                          <input type="checkbox" id="floorTypeOne" required/>
+                          <label for="floorTypeOne">Floor Type One</label>
+                      </p>
+                      <p>
+                          <input type="checkbox" id="floorTypeTwo" />
+                          <label for="floorTypeTwo">Floor Type Two</label>
+                      </p>
+                      <p>
+                          <input type="checkbox" id="floorTypeThree" />
+                          <label for="floorTypeThree">Floor Type Three</label>
+                      </p>
 
-                    <button name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "New Floor Type" style = "margin-left: 5px;" href = "#modalNewFloorType"><i class="material-icons">add</i></button>
+                      <div class="modal-footer">
+                          <button type = "submit" onclick="configureFloor()" name = "action" class="btn red" style = "margin-left: 10px; ">Confirm</button>
+
+                          <button name = "action" class="btn red modal-close">Cancel</button>
+                      </div>
+                  </form>
+              </div>
+                <div class = "col s6" style = "padding-left: 20px;">
+                    <form action="#">
+                        <p>
+                            <input type="checkbox" id="floorTypeFour" />
+                            <label for="floorTypeFour">Floor Type Four</label>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="floorTypeFive"/>
+                            <label for="floorTypeFive">Floor Type Five</label>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="floorTypeSix"/>
+                            <label for="floorTypeSix">Floor Type Six</label>
+                        </p>
+                    </form>
+                    <br>
+                </div>
+
+
 
             </div>
-          </div>
-          <br><br><br>
+          </form>
 
-                <div class="modal-footer">
-                    <button onclick="configureFloor()" name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
-                   
-                    <button name = "action" class="waves-effect waves-light btn red modal-close">Cancel</button>
-                </div>
+
             </div>
             </div>
 

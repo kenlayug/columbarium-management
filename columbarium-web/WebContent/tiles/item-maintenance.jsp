@@ -134,10 +134,10 @@
 				</div>
 				<form class="modal-content" id="formCreateItemCategory">
 					<div style = "padding-left: 10px;">
-						<div class="input-field col s6">
+						<div class="input-field col s12">
 							<input id="itemCategoryDesc" type="text" class="validate" name="item.strItemCategory" required = "" aria-required="true" length = "20">
 							<label for="itemCategoryDesc" data-error = "Invalid format." data-success = "">Item Category<span style = "color: red;">*</span></label>
-							<i class = "left" style = "margin-top: 30px; padding-left: 20px; color: red;">*Required Fields</i>
+							<i class = "left" style = "padding-bottom: 20px; margin-top: 20px; padding-left: 0px; color: red;">*Required Fields</i>
 						</div>
 						<br>
 					</div>
