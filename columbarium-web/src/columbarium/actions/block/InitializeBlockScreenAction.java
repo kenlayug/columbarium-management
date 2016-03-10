@@ -7,6 +7,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 import columbarium.model.Building;
 import columbarium.model.Floor;
+import columbarium.model.FloorType;
 
 public class InitializeBlockScreenAction extends ActionSupport implements Action{
 
@@ -23,6 +24,11 @@ public class InitializeBlockScreenAction extends ActionSupport implements Action
 		for (Building building : buildingList) {
 			for (Floor floor : building.getFloorList()) {
 				floor.getAllBlocks();
+				for (FloorType floorType : floor.getFloorTypeList()) {
+					if (floorType.getBoolIsUnit()){
+						floor.setBoolIsUnit(true);
+					}
+				}
 			}
 		}
 		return "success";

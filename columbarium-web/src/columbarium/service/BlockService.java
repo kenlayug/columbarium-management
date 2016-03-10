@@ -11,5 +11,6 @@ public interface BlockService {
 	public Block							getBlock(String strBlockName);
 	
 	public List<Block>						getAllBlockFromFloor(Floor floor);
+	public List<Block>						getAllBlocks();
 	
 }

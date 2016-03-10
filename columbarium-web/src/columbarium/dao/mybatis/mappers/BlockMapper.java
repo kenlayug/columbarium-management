@@ -18,6 +18,7 @@ public interface BlockMapper {
 	public void										updateBlock(Block block);
 	
 	public List<Block>								getAllBlockFromFloor(Floor floor);
+	public List<Block>								getAllBlock();
 	
 	public int										checkIfExistingBlock(Block block);
 	

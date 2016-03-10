@@ -70,6 +70,14 @@
 					AND b.floorIdFK = #{floorId}
 			</where>
 		</select>
+		
+		<select id="getAllBlock" resultMap="BlockResultMap">
+			SELECT b.*, u.*
+			FROM tblBlock b
+				LEFT JOIN tblUnit u ON b.blockId = u.blockIdFK
+			WHERE b.intStatus = 1
+			ORDER BY b.strBlockDesc ASC
+		</select>
 	
 	<!-- END SELECT QUERIES -->
 	

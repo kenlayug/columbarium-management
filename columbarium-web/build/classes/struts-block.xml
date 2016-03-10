@@ -19,6 +19,14 @@
   		<action name="create" class="columbarium.actions.block.CreateBlockAction">
   			<result name="success" type="json"></result>
   		</action>
+  		
+  		<action name="getFloorById" class="columbarium.actions.floor.GetFloorByIdAction">
+      		<result name="success" type="json"></result>
+      	</action>
+      	
+      	<action name="getAllBlocks" class="columbarium.actions.block.GetAllBlocksAction">
+      		<result name="success" type="json"></result>
+      	</action>
   	 
   	</package> 
    

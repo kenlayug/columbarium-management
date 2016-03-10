@@ -21,10 +21,6 @@
 				<result property="intFloorNo" column="intFloorNo"/>
 				<result property="intLevelNo" column="intLevelNo"/>
 				<result property="intColumnNo" column="intColumnNo"/>
-				<collection property="floorTypeList" ofType="FloorType">
-					<id property="floorTypeId" column="floorTypeId"/>
-					<result property="strFloorDesc" column="strFloorTypeDesc"/>
-				</collection>
 			</collection>
 		</resultMap>
 		
@@ -69,11 +65,9 @@
 		</select>
 		
 		<select id="getAllBuilding" resultMap="BuildingResultMap">
-			SELECT b.*, f.*, ft.*
+			SELECT b.*, f.*
 			FROM tblBldg b
 			LEFT JOIN tblFloor f ON b.bldgId = f.bldgIdFK
-			LEFT JOIN tblFloorDetail fd ON f.floorId = fd.floorIdFK
-			LEFT JOIN tblFloorType ft ON ft.floorTypeId = fd.floorTypeIdFK
 			WHERE b.intStatus = 1
 			ORDER BY b.strBldgDesc, f.intFloorNo ASC
 		</select>

@@ -17,6 +17,14 @@ public class Floor {
 	private int									currentLevel;
 	private List<Block>							blockList;
 	private List<FloorType>						floorTypeList;
+	private boolean								boolIsUnit = false;
+	
+	public void setBoolIsUnit(boolean boolIsUnit){
+		this.boolIsUnit = boolIsUnit;
+	}
+	public boolean getBoolIsUnit(){
+		return this.boolIsUnit;
+	}
 	
 	@Override
 	public int hashCode() {

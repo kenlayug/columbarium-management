@@ -127,4 +127,19 @@ public class MybatisBlockRepository extends MybatisClient implements BlockReposi
 		return null;
 	}
 
+	@Override
+	public List<Block> getAllBlocks() {
+		
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		try{
+			
+			BlockMapper blockMapper = sqlSession.getMapper(BlockMapper.class);
+			return blockMapper.getAllBlock();
+			
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return null;
+	}
+
 }

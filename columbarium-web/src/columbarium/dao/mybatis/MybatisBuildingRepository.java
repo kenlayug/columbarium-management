@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 
 import columbarium.dao.BuildingRepository;
 import columbarium.dao.mybatis.mappers.BuildingMapper;
+import columbarium.dao.mybatis.mappers.FloorMapper;
 import columbarium.model.Building;
 import columbarium.model.Floor;
 
@@ -53,8 +54,14 @@ public class MybatisBuildingRepository extends MybatisClient implements Building
 		try{
 			
 			BuildingMapper buildingMapper = sqlSession.getMapper(BuildingMapper.class);
+			FloorMapper floorMapper = sqlSession.getMapper(FloorMapper.class);
 			if (buildingMapper.countAllBuilding() > 0){
 				List<Building>buildingList = buildingMapper.getAllBuilding();
+				for (Building building : buildingList) {
+					for (Floor floor : building.getFloorList()) {
+						floor.setFloorTypeList(floorMapper.getFloorTypeOfFloor(floor));
+					}
+				}
 				return buildingList;
 			}
 			

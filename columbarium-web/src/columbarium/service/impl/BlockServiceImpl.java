@@ -36,4 +36,9 @@ public class BlockServiceImpl implements BlockService{
 		return blockRepository.getAllBlocksFromFloor(floor);
 	}
 
+	@Override
+	public List<Block> getAllBlocks() {
+		return blockRepository.getAllBlocks();
+	}
+
 }

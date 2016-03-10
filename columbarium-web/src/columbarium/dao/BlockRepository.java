@@ -12,5 +12,6 @@ public interface BlockRepository {
 	public String								updateBlock(Block block);
 	
 	public List<Block>							getAllBlocksFromFloor(Floor floor);
+	public List<Block>							getAllBlocks();
 	
 }

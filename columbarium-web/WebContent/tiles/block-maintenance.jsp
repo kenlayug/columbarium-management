@@ -75,28 +75,31 @@
 		                                                <ul class="collapsible" data-collapsible="accordion">
 		                                                	<c:if test="${building.floorList != null }">
 		                                                		<c:forEach items="${building.floorList }" var="floor">
-		                                                			 <li>
-				                                                        <div class="collapsible-header" style = "background-color: #ffa726">
-				                                                            <i class="material-icons">view_module</i>Floor No. ${floor.intFloorNo}
-				                                                        </div>
-				                                                      
-				                                                        	<div class="collapsible-body" style = "background-color: #ffa726">
-					                                                            <p>Create Block
-					                                                                <button value="${floor.floorId }" name = "action" data-target="modalCreateBlock" class="modal-trigger btn-floating blue right" style = "margin-right: 10px;" onclick="openCreateBlock(this.value)"><i class="material-icons">add</i></button>
-					                                                            </p>
+		                                                			<c:if test="${floor.boolIsUnit == true }">
+			                                                			<li>
+					                                                        <div class="collapsible-header" style = "background-color: #ffa726">
+					                                                            <i class="material-icons">view_module</i>Floor No. ${floor.intFloorNo}
 					                                                        </div>
-					                                                        <c:if test="${floor.blockList != null}">
-					                                                        	<c:forEach items="${floor.blockList }" var="block">
-					                                                        		<div class="collapsible-body">
-							                                                            <p>${block.strBlockName }
-							                                                                <button name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor price is not yet configured."  style = "margin-left: 5px;" href = "#modalDeactivateBlock"><i class="material-icons">not_interested</i></button>
-							                                                                <button name = "action" class="btn tooltipped modal-trigger btn-floating green right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor is not yet configured." style = "margin-left: 5px;" href = "#modalUpdateBlock"><i class="material-icons">mode_edit</i></button>
+					                                                      	<c:if test="${floor.floorTypeList != null }">
+						                                                    	
+						                                                        	<div class="collapsible-body" style = "background-color: #ffa726">
+							                                                            <p>Create Block
+							                                                                <button value="${floor.floorId }" name = "action" data-target="modalCreateBlock" class="modal-trigger btn-floating blue right" style = "margin-right: 10px;" onclick="openCreateBlock(this.value)"><i class="material-icons">add</i></button>
 							                                                            </p>
 							                                                        </div>
-					                                                        	</c:forEach>
-					                                                        </c:if>
-				                                                        
-				                                                    </li>
+							                                                        <c:if test="${floor.blockList != null}">
+							                                                        	<c:forEach items="${floor.blockList }" var="block">
+							                                                        		<div class="collapsible-body">
+									                                                            <p>${block.strBlockName }
+									                                                                <button name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor price is not yet configured."  style = "margin-left: 5px;" href = "#modalDeactivateBlock"><i class="material-icons">not_interested</i></button>
+									                                                                <button name = "action" class="btn tooltipped modal-trigger btn-floating green right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor is not yet configured." style = "margin-left: 5px;" href = "#modalUpdateBlock"><i class="material-icons">mode_edit</i></button>
+									                                                            </p>
+									                                                        </div>
+							                                                        	</c:forEach>
+							                                                        </c:if>
+						                                                    </c:if>				                                                        
+					                                                    </li>
+					                                            	</c:if>
 		                                                		</c:forEach>
 		                                                	</c:if>
 		                                                   
@@ -133,12 +136,14 @@
                     <div class="row" style = "padding-left: 20px;">
                         <h5 style = "font-family: arial;">Block size:</h5>
                         <div class="input-field col s6" style = "padding-left: 10px;">
-                            <input id="floorLevelToBeConfigured" type="number" class="validate" required = "" aria-required = "true" min = "1" max = "10">
-                            <label for="floorLevelToBeConfigured" data-error = "1-10 only" data-success = "">Level/s:<span style = "color: red;">*</span></label>
+                            <input id="blockLevel" type="number" class="validate" required = "" aria-required = "true" min = "1" max = "10">
+                            <label for="blockLevel" data-error = "1-10 only" data-success = "">Level/s:<span style = "color: red;">*</span></label>
                         </div>
                         <div class="input-field col s6">
-                            <input id="floorUnitToBeConfigured" type="number" class="validate" required = "" aria-required = "true" min = "1" max = "20">
-                            <label for="floorUnitToBeConfigured" data-error = "1-20 only" data-success = "">Unit/s:<span style = "color: red">*</span></label>
+                            <input id="blockColumn" type="number" class="validate" required = "" aria-required = "true" min = "1" max = "20">
+                            <label for="blockColumn" data-error = "1-20 only" data-success = "">Unit/s:<span style = "color: red">*</span></label>
+                        </div>
+                        <div class="input-field col s6" id="divUnitType">
                         </div>
                     </div>
 
@@ -432,8 +437,12 @@
 		
 		var floorId = document.getElementById("floorIdBlockToCreate").value;
 		var blockName = document.getElementById("blockName").value;
+		var unitType = $('input:radio[name=unitType]:checked').val();
+		var levelNo = document.getElementById("blockLevel").value;
+		var columnNo = document.getElementById("blockColumn").value;
 		
-		if (blockName == null || blockName == " " || blockName == ""){
+		if (blockName == null || blockName == "" || blockName == " " ||
+				unitType == null || unitType == "" || unitType == " "){
 			
 		}else{
 
@@ -443,7 +452,10 @@
 				url: "create",
 				data: {
 					"block.floorId" : floorId,
-					"block.strBlockName" : blockName
+					"block.strBlockName" : blockName,
+					"block.strUnitType" : unitType,
+					"block.intLevelNo" : levelNo,
+					"block.intColumnNo" : columnNo
 				},
 				dataType: "json",
 				async: true,
@@ -472,6 +484,73 @@
     	$('#modalCreateBlock').openModal();
     	Materialize.toast(floorId, 3000, 'rounded');
     	$('#floorIdBlockToCreate').val(floorId);
+    	$.ajax({
+    		type : "POST",
+    		url : "getFloorById",
+    		data : {
+    			"floorId" : floorId
+    		},
+    		dataType : "json",
+    		async : true,
+    		success : function(data){
+    			var floorTypeList = data.floor.floorTypeList;
+    			if (floorTypeList != null){
+    				
+    				$.each(floorTypeList, function(i, floorType){
+    					
+    					if (floorType.boolIsUnit == true){
+    						var radioBtn = $('<input type="radio" name="unitType" id="'+floorType.strFloorDesc+'" value="'+floorType.strFloorDesc+'"/>');
+    						var label = $('<label for="'+floorType.strFloorDesc+'">'+floorType.strFloorDesc+'</label><br>');
+    					    radioBtn.appendTo('#divUnitType');
+    					    label.appendTo('#divUnitType');
+    					}
+    					
+    				});
+    				
+    			}
+    		},
+    		error : function(data){
+    			Materialize.toast('Error occured.', 3000, 'rounded');
+    		}
+    	});
+    	
+    }
+    
+    window.onload = updateTable;
+    
+    function updateTable(){
+    	
+    	$.ajax({
+    		type : "POST",
+    		url : "getAllBlocks",
+    		dataType : "json",
+    		async : "true",
+    		success : function(data){
+    			if (data.blockList != null){
+    				var table = $('#datatable').DataTable();
+            		table.clear().draw();
+    				$.each(data.blockList, function(i, block){
+    					var unitType = null;
+    					$.each(block.unitList, function (o, unit){
+    						unitType = unit.strUnitType;
+    					});
+    					table.row.add( [
+        	        		            block.strBlockName,
+        	        		            unitType,
+        	        		            ,
+        	        		            ,
+        	        		            block.intLevelNo,
+        	        		            block.intColumnNo
+        	        		            ]);
+    				});
+    				table.draw();
+    				
+    			}
+    		},
+    		error : function(data){
+    			Materialize.toast('Error occured.', 3000, 'rounded');
+    		}
+    	});
     	
     }
     

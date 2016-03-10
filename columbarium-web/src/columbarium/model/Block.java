@@ -80,4 +80,10 @@ public class Block {
 		return blockService.getBlock(strBlockName);
 	}
 	
+	public static List<Block> getAllBlocks(){
+		BlockService blockService = (BlockService)ServletActionContext.getServletContext()
+				.getAttribute("blockService");
+		return blockService.getAllBlocks();
+	}
+	
 }
