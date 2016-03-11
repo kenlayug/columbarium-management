@@ -86,7 +86,7 @@
 
 	<!-- Dropdown Utilities -->
 	<ul id="dropdown6" class="dropdown-content">
-		<li><a href="Employee.html">Log Out</a></li>
+		<li><a href="<%=request.getContextPath()%>/logout">Log Out</a></li>
 	</ul>
 
 
