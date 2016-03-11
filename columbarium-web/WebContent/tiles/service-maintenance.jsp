@@ -21,8 +21,8 @@
 					<h4 style = "font-size: 30px; margin-top: 0px; padding-top: 10px;">Form</h4>
 				</div>
 
-				<button name = "action" class="modal-trigger btn red left" style = "margin-left: 20px;" href = "#modalRequirement">Requirement</button>
-				<button name = "action" class="btn tooltipped modal-trigger btn-floating yellow right" data-position = "bottom" data-delay = "30" data-tooltip = "View Requirement/s" style = "margin-right: 10px;" href = "#modalListOfRequirement"><i class="material-icons" style = "color: black;">pageview</i></button>
+				<button name = "action" class="modal-trigger btn green left" style = "margin-left: 20px;" href = "#modalRequirement">Requirement</button>
+				<button name = "action" class="btn tooltipped modal-trigger btn green right" data-position = "bottom" data-delay = "30" data-tooltip = "View Requirement/s" style = "margin-right: 10px;" href = "#modalListOfRequirement">view</button>
 				<br><br>
 				<div class="row" style = "padding-left: 10px;" id="formCreate">
 					<div class="input-field col s12">
@@ -42,7 +42,7 @@
 					</div>
 				</div>
 
-				<button onclick = "createService()" type = "submit" name = "action" class="btn red right" style = "margin-top: -20px; margin-right: 10px;">Create</button>
+				<button onclick = "createService()" type = "submit" name = "action" class="btn green right" style = "margin-top: -20px; margin-right: 10px;">Create</button>
 			</div>
 		</form>
 		</div>

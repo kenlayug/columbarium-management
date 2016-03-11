@@ -28,3 +28,8 @@ $("#submitCreate").click(function(){
 });
 
 $('#modal1').closeModal();
+
+
+$(document).ready(function() {
+    $('select').material_select();
+});
