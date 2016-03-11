@@ -9,6 +9,13 @@
 	    <script type="text/javascript" src="<%=request.getContextPath()%>/js/navigation.js"></script>
 	    <link rel = "stylesheet" href = "<%=request.getContextPath()%>/css/navigation.css"/>
 
+	<style>
+		#dropdown6 li a{
+			color: white;
+			background-color: #ff8f00;
+		}
+	</style>
+
 </head>
 <body>
 	<body class = "responsive">
@@ -25,6 +32,7 @@
 	                <li><a class="dropdown-button" data-beloworigin="true" data-activates="dropdown3">Queries<i class="material-icons right">arrow_drop_down</i></a></li>
 	                <li><a class="dropdown-button" data-beloworigin="true" data-activates="dropdown4">Reports<i class="material-icons right">arrow_drop_down</i></a></li>
 	                <li><a class="dropdown-button" data-beloworigin="true" data-activates="dropdown5">Utilities<i class="material-icons right">arrow_drop_down</i></a></li>
+					<li><a class="dropdown-button" data-beloworigin="true" data-activates="dropdown6">Account<i class="material-icons right">arrow_drop_down</i></a></li>
 	            </ul>
 	        </div>
 	    </nav>
@@ -70,9 +78,30 @@
 	    <li><a href="Collection_Report.html">Collection Record</a></li>
 	    <li><a href="transferring-report.html">Transferring Record</a></li>
 	</ul>
-	
+
 	<!-- Dropdown Utilities -->
 	<ul id="dropdown5" class="dropdown-content">
 	    <li><a href="Employee.html">Employee</a></li>
-	    <li class="divider"></li>
 	</ul>
+
+	<!-- Dropdown Utilities -->
+	<ul id="dropdown6" class="dropdown-content">
+		<li><a href="Employee.html">Log Out</a></li>
+	</ul>
+
+
+
+
+	<script>
+		$('.dropdown-button').dropdown({
+					inDuration: 300,
+					outDuration: 225,
+					constrain_width: false, // Does not change width of dropdown to that of the activator
+					hover: true, // Activate on hover
+					gutter: 0, // Spacing from edge
+					belowOrigin: true, // Displays dropdown below the button
+					alignment: 'left' // Displays dropdown with edge aligned to the left of button
+				}
+		);
+
+	</script>

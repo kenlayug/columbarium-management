@@ -132,7 +132,6 @@
                 <i class = "left" style = "margin-top: 0px; padding-left: 10px; color: red;">*Required Fields</i>
                 <br><br>
 
-                <div class = "col s12">
                     <div class="row">
                         <div class="input-field col s6">
                             <input value=" " placeholder="Package Name" id="packageNameUpdate" type="text" class="validate" required = "" aria-required="true">
@@ -142,68 +141,19 @@
                             <input value=" " placeholder="Package Price" id="packagePriceUpdate" type="text" class="validate" required = "" aria-required="true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
                             <label for="packagePriceUpdate" data-error = "Invalid format." data-success = "">New Package Price<span style = "color: red;">*</span></label>
                         </div>
-                    </div>
-                </div>
-                <div class = "col s12">
-                    <div class="row">
                         <div class="input-field col s12">
                             <input value=" " placeholder="Package Description" id="packageDescUpdate" type="text" class="validate">
                             <label for="packageDescUpdate">New Package Description</label>
                         </div>
-                    </div>
-                </div>
 
-                <div class = "col s12">
-                    <div class="row">
-                        <div class = "col s6">
-                            <div action="#">
-                                <h6>Services</h6>
-                                <p>
-                                    <input type="checkbox" id="cremation" />
-                                    <label for="cremation">Cremation</label>
-                                </p>
-                                <p>
-                                    <input type="checkbox" id="fullBody" />
-                                    <label for="fullBody">Full Body Crypts</label>
-                                </p>
-                                <p>
-                                    <input type="checkbox" id="vaultInscription" />
-                                    <label for="vaultInscription">Vault Inscription</label>
-                                </p>
-                                <p>
-                                    <input type="checkbox" id="urnInscription" />
-                                    <label for="urnInscription">Urn Inscription</label>
-                                </p>
-                            </div>
-                        </div>
-                        <div class = "col s6">
-                            <div action="#">
-                                <h6>Items</h6>
-                                <p>
-                                    <input type="checkbox" id="woodenUrn" />
-                                    <label for="woodenUrn">Wooden urn</label>
-                                </p>
-                                <p>
-                                    <input type="checkbox" id="metalUrn" />
-                                    <label for="metalUrn">Metal urn</label>
-                                </p>
-                                <p>
-                                    <input type="checkbox" id="porcelain" />
-                                    <label for="porcelain">Porcelain</label>
-                                </p>
-                                <p>
-                                    <input type="checkbox" id="pouch" />
-                                    <label for="pouch">Pouch</label>
-                                </p>
-                            </div>
-                        </div>
+                        <button type = "submit" name = "action" class="modal-trigger btn green left" style = "margin-left: 10px; margin-top: 10px; margin-right: 10px;" href = "#modalItem">Item/s</button>
+                        <button type = "submit" name = "action" class="modal-trigger btn green left" style = "margin-top: 10px; margin-right: 10px;" href = "#modalService">Service/s</button>
                     </div>
-                </div>
             </div>
 
             <div class="modal-footer">
-                <button type = "submit" name = "action" class="btn red" style = "margin-left: 10px; ">Confirm</button>
-                <button name = "action" class="btn red modal-close">Cancel</button>
+                <button type = "submit" name = "action" class="btn green" style = "margin-left: 10px; ">Confirm</button>
+                <button name = "action" class="btn green modal-close">Cancel</button>
             </div>
         </form>
 
