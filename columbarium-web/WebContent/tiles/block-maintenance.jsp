@@ -48,6 +48,7 @@
 	                                                            <p>Block One
 	                                                                <button name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor price is not yet configured."  style = "margin-left: 5px;" href = "#modalDeactivateBlock"><i class="material-icons">not_interested</i></button>
 	                                                                <button name = "action" class="btn tooltipped modal-trigger btn-floating green right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor is not yet configured." style = "margin-left: 5px;" href = "#modalUpdateBlock"><i class="material-icons">mode_edit</i></button>
+	                                                                <button name = "action" class="btn tooltipped modal-trigger btn-floating yellow right" data-position = "bottom" data-delay = "30" data-tooltip = "Update Floor Price" style = "margin-left: 5px;" href = "#modalUpdateFloorPrice"><i class="material-icons">&#8369</i></button>
 	                                                            </p>
 	                                                        </div>
 	                                                        <div class="collapsible-body">
@@ -91,8 +92,8 @@
 							                                                        	<c:forEach items="${floor.blockList }" var="block">
 							                                                        		<div class="collapsible-body">
 									                                                            <p>${block.strBlockName }
-									                                                                <button name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor price is not yet configured."  style = "margin-left: 5px;" href = "#modalDeactivateBlock"><i class="material-icons">not_interested</i></button>
-									                                                                <button name = "action" class="btn tooltipped modal-trigger btn-floating green right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor is not yet configured." style = "margin-left: 5px;" href = "#modalUpdateBlock"><i class="material-icons">mode_edit</i></button>
+									                                                                <button value="${block.blockId }" name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "Deactivate Block"  style = "margin-left: 5px;" onclick = "openDeactivateBlock(this.value)" data-target="modalDeactivateBlock"><i class="material-icons">not_interested</i></button>
+									                                                                <button value="${block.blockId }" name = "action" class="btn tooltipped modal-trigger btn-floating green right" data-position = "bottom" data-delay = "30" data-tooltip = "Update Block" style = "margin-left: 5px;" onclick = "openUpdateBlock(this.value)"><i class="material-icons">mode_edit</i></button>
 									                                                            </p>
 									                                                        </div>
 							                                                        	</c:forEach>
@@ -170,7 +171,8 @@
                 <div class="modal-content">
                     <div style = "padding-left: 10px;">
                         <div class="input-field col s12">
-                            <input id="newBlockName" type="text" class="validate" required = "" aria-required = "true" length = "20">
+                        	<input id="blockIdUpdate" type="hidden">
+                            <input value=" " id="newBlockName" type="text" class="validate" required = "" aria-required = "true" length = "20">
                             <label class = "active" for="newBlockName" data-error = "Invalid format." data-success = "">New Block Name <span style = "color: red;">*</span></label>
                         </div>
                     </div>
@@ -178,7 +180,7 @@
                 </div>
                 <br><br><br><br>
                 <div class="modal-footer">
-                    <button type = "submit" name = "action" class="btn red" style = "margin-left: 10px; ">Confirm</button>
+                    <button onclick="updateBlock()" type = "submit" name = "action" class="btn red" style = "margin-left: 10px; ">Confirm</button>
                     <button name = "action" class="btn red modal-close">Cancel</button>
                 </div>
             </form>
@@ -191,9 +193,9 @@
                 <div class="modal-content">
                     <p style = "padding-left: 20px; font-size: 15px;">Are you sure you want to deactivate this block?</p>
                 </div>
-
+				<input id="blockIdDeactivate" type="hidden">
                 <div class="modal-footer">
-                    <button name = "action" class="btn red" style = "margin-left: 10px; ">Confirm</button>
+                    <button onclick="deactivateBlock()" name = "action" class="btn red" style = "margin-left: 10px; ">Confirm</button>
                     <button name = "action" class="btn red modal-close">Cancel</button>
                 </div>
             </div>
@@ -270,6 +272,75 @@
                     </div>
                 </div>
                 <button name = "action" class="btn red modal-close right" style = "margin-bottom: 10px; margin-right: 30px;">DONE</button>
+            </div>
+            
+ 	        <!-- Modal Price -->
+            <div id="modalUpdateFloorPrice" class="modal" style = "width: 700px;">
+                <div class = "modal-header" style = "height: 55px;">
+                    <h4 style = "padding-left: 20px; font-size: 30px; ">Floor Price</h4>
+                </div>
+                <div class="modal-content">
+                    <div class = "col s12">
+                        <div class = "row">
+                            <div style = "padding-left: 10px;">
+                                <div class="input-field col s6">
+                                    <input id="floorPriceA" type="text" class="validate" required = "" aria-required = "true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
+                                    <label for="floorPriceA" data-error = "Invalid format.">Level A</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <input id="floorPriceB" type="text" class="validate" required = "" aria-required = "true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
+                                    <label for="floorPriceB" data-error = "Invalid format.">Level B</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class = "col s12">
+                        <div class = "row">
+                            <div style = "padding-left: 10px;">
+                                <div class="input-field col s6">
+                                    <input id="floorPriceC" type="text" class="validate" required = "" aria-required = "true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
+                                    <label for="floorPriceC" data-error = "Invalid format.">Level C</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <input id="floorPriceD" type="text" class="validate" required = "" aria-required = "true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
+                                    <label for="floorPriceD" data-error = "Invalid format.">Level D</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class = "col s12">
+                        <div class = "row">
+                            <div style = "padding-left: 10px;">
+                                <div class="input-field col s6">
+                                    <input id="floorPriceE" type="text" class="validate" required = "" aria-required = "true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
+                                    <label for="floorPriceE" data-error = "Invalid format.">Level E</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <input id="floorPriceF" type="text" class="validate" required = "" aria-required = "true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
+                                    <label for="floorPriceF" data-error = "Invalid format.">Level F</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class = "col s12">
+                        <div class = "row">
+                            <div style = "padding-left: 10px;">
+                                <div class="input-field col s6">
+                                    <input id="floorPriceG" type="text" class="validate" required = "" aria-required = "true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
+                                    <label for="floorPriceG" data-error = "Invalid format.">Level G</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <input id="floorPriceH" type="text" class="validate" required = "" aria-required = "true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
+                                    <label for="floorPriceH" data-error = "Invalid format.">Level H</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
+                    <button name = "action" class="waves-effect waves-light btn red modal-close">Cancel</button>
+                </div>
             </div>
 
             <!-- Data Grid -->
@@ -433,6 +504,10 @@
 	    return false;
 	});
 	
+	$("#modalUpdateBlock").submit(function(e){
+	    return false;
+	});
+	
 	function createBlock(){
 		
 		var floorId = document.getElementById("floorIdBlockToCreate").value;
@@ -446,7 +521,6 @@
 			
 		}else{
 
-			Materialize.toast('Here in else -- '+floorId, 3000, 'rounded');
 			$.ajax({
 				type: "POST",
 				url: "create",
@@ -463,6 +537,7 @@
 					if (data.status === "success"){
 						Materialize.toast('Block is successfully created.', 3000, 'rounded');
 						$('#modalCreateBlock').closeModal();
+						updateTable();
 					}else if (data.status === "failed-existing"){
 						Materialize.toast('Block already exists.', 3000, 'rounded');
 					}else if (data.status === "failed-database"){
@@ -513,6 +588,103 @@
     			Materialize.toast('Error occured.', 3000, 'rounded');
     		}
     	});
+    	
+    }
+    
+    function openUpdateBlock(blockId){
+    	$.ajax({
+    		type : "POST",
+    		url : "getBlockById",
+    		data : {
+    			"blockId" : blockId
+    		},
+    		dataType : "json",
+    		async : true,
+    		success : function(data){
+    			if (data.block != null){
+    				$('#modalUpdateBlock').openModal();
+    				$('#blockIdUpdate').val(data.block.blockId);
+    				$('#newBlockName').val(data.block.strBlockName);
+    			}
+    		},
+    		error : function(data){
+    			Materialize.toast('Error occured.', 3000, 'rounded');
+    		}
+    	});
+    	
+    }
+    
+    function openDeactivateBlock(blockId){
+    	$('#blockIdDeactivate').val(blockId);
+    	$('#modalDeactivateBlock').openModal();
+    }
+    
+    function deactivateBlock(){
+    	
+    	var blockIdToDeactivate = document.getElementById("blockIdDeactivate").value;
+    	
+    	$.ajax({
+    		type : "POST",
+    		url : "deactivate",
+    		data : {
+    			"blockId" : blockIdToDeactivate
+    		},
+    		dataType : "json",
+    		async : true,
+    		success : function(data){
+    			if (data.status === "success"){
+    				Materialize.toast('Block is successfully deactivated.', 3000, 'rounded');
+    				updateTable();
+    			}else if (data.status === "failed-does-not-exist"){
+    				Materialize.toast('Block does not exist.', 3000, 'rounded');
+    			}else if (data.status === "failed-database"){
+    				Materialize.toast('Please check your connection', 3000, 'rounded');
+    			}
+    			$('#modalDeactivateBlock').closeModal();
+    		},
+    		error : function(data){
+    			Materialize.toast('Error occured.', 3000, 'rounded');
+    		}
+    	});
+    	
+    }
+    
+    function updateBlock(){
+    	
+    	var blockIdUpdate = document.getElementById("blockIdUpdate").value;
+    	Materialize.toast(blockIdUpdate, 3000, 'rounded');
+    	var blockName = document.getElementById("newBlockName").value;
+    	
+    	if (blockName == null || blockName == " " || blockName == ""){
+    		
+    	}else{
+    		
+    		$.ajax({
+    			type : "POST",
+    			url : "update",
+    			data : {
+    				"blockId" : blockIdUpdate,
+    				"block.strBlockName" : blockName
+    			},
+    			dataType : "json",
+    			async : true,
+    			success : function(data){
+    				if (data.status === "success"){
+    					Materialize.toast('Block is successfully updated.', 3000, 'rounded');
+    					$('#modalUpdateBlock').closeModal();
+    					updateTable();
+    				}else if (data.status === "input"){
+    					Materialize.toast('PLease check all your inputs.', 3000, 'rounded');
+    				}else if (data.status === "failed-database"){
+    					Materialize.toast('Please check your connection.', 3000, 'rounded');
+    				}
+    			},
+    			error : function(data){
+    				Materialize.toast('Error occured.', 3000, 'rounded');
+    			}
+    		});
+    		
+    	}
     	
     }
     

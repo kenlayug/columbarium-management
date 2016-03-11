@@ -25,17 +25,11 @@
                 </div>
 
                     <div class = "row" style = "margin-top: 10px;">
-                        <div class = "col s3">
+                        <div class = "col s6">
                             <button id = "configure" name = "action" class="btn tooltipped btn-floating green" data-position = "bottom" data-delay = "25" data-tooltip = "Configured Floor" style = "margin-left: 30px;"><i class="material-icons">settings</i></button>
                         </div>
-                        <div class = "col s3">
+                        <div class = "col s6">
                             <button id = "notConfigure" name = "action" class="btn tooltipped btn-floating black" data-position = "bottom" data-delay = "25" data-tooltip = "Not yet Configured Floor" style = "margin-left: 30px;"><i class="material-icons">settings</i></button>
-                        </div>
-                        <div class = "col s3">
-                            <button id = "configuredFloorPrice" name = "action" class="btn tooltipped btn-floating blue" data-position = "bottom" data-delay = "25" data-tooltip = "Configured Floor Price" style = "margin-left: 30px;"><i class="material-icons medium">&#8369</i></button>
-                        </div>
-                        <div class = "s3">
-                            <button id = "notConfiguredFloorPrice" name = "action" class="btn tooltipped btn-floating red" data-position = "bottom" data-delay = "25" data-tooltip = "Not yet Configured Floor Price" style = "margin-left: 30px;"><i class="material-icons medium">&#8369</i></button>
                         </div>
                     </div>
             </div>
@@ -53,13 +47,11 @@
 	                                </div>
 	                                <div class="collapsible-body">
 	                                    <p>Ground Floor
-	                                        <button name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor price is not yet configured."  style = "margin-left: 5px;" href = "#modalPrice"><i class="material-icons">&#8369</i></button>
 	                                        <button name = "action" class="btn tooltipped modal-trigger btn-floating black right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor is not yet configured." style = "margin-left: 5px;" href = "#modalConfigure"><i class="material-icons">settings</i></button>
 	                                    </p>
 	                                </div>
 	                                <div class="collapsible-body">
 	                                    <p>First Floor
-	                                        <button name = "action" class="btn tooltipped modal-trigger btn-floating blue right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor price is configured." style = "margin-left: 5px;" href = "#modalPrice"><i class="material-icons">&#8369</i></button>
 	                                        <button name = "action" class="btn tooltipped modal-trigger btn-floating black right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor is not yet configured." style = "margin-left: 5px;" href = "#modalConfigure"><i class="material-icons">settings</i></button>
 	                                   </p>
 	                                </div>
@@ -157,76 +149,6 @@
                     <button name = "action" class="waves-effect waves-light btn red modal-close">Cancel</button>
                 </div>
             </div>
-
-            <!-- Modal Price -->
-            <div id="modalPrice" class="modal" style = "width: 700px;">
-                <div class = "modal-header" style = "height: 55px;">
-                    <h4 style = "padding-left: 20px; font-size: 30px; ">Floor Price</h4>
-                </div>
-                <div class="modal-content">
-                    <div class = "col s12">
-                        <div class = "row">
-                            <div style = "padding-left: 10px;">
-                                <div class="input-field col s6">
-                                    <input id="floorPriceA" type="text" class="validate" required = "" aria-required = "true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
-                                    <label for="floorPriceA" data-error = "Invalid format.">Level A</label>
-                                </div>
-                                <div class="input-field col s6">
-                                    <input id="floorPriceB" type="text" class="validate" required = "" aria-required = "true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
-                                    <label for="floorPriceB" data-error = "Invalid format.">Level B</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class = "col s12">
-                        <div class = "row">
-                            <div style = "padding-left: 10px;">
-                                <div class="input-field col s6">
-                                    <input id="floorPriceC" type="text" class="validate" required = "" aria-required = "true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
-                                    <label for="floorPriceC" data-error = "Invalid format.">Level C</label>
-                                </div>
-                                <div class="input-field col s6">
-                                    <input id="floorPriceD" type="text" class="validate" required = "" aria-required = "true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
-                                    <label for="floorPriceD" data-error = "Invalid format.">Level D</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class = "col s12">
-                        <div class = "row">
-                            <div style = "padding-left: 10px;">
-                                <div class="input-field col s6">
-                                    <input id="floorPriceE" type="text" class="validate" required = "" aria-required = "true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
-                                    <label for="floorPriceE" data-error = "Invalid format.">Level E</label>
-                                </div>
-                                <div class="input-field col s6">
-                                    <input id="floorPriceF" type="text" class="validate" required = "" aria-required = "true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
-                                    <label for="floorPriceF" data-error = "Invalid format.">Level F</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class = "col s12">
-                        <div class = "row">
-                            <div style = "padding-left: 10px;">
-                                <div class="input-field col s6">
-                                    <input id="floorPriceG" type="text" class="validate" required = "" aria-required = "true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
-                                    <label for="floorPriceG" data-error = "Invalid format.">Level G</label>
-                                </div>
-                                <div class="input-field col s6">
-                                    <input id="floorPriceH" type="text" class="validate" required = "" aria-required = "true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
-                                    <label for="floorPriceH" data-error = "Invalid format.">Level H</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
-                    <button name = "action" class="waves-effect waves-light btn red modal-close">Cancel</button>
-                </div>
-            </div>
-
 
             <!-- Modal Archive Floor-->
             <div id="modalArchiveFloor" class="modal" style = "height: 400px; width: 600px;">

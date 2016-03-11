@@ -35,4 +35,30 @@ public class BlockBusinessImpl implements BlockBusiness{
 		return blockRepository.getBlock(block);
 	}
 
+	@Override
+	public String updateBlock(Block block) {
+		
+		if (block.getStrBlockName() == null || block.getStrBlockName().trim().equals(" ") ||
+				block.getStrBlockName().length() == 0){
+			return "input";
+		}
+		return blockRepository.updateBlock(block);
+	}
+
+	@Override
+	public Block getBlockById(int blockId) {
+		
+		Block block = new Block();
+		block.setBlockId(blockId);
+		return blockRepository.getBlock(block);
+	}
+
+	@Override
+	public String deactivateBlock(int blockId) {
+		
+		Block block = new Block();
+		block.setBlockId(blockId);
+		return blockRepository.deactivateBlock(block);
+	}
+
 }

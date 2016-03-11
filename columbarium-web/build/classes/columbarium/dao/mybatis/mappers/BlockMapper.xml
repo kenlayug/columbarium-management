@@ -45,12 +45,11 @@
 		</select>
 		
 		<select id="getBlock" resultMap="BlockResultMap">
-			SELECT b.*, u.*, uc.intLevelNo
+			SELECT b.*, u.*
 			FROM tblBlock b
 				LEFT JOIN tblUnit u ON b.blockId = u.blockIdFK
-				LEFT JOIN tblUnitCategory uc ON uc.unitCategoryId = u.unitCategoryIdFK
 			<where>
-				intStatus = 1
+				b.intStatus = 1
 				<if test="blockId == 0">
 					AND b.strBlockDesc LIKE #{strBlockName}
 				</if>
@@ -61,10 +60,9 @@
 		</select>
 		
 		<select id="getAllBlockFromFloor" resultMap="BlockResultMap">
-			SELECT b.*, u.*, uc.intLevelNo
+			SELECT b.*, u.*
 			FROM tblBlock b
 				LEFT JOIN tblUnit u ON b.blockId = u.blockIdFK
-				LEFT JOIN tblUnitCategory uc ON uc.unitCategoryId = u.unitCategoryIdFK
 			<where>
 				intStatus = 1
 					AND b.floorIdFK = #{floorId}
@@ -117,6 +115,12 @@
 					strBlockDesc = #{strBlockName}
 				</if>
 			</set>
+			WHERE blockId = #{blockId}
+		</update>
+		
+		<update id="deactivateBlock">
+			UPDATE tblBlock
+			SET intStatus = 0
 			WHERE blockId = #{blockId}
 		</update>
 	
