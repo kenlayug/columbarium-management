@@ -27,6 +27,22 @@
   		<action name="getById" class="columbarium.actions.packages.GetPackageAction">
   			<result name="success" type="json"></result>
   		</action>
+  		
+  		<action name="getAllItem" class="columbarium.actions.packages.GetAllItemAction">
+  			<result name="success" type="json"></result>
+  		</action>
+  		
+  		<action name="getAllService" class="columbarium.actions.packages.GetAllServiceAction">
+  			<result name="success" type="json"></result>
+  		</action>
+  		
+  		<action name="update" class="columbarium.actions.packages.UpdatePackageAction">
+  			<result name="success" type="json"></result>
+  		</action>
+  		
+  		<action name="deactivate" class="columbarium.actions.packages.DeactivatePackageAction">
+  			<result name="success" type="json"></result>
+  		</action>
   	 
   	</package> 
    

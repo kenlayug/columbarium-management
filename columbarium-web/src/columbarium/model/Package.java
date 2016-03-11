@@ -100,10 +100,10 @@ public class Package {
 		return packageService.updatePackage(this);
 	}
 	
-	public String delete(){
+	public static String delete(int packageId){
 		PackageService packageService = (PackageService)ServletActionContext.getServletContext()
 				.getAttribute("packageService");
-		return packageService.deactivatePackage(this);
+		return packageService.deactivatePackage(packageId);
 	}
 	
 	public static List<Package>getAllPackages(){

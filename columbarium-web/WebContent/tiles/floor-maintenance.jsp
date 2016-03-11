@@ -399,7 +399,6 @@
 					
 					
         		});
-    			$('select').material_select();
     		},
     		error : function(data){
     			Materialize.toast('Error in updating select floor type.', 3000, 'rounded');
@@ -440,7 +439,6 @@
     	var floorId = document.getElementById("floorIdToBeConfigured").value;
     	var floorType = null;
     	floorType = $("input[name='floorType[]']:checked").map(function() {
-    		Materialize.toast(this.value, 3000, 'rounded');
     		return this.value;
     	}).get();
     	

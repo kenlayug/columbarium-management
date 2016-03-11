@@ -19,6 +19,10 @@ public interface PackageMapper {
 	
 	public void addServiceToPackage(PackageService packageService);
 	public void addItemToPackage(PackageItem packageItem);
+	public void removeServiceFromPackage(PackageService packageService);
+	public void removeItemFromPackage(PackageItem packageItem);
+	public void upItemToPackage(PackageItem packageItem);
+	public void upServiceToPackage(PackageService packageService);
 	
 	public List<Package>getAllPackage();
 	public int countAllPackage();

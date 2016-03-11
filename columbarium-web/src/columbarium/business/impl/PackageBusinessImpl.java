@@ -41,4 +41,11 @@ public class PackageBusinessImpl implements PackageBusiness{
 		return packageRepository.searchPackage(packageTo);
 	}
 
+	@Override
+	public String deactivatePackage(int packageId) {
+		Package packageTo = new Package();
+		packageTo.setPackageId(packageId);
+		return packageRepository.deactivatePackage(packageTo);
+	}
+
 }

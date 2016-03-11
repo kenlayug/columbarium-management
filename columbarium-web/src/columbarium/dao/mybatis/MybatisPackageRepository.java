@@ -71,6 +71,8 @@ public class MybatisPackageRepository extends MybatisClient implements PackageRe
 			
 		}catch(Exception e){
 			e.printStackTrace();
+		}finally{
+			sqlSession.close();
 		}
 		return null;
 	}
@@ -200,8 +202,19 @@ public class MybatisPackageRepository extends MybatisClient implements PackageRe
 							new PackageService(packageMapper.getPackageId(packageTo), service);
 					if (packageMapper.checkPackageIfExistingService(packageService) == 0){
 						packageMapper.addServiceToPackage(packageService);
+					}else{
+						packageMapper.upServiceToPackage(packageService);
 					}
 					
+				}
+				
+				List<Service>serviceList = packageMapper.getServicesOfPackage(packageTo);
+				for (Service service : serviceList) {
+					if (!packageTo.getServiceList().contains(service)){
+						PackageService packageService = 
+								new PackageService(packageMapper.getPackageId(packageTo), service);
+						packageMapper.removeServiceFromPackage(packageService);
+					}
 				}
 				
 				for (Item item : packageTo.getItemList()) {
@@ -210,8 +223,19 @@ public class MybatisPackageRepository extends MybatisClient implements PackageRe
 							new PackageItem(packageMapper.getPackageId(packageTo), item);
 					if (packageMapper.checkPackageIfExistingItem(packageItem) == 0){
 						packageMapper.addItemToPackage(packageItem);
+					}else{
+						packageMapper.upItemToPackage(packageItem);
 					}
 					
+				}
+				
+				List<Item>itemList = packageMapper.getItemsOfPackage(packageTo);
+				for (Item item : itemList) {
+					if (!packageTo.getItemList().contains(item)){
+						PackageItem packageItem =
+								new PackageItem(packageMapper.getPackageId(packageTo), item);
+						packageMapper.removeItemFromPackage(packageItem);
+					}
 				}
 
 				sqlSession.commit();

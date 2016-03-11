@@ -58,19 +58,21 @@
                 <div class = "col s12">
 
                         <h6 style = "font-family: arial;">Items</h6>
-                        <c:if test="${itemList == null}">
-                            <p>
-                                <h7>No items available</h7>
-                            </p>
-                        </c:if>
-                        <c:if test="${itemList != null }">
-                            <c:forEach items="${itemList }" var="item">
-                                <p>
-                                    <input type="checkbox" name="item[]" id="${item.strItemName }" value="${item.strItemName }" />
-                                    <label for="${item.strItemName }">${item.strItemName}</label>
-                                </p>
-                            </c:forEach>
-                        </c:if>
+                        <div id="itemCheckBox">
+	                        <c:if test="${itemList == null}">
+	                            <p>
+	                                <h7>No items available</h7>
+	                            </p>
+	                        </c:if>
+	                        <c:if test="${itemList != null }">
+	                            <c:forEach items="${itemList }" var="item">
+	                                <p>
+	                                    <input type="checkbox" name="item[]" id="${item.strItemName }" value="${item.strItemName }" />
+	                                    <label for="${item.strItemName }">${item.strItemName}</label>
+	                                </p>
+	                            </c:forEach>
+	                        </c:if>
+                        </div>
                     </div>
 
                 <br><br><br>
@@ -94,20 +96,21 @@
                     <div class = "col s6">
                         <div>
                             <h6 style = "font-family: arial;">Services</h6>
-                            <c:if test="${serviceList == null}">
-                                <p>
-                                    <h7>No services available</h7>
-                                </p>
-                            </c:if>
-                            <c:if test="${serviceList != null }">
-                                <c:forEach items="${serviceList }" var="service">
-                                    <p>
-                                        <input type="checkbox" name="service[]" id="${service.strServiceName }" value="${service.strServiceName }" />
-                                        <label for="${service.strServiceName }">${service.strServiceName}</label>
-                                    </p>
-                                </c:forEach>
-                            </c:if>
-
+                            <div id="serviceCheckBox">
+	                            <c:if test="${serviceList == null}">
+	                                <p>
+	                                    <h7>No services available</h7>
+	                                </p>
+	                            </c:if>
+	                            <c:if test="${serviceList != null }">
+	                                <c:forEach items="${serviceList }" var="service">
+	                                    <p>
+	                                        <input type="checkbox" name="service[]" id="${service.strServiceName }" value="${service.strServiceName }" />
+	                                        <label for="${service.strServiceName }">${service.strServiceName}</label>
+	                                    </p>
+	                                </c:forEach>
+	                            </c:if>
+							</div>
                         <br><br>
                         </div>
                     </div>
@@ -134,6 +137,7 @@
 
                     <div class="row">
                         <div class="input-field col s6">
+                        	<input id="packageToBeUpdated" type="hidden">
                             <input value=" " placeholder="Package Name" id="packageNameUpdate" type="text" class="validate" required = "" aria-required="true">
                             <label for="packageNameUpdate" data-error = "Invalid format." data-success = "">New Package Name<span style = "color: red;">*</span></label>
                         </div>
@@ -152,7 +156,7 @@
             </div>
 
             <div class="modal-footer">
-                <button type = "submit" name = "action" class="btn green" style = "margin-left: 10px; ">Confirm</button>
+                <button onclick="updatePackage()" type = "submit" name = "action" class="btn green" style = "margin-left: 10px; ">Confirm</button>
                 <button name = "action" class="btn green modal-close">Cancel</button>
             </div>
         </form>
@@ -163,11 +167,12 @@
             <div class = "modal-header" style = "height: 55px;">
                 <h4 style = "font-size: 30px; padding-left: 20px;">Deactivate Package</h4>
             </div>
+            <input id="packageToBeDeactivated" type="hidden">
             <div class="modal-content">
                 <p style = "padding-left: 30px; font-size: 15px;">Are you sure you want to deactivate this package?</p>
             </div>
             <div class="modal-footer">
-                <button name = "action" class="btn red" style = "margin-left: 10px; ">Confirm</button>
+                <button onclick="deactivatePackage()" name = "action" class="btn red" style = "margin-left: 10px; ">Confirm</button>
                 <button name = "action" class="modal-close btn red">Cancel</button>
             </div>
         </div>
@@ -422,7 +427,13 @@
 	    	
 	    }
 	    
-	    window.onload = updateTable;
+	    window.onload = windowOnLoad;
+	    
+	    function windowOnLoad(){
+	    	updateTable();
+	    	updateItemModal(null);
+	    	updateServiceModal(null);
+	    }
 	    
 	    function updateTable(){
 	    	Materialize.toast('Updating table...', 3000, 'rounded');
@@ -459,6 +470,58 @@
 	    	
 	    }
 	    
+	    function updatePackage(){
+	    	
+	    	var updatePackageName = document.getElementById("packageNameUpdate").value;
+	    	var updatePackagePrice = document.getElementById("packagePriceUpdate").value;
+	    	var updatePackageDesc = document.getElementById("packageDescUpdate").value;
+	    	var packageToBeUpdated = document.getElementById("packageToBeUpdated").value;
+	    	var item = $("input[name='item[]']:checked").map(function() {
+	    		return this.value;
+	    	}).get();
+	    	var service = $("input[name='service[]']:checked").map(function() {
+	    		return this.value;
+	    	}).get();
+	    	
+	    	if (updatePackageName == null || updatePackageName == "" || updatePackageName == " " ||
+	    			updatePackagePrice <= 0 || updatePackagePrice == null){
+	    		
+	    	}else{
+	    		$.ajax({
+	    			type : "POST",
+	    			url : "update",
+	    			data : {
+	    				"packageId" : packageToBeUpdated,
+	    				"packageTo.strPackageName" : updatePackageName,
+	    				"packageTo.dblPrice" : updatePackagePrice,
+	    				"packageTo.strPackageDesc" : updatePackageDesc,
+	    				"itemList" : item,
+	    				"serviceList" : service
+	    			},
+	    			dataType : "json",
+	    			async : true,
+	    			traditional : true,
+	    			success : function(data){
+	    				Materialize.toast(data.status, 3000, 'rounded');
+	    				if (data.status === "success"){
+	    					Materialize.toast('Package is successfully updated.', 3000, 'rounded');
+	    					updateTable();
+	    					$('#modalUpdatePackage').closeModal();
+	    				}else if (data.status === "input"){
+	    					Materialize.toast('Please check all your inputs.', 3000, 'rounded');
+	    				}else if (data.status === "failed-database"){
+	    					Materialize.toast('Please check your connection.', 3000, 'rounded');
+	    				}
+	    			},
+	    			error : function(data){
+	    				Materialize.toast('Error occured...', 3000, 'rounded');
+	    			}
+	    		});
+	    		
+	    	}
+	    	
+	    }
+	    
 	    function openUpdate(packageId){
 	    	$('#modalUpdatePackage').openModal();
 	    	$.ajax({
@@ -474,6 +537,9 @@
 	    				$('#packageNameUpdate').val(data.packageTo.strPackageName);
 	    				$('#packagePriceUpdate').val(data.packageTo.dblPrice);
 	    				$('#packageDescUpdate').val(data.packageTo.strPackageDesc);
+	    				$('#packageToBeUpdated').val(packageId);
+	    				updateItemModal(data.packageTo.itemList);
+	    				updateServiceModal(data.packageTo.serviceList);
 	    				
 	    			}
 	    		},
@@ -481,6 +547,40 @@
 	    			Materialize.toast('Error occured...', 3000, 'rounded');
 	    		}
 	    	});
+	    }
+	    
+	    function openDeactivate(packageId){
+	    	$('#packageToBeDeactivated').val(packageId);
+	    	$('#modalDeactivatePackage').openModal();
+	    }
+	    
+	    function deactivatePackage(){
+	    	
+	    	var packageId = document.getElementById("packageToBeDeactivated").value;
+	    	
+	    	$.ajax({
+	    		type : "POST",
+	    		url : "deactivate",
+	    		data : {
+	    			"packageId" : packageId
+	    		},
+	    		dataType : "json",
+	    		async : true,
+	    		success : function(data){
+	    			Materialize.toast(data.status, 3000, 'rounded');
+	    			if (data.status === "success"){
+	    				Materialize.toast('Package is successfully deactivated.', 3000, 'rounded');
+	    				$('#modalDeactivatePackage').closeModal();
+	    				updateTable();
+	    			}else if (data.status === "failed-database"){
+	    				Materialize.toast('Please check your connection.', 3000, 'rounded');
+	    			}
+	    		},
+	    		error : function(data){
+	    			Materialize.toast('Error occured...', 3000, 'rounded');
+	    		}
+	    	});
+	    	
 	    }
 	    
 	    function openInclusion(packageId){
@@ -509,6 +609,76 @@
 	    				});
 	    				
 	    			}
+	    		},
+	    		error : function(data){
+	    			Materialize.toast('Error occured...', 3000, 'rounded');
+	    		}
+	    	});
+	    	
+	    }
+	    
+	    function updateItemModal(itemListChecked){
+	    	
+	    	$.ajax({
+	    		type : "POST",
+	    		url : "getAllItem",
+	    		dataType : "json",
+	    		async : true,
+	    		success : function(data){
+	    			var itemList = data.itemList;
+	    			$('#itemCheckBox').empty();
+					$.each(itemList, function(i, item){
+						var checked = '';
+						if (itemListChecked != null){
+							$.each(itemListChecked, function(o, itemChecked){
+								
+								if (item.strItemName == itemChecked.strItemName){
+									checked = ' checked="checked"';
+								}
+							});
+						}
+						
+						var radioBtn = $('<input type="checkbox" name="item[]" id="'+item.strItemName+'" value="'+item.strItemName+'"'+checked+' />');
+						var label = $('<label for="'+item.strItemName+'">'+item.strItemName+'</label><br>');
+					    radioBtn.appendTo('#itemCheckBox');
+					    label.appendTo('#itemCheckBox');
+						
+	        		});
+	    		},
+	    		error : function(data){
+	    			Materialize.toast('Error occured...', 3000, 'rounded');
+	    		}
+	    	});
+	    	
+	    }
+	    
+	    function updateServiceModal(serviceListChecked){
+	    	
+	    	$.ajax({
+	    		type : "POST",
+	    		url : "getAllService",
+	    		dataType : "json",
+	    		async : true,
+	    		success : function(data){
+	    			var serviceList = data.serviceList;
+	    			$('#serviceCheckBox').empty();
+					$.each(serviceList, function(i, service){
+						var checked = '';
+						if (serviceListChecked != null){
+							$.each(serviceListChecked, function(o, serviceChecked){
+								
+								if (service.strServiceName == serviceChecked.strServiceName){
+									checked = ' checked="checked"';
+								}
+							});
+						}
+						
+						var radioBtn = $('<input type="checkbox" name="service[]" id="'+service.strServiceName+'" value="'+service.strServiceName+'"'+checked+' />');
+						var label = $('<label for="'+service.strServiceName+'">'+service.strServiceName+'</label><br>');
+					    radioBtn.appendTo('#serviceCheckBox');
+					    label.appendTo('#serviceCheckBox');
+						
+	        		});
 	    		},
 	    		error : function(data){
 	    			Materialize.toast('Error occured...', 3000, 'rounded');

@@ -150,14 +150,14 @@
 		<select id="checkPackageIfExistingService" resultMap="CountPackageResultMap">
 			SELECT COUNT(*) FROM tblPackageService
 			WHERE packageIdFK = #{packageId}
-				AND serviceIdFK = #{serviceId}
+				AND serviceIdFK = (SELECT serviceId FROM tblService WHERE strServiceName LIKE #{service.strServiceName})
 		</select>
 		
 		<select id="checkPackageIfExistingItem" resultMap="CountPackageResultMap">
 			SELECT COUNT(*)
 			FROM tblPackageItem
 			WHERE packageIdFK = #{packageId}
-				AND itemIdFK = #{itemId}
+				AND itemIdFK = (SELECT itemId FROM tblItem WHERE strItemName LIKE #{item.strItemName})
 		</select>
 	
 	<!-- END SELECT QUERIES -->
@@ -173,7 +173,7 @@
 			INSERT INTO tblPackageService(packageIdFK, serviceIdFK, intStatus)
 			VALUES (
 				#{packageId},
-				(SELECT serviceId FROM tblService WHERE strServiceName LIKE #{service.strServiceName}),
+				(SELECT serviceId FROM tblService WHERE strServiceName LIKE #{service.strServiceName} LIMIT 1),
 				1
 			)
 		</insert>
@@ -182,7 +182,7 @@
 			INSERT INTO tblPackageItem(packageIdFK, itemIdFK, intStatus)
 			VALUES (
 				#{packageId},
-				(SELECT itemId FROM tblItem WHERE strItemName LIKE #{item.strItemName}),
+				(SELECT itemId FROM tblItem WHERE strItemName LIKE #{item.strItemName} LIMIT 1),
 				1
 			)
 		</insert>
@@ -199,6 +199,34 @@
 				<if test="dblPrice != 0">deciPackagePrice = #{dblPrice}</if>
 			</set>
 			WHERE packageId = #{packageId}
+		</update>
+		
+		<update id="removeItemFromPackage">
+			UPDATE tblPackageItem
+			SET intStatus = 0
+			WHERE packageIdFK = #{packageId}
+				AND itemIdFK = (SELECT itemId FROM tblItem WHERE strItemName LIKE #{item.strItemName})
+		</update>
+		
+		<update id="removeServiceFromPackage">
+			UPDATE tblPackageService
+			SET intStatus = 0
+			WHERE packageIdFK = #{packageId}
+				AND serviceIdFK = (SELECT serviceId FROM tblService WHERE strServiceName LIKE #{service.strServiceName})
+		</update>
+		
+		<update id="upItemToPackage">
+			UPDATE tblPackageItem
+			SET intStatus = 1
+			WHERE packageIdFK = #{packageId}
+				AND itemIdFK = (SELECT itemId FROM tblItem WHERE strItemName LIKE #{item.strItemName})
+		</update>
+		
+		<update id="upServiceToPackage">
+			UPDATE tblPackageService
+			SET intStatus = 1
+			WHERE packageIdFK = #{packageId}
+				AND serviceIdFK = (SELECT serviceId FROM tblService WHERE strServiceName LIKE #{service.strServiceName})
 		</update>
 		
 		<update id="deactivatePackage">

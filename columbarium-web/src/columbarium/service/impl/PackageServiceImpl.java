@@ -39,9 +39,9 @@ public class PackageServiceImpl implements PackageService{
 	}
 
 	@Override
-	public String deactivatePackage(Package packageTo) {
+	public String deactivatePackage(int packageId) {
 		// TODO Auto-generated method stub
-		return packageRepository.deactivatePackage(packageTo);
+		return packageBusiness.deactivatePackage(packageId);
 	}
 
 	@Override
