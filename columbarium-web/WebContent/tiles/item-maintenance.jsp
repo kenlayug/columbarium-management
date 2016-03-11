@@ -8,7 +8,6 @@
 
 		<link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css">
 		<link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.min.css">
-		<script type="text/javascript" src = "<%=request.getContextPath()%>/js/plugins.min.js"></script>
 
 	<!-- Section -->
 	<div class = "responsive col s12">
@@ -358,7 +357,9 @@
 			        	var alert = '<div id="card-alert" class="'+color+'">'+
                   		'<div class="card-content white-text">'+
             			'<p><i class="'+icon+'"></i> '+message+'</p>'+
-          				'</div></div>';
+          				'</div><button onclick="closeAlert()" type="button" class="close white-text" data-dismiss="alert" aria-label="Close">'+
+                        '<span aria-hidden="true">×</span>'+
+                        '</button></div>';
           				$(alert).appendTo('#alertDiv');
 			        },
 			        error: function(data){
@@ -369,6 +370,10 @@
 	
 		}
 	
+		function closeAlert(){
+			$('#alertDiv').html('');
+		}
+		
 		function updateItem(){
 			var itemName = document.getElementById("itemNameUpdate").value;
 			var itemPrice = document.getElementById("itemPriceUpdate").value;
