@@ -7,21 +7,23 @@
 	    <link rel = "stylesheet" href = "<%=request.getContextPath()%>/css/Inventory_Form.css"/>
 
 		<link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css">
+		<link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.min.css">
+		<script type="text/javascript" src = "<%=request.getContextPath()%>/js/plugins.min.js"></script>
 
 	<!-- Section -->
 	<div class = "responsive col s12">
 	    <div class = "row">
 	        <div class = "col s5">
 	            <h2 style = "font-size: 30px;margin-bottom: 10px; margin-top: 0px;">Item Maintenance</h2>
-	
+					<div id="alertDiv">
+						
+	            	</div>
 	            <!-- Create Items -->
 	            <div class = "col s12">
 	                <form class = "aside aside z-depth-3" style = "height: 430px; margin-top: 0px;" id="formCreate">
 	                    <div class = "header">
 	                        <h4 style = "font-size: 30px;padding-top: 10px; margin-top: 10px;">Form</h4>
 	                    </div>
-	
-
 	                        <div class = "row">
 	                        <div style = "padding-left: 10px;">
 	                            <div class="input-field col s6">
@@ -328,19 +330,36 @@
 			       	dataType: "json",
 			        async: true,
 			        success: function(data){
+			        	var message = ""
+			        	var color = "";
+			        	var icon = "";
+			        	$('#alertDiv').html('');
 			        	if (data.status === "success"){
-			        		Materialize.toast('Item successfully saved.', 3000, 'rounded');
 			        		$("#itemName").val("");
 			        		$("#itemPrice").val("");
 			        		$("#itemDesc").val("");
 			        		updateTable();
+			        		color = 'card green';
+			        		icon = 'mdi-navigation-check';
+			        		message = 'SUCCESS: Item created.';
 			        	}else if(data.status === "input"){
-			        		Materialize.toast('Check all your inputs.', 3000, 'rounded');
+			        		color = 'card red';
+			        		icon = 'mdi-alert-error';
+			        		message = 'ERROR: Please check your inputs.';
 			        	}else if(data.status === "failed-existing"){
-			        		Materialize.toast('Item already exists.', 3000, 'rounded');
+			        		color = 'card red';
+			        		icon = 'mdi-alert-error';
+			        		message = 'ERROR: Item already exists.';
 			        	}else if(data.status === "failed-database"){
-			        		Materialize.toast('Please check your connection.', 3000, 'rounded');
+			        		color = 'card red';
+			        		icon = 'mdi-alert-error';
+			        		message = 'ERROR: Please check your connection';
 			        	}
+			        	var alert = '<div id="card-alert" class="'+color+'">'+
+                  		'<div class="card-content white-text">'+
+            			'<p><i class="'+icon+'"></i> '+message+'</p>'+
+          				'</div></div>';
+          				$(alert).appendTo('#alertDiv');
 			        },
 			        error: function(data){
 			        	Materialize.toast('Error occured.', 3000, 'rounded');
