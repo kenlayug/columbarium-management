@@ -34,4 +34,11 @@ public class PackageBusinessImpl implements PackageBusiness{
 		return packageRepository.createPackage(packageTo);
 	}
 
+	@Override
+	public Package getPackage(int packageId) {
+		Package packageTo = new Package();
+		packageTo.setPackageId(packageId);
+		return packageRepository.searchPackage(packageTo);
+	}
+
 }

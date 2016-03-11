@@ -88,18 +88,10 @@ public class Package {
 		return packageService.createPackage(this);
 	}
 	
-	public void fetch(){
+	public static Package getById(int packageId){
 		PackageService packageService = (PackageService)ServletActionContext.getServletContext()
 				.getAttribute("packageService");
-		Package packageTo = packageService.searchPackage(this);
-		if (packageTo != null){
-			setDblPrice(packageTo.dblPrice);
-			setItemList(packageTo.itemList);
-			setPackageId(packageTo.packageId);
-			setServiceList(packageTo.serviceList);
-			setStrPackageDesc(packageTo.strPackageDesc);
-			setStrPackageName(packageTo.strPackageName);
-		}
+		return packageService.searchPackage(packageId);
 	}
 	
 	public String update(){

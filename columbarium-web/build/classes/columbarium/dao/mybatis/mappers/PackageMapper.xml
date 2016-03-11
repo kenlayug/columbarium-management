@@ -51,10 +51,10 @@
 			<where>
 				intStatus = 1
 				<choose>
-					<when test="packageId == null">
+					<when test="packageId == 0">
 						AND strPackageName LIKE #{strPackageName}
 					</when>
-					<when test="packageId != null">
+					<when test="packageId != 0">
 						AND packageId = #{packageId}
 					</when>
 				</choose>
@@ -78,7 +78,7 @@
 					<when test="packageId != 0">
 						AND p.packageId = #{packageId}
 					</when>
-					<when test="strPackageName != null">
+					<when test="packageId == 0">
 						AND p.strPackageName LIKE #{strPackageName}
 					</when>
 				</choose>

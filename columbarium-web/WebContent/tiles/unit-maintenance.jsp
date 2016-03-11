@@ -160,7 +160,7 @@
     				for (var intSubCtr = 0; intSubCtr < intLevelNo; intSubCtr++, intCtr++){
     					Materialize.toast(data.block.unitList[intCtr].unitId, 3000, 'rounded');
     					
-    					strAppend = strAppend + '<td><a class="waves-effect waves-light modal-trigger" href="#modal1">'+data.block.unitList[intCtr].unitId+'</a></td>';
+    					strAppend = strAppend + '<td><button class="btn modal-trigger" href="#modal1">'+data.block.unitList[intCtr].unitId+'</button></td>';
     				}
     				$('#tableUnits tbody').append('<tr>'+strAppend+'</tr>');
     			}

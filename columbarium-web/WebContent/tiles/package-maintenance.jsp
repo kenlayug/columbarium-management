@@ -45,7 +45,7 @@
 
             </div>
 
-            <button onclick = "createBuilding()" type = "submit" name = "action" class="btn red right" style = "margin-top: 20px; margin-right: 10px;">Create</button>
+            <button onclick = "createPackage()" type = "submit" name = "action" class="btn red right" style = "margin-top: 20px; margin-right: 10px;">Create</button>
         </div>
     </form>
 
@@ -55,7 +55,6 @@
             <div class = "modal-header" style = "height: 55px;">
                 <h4 style = "font-size: 30px; padding-left: 20px;">Item Inclusion/s</h4>
             </div>
-            <form class="modal-content">
                 <div class = "col s12">
 
                         <h6 style = "font-family: arial;">Items</h6>
@@ -82,9 +81,6 @@
                     <button name = "action" class="modal-close btn red" style = "margin-bottom: 0px;">Cancel</button>
                 </div>
                 </div>
-
-            </form>
-
         </div>
 
     <!-- Modal Service -->
@@ -139,11 +135,11 @@
                 <div class = "col s12">
                     <div class="row">
                         <div class="input-field col s6">
-                            <input placeholder="Package Name" id="packageNameUpdate" type="text" class="validate" required = "" aria-required="true">
+                            <input value=" " placeholder="Package Name" id="packageNameUpdate" type="text" class="validate" required = "" aria-required="true">
                             <label for="packageNameUpdate" data-error = "Invalid format." data-success = "">New Package Name<span style = "color: red;">*</span></label>
                         </div>
                         <div class="input-field col s6">
-                            <input placeholder="Package Price" id="packagePriceUpdate" type="text" class="validate" required = "" aria-required="true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
+                            <input value=" " placeholder="Package Price" id="packagePriceUpdate" type="text" class="validate" required = "" aria-required="true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
                             <label for="packagePriceUpdate" data-error = "Invalid format." data-success = "">New Package Price<span style = "color: red;">*</span></label>
                         </div>
                     </div>
@@ -151,7 +147,7 @@
                 <div class = "col s12">
                     <div class="row">
                         <div class="input-field col s12">
-                            <input placeholder="Package Description" id="packageDescUpdate" type="text" class="validate">
+                            <input value=" " placeholder="Package Description" id="packageDescUpdate" type="text" class="validate">
                             <label for="packageDescUpdate">New Package Description</label>
                         </div>
                     </div>
@@ -232,7 +228,10 @@
             <h4 style = "font-size: 30px; padding-left: 20px;">Package</h4>
         </div>
         <div class="modal-content">
-            <p style = "padding-left: 30px;">Service One, Service Two, and Item Five</p>
+        	<div id="inclusionDiv">
+        	
+        	</div>
+            
         </div>
         <div class="modal-footer">
             <button name = "action" class="modal-close btn red" style = "margin-left: 10px; ">Confirm</button>
@@ -410,9 +409,6 @@
                     </div>
                 </div>
             </div>
-            <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-            <script src='http://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js'></script>
-            <script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js'></script>
             <script type="text/javascript" src = "../js/index.js"></script>
         </div>
 </div>
@@ -431,6 +427,10 @@
 	    $("#formCreate").submit(function(e){
 		    return false;
 		});
+	    $("#modalUpdatePackage").submit(function(e){
+		    return false;
+		});
+	    
 	    
 	    function createPackage(){
 	    	
@@ -472,8 +472,10 @@
 	    	
 	    }
 	    
+	    window.onload = updateTable;
+	    
 	    function updateTable(){
-	    	
+	    	Materialize.toast('Updating table...', 3000, 'rounded');
 	    	$.ajax({
 	    		type: "POST",
 	    		url: "getAllPackages", 
@@ -481,25 +483,85 @@
 	    		async: true,
 	    		success: function(data){
 	    			var packageList = data.packageList;
-	        		$("#tablePackage tbody").remove();
+	    			var table = $('#datatable').DataTable();
+	        		table.clear().draw();
 					if (packageList != null){
 						$.each(packageList, function(i, packageTo){
-							
-			        		tableRow = $("<tr>").append(
-			        				$("<td>").text(packageTo.strPackageName),
-			        				$("<td>").text(packageTo.dblPrice),
-			        				$("<td>").text(packageTo.strPackageDesc),
-			        				$("<td>").text());
-			        		$("#tablePackage").append(tableRow);
-		        		});
-					}else{
-						tableRow = $("<tr>").append(
-								$("<td>").text("No packages available."));
-						$("#tablePackages").append(tableRow);
+							var addButtons = "<button name = action class= 'modal-trigger btn-floating blue' onclick = openUpdate(this.value) value = "+packageTo.packageId+" ><i class= material-icons  style = 'color: black;' >mode_edit</i></button>"+
+		        			"<button name = action class= 'modal-trigger btn-floating red' onclick = openDeactivate(this.value) value = "+packageTo.packageId+" ><i class= material-icons style = 'color: black;' >not_interested</i></button></td>";
+		        			var viewInclusion = '<button value='+packageTo.packageId+' data-target="modalPackageIncludes" class="red btn modal-trigger" onclick="openInclusion(this.value)">view</button>';
+		        			
+		        			table.row.add( [
+		    	        		            packageTo.strPackageName,
+		    	        		            'P '+packageTo.dblPrice,
+		    	        		            packageTo.strPackageDesc,
+		    	        		            viewInclusion,
+		    	        		            addButtons
+		    	        		            ]);
+		        		});						
 					}
+					table.draw();
 	    		},
 	    		error: function(data){
 	    			alert("error in updating table...");
+	    		}
+	    	});
+	    	
+	    }
+	    
+	    function openUpdate(packageId){
+	    	$('#modalUpdatePackage').openModal();
+	    	$.ajax({
+	    		type : "POST",
+	    		url : "getById",
+	    		data : {
+	    			"packageId" : packageId
+	    		},
+	    		dataType : "json",
+	    		async : true,
+	    		success : function(data){
+	    			if (data.packageTo != null){
+	    				$('#packageNameUpdate').val(data.packageTo.strPackageName);
+	    				$('#packagePriceUpdate').val(data.packageTo.dblPrice);
+	    				$('#packageDescUpdate').val(data.packageTo.strPackageDesc);
+	    				
+	    			}
+	    		},
+	    		error : function(data){
+	    			Materialize.toast('Error occured...', 3000, 'rounded');
+	    		}
+	    	});
+	    }
+	    
+	    function openInclusion(packageId){
+	    	
+	    	$('#modalPackageIncludes').openModal();
+	    	$.ajax({
+	    		type : "POST",
+	    		url : "getById",
+	    		data : {
+	    			"packageId" : packageId
+	    		},
+	    		dataType : "json",
+	    		async : true,
+	    		success : function(data){
+	    			if (data.packageTo != null){
+	    				$('#inclusionDiv').html('');
+	    				var itemHeader = $('<h6>Item/s</h6>');
+	    				itemHeader.appendTo('#inclusionDiv');
+	    				$.each(data.packageTo.itemList, function(i, item){
+	    					$('<li>'+item.strItemName+'</li>').appendTo('#inclusionDiv');
+	    				});
+	    				$('<h6>Service/s</h6>').appendTo('#inclusionDiv');
+	    				$.each(data.packageTo.serviceList, function(s, service){
+	    					Materialize.toast(s, 3000, 'rounded');
+	    					$('<li>'+service.strServiceName+'</li>').appendTo('#inclusionDiv');
+	    				});
+	    				
+	    			}
+	    		},
+	    		error : function(data){
+	    			Materialize.toast('Error occured...', 3000, 'rounded');
 	    		}
 	    	});
 	    	

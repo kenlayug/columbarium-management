@@ -65,6 +65,7 @@ public class MybatisPackageRepository extends MybatisClient implements PackageRe
 			if (packageMapper.checkIfExisting(packageTo) > 0){
 				Package package1 = packageMapper.getPackage(packageTo);
 				package1.setItemList(packageMapper.getItemsOfPackage(packageTo));
+				package1.setServiceList(packageMapper.getServicesOfPackage(packageTo));
 				return package1;
 			}
 			
@@ -133,6 +134,7 @@ public class MybatisPackageRepository extends MybatisClient implements PackageRe
 				packageList = packageMapper.getAllPackage();
 				System.out.println(packageList.size());
 				for (Package packageTo : packageList) {
+					System.out.println(packageTo.getDblPrice());
 					packageTo.setItemList(packageMapper.getItemsOfPackage(packageTo));
 					packageTo.setServiceList(packageMapper.getServicesOfPackage(packageTo));
 				}

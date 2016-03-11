@@ -20,7 +20,11 @@
   			<result name="success" type="json"></result>
   		</action>
   		
-  		<action name="getAllPackages" class="columbarium.actions.packages.InitializePackageAction">
+  		<action name="getAllPackages" class="columbarium.actions.packages.GetAllPackageAction">
+  			<result name="success" type="json"></result>
+  		</action>
+  		
+  		<action name="getById" class="columbarium.actions.packages.GetPackageAction">
   			<result name="success" type="json"></result>
   		</action>
   	 

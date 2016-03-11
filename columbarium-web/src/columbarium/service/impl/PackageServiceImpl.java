@@ -27,9 +27,9 @@ public class PackageServiceImpl implements PackageService{
 	}
 
 	@Override
-	public Package searchPackage(Package packageTo) {
+	public Package searchPackage(int packageId) {
 		// TODO Auto-generated method stub
-		return packageRepository.searchPackage(packageTo);
+		return packageBusiness.getPackage(packageId);
 	}
 
 	@Override

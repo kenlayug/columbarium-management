@@ -6,5 +6,6 @@ public interface PackageBusiness {
 
 	public int getNewPackageId();
 	public String createPackage(Package packageTo);
+	public Package getPackage(int packageId);
 	
 }
