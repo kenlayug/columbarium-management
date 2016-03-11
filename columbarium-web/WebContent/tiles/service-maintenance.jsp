@@ -13,7 +13,8 @@
 		<div class = "col s4">
             <h2 style = "padding-bottom: 20px; font-size: 30px; padding-left: 30px; margin-top: 0px; margin-bottom: 0px;">Service Maintenance</h2>
 
-		<!-- Create Service -->
+
+			<!-- Create Service -->
 		<form class = "col s12" id="formCreate">
 			<div class = "aside aside z-depth-3" style = "height: 440px;">
 				<div class = "header">
@@ -21,6 +22,7 @@
 				</div>
 
 				<button name = "action" class="modal-trigger btn red left" style = "margin-left: 20px;" href = "#modalRequirement">Requirement</button>
+				<button name = "action" class="btn tooltipped modal-trigger btn-floating yellow right" data-position = "bottom" data-delay = "30" data-tooltip = "View Requirement/s" style = "margin-right: 10px;" href = "#modalListOfRequirement"><i class="material-icons" style = "color: black;">pageview</i></button>
 				<br><br>
 				<div class="row" style = "padding-left: 10px;" id="formCreate">
 					<div class="input-field col s12">
@@ -124,6 +126,24 @@
 
         </div>
 
+		<!-- Modal List of Requirement/s -->
+		<div id="modalListOfRequirement" class="modal" style = "width: 550px;">
+			<div class = "modal-header" style = "height: 55px;">
+				<h4 style = "font-size: 30px; padding-left: 20px;">List of Requirement/s</h4>
+			</div>
+			<div class="modal-content">
+				<ul class="collection with-header">
+					<li class="collection-header"><h4 style = "padding-left: 150px; font-family: arial; font-size: 20px;">Requirement List</h4></li>
+					<li class="collection-item">Requirement One</li>
+					<li class="collection-item">Requirement Two</li>
+					<li class="collection-item">Requirement Three</li>
+					<li class="collection-item">Requirement Four</li>
+				</ul>
+			</div>
+			<div class="modal-footer">
+				<button name = "action" class="modal-close btn red" style = "margin-right: 10px;">Done</button>
+			</div>
+		</div>
 
         <!-- Modal Deactivate -->
         <div id="modalDeactivateService" class="modal" style = "width: 400px;">
