@@ -17,10 +17,8 @@
 	    <nav>
 	        <div class="nav-wrapper">
 	            <a href="#!" class="brand-logo left">
-	            <div class = "aside aside z-depth-1" style = "margin-top: -5px;height: 50px;">
-	            <h2 style = "margin-top: 10px;padding-bottom: 30px;padding-left: 10px; font-size: 22px; color: orange;">
-	            	Columbary & Crematory<br>&nbsp&nbspManagement System
-	            </h2></div></a>
+					<img src="../img/sad_logo.jpg" alt="" style="width:100px;height:100px;">
+	           </a>
 	            <ul class="right hide-on-med-and-down">
 	                <li><a class="dropdown-button" data-beloworigin="true" data-activates="dropdown1">Maintenance<i class="material-icons right">arrow_drop_down</i></a></li>
 	                <li><a class="dropdown-button" data-beloworigin="true" data-activates="dropdown2">Transaction<i class="material-icons right">arrow_drop_down</i></a></li>
