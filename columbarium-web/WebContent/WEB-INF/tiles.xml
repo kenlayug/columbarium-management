@@ -47,5 +47,10 @@
  		<put-attribute name="title"			value="Block Maintenance"/>
  		<put-attribute name="body"			value="/tiles/block-maintenance.jsp"/>
  	</definition>
+ 	
+ 	<definition name="unit-maintenance" extends="baseLayout">
+ 		<put-attribute name="title"			value="Unit Maintenance"/>
+ 		<put-attribute name="body"			value="/tiles/unit-maintenance.jsp"/>
+ 	</definition>
   
 </tiles-definitions>

@@ -57,6 +57,7 @@
 					AND b.blockId = #{blockId}
 				</if>
 			</where>
+			ORDER BY u.unitId
 		</select>
 		
 		<select id="getAllBlockFromFloor" resultMap="BlockResultMap">

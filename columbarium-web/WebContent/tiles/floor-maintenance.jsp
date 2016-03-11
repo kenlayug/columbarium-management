@@ -72,7 +72,6 @@
 			                                        <c:if test="${floor.floorType != 0}">
 			                                        	<button value="${floor.floorId}" name = "action" class="btn tooltipped modal-trigger btn-floating green right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor is configured." style = "margin-left: 5px;" onclick="openConfigureFloor(this.value)"><i class="material-icons">settings</i></button>
 			                                        </c:if>
-			                                        <button value="${floor.floorId}" name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor price is not yet configured."  style = "margin-left: 5px;" href="#modalPrice"><i class="material-icons">&#8369</i></button>
 			                                    </p>
 			                                </div>
 										</c:forEach>

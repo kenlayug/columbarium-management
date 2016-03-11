@@ -40,7 +40,7 @@
 	    <li><a href="<%=request.getContextPath()%>/building">Building</a></li>
 	    <li><a href="<%=request.getContextPath()%>/floor">Floor</a></li>
 	    <li><a href="<%=request.getContextPath()%>/block">Block</a></li>
-	    <li><a href="vaults.html">Unit</a></li>
+	    <li><a href="<%=request.getContextPath()%>/unit">Unit</a></li>
 
 	</ul>
 	
