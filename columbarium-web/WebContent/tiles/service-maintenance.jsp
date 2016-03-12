@@ -26,11 +26,11 @@
 				<br><br>
 				<div class="row" style = "padding-left: 10px;" id="formCreate">
 					<div class="input-field col s12">
-						<input id="serviceName" type="text" class="validate" required = "" aria-required = "true" pattern = "[A-Za-z0-9\s]{1,29}">
+						<input id="serviceName" type="text" class="validate" required = "" aria-required="true" minlength = "1" maxlength="20" pattern= "^[a-zA-Z'-\s]+|[0-9a-zA-Z'-\s]+|[a-zA-Z0-9'-]{1,20}">
 						<label for="serviceName" data-error = "Invalid Format." data-success = "">Service Name <span style = "color: red;">*</span></label>
 					</div>
 					<div class="input-field col s12">
-						<input id="servicePrice" type="text" class="validate" required = "" aria-required = "true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
+						<input id="servicePrice" type="text" class="validate" min="1" step="1" aria-required = "true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
 						<label for="servicePrice" data-error = "Invalid Format." data-success = "">Service Price <span style = "color: red;">*</span></label>
 					</div>
 					<div class="row" style = "padding-left: 0px;">
@@ -82,8 +82,8 @@
                         <br><br><br><br><br><br><br><br><br><br><br><br>
 
                 <div class="modal-footer">
-                    <button onclick="$('#modalRequirement').closeModal()" name = "action" class="waves-effect waves-light btn red right" style = "margin-right: 0px; width: 130px;">CONFIRM</button>
-					<button name = "action" class="waves-effect waves-light modal-close btn red" style = "margin-right: 10px;">Cancel</button>
+                    <button onclick="$('#modalRequirement').closeModal()" name = "action" class="btn green right" style = "margin-right: 0px; width: 130px;">CONFIRM</button>
+					<button name = "action" class="waves-effect waves-light modal-close btn green" style = "margin-right: 10px;">Cancel</button>
                 </div>
             </div>
         </div>
@@ -99,11 +99,11 @@
                     <div class="row" style = "padding-left: 10px;">
                         <div class="input-field col s6">
                         	<input id="serviceToBeUpdate" type="hidden">
-                            <input id="serviceNameUpdate" value=" " type="text" class="validate" required = "" aria-required = "true" pattern = "[A-Za-z0-9\s]{1,29}">
+                            <input id="serviceNameUpdate" value=" " type="text" class="validate" required = "" aria-required="true" minlength = "1" maxlength="20" pattern= "^[a-zA-Z'-\s]+|[0-9a-zA-Z'-\s]+|[a-zA-Z0-9'-]{1,20}">
                             <label for="serviceNameUpdate" data-error = "Check format field." data-success = "">New Service Name<span style = "color: red;">*</span></label>
                         </div>
                         <div class="input-field col s6">
-                            <input id="servicePriceUpdate" value=" " type="text" class="validate" required = "" aria-required = "true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
+                            <input id="servicePriceUpdate" value=" " type="text" class="validate" min="1" step="1" aria-required = "true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
                             <label for="servicePriceUpdate" data-error = "Check format field." data-success = "">New Service Price <span style = "color: red;">*</span></label>
                         </div>
                     </div>
@@ -115,12 +115,10 @@
                                 <label for="serviceDescUpdate" data-error = "Check format field." data-success = "">New Service Description</label>
                             </div>
                         </div>
-
-                    <button data-target = "modalRequirement" class="waves-effect waves-light modal-trigger red left" style = "margin-left: 20px; width: 180px; height: 35px; color: white; margin-bottom: 50px; font-size: 14px;"></i>CHOOSE REQUIREMENTS</button>
                 </div>
 				<div class="modal-footer">
-					<button type = "submit" onclick="updateService()" name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
-					<button name = "action" class="waves-effect waves-light modal-close btn red">Cancel</button>
+					<button type = "submit" onclick="updateService()" name = "action" class="btn green" style = "margin-left: 10px; ">Confirm</button>
+					<button name = "action" class="modal-close btn green">Cancel</button>
 				</div>
             </form>
 
@@ -141,7 +139,7 @@
 				</ul>
 			</div>
 			<div class="modal-footer">
-				<button name = "action" class="modal-close btn red" style = "margin-right: 10px;">Done</button>
+				<button name = "action" class="modal-close btn green" style = "margin-right: 10px;">Done</button>
 			</div>
 		</div>
 
@@ -155,8 +153,8 @@
 				<p style = "padding-left: 90px; font-size: 15px;">Are you sure you want to deactivate this service?</p>
             </div>
             <div class="modal-footer">
-                <button onclick="deactivateService()" name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
-                <button name = "action" class="waves-effect waves-light modal-close btn red">Cancel</button>
+                <button onclick="deactivateService()" name = "action" class="btn green" style = "margin-left: 10px; ">Confirm</button>
+                <button name = "action" class="modal-close btn green">Cancel</button>
             </div>
         </div>
 
@@ -181,49 +179,49 @@
 							<tr>
 								<td>Service One</td>
 								<td>
-									<button name = "action" class="btn red modal-close">Activate</button>
+									<button name = "action" class="btn green modal-close">Activate</button>
 								</td>
 							</tr>
 							<tr>
 								<td>Service Two</td>
 								<td>
-									<button name = "action" class="btn red modal-close">Activate</button>
+									<button name = "action" class="btn green modal-close">Activate</button>
 								</td>
 							</tr>
 							<tr>
 								<td>Service Three</td>
 								<td>
-									<button name = "action" class="btn red modal-close">Activate</button>
+									<button name = "action" class="btn green modal-close">Activate</button>
 								</td>
 							</tr>
 							<tr>
 								<td>Service Three</td>
 								<td>
-									<button name = "action" class="btn red modal-close">Activate</button>
+									<button name = "action" class="btn green modal-close">Activate</button>
 								</td>
 							</tr>
 							<tr>
 								<td>Service Four</td>
 								<td>
-									<button name = "action" class="btn red modal-close">Activate</button>
+									<button name = "action" class="btn green modal-close">Activate</button>
 								</td>
 							</tr>
 							<tr>
 								<td>Service Five</td>
 								<td>
-									<button name = "action" class="btn red modal-close">Activate</button>
+									<button name = "action" class="btn green modal-close">Activate</button>
 								</td>
 							</tr>
 							<tr>
 								<td>Service Six</td>
 								<td>
-									<button name = "action" class="btn red modal-close">Activate</button>
+									<button name = "action" class="btn green modal-close">Activate</button>
 								</td>
 							</tr>
 							<tr>
 								<td>Service Seven</td>
 								<td>
-									<button name = "action" class="btn red modal-close">Activate</button>
+									<button name = "action" class="btn green modal-close">Activate</button>
 								</td>
 							</tr>
 							</tbody>
@@ -231,7 +229,7 @@
 					</div>
 				</div>
 			</div>
-			<button name = "action" class="btn red modal-close right" style = "margin-bottom: 10px; margin-right: 30px;">DONE</button>
+			<button name = "action" class="btn green modal-close right" style = "margin-bottom: 10px; margin-right: 30px;">DONE</button>
 		</div>
 
 

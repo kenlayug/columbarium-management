@@ -22,14 +22,14 @@
 	
 	                        <div class="row" style = "padding-left: 10px;">
 	                            <div class="input-field required col s12">
-	                              <input id="buildingName" type="text" class="validate" required = "" aria-required = "true">
+	                              <input id="buildingName" type="text" class="validate" required = "" aria-required="true" minlength = "1" maxlength="20" pattern= "^[a-zA-Z'-\s]+|[0-9a-zA-Z'-\s]+|[a-zA-Z0-9'-]{1,20}">
 	                              <label for="buildingName" data-error = "Invalid format." data-success = "">Name of Building <span style = "color: red;">*</span></label>
 	                            </div>
 	                        </div>
 
 						<div style = "padding-left: 10px;">
 							<div class="required input-field col s12">
-								<input id="buildingAddress" type="text" class="validate" required = "" aria-required = "true">
+								<input id="buildingAddress" type="text" class="validate" required = "" aria-required="true" minlength = "1" maxlength="20" pattern= "^[a-zA-Z'-\s]+|[0-9a-zA-Z'-\s]+|[a-zA-Z0-9'-]{1,20}">
 								<label for="buildingAddress" data-error = "Invalid format." data-success = "">Building Location <span style = "color: red;">*</span></label>
 							</div>
 						</div>
@@ -45,7 +45,7 @@
 						<br><br><br><br>
 						<i class = "left" style = "margin-top: 10px; margin-bottom: 50px; padding-left: 20px; color: red;">*Required Fields</i>
 						<br><br><br>
-						<button onclick = "createBuilding()" type = "submit" name = "action" class="btn red right" style = "margin-top: 30px; margin-right: 10px;">Create</button>
+						<button onclick = "createBuilding()" type = "submit" name = "action" class="btn green right" style = "margin-top: 30px; margin-right: 10px;">Create</button>
 	                </div>
 	            </form>
 	        </div>
@@ -60,19 +60,19 @@
 	                    <form class="row"  style = "padding-left: 20px;">
 	                        <div class="input-field col s12">
 	                       		<input id="buildingToBeUpdated" type="hidden">
-	                            <input placeholder = "Building Name" id="buildingNameUpdate" type="text" class="validate"  required = "" aria-required = "true">
+	                            <input placeholder = "Building Name" id="buildingNameUpdate" type="text" class="validate"  required = "" aria-required="true" minlength = "1" maxlength="20" pattern= "^[a-zA-Z'-\s]+|[0-9a-zA-Z'-\s]+|[a-zA-Z0-9'-]{1,20}">
 	                            <label class = "active" for="buildingNameUpdate" data-error = "Invalid format." data-success = "">New Building Name <span style = "color: red;">*</span></label>
 	                        </div>
 	                        <div class="input-field col s12">
-	                            <input placeholder = "Building Name" id="buildingAddressUpdate" type="text" class="validate"  required = "" aria-required = "true">
+	                            <input placeholder = "Building Name" id="buildingAddressUpdate" type="text" class="validate"  required = "" aria-required="true" minlength = "1" maxlength="20" pattern= "^[a-zA-Z'-\s]+|[0-9a-zA-Z'-\s]+|[a-zA-Z0-9'-]{1,20}">
 	                            <label for="buildingAddressUpdate" data-error = "Invalid Format." data-success = "">New Building Location <span style = "color: red;">*</span></label>
 	                        </div>
 							<i class = "left" style = "margin-top: 10px; padding-left: 10px; color: red;">*Required Fields</i>
 							<div class="modal-footer">
 								<div style = "margin-top: 0px; margin-bottom: 0px;">
-							<button onclick="updateBuilding()" name = "action" type = "submit" class="btn red" style = "margin-bottom: 0px; margin-top: 65px;margin-left: 10px; ">Confirm</button>
+							<button onclick="updateBuilding()" name = "action" type = "submit" class="btn green" style = "margin-bottom: 0px; margin-top: 65px;margin-left: 10px; ">Confirm</button>
 	                    </form>
-	                       		 <button name = "action" class="btn red modal-close" style = "margin-top: 65px; margin-bottom: 0px;">Cancel</button>
+	                       		 <button name = "action" class="btn green modal-close" style = "margin-top: 65px; margin-bottom: 0px;">Cancel</button>
 							</div>
 	                    </div>
 	            </div>
@@ -91,8 +91,8 @@
 						<br>
 	            </div>
 				<div class="modal-footer" style = "margin-bottom: 0px;">
-					<button onclick="deactivateBuilding()" name = "action" class="waves-effect default btn red">Confirm</button>
-					<button name = "action" class="waves-effect default btn red modal-close" style = "margin-right: 10px;">Cancel</button>
+					<button onclick="deactivateBuilding()" name = "action" class="btn green">Confirm</button>
+					<button name = "action" class="btn green modal-close" style = "margin-right: 10px;">Cancel</button>
 				</div>
 	        </div>
 
@@ -117,49 +117,49 @@
 					<tr>
 						<td>Building One</td>
 						<td>
-							<button name = "action" class="btn red modal-close">Activate</button>
+							<button name = "action" class="btn green modal-close">Activate</button>
 						</td>
 					</tr>
 					<tr>
 						<td>Building Two</td>
 						<td>
-							<button name = "action" class="btn red modal-close">Activate</button>
+							<button name = "action" class="btn green modal-close">Activate</button>
 						</td>
 					</tr>
 					<tr>
 						<td>Building Three</td>
 						<td>
-							<button name = "action" class="btn red modal-close">Activate</button>
+							<button name = "action" class="btn green modal-close">Activate</button>
 						</td>
 					</tr>
 					<tr>
 						<td>Building Three</td>
 						<td>
-							<button name = "action" class="btn red modal-close">Activate</button>
+							<button name = "action" class="btn green modal-close">Activate</button>
 						</td>
 					</tr>
 					<tr>
 						<td>Building Four</td>
 						<td>
-							<button name = "action" class="btn red modal-close">Activate</button>
+							<button name = "action" class="btn green modal-close">Activate</button>
 						</td>
 					</tr>
 					<tr>
 						<td>Building Five</td>
 						<td>
-							<button name = "action" class="btn red modal-close">Activate</button>
+							<button name = "action" class="btn green modal-close">Activate</button>
 						</td>
 					</tr>
 					<tr>
 						<td>Building Six</td>
 						<td>
-							<button name = "action" class="btn red modal-close">Activate</button>
+							<button name = "action" class="btn green modal-close">Activate</button>
 						</td>
 					</tr>
 					<tr>
 						<td>Building Seven</td>
 						<td>
-							<button name = "action" class="btn red modal-close">Activate</button>
+							<button name = "action" class="btn green modal-close">Activate</button>
 						</td>
 					</tr>
 					</tbody>
@@ -167,7 +167,7 @@
 			</div>
 		</div>
 	</div>
-	<button name = "action" class="btn red modal-close right" style = "margin-bottom: 10px; margin-right: 30px;">DONE</button>
+	<button name = "action" class="btn green modal-close right" style = "margin-bottom: 10px; margin-right: 30px;">DONE</button>
 </div>
 	
 	        <!-- Data Grid -->

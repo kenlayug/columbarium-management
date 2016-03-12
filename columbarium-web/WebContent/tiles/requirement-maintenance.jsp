@@ -21,7 +21,7 @@
 	                    
                         <div class="row" style = "padding-left: 10px;">
                             <div class="input-field col s6">
-                                <input id="requirementName" type="text" class="validate" required = "" aria-required = "true">
+                                <input id="requirementName" type="text" class="validate" required = "" aria-required = "true" minlength = "1" maxlength="20" pattern= "^[a-zA-Z'-\s]+|[0-9a-zA-Z'-\s]+|[a-zA-Z0-9'-]{1,20}">
                                 <label for="requirementName">Requirement Name<span style = "color: red;">*</span></label>
                             </div>
                         </div>
@@ -34,7 +34,7 @@
 					
 						<i class = "left" style = "margin-bottom: 50px; padding-left: 20px; color: red;">*Required Fields</i>
 
-						<button onclick="createRequirement()" type = "submit" name = "action" class="btn red right" style = "margin-right: 10px;">Create</button>
+						<button onclick="createRequirement()" type = "submit" name = "action" class="btn green right" style = "margin-right: 10px;">Create</button>
 	                </form>
 	
 	            </div>
@@ -51,7 +51,7 @@
 	                <div class = "col s6">
 	                    <div class="input-field col s12">
 	                    	<input id="requirementToBeUpdated" type="hidden">
-	                        <input id="requirementNameUpdate" value=" " type="text" class="validate" required = "" aria-required = "true">
+	                        <input id="requirementNameUpdate" value=" " type="text" class="validate" required = "" aria-required = "true" minlength = "1" maxlength="20" pattern= "^[a-zA-Z'-\s]+|[0-9a-zA-Z'-\s]+|[a-zA-Z0-9'-]{1,20}">
 	                        <label for="requirementNameUpdate">New Requirement Name<span style = "color: red;">*</span></label>
 	                    </div>
 	                </div>
@@ -67,8 +67,8 @@
 					<br><br>
 
 						<div class="modal-footer">
-							<button type = "submit" onclick="updateRequirement()" name = "action" class="waves-effect waves-light btn red bottom" style = "margin-top: 30px; margin-left: 10px; ">Confirm</button>
-							<button name = "action" class="modal-close btn red modal-close bottom" style = "margin-top: 30px;">Cancel</button>
+							<button type = "submit" onclick="updateRequirement()" name = "action" class="btn green bottom" style = "margin-top: 30px; margin-left: 10px; ">Confirm</button>
+							<button name = "action" class="btn green modal-close bottom" style = "margin-top: 30px;">Cancel</button>
 						</div>
 	            </form>
 
@@ -81,12 +81,12 @@
 					<h4 style = "padding-left: 20px; font-size: 30px;">Deactivate Requirement</h4>
 				</div>
 				<div class="modal-content">
-					<p style = "padding-left: 90px; font-size: 15px;">Are you sure you want to deactivate this item?</p>
+					<p style = "padding-left: 90px; font-size: 15px;">Are you sure you want to deactivate this requirement?</p>
 				</div>
 					<input id="requirementToBeDeactivated" type="hidden">
 				<div class="modal-footer">
-					<button onclick="deactivateRequirement()" name = "action" class="btn red" style = "margin-left: 10px; ">Confirm</button>
-					<button class="btn red modal-close">Cancel</button>
+					<button onclick="deactivateRequirement()" name = "action" class="btn green" style = "margin-left: 10px; ">Confirm</button>
+					<button class="btn green modal-close">Cancel</button>
 				</div>
 			</div>
 
@@ -129,49 +129,49 @@
 								<tr>
 									<td>Requirement One</td>
 									<td>
-										<button name = "action" class="btn red modal-close">Activate</button>
+										<button name = "action" class="btn green modal-close">Activate</button>
 									</td>
 								</tr>
 								<tr>
 									<td>Requirement Two</td>
 									<td>
-										<button name = "action" class="btn red modal-close">Activate</button>
+										<button name = "action" class="btn green modal-close">Activate</button>
 									</td>
 								</tr>
 								<tr>
 									<td>Requirement Three</td>
 									<td>
-										<button name = "action" class="btn red modal-close">Activate</button>
+										<button name = "action" class="btn green modal-close">Activate</button>
 									</td>
 								</tr>
 								<tr>
 									<td>Requirement Three</td>
 									<td>
-										<button name = "action" class="btn red modal-close">Activate</button>
+										<button name = "action" class="btn green modal-close">Activate</button>
 									</td>
 								</tr>
 								<tr>
 									<td>Requirement Four</td>
 									<td>
-										<button name = "action" class="btn red modal-close">Activate</button>
+										<button name = "action" class="btn green modal-close">Activate</button>
 									</td>
 								</tr>
 								<tr>
 									<td>Requirement Five</td>
 									<td>
-										<button name = "action" class="btn red modal-close">Activate</button>
+										<button name = "action" class="btn green modal-close">Activate</button>
 									</td>
 								</tr>
 								<tr>
 									<td>Requirement Six</td>
 									<td>
-										<button name = "action" class="btn red modal-close">Activate</button>
+										<button name = "action" class="btn green modal-close">Activate</button>
 									</td>
 								</tr>
 								<tr>
 									<td>Requirement Seven</td>
 									<td>
-										<button name = "action" class="btn red modal-close">Activate</button>
+										<button name = "action" class="btn green modal-close">Activate</button>
 									</td>
 								</tr>
 								</tbody>

@@ -26,13 +26,13 @@
 	                        <div class = "row">
 	                        <div style = "padding-left: 10px;">
 	                            <div class="input-field col s6">
-	                                <input id="itemName" type="text" class="validate" name="item.strItemName" required = "" aria-required="true" length = "20">
+	                                <input id="itemName" type="text" class="validate" name="item.strItemName" required = "" aria-required="true" minlength = "1" maxlength="20" pattern= "^[a-zA-Z'-\s]+|[0-9a-zA-Z'-\s]+|[a-zA-Z0-9'-]{1,20}">
 	                                <label for="itemName" data-error = "Invalid format." data-success = "">Item Name<span style = "color: red;">*</span></label>
 	                            </div>
 	                        </div>
 	                        <div style = "padding-left: 10px;">
 	                            <div class="input-field col s6">
-	                                <input id="itemPrice" type="text" class="validate" name="item.dblPrice" required = "" aria-required = "true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
+	                                <input id="itemPrice" type="text" class="validate" name="item.dblPrice" required = "" min="1" step="1" aria-required = "true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
 	                                <label for="itemPrice" data-error = "Invalid Format." data-success = "">Item Price<span style = "color: red;">*</span></label>
 	                            </div>
 	                        </div>
@@ -50,7 +50,7 @@
 							</select>
 							<label>Select Item Category</label>
 						</div>
-						<button type = "submit" name = "action" class="modal-trigger btn red right" style = "margin-top: 10px; margin-right: 10px;" href = "#modalItemCategory">Item Category</button>
+						<button type = "submit" name = "action" class="modal-trigger btn green right" style = "margin-top: 10px; margin-right: 10px;" href = "#modalItemCategory">Item Category</button>
 					</div>
 
 
@@ -62,7 +62,7 @@
 	                        </div>
 						<i class = "left" style = "margin-bottom: 0px; padding-left: 20px; color: red;">*Required Fields</i>
 	                	<br>
-						<button onClick = "createItem()" type = "submit" name = "action" class="btn red right" style = "margin-right: 10px;">Create</button>
+						<button onClick = "createItem()" type = "submit" name = "action" class="btn green right" style = "margin-right: 10px;">Create</button>
 
 					</form>
 
@@ -80,13 +80,13 @@
 		                        <div style = "padding-left: 10px;">
 		                            <div class="input-field col s6">
 		                            	<input id="itemNameToBeUpdated" type="hidden"/>
-		                                <input value=" " id="itemNameUpdate" type="text" class="validate" name="item.strItemName" required = ""  pattern = "[A-Za-z0-9\s]{1,29}">
+		                                <input value=" " id="itemNameUpdate" type="text" class="validate" name="item.strItemName" required = ""  minlength = "1" maxlength="20" pattern= "^[a-zA-Z'-\s]+|[0-9a-zA-Z'-\s]+|[a-zA-Z0-9'-]{1,20}">
 		                                <label class="active" for="itemNameUpdate" data-error = "Invalid format." data-success = "">New Item Name<span style = "color: red;">*</span></label>
 		                            </div>
 		                        </div>
 		                        <div style = "padding-left: 10px;">
 		                            <div class="input-field col s6">
-		                                <input value="0" id="itemPriceUpdate" type="text" class="validate" name="item.dblPrice" required = "" aria-required = "true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
+		                                <input value="0" id="itemPriceUpdate" type="text" class="validate" name="item.dblPrice" required = "" min="1" step="1" aria-required = "true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
 		                                <label class="active" for="itemPriceUpdate" data-error = "Invalid format." data-success = "">New Item Price<span style = "color: red;">*</span></label>
 		                            </div>
 		                        </div>
@@ -104,8 +104,8 @@
 					<br>
 
 					<div class="modal-footer">
-							<button onclick="updateItem()" type="submit" name="action" class="btn red" style = "margin-top: 30px; margin-left: 10px; ">Confirm</button>
-						<button class="btn red modal-close" style = "margin-top: 30px" onclick="$('modalUpdateItem').closeModal()">Cancel</button>
+							<button onclick="updateItem()" type="submit" name="action" class="btn green" style = "margin-top: 30px; margin-left: 10px; ">Confirm</button>
+						<button class="btn green modal-close" style = "margin-top: 30px" onclick="$('modalUpdateItem').closeModal()">Cancel</button>
 					</div>
 				</form>
 
@@ -124,7 +124,7 @@
 				<input id="itemToBeDeactivated" type="hidden"/>
 				<div class="modal-footer">
 					<button onclick = "deactivateItem()" name = "action" class="btn red" style = "margin-left: 10px; ">Confirm</button>
-					<button name = "action" class="btn red modal-close">Cancel</button>
+					<button name = "action" class="btn green modal-close">Cancel</button>
 				</div>
 			</div>
 
@@ -136,7 +136,7 @@
 				<form class="modal-content" id="formCreateItemCategory">
 					<div style = "padding-left: 10px;">
 						<div class="input-field col s12">
-							<input id="itemCategoryDesc" type="text" class="validate" name="item.strItemCategory" required = "" aria-required="true" length = "20">
+							<input id="itemCategoryDesc" type="text" class="validate" name="item.strItemCategory" required = "" aria-required="true" minlength = "1" maxlength="20" pattern= "^[a-zA-Z'-\s]+|[0-9a-zA-Z'-\s]+|[a-zA-Z0-9'-]{1,20}">
 							<label for="itemCategoryDesc" data-error = "Invalid format." data-success = "">Item Category<span style = "color: red;">*</span></label>
 							<i class = "left" style = "padding-bottom: 20px; margin-top: 20px; padding-left: 0px; color: red;">*Required Fields</i>
 						</div>
@@ -144,7 +144,7 @@
 					</div>
 					<div class="modal-footer">
 						<button onclick="createItemCategory()" name = "action" class="btn red" style = "margin-left: 10px; ">Confirm</button>
-						<button name = "action" class="btn red modal-close">Cancel</button>
+						<button name = "action" class="btn green modal-close">Cancel</button>
 					</div>
 				</form>
 
@@ -171,49 +171,49 @@
 								<tr>
 									<td>Item One</td>
 									<td>
-										<button name = "action" class="btn red modal-close">Activate</button>
+										<button name = "action" class="btn green modal-close">Activate</button>
 									</td>
 								</tr>
 								<tr>
 									<td>Item Two</td>
 									<td>
-										<button name = "action" class="btn red modal-close">Activate</button>
+										<button name = "action" class="btn green modal-close">Activate</button>
 									</td>
 								</tr>
 								<tr>
 									<td>Item Three</td>
 									<td>
-										<button name = "action" class="btn red modal-close">Activate</button>
+										<button name = "action" class="btn green modal-close">Activate</button>
 									</td>
 								</tr>
 								<tr>
 									<td>Item Three</td>
 									<td>
-										<button name = "action" class="btn red modal-close">Activate</button>
+										<button name = "action" class="btn green modal-close">Activate</button>
 									</td>
 								</tr>
 								<tr>
 									<td>Item Four</td>
 									<td>
-										<button name = "action" class="btn red modal-close">Activate</button>
+										<button name = "action" class="btn green modal-close">Activate</button>
 									</td>
 								</tr>
 								<tr>
 									<td>Item Five</td>
 									<td>
-										<button name = "action" class="btn red modal-close">Activate</button>
+										<button name = "action" class="btn green modal-close">Activate</button>
 									</td>
 								</tr>
 								<tr>
 									<td>Item Six</td>
 									<td>
-										<button name = "action" class="btn red modal-close">Activate</button>
+										<button name = "action" class="btn green modal-close">Activate</button>
 									</td>
 								</tr>
 								<tr>
 									<td>Item Seven</td>
 									<td>
-										<button name = "action" class="btn red modal-close">Activate</button>
+										<button name = "action" class="btn green modal-close">Activate</button>
 									</td>
 								</tr>
 								</tbody>
@@ -221,7 +221,7 @@
 						</div>
 					</div>
 				</div>
-				<button name = "action" class="btn red modal-close right" style = "margin-bottom: 10px; margin-right: 30px;">DONE</button>
+				<button name = "action" class="btn green modal-close right" style = "margin-bottom: 10px; margin-right: 30px;">DONE</button>
 			</div>
 
 

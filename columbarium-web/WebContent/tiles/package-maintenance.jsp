@@ -28,7 +28,7 @@
             <div class = "col s12">
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="packageName" type="text" class="validate" required = "" aria-required="true">
+                        <input id="packageName" type="text" class="validate" required = "" aria-required="true" minlength = "1" maxlength="20" pattern= "^[a-zA-Z'-\s]+|[0-9a-zA-Z'-\s]+|[a-zA-Z0-9'-]{1,20}">
                         <label for="packageName" data-error = "Invalid format." data-success = "">Package Name<span style = "color: red;">*</span></label>
                     </div>
                     <div class="input-field col s12">
@@ -39,13 +39,13 @@
                         <input id="packageDesc" type="text" class="validate">
                         <label for="packageDesc">Package Description</label>
                     </div>
-                    <button type = "submit" name = "action" class="modal-trigger btn red left" style = "margin-left: 10px; margin-top: 10px; margin-right: 10px;" href = "#modalItem">Item/s</button>
-                    <button type = "submit" name = "action" class="modal-trigger btn red left" style = "margin-top: 10px; margin-right: 10px;" href = "#modalService">Service/s</button>
+                    <button type = "submit" name = "action" class="modal-trigger btn green left" style = "margin-left: 10px; margin-top: 10px; width: 185px; margin-right: 10px;" href = "#modalItem">View Item/s</button>
+                    <button type = "submit" name = "action" class="modal-trigger btn green left" style = "margin-top: 10px; margin-right: 10px; width: 185px;" href = "#modalService">View Service/s</button>
                 </div>
 
             </div>
 
-            <button onclick = "createPackage()" type = "submit" name = "action" class="btn red right" style = "margin-top: 20px; margin-right: 10px;">Create</button>
+            <button onclick = "createPackage()" type = "submit" name = "action" class="btn green right" style = "margin-top: 20px; margin-right: 10px;">Create</button>
         </div>
     </form>
 
@@ -79,8 +79,8 @@
 
                 <div style = "margin-top: 30px;">
                 <div class="modal-footer">
-                    <button name = "action" class="btn red" style = "margin-bottom: 0px; margin-top: 6px; margin-left: 10px; ">Confirm</button>
-                    <button name = "action" class="modal-close btn red" style = "margin-bottom: 0px;">Cancel</button>
+                    <button name = "action" class="btn green" style = "margin-bottom: 0px; margin-top: 6px; margin-left: 10px; ">Confirm</button>
+                    <button name = "action" class="modal-close btn green" style = "margin-bottom: 0px;">Cancel</button>
                 </div>
                 </div>
         </div>
@@ -120,8 +120,8 @@
         </div>
 
         <div class="modal-footer">
-            <button name = "action" class="btn red" style = "margin-left: 10px; ">Confirm</button>
-            <button name = "action" class="modal-close btn red">Cancel</button>
+            <button name = "action" class="btn green" style = "margin-left: 10px; ">Confirm</button>
+            <button name = "action" class="modal-close btn green">Cancel</button>
         </div>
     </div>
 
@@ -138,7 +138,7 @@
                     <div class="row">
                         <div class="input-field col s6">
                         	<input id="packageToBeUpdated" type="hidden">
-                            <input value=" " placeholder="Package Name" id="packageNameUpdate" type="text" class="validate" required = "" aria-required="true">
+                            <input value=" " placeholder="Package Name" id="packageNameUpdate" type="text" class="validate" required = "" aria-required="true" minlength = "1" maxlength="20" pattern= "^[a-zA-Z'-\s]+|[0-9a-zA-Z'-\s]+|[a-zA-Z0-9'-]{1,20}">
                             <label for="packageNameUpdate" data-error = "Invalid format." data-success = "">New Package Name<span style = "color: red;">*</span></label>
                         </div>
                         <div class="input-field col s6">
@@ -172,8 +172,8 @@
                 <p style = "padding-left: 30px; font-size: 15px;">Are you sure you want to deactivate this package?</p>
             </div>
             <div class="modal-footer">
-                <button onclick="deactivatePackage()" name = "action" class="btn red" style = "margin-left: 10px; ">Confirm</button>
-                <button name = "action" class="modal-close btn red">Cancel</button>
+                <button onclick="deactivatePackage()" name = "action" class="btn green" style = "margin-left: 10px; ">Confirm</button>
+                <button name = "action" class="modal-close btn green">Cancel</button>
             </div>
         </div>
 
@@ -189,7 +189,7 @@
             
         </div>
         <div class="modal-footer">
-            <button name = "action" class="modal-close btn red" style = "margin-left: 10px; ">Confirm</button>
+            <button name = "action" class="modal-close btn green" style = "margin-left: 10px; ">Confirm</button>
 
         </div>
     </div>
@@ -216,56 +216,56 @@
                         <tr>
                             <td>Package One</td>
                             <td>
-                                <button name = "action" class="btn red modal-close">Activate</button>
+                                <button name = "action" class="btn green modal-close">Activate</button>
                             </td>
                         </tr>
                         <tr>
                             <td>Package Two</td>
                             <td>
-                                <button name = "action" class="btn red modal-close">Activate</button>
+                                <button name = "action" class="btn green modal-close">Activate</button>
                             </td>
                         </tr>
                         <tr>
                             <td>Package Three</td>
                             <td>
-                                <button name = "action" class="btn red modal-close">Activate</button>
+                                <button name = "action" class="btn green modal-close">Activate</button>
                             </td>
                         </tr>
                         <tr>
                             <td>Package Three</td>
                             <td>
-                                <button name = "action" class="btn red modal-close">Activate</button>
+                                <button name = "action" class="btn green modal-close">Activate</button>
                             </td>
                         </tr>
                         <tr>
                             <td>Package Four</td>
                             <td>
-                                <button name = "action" class="btn red modal-close">Activate</button>
+                                <button name = "action" class="btn green modal-close">Activate</button>
                             </td>
                         </tr>
                         <tr>
                             <td>Package Five</td>
                             <td>
-                                <button name = "action" class="btn red modal-close">Activate</button>
+                                <button name = "action" class="btn green modal-close">Activate</button>
                             </td>
                         </tr>
                         <tr>
                             <td>Package Six</td>
                             <td>
-                                <button name = "action" class="btn red modal-close">Activate</button>
+                                <button name = "action" class="btn green modal-close">Activate</button>
                             </td>
                         </tr>
                         <tr>
                             <td>Package Seven</td>
                             <td>
-                                <button name = "action" class="btn red modal-close">Activate</button>
+                                <button name = "action" class="btn green modal-close">Activate</button>
                             </td>
                         </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
-            <button name = "action" class="btn red modal-close right" style = "margin-bottom: 10px; margin-right: 0px;">DONE</button>
+            <button name = "action" class="btn green modal-close right" style = "margin-bottom: 10px; margin-right: 0px;">DONE</button>
         </div>
 
     </div>
@@ -300,7 +300,7 @@
                                 <td>Package Eight</td>
                                 <td>Price Eight</td>
                                 <td>Description Eight</td>
-                                <td><button data-target="modalPackageIncludes" class="red btn modal-trigger">view</button></td>
+                                <td><button name = "action" data-target="modalPackageIncludes" class="modal-trigger btn-floating yellow center"><i class="material-icons" style = "color: black;">visibility</i></button>
                                 <td>
                                     <button name = "action" data-target="modalUpdatePackage" class="modal-trigger btn-floating blue"><i class="material-icons" style = "color: black;">mode_edit</i></button>
                                     <button name = "action" data-target="modalDeactivatePackage" class="modal-trigger btn-floating red"><i class="material-icons" style = "color: black;">not_interested</i></button></td>
@@ -309,7 +309,7 @@
                                 <td>Package Eight</td>
                                 <td>Price Eight</td>
                                 <td>Description Eight</td>
-                                <td><button data-target="modalPackageIncludes" class="red btn modal-trigger">view</button></td>
+                                <td><button name = "action" data-target="modalPackageIncludes" class="modal-trigger btn-floating yellow center"><i class="material-icons" style = "color: black;">visibility</i></button>
                                 <td>
                                     <button name = "action" data-target="modalUpdatePackage" class="modal-trigger btn-floating blue"><i class="material-icons" style = "color: black;">mode_edit</i></button>
                                     <button name = "action" data-target="modalDeactivatePackage" class="modal-trigger btn-floating red"><i class="material-icons" style = "color: black;">not_interested</i></button></td>
@@ -318,7 +318,7 @@
                                 <td>Package Eight</td>
                                 <td>Price Eight</td>
                                 <td>Description Eight</td>
-                                <td><button data-target="modalPackageIncludes" class="red btn modal-trigger">view</button></td>
+                                <td><button name = "action" data-target="modalPackageIncludes" class="modal-trigger btn-floating yellow center"><i class="material-icons" style = "color: black;">visibility</i></button>
                                 <td>
                                     <button name = "action" data-target="modalUpdatePackage" class="modal-trigger btn-floating blue"><i class="material-icons" style = "color: black;">mode_edit</i></button>
                                     <button name = "action" data-target="modalDeactivatePackage" class="modal-trigger btn-floating red"><i class="material-icons" style = "color: black;">not_interested</i></button></td>
@@ -327,7 +327,7 @@
                                 <td>Package Eight</td>
                                 <td>Price Eight</td>
                                 <td>Description Eight</td>
-                                <td><button data-target="modalPackageIncludes" class="red btn modal-trigger">view</button></td>
+                                <td><button name = "action" data-target="modalPackageIncludes" class="modal-trigger btn-floating yellow center"><i class="material-icons" style = "color: black;">visibility</i></button>
                                 <td>
                                     <button name = "action" data-target="modalUpdatePackage" class="modal-trigger btn-floating blue"><i class="material-icons" style = "color: black;">mode_edit</i></button>
                                     <button name = "action" data-target="modalDeactivatePackage" class="modal-trigger btn-floating red"><i class="material-icons" style = "color: black;">not_interested</i></button></td>
@@ -336,7 +336,7 @@
                                 <td>Package Eight</td>
                                 <td>Price Eight</td>
                                 <td>Description Eight</td>
-                                <td><button data-target="modalPackageIncludes" class="red btn modal-trigger">view</button></td>
+                                <td><button name = "action" data-target="modalPackageIncludes" class="modal-trigger btn-floating yellow center"><i class="material-icons" style = "color: black;">visibility</i></button>
                                 <td>
                                     <button name = "action" data-target="modalUpdatePackage" class="modal-trigger btn-floating blue"><i class="material-icons" style = "color: black;">mode_edit</i></button>
                                     <button name = "action" data-target="modalDeactivatePackage" class="modal-trigger btn-floating red"><i class="material-icons" style = "color: black;">not_interested</i></button></td>
@@ -345,7 +345,7 @@
                                 <td>Package Eight</td>
                                 <td>Price Eight</td>
                                 <td>Description Eight</td>
-                                <td><button data-target="modalPackageIncludes" class="red btn modal-trigger">view</button></td>
+                                <td><button name = "action" data-target="modalPackageIncludes" class="modal-trigger btn-floating yellow center"><i class="material-icons" style = "color: black;">visibility</i></button>
                                 <td>
                                     <button name = "action" data-target="modalUpdatePackage" class="modal-trigger btn-floating blue"><i class="material-icons" style = "color: black;">mode_edit</i></button>
                                     <button name = "action" data-target="modalDeactivatePackage" class="modal-trigger btn-floating red"><i class="material-icons" style = "color: black;">not_interested</i></button></td>
@@ -354,7 +354,7 @@
                                 <td>Package Eight</td>
                                 <td>Price Eight</td>
                                 <td>Description Eight</td>
-                                <td><button data-target="modalPackageIncludes" class="red btn modal-trigger">view</button></td>
+                                <td><button name = "action" data-target="modalPackageIncludes" class="modal-trigger btn-floating yellow center"><i class="material-icons" style = "color: black;">visibility</i></button>
                                 <td>
                                     <button name = "action" data-target="modalUpdatePackage" class="modal-trigger btn-floating blue"><i class="material-icons" style = "color: black;">mode_edit</i></button>
                                     <button name = "action" data-target="modalDeactivatePackage" class="modal-trigger btn-floating red"><i class="material-icons" style = "color: black;">not_interested</i></button></td>

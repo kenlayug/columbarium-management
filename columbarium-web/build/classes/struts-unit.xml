@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+     "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" 
+     "http://struts.apache.org/dtds/struts-2.0.dtd"> 
+   
+   <struts>
+   
+   	<package name="unit-maintenance" extends="struts-default, json-default" namespace="/unit"> 
+  		 
+  		<result-types>
+         	<result-type name="tiles" 
+         	class="org.apache.struts2.views.tiles.TilesResult" />
+      	</result-types>
+  		 
+  		<action name="*" class="columbarium.actions.unit.InitializeUnitScreenAction">
+  			<result name="success" type="tiles">unit-maintenance</result>
+  		</action>
+  		
+  		<action name="getUnitsFromBlock" class="columbarium.actions.unit.GetAllUnitFromBlockAction">
+  			<result name="success" type="json"></result>
+  		</action>
+  	 
+  	</package> 
+   
+   </struts>

@@ -19,13 +19,21 @@
 </head>
 <body>
 	<body class = "responsive">
+
+	<div class="navbar-fixed navbar-leo">
+		<nav>
+			<div class="nav-wrapper">
+				<a href="#!" class="brand-logo left">
+					<h2 style = "padding-top: 0px; font-size: 20px; padding-left: 20px;">Columbary and Crematory Services Management with Billing and Collection Monitoring System</h2>
+				</a>
+			</div>
+		</nav>
+	</div>
+
 	<!-- Navbar -->
 	<div class="navbar-fixed navbar-leo">
 	    <nav>
 	        <div class="nav-wrapper">
-	            <a href="#!" class="brand-logo left">
-					<img src="../img/sad_logo.jpg" alt="" style="width:100px;height:100px;">
-	           </a>
 	            <ul class="right hide-on-med-and-down">
 	                <li><a class="dropdown-button" data-beloworigin="true" data-activates="dropdown1">Maintenance<i class="material-icons right">arrow_drop_down</i></a></li>
 	                <li><a class="dropdown-button" data-beloworigin="true" data-activates="dropdown2">Transaction<i class="material-icons right">arrow_drop_down</i></a></li>
@@ -54,39 +62,41 @@
 	
 	<!-- Dropdown Transaction -->
 	<ul id="dropdown2" class="dropdown-content">
-	    <li><a href="Reservation_Transaction.html">Reservation</a></li>
-	    <li><a href="scheduling.html">Scheduling</a></li>
+	    <li><a href="<%=request.getContextPath()%>">Inventory</a></li>
+	    <li><a href="<%=request.getContextPath()%>">Buy, Reserved, At need</a></li>
 	    <li class="divider"></li>
-	    <li><a href="Collection_Transaction.html">Collection</a></li>
-	    <li><a href="UnitOwnership.html">Ownership</a></li>
-		<li><a href="UnitOwnership.html">Manage Unit</a></li>
+	    <li><a href="<%=request.getContextPath()%>">Schedule</a></li>
+	    <li><a href="<%=request.getContextPath()%>">Manage Unit</a></li>
+		<li><a href="<%=request.getContextPath()%>">Collection</a></li>
+		<li><a href="<%=request.getContextPath()%>">Notification</a></li>
+		<li><a href="<%=request.getContextPath()%>">Avail</a></li>
 	</ul>
 	
 	<!-- Dropdown Queries -->
 	<ul id="dropdown3" class="dropdown-content">
-	    <li><a href="Maintenance.jsp.html">Product</a></li>
-	    <li><a href="Employee-Maintenance.jsp.html">Employee</a></li>
+	    <li><a href="<%=request.getContextPath()%>">Product</a></li>
+	    <li><a href="<%=request.getContextPath()%>">Employee</a></li>
 	    <li class="divider"></li>
-	    <li><a href="Customer-Maintenance.jsp.html">Customer</a></li>
+	    <li><a href="<%=request.getContextPath()%>">Customer</a></li>
 	</ul>
 	
 	<!-- Dropdown Reports -->
 	<ul id="dropdown4" class="dropdown-content">
-	    <li><a href="Reservation_Report.html">Reservation Record</a></li>
-	    <li><a href="scheduling-report.html">Scheduling Record</a></li>
+	    <li><a href="<%=request.getContextPath()%>">Reservation Record</a></li>
+	    <li><a href="<%=request.getContextPath()%>">Scheduling Record</a></li>
 	    <li class="divider"></li>
-	    <li><a href="Collection_Report.html">Collection Record</a></li>
-	    <li><a href="transferring-report.html">Transferring Record</a></li>
+	    <li><a href="<%=request.getContextPath()%>">Collection Record</a></li>
+	    <li><a href="<%=request.getContextPath()%>">Transferring Record</a></li>
 	</ul>
 
 	<!-- Dropdown Utilities -->
 	<ul id="dropdown5" class="dropdown-content">
-	    <li><a href="Employee.html">Employee</a></li>
+	    <li><a href="<%=request.getContextPath()%>">Employee</a></li>
 	</ul>
 
 	<!-- Dropdown Utilities -->
 	<ul id="dropdown6" class="dropdown-content">
-		<li><a href="Employee.html">Log Out</a></li>
+		<li><a href="<%=request.getContextPath()%>">Log Out</a></li>
 	</ul>
 
 
