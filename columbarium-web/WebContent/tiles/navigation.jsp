@@ -96,11 +96,11 @@
 
 	<!-- Dropdown Utilities -->
 	<ul id="dropdown6" class="dropdown-content">
-<<<<<<< HEAD
+
 		<li><a href="<%=request.getContextPath()%>">Log Out</a></li>
-=======
+
 		<li><a href="<%=request.getContextPath()%>/logout">Log Out</a></li>
->>>>>>> d1c295e699b2d047dcabc693ce277e16733bd254
+
 	</ul>
 
 

@@ -13,7 +13,6 @@
 	<div class = "responsive col s12">
 	    <div class = "row">
 	        <div class = "col s5">
-	            <h2 style = "font-size: 30px;margin-bottom: 10px; margin-top: 0px;">Item Maintenance</h2>
 					<div id="alertDiv">
 						
 	            	</div>
@@ -21,7 +20,7 @@
 	            <div class = "col s12">
 	                <form class = "aside aside z-depth-3" style = "height: 430px; margin-top: 0px;" id="formCreate">
 	                    <div class = "header">
-	                        <h4 style = "font-size: 30px;padding-top: 10px; margin-top: 10px;">Form</h4>
+	                        <h4 style = "font-size: 30px;padding-top: 10px; margin-top: 10px;">Item Maintenance</h4>
 	                    </div>
 	                        <div class = "row">
 	                        <div style = "padding-left: 10px;">

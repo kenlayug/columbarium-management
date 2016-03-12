@@ -17,10 +17,9 @@
 
     <!-- Create Package -->
     <form class = "col s4" id="formCreate">
-        <h2 style = "font-size: 30px; padding-left:30px; margin-bottom: 20px; margin-top: 0px;">Package Maintenance</h2>
         <div class = "aside aside z-depth-3" style = "height: 450px; margin-left: 20px;">
             <div class = "header">
-                <h4 style = "font-size: 30px; margin-top: 0px; padding-top: 10px;">Form</h4>
+                <h4 style = "font-size: 30px; margin-top: 0px; padding-top: 10px;">Package Maintenance</h4>
             </div>
 
             <i class = "left" style = "margin-top: 0px; padding-left: 20px; color: red;">*Required Fields</i>
