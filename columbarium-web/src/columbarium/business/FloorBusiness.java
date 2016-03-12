@@ -1,5 +1,6 @@
 package columbarium.business;
 
+import columbarium.model.Block;
 import columbarium.model.Floor;
 import columbarium.model.FloorType;
 
@@ -11,6 +12,6 @@ public interface FloorBusiness {
 	
 	public String createFloorType(FloorType floorType);
 	
-	public String configureUnitPrice(Floor floor);
+	public String configureUnitPrice(Block block);
 	
 }

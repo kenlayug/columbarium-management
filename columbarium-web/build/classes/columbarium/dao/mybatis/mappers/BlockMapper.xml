@@ -25,6 +25,12 @@
 				<result property="intStatus" column="intUnitStatus"/>
 			</collection>
 		</resultMap>
+		
+		<resultMap type="UnitCategory" id="UnitCategoryResultMap">
+			<id property="unitCategoryId" column="unitCategoryId"/>
+			<result property="blockId" column="blockIdFK"/>
+			<result property="intLevelNo" column="intLevelNo"/>
+		</resultMap>
 	
 	<!-- END RESULTMAPS -->
 	
@@ -77,7 +83,12 @@
 			WHERE b.intStatus = 1
 			ORDER BY b.strBlockDesc ASC
 		</select>
-	
+		
+		<select id="getAllUnitCategoryOfBlock" resultMap="UnitCategoryResultMap">
+			SELECT * FROM tblUnitCategory
+			WHERE blockIdFK = #{blockId}
+		</select>
+			
 	<!-- END SELECT QUERIES -->
 	
 	<!-- INSERT QUERIES -->

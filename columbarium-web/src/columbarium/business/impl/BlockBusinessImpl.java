@@ -1,8 +1,11 @@
 package columbarium.business.impl;
 
+import java.util.List;
+
 import columbarium.business.BlockBusiness;
 import columbarium.dao.BlockRepository;
 import columbarium.model.Block;
+import columbarium.model.UnitCategory;
 
 public class BlockBusinessImpl implements BlockBusiness{
 
@@ -59,6 +62,14 @@ public class BlockBusinessImpl implements BlockBusiness{
 		Block block = new Block();
 		block.setBlockId(blockId);
 		return blockRepository.deactivateBlock(block);
+	}
+
+	@Override
+	public List<UnitCategory> getAllUnitCategoryFromBlock(int blockId) {
+		
+		Block block = new Block();
+		block.setBlockId(blockId);
+		return blockRepository.getAllUnitCategoryFromBlock(block);
 	}
 
 }

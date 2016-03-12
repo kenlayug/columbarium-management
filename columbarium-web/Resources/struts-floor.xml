@@ -48,10 +48,6 @@
       		<result name="success" type="json"></result>
       	</action>
       	
-      	<action name="configureUnitPrice" class="columbarium.actions.floor.ConfigureUnitPriceAction">
-      		<result name="success" type="json"></result>
-      	</action>
-      	
       	<action name="getFloorById" class="columbarium.actions.floor.GetFloorByIdAction">
       		<result name="success" type="json"></result>
       	</action>

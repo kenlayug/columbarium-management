@@ -2,6 +2,7 @@ package columbarium.service;
 
 import java.util.List;
 
+import columbarium.model.Block;
 import columbarium.model.Floor;
 import columbarium.model.FloorType;
 import columbarium.model.UnitCategory;
@@ -17,6 +18,6 @@ public interface FloorService {
 	
 	public List<UnitCategory>					getAllUnitCategoryFromFloor(Floor floor);
 	
-	public String								configureUnitPrice(Floor floor);
+	public String								configureUnitPrice(Block block);
 	
 }

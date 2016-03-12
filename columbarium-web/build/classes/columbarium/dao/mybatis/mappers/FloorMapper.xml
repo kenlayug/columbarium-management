@@ -68,7 +68,7 @@
 		<select id="getUnitCategory" resultMap="UnitCategoryResultMap">
 			SELECT uc.*
 			FROM tblUnitCategory uc
-			WHERE uc.floorIdFK = #{floorId}
+			WHERE uc.blockIdFK = #{blockId}
 				AND uc.intLevelNo = #{intLevelNo}
 			LIMIT 1
 		</select>

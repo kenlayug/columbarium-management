@@ -165,4 +165,21 @@ public class MybatisBlockRepository extends MybatisClient implements BlockReposi
 		return "failed-database";
 	}
 
+	@Override
+	public List<UnitCategory> getAllUnitCategoryFromBlock(Block block) {
+		
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		try{
+			
+			BlockMapper blockMapper = sqlSession.getMapper(BlockMapper.class);
+			return blockMapper.getAllUnitCategoryOfBlock(block);
+			
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			sqlSession.close();
+		}
+		return null;
+	}
+
 }

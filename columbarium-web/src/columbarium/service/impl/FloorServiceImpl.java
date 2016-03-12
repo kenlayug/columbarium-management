@@ -4,6 +4,7 @@ import java.util.List;
 
 import columbarium.business.FloorBusiness;
 import columbarium.dao.FloorRepository;
+import columbarium.model.Block;
 import columbarium.model.Floor;
 import columbarium.model.FloorType;
 import columbarium.model.UnitCategory;
@@ -43,8 +44,8 @@ public class FloorServiceImpl implements FloorService{
 	}
 
 	@Override
-	public String configureUnitPrice(Floor floor) {
-		return floorBusiness.configureUnitPrice(floor);
+	public String configureUnitPrice(Block block) {
+		return floorBusiness.configureUnitPrice(block);
 	}
 
 	@Override

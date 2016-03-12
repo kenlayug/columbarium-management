@@ -21,6 +21,7 @@ public interface BlockMapper {
 	
 	public List<Block>								getAllBlockFromFloor(Floor floor);
 	public List<Block>								getAllBlock();
+	public List<UnitCategory>						getAllUnitCategoryOfBlock(Block block);
 	
 	public int										checkIfExistingBlock(Block block);
 	

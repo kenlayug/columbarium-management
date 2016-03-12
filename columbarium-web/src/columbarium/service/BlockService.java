@@ -4,6 +4,7 @@ import java.util.List;
 
 import columbarium.model.Block;
 import columbarium.model.Floor;
+import columbarium.model.UnitCategory;
 
 public interface BlockService {
 
@@ -15,5 +16,6 @@ public interface BlockService {
 	
 	public List<Block>						getAllBlockFromFloor(Floor floor);
 	public List<Block>						getAllBlocks();
+	public List<UnitCategory>				getAllUnitCategoryFromBlock(int blockId);
 	
 }

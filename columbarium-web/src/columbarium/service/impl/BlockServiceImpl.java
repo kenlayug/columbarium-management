@@ -6,6 +6,7 @@ import columbarium.business.BlockBusiness;
 import columbarium.dao.BlockRepository;
 import columbarium.model.Block;
 import columbarium.model.Floor;
+import columbarium.model.UnitCategory;
 import columbarium.service.BlockService;
 
 public class BlockServiceImpl implements BlockService{
@@ -54,6 +55,11 @@ public class BlockServiceImpl implements BlockService{
 	@Override
 	public String deactivateBlock(int blockId) {
 		return blockBusiness.deactivateBlock(blockId);
+	}
+
+	@Override
+	public List<UnitCategory> getAllUnitCategoryFromBlock(int blockId) {
+		return blockBusiness.getAllUnitCategoryFromBlock(blockId);
 	}
 
 }

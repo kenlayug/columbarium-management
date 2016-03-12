@@ -22,6 +22,7 @@ public class GetBlockAction extends ActionSupport implements Action{
 	public String execute(){
 		
 		block = Block.getBlockById(blockId);
+		block.getAllUnitCategory();
 		return "success";
 		
 	}

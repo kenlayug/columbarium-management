@@ -145,10 +145,4 @@ public class Floor {
 		setBlockList(blockService.getAllBlockFromFloor(this));
 	}
 	
-	public String configureUnitPrice(){
-		FloorService floorService = (FloorService)ServletActionContext.getServletContext()
-				.getAttribute("floorService");
-		return floorService.configureUnitPrice(this);
-	}
-	
 }

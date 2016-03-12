@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.struts2.ServletActionContext;
 
 import columbarium.service.BlockService;
+import columbarium.service.FloorService;
 
 public class Block {
 
@@ -15,6 +16,7 @@ public class Block {
 	private int intLevelNo;
 	private String strUnitType;
 	private List<Unit>unitList;
+	private List<UnitCategory>unitCategoryList;
 	
 	public Block(){
 		
@@ -23,6 +25,12 @@ public class Block {
 		this.floorId = floorId;
 		this.blockId = blockId;
 		this.strBlockName = strBlockName;
+	}
+	public List<UnitCategory> getUnitCategoryList() {
+		return unitCategoryList;
+	}
+	public void setUnitCategoryList(List<UnitCategory> unitCategoryList) {
+		this.unitCategoryList = unitCategoryList;
 	}
 	public void setStrUnitType(String strUnitType){
 		this.strUnitType = strUnitType;
@@ -102,6 +110,18 @@ public class Block {
 		BlockService blockService = (BlockService)ServletActionContext.getServletContext()
 				.getAttribute("blockService");
 		return blockService.deactivateBlock(blockId);
+	}
+	
+	public void getAllUnitCategory(){
+		BlockService blockService = (BlockService)ServletActionContext.getServletContext()
+				.getAttribute("blockService");
+		setUnitCategoryList(blockService.getAllUnitCategoryFromBlock(getBlockId()));
+	}
+	
+	public String configureUnitPrice(){
+		FloorService floorService = (FloorService)ServletActionContext.getServletContext()
+				.getAttribute("floorService");
+		return floorService.configureUnitPrice(this);
 	}
 	
 }
