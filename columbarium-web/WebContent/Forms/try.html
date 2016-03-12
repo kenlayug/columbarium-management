@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.toggle').hide();
+            $('a.togglelink').on('click', function (e) {
+                e.preventDefault();
+                var elem = $(this).next('.toggle')
+                $('.toggle').not(elem).hide('slow');
+                elem.toggle('slow');
+            });
+        });
+    </script>
+</head>
+<body>
+<ul id="list">
+    <li>
+        <a href="#" class="togglelink">America</a>
+        <div class="toggle" style="display: block;">
+            <p>America - USA - the States</p>
+        </div>
+    </li>
+    <li>
+        <a href="#" class="togglelink">Brazil</a>
+        <div class="toggle" style="display: block;">
+            <p>Brazil - Federative Republic of Brazil</p>
+        </div>
+    </li>
+</ul>
+</div>
+</body>
+</html>

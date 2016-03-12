@@ -10,6 +10,15 @@
         $('.hiddensearch').slideUp();
     });
 
+    <!-- Scheduling Slide Add Time -->
+    $('.add-toggle').click(function() {
+      if ($('#addTime').css('display') == 'none')
+        $('#addTime').slideDown();
+      else
+        $('#addTime').slideUp();
+    });
+
+
     /* Set the defaults for DataTables initialisation */
     $.extend(true, DataTable.defaults, {
       dom: "<'hiddensearch'f'>" +
@@ -203,8 +212,30 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
+  $('#datatable3').dataTable({
+    "iDisplayLength": 5,
+    "oLanguage": {
+      "sStripClasses": "",
+      "sSearch": "",
+      "sSearchPlaceholder": "Enter Keywords Here",
+      "sInfo": "_START_ -_END_ of _TOTAL_",
+      "sLengthMenu": '<span>Rows per page:</span><select class="browser-default">' +
+      '<option value="5">5</option>' +
+      '<option value="10">10</option>' +
+      '<option value="20">20</option>' +
+      '<option value="30">30</option>' +
+      '<option value="40">40</option>' +
+      '<option value="50">50</option>' +
+      '<option value="-1">All</option>' +
+      '</select></div>'
+    },
+    bAutoWidth: false
+  });
+});
+
+$(document).ready(function() {
   $('#datatable2').dataTable({
-    "iDisplayLength": 3,
+    "iDisplayLength": 5,
     "oLanguage": {
       "sStripClasses": "",
       "sSearch": "",

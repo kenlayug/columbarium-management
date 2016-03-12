@@ -1,32 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-
+    <meta charset="UTF-8">
+    <title>Unit Maintenance</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-
-    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-    <script src='http://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js'></script>
-
-    <link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen,projection"/>
-    <script type="text/javascript" src="../js/materialize.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
 
     <!-- Import File -->
-    <script type="text/javascript" src = "../js/CustomerJS.js"></script>
     <script type="text/javascript" src = "../js/Blocks_Record_Form.js"></script>
-    <script type="text/javascript" src = "../js/datepicker.js"></script>
-    <script type="text/javascript" src = "../js/vaults.js"></script>
-    <script type="text/javascript" src = "../js/UnitOwnership.js"></script>
     <link href="../css/vaults.css" rel="stylesheet" type="text/css"/>
 
 </head>
 <body>
-
 <div class="navbar-fixed nav-birdifly">
     <div class="responsive">
         <nav>
@@ -64,7 +53,7 @@
                 </ul>
                 <nav>
                     <div class="nav-wrapper">
-                        <a href="#!" class="brand-logo"><img src="../img/sad_logo.jpg" alt="" style="width:70px;height:70px;"></a>
+                        <a href="#!" class="brand-logo">Logo</a>
                         <ul class="right hide-on-med-and-down">
                             <li><a class="dropdown-button" href="#!" data-activates="maintenance" id="db-content">Maintenance<i class="material-icons right">arrow_drop_down</i></a></li>
                             <li><a class="dropdown-button" href="#!" data-activates="transaction" id="db-content">Transaction<i class="material-icons right">arrow_drop_down</i></a></li>
@@ -79,357 +68,69 @@
     </div>
 </div>
 
-
 <!-- Section -->
 <div class = col s12 >
     <div class = "row">
         <div class = "col s5" style="height: 500px">
-            <h2 style = "font-family: myFirstFont; font-size: 30px; padding-left: 45px; margin-bottom: 0px;">Unit Maintenance</h2>
-            <div class = "col s12" style="margin-top: 0px; margin-left: 0px;">
-                <div style = "overflow: auto;height: 370px;">
-                    <div class = "col s12" style = "margin-left: 0px;">
-                        <div class = "aside aside ">
-
-                            <!-- Building -->
-                            <ul class="collapsible popout" data-collapsible="accordion">
-                                <li>
-                                    <div class="collapsible-header" style = "background-color: #00897b">
-                                        <i class="material-icons">business</i><h2 style = "color: white; font-family: myFirstFont; font-size: 20px; padding-top: 10px;">Building One</h2></div>
-                                    <div class="collapsible-body">
-
-                                        <!-- Floor -->
-                                        <div class="row">
-                                            <div class="col s12 m12">
-                                                <ul class="collapsible" data-collapsible="accordion">
-                                                    <li>
-                                                        <div class="collapsible-header" style = "background-color: #ffa000">
-                                                            <i class="material-icons">view_agenda</i>First Floor</div>
-                                                        <div class="collapsible-body" style = "max-height: 50px; padding-top: 0px; margin-top: 0px;">
-                                                            <p style = "padding-top: 10px;">Block One
-                                                                <button name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "View Block" style = "margin-left: 5px;" href = "#modalUpdateBlock"><i class="material-icons">pageview</i></button>
-                                                            </p>
-
-                                                        </div>
-                                                        <div class="collapsible-body" style = "max-height: 50px; padding-top: 0px; margin-top: 0px;">
-                                                            <p style = "padding-top: 10px;">Block One
-                                                                <button name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "View Block" style = "margin-left: 5px;" href = "#modalUpdateBlock"><i class="material-icons">pageview</i></button>
-                                                            </p>
-
-                                                        </div>
-                                                        <div class="collapsible-body" style = "max-height: 50px; padding-top: 0px; margin-top: 0px;">
-                                                            <p style = "padding-top: 10px;">Block One
-                                                                <button name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "View Block" style = "margin-left: 5px;" href = "#modalUpdateBlock"><i class="material-icons">pageview</i></button>
-                                                            </p>
-
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="collapsible-header" style = "background-color: #ffa000">
-                                                            <i class="material-icons">view_agenda</i>Second Floor</div>
-                                                        <div class="collapsible-body" style = "max-height: 50px; padding-top: 0px; margin-top: 0px;">
-                                                            <p style = "padding-top: 10px;">Block One
-                                                                <button name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "View Block" style = "margin-left: 5px;" href = "#modalUpdateBlock"><i class="material-icons">pageview</i></button>
-                                                            </p>
-                                                        </div>
-
-                                                        <div class="collapsible-body" style = "max-height: 50px; padding-top: 0px; margin-top: 0px;">
-                                                            <p style = "padding-top: 10px;">Block One
-                                                                <button name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "View Block" style = "margin-left: 5px;" href = "#modalUpdateBlock"><i class="material-icons">pageview</i></button>
-                                                            </p>
-                                                        </div>
-
-                                                        <div class="collapsible-body" style = "max-height: 50px; padding-top: 0px; margin-top: 0px;">
-                                                            <p style = "padding-top: 10px;">Block One
-                                                                <button name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "View Block" style = "margin-left: 5px;" href = "#modalUpdateBlock"><i class="material-icons">pageview</i></button>
-                                                            </p>
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="collapsible-header" style = "background-color: #ffa000">
-                                                            <i class="material-icons">view_agenda</i>Third Floor</div>
-                                                        <div class="collapsible-body" style = "max-height: 50px; padding-top: 0px; margin-top: 0px;">
-                                                            <p style = "padding-top: 10px;">Block One
-                                                                <button name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "View Block" style = "margin-left: 5px;" href = "#modalUpdateBlock"><i class="material-icons">pageview</i></button>
-                                                            </p>
-                                                        </div>
-
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="collapsible-header" style = "background-color: #00897b">
-                                        <i class="material-icons">business</i><h2 style = "color: white; margin-top: 0px; font-family: myFirstFont; font-size: 20px; padding-top: 10px;">Building Two</h2></div>
-                                    <div class="collapsible-body">
-
-                                        <!-- Floor -->
-                                        <div class="row">
-                                            <div class="col s12 m12">
-                                                <ul class="collapsible" data-collapsible="accordion">
-                                                    <li>
-                                                        <div class="collapsible-header" style = "background-color: #ffa000">
-                                                            <i class="material-icons">view_agenda</i>First Floor</div>
-                                                        <div class="collapsible-body" style = "max-height: 50px; padding-top: 0px; margin-top: 0px;">
-                                                            <p style = "padding-top: 10px;">Block One
-                                                                <button name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "View Block" style = "margin-left: 5px;" href = "#modalUpdateBlock"><i class="material-icons">pageview</i></button>
-                                                            </p>
-
-                                                        </div>
-                                                        <div class="collapsible-body" style = "max-height: 50px; padding-top: 0px; margin-top: 0px;">
-                                                            <p style = "padding-top: 10px;">Block One
-                                                                <button name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "View Block" style = "margin-left: 5px;" href = "#modalUpdateBlock"><i class="material-icons">pageview</i></button>
-                                                            </p>
-
-                                                        </div>
-                                                        <div class="collapsible-body" style = "max-height: 50px; padding-top: 0px; margin-top: 0px;">
-                                                            <p style = "padding-top: 10px;">Block One
-                                                                <button name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "View Block" style = "margin-left: 5px;" href = "#modalUpdateBlock"><i class="material-icons">pageview</i></button>
-                                                            </p>
-
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="collapsible-header" style = "background-color: #ffa000">
-                                                            <i class="material-icons">view_agenda</i>Second Floor</div>
-                                                        <div class="collapsible-body" style = "max-height: 50px; padding-top: 0px; margin-top: 0px;">
-                                                            <p style = "padding-top: 10px;">Block One
-                                                                <button name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "View Block" style = "margin-left: 5px;" href = "#modalUpdateBlock"><i class="material-icons">pageview</i></button>
-                                                            </p>
-                                                        </div>
-
-                                                        <div class="collapsible-body" style = "max-height: 50px; padding-top: 0px; margin-top: 0px;">
-                                                            <p style = "padding-top: 10px;">Block One
-                                                                <button name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "View Block" style = "margin-left: 5px;" href = "#modalUpdateBlock"><i class="material-icons">pageview</i></button>
-                                                            </p>
-                                                        </div>
-
-                                                        <div class="collapsible-body" style = "max-height: 50px; padding-top: 0px; margin-top: 0px;">
-                                                            <p style = "padding-top: 10px;">Block One
-                                                                <button name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "View Block" style = "margin-left: 5px;" href = "#modalUpdateBlock"><i class="material-icons">pageview</i></button>
-                                                            </p>
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="collapsible-header" style = "background-color: #ffa000">
-                                                            <i class="material-icons">view_agenda</i>Third Floor</div>
-                                                        <div class="collapsible-body" style = "max-height: 50px; padding-top: 0px; margin-top: 0px;">
-                                                            <p style = "padding-top: 10px;">Block One
-                                                                <button name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "View Block" style = "margin-left: 5px;" href = "#modalUpdateBlock"><i class="material-icons">pageview</i></button>
-                                                            </p>
-                                                        </div>
-
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="collapsible-header" style = "background-color: #00897b">
-                                        <i class="material-icons">business</i><h2 style = "color: white; margin-top: 0px; font-family: myFirstFont; font-size: 20px; padding-top: 10px;">Building Three</h2></div>
-                                    <div class="collapsible-body">
-
-                                        <!-- Floor -->
-                                        <div class="row">
-                                            <div class="col s12 m12">
-                                                <ul class="collapsible" data-collapsible="accordion">
-                                                    <li>
-                                                        <div class="collapsible-header" style = "background-color: #ffa000">
-                                                            <i class="material-icons">view_agenda</i>First Floor</div>
-                                                        <div class="collapsible-body" style = "max-height: 50px; padding-top: 0px; margin-top: 0px;">
-                                                            <p style = "padding-top: 10px;">Block One
-                                                                <button name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "View Block" style = "margin-left: 5px;" href = "#modalUpdateBlock"><i class="material-icons">pageview</i></button>
-                                                            </p>
-
-                                                        </div>
-                                                        <div class="collapsible-body" style = "max-height: 50px; padding-top: 0px; margin-top: 0px;">
-                                                            <p style = "padding-top: 10px;">Block One
-                                                                <button name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "View Block" style = "margin-left: 5px;" href = "#modalUpdateBlock"><i class="material-icons">pageview</i></button>
-                                                            </p>
-
-                                                        </div>
-                                                        <div class="collapsible-body" style = "max-height: 50px; padding-top: 0px; margin-top: 0px;">
-                                                            <p style = "padding-top: 10px;">Block One
-                                                                <button name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "View Block" style = "margin-left: 5px;" href = "#modalUpdateBlock"><i class="material-icons">pageview</i></button>
-                                                            </p>
-
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="collapsible-header" style = "background-color: #ffa000">
-                                                            <i class="material-icons">view_agenda</i>Second Floor</div>
-                                                        <div class="collapsible-body" style = "max-height: 50px; padding-top: 0px; margin-top: 0px;">
-                                                            <p style = "padding-top: 10px;">Block One
-                                                                <button name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "View Block" style = "margin-left: 5px;" href = "#modalUpdateBlock"><i class="material-icons">pageview</i></button>
-                                                            </p>
-                                                        </div>
-
-                                                        <div class="collapsible-body" style = "max-height: 50px; padding-top: 0px; margin-top: 0px;">
-                                                            <p style = "padding-top: 10px;">Block One
-                                                                <button name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "View Block" style = "margin-left: 5px;" href = "#modalUpdateBlock"><i class="material-icons">pageview</i></button>
-                                                            </p>
-                                                        </div>
-
-                                                        <div class="collapsible-body" style = "max-height: 50px; padding-top: 0px; margin-top: 0px;">
-                                                            <p style = "padding-top: 10px;">Block One
-                                                                <button name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "View Block" style = "margin-left: 5px;" href = "#modalUpdateBlock"><i class="material-icons">pageview</i></button>
-                                                            </p>
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="collapsible-header" style = "background-color: #ffa000">
-                                                            <i class="material-icons">view_agenda</i>Third Floor</div>
-                                                        <div class="collapsible-body" style = "max-height: 50px; padding-top: 0px; margin-top: 0px;">
-                                                            <p style = "padding-top: 10px;">Block One
-                                                                <button name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "View Block" style = "margin-left: 5px;" href = "#modalUpdateBlock"><i class="material-icons">pageview</i></button>
-                                                            </p>
-                                                        </div>
-
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="collapsible-header" style = "background-color: #00897b">
-                                        <i class="material-icons">business</i><h2 style = "color: white; margin-top: 0px; font-family: myFirstFont; font-size: 20px; padding-top: 10px;">Building Four</h2></div>
-                                    <div class="collapsible-body">
-
-                                        <!-- Floor -->
-                                        <div class="row">
-                                            <div class="col s12 m12">
-                                                <ul class="collapsible" data-collapsible="accordion">
-                                                    <li>
-                                                        <div class="collapsible-header" style = "background-color: #ffa000">
-                                                            <i class="material-icons">view_agenda</i>First Floor</div>
-                                                        <div class="collapsible-body" style = "max-height: 50px; padding-top: 0px; margin-top: 0px;">
-                                                            <p style = "padding-top: 10px;">Block One
-                                                                <button name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "View Block" style = "margin-left: 5px;" href = "#modalUpdateBlock"><i class="material-icons">pageview</i></button>
-                                                            </p>
-
-                                                        </div>
-                                                        <div class="collapsible-body" style = "max-height: 50px; padding-top: 0px; margin-top: 0px;">
-                                                            <p style = "padding-top: 10px;">Block One
-                                                                <button name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "View Block" style = "margin-left: 5px;" href = "#modalUpdateBlock"><i class="material-icons">pageview</i></button>
-                                                            </p>
-
-                                                        </div>
-                                                        <div class="collapsible-body" style = "max-height: 50px; padding-top: 0px; margin-top: 0px;">
-                                                            <p style = "padding-top: 10px;">Block One
-                                                                <button name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "View Block" style = "margin-left: 5px;" href = "#modalUpdateBlock"><i class="material-icons">pageview</i></button>
-                                                            </p>
-
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="collapsible-header" style = "background-color: #ffa000">
-                                                            <i class="material-icons">view_agenda</i>Second Floor</div>
-                                                        <div class="collapsible-body" style = "max-height: 50px; padding-top: 0px; margin-top: 0px;">
-                                                            <p style = "padding-top: 10px;">Block One
-                                                                <button name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "View Block" style = "margin-left: 5px;" href = "#modalUpdateBlock"><i class="material-icons">pageview</i></button>
-                                                            </p>
-                                                        </div>
-
-                                                        <div class="collapsible-body" style = "max-height: 50px; padding-top: 0px; margin-top: 0px;">
-                                                            <p style = "padding-top: 10px;">Block One
-                                                                <button name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "View Block" style = "margin-left: 5px;" href = "#modalUpdateBlock"><i class="material-icons">pageview</i></button>
-                                                            </p>
-                                                        </div>
-
-                                                        <div class="collapsible-body" style = "max-height: 50px; padding-top: 0px; margin-top: 0px;">
-                                                            <p style = "padding-top: 10px;">Block One
-                                                                <button name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "View Block" style = "margin-left: 5px;" href = "#modalUpdateBlock"><i class="material-icons">pageview</i></button>
-                                                            </p>
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="collapsible-header" style = "background-color: #ffa000">
-                                                            <i class="material-icons">view_agenda</i>Third Floor</div>
-                                                        <div class="collapsible-body" style = "max-height: 50px; padding-top: 0px; margin-top: 0px;">
-                                                            <p style = "padding-top: 10px;">Block One
-                                                                <button name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "View Block" style = "margin-left: 5px;" href = "#modalUpdateBlock"><i class="material-icons">pageview</i></button>
-                                                            </p>
-                                                        </div>
-
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="collapsible-header" style = "background-color: #00897b">
-                                        <i class="material-icons">business</i><h2 style = "color: white; margin-top: 0px; font-family: myFirstFont; font-size: 20px; padding-top: 10px;">Building Five</h2></div>
-                                    <div class="collapsible-body">
-
-                                        <!-- Floor -->
-                                        <div class="row">
-                                            <div class="col s12 m12">
-                                                <ul class="collapsible" data-collapsible="accordion">
-                                                    <li>
-                                                        <div class="collapsible-header" style = "background-color: #ffa000">
-                                                            <i class="material-icons">view_agenda</i>First Floor</div>
-                                                        <div class="collapsible-body" style = "max-height: 50px; padding-top: 0px; margin-top: 0px;">
-                                                            <p style = "padding-top: 10px;">Block One
-                                                                <button name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "View Block" style = "margin-left: 5px;" href = "#modalUpdateBlock"><i class="material-icons">pageview</i></button>
-                                                            </p>
-
-                                                        </div>
-                                                        <div class="collapsible-body" style = "max-height: 50px; padding-top: 0px; margin-top: 0px;">
-                                                            <p style = "padding-top: 10px;">Block One
-                                                                <button name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "View Block" style = "margin-left: 5px;" href = "#modalUpdateBlock"><i class="material-icons">pageview</i></button>
-                                                            </p>
-
-                                                        </div>
-                                                        <div class="collapsible-body" style = "max-height: 50px; padding-top: 0px; margin-top: 0px;">
-                                                            <p style = "padding-top: 10px;">Block One
-                                                                <button name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "View Block" style = "margin-left: 5px;" href = "#modalUpdateBlock"><i class="material-icons">pageview</i></button>
-                                                            </p>
-
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="collapsible-header" style = "background-color: #ffa000">
-                                                            <i class="material-icons">view_agenda</i>Second Floor</div>
-                                                        <div class="collapsible-body" style = "max-height: 50px; padding-top: 0px; margin-top: 0px;">
-                                                            <p style = "padding-top: 10px;">Block One
-                                                                <button name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "View Block" style = "margin-left: 5px;" href = "#modalUpdateBlock"><i class="material-icons">pageview</i></button>
-                                                            </p>
-                                                        </div>
-
-                                                        <div class="collapsible-body" style = "max-height: 50px; padding-top: 0px; margin-top: 0px;">
-                                                            <p style = "padding-top: 10px;">Block One
-                                                                <button name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "View Block" style = "margin-left: 5px;" href = "#modalUpdateBlock"><i class="material-icons">pageview</i></button>
-                                                            </p>
-                                                        </div>
-
-                                                        <div class="collapsible-body" style = "max-height: 50px; padding-top: 0px; margin-top: 0px;">
-                                                            <p style = "padding-top: 10px;">Block One
-                                                                <button name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "View Block" style = "margin-left: 5px;" href = "#modalUpdateBlock"><i class="material-icons">pageview</i></button>
-                                                            </p>
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="collapsible-header" style = "background-color: #ffa000">
-                                                            <i class="material-icons">view_agenda</i>Third Floor</div>
-                                                        <div class="collapsible-body" style = "max-height: 50px; padding-top: 0px; margin-top: 0px;">
-                                                            <p style = "padding-top: 10px;">Block One
-                                                                <button name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "View Block" style = "margin-left: 5px;" href = "#modalUpdateBlock"><i class="material-icons">pageview</i></button>
-                                                            </p>
-                                                        </div>
-
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
+            <div class = "col s12" style="margin-top: 30px;">
+                <div class = "aside aside z-depth-3">
+                    <div class="modal-header">
+                        <label style="font-size: large">Unit Maintenance</label>
                     </div>
+                    <form action="Unit_Maintenance.html" method="post">
+
+                        <div class="row">
+                            <div class="input-field col s3">
+                                <label>Unit Type:</label>
+                            </div>
+                            <div class="input-field col s8" style="font-family: none">
+                                <p>
+                                    <input name="group11" type="radio" id="test11" checked="checked"/>
+                                    <label for="test11">Full Body Crypts</label>
+                                    <input name="group11" type="radio" id="test21" />
+                                    <label for="test21">Vault</label>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s3">
+                                <label>Building No:</label>
+                            </div>
+                            <div class = "col s9" style = "padding-left: 20px;">
+                                <select id="building">
+                                    <option value="0" disabled selected> Select Building No:</option>
+                                    <option value="1">Building 1</option>
+                                    <option value="2">Building 2</option>
+                                    <option value="3">Building 3</option>
+                                </select>
+                            </div>
+
+                            <div class="input-field col s3">
+                                <label>Floor No:</label>
+                            </div>
+                            <div class = "col s9" style = "padding-left: 20px;">
+                                <select>
+                                    <option value="" disabled selected> Select Floor No:</option>
+                                    <option value="1">Floor 1</option>
+                                    <option value="2">Floor 2</option>
+                                    <option value="3">Floor 3</option>
+                                </select>
+                            </div>
+
+                            <div class="input-field col s3">
+                                <label>Block Name:</label>
+                            </div>
+                            <div class = "col s9" style = "padding-left: 20px;">
+                                <select>
+                                    <option value="" disabled selected> Select Block Name:</option>
+                                    <option value="1">Block A</option>
+                                    <option value="2">Block B</option>
+                                    <option value="3">Block C</option>
+                                </select>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

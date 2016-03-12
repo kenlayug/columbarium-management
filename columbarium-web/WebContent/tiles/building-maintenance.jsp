@@ -17,20 +17,20 @@
 	            <form class = "col s12" id="formCreate">
 	                <div class = "aside aside z-depth-3" style = "height: 400px;">
 	                    <div class = "header">
-	                        <h4 style = "font-size: 30px; margin-top: 0px; padding-top: 10px;">Form</h4>
+	                        <h4 style = "font-size: 30px; margin-top: 0px; padding-top: 10px;">Building Form</h4>
 	                    </div>
 	
 	                        <div class="row" style = "padding-left: 10px;">
 	                            <div class="input-field required col s12">
-	                              <input id="buildingName" type="text" class="validate" required = "" aria-required="true" minlength = "1" maxlength="20" pattern= "^[a-zA-Z'-\s]+|[0-9a-zA-Z'-\s]+|[a-zA-Z0-9'-]{1,20}">
+	                              <input id="buildingName" type="text" class="validate" required = "" aria-required = "true">
 	                              <label for="buildingName" data-error = "Invalid format." data-success = "">Name of Building <span style = "color: red;">*</span></label>
 	                            </div>
 	                        </div>
 
 						<div style = "padding-left: 10px;">
 							<div class="required input-field col s12">
-								<input id="buildingAddress" type="text" class="validate" required = "" aria-required="true" minlength = "1" maxlength="20" pattern= "^[a-zA-Z'-\s]+|[0-9a-zA-Z'-\s]+|[a-zA-Z0-9'-]{1,20}">
-								<label for="buildingAddress" data-error = "Invalid format." data-success = "">Building Location <span style = "color: red;">*</span></label>
+								<input id="buildingAddress" type="text" class="validate" required = "" aria-required = "true">
+								<label for="buildingAddress" data-error = "Invalid format." data-success = "">Building Address <span style = "color: red;">*</span></label>
 							</div>
 						</div>
 
@@ -45,7 +45,7 @@
 						<br><br><br><br>
 						<i class = "left" style = "margin-top: 10px; margin-bottom: 50px; padding-left: 20px; color: red;">*Required Fields</i>
 						<br><br><br>
-						<button onclick = "createBuilding()" type = "submit" name = "action" class="btn green right" style = "margin-top: 30px; margin-right: 10px;">Create</button>
+						<button onclick = "createBuilding()" type = "submit" name = "action" class="btn red right" style = "margin-top: 30px; margin-right: 10px;">Create</button>
 	                </div>
 	            </form>
 	        </div>
@@ -60,19 +60,19 @@
 	                    <form class="row"  style = "padding-left: 20px;">
 	                        <div class="input-field col s12">
 	                       		<input id="buildingToBeUpdated" type="hidden">
-	                            <input placeholder = "Building Name" id="buildingNameUpdate" type="text" class="validate"  required = "" aria-required="true" minlength = "1" maxlength="20" pattern= "^[a-zA-Z'-\s]+|[0-9a-zA-Z'-\s]+|[a-zA-Z0-9'-]{1,20}">
+	                            <input placeholder = "Building Name" id="buildingNameUpdate" type="text" class="validate"  required = "" aria-required = "true">
 	                            <label class = "active" for="buildingNameUpdate" data-error = "Invalid format." data-success = "">New Building Name <span style = "color: red;">*</span></label>
 	                        </div>
 	                        <div class="input-field col s12">
-	                            <input placeholder = "Building Name" id="buildingAddressUpdate" type="text" class="validate"  required = "" aria-required="true" minlength = "1" maxlength="20" pattern= "^[a-zA-Z'-\s]+|[0-9a-zA-Z'-\s]+|[a-zA-Z0-9'-]{1,20}">
-	                            <label for="buildingAddressUpdate" data-error = "Invalid Format." data-success = "">New Building Location <span style = "color: red;">*</span></label>
+	                            <input placeholder = "Building Name" id="buildingAddressUpdate" type="text" class="validate"  required = "" aria-required = "true">
+	                            <label for="buildingAddressUpdate" data-error = "Invalid Format." data-success = "">New Building Address <span style = "color: red;">*</span></label>
 	                        </div>
 							<i class = "left" style = "margin-top: 10px; padding-left: 10px; color: red;">*Required Fields</i>
 							<div class="modal-footer">
 								<div style = "margin-top: 0px; margin-bottom: 0px;">
-							<button onclick="updateBuilding()" name = "action" type = "submit" class="btn green" style = "margin-bottom: 0px; margin-top: 65px;margin-left: 10px; ">Confirm</button>
+							<button onclick="updateBuilding()" name = "action" type = "submit" class="btn red" style = "margin-bottom: 0px; margin-top: 65px;margin-left: 10px; ">Confirm</button>
 	                    </form>
-	                       		 <button name = "action" class="btn green modal-close" style = "margin-top: 65px; margin-bottom: 0px;">Cancel</button>
+	                       		 <button name = "action" class="btn red modal-close" style = "margin-top: 65px; margin-bottom: 0px;">Cancel</button>
 							</div>
 	                    </div>
 	            </div>
@@ -91,84 +91,84 @@
 						<br>
 	            </div>
 				<div class="modal-footer" style = "margin-bottom: 0px;">
-					<button onclick="deactivateBuilding()" name = "action" class="btn green">Confirm</button>
-					<button name = "action" class="btn green modal-close" style = "margin-right: 10px;">Cancel</button>
+					<button onclick="deactivateBuilding()" name = "action" class="waves-effect default btn red">Confirm</button>
+					<button name = "action" class="waves-effect default btn red modal-close" style = "margin-right: 10px;">Cancel</button>
 				</div>
 	        </div>
 
-<!-- Modal Archive Building-->
-<div id="modalArchiveBuilding" class="modal" style = "height: 400px; width: 600px;">
-	<div class="modal-content">
-		<!-- Data Grid Deactivated Building/s-->
-		<div id="admin1" class="col s12" style="margin-top: 0px">
-			<div class="z-depth-2 card material-table" style="margin-top: 0px">
-				<div class="table-header" style="height: 45px; background-color: #00897b;">
-					<h4 style = "padding-top: 10px; font-size: 30px; color: white; padding-left: 0px;">Archive Building/s</h4>
-					<a href="#" class="search-toggle btn-flat right"><i class="material-icons right" style="margin-left: 150px; color: #ffffff;">search</i></a>
+			<!-- Modal List of Deactivated Building -->
+			<div id="modalListOfDeactivatedBuilding" class="modal" style = "height: 1200px; width: 600px;">
+				<div class="modal-content">
+					<!-- Data Grid Deactivated Building/s-->
+					<div id="admin2" class="col s12" style="margin-top: 0px">
+						<div class="z-depth-2 card material-table" style="margin-top: 0px">
+							<div class="table-header" style="height: 55px; background-color: #00897b;">
+								<h4 style = "padding-top: 10px; font-size: 30px; color: white; padding-left: 0px;">Deactivated Building/s</h4>
+							</div>
+							<table id="datatable2">
+								<thead>
+								<tr>
+									<th>Building Name</th>
+									<th>Action</th>
+								</tr>
+								</thead>
+								<tbody>
+								<tr>
+									<td>Building One</td>
+									<td>
+										<button name = "action" class="btn red modal-close">Activate</button>
+									</td>
+								</tr>
+								<tr>
+									<td>Building Two</td>
+									<td>
+										<button name = "action" class="btn red modal-close">Activate</button>
+									</td>
+								</tr>
+								<tr>
+									<td>Building Three</td>
+									<td>
+										<button name = "action" class="btn red modal-close">Activate</button>
+									</td>
+								</tr>
+								<tr>
+									<td>Building Three</td>
+									<td>
+										<button name = "action" class="btn red modal-close">Activate</button>
+									</td>
+								</tr>
+								<tr>
+									<td>Building Four</td>
+									<td>
+										<button name = "action" class="btn red modal-close">Activate</button>
+									</td>
+								</tr>
+								<tr>
+									<td>Building Five</td>
+									<td>
+										<button name = "action" class="btn red modal-close">Activate</button>
+									</td>
+								</tr>
+								<tr>
+									<td>Building Six</td>
+									<td>
+										<button name = "action" class="btn red modal-close">Activate</button>
+									</td>
+								</tr>
+								<tr>
+									<td>Building Seven</td>
+									<td>
+										<button name = "action" class="btn red modal-close">Activate</button>
+									</td>
+								</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
 				</div>
-				<table id="datatable2">
-					<thead>
-					<tr>
-						<th>Name</th>
-						<th>Action</th>
-					</tr>
-					</thead>
-					<tbody>
-					<tr>
-						<td>Building One</td>
-						<td>
-							<button name = "action" class="btn green modal-close">Activate</button>
-						</td>
-					</tr>
-					<tr>
-						<td>Building Two</td>
-						<td>
-							<button name = "action" class="btn green modal-close">Activate</button>
-						</td>
-					</tr>
-					<tr>
-						<td>Building Three</td>
-						<td>
-							<button name = "action" class="btn green modal-close">Activate</button>
-						</td>
-					</tr>
-					<tr>
-						<td>Building Three</td>
-						<td>
-							<button name = "action" class="btn green modal-close">Activate</button>
-						</td>
-					</tr>
-					<tr>
-						<td>Building Four</td>
-						<td>
-							<button name = "action" class="btn green modal-close">Activate</button>
-						</td>
-					</tr>
-					<tr>
-						<td>Building Five</td>
-						<td>
-							<button name = "action" class="btn green modal-close">Activate</button>
-						</td>
-					</tr>
-					<tr>
-						<td>Building Six</td>
-						<td>
-							<button name = "action" class="btn green modal-close">Activate</button>
-						</td>
-					</tr>
-					<tr>
-						<td>Building Seven</td>
-						<td>
-							<button name = "action" class="btn green modal-close">Activate</button>
-						</td>
-					</tr>
-					</tbody>
-				</table>
+				<button name = "action" class="btn red modal-close right" style = "margin-bottom: 10px; margin-right: 30px;">DONE</button>
 			</div>
-		</div>
-	</div>
-	<button name = "action" class="btn green modal-close right" style = "margin-bottom: 10px; margin-right: 30px;">DONE</button>
-</div>
+
 	
 	        <!-- Data Grid -->
 			<div class = "col s7">
@@ -176,17 +176,17 @@
 					<div id="admin" class="col s12" style="margin-top: 20px">
 						<div class="z-depth-2 card material-table">
 							<div class="table-header" style="background-color: #00897b;">
-								<h4 style = "font-size: 30px; color: white; padding-left: 0px;">Building Record</h4>
+								<h4 style = "font-size: 30px; color: white; padding-left: 0px;">Building Data Grid</h4>
 								<div class="actions">
-									<button name = "action" class="btn tooltipped modal-trigger btn-floating black" data-position = "bottom" data-delay = "30" data-tooltip = "Deactivated Building/s" style = "margin-right: 10px;" href = "#modalArchiveBuilding"><i class="material-icons" style = "color: white">delete</i></button>
+									<button name = "action" class="modal-trigger btn-floating black" style = "margin-right: 10px;" href = "#modalListOfDeactivatedBuilding"><i class="material-icons" style = "color: white">delete</i></button>
 									<a href="#" class="search-toggle waves-effect btn-flat nopadding"><i class="material-icons" style="color: #ffffff;">search</i></a>
 								</div>
 							</div>
 							<table id="datatable">
 								<thead>
 								<tr>
-									<th>Name</th>
-									<th>Location</th>
+									<th>Building Name</th>
+									<th>Building Location</th>
 									<th>No. of Floor/s</th>
 									<th>Action</th>
 								</tr>
@@ -196,99 +196,99 @@
 									<td>Building One</td>
 									<td>Type One</td>
 									<td>Location One</td>
-									<td><button name = "action" class="modal-trigger btn-floating blue" href = "#modalUpdateBuilding"><i class="material-icons" style = "color: black;">mode_edit</i></button>
-										<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateBuilding"><i class="material-icons" style = "color: black;">not_interested</i></button></td>
+									<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateBuilding"><i class="material-icons">mode_edit</i></button>
+										<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateBuilding"><i class="material-icons">delete</i></button></td>
 								</tr>
 								<tr>
 									<td>Building Two</td>
 									<td>Type two</td>
 									<td>Location Two</td>
-									<td><button name = "action" class="modal-trigger btn-floating blue" href = "#modalUpdateBuilding"><i class="material-icons" style = "color: black;">mode_edit</i></button>
-										<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateBuilding"><i class="material-icons" style = "color: black;">not_interested</i></button></td>
+									<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateBuilding"><i class="material-icons">mode_edit</i></button>
+										<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateBuilding"><i class="material-icons">delete</i></button></td>
 								</tr>
 								<tr>
 									<td>Building Three</td>
 									<td>Type Three</td>
 									<td>Location Three</td>
-									<td><button name = "action" class="modal-trigger btn-floating blue" href = "#modalUpdateBuilding"><i class="material-icons" style = "color: black;">mode_edit</i></button>
-										<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateBuilding"><i class="material-icons" style = "color: black;">not_interested</i></button></td>
+									<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateBuilding"><i class="material-icons">mode_edit</i></button>
+										<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateBuilding"><i class="material-icons">delete</i></button></td>
 								</tr>
 								<tr>
 									<td>Building Four</td>
 									<td>Type Four</td>
 									<td>Location Four</td>
-									<td><button name = "action" class="modal-trigger btn-floating blue" href = "#modalUpdateBuilding"><i class="material-icons" style = "color: black;">mode_edit</i></button>
-										<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateBuilding"><i class="material-icons" style = "color: black;">not_interested</i></button></td>
+									<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateBuilding"><i class="material-icons">mode_edit</i></button>
+										<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateBuilding"><i class="material-icons">delete</i></button></td>
 								</tr>
 								<tr>
 									<td>Building Five</td>
 									<td>Type Five</td>
 									<td>Location Five</td>
-									<td><button name = "action" class="modal-trigger btn-floating blue" href = "#modalUpdateBuilding"><i class="material-icons" style = "color: black;">mode_edit</i></button>
-										<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateBuilding"><i class="material-icons" style = "color: black;">not_interested</i></button></td>
+									<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateBuilding"><i class="material-icons">mode_edit</i></button>
+										<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateBuilding"><i class="material-icons">delete</i></button></td>
 								</tr>
 								<tr>
 									<td>Building Six</td>
 									<td>Type Six</td>
 									<td>Location Six</td>
-									<td><button name = "action" class="modal-trigger btn-floating blue" href = "#modalUpdateBuilding"><i class="material-icons" style = "color: black;">mode_edit</i></button>
-										<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateBuilding"><i class="material-icons" style = "color: black;">not_interested</i></button></td>
+									<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateBuilding"><i class="material-icons">mode_edit</i></button>
+										<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateBuilding"><i class="material-icons">delete</i></button></td>
 								</tr>
 								<tr>
 									<td>Building Seven</td>
 									<td>Type Seven</td>
 									<td>Location Seven</td>
-									<td><button name = "action" class="modal-trigger btn-floating blue" href = "#modalUpdateBuilding"><i class="material-icons" style = "color: black;">mode_edit</i></button>
-										<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateBuilding"><i class="material-icons" style = "color: black;">not_interested</i></button></td>
+									<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateBuilding"><i class="material-icons">mode_edit</i></button>
+										<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateBuilding"><i class="material-icons">delete</i></button></td>
 								</tr>
 								<tr>
 									<td>Building Eight</td>
 									<td>Type Eight</td>
 									<td>Location Eight</td>
-									<td><button name = "action" class="modal-trigger btn-floating blue" href = "#modalUpdateBuilding"><i class="material-icons" style = "color: black;">mode_edit</i></button>
-										<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateBuilding"><i class="material-icons" style = "color: black;">not_interested</i></button></td>
+									<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateBuilding"><i class="material-icons">mode_edit</i></button>
+										<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateBuilding"><i class="material-icons">delete</i></button></td>
 								</tr>
 								<tr>
 									<td>Building Nine</td>
 									<td>Type Nine</td>
 									<td>Location Nine</td>
-									<td><button name = "action" class="modal-trigger btn-floating blue" href = "#modalUpdateBuilding"><i class="material-icons" style = "color: black;">mode_edit</i></button>
-										<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateBuilding"><i class="material-icons" style = "color: black;">not_interested</i></button></td>
+									<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateBuilding"><i class="material-icons">mode_edit</i></button>
+										<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateBuilding"><i class="material-icons">delete</i></button></td>
 								</tr>
 								<tr>
 									<td>Building Ten</td>
 									<td>Type Ten</td>
 									<td>Location Ten</td>
-									<td><button name = "action" class="modal-trigger btn-floating blue" href = "#modalUpdateBuilding"><i class="material-icons" style = "color: black;">mode_edit</i></button>
-										<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateBuilding"><i class="material-icons" style = "color: black;">not_interested</i></button></td>
+									<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateBuilding"><i class="material-icons">mode_edit</i></button>
+										<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateBuilding"><i class="material-icons">delete</i></button></td>
 								</tr>
 								<tr>
 									<td>Building Eleven</td>
 									<td>Type Eleven</td>
 									<td>Location Eleven</td>
-									<td><button name = "action" class="modal-trigger btn-floating blue" href = "#modalUpdateBuilding"><i class="material-icons" style = "color: black;">mode_edit</i></button>
-										<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateBuilding"><i class="material-icons" style = "color: black;">not_interested</i></button></td>
+									<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateBuilding"><i class="material-icons">mode_edit</i></button>
+										<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateBuilding"><i class="material-icons">delete</i></button></td>
 								</tr>
 								<tr>
 									<td>Building Twelve</td>
 									<td>Type Twelve</td>
 									<td>Location Twelve</td>
-									<td><button name = "action" class="modal-trigger btn-floating blue" href = "#modalUpdateBuilding"><i class="material-icons" style = "color: black;">mode_edit</i></button>
-										<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateBuilding"><i class="material-icons" style = "color: black;">not_interested</i></button></td>
+									<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateBuilding"><i class="material-icons">mode_edit</i></button>
+										<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateBuilding"><i class="material-icons">delete</i></button></td>
 								</tr>
 								<tr>
 									<td>Building Thirteen</td>
 									<td>Type Thirteen</td>
 									<td>Location Thirteen</td>
-									<td><button name = "action" class="modal-trigger btn-floating blue" href = "#modalUpdateBuilding"><i class="material-icons" style = "color: black;">mode_edit</i></button>
-										<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateBuilding"><i class="material-icons" style = "color: black;">not_interested</i></button></td>
+									<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateBuilding"><i class="material-icons">mode_edit</i></button>
+										<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateBuilding"><i class="material-icons">delete</i></button></td>
 								</tr>
 								<tr>
 									<td>Building Fourteen</td>
 									<td>Type Fourteen</td>
 									<td>Location Fourteen</td>
-									<td><button name = "action" class="modal-trigger btn-floating blue" href = "#modalUpdateBuilding"><i class="material-icons" style = "color: black;">mode_edit</i></button>
-										<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateBuilding"><i class="material-icons" style = "color: black;">not_interested</i></button></td>
+									<td><button name = "action" class="modal-trigger btn-floating green" href = "#modalUpdateBuilding"><i class="material-icons">mode_edit</i></button>
+										<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateBuilding"><i class="material-icons">delete</i></button></td>
 								</tr>
 								</tbody>
 							</table>
@@ -342,7 +342,7 @@
 			var noOfFloors = document.getElementById("floorNumber").value;
 			if (buildingName == null || buildingName == "" || buildingName == " " ||
 					buildingAddress == null || buildingAddress == "" || buildingAddress == " " ||
-					noOfFloors == 0 || noOfFloors == null || noOfFloors > 10){
+					noOfFloors == 0 || noOfFloors == null){
 
 			}else{
 				$.ajax({
@@ -464,8 +464,8 @@
 		        		table.clear().draw();
 		        	
 		        		$.each(buildingList, function(i, building){
-		        			var addButtons = "<button name = action class= 'modal-trigger btn-floating blue' onclick = openUpdate(this.value) value = "+building.buildingId+" ><i class= material-icons style = 'color: black;'>mode_edit</i></button>"+
-		        			"<button name = action class= 'modal-trigger btn-floating red' onclick = openDeactivate(this.value) value = "+building.buildingId+" ><i class= material-icons style = 'color: black;'>not_interested</i></button></td>";
+		        			var addButtons = "<button name = action class= 'modal-trigger btn-floating green' onclick = openUpdate(this.value) value = "+building.buildingId+" ><i class= material-icons >mode_edit</i></button>"+
+		        			"<button name = action class= 'modal-trigger btn-floating red' onclick = openDeactivate(this.value) value = "+building.buildingId+" ><i class= material-icons >delete</i></button></td>";
 		        			
 		        			
 		        			table.row.add( [

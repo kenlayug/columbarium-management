@@ -4,7 +4,7 @@
 }
 
 .navbar-leo nav{
-    background-color: #ffb74d;
+    background-color: #ff8f00;
     color: white;
     font-family: myFirstFont;
 }
@@ -28,11 +28,6 @@
 }
 
 #dropdown5 li a{
-    color: white;
-    background-color: #ff8f00;
-}
-
-#dropdown6 li a{
     color: white;
     background-color: #ff8f00;
 }
