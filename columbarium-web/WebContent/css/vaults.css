@@ -1,0 +1,109 @@
+@font-face {
+    font-family: myFirstFont;
+    src: url(../fonts/KGBlankSpaceSketch.ttf);
+}
+html{
+    background-color: #ffffff;
+}
+.nav-birdifly nav{
+    background-color: #ffa000;
+}
+h4{
+    font-family:  myFirstFont;
+}
+#db-content{
+    background-color: #ffa000;
+    font-family: myFirstFont;
+    color: #ffffff;
+}
+#unit-modal{
+    color: #ffffff;
+    text-shadow: 2px 2px #000000;
+}
+.vaults-content {
+    float: left;
+}
+table{
+    margin-top: 10px;
+    table-layout: fixed;
+}
+td{
+    width: 10px;
+    height: 10px;
+}
+table, td {
+    border: 2px solid #00beab;
+    color: #ffffff;
+    background-color: #00897b;
+}
+#data td{
+    text-align: center;
+    background: white;
+    border: none;
+    font-family:  myFirstFont;
+}
+#data tr td{
+    color: #000000;
+}
+#iba th{
+    text-align: center;
+    border: none;
+    font-family:  myFirstFont;
+}
+.data-grid{
+    border: none;
+}
+p{
+    font-family:  myFirstFont;
+    font-size: 15px;
+    padding-left: 15px;
+}
+td a{
+    color: #ffffff;
+    margin-left: 25%;
+    margin-right: 25%;
+    padding-right: 20px;
+    text-decoration: none;
+    font-family:  myFirstFont;
+}
+td a:hover, td a:active{
+    color: #ffffff;
+    margin-left: 25%;
+    margin-right: 25%;
+    padding-right: 20px;
+    text-decoration: none;
+    font-family:  myFirstFont;
+    background-color: transparent;
+    text-decoration: none;
+    cursor: pointer;
+}
+.h{
+    visibility: hidden;
+}
+.modal-header{
+    background-color: #00897b;
+}
+.modal-header label{
+    font-family:  myFirstFont;
+    color: #ffffff;
+    font-size: xx-large;
+}
+.modal-header{
+    padding: 15px;
+}
+.modal-fixed-footer{
+    position: fixed;
+}
+#unit-type{
+    font-size: medium;
+    font-family:  myFirstFont;
+}
+.dropdown-content{
+    margin-top: 55px;
+}
+.dropdown-content li a:hover{
+    background-color: #ffffff;
+    font-family: myFirstFont;
+    color: #000000;
+    text-shadow: 2px 2px #000000;
+}

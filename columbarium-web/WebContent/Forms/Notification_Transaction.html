@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-    <title>SAD Forms</title>
+    <title>Notification Transaction</title>
 
     <!-- Materialize -->
     <meta charset="UTF-8">
@@ -26,7 +26,11 @@
 
     <link rel="stylesheet" href="../css/style.css">
     <script type="text/javascript" src = "../js/index.js"></script>
-
+    <style>
+        tr, th, td{
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
 
@@ -96,18 +100,30 @@
 
 
 <!-- Section -->
-
 <div class = "responsive col s12">
+
     <div class = "row">
-        <h2 style = "padding-left: 490px; font-size: 30px; margin-top: 20px; margin-bottom: 0px;">Notification Transaction</h2>
 
         <!-- Data Grid -->
-        <div class = "col s7" style = "margin-left: 320px;">
+        <div class = "col s8" style="margin-top: 13px; margin-left: 16%">
             <div class="row">
-                <div id="admin" class="col s12" style="margin-top: 20px">
+                <div id="admin" class="col s12">
+                    <div class="row">
+                        <div class="input-field col s2">
+                            <label>Due Date This:</label>
+                        </div>
+                        <div class = "col s3" style = "padding-left: 20px;">
+                            <select id="building">
+                                <option value="0" disabled selected> Select Option:</option>
+                                <option value="1">Day</option>
+                                <option value="2">Week</option>
+                                <option value="3">Month</option>
+                            </select>
+                        </div>
+                    </div>
                     <div class="z-depth-2 card material-table">
                         <div class="table-header" style="background-color: #00897b;">
-                            <h4 style = "font-size: 30px; color: white; padding-left: 0px;">Notification Data Grid</h4>
+                            <h4 style = "font-size: 30px; color: white; padding-left: 0px;">Notification</h4>
                             <div class="actions">
                                 <a href="#" class="search-toggle waves-effect btn-flat nopadding"><i class="material-icons" style="color: #ffffff;">search</i></a>
                             </div>
@@ -116,111 +132,59 @@
                             <thead>
                             <tr>
                                 <th>Customer Name</th>
-                                <th>Status</th>
+                                <th>Item</th>
+                                <th>Service</th>
+                                <th>Balance</th>
+                                <th>Collection</th>
                                 <th>Due Date</th>
-                                <th>Action</th>
+                                <th>Notify</th>
                             </tr>
                             </thead>
                             <tbody>
                             <tr>
-                                <td>Customer One</td>
-                                <td>Status One</td>
-                                <td>March 1, 2016</td>
-                                <td>
-                                    <button name = "action" class="btn tooltipped modal-trigger btn-floating red" data-position = "bottom" data-delay = "50" data-tooltip = "Notify!" href = "#modal2"><i class="material-icons">announcement</i></button></td>
+                                <td>Elizabeth Chu</td>
+                                <td></td>
+                                <td>Cremation</td>
+                                <td>45,000</td>
+                                <td>5,000</td>
+                                <td>03/18/16</td>
+                                <td><button name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; margin-right: 10px">Notify</button></td>
                             </tr>
                             <tr>
-                                <td>Customer One</td>
-                                <td>Status One</td>
-                                <td>March 1, 2016</td>
-                                <td>
-                                    <button name = "action" class="btn tooltipped modal-trigger btn-floating red" data-position = "bottom" data-delay = "50" data-tooltip = "Notify!" href = "#modal2"><i class="material-icons">announcement</i></button></td>
+                                <td>Elizabeth Chu</td>
+                                <td></td>
+                                <td>Cremation</td>
+                                <td>45,000</td>
+                                <td>5,000</td>
+                                <td>03/18/16</td>
+                                <td><button name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; margin-right: 10px">Notify</button></td>
                             </tr>
                             <tr>
-                                <td>Customer One</td>
-                                <td>Status One</td>
-                                <td>March 1, 2016</td>
-                                <td>
-                                    <button name = "action" class="btn tooltipped modal-trigger btn-floating red" data-position = "bottom" data-delay = "50" data-tooltip = "Notify!" href = "#modal2"><i class="material-icons">announcement</i></button></td>
+                                <td>Elizabeth Chu</td>
+                                <td></td>
+                                <td>Cremation</td>
+                                <td>45,000</td>
+                                <td>5,000</td>
+                                <td>03/18/16</td>
+                                <td><button name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; margin-right: 10px">Notify</button></td>
+                            </tr><tr>
+                                <td>Elizabeth Chu</td>
+                                <td></td>
+                                <td>Cremation</td>
+                                <td>45,000</td>
+                                <td>5,000</td>
+                                <td>03/18/16</td>
+                                <td><button name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; margin-right: 10px">Notify</button></td>
                             </tr>
                             <tr>
-                                <td>Customer One</td>
-                                <td>Status One</td>
-                                <td>March 1, 2016</td>
-                                <td>
-                                    <button name = "action" class="btn tooltipped modal-trigger btn-floating red" data-position = "bottom" data-delay = "50" data-tooltip = "Notify!" href = "#modal2"><i class="material-icons">announcement</i></button></td>
+                                <td>Elizabeth Chu</td>
+                                <td></td>
+                                <td>Cremation</td>
+                                <td>45,000</td>
+                                <td>5,000</td>
+                                <td>03/18/16</td>
+                                <td><button name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; margin-right: 10px">Notify</button></td>
                             </tr>
-                            <tr>
-                                <td>Customer One</td>
-                                <td>Status One</td>
-                                <td>March 1, 2016</td>
-                                <td>
-                                    <button name = "action" class="btn tooltipped modal-trigger btn-floating red" data-position = "bottom" data-delay = "50" data-tooltip = "Notify!" href = "#modal2"><i class="material-icons">announcement</i></button></td>
-                            </tr>
-                            <tr>
-                                <td>Customer One</td>
-                                <td>Status One</td>
-                                <td>March 1, 2016</td>
-                                <td>
-                                    <button name = "action" class="btn tooltipped modal-trigger btn-floating red" data-position = "bottom" data-delay = "50" data-tooltip = "Notify!" href = "#modal2"><i class="material-icons">announcement</i></button></td>
-                            </tr>
-                            <tr>
-                                <td>Customer One</td>
-                                <td>Status One</td>
-                                <td>March 1, 2016</td>
-                                <td>
-                                    <button name = "action" class="btn tooltipped modal-trigger btn-floating red" data-position = "bottom" data-delay = "50" data-tooltip = "Notify!" href = "#modal2"><i class="material-icons">announcement</i></button></td>
-                            </tr>
-                            <tr>
-                                <td>Customer One</td>
-                                <td>Status One</td>
-                                <td>March 1, 2016</td>
-                                <td>
-                                    <button name = "action" class="btn tooltipped modal-trigger btn-floating red" data-position = "bottom" data-delay = "50" data-tooltip = "Notify!" href = "#modal2"><i class="material-icons">announcement</i></button></td>
-                            </tr>
-                            <tr>
-                                <td>Customer One</td>
-                                <td>Status One</td>
-                                <td>March 1, 2016</td>
-                                <td>
-                                    <button name = "action" class="btn tooltipped modal-trigger btn-floating red" data-position = "bottom" data-delay = "50" data-tooltip = "Notify!" href = "#modal2"><i class="material-icons">announcement</i></button></td>
-                            </tr>
-                            <tr>
-                                <td>Customer One</td>
-                                <td>Status One</td>
-                                <td>March 1, 2016</td>
-                                <td>
-                                    <button name = "action" class="btn tooltipped modal-trigger btn-floating red" data-position = "bottom" data-delay = "50" data-tooltip = "Notify!" href = "#modal2"><i class="material-icons">announcement</i></button></td>
-                            </tr>
-                            <tr>
-                                <td>Customer One</td>
-                                <td>Status One</td>
-                                <td>March 1, 2016</td>
-                                <td>
-                                    <button name = "action" class="btn tooltipped modal-trigger btn-floating red" data-position = "bottom" data-delay = "50" data-tooltip = "Notify!" href = "#modal2"><i class="material-icons">announcement</i></button></td>
-                            </tr>
-                            <tr>
-                                <td>Customer One</td>
-                                <td>Status One</td>
-                                <td>March 1, 2016</td>
-                                <td>
-                                    <button name = "action" class="btn tooltipped modal-trigger btn-floating red" data-position = "bottom" data-delay = "50" data-tooltip = "Notify!" href = "#modal2"><i class="material-icons">announcement</i></button></td>
-                            </tr>
-                            <tr>
-                                <td>Customer One</td>
-                                <td>Status One</td>
-                                <td>March 1, 2016</td>
-                                <td>
-                                    <button name = "action" class="btn tooltipped modal-trigger btn-floating red" data-position = "bottom" data-delay = "50" data-tooltip = "Notify!" href = "#modal2"><i class="material-icons">announcement</i></button></td>
-                            </tr>
-                            <tr>
-                                <td>Customer One</td>
-                                <td>Status One</td>
-                                <td>March 1, 2016</td>
-                                <td>
-                                    <button name = "action" class="btn tooltipped modal-trigger btn-floating red" data-position = "bottom" data-delay = "50" data-tooltip = "Notify!" href = "#modal2"><i class="material-icons">announcement</i></button></td>
-                            </tr>
-                            </tbody>
                         </table>
                     </div>
                 </div>
@@ -238,32 +202,6 @@
 
 
 
-<!-- Footer -->
-<footer class="page-footer" style = "background-color: #ff8f00">
-    <div class="container">
-        <div class="row">
-            <div class="col l6 s12">
-                <h5 class="white-text">Footer Content</h5>
-                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
-            </div>
-            <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Links</h5>
-                <ul>
-                    <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="footer-copyright">
-        <div class="container">
-            © 2014 Copyright Text
-            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-        </div>
-    </div>
-</footer>
 
 </body>
 </html>

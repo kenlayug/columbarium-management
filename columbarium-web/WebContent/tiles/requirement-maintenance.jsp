@@ -10,13 +10,16 @@
 <div class = "responsive col s12">
 	    <div class = "row">
 	        <div class = "col s5">
-	            <h2 style = "font-size: 30px;">Requirement Maintenance</h2>
 
 	            <!-- Create Requirement -->
 	            <div class = "col s12">
 	                <form class = "wrapper responsive aside aside z-depth-2" id="formCreate">
 	                    <div class = "header">
-	                        <h4 style = "stroke: black; stroke-width: 10px; font-size: 30px; padding-top: 10px; margin-top: 0px;">Form</h4>
+<<<<<<< HEAD
+	                        <h4 style = "stroke: black; stroke-width: 10px; font-size: 30px; padding-top: 10px; margin-top: 0px;">Requirement Form</h4>
+=======
+	                        <h4 style = "stroke: black; stroke-width: 10px; font-size: 30px; padding-top: 10px; margin-top: 0px;">Requirement Maintenance</h4>
+>>>>>>> 00daac307aa3207b9c3fd4d80632c54b6f9d35b0
 	                    </div>
 	                    
                         <div class="row" style = "padding-left: 10px;">
@@ -108,20 +111,19 @@
 				</div>
 			</div>
 
-			<!-- Modal Archive Requirement-->
-			<div id="modalArchiveRequirement" class="modal" style = "height: 400px; width: 600px;">
+			<!-- Modal List of Deactivated Requirement -->
+			<div id="modalListOfDeactivatedRequirement" class="modal" style = "height: 1200px; width: 600px;">
 				<div class="modal-content">
 					<!-- Data Grid Deactivated Requirement/s-->
-					<div id="admin1" class="col s12" style="margin-top: 0px">
+					<div id="admin2" class="col s12" style="margin-top: 0px">
 						<div class="z-depth-2 card material-table" style="margin-top: 0px">
-							<div class="table-header" style="height: 45px; background-color: #00897b;">
-								<h4 style = "padding-top: 10px; font-size: 30px; color: white; padding-left: 0px;">Archive Requirement/s</h4>
-								<a href="#" class="search-toggle btn-flat right"><i class="material-icons right" style="margin-left: 60px; color: #ffffff;">search</i></a>
+							<div class="table-header" style="height: 55px; background-color: #00897b;">
+								<h4 style = "padding-top: 10px; font-size: 30px; color: white; padding-left: 0px;">Deactivated Requirement/s</h4>
 							</div>
 							<table id="datatable2">
 								<thead>
 								<tr>
-									<th>Name</th>
+									<th>Requirement Name</th>
 									<th>Action</th>
 								</tr>
 								</thead>
@@ -189,9 +191,9 @@
 					<div id="admin" class="col s12" style="margin-top: 20px">
 						<div class="z-depth-2 card material-table">
 							<div class="table-header" style="background-color: #00897b;">
-								<h4 style = "font-size: 30px; color: white; padding-left: 0px;">Requirement Record</h4>
+								<h4 style = "font-size: 30px; color: white; padding-left: 0px;">Building Data Grid</h4>
 								<div class="actions">
-									<button name = "action" class="btn tooltipped modal-trigger btn-floating black" data-position = "bottom" data-delay = "30" data-tooltip = "Deactivated Requirement/s" style = "margin-right: 10px;" href = "#modalArchiveRequirement"><i class="material-icons" style = "color: white">delete</i></button>
+									<button name = "action" class="modal-trigger btn-floating black" style = "margin-right: 10px;" href = "#modalListOfDeactivatedRequirement"><i class="material-icons" style = "color: white">delete</i></button>
 									<a href="#" class="search-toggle waves-effect btn-flat nopadding"><i class="material-icons" style="color: #ffffff;">search</i></a>
 								</div>
 							</div>
@@ -357,8 +359,8 @@
         		var requirementList = data.requirementList;
         	
         		$.each(requirementList, function(i, requirement){
-        			var addButtons = "<button name = action class= 'modal-trigger btn-floating blue' onclick = openUpdate(this.value) value = "+requirement.requirementId+" ><i class= material-icons  style = 'color: black;' >mode_edit</i></button>"+
-        			"<button name = action class= 'modal-trigger btn-floating red' onclick = openDeactivate(this.value) value = "+requirement.requirementId+" ><i class= material-icons style = 'color: black;' >not_interested</i></button></td>";
+        			var addButtons = "<button name = action class= 'modal-trigger btn-floating green' onclick = openUpdate(this.value) value = "+requirement.requirementId+" ><i class= material-icons >mode_edit</i></button>"+
+        			"<button name = action class= 'modal-trigger btn-floating red' onclick = openDeactivate(this.value) value = "+requirement.requirementId+" ><i class= material-icons >delete</i></button></td>";
         			
         			
         			table.row.add( [

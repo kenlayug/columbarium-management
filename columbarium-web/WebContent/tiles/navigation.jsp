@@ -9,13 +9,6 @@
 	    <script type="text/javascript" src="<%=request.getContextPath()%>/js/navigation.js"></script>
 	    <link rel = "stylesheet" href = "<%=request.getContextPath()%>/css/navigation.css"/>
 
-	<style>
-		#dropdown6 li a{
-			color: white;
-			background-color: #ff8f00;
-		}
-	</style>
-
 </head>
 <body>
 	<body class = "responsive">
@@ -23,16 +16,13 @@
 	<div class="navbar-fixed navbar-leo">
 	    <nav>
 	        <div class="nav-wrapper">
-	            <a href="#!" class="brand-logo left">
-					<img src="../img/sad_logo.jpg" alt="" style="width:100px;height:100px;">
-	           </a>
+	            <a href="#!" class="brand-logo left">Logo</a>
 	            <ul class="right hide-on-med-and-down">
 	                <li><a class="dropdown-button" data-beloworigin="true" data-activates="dropdown1">Maintenance<i class="material-icons right">arrow_drop_down</i></a></li>
 	                <li><a class="dropdown-button" data-beloworigin="true" data-activates="dropdown2">Transaction<i class="material-icons right">arrow_drop_down</i></a></li>
 	                <li><a class="dropdown-button" data-beloworigin="true" data-activates="dropdown3">Queries<i class="material-icons right">arrow_drop_down</i></a></li>
 	                <li><a class="dropdown-button" data-beloworigin="true" data-activates="dropdown4">Reports<i class="material-icons right">arrow_drop_down</i></a></li>
 	                <li><a class="dropdown-button" data-beloworigin="true" data-activates="dropdown5">Utilities<i class="material-icons right">arrow_drop_down</i></a></li>
-					<li><a class="dropdown-button" data-beloworigin="true" data-activates="dropdown6">Account<i class="material-icons right">arrow_drop_down</i></a></li>
 	            </ul>
 	        </div>
 	    </nav>
@@ -47,13 +37,14 @@
 	    <li class="divider"></li>
 	    <li><a href="<%=request.getContextPath()%>/building">Building</a></li>
 	    <li><a href="<%=request.getContextPath()%>/floor">Floor</a></li>
-	    <li><a href="<%=request.getContextPath()%>/block">Block</a></li>
-	    <li><a href="<%=request.getContextPath()%>/unit">Unit</a></li>
+	    <li><a href="Blocks_Maintenance.html">Block</a></li>
+	    <li><a href="vaults.html">Unit</a></li>
 
 	</ul>
 	
 	<!-- Dropdown Transaction -->
 	<ul id="dropdown2" class="dropdown-content">
+	    <li><a href="Customer.html">Customer</a></li>
 	    <li><a href="Reservation_Transaction.html">Reservation</a></li>
 	    <li><a href="scheduling.html">Scheduling</a></li>
 	    <li class="divider"></li>
@@ -78,15 +69,24 @@
 	    <li><a href="Collection_Report.html">Collection Record</a></li>
 	    <li><a href="transferring-report.html">Transferring Record</a></li>
 	</ul>
-
+	
 	<!-- Dropdown Utilities -->
 	<ul id="dropdown5" class="dropdown-content">
+<<<<<<< HEAD
 	    <li><a href="Employee.html">Employee</a></li>
+	    <li class="divider"></li>
+	</ul>
+=======
+	    <li><a href="<%=request.getContextPath()%>">Employee</a></li>
 	</ul>
 
 	<!-- Dropdown Utilities -->
 	<ul id="dropdown6" class="dropdown-content">
+
+		<li><a href="<%=request.getContextPath()%>">Log Out</a></li>
+
 		<li><a href="<%=request.getContextPath()%>/logout">Log Out</a></li>
+
 	</ul>
 
 
@@ -105,3 +105,4 @@
 		);
 
 	</script>
+>>>>>>> 00daac307aa3207b9c3fd4d80632c54b6f9d35b0

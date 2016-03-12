@@ -11,7 +11,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
     <!-- Import File -->
     <script type="text/javascript" src = "../js/Reservation_Transaction.js"></script>
-    <link href="../css/style.css" rel="stylesheet" type="text/css"/>
     <link href="../css/CustomerCSS.css" rel="stylesheet" type="text/css"/>
 
 
@@ -76,7 +75,7 @@
                     <div class="modal-header">
                         <label style="font-size: x-large">Inventory</label>
                     </div>
-                    <form action="inventory.html" method="post">
+                    <div action="inventory.html" method="post">
                         <div class="row">
                             <div class="input-field col s3">
                                 <label>Item Name:</label>
@@ -90,144 +89,86 @@
                             <div class="input-field col s3">
                                 <label>Quantity:</label>
                             </div>
-                            <div class="input-field col s3">
+                            <div class="input-field col s4">
                                 <input id="quantity" type="number" required="" aria-required="true" class="validate" min="1" max="9999" length="4">
                                 <label for="quantity" data-error="Range From 1 - 9999">Item Quantity</label>
                             </div>
+                            <br>
                         </div>
-                        <br>
-                        <div class="right row">
-                            <button name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; margin-right: 10px">Confirm</button>
-                            <button name = "action" class="waves-effect waves-light btn red" style="margin-right: 10px;">Cancel</button>
-                        </div><br><br>
+                        <br><br><br>
                         <datalist id="itemList">
                             <option value="Columbary Vaults">
                             <option value="FB Crypys">
                             <option value="Urns">
                         </datalist>
-                    </form>
+                        <div class="left row" style="margin-bottom: 20px; margin-left:200px;"><br>
+                            <button name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; margin-right: 10px; margin-top: -150px;">Confirm</button>
+                    </div>
+                    <button class="waves-effect waves-light btn red modal-closed" style="margin-right: 10px; margin-top: -150px;">Cancel</button>
+                </div>
                 </div>
             </div>
-        </div>
+         </div>
         <div class = "col s7">
-                <div class="row">
-                    <div id="admin" class="col s12" style="margin-top: 20px">
-                        <div class="z-depth-2 card material-table">
-                            <div class="table-header" style="background-color: #00897b;">
-                                <h4 style = "font-size: 30px; color: white; padding-left: 0px;">Item Data Grid</h4>
-                            </div>
+            <div class="row">
+                <div id="admin" class="col s12" style="margin-top: 13px">
+                    <div class="z-depth-2 card material-table">
+                        <div class="table-header" style="background-color: #00897b;">
+                            <h4 style = "font-size: 30px; color: white; padding-left: 0px;">Inventory Data Grid</h4>
                             <div class="actions">
                                 <a href="#" class="search-toggle waves-effect btn-flat nopadding"><i class="material-icons" style="color: #ffffff;">search</i></a>
                             </div>
-                            <table id="datatable">
-                                <thead>
-                                <tr>
-                                    <th>Item</th>
-                                    <th>Category</th>
-                                    <th>Quantity</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td>Urn</td>
-                                    <td>Crematory</td>
-                                    <td>304</td>
-                                </tr>
-                                <tr>
-                                    <td>Urn</td>
-                                    <td>Crematory</td>
-                                    <td>304</td>
-                                </tr>
-                                <tr>
-                                    <td>Urn</td>
-                                    <td>Crematory</td>
-                                    <td>304</td>
-                                </tr>
-                                <tr>
-                                    <td>Urn</td>
-                                    <td>Crematory</td>
-                                    <td>304</td>
-                                </tr>
-                                <tr>
-                                    <td>Urn</td>
-                                    <td>Crematory</td>
-                                    <td>304</td>
-                                </tr>
-                                <tr>
-                                    <td>Urn</td>
-                                    <td>Crematory</td>
-                                    <td>304</td>
-                                </tr>
-                                <tr>
-                                    <td>Urn</td>
-                                    <td>Crematory</td>
-                                    <td>304</td>
-                                </tr>
-                                <tr>
-                                    <td>Urn</td>
-                                    <td>Crematory</td>
-                                    <td>304</td>
-                                </tr>
-                                <tr>
-                                    <td>Urn</td>
-                                    <td>Crematory</td>
-                                    <td>304</td>
-                                </tr>
-                                <tr>
-                                    <td>Urn</td>
-                                    <td>Crematory</td>
-                                    <td>304</td>
-                                </tr>
-                                <tr>
-                                    <td>Urn</td>
-                                    <td>Crematory</td>
-                                    <td>304</td>
-                                </tr>
-                                <tr>
-                                    <td>Urn</td>
-                                    <td>Crematory</td>
-                                    <td>304</td>
-                                </tr>
-                                </tbody>
-                            </table>
                         </div>
+                        <table id="datatable">
+                            <thead>
+                            <tr>
+                                <th>Category</th>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th>Quantity</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>FullBody Crypts</td>
+                                <td>Candle Holder</td>
+                                <td></td>
+                                <td>90</td>
+                            </tr>
+                            <tr>
+                                <td>Columbary Vault</td>
+                                <td>Customize Urn</td>
+                                <td>Lalagyanan ng abo</td>
+                                <td>52</td>
+                            </tr>
+                            <tr>
+                                <td>Columbary Vault</td>
+                                <td>Pouch</td>
+                                <td></td>
+                                <td>1002</td>
+                            </tr>
+                            <tr>
+                                <td>FullBody Crypts</td>
+                                <td>Wood</td>
+                                <td>For coffin</td>
+                                <td>87</td>
+                            </tr>
+                            <tr>
+                                <td>Columbary Vault</td>
+                                <td>Urn</td>
+                                <td>Lalagyanan ng abo</td>
+                                <td>902</td>
+                            </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
-                <script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js'></script>
-
-
-                <script src='http://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js'></script>
-                <script type="text/javascript" src = "../js/index.js"></script>
             </div>
+            <script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js'></script>
+            <script src='http://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js'></script>
+            <script type="text/javascript" src = "../js/index.js"></script>
         </div>
 </div>
-
-<footer class="page-footer" style = "background-color: #ffa000;">
-    <div class="container">
-        <div class="row">
-            <div class="col l6 s12">
-                <h5 class="white-text">Footer Content</h5>
-                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
-            </div>
-            <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Links</h5>
-                <ul>
-                    <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="footer-copyright">
-        <div class="container">
-            © 2014 Copyright Text
-            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-        </div>
-    </div>
-</footer>
-
 </body>
 </html>
 
