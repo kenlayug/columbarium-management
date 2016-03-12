@@ -53,6 +53,7 @@
 		<mapper resource="columbarium/dao/mybatis/mappers/RequirementMapper.xml"/>
 		<mapper resource="columbarium/dao/mybatis/mappers/FloorMapper.xml"/>
 		<mapper resource="columbarium/dao/mybatis/mappers/BlockMapper.xml"/>
+		<mapper resource="columbarium/dao/mybatis/mappers/UnitMapper.xml"/>
 	
 	</mappers>
 	

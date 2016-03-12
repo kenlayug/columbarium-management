@@ -16,13 +16,54 @@
          	<result-type name="tiles" 
          	class="org.apache.struts2.views.tiles.TilesResult" />
       	</result-types>
+      	
+      	<interceptors>
+    		
+    		<interceptor name="loginInterceptor" class="columbarium.interceptors.log.LoginInterceptor"/>
+    		<interceptor name="userInterceptor" class="columbarium.interceptors.log.UserInterceptor"/>
+    		
+    		<interceptor-stack name="userLogin?">
+    			<interceptor-ref name="loginInterceptor"/>
+    			<interceptor-ref name="defaultStack"></interceptor-ref>
+    		</interceptor-stack>
+    		
+    	</interceptors>
+    	
+    	<default-interceptor-ref name="userLogin?"></default-interceptor-ref>
+    	
+    	<global-results>
+    		<result name="login" type="redirect">/login</result>
+    	</global-results>
      
      	<action name="*" class="columbarium.actions.ChainAction">
+     		<interceptor-ref name="defaultStack"></interceptor-ref>
+     		<interceptor-ref name="userInterceptor"></interceptor-ref>
      		<result name="success">/tiles/login.jsp</result>
+     		<result name="exist" type="redirect">/item/</result>
      	</action>
      
      	<action name="login" class="columbarium.actions.ChainAction">
+     		<interceptor-ref name="defaultStack"></interceptor-ref>
+     		<interceptor-ref name="userInterceptor"></interceptor-ref>
      		<result name="success">/tiles/login.jsp</result>
+     		<result name="exist" type="redirect">/item/</result>
+     	</action>
+     	
+     	<action name="login/" class="columbarium.actions.ChainAction">
+     		<result name="success" type="redirect">/login</result>
+     	</action>
+     	
+     	<action name="loginAccount" class="columbarium.actions.log.LoginAction">
+     		<interceptor-ref name="defaultStack"></interceptor-ref>
+     		<interceptor-ref name="userInterceptor"></interceptor-ref>
+     		<result name="success" type="redirect">/item/</result>
+     		<result name="failed-incorrect-password" type="redirect">/login/</result>
+     		<result name="failed-not-found" type="redirect">/login/</result>
+     		<result name="exist" type="redirect">/item/</result>
+     	</action>
+     	
+     	<action name="logout" class="columbarium.actions.log.LogoutAction">
+     		<result name="success" type="redirect">/login</result>
      	</action>
      
      	<action name="item" class="columbarium.actions.ChainAction">

@@ -173,7 +173,7 @@
 			INSERT INTO tblPackageService(packageIdFK, serviceIdFK, intStatus)
 			VALUES (
 				#{packageId},
-				(SELECT serviceId FROM tblService WHERE strServiceName LIKE #{service.strServiceName} LIMIT 1),
+				#{service.serviceId},
 				1
 			)
 		</insert>
@@ -182,7 +182,7 @@
 			INSERT INTO tblPackageItem(packageIdFK, itemIdFK, intStatus)
 			VALUES (
 				#{packageId},
-				(SELECT itemId FROM tblItem WHERE strItemName LIKE #{item.strItemName} LIMIT 1),
+				#{item.itemId},
 				1
 			)
 		</insert>
@@ -205,28 +205,28 @@
 			UPDATE tblPackageItem
 			SET intStatus = 0
 			WHERE packageIdFK = #{packageId}
-				AND itemIdFK = (SELECT itemId FROM tblItem WHERE strItemName LIKE #{item.strItemName})
+				AND itemIdFK = #{item.itemId}
 		</update>
 		
 		<update id="removeServiceFromPackage">
 			UPDATE tblPackageService
 			SET intStatus = 0
 			WHERE packageIdFK = #{packageId}
-				AND serviceIdFK = (SELECT serviceId FROM tblService WHERE strServiceName LIKE #{service.strServiceName})
+				AND serviceIdFK = #{service.serviceId}
 		</update>
 		
 		<update id="upItemToPackage">
 			UPDATE tblPackageItem
 			SET intStatus = 1
 			WHERE packageIdFK = #{packageId}
-				AND itemIdFK = (SELECT itemId FROM tblItem WHERE strItemName LIKE #{item.strItemName})
+				AND itemIdFK = #{item.itemId}
 		</update>
 		
 		<update id="upServiceToPackage">
 			UPDATE tblPackageService
 			SET intStatus = 1
 			WHERE packageIdFK = #{packageId}
-				AND serviceIdFK = (SELECT serviceId FROM tblService WHERE strServiceName LIKE #{service.strServiceName})
+				AND serviceIdFK = #{service.serviceId}
 		</update>
 		
 		<update id="deactivatePackage">

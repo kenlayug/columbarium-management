@@ -17,10 +17,22 @@
     <link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/css/materialize.min.css"  media="screen,projection"/>
     <script type="text/javascript" src="<%=request.getContextPath()%>/js/materialize.min.js"></script>
 
+	<style>
+		@font-face {
+		    font-family: myFirstFont;
+		    src: url(../fonts/KGBlankSpaceSketch.ttf);
+		}
+		
+		@font-face {
+		    font-family: myFirstFont1;
+		    src: url(../fonts/NEOTERICc%20-%20Bold%20DEMO%20VERSION.ttf);
+		}
+		
+	</style>
+
     <!-- Import File -->
     <script type="text/javascript" src = "<%=request.getContextPath()%>/js/Login_Final.js"></script>
-    <link href="<%=request.getContextPath()%>/css/Login_Final.css" rel="stylesheet" type="text/css"/>
-	<title>Login</title>
+    <title>Login</title>
 </head>
 <body style = "background-color: #ff8f00">
 
@@ -35,19 +47,23 @@
         <div class="row" style = "padding-left: 30px; padding-right: 30px; ">
             <div class="col s12">
                 <div class="row">
+                	<form action="loginAccount" method="post">
                     <div class="input-field col s12">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="icon_prefix" type="text" class="validate">
+                        <input id="icon_prefix" type="text" class="validate" name="username">
                         <label for="icon_prefix">Username</label>
                     </div>
                     <div class="input-field col s12">
                         <i class="material-icons prefix">lock</i>
-                        <input id="icon_telephone" type="tel" class="validate">
+                        <input id="icon_telephone" type="password" class="validate" name="password">
                         <label for="icon_telephone">Password</label>
                     </div>
                     <br>
-                    <button type = "submit" name = "action" class="btn blue right" style = "width: 165px; margin-top: 10px; margin-right: 10px;">register</button>
+                    
                     <button type = "submit" name = "action" class="btn blue right" style = "width: 165px; margin-top: 10px; margin-right: 10px;">Login</button>
+                	</form>
+                	<button type = "submit" name = "action" class="btn blue right" style = "width: 165px; margin-top: 10px; margin-right: 10px;">register</button>
+                    
                 </div>
             </div>
         </div>

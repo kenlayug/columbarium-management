@@ -18,8 +18,8 @@
 	<script src='http://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js'></script>
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js'></script>
 
-    <link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen,projection"/>
-    <script type="text/javascript" src="../js/materialize.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/css/materialize.min.css"  media="screen,projection"/>
+    <script type="text/javascript" src="<%=request.getContextPath()%>/js/materialize.min.js"></script>
 				
 	
 </head>

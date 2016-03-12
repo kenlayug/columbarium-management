@@ -11,12 +11,41 @@
          	<result-type name="tiles" 
          	class="org.apache.struts2.views.tiles.TilesResult" />
       	</result-types>
-  		 
+  		
+  		<interceptors>
+    		
+    		<interceptor name="loginInterceptor" class="columbarium.interceptors.log.LoginInterceptor"/>
+    		
+    		<interceptor-stack name="userLogin?">
+    			<interceptor-ref name="loginInterceptor"/>
+    			<interceptor-ref name="defaultStack"></interceptor-ref>
+    		</interceptor-stack>
+    		
+    	</interceptors>
+    	
+    	<default-interceptor-ref name="userLogin?"></default-interceptor-ref>
+    	
+    	<global-results>
+    		<result name="login" type="redirect">/login</result>
+    	</global-results>
+  		
   		<action name="*" class="columbarium.actions.unit.InitializeUnitScreenAction">
   			<result name="success" type="tiles">unit-maintenance</result>
   		</action>
   		
   		<action name="getUnitsFromBlock" class="columbarium.actions.unit.GetAllUnitFromBlockAction">
+  			<result name="success" type="json"></result>
+  		</action>
+  		
+  		<action name="getUnitById" class="columbarium.actions.unit.GetUnitByIdAction">
+  			<result name="success" type="json"></result>
+  		</action>
+  		
+  		<action name="deactivate" class="columbarium.actions.unit.DeactivateUnitAction">
+  			<result name="success" type="json"></result>
+  		</action>
+  		
+  		<action name="activate" class="columbarium.actions.unit.ActivateUnitAction">
   			<result name="success" type="json"></result>
   		</action>
   	 
