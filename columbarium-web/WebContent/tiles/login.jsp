@@ -17,10 +17,22 @@
     <link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/css/materialize.min.css"  media="screen,projection"/>
     <script type="text/javascript" src="<%=request.getContextPath()%>/js/materialize.min.js"></script>
 
+	<style>
+		@font-face {
+		    font-family: myFirstFont;
+		    src: url(../fonts/KGBlankSpaceSketch.ttf);
+		}
+		
+		@font-face {
+		    font-family: myFirstFont1;
+		    src: url(../fonts/NEOTERICc%20-%20Bold%20DEMO%20VERSION.ttf);
+		}
+		
+	</style>
+
     <!-- Import File -->
     <script type="text/javascript" src = "<%=request.getContextPath()%>/js/Login_Final.js"></script>
-    <link href="<%=request.getContextPath()%>/css/Login_Final.css" rel="stylesheet" type="text/css"/>
-	<title>Login</title>
+    <title>Login</title>
 </head>
 <body style = "background-color: #ff8f00">
 
@@ -43,7 +55,7 @@
                     </div>
                     <div class="input-field col s12">
                         <i class="material-icons prefix">lock</i>
-                        <input id="icon_telephone" type="tel" class="validate" name="password">
+                        <input id="icon_telephone" type="password" class="validate" name="password">
                         <label for="icon_telephone">Password</label>
                     </div>
                     <br>

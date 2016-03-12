@@ -12,6 +12,7 @@ import columbarium.business.ItemBusiness;
 import columbarium.business.PackageBusiness;
 import columbarium.business.RequirementBusiness;
 import columbarium.business.ServiceBusiness;
+import columbarium.business.UnitBusiness;
 import columbarium.business.impl.BlockBusinessImpl;
 import columbarium.business.impl.BuildingBusinessImpl;
 import columbarium.business.impl.EmployeeBusinessImpl;
@@ -20,6 +21,7 @@ import columbarium.business.impl.ItemBusinessImpl;
 import columbarium.business.impl.PackageBusinessImpl;
 import columbarium.business.impl.RequirementBusinessImpl;
 import columbarium.business.impl.ServiceBusinessImpl;
+import columbarium.business.impl.UnitBusinessImpl;
 import columbarium.dao.BlockRepository;
 import columbarium.dao.BuildingRepository;
 import columbarium.dao.ConnectionManager;
@@ -29,6 +31,7 @@ import columbarium.dao.ItemRepository;
 import columbarium.dao.PackageRepository;
 import columbarium.dao.RequirementRepository;
 import columbarium.dao.ServiceRepository;
+import columbarium.dao.UnitRepository;
 import columbarium.dao.mybatis.MybatisBlockRepository;
 import columbarium.dao.mybatis.MybatisBuildingRepository;
 import columbarium.dao.mybatis.MybatisConnectionManager;
@@ -38,12 +41,14 @@ import columbarium.dao.mybatis.MybatisItemRepository;
 import columbarium.dao.mybatis.MybatisPackageRepository;
 import columbarium.dao.mybatis.MybatisRequirementRepository;
 import columbarium.dao.mybatis.MybatisServiceRepository;
+import columbarium.dao.mybatis.MybatisUnitRepository;
 import columbarium.service.BlockService;
 import columbarium.service.BuildingService;
 import columbarium.service.EmployeeService;
 import columbarium.service.FloorService;
 import columbarium.service.ItemService;
 import columbarium.service.ServiceService;
+import columbarium.service.UnitService;
 import columbarium.service.PackageService;
 import columbarium.service.RequirementService;
 import columbarium.service.impl.BlockServiceImpl;
@@ -54,6 +59,7 @@ import columbarium.service.impl.ItemServiceImpl;
 import columbarium.service.impl.PackageServiceImpl;
 import columbarium.service.impl.RequirementServiceImpl;
 import columbarium.service.impl.ServiceServiceImpl;
+import columbarium.service.impl.UnitServiceImpl;
 
 public class MainContextListener implements ServletContextListener{
 
@@ -151,6 +157,16 @@ public class MainContextListener implements ServletContextListener{
 			((BlockServiceImpl)blockService).setBlockBusiness(blockBusiness);
 			((BlockServiceImpl)blockService).setBlockRepository(blockRepository);
 			servletContext.setAttribute("blockService", blockService);
+			
+			//Unit
+			UnitRepository unitRepository =
+					new MybatisUnitRepository((MybatisConnectionManager)connectionManager);
+			UnitBusiness unitBusiness = new UnitBusinessImpl();
+			((UnitBusinessImpl)unitBusiness).setUnitRepository(unitRepository);
+			UnitService unitService = new UnitServiceImpl();
+			((UnitServiceImpl)unitService).setUnitBusiness(unitBusiness);
+			((UnitServiceImpl)unitService).setUnitRepository(unitRepository);
+			servletContext.setAttribute("unitService", unitService);
 			
 			System.out.println("Context Listener initialized...");
 			

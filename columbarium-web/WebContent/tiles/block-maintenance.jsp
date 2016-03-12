@@ -92,6 +92,7 @@
 							                                                        	<c:forEach items="${floor.blockList }" var="block">
 							                                                        		<div class="collapsible-body">
 									                                                            <p>${block.strBlockName }
+									                                                            	<button value="${block.blockId}" name = "action" class="btn tooltipped modal-trigger btn-floating yellow right" data-position = "bottom" data-delay = "30" data-tooltip = "Update Floor Price" style = "margin-left: 5px;" onclick = "openConfigurePrice(this.value)" data-target="modalUpdatePrice"><i class="material-icons">&#8369</i></button>
 									                                                                <button value="${block.blockId }" name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "Deactivate Block"  style = "margin-left: 5px;" onclick = "openDeactivateBlock(this.value)" data-target="modalDeactivateBlock"><i class="material-icons">not_interested</i></button>
 									                                                                <button value="${block.blockId }" name = "action" class="btn tooltipped modal-trigger btn-floating green right" data-position = "bottom" data-delay = "30" data-tooltip = "Update Block" style = "margin-left: 5px;" onclick = "openUpdateBlock(this.value)"><i class="material-icons">mode_edit</i></button>
 									                                                            </p>
@@ -275,7 +276,7 @@
             </div>
             
  	        <!-- Modal Price -->
-            <div id="modalUpdateFloorPrice" class="modal" style = "width: 700px;">
+            <div id="modalUpdatePrice" class="modal" style = "width: 700px;">
                 <div class = "modal-header" style = "height: 55px;">
                     <h4 style = "padding-left: 20px; font-size: 30px; ">Floor Price</h4>
                 </div>
@@ -617,6 +618,10 @@
     function openDeactivateBlock(blockId){
     	$('#blockIdDeactivate').val(blockId);
     	$('#modalDeactivateBlock').openModal();
+    }
+    
+    function openConfigurePrice(blockId){
+    	$('#modalUpdatePrice').openModal();
     }
     
     function deactivateBlock(){

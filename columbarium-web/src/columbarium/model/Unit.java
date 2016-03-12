@@ -1,9 +1,13 @@
 package columbarium.model;
 
+import org.apache.struts2.ServletActionContext;
+
+import columbarium.service.UnitService;
+
 public class Unit {
 	
 	private int unitId;
-	private int blockId;//
+	private int blockId;
 	private double dblPrice;
 	private String strUnitType;
 	private int intColumnNo;
@@ -12,16 +16,16 @@ public class Unit {
 	private int buildingId;
 	private int intStatus;
 	
-	public void setIntStatus(int intStatus){
+	public void setStatus(int intStatus){
 		this.intStatus = intStatus;
 	}
 	public String getStatus(){
 		
 		switch(intStatus){
 		case 1: return "Active";
-		case 2: return "Inactive";
-		case 3: return "Reserved";
-		case 4: return "Owned";
+		case 0: return "Inactive";
+		case 2: return "Reserved";
+		case 3: return "Owned";
 		}
 		return null;
 		
@@ -73,6 +77,24 @@ public class Unit {
 	}
 	public void setStrUnitType(String strUnitType) {
 		this.strUnitType = strUnitType;
+	}
+	
+	public static Unit getUnitById(int unitId){
+		UnitService unitService = (UnitService)ServletActionContext.getServletContext()
+				.getAttribute("unitService");
+		return unitService.getUnitById(unitId);
+	}
+	
+	public static String deactivate(int unitId){
+		UnitService unitService = (UnitService)ServletActionContext.getServletContext()
+				.getAttribute("unitService");
+		return unitService.deactivateUnit(unitId);
+	}
+	
+	public static String activate(int unitId){
+		UnitService unitService = (UnitService)ServletActionContext.getServletContext()
+				.getAttribute("unitService");
+		return unitService.activateUnit(unitId);
 	}
 
 }

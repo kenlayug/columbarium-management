@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
-	<link href="<%=request.getContextPath()%>/css/vaults.css" rel="stylesheet" type="text/css"/>
 <!-- Section -->
 <div class = col s12 >
     <div class = "row">
@@ -42,7 +41,7 @@
 							                                                        	<c:forEach items="${floor.blockList }" var="block">
 							                                                        		<div class="collapsible-body">
 									                                                            <p>${block.strBlockName }
-									                                                            	<button value="${block.blockId }" name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "View Block" style = "margin-left: 5px;" onclick="viewUnits(this.value)"><i class="material-icons">pageview</i></button>
+									                                                            	<button value="${block.blockId }" name = "action" class="btn tooltipped btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "View Block" style = "margin-left: 5px;" onclick="viewUnits(this.value)" ><i class="material-icons">pageview</i></button>
                                                             									</p>
 									                                                        </div>
 							                                                        	</c:forEach>
@@ -86,23 +85,21 @@
                                     <div class="modal-header">
                                         <label style="font-size: large">UNIT STATUS</label>
                                     </div>
-                                    <form class="cmxform" id="ownershipForm" action="Unit_Maintenance.html" method="get" autocomplete="off">
                                         <div class="row">
                                             <div class="input-field col s3">
-                                                <label style="font-size: 20px">Status: <span style="color: green">Activate</span></label>
+                                            	<input id="unitToToggle" type="hidden">
+                                                <label style="font-size: 20px">Status: <span style="color: green" id="unitStatus"></span></label>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="input-field col s3">
                                             </div>
                                             <div class="input-field col s6">
-                                                <button class="waves-effect waves-light btn red right" style = "width: 135px;  margin-top: 20px; margin-bottom: 10px;" type="submit">Deactivate</button>
-                                                <button class="waves-effect waves-light btn red right" style = "width: 130px;  margin-top: 20px; margin-bottom: 10px; margin-right: 10px; cursor: not-allowed;" type="submit" disabled>Activate</button>
+                                                <button onclick="deactivateUnit()" id="btnDeactivate" class="waves-effect waves-light btn red right" style = "width: 135px;  margin-top: 20px; margin-bottom: 10px;" type="submit">Deactivate</button>
+                                                <button onclick="activateUnit()" id="btnActivate" class="waves-effect waves-light btn red right" style = "width: 130px;  margin-top: 20px; margin-bottom: 10px; margin-right: 10px;" type="submit">Activate</button>
                                             </div>
                                         </div>
-                                    </form>
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -128,21 +125,13 @@
 
             $(this).next("input").attr("disabled", false)
     });
-
-    jQuery.validator.setDefaults({
-            debug: true,
-            success: "valid"
-    });
-    $( "#myform" ).validate({
-            rules: {
-                    field: {
-                            required: true
-                    }
-            }
-    });
+    
+    $("#ownershipForm").submit(function(e){
+	    return false;
+	});
     
     function viewUnits(blockId){
-    	
+    	Materialize.toast('View Units...', 3000, 'rounded');
     	$.ajax({
     		type : "POST",
     		url : "getUnitsFromBlock",
@@ -153,14 +142,18 @@
     		async : true,
     		success : function(data){
     			var intLevelNo = data.block.intLevelNo;
+    			$('#tableUnits tbody').html('');
     			for (var intCtr = 0; intCtr < data.block.unitList.length;){
-    				/*var tableRow = $('#tableUnits').find('tbody')
-    					.append($('<tr>'));*/
     				var strAppend = "";
     				for (var intSubCtr = 0; intSubCtr < intLevelNo; intSubCtr++, intCtr++){
-    					Materialize.toast(data.block.unitList[intCtr].unitId, 3000, 'rounded');
-    					
-    					strAppend = strAppend + '<td><button class="btn modal-trigger" href="#modal1">'+data.block.unitList[intCtr].unitId+'</button></td>';
+    					var status = data.block.unitList[intCtr].status;
+    					var color = "";
+    					if (status === "Active"){
+    						color = "green";
+    					}else{
+    						color = "red";
+    					}
+    					strAppend = strAppend + '<td><button value="'+data.block.unitList[intCtr].unitId+'" data-target="modal1" class="btn modal-trigger '+color+'" onclick="openStatusUnit(this.value)">'+data.block.unitList[intCtr].unitId+'</button></td>';
     				}
     				$('#tableUnits tbody').append('<tr>'+strAppend+'</tr>');
     			}
@@ -171,6 +164,105 @@
     		}
     	});
     	
+    }
+    
+    function openStatusUnit(unitId){
+    	
+    	$('#modal1').openModal();
+    	$.ajax({
+    		type : "POST",
+    		url : "getUnitById",
+    		data : {
+    			"unitId" : unitId
+    		},
+    		dataType : "json",
+    		async : true,
+    		success : function(data){
+    			
+	    		$('#unitStatus').text(data.unit.status);   			
+    			$('#unitToToggle').val(unitId);
+    			
+    			
+    		},
+    		error : function(data){
+    			Materialize.toast('Error occured.', 3000, 'rounded');
+    		}
+    	});
+    	
+    }
+    
+    function deactivateUnit(){
+    	
+    	var unitId = document.getElementById("unitToToggle").value;
+    	$.ajax({
+    		type : "POST",
+    		url : "deactivate",
+    		data : {
+    			"unitId" : unitId
+    		},
+    		dataType : "json",
+    		async : true,
+    		success : function(data){
+    			if (data.status === "success"){
+	    			Materialize.toast('Unit is successfully deactivated.', 3000, 'rounded');
+	    			$('#modal1').closeModal();
+	    			getBlock(unitId);
+    			}else if (data.status === "failed-database"){
+    				Materialize.toast('Please check your connection.', 3000, 'rounded');
+    			}
+    		},
+    		error :function(data){
+    			Materialize.toast('Error occured.', 3000, 'rounded');
+    		}
+    	});
+    	
+    }
+    
+    function getBlock(unitId){
+    	
+    	$.ajax({
+    		type : "POST",
+    		url : "getUnitById",
+    		data : {
+    			"unitId" : unitId
+    		},
+    		dataType : "json",
+    		async : true,
+    		success : function(data){
+    			Materialize.toast('Updating table unit...'+data.unit.blockId, 3000, 'rounded');
+    			viewUnits(data.unit.blockId);
+    		},
+    		error : function(data){
+    	    	Materialize.toast('Error occured...', 3000, 'rounded');
+    		}
+    	});
+    	
+    }
+    
+    function activateUnit(){
+    	var unitId = document.getElementById("unitToToggle").value;
+    	
+    	$.ajax({
+    		type : "POST",
+    		url : "activate",
+    		data : {
+    			"unitId" : unitId
+    		},
+    		dataType : "json",
+    		async : true,
+    		success : function(data){
+    			if (data.status === "success"){
+    				Materialize.toast('Unit is successfully activated.', 3000, 'rounded');
+    				$('#modal1').closeModal();
+    				getBlock(unitId);
+    			}else if (data.status === "failed-database"){
+    				Materialize.toast('Please check your connection.', 3000, 'rounded');
+    			}
+    		},
+    		error :function(data){
+    			Materialize.toast('Error occured.', 3000, 'rounded');
+    		}
+    	});
     }
     
     </script>

@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 
 import columbarium.dao.PackageRepository;
 import columbarium.dao.mybatis.mappers.PackageMapper;
+import columbarium.dao.mybatis.mappers.ServiceMapper;
 import columbarium.model.Item;
 import columbarium.model.Package;
 import columbarium.model.PackageItem;
@@ -194,6 +195,7 @@ public class MybatisPackageRepository extends MybatisClient implements PackageRe
 		try{
 			
 			PackageMapper packageMapper = sqlSession.getMapper(PackageMapper.class);
+			ServiceMapper serviceMapper = sqlSession.getMapper(ServiceMapper.class);
 			if (packageMapper.checkIfExisting(packageTo) > 0){
 				
 				for (Service service : packageTo.getServiceList()) {
@@ -221,6 +223,7 @@ public class MybatisPackageRepository extends MybatisClient implements PackageRe
 					
 					PackageItem packageItem =
 							new PackageItem(packageMapper.getPackageId(packageTo), item);
+					System.out.println(packageItem.getPackageId()+"  "+item.getItemId()+" -- "+item.getStrItemName());
 					if (packageMapper.checkPackageIfExistingItem(packageItem) == 0){
 						packageMapper.addItemToPackage(packageItem);
 					}else{
@@ -234,6 +237,7 @@ public class MybatisPackageRepository extends MybatisClient implements PackageRe
 					if (!packageTo.getItemList().contains(item)){
 						PackageItem packageItem =
 								new PackageItem(packageMapper.getPackageId(packageTo), item);
+						System.out.println(item.getItemId()+" -- "+item.getStrItemName());
 						packageMapper.removeItemFromPackage(packageItem);
 					}
 				}
