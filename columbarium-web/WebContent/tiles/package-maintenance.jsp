@@ -13,10 +13,20 @@
 <div class = "col s12" >
     <h2 style = "font-size: 30px;padding-left:50px; margin-bottom: 0px; margin-top: 0px;">Package Maintenance</h2>
 
+<<<<<<< HEAD
         <!-- Modal Create -->
         <form id="modalCreatePackage" class="modal" style = "width: 700px;">
             <div class = "modal-header" style = "height: 55px;">
                 <h4 style = "padding-left: 20px; font-size: 30px;">Create Package</h4>
+=======
+
+
+    <!-- Create Package -->
+    <form class = "col s4" id="formCreate">
+        <div class = "aside aside z-depth-3" style = "height: 450px; margin-left: 20px;">
+            <div class = "header">
+                <h4 style = "font-size: 30px; margin-top: 0px; padding-top: 10px;">Package Maintenance</h4>
+>>>>>>> 00daac307aa3207b9c3fd4d80632c54b6f9d35b0
             </div>
             <div class="modal-content">
                 <i class = "left" style = "margin-top: 0px; padding-left: 10px; color: red;">*Required Fields</i>

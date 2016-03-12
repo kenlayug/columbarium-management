@@ -25,6 +25,7 @@
                 </div>
 
                     <div class = "row" style = "margin-top: 10px;">
+<<<<<<< HEAD
                         <div class = "col s3">
                             <button id = "configure" name = "action" class="btn tooltipped btn-floating green" data-position = "bottom" data-delay = "25" data-tooltip = "Configured Floor" style = "margin-left: 30px;"><i class="material-icons">settings</i></button>
                         </div>
@@ -37,6 +38,16 @@
                         <div class = "s3">
                             <button id = "notConfiguredFloorPrice" name = "action" class="btn tooltipped btn-floating red" data-position = "bottom" data-delay = "25" data-tooltip = "Not yet Configured Floor Price" style = "margin-left: 30px;"><i class="material-icons medium">&#8369</i></button>
                         </div>
+=======
+                        <div class = "col s6">
+                            <button id = "configure" name = "action" class="btn-floating green" data-position = "bottom" data-delay = "25" data-tooltip = "" style = "margin-left: 30px;"><i class="material-icons">settings</i></button>
+							<p>Configured Floor</p>
+						</div>
+                        <div class = "col s6">
+                            <button id = "notConfigure" name = "action" class="btn-floating black" data-position = "bottom" data-delay = "25" data-tooltip = "Not yet Configured Floor" style = "margin-left: 30px;"><i class="material-icons">settings</i></button>
+    						<p>Not yet Configured Floor</p>
+						</div>
+>>>>>>> 00daac307aa3207b9c3fd4d80632c54b6f9d35b0
                     </div>
             </div>
             </div>
@@ -121,6 +132,7 @@
                     </div>
                 </div>
 
+<<<<<<< HEAD
                 <div class="modal-content">
                     <div class="row" style = "padding-left: 20px;">
                         <h5 style = "font-family: arial;">Block size per floor:</h5>
@@ -134,6 +146,13 @@
                         </div>
                     </div>
                 </div>
+=======
+			<div class="modal-footer">
+                          <button type = "submit" onclick="configureFloor()" name = "action" class="btn green" style = "margin-left: 10px; ">Confirm</button>
+
+                          <button name = "action" class="btn green modal-close">Cancel</button>
+                      </div>
+>>>>>>> 00daac307aa3207b9c3fd4d80632c54b6f9d35b0
 
 
                 <!-- Checkbox -->
@@ -193,9 +212,13 @@
 
                 </div>
                 <div class="modal-footer">
+<<<<<<< HEAD
                     <button name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
+=======
+                    <button onclick="createFloorType()" name = "action" class="btn green" style = "margin-left: 10px; ">Confirm</button>
+>>>>>>> 00daac307aa3207b9c3fd4d80632c54b6f9d35b0
                     </form>
-                    <button name = "action" class="waves-effect waves-light btn red modal-close">Cancel</button>
+                    <button name = "action" class="btn green modal-close">Cancel</button>
                 </div>
             </div>
 
@@ -262,10 +285,14 @@
                         </div>
                     </div>
                 </div>
+<<<<<<< HEAD
                 <div class="modal-footer">
                     <button name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
                     <button name = "action" class="waves-effect waves-light btn red modal-close">Cancel</button>
                 </div>
+=======
+                <button name = "action" class="btn green modal-close right" style = "margin-bottom: 10px; margin-right: 30px;">DONE</button>
+>>>>>>> 00daac307aa3207b9c3fd4d80632c54b6f9d35b0
             </div>
 
 

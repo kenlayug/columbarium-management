@@ -10,7 +10,11 @@
 
 <div class = "col s12" >
     <div class = "row">
+<<<<<<< HEAD
             <h2 style = "font-size: 30px; padding-left: 70px; margin-top: 0px; margin-bottom: 0px;">Service Maintenance</h2>
+=======
+		<div class = "col s4">
+>>>>>>> 00daac307aa3207b9c3fd4d80632c54b6f9d35b0
 
 		<!-- Modal Create -->
 		<div id="modalCreateService" class="modal" style = "width: 650px;">
@@ -19,8 +23,17 @@
 			</div>
 			<form class="modal-content">
 
+<<<<<<< HEAD
 				<button name = "action" class="modal-trigger waves-effect waves-light btn red left" style = "margin-left: 20px;" href = "#modalRequirement">Requirement</button>
 				<br><br>
+=======
+			<!-- Create Service -->
+		<form class = "col s12" id="formCreate">
+			<div class = "aside aside z-depth-3" style = "height: 440px;">
+				<div class = "header">
+					<h4 style = "font-size: 30px; margin-top: 0px; padding-top: 10px;">Service Maintenance</h4>
+				</div>
+>>>>>>> 00daac307aa3207b9c3fd4d80632c54b6f9d35b0
 				<div class="row" style = "padding-left: 10px;" id="formCreate">
 					<div class="input-field col s6">
 						<input id="serviceName" type="text" class="validate" required = "" aria-required = "true" pattern = "[A-Za-z0-9\s]{1,29}">
@@ -37,6 +50,7 @@
 						<div class="input-field col s12">
 							<input id="serviceDesc" type="text" class="validate">
 							<label for="serviceDesc" data-error = "Invalid Format." data-success = "">Service Description</label>
+<<<<<<< HEAD
 							<i class = "left" style = "margin-top: 20px; padding-left: 0px; color: red;">*Required Fields</i>
 						</div>
 					</div>
@@ -47,6 +61,20 @@
 					<button name = "action" class="waves-effect waves-light modal-close btn red" style = "margin-left: 20px;">Cancel</button>
 				</div>
 			</form>
+=======
+							<i class = "left" style = "margin-top: 0px; padding-left: 0px; color: red;">*Required Fields</i>
+						</div>
+					</div>
+				</div>
+				<div class = "row" style = "margin-top: -20px;">
+				<button name = "action" class="modal-trigger btn green left" style = "font-size: 10px; width: 180px; margin-left: 20px;" href = "#modalRequirement">Choose Requirement</button>
+				<button name = "action" class="btn tooltipped modal-trigger btn green right" data-position = "bottom" data-delay = "30" data-tooltip = "View Requirement/s" style = "font-size: 10px; width: 180px; margin-right: 10px;" href = "#modalListOfRequirement">View Requirement/s</button>
+				</div>
+				<button onclick = "createService()" type = "submit" name = "action" class="btn green right" style = "margin-top: 0px; margin-right: 10px;">Create</button>
+			</div>
+		</form>
+		</div>
+>>>>>>> 00daac307aa3207b9c3fd4d80632c54b6f9d35b0
 
 		</div>
 

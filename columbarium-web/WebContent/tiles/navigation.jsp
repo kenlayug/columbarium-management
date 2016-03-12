@@ -72,6 +72,37 @@
 	
 	<!-- Dropdown Utilities -->
 	<ul id="dropdown5" class="dropdown-content">
+<<<<<<< HEAD
 	    <li><a href="Employee.html">Employee</a></li>
 	    <li class="divider"></li>
 	</ul>
+=======
+	    <li><a href="<%=request.getContextPath()%>">Employee</a></li>
+	</ul>
+
+	<!-- Dropdown Utilities -->
+	<ul id="dropdown6" class="dropdown-content">
+
+		<li><a href="<%=request.getContextPath()%>">Log Out</a></li>
+
+		<li><a href="<%=request.getContextPath()%>/logout">Log Out</a></li>
+
+	</ul>
+
+
+
+
+	<script>
+		$('.dropdown-button').dropdown({
+					inDuration: 300,
+					outDuration: 225,
+					constrain_width: false, // Does not change width of dropdown to that of the activator
+					hover: false, // Activate on hover
+					gutter: 0, // Spacing from edge
+					belowOrigin: true, // Displays dropdown below the button
+					alignment: 'left' // Displays dropdown with edge aligned to the left of button
+				}
+		);
+
+	</script>
+>>>>>>> 00daac307aa3207b9c3fd4d80632c54b6f9d35b0
