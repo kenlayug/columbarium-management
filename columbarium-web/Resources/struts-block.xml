@@ -27,6 +27,18 @@
       	<action name="getAllBlocks" class="columbarium.actions.block.GetAllBlocksAction">
       		<result name="success" type="json"></result>
       	</action>
+      	
+      	<action name="update" class="columbarium.actions.block.UpdateBlockAction">
+      		<result name="success" type="json"></result>
+      	</action>
+      	
+      	<action name="getBlockById" class="columbarium.actions.block.GetBlockAction">
+      		<result name="success" type="json"></result>
+      	</action>
+      	
+      	<action name="deactivate" class="columbarium.actions.block.DeactivateBlockAction">
+      		<result name="success" type="json"></result>
+      	</action>
   	 
   	</package> 
    

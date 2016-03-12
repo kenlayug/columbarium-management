@@ -80,10 +80,28 @@ public class Block {
 		return blockService.getBlock(strBlockName);
 	}
 	
+	public static Block getBlockById(int blockId){
+		BlockService blockService = (BlockService)ServletActionContext.getServletContext()
+				.getAttribute("blockService");
+		return blockService.getBlockById(blockId);
+	}
+	
 	public static List<Block> getAllBlocks(){
 		BlockService blockService = (BlockService)ServletActionContext.getServletContext()
 				.getAttribute("blockService");
 		return blockService.getAllBlocks();
+	}
+	
+	public String update(){
+		BlockService blockService = (BlockService)ServletActionContext.getServletContext()
+				.getAttribute("blockService");
+		return blockService.updateBlock(this);
+	}
+	
+	public static String deactivate(int blockId){
+		BlockService blockService = (BlockService)ServletActionContext.getServletContext()
+				.getAttribute("blockService");
+		return blockService.deactivateBlock(blockId);
 	}
 	
 }

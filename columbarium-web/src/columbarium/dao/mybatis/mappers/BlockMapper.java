@@ -17,6 +17,8 @@ public interface BlockMapper {
 	
 	public void										updateBlock(Block block);
 	
+	public void										deactivateBlock(Block block);
+	
 	public List<Block>								getAllBlockFromFloor(Floor floor);
 	public List<Block>								getAllBlock();
 	

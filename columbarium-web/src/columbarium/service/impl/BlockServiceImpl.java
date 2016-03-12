@@ -41,4 +41,19 @@ public class BlockServiceImpl implements BlockService{
 		return blockRepository.getAllBlocks();
 	}
 
+	@Override
+	public String updateBlock(Block block) {
+		return blockBusiness.updateBlock(block);
+	}
+
+	@Override
+	public Block getBlockById(int blockId) {
+		return blockBusiness.getBlockById(blockId);
+	}
+
+	@Override
+	public String deactivateBlock(int blockId) {
+		return blockBusiness.deactivateBlock(blockId);
+	}
+
 }

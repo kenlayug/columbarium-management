@@ -116,6 +116,7 @@ public class MybatisBlockRepository extends MybatisClient implements BlockReposi
 				sqlSession.commit();
 				return "success";
 			}
+			System.out.println(block.getBlockId());
 			return "failed-does-not-exist";
 			
 		}catch(Exception e){
@@ -140,6 +141,28 @@ public class MybatisBlockRepository extends MybatisClient implements BlockReposi
 			e.printStackTrace();
 		}
 		return null;
+	}
+
+	@Override
+	public String deactivateBlock(Block block) {
+		
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		try{
+			
+			BlockMapper blockMapper = sqlSession.getMapper(BlockMapper.class);
+			if (blockMapper.checkIfExistingBlock(block) > 0){
+				blockMapper.deactivateBlock(block);
+				sqlSession.commit();
+				return "success";
+			}
+			return "failed-does-not-exist";
+		}catch(Exception e){
+			e.printStackTrace();
+			sqlSession.rollback();
+		}finally{
+			sqlSession.close();
+		}
+		return "failed-database";
 	}
 
 }
