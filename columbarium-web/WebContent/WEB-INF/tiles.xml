@@ -10,7 +10,7 @@
       <put-attribute name="title"			value="Template"/>
       <put-attribute name="navigation"		value="/tiles/navigation.jsp"/>
       <put-attribute name="body"			value="/tiles/body.jsp"/>
-      <put-attribute name="footer"			value="/tiles/footer.jsp"/>
+      <put-attribute name="footer"			value=""/>
     </definition>
    
 	<definition name="item-maintenance" extends="baseLayout">
@@ -41,6 +41,51 @@
  	<definition name="floor-maintenance" extends="baseLayout">
  		<put-attribute name="title"			value="Floor Maintenance"/>
  		<put-attribute name="body"			value="/tiles/floor-maintenance.jsp"/>
+ 	</definition>
+ 	
+ 	<definition name="block-maintenance" extends="baseLayout">
+ 		<put-attribute name="title"			value="Block Maintenance"/>
+ 		<put-attribute name="body"			value="/tiles/block-maintenance.jsp"/>
+ 	</definition>
+ 	
+ 	<definition name="unit-maintenance" extends="baseLayout">
+ 		<put-attribute name="title"			value="Unit Maintenance"/>
+ 		<put-attribute name="body"			value="/tiles/unit-maintenance.jsp"/>
+ 	</definition>
+ 	
+ 	<definition name="inventory-transaction" extends="baseLayout">
+ 		<put-attribute name="title"			value="Inventory"/>
+ 		<put-attribute name="body"			value="/tiles/inventory-transaction.jsp"/>
+ 	</definition>
+ 	
+ 	<definition name="buy-unit-transaction" extends="baseLayout">
+ 		<put-attribute name="title"			value="Buy Unit"/>
+ 		<put-attribute name="body"			value="/tiles/buy-unit-transaction.jsp"/>
+ 	</definition>
+ 	
+ 	<definition name="schedule-transaction" extends="baseLayout">
+ 		<put-attribute name="title"			value="Schedule"/>
+ 		<put-attribute name="body"			value="/tiles/schedule-transaction.jsp"/>
+ 	</definition>
+ 	
+ 	<definition name="manage-unit-transaction" extends="baseLayout">
+ 		<put-attribute name="title"			value="Manage Unit"/>
+ 		<put-attribute name="body"			value="/tiles/manage-unit.jsp"/>
+ 	</definition>
+ 	
+ 	<definition name="collection-transaction" extends="baseLayout">
+ 		<put-attribute name="title"			value="Collection"/>
+ 		<put-attribute name="body"			value="/tiles/collection-transaction.jsp"/>
+ 	</definition>
+ 	
+ 	<definition name="notification-transaction" extends="baseLayout">
+ 		<put-attribute name="title"			value="Notification"/>
+ 		<put-attribute name="body"			value="/tiles/notification-transaction.jsp"/>
+ 	</definition>
+ 	
+ 	<definition name="avail-transaction" extends="baseLayout">
+ 		<put-attribute name="title"			value="Avail"/>
+ 		<put-attribute name="body"			value="/tiles/avail-transaction.jsp"/>
  	</definition>
   
 </tiles-definitions>

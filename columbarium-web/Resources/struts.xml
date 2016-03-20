@@ -35,13 +35,6 @@
     		<result name="login" type="redirect">/login</result>
     	</global-results>
      
-     	<action name="*" class="columbarium.actions.ChainAction">
-     		<interceptor-ref name="defaultStack"></interceptor-ref>
-     		<interceptor-ref name="userInterceptor"></interceptor-ref>
-     		<result name="success">/tiles/login.jsp</result>
-     		<result name="exist" type="redirect">/item/</result>
-     	</action>
-     
      	<action name="login" class="columbarium.actions.ChainAction">
      		<interceptor-ref name="defaultStack"></interceptor-ref>
      		<interceptor-ref name="userInterceptor"></interceptor-ref>
@@ -97,6 +90,39 @@
      	<action name="unit" class="columbarium.actions.ChainAction">
 			<result name="success" type="redirect">/unit/</result>
 		</action>
+		
+		<action name="inventory" class="columbarium.actions.ChainAction">
+			<result name="success" type="tiles">inventory-transaction</result>
+		</action>
+		
+		<action name="inventory/" class="columbarium.actions.ChainAction">
+			<result name="success" type="redirect">/inventory</result>
+		</action>
+		
+		<action name="buy-unit" class="columbarium.actions.ChainAction">
+			<result name="success" type="tiles">buy-unit-transaction</result>
+		</action>
+		
+		<action name="schedule" class="columbarium.actions.ChainAction">
+			<result name="success" type="tiles">schedule-transaction</result>
+		</action>
+		
+		<action name="manage-unit" class="columbarium.actions.ChainAction">
+			<result name="success" type="tiles">manage-unit-transaction</result>
+		</action>
+		
+		<action name="collection" class="columbarium.actions.ChainAction">
+			<result name="success" type="tiles">collection-transaction</result>
+		</action>
+		
+		<action name="notification" class="columbarium.actions.ChainAction">
+			<result name="success" type="tiles">notification-transaction</result>
+		</action>
+		
+		<action name="avail" class="columbarium.actions.ChainAction">
+			<result name="success" type="tiles">avail-transaction</result>
+		</action>
+		
      
      </package>
      

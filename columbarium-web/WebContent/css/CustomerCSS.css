@@ -243,9 +243,6 @@ div.material-table table td:last-child {
 .data-grid table{
     width: 30px;
 }
-.nav-birdifly nav{
-    background-color: #ffa000;
-}
 #dd-btn{
     margin-top: 0;
     height: 100%;
@@ -286,17 +283,7 @@ thead tr th{
 #db-iba{
     background: url("../img/bg.jpg");
 }
-.dropdown-content{
-    margin-top: 45px;
-    background-color: #ffffff;
-    color: #000000;
-}
-.dropdown-content li a:hover{
-    background-color: #dd8b00;
-    font-family: myFirstFont;
-    color: #ffffff;
-    text-shadow: 2px 2px #000000;
-}
+
 .search-customer-update input[type=text] {
     width: 130px;
     box-sizing: border-box;

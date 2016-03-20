@@ -16,11 +16,9 @@
 	            <form class = "col s12" id="formCreate">
 	                <div class = "aside aside z-depth-3" style = "height: 400px;">
 	                    <div class = "header">
-<<<<<<< HEAD
-	                        <h4 style = "font-size: 30px; margin-top: 0px; padding-top: 10px;">Building Form</h4>
-=======
+
 	                        <h4 style = "font-size: 30px; margin-top: 0px; padding-top: 10px;">Building Maintenance</h4>
->>>>>>> 00daac307aa3207b9c3fd4d80632c54b6f9d35b0
+
 	                    </div>
 	
 	                        <div class="row" style = "padding-left: 10px;">

@@ -25,29 +25,15 @@
                 </div>
 
                     <div class = "row" style = "margin-top: 10px;">
-<<<<<<< HEAD
-                        <div class = "col s3">
-                            <button id = "configure" name = "action" class="btn tooltipped btn-floating green" data-position = "bottom" data-delay = "25" data-tooltip = "Configured Floor" style = "margin-left: 30px;"><i class="material-icons">settings</i></button>
-                        </div>
-                        <div class = "col s3">
-                            <button id = "notConfigure" name = "action" class="btn tooltipped btn-floating black" data-position = "bottom" data-delay = "25" data-tooltip = "Not yet Configured Floor" style = "margin-left: 30px;"><i class="material-icons">settings</i></button>
-                        </div>
-                        <div class = "col s3">
-                            <button id = "configuredFloorPrice" name = "action" class="btn tooltipped btn-floating blue" data-position = "bottom" data-delay = "25" data-tooltip = "Configured Floor Price" style = "margin-left: 30px;"><i class="material-icons medium">&#8369</i></button>
-                        </div>
-                        <div class = "s3">
-                            <button id = "notConfiguredFloorPrice" name = "action" class="btn tooltipped btn-floating red" data-position = "bottom" data-delay = "25" data-tooltip = "Not yet Configured Floor Price" style = "margin-left: 30px;"><i class="material-icons medium">&#8369</i></button>
-                        </div>
-=======
+
                         <div class = "col s6">
-                            <button id = "configure" name = "action" class="btn-floating green" data-position = "bottom" data-delay = "25" data-tooltip = "" style = "margin-left: 30px;"><i class="material-icons">settings</i></button>
-							<p>Configured Floor</p>
+                            <button id = "configure" name = "action" class="btn-floating green" data-position = "bottom" data-delay = "25" data-tooltip = "" style = "margin-left: 30px;"><i class="material-icons">settings</i></button>Configured Floor
+							
 						</div>
                         <div class = "col s6">
-                            <button id = "notConfigure" name = "action" class="btn-floating black" data-position = "bottom" data-delay = "25" data-tooltip = "Not yet Configured Floor" style = "margin-left: 30px;"><i class="material-icons">settings</i></button>
-    						<p>Not yet Configured Floor</p>
+                            <button id = "notConfigure" name = "action" class="btn-floating black" data-position = "bottom" data-delay = "25" data-tooltip = "Not yet Configured Floor" style = "margin-left: 30px;"><i class="material-icons">settings</i></button>Unconfigured Floor
+    						
 						</div>
->>>>>>> 00daac307aa3207b9c3fd4d80632c54b6f9d35b0
                     </div>
             </div>
             </div>

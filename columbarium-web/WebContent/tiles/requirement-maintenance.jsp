@@ -15,11 +15,7 @@
 	            <div class = "col s12">
 	                <form class = "wrapper responsive aside aside z-depth-2" id="formCreate">
 	                    <div class = "header">
-<<<<<<< HEAD
-	                        <h4 style = "stroke: black; stroke-width: 10px; font-size: 30px; padding-top: 10px; margin-top: 0px;">Requirement Form</h4>
-=======
 	                        <h4 style = "stroke: black; stroke-width: 10px; font-size: 30px; padding-top: 10px; margin-top: 0px;">Requirement Maintenance</h4>
->>>>>>> 00daac307aa3207b9c3fd4d80632c54b6f9d35b0
 	                    </div>
 	                    
                         <div class="row" style = "padding-left: 10px;">

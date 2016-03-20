@@ -5,9 +5,6 @@
 html{
     background-color: #ffffff;
 }
-.nav-birdifly nav{
-    background-color: #ffa000;
-}
 h4{
     font-family:  myFirstFont;
 }
@@ -97,13 +94,4 @@ td a:hover, td a:active{
 #unit-type{
     font-size: medium;
     font-family:  myFirstFont;
-}
-.dropdown-content{
-    margin-top: 55px;
-}
-.dropdown-content li a:hover{
-    background-color: #ffffff;
-    font-family: myFirstFont;
-    color: #000000;
-    text-shadow: 2px 2px #000000;
 }

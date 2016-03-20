@@ -12,23 +12,16 @@
 	<div class = "responsive col s12">
 	    <div class = "row">
 	        <div class = "col s5">
-<<<<<<< HEAD
-	            <h2 style = "font-size: 30px;margin-bottom: 10px;">Item Maintenance</h2>
-	
-=======
+
 					<div id="alertDiv">
 						
 	            	</div>
->>>>>>> 00daac307aa3207b9c3fd4d80632c54b6f9d35b0
 	            <!-- Create Items -->
 	            <div class = "col s12">
 	                <form class = "aside aside z-depth-3" style = "margin-top: 0px;" id="formCreate">
 	                    <div class = "header">
-<<<<<<< HEAD
-	                        <h4 style = "font-size: 30px;padding-top: 10px;">Item Form</h4>
-=======
+
 	                        <h4 style = "font-size: 30px;padding-top: 10px; margin-top: 10px;">Item Maintenance</h4>
->>>>>>> 00daac307aa3207b9c3fd4d80632c54b6f9d35b0
 	                    </div>
 	
 
