@@ -2,6 +2,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
+
+    <link href="../css/vaults.css" rel="stylesheet" type="text/css"/>
 <!-- Section -->
 <div class = col s12 >
     <div class = "row">
@@ -140,11 +142,11 @@
     		dataType : "json",
     		async : true,
     		success : function(data){
-    			var intLevelNo = data.block.intLevelNo;
+    			var intColumnNo = data.block.intColumnNo;
     			$('#tableUnits tbody').html('');
     			for (var intCtr = 0; intCtr < data.block.unitList.length;){
     				var strAppend = "";
-    				for (var intSubCtr = 0; intSubCtr < intLevelNo; intSubCtr++, intCtr++){
+    				for (var intSubCtr = 0; intSubCtr < intColumnNo; intSubCtr++, intCtr++){
     					var status = data.block.unitList[intCtr].status;
     					var color = "";
     					if (status === "Active"){
@@ -152,7 +154,8 @@
     					}else{
     						color = "red";
     					}
-    					strAppend = strAppend + '<td><button value="'+data.block.unitList[intCtr].unitId+'" data-target="modal1" class="btn modal-trigger '+color+'" onclick="openStatusUnit(this.value)">'+data.block.unitList[intCtr].unitId+'</button></td>';
+    					
+    					strAppend = strAppend + '<td><a data-target="modal1" value="'+data.block.unitList[intCtr].unitId+'" class="waves-effect waves-light modal-trigger" onclick="openStatusUnit(this.value)">'+data.block.unitList[intCtr].unitId+'</a></td>';
     				}
     				$('#tableUnits tbody').append('<tr>'+strAppend+'</tr>');
     			}
