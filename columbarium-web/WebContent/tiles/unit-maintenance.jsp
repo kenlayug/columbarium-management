@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
@@ -110,7 +111,6 @@
 </div>
     
     <script>
-
     $('.modal-trigger').leanModal({
             dismissible: false, // Modal can be dismissed by clicking outside of the modal
             opacity: .5, // Opacity of modal background
@@ -122,7 +122,6 @@
     );
     $("input:radio").on("click", function() {
             $("input:text").attr("disabled", true);
-
             $(this).next("input").attr("disabled", false)
     });
     

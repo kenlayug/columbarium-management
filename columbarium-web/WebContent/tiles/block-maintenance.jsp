@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
@@ -278,21 +279,70 @@
  	        <!-- Modal Price -->
             <div id="modalUpdatePrice" class="modal" style = "width: 700px;">
                 <div class = "modal-header" style = "height: 55px;">
-                    <h4 style = "padding-left: 20px; font-size: 30px; ">Block Price</h4>
+                    <h4 style = "padding-left: 20px; font-size: 30px; ">Floor Price</h4>
                 </div>
                 <div class="modal-content">
-                	<input id="levelNoForPriceConfig" type="hidden"> 
-                	<input id="blockToConfigPrice" type="hidden" name="block.blockId">
-                    <div class = "col s12" id="levelPriceDiv">
-	                    
+                    <div class = "col s12">
+                        <div class = "row">
+                            <div style = "padding-left: 10px;">
+                                <div class="input-field col s6">
+                                    <input id="floorPriceA" type="text" class="validate" required = "" aria-required = "true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
+                                    <label for="floorPriceA" data-error = "Invalid format.">Level A</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <input id="floorPriceB" type="text" class="validate" required = "" aria-required = "true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
+                                    <label for="floorPriceB" data-error = "Invalid format.">Level B</label>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-             
+                    <div class = "col s12">
+                        <div class = "row">
+                            <div style = "padding-left: 10px;">
+                                <div class="input-field col s6">
+                                    <input id="floorPriceC" type="text" class="validate" required = "" aria-required = "true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
+                                    <label for="floorPriceC" data-error = "Invalid format.">Level C</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <input id="floorPriceD" type="text" class="validate" required = "" aria-required = "true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
+                                    <label for="floorPriceD" data-error = "Invalid format.">Level D</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class = "col s12">
+                        <div class = "row">
+                            <div style = "padding-left: 10px;">
+                                <div class="input-field col s6">
+                                    <input id="floorPriceE" type="text" class="validate" required = "" aria-required = "true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
+                                    <label for="floorPriceE" data-error = "Invalid format.">Level E</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <input id="floorPriceF" type="text" class="validate" required = "" aria-required = "true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
+                                    <label for="floorPriceF" data-error = "Invalid format.">Level F</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class = "col s12">
+                        <div class = "row">
+                            <div style = "padding-left: 10px;">
+                                <div class="input-field col s6">
+                                    <input id="floorPriceG" type="text" class="validate" required = "" aria-required = "true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
+                                    <label for="floorPriceG" data-error = "Invalid format.">Level G</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <input id="floorPriceH" type="text" class="validate" required = "" aria-required = "true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
+                                    <label for="floorPriceH" data-error = "Invalid format.">Level H</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="modal-footer">
-                    <button onclick="configurePrice()" name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
-                 
+                    <button name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
                     <button name = "action" class="waves-effect waves-light btn red modal-close">Cancel</button>
                 </div>
-            </div>
             </div>
 
             <!-- Data Grid -->
@@ -447,7 +497,6 @@
 	$(document).ready(function() {
 	    $('input#input_text, textarea#textarea1').characterCounter();
 	});
-
 	$('.modal-trigger').leanModal({
         dismissible: false
   	});
@@ -472,7 +521,6 @@
 				unitType == null || unitType == "" || unitType == " "){
 			
 		}else{
-
 			$.ajax({
 				type: "POST",
 				url: "create",
@@ -506,7 +554,6 @@
 		}
 		
 	}
-
     function openCreateBlock(floorId){
     	$('#modalCreateBlock').openModal();
     	Materialize.toast(floorId, 3000, 'rounded');
@@ -573,65 +620,6 @@
     
     function openConfigurePrice(blockId){
     	$('#modalUpdatePrice').openModal();
-    	$.ajax({
-    		type : "POST",
-    		url: "getBlockById",
-    		data : {
-    			"blockId" : blockId
-    		},
-    		dataType : "json",
-    		async: true,
-    		success : function(data){
-    			if (data.block != null){
-    				$.each(data.block.unitCategoryList, function(i, unitCategory){
-    					var input = $('<input type="text" id="'+unitCategory.intLevelNo+'" />');
-						var label = $('<label for="'+unitCategory.intLevelNo+'">Level '+unitCategory.intLevelNo+'</label><br>');
-					    input.appendTo('#levelPriceDiv');
-					    label.appendTo('#levelPriceDiv');
-    				});
-    				$('#levelNoForPriceConfig').val(data.block.intLevelNo);
-    				$('#blockToConfigPrice').val(data.block.blockId);
-    			}
-    		},
-    		error : function(data){
-    			Materialize.toast('Error occured.', 3000, 'rounded');
-    		}
-    	});
-    }
-    
-    function configurePrice(){
-    	
-    	var arrPrice = new Array();
-    	var blockIdToConfigPrice = document.getElementById("blockToConfigPrice").value;
-    	var levelNo = document.getElementById("levelNoForPriceConfig").value;
-    	var price = 0;
-    	for(var intCtr = 1; intCtr < levelNo+1; intCtr++){
-    		price = $('#'+intCtr).val();
-    		arrPrice.push(price);
-    	}
-    	$.ajax({
-    		type : "POST",
-    		url : "configurePrice",
-    		traditional : true,
-    		data : {
-    			"levelPrice" : arrPrice,
-    			"block.blockId" : blockIdToConfigPrice
-    		},
-    		dataType : "json",
-    		async : true,
-    		success : function(data){
-    			if (data.status === "success"){
-    				Materialize.toast('Price is successfully saved.', 3000, 'rounded');
-    				$('#modalUpdatePrice').closeModal();
-    			}else {
-    		    	Materialize.toast('Error in configuring price...', 3000, 'rounded');
-    			}
-    		},
-    		error : function(data){
-    			Materialize.toast('Error occured.', 3000, 'rounded');
-    		}
-    	});
-    	
     }
     
     function deactivateBlock(){

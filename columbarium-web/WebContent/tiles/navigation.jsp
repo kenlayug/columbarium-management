@@ -1,4 +1,5 @@
-<!-- Materialize -->
+
+	<!-- Materialize -->
 	    <meta charset="UTF-8">
 	    <!--Let browser know website is optimized for mobile-->
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -60,14 +61,14 @@
 	
 	<!-- Dropdown Transaction -->
 	<ul id="dropdown2" class="dropdown-content">
-	    <li><a href="<%=request.getContextPath()%>/inventory">Inventory</a></li>
-	    <li><a href="<%=request.getContextPath()%>/buy-unit">Buy, Reserved, At Need</a></li>
+	    <li><a href="<%=request.getContextPath()%>">Inventory</a></li>
+	    <li><a href="<%=request.getContextPath()%>">Buy, Reserved, At need</a></li>
 	    <li class="divider"></li>
-	    <li><a href="<%=request.getContextPath()%>/schedule">Schedule</a></li>
-	    <li><a href="<%=request.getContextPath()%>/manage-unit">Manage Unit</a></li>
-		<li><a href="<%=request.getContextPath()%>/collection">Collection</a></li>
-		<li><a href="<%=request.getContextPath()%>/notification">Notification</a></li>
-		<li><a href="<%=request.getContextPath()%>/avail">Avail</a></li>
+	    <li><a href="<%=request.getContextPath()%>">Schedule</a></li>
+	    <li><a href="<%=request.getContextPath()%>">Manage Unit</a></li>
+		<li><a href="<%=request.getContextPath()%>">Collection</a></li>
+		<li><a href="<%=request.getContextPath()%>">Notification</a></li>
+		<li><a href="<%=request.getContextPath()%>">Avail</a></li>
 	</ul>
 	
 	<!-- Dropdown Queries -->

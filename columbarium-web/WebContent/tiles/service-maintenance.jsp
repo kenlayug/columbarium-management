@@ -38,7 +38,8 @@
 					</div>
 				</div>
 				<div class = "row" style = "margin-top: -20px;">
-				<button name = "action" class="modal-trigger btn green left" style = "font-size: 10px; width: 180px; margin-left: 20px;" href = "#modalRequirement">Select Requirement</button>
+				<button name = "action" class="modal-trigger btn green left" style = "font-size: 10px; width: 180px; margin-left: 20px;" href = "#modalRequirement">Choose Requirement</button>
+				<button name = "action" class="btn tooltipped modal-trigger btn green right" data-position = "bottom" data-delay = "30" data-tooltip = "View Requirement/s" style = "font-size: 10px; width: 180px; margin-right: 10px;" href = "#modalListOfRequirement">View Requirement/s</button>
 				</div>
 				<button onclick = "createService()" type = "submit" name = "action" class="btn green right" style = "margin-top: 0px; margin-right: 10px;">Create</button>
 			</div>
@@ -496,5 +497,3 @@
 		}
     
     </script>
-    
-    
