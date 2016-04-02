@@ -18,27 +18,6 @@
         <div class = "col s5">
             <h2 style = "padding-left: 40px; font-size: 30px; margin-top: 0px;">Floor Maintenance</h2>
 
-            <div class = "row">
-            <div class = "col s11">
-            <div class = "aside aside z-depth-3" style = "margin-left: 25px; height: 100px; width: 450px;">
-                <div class = "header" style = "height: 35px; background-color: #00897b">
-                    <label style = "padding-left: 10px;font-size: 23px; color: white; font-family: myFirstFont;">Legend:</label>
-                </div>
-
-                    <div class = "row" style = "margin-top: 10px;">
-                        <div class = "col s6">
-                            <button id = "configure" name = "action" class="btn-floating green" data-position = "bottom" data-delay = "25" data-tooltip = "" style = "margin-left: 30px;"><i class="material-icons">settings</i></button>
-							<p>Configured Floor</p>
-						</div>
-                        <div class = "col s6">
-                            <button id = "notConfigure" name = "action" class="btn-floating black" data-position = "bottom" data-delay = "25" data-tooltip = "Not yet Configured Floor" style = "margin-left: 30px;"><i class="material-icons">settings</i></button>
-    						<p>Not yet Configured Floor</p>
-						</div>
-                    </div>
-            </div>
-            </div>
-            </div>
-
             <div style = "overflow: auto;height: 470px;">
                 <div class = "col s12">
                     <div class = "aside aside " id="buildingSet">
