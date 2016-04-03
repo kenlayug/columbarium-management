@@ -12,8 +12,8 @@
     <div class = "row">
         <div class = "responsive">
 
-            <div class = "col s4">
-                <h2 style = "padding-left: 40px; font-size: 30px; margin-top: 20px;">Block Maintenance</h2>
+            <div class = "col s4" style = "width: 420px; margin-left: 230px;">
+                <h2 style = "padding-left: 10px; font-size: 30px; margin-top: 20px;">Block Maintenance</h2>
 
                 <div style = "overflow: auto;height: 370px;">
                     <div class = "col s12">
@@ -42,20 +42,20 @@
 	                                                        </div>
 	                                                        <div class="collapsible-body" style = "background-color: #ffa726">
 	                                                            <p>Create Block
-	                                                                <button name = "action" class="modal-trigger btn-floating blue right" style = "margin-right: 10px;" href = "#modalCreateBlock"><i class="material-icons">add</i></button>
+	                                                                <button name = "action" class="modal-trigger btn-floating light-green right" style = "margin-right: 10px;" href = "#modalCreateBlock"><i class="material-icons">add</i></button>
 	                                                            </p>
 	                                                        </div>
 	                                                        <div class="collapsible-body">
 	                                                            <p>Block One
 	                                                                <button name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor price is not yet configured."  style = "margin-left: 5px;" href = "#modalDeactivateBlock"><i class="material-icons">not_interested</i></button>
-	                                                                <button name = "action" class="btn tooltipped modal-trigger btn-floating green right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor is not yet configured." style = "margin-left: 5px;" href = "#modalUpdateBlock"><i class="material-icons">mode_edit</i></button>
+	                                                                <button name = "action" class="btn tooltipped modal-trigger btn-floating light-green right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor is not yet configured." style = "margin-left: 5px;" href = "#modalUpdateBlock"><i class="material-icons">mode_edit</i></button>
 	                                                                <button name = "action" class="btn tooltipped modal-trigger btn-floating yellow right" data-position = "bottom" data-delay = "30" data-tooltip = "Update Floor Price" style = "margin-left: 5px;" href = "#modalUpdateFloorPrice"><i class="material-icons">&#8369</i></button>
 	                                                            </p>
 	                                                        </div>
 	                                                        <div class="collapsible-body">
 	                                                            <p>Block Two
 	                                                                <button name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor price is not yet configured."  style = "margin-left: 5px;" href = "#modalDeactivateBlock"><i class="material-icons">not_interested</i></button>
-	                                                                <button name = "action" class="btn tooltipped modal-trigger btn-floating green right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor is not yet configured." style = "margin-left: 5px;" href = "#modalUpdateBlock"><i class="material-icons">mode_edit</i></button>
+	                                                                <button name = "action" class="btn tooltipped modal-trigger btn-floating light-green right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor is not yet configured." style = "margin-left: 5px;" href = "#modalUpdateBlock"><i class="material-icons">mode_edit</i></button>
 	                                                            </p>
 	                                                        </div>
 	                                                    </li>
@@ -86,16 +86,16 @@
 						                                                    	
 						                                                        	<div class="collapsible-body" style = "background-color: #ffa726">
 							                                                            <p>Create Block
-							                                                                <button value="${floor.floorId }" name = "action" data-target="modalCreateBlock" class="modal-trigger btn-floating blue right" style = "margin-right: 10px;" onclick="openCreateBlock(this.value)"><i class="material-icons">add</i></button>
+							                                                                <button value="${floor.floorId }" name = "action" data-target="modalCreateBlock" class="modal-trigger btn-floating light-green right" style = "margin-right: 10px;" onclick="openCreateBlock(this.value)"><i class="material-icons" style = "color: black;">add</i></button>
 							                                                            </p>
 							                                                        </div>
 							                                                        <c:if test="${floor.blockList != null}">
 							                                                        	<c:forEach items="${floor.blockList }" var="block">
 							                                                        		<div class="collapsible-body">
 									                                                            <p>${block.strBlockName }
-									                                                            	<button value="${block.blockId}" name = "action" class="btn tooltipped modal-trigger btn-floating yellow right" data-position = "bottom" data-delay = "30" data-tooltip = "Update Floor Price" style = "margin-left: 5px;" onclick = "openConfigurePrice(this.value)" data-target="modalUpdatePrice"><i class="material-icons">&#8369</i></button>
-									                                                                <button value="${block.blockId }" name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "Deactivate Block"  style = "margin-left: 5px;" onclick = "openDeactivateBlock(this.value)" data-target="modalDeactivateBlock"><i class="material-icons">not_interested</i></button>
-									                                                                <button value="${block.blockId }" name = "action" class="btn tooltipped modal-trigger btn-floating green right" data-position = "bottom" data-delay = "30" data-tooltip = "Update Block" style = "margin-left: 5px;" onclick = "openUpdateBlock(this.value)"><i class="material-icons">mode_edit</i></button>
+									                                                            	<button value="${block.blockId}" name = "action" class="btn tooltipped modal-trigger btn-floating light-green right" data-position = "bottom" data-delay = "30" data-tooltip = "Update Floor Price" style = "margin-left: 5px;" onclick = "openConfigurePrice(this.value)" data-target="modalUpdatePrice"><i class="material-icons" style = "color: black;">&#8369</i></button>
+									                                                                <button value="${block.blockId }" name = "action" class="btn tooltipped modal-trigger btn-floating light-green right" data-position = "bottom" data-delay = "30" data-tooltip = "Deactivate Block"  style = "margin-left: 5px;" onclick = "openDeactivateBlock(this.value)" data-target="modalDeactivateBlock"><i class="material-icons" style = "color: black;">not_interested</i></button>
+									                                                                <button value="${block.blockId }" name = "action" class="btn tooltipped modal-trigger btn-floating light-green right" data-position = "bottom" data-delay = "30" data-tooltip = "Update Block" style = "margin-left: 5px;" onclick = "openUpdateBlock(this.value)"><i class="material-icons" style = "color: black;">mode_edit</i></button>
 									                                                            </p>
 									                                                        </div>
 							                                                        	</c:forEach>
@@ -122,43 +122,38 @@
 
 
             <!-- Modal Create -->
-            <div id="modalCreateBlock" class="modal" style = "width: 450px;">
+            <div id="modalCreateBlock" class="modal" style = "width: 600px;">
                 <div class = "modal-header" style = "height: 55px;">
                     <h4 style = "font-size: 30px; padding-left: 20px;">Create Block</h4>
                 </div>
-                <form class="modal-content" id="createBlockForm">
+                <form class="modal-content" id="createBlockForm" style = "padding-bottom: 0px;">
 
-                    <div style = "padding-left: 10px;">
+                    <div style = "margin-top: 0px; padding-top: 0px; padding-left: 10px;">
                         <div class="input-field col s12">
                             <input id="floorIdBlockToCreate" type="hidden">
                             <input id="blockName" type="text" class="validate" required = "" aria-required="true" length = "20">
                             <label for="blockName" data-error = "Invalid format." data-success = "">Block Name<span style = "color: red;">*</span></label>
                         </div>
+                        <div class="row" style = "padding-left: 0px;">
+                            <h5 style = "font-family: arial; font-size: 20px;">Block size:</h5>
+                            <div class="input-field col s6" style = "padding-left: 10px;">
+                                <input id="blockLevel" type="number" class="validate" required = "" aria-required = "true" min = "1" max = "10">
+                                <label for="blockLevel" data-error = "1-10 only" data-success = "">Level/s:<span style = "color: red;">*</span></label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input id="blockColumn" type="number" class="validate" required = "" aria-required = "true" min = "1" max = "20">
+                                <label for="blockColumn" data-error = "1-20 only" data-success = "">Unit/s:<span style = "color: red">*</span></label>
+                            </div>
+                            <div class="input-field col s6" id="divUnitType">
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="row" style = "padding-left: 20px;">
-                        <h5 style = "font-family: arial;">Block size:</h5>
-                        <div class="input-field col s6" style = "padding-left: 10px;">
-                            <input id="blockLevel" type="number" class="validate" required = "" aria-required = "true" min = "1" max = "10">
-                            <label for="blockLevel" data-error = "1-10 only" data-success = "">Level/s:<span style = "color: red;">*</span></label>
-                        </div>
-                        <div class="input-field col s6">
-                            <input id="blockColumn" type="number" class="validate" required = "" aria-required = "true" min = "1" max = "20">
-                            <label for="blockColumn" data-error = "1-20 only" data-success = "">Unit/s:<span style = "color: red">*</span></label>
-                        </div>
-                        <div class="input-field col s6" id="divUnitType">
-                        </div>
-                    </div>
-
-                    <br><br>
-
-                    <br>
                     <i class = "left" style = "padding-top: 20px; margin-bottom: 0px; padding-left: 30px; color: red;">*Required Fields</i>
-                    <br>
                     <div style = "margin-top: 50px;">
                         <div class="modal-footer">
-                            <button onclick="createBlock()" name = "action" class="btn red" style = "margin-left: 10px;">Confirm</button>
-                            <button name = "action" class="btn red modal-close">Cancel</button>
+                            <button onclick="createBlock()" name = "action" class="btn light-green" style = "color: black; margin-left: 10px;">Confirm</button>
+                            <button name = "action" class="btn light-green modal-close" style = "color: black;">Cancel</button>
                         </div>
                     </div>
                 </form>
@@ -346,14 +341,14 @@
             </div>
 
             <!-- Data Grid -->
-            <div class = "col s8">
+            <div class = "col s6">
                 <div class="row">
-                    <div id="admin" class="col s12" style="margin-top: 20px">
+                    <div id="admin" class="col s12" style="margin-left: 0px; margin-top: 20px">
                         <div class="z-depth-2 card material-table">
                             <div class="table-header" style="background-color: #00897b;">
                                 <h4 style = "font-size: 30px; color: white; padding-left: 0px;">Block Record</h4>
                                 <div class="actions">
-                                    <button name = "action" class="btn tooltipped modal-trigger btn-floating black" data-position = "bottom" data-delay = "30" data-tooltip = "Deactivated Block/s" style = "margin-right: 10px;" href = "#modalArchiveBlock"><i class="material-icons" style = "color: white">delete</i></button>
+                                    <button name = "action" class="btn tooltipped modal-trigger btn-floating light-green" data-position = "bottom" data-delay = "30" data-tooltip = "Deactivated Block/s" style = "margin-right: 10px;" href = "#modalArchiveBlock"><i class="material-icons" style = "color: black">delete</i></button>
                                     <a href="#" class="search-toggle waves-effect btn-flat nopadding"><i class="material-icons" style="color: #ffffff;">search</i></a>
                                 </div>
                             </div>
@@ -364,8 +359,6 @@
                                     <th>Type</th>
                                     <th>Name</th>
                                     <th>Floor Number</th>
-                                    <th>Row/s</th>
-                                    <th>Column/s</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -374,112 +367,84 @@
                                     <td>Full Body</td>
                                     <td>Building One</td>
                                     <td>First Floor</td>
-                                    <td>5</td>
-                                    <td>6</td>
                                 </tr>
                                 <tr>
                                     <td>Block Two</td>
                                     <td>Full Body</td>
                                     <td>Building One</td>
                                     <td>First Floor</td>
-                                    <td>5</td>
-                                    <td>6</td>
                                 </tr>
                                 <tr>
                                     <td>Block Three</td>
                                     <td>Columbary Vault</td>
                                     <td>Building One</td>
                                     <td>First Floor</td>
-                                    <td>5</td>
-                                    <td>6</td>
                                 </tr>
                                 <tr>
                                     <td>Block Four</td>
                                     <td>Full Body</td>
                                     <td>Building One</td>
                                     <td>First Floor</td>
-                                    <td>5</td>
-                                    <td>6</td>
                                 </tr>
                                 <tr>
                                     <td>Block Five</td>
                                     <td>Columbary Vault</td>
                                     <td>Building One</td>
                                     <td>First Floor</td>
-                                    <td>5</td>
-                                    <td>6</td>
                                 </tr>
                                 <tr>
                                     <td>Block Six</td>
                                     <td>Full Body</td>
                                     <td>Building One</td>
                                     <td>First Floor</td>
-                                    <td>5</td>
-                                    <td>6</td>
                                 </tr>
                                 <tr>
                                     <td>Block Seven</td>
                                     <td>Columbary Vault</td>
                                     <td>Building One</td>
                                     <td>First Floor</td>
-                                    <td>5</td>
-                                    <td>6</td>
                                 </tr>
                                 <tr>
                                     <td>Block Eight</td>
                                     <td>Full Body</td>
                                     <td>Building One</td>
                                     <td>First Floor</td>
-                                    <td>5</td>
-                                    <td>6</td>
                                 </tr>
                                 <tr>
                                     <td>Block Nine</td>
                                     <td>Columbary Vault</td>
                                     <td>Building One</td>
                                     <td>First Floor</td>
-                                    <td>5</td>
-                                    <td>6</td>
                                 </tr>
                                 <tr>
                                     <td>Block Ten</td>
                                     <td>Full Body</td>
                                     <td>Building One</td>
                                     <td>First Floor</td>
-                                    <td>5</td>
-                                    <td>6</td>
                                 </tr>
                                 <tr>
                                     <td>Block Eleven</td>
                                     <td>Columbary Vault</td>
                                     <td>Building One</td>
                                     <td>First Floor</td>
-                                    <td>5</td>
-                                    <td>6</td>
                                 </tr>
                                 <tr>
                                     <td>Block Twelve</td>
                                     <td>Full Body</td>
                                     <td>Building One</td>
                                     <td>First Floor</td>
-                                    <td>5</td>
-                                    <td>6</td>
                                 </tr>
                                 <tr>
                                     <td>Block Thirteen</td>
                                     <td>Full Body</td>
                                     <td>Building One</td>
                                     <td>First Floor</td>
-                                    <td>5</td>
-                                    <td>6</td>
                                 </tr>
                                 <tr>
                                     <td>Block Fourteen</td>
                                     <td>Columbary Vault</td>
                                     <td>Building One</td>
                                     <td>First Floor</td>
-                                    <td>5</td>
-                                    <td>6</td>
                                 </tr>
                                 </tbody>
                             </table>

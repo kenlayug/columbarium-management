@@ -12,13 +12,13 @@
 	<!-- Section -->
 	<div class = "responsive col s12">
 	    <div class = "row">
-	        <div class = "col s5">
+	        <div class = "col s3">
 					<div id="alertDiv">
 						
 	            	</div>
 	            <!-- Create Items -->
 	            <div class = "col s12">
-	                <form class = "aside aside z-depth-3" style = "height: 430px; margin-top: 0px;" id="formCreate">
+	                <form class = "aside aside z-depth-3" style = "height: 430px; margin-left: 230px;" id="formCreate">
 	                    <div class = "header">
 	                        <h4 style = "font-size: 30px;padding-top: 10px; margin-top: 10px;">Item Maintenance</h4>
 	                    </div>
@@ -228,7 +228,7 @@
 			<!-- Data Grid -->
 			<div class = "col s7">
 				<div class="row">
-					<div id="admin" class="col s12" style="margin-top: 20px">
+					<div id="admin" class="col s12" style="margin-left: 230px; margin-top: 20px">
 						<div class="z-depth-2 card material-table">
 							<div class="table-header" style="background-color: #00897b;">
 								<h4 style = "font-size: 30px; color: white; padding-left: 0px;">Item Record</h4>

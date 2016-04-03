@@ -8,7 +8,7 @@
     <div class="nav-wrapper">
         <a href="#" class="brand-logo" style = "font-family: myFirstFont; padding-left: 250px;">Columbary and Crematory Management System</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="sass.html"><button type = "submit" name = "action" class="btn red right" style = "width: 125px; margin-top: 15px; margin-right: 0px;">Log Out</button></a></li>
+            <li><a href="sass.html"><button type = "submit" name = "action" class="btn black right" style = "width: 135px; margin-top: 15px; margin-right: 0px;">Log Out</button></a></li>
         </ul>
     </div>
 </nav>
