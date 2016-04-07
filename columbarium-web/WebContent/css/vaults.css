@@ -5,18 +5,6 @@
 html{
     background-color: #ffffff;
 }
-h4{
-    font-family:  myFirstFont;
-}
-#db-content{
-    background-color: #ffa000;
-    font-family: myFirstFont;
-    color: #ffffff;
-}
-#unit-modal{
-    color: #ffffff;
-    text-shadow: 2px 2px #000000;
-}
 .vaults-content {
     float: left;
 }
@@ -32,28 +20,6 @@ table, td {
     border: 2px solid #00beab;
     color: #ffffff;
     background-color: #00897b;
-}
-#data td{
-    text-align: center;
-    background: white;
-    border: none;
-    font-family:  myFirstFont;
-}
-#data tr td{
-    color: #000000;
-}
-#iba th{
-    text-align: center;
-    border: none;
-    font-family:  myFirstFont;
-}
-.data-grid{
-    border: none;
-}
-p{
-    font-family:  myFirstFont;
-    font-size: 15px;
-    padding-left: 15px;
 }
 td a{
     color: #ffffff;
@@ -79,19 +45,13 @@ td a:hover, td a:active{
 }
 .modal-header{
     background-color: #00897b;
+    padding: 15px;
 }
 .modal-header label{
     font-family:  myFirstFont;
     color: #ffffff;
     font-size: xx-large;
 }
-.modal-header{
-    padding: 15px;
-}
 .modal-fixed-footer{
     position: fixed;
-}
-#unit-type{
-    font-size: medium;
-    font-family:  myFirstFont;
 }

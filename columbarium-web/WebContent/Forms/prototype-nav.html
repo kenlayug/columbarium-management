@@ -1,50 +1,65 @@
-<!doctype html>
-<html lang=''>
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
-   <meta charset='utf-8'>
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta charset="UTF-8">
+   <title>Log In /Sign Up</title>
    <meta name="viewport" content="width=device-width, initial-scale=1">
-   <link rel="stylesheet" href="css/prototype-nav.css">
-   <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-   <script type="text/javascript" script src="js/prototype-nav.js"></script>
-   <title>Side Navigation Bar</title>
+   <link rel = "stylesheet" href = "../css/prototype-nav.css"/>
 </head>
-<body>
-    <nav>
-       <div id='cssmenu'>
-          <a href="#" class="nav-toggle-btn"></a>
-          <ul>
-             <li class='active has-sub'><a href='#'><span>MAINTENANCE</span></a>
-                <ul>
-                   <li><a href='Inventory_Form.html'><span>INVENTORY</span></a></li>
-                   <li><a href='Services_Record_Form.html'><span>SERVICE</span></a></li>
-                   <li><a href='Package_Record_Form.html'><span>PACKAGE</span></a></li>
-                   <li><a href='Building_Record_Form.html'><span>BUILDING</span></a></li>
-                   <li><a href='Floor_Record_Form.html'><span>FLOOR</span></a></li>
-                   <li><a href='Blocks_Record_Form.html'><span>BLOCK</span></a></li>
-                   <li><a href="vaults.html"><span>VAULTS</span></a></li>
-                   <li><a class="last" href="FullBodyCrypts.html"><span>FULL BODY CRYPTS</span></a></li>
-                </ul>
-             </li>
-             <li class="active has-sub"><a href='#'><span>TRANSACTIONS</span></a>
-                <ul>
-                   <li><a href='Reservation_Transaction.html'><span>RESERVATION</span></a></li>
-                   <li><a href='scheduling.html'><span>SCHEDULING</span></a></li>
-                   <li><a href='Collection_Transaction.html'><span>COLLECTION</span></a></li>
-                   <li><a class="last" href="UnitOwnership.html"><span>TRANSFERRING</span></a></li>
-                </ul>
-             </li>
-             <li><a href='#'><span>QUERIES</span></a></li>
-             <li><a href='#'><span>REPORTS</span></a></li>
-             <li class='active has-sub'><a href='#'><span>UTILITIES</span></a>
-               <ul>
-                  <li><a href='Customer.html'><span>CUSTOMER</span></a></li>
-                  <li><a class="last" href="Employee.html"><span>EMPLOYEE</span></a></li>
-               </ul>
-             </li>
-          </ul>
-       </div>
-    </nav>
+
+<div style = "background: #eee;">
+
+   <!-- Ayusin ang color ng mga links and font at Log in sign up -->
+
+   <header>
+      <nav>
+         <a href="#" class="nav-toggle-btn" style="color: #000000">=</a>
+         <div id="cssmenu">
+            <ul>
+               <div class="nav-icon">
+                  <img src="../img/sad_logo.png" class="center-block" alt="icon" style="width:120px;height:120px; margin-left: 17%;">
+               </div>
+
+               <li class='active-has-sub'><a href='#'><span>MAINTENANCE</span></a>
+                  <ul class="nav-coffee">
+                     <li><a href='Inventory_Form.html' id="db-content"><span>INVENTORY</span></a></li>
+                     <li><a href='Services_Record_Form.html' id="db-content"><span>SERVICE</span></a></li>
+                     <li><a href='Package_Record_Form.html' id="db-content"><span>PACKAGE</span></a></li>
+                     <li><a href='Building_Record_Form.html' id="db-content"><span>BUILDING</span></a></li>
+                     <li><a href='Floor_Record_Form.html' id="db-content"><span>FLOOR</span></a></li>
+                     <li><a href='Blocks_Record_Form.html' id="db-content"><span>BLOCK</span></a></li>
+                     <li><a href="vaults.html" id="db-content"><span>VAULTS</span></a></li>
+                     <li><a class="last" href="FullBodyCrypts.html" id="db-content"><span>FULL BODY CRYPTS</span></a></li>
+                  </ul>
+               </li>
+               <li class='active-has-sub'><a href='#'><span>TRANSACTION</span></a>
+                  <ul class="nav-coffee">
+                     <li><a href='Customer.html' id="db-content"><span>CUSTOMER</span></a></li>
+                     <li><a href='Reservation_Transaction.html' id="db-content"><span>RESERVATION</span></a></li>
+                     <li><a href='scheduling.html' id="db-content"><span>SCHEDULING</span></a></li>
+                     <li><a href='Collection_Transaction.html' id="db-content"><span>COLLECTION</span></a></li>
+                     <li><a class="last" href="UnitOwnership.html" id="db-content"><span>TRANSFERRING</span></a></li>
+                  </ul>
+               </li>
+            </ul>
+         </div>
+      </nav>
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+      <script type="text/javascript">
+         (function(){
+            var bodyEl = $('body'),
+                    navToggleBtn = bodyEl.find('.nav-toggle-btn');
+
+            navToggleBtn.on('click', function(e){
+               bodyEl.toggleClass('active-nav');
+               e.preventDefault();
+            });
+         })();
+      </script>
+   </header>
+</div>
+</header>
 </body>
-<html>
+</html>

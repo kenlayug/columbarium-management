@@ -10,20 +10,3 @@ $('.modal-trigger').leanModal({
         complete: function() { alert('Closed'); } // Callback for Modal close
     }
 );
-$("input:radio").on("click", function() {
-        $("input:text").attr("disabled", true);
-
-        $(this).next("input").attr("disabled", false)
-});
-
-jQuery.validator.setDefaults({
-        debug: true,
-        success: "valid"
-});
-$( "#myform" ).validate({
-        rules: {
-                field: {
-                        required: true
-                }
-        }
-});
