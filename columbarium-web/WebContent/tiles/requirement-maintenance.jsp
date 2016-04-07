@@ -8,67 +8,71 @@
 	<link rel="stylesheet" href="../css/style.css">
 
 
-<div class = "responsive col s12">
-	    <div class = "row">
-	        <div class = "col s5">
 
-	            <!-- Create Requirement -->
-	            <div class = "col s12">
-	                <form class = "wrapper responsive aside aside z-depth-2" id="formCreate">
-	                    <div class = "header">
-	                        <h4 style = "stroke: black; stroke-width: 10px; font-size: 30px; padding-top: 10px; margin-top: 0px;">Requirement Maintenance</h4>
-	                    </div>
-	                    
-                        <div class="row" style = "padding-left: 10px;">
-                            <div class="input-field col s6">
-                                <input id="requirementName" type="text" class="validate" required = "" aria-required = "true" minlength = "1" maxlength="20" pattern= "^[a-zA-Z'-\s]+|[0-9a-zA-Z'-\s]+|[a-zA-Z0-9'-]{1,20}">
-                                <label for="requirementName">Requirement Name<span style = "color: red;">*</span></label>
-                            </div>
-                        </div>
-                        <div class="row" style = "padding-left: 10px;">
-                            <div class="input-field col s12">
-                                <input id="requirementDesc" type="text" class="validate" >
-                                <label for="requirementDesc">Requirement Description</label>
-                            </div>
-                        </div>
-					
+	<!-- Section -->
+	<div class = "parent" style = "display: flex; flex-wrap: wrap; flex-direction: column;">
+		<div class = "row">
+			<div class = "col s4">
+				<div id="alertDiv">
+
+				</div>
+				<!-- Create Requirement -->
+				<div class = "col s12">
+					<form class = "aside aside z-depth-3" style = "margin-top: 20px; height: 360px; margin-left: 30px;" id="formCreate">
+						<div class = "header">
+							<h4 style = "font-family: myFirstFont2; font-size: 25px;padding-top: 10px; margin-top: 10px;">Requirement Maintenance</h4>
+						</div>
+						<div class="row" style = "padding-left: 10px;" id = "formCreate">
+							<div class="input-field col s6">
+								<input id="requirementName" type="text" class="validate" required = "" aria-required = "true" minlength = "1" maxlength="20" pattern= "^[a-zA-Z'-\s]+|[0-9a-zA-Z'-\s]+|[a-zA-Z0-9'-]{1,20}">
+								<label for="requirementName">Requirement Name<span style = "color: red;">*</span></label>
+							</div>
+						</div>
+						<div class="row" style = "padding-left: 10px;">
+							<div class="input-field col s12">
+								<input id="requirementDesc" type="text" class="validate" >
+								<label for="requirementDesc">Requirement Description</label>
+							</div>
+						</div>
+
 						<i class = "left" style = "margin-bottom: 50px; padding-left: 20px; color: red;">*Required Fields</i>
+						<br>
+						<button onClick = "createRequirement()" type = "submit" name = "action" class="btn light-green right" style = "color: black; margin-top: 30px; margin-right: 10px;">Create</button>
 
-						<button onclick="createRequirement()" type = "submit" name = "action" class="btn green right" style = "margin-right: 10px;">Create</button>
-	                </form>
-	
-	            </div>
-	        </div>
+					</form>
+
+				</div>
+			</div>
+
 	
 	        <!-- Modal Update -->
-	        <div id="modalUpdateRequirement" class="modal" style = "width: 400px;">
+	        <div id="modalUpdateRequirement" class="modal" style = "width: 600px;">
 	            <div class = "modal-header" style = "height: 55px; margin-bottom: 0px;">
-	                <h4 style = "font-size: 30px; padding-left: 20px;">Update Requirement</h4>
+	                <h4 style = "font-family: myFirstFont2; font-size: 30px; padding-left: 20px;">Update Requirement</h4>
 	            </div>
 	            <form class="modal-content" id="formUpdate">
-	
-	                <div style = "padding-left: 10px;" id="formUpdate">
-	                <div class = "col s6">
-	                    <div class="input-field col s12">
-	                    	<input id="requirementToBeUpdated" type="hidden">
-	                        <input id="requirementNameUpdate" value=" " type="text" class="validate" required = "" aria-required = "true" minlength = "1" maxlength="20" pattern= "^[a-zA-Z'-\s]+|[0-9a-zA-Z'-\s]+|[a-zA-Z0-9'-]{1,20}">
-	                        <label for="requirementNameUpdate">New Requirement Name<span style = "color: red;">*</span></label>
-	                    </div>
-	                </div>
-	
-	                <div class = "col s12">
-	                    <div class="input-field col s12">
-	                        <input id="requirementDescUpdate" value=" " type="text" class="validate">
-	                        <label for="requirementDescUpdate">New Requirement Description</label>
-	                    </div>
-	                </div>
-	                </div>
-					<i class = "left" style = "margin-bottom: 50px; padding-left: 30px; color: red;">*Required Fields</i>
-					<br><br>
+
+					<div class="row">
+						<div class="input-field col s6">
+							<input id="requirementToBeUpdated" type="hidden"/>
+							<input placeholder = "Requirement Name" id="requirementNameUpdate" type="text" class="validate" required = "" aria-required = "true" minlength = "1" maxlength="20" pattern= "^[a-zA-Z'-\s]+|[0-9a-zA-Z'-\s]+|[a-zA-Z0-9'-]{1,20}">
+							<label class = "active" for="requirementNameUpdate">New Requirement Name<span style = "color: red;">*</span></label>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="input-field col s12">
+							<input placeholder = "Requirement Description" id="requirementDescUpdate" type="text" class="validate">
+							<label for="requirementNameUpdate">New Requirement Description</label>
+						</div>
+					</div>
+
+					<i class = "left" style = "margin-bottom: 50px; padding-left: 10px; color: red;">*Required Fields</i>
+					<br>
 
 						<div class="modal-footer">
-							<button type = "submit" onclick="updateRequirement()" name = "action" class="btn green bottom" style = "margin-top: 30px; margin-left: 10px; ">Confirm</button>
-							<button name = "action" class="btn green modal-close bottom" style = "margin-top: 30px;">Cancel</button>
+							<button type = "submit" onclick="updateRequirement()" name = "action" class="btn light-green bottom" style = "color: black; margin-top: 30px; margin-left: 10px; ">Confirm</button>
+							<button name = "action" class="btn light-green modal-close bottom" style = "color: black; margin-top: 30px;">Cancel</button>
 						</div>
 	            </form>
 
@@ -76,37 +80,20 @@
 	        </div>
 
 			<!-- Modal Deactivate -->
-			<div id="modalDeactivateRequirement" class="modal" style = "width: 400px;">
+			<div id="modalDeactivateRequirement" class="modal" style = "width: 450px;">
 				<div class = "modal-header" style = "height: 55px;">
 					<h4 style = "padding-left: 20px; font-size: 30px;">Deactivate Requirement</h4>
 				</div>
 				<div class="modal-content">
-					<p style = "padding-left: 90px; font-size: 15px;">Are you sure you want to deactivate this requirement?</p>
+					<p style = "padding-left: 20px; font-size: 15px;">Are you sure you want to deactivate this requirement?</p>
 				</div>
 					<input id="requirementToBeDeactivated" type="hidden">
 				<div class="modal-footer">
-					<button onclick="deactivateRequirement()" name = "action" class="btn green" style = "margin-left: 10px; ">Confirm</button>
-					<button class="btn green modal-close">Cancel</button>
+					<button onclick="deactivateRequirement()" name = "action" class="btn light-green" style = "color: black; margin-left: 10px; ">Confirm</button>
+					<button class="btn light-green modal-close" style = "color: black;">Cancel</button>
 				</div>
 			</div>
 
-<!--ganto ung declaration sa btn ken	<button class="modal-trigger btn red" href = "#modalSuccessMessage">btnSuccess</button>    -->
-			<!-- Modal Success -->
-			<div id="modalSuccessMessage" class="modal" style = "width: 350px; height: 155px;">
-				<div class = "modal-header" style = "height: 50px;">
-					<div class = "row">
-						<div class = "col s10">
-							<h4 style = "padding-left: 10px; font-size: 25px;">Success Message</h4>
-						</div>
-						<div class = "col s2">
-							<a class="btn-floating btn-small modal-close black right" style = "margin-top: 5px; margin-right: 5px; padding-bottom: 10px;"><i class="material-icons" style = "padding-bottom: 5px;">&#10006</i></a>
-						</div>
-					</div>
-				</div>
-				<div class="modal-content">
-					<p style = "padding-top: 0px; padding-left: 50px; font-size: 16px; font-family: arial;">Record has been saved.</p>
-				</div>
-			</div>
 
 			<!-- Modal Archive Requirement-->
 			<div id="modalArchiveRequirement" class="modal" style = "height: 400px; width: 600px;">
@@ -115,7 +102,7 @@
 					<div id="admin1" class="col s12" style="margin-top: 0px">
 						<div class="z-depth-2 card material-table" style="margin-top: 0px">
 							<div class="table-header" style="height: 45px; background-color: #00897b;">
-								<h4 style = "padding-top: 10px; font-size: 30px; color: white; padding-left: 0px;">Archive Requirement/s</h4>
+								<h4 style = "font-family: myFirstFont2; padding-top: 10px; font-size: 30px; color: white; padding-left: 0px;">Archive Requirement/s</h4>
 								<a href="#" class="search-toggle btn-flat right"><i class="material-icons right" style="margin-left: 60px; color: #ffffff;">search</i></a>
 							</div>
 							<table id="datatable2">
@@ -129,49 +116,49 @@
 								<tr>
 									<td>Requirement One</td>
 									<td>
-										<button name = "action" class="btn green modal-close">Activate</button>
+										<button name = "action" class="btn light-green modal-close" style = "color: black;">Activate</button>
 									</td>
 								</tr>
 								<tr>
 									<td>Requirement Two</td>
 									<td>
-										<button name = "action" class="btn green modal-close">Activate</button>
+										<button name = "action" class="btn light-green modal-close" style = "color: black;">Activate</button>
 									</td>
 								</tr>
 								<tr>
 									<td>Requirement Three</td>
 									<td>
-										<button name = "action" class="btn green modal-close">Activate</button>
+										<button name = "action" class="btn light-green modal-close" style = "color: black;">Activate</button>
 									</td>
 								</tr>
 								<tr>
 									<td>Requirement Three</td>
 									<td>
-										<button name = "action" class="btn green modal-close">Activate</button>
+										<button name = "action" class="btn light-green modal-close" style = "color: black;">Activate</button>
 									</td>
 								</tr>
 								<tr>
 									<td>Requirement Four</td>
 									<td>
-										<button name = "action" class="btn green modal-close">Activate</button>
+										<button name = "action" class="btn light-green modal-close" style = "color: black;">Activate</button>
 									</td>
 								</tr>
 								<tr>
 									<td>Requirement Five</td>
 									<td>
-										<button name = "action" class="btn green modal-close">Activate</button>
+										<button name = "action" class="btn light-green modal-close" style = "color: black;">Activate</button>
 									</td>
 								</tr>
 								<tr>
 									<td>Requirement Six</td>
 									<td>
-										<button name = "action" class="btn green modal-close">Activate</button>
+										<button name = "action" class="btn light-green modal-close" style = "color: black;">Activate</button>
 									</td>
 								</tr>
 								<tr>
 									<td>Requirement Seven</td>
 									<td>
-										<button name = "action" class="btn green modal-close">Activate</button>
+										<button name = "action" class="btn light-green modal-close" style = "color: black;">Activate</button>
 									</td>
 								</tr>
 								</tbody>
@@ -179,19 +166,19 @@
 						</div>
 					</div>
 				</div>
-				<button name = "action" class="btn red modal-close right" style = "margin-bottom: 10px; margin-right: 30px;">DONE</button>
+				<button name = "action" class="btn light-green modal-close right" style = "color: black; margin-bottom: 10px; margin-right: 30px;">DONE</button>
 			</div>
 
 
 			<!-- Data Grid -->
-			<div class = "col s7">
+			<div class = "col s7" style = "margin-top: 20px; margin-left: 50px;">
 				<div class="row">
-					<div id="admin" class="col s12" style="margin-top: 20px">
+					<div id="admin">
 						<div class="z-depth-2 card material-table">
 							<div class="table-header" style="background-color: #00897b;">
-								<h4 style = "font-size: 30px; color: white; padding-left: 0px;">Requirement Record</h4>
+								<h4 style = "font-family: myFirstFont2; font-size: 30px; color: white; padding-left: 0px;">Requirement Record</h4>
 								<div class="actions">
-									<button name = "action" class="btn tooltipped modal-trigger btn-floating black" data-position = "bottom" data-delay = "30" data-tooltip = "Deactivated Requirement/s" style = "margin-right: 10px;" href = "#modalArchiveRequirement"><i class="material-icons" style = "color: white">delete</i></button>
+									<button name = "action" class="btn tooltipped modal-trigger btn-floating light-green" data-position = "bottom" data-delay = "30" data-tooltip = "Deactivated Requirement/s" style = "margin-right: 10px;" href = "#modalArchiveRequirement"><i class="material-icons" style = "color: black;">delete</i></button>
 									<a href="#" class="search-toggle waves-effect btn-flat nopadding"><i class="material-icons" style="color: #ffffff;">search</i></a>
 								</div>
 							</div>
@@ -212,7 +199,6 @@
 
 				<script type="text/javascript" src = "../js/index.js"></script>
 			</div>
-	    </div>
 	</div>
 	
 	<script>
@@ -340,8 +326,8 @@
         		var requirementList = data.requirementList;
         	
         		$.each(requirementList, function(i, requirement){
-        			var addButtons = "<button name = action class= 'modal-trigger btn-floating blue' onclick = openUpdate(this.value) value = "+requirement.requirementId+" ><i class= material-icons  style = 'color: black;' >mode_edit</i></button>"+
-        			"<button name = action class= 'modal-trigger btn-floating red' onclick = openDeactivate(this.value) value = "+requirement.requirementId+" ><i class= material-icons style = 'color: black;' >not_interested</i></button></td>";
+        			var addButtons = "<button name = action class= 'modal-trigger btn-floating light-green' onclick = openUpdate(this.value) value = "+requirement.requirementId+" ><i class= material-icons  style = 'color: black;' >mode_edit</i></button>"+
+        			"<button name = action class= 'modal-trigger btn-floating light-green' style = 'margin-left: 5px;' onclick = openDeactivate(this.value) value = "+requirement.requirementId+" ><i class= material-icons style = 'color: black;' >not_interested</i></button></td>";
         			
         			
         			table.row.add( [

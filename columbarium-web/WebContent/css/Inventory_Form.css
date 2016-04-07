@@ -16,29 +16,13 @@
     width: 100%;
 }
 
-h1 {
-    padding-left: 100px;
-    font-family: myFirstFont;
-}
-
-h2 {
-    font-family: myFirstFont;
-    padding-left: 30px;
-    font-size: 40px;
-
-}
 
 h4 {
     font-family: myFirstFont;
-    font-size: 40px;
-    padding-left: 40px;
+    font-size: 30px;
+    padding-left: 280px;
 }
 
-h5 {
-    font-family: myFirstFont;
-    font-size: 20px;
-    padding-left: 10px;
-}
 
 h6{
     font-family: myFirstFont;

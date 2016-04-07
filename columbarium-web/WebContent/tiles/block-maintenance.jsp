@@ -8,12 +8,13 @@
 
 	<link rel="stylesheet" href="../css/style.css">
 
+
+<h2 style = "font-family: myFirstFont2; padding-left: 50px; font-size: 30px; margin-top: 20px;">Block Maintenance</h2>
 <div class = "col s12" >
     <div class = "row">
         <div class = "responsive">
 
-            <div class = "col s4">
-                <h2 style = "padding-left: 40px; font-size: 30px; margin-top: 20px;">Block Maintenance</h2>
+            <div class = "col s4" style = "width: 420px; margin-left: 30px;">
 
                 <div style = "overflow: auto;height: 370px;">
                     <div class = "col s12">
@@ -23,7 +24,7 @@
                             	<c:if test="${buildingList == null }">
 	                                <li>
 	                                    <div class="collapsible-header" style = "background-color: #00897b"><i class="medium material-icons">business</i>
-	                                        <label style = "font-family: myFirstFont; font-size: 20px; color: white;">Building One</label>
+	                                        <label style = "font-family: myFirstFont2; font-size: 20px; color: white;">Building One</label>
 	                                    </div>
 	                                    <div class="collapsible-body">
 	                                        <div class="row">
@@ -42,20 +43,20 @@
 	                                                        </div>
 	                                                        <div class="collapsible-body" style = "background-color: #ffa726">
 	                                                            <p>Create Block
-	                                                                <button name = "action" class="modal-trigger btn-floating blue right" style = "margin-right: 10px;" href = "#modalCreateBlock"><i class="material-icons">add</i></button>
+	                                                                <button name = "action" class="modal-trigger btn-floating light-green right" style = "margin-right: 10px;" href = "#modalCreateBlock"><i class="material-icons">add</i></button>
 	                                                            </p>
 	                                                        </div>
 	                                                        <div class="collapsible-body">
 	                                                            <p>Block One
 	                                                                <button name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor price is not yet configured."  style = "margin-left: 5px;" href = "#modalDeactivateBlock"><i class="material-icons">not_interested</i></button>
-	                                                                <button name = "action" class="btn tooltipped modal-trigger btn-floating green right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor is not yet configured." style = "margin-left: 5px;" href = "#modalUpdateBlock"><i class="material-icons">mode_edit</i></button>
+	                                                                <button name = "action" class="btn tooltipped modal-trigger btn-floating light-green right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor is not yet configured." style = "margin-left: 5px;" href = "#modalUpdateBlock"><i class="material-icons">mode_edit</i></button>
 	                                                                <button name = "action" class="btn tooltipped modal-trigger btn-floating yellow right" data-position = "bottom" data-delay = "30" data-tooltip = "Update Floor Price" style = "margin-left: 5px;" href = "#modalUpdateFloorPrice"><i class="material-icons">&#8369</i></button>
 	                                                            </p>
 	                                                        </div>
 	                                                        <div class="collapsible-body">
 	                                                            <p>Block Two
 	                                                                <button name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor price is not yet configured."  style = "margin-left: 5px;" href = "#modalDeactivateBlock"><i class="material-icons">not_interested</i></button>
-	                                                                <button name = "action" class="btn tooltipped modal-trigger btn-floating green right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor is not yet configured." style = "margin-left: 5px;" href = "#modalUpdateBlock"><i class="material-icons">mode_edit</i></button>
+	                                                                <button name = "action" class="btn tooltipped modal-trigger btn-floating light-green right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor is not yet configured." style = "margin-left: 5px;" href = "#modalUpdateBlock"><i class="material-icons">mode_edit</i></button>
 	                                                            </p>
 	                                                        </div>
 	                                                    </li>
@@ -69,7 +70,7 @@
 									<c:forEach items="${buildingList }" var="building">
 										 <li>
 		                                    <div class="collapsible-header" style = "background-color: #00897b"><i class="medium material-icons">business</i>
-		                                        <label style = "font-family: myFirstFont; font-size: 20px; color: white;">${building.strBuildingName }</label>
+		                                        <label style = "font-family: myFirstFont2; font-size: 20px; color: white;">${building.strBuildingName }</label>
 		                                    </div>
 		                                    <div class="collapsible-body">
 		                                        <div class="row">
@@ -86,16 +87,16 @@
 						                                                    	
 						                                                        	<div class="collapsible-body" style = "background-color: #ffa726">
 							                                                            <p>Create Block
-							                                                                <button value="${floor.floorId }" name = "action" data-target="modalCreateBlock" class="modal-trigger btn-floating blue right" style = "margin-right: 10px;" onclick="openCreateBlock(this.value)"><i class="material-icons">add</i></button>
+							                                                                <button value="${floor.floorId }" name = "action" data-target="modalCreateBlock" class="modal-trigger btn-floating light-green right" style = "margin-right: 10px;" onclick="openCreateBlock(this.value)"><i class="material-icons" style = "color: black;">add</i></button>
 							                                                            </p>
 							                                                        </div>
 							                                                        <c:if test="${floor.blockList != null}">
 							                                                        	<c:forEach items="${floor.blockList }" var="block">
 							                                                        		<div class="collapsible-body">
 									                                                            <p>${block.strBlockName }
-									                                                            	<button value="${block.blockId}" name = "action" class="btn tooltipped modal-trigger btn-floating yellow right" data-position = "bottom" data-delay = "30" data-tooltip = "Update Floor Price" style = "margin-left: 5px;" onclick = "openConfigurePrice(this.value)" data-target="modalUpdatePrice"><i class="material-icons">&#8369</i></button>
-									                                                                <button value="${block.blockId }" name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "Deactivate Block"  style = "margin-left: 5px;" onclick = "openDeactivateBlock(this.value)" data-target="modalDeactivateBlock"><i class="material-icons">not_interested</i></button>
-									                                                                <button value="${block.blockId }" name = "action" class="btn tooltipped modal-trigger btn-floating green right" data-position = "bottom" data-delay = "30" data-tooltip = "Update Block" style = "margin-left: 5px;" onclick = "openUpdateBlock(this.value)"><i class="material-icons">mode_edit</i></button>
+									                                                            	<button value="${block.blockId}" name = "action" class="btn tooltipped modal-trigger btn-floating light-green right" data-position = "bottom" data-delay = "30" data-tooltip = "Update Floor Price" style = "margin-left: 5px;" onclick = "openConfigurePrice(this.value)" data-target="modalUpdatePrice"><i class="material-icons" style = "color: black;">&#8369</i></button>
+									                                                                <button value="${block.blockId }" name = "action" class="btn tooltipped modal-trigger btn-floating light-green right" data-position = "bottom" data-delay = "30" data-tooltip = "Deactivate Block"  style = "margin-left: 5px;" onclick = "openDeactivateBlock(this.value)" data-target="modalDeactivateBlock"><i class="material-icons" style = "color: black;">not_interested</i></button>
+									                                                                <button value="${block.blockId }" name = "action" class="btn tooltipped modal-trigger btn-floating light-green right" data-position = "bottom" data-delay = "30" data-tooltip = "Update Block" style = "margin-left: 5px;" onclick = "openUpdateBlock(this.value)"><i class="material-icons" style = "color: black;">mode_edit</i></button>
 									                                                            </p>
 									                                                        </div>
 							                                                        	</c:forEach>
@@ -120,45 +121,40 @@
             </div>
 
 
-
             <!-- Modal Create -->
-            <div id="modalCreateBlock" class="modal" style = "width: 450px;">
+            <div id="modalCreateBlock" class="modal" style = "width: 550px;">
                 <div class = "modal-header" style = "height: 55px;">
-                    <h4 style = "font-size: 30px; padding-left: 20px;">Create Block</h4>
+                    <h4 style = "font-family: myFirstFont2; font-size: 30px; padding-left: 20px;">Create Block</h4>
                 </div>
-                <form class="modal-content" id="createBlockForm">
+                <form id="createBlockForm" style = "padding-bottom: 0px;">
 
-                    <div style = "padding-left: 10px;">
-                        <div class="input-field col s12">
+                    <div style = "margin-top: 0px; padding-top: 0px; padding-left: 10px;">
+                        <div class="input-field col s12" style = "padding-bottom: 20px;">
                             <input id="floorIdBlockToCreate" type="hidden">
                             <input id="blockName" type="text" class="validate" required = "" aria-required="true" length = "20">
                             <label for="blockName" data-error = "Invalid format." data-success = "">Block Name<span style = "color: red;">*</span></label>
                         </div>
+
+                        <div class="row" style = "padding-top: 0px;">
+                            <h5 style = "padding-bottom: 0px; font-family: arial; font-size: 20px;">Block size:</h5>
+                            <div class="input-field col s6" style = "padding-left: 10px;">
+                                <input id="blockLevel" type="number" class="validate" required = "" aria-required = "true" min = "1" max = "10">
+                                <label for="blockLevel" data-error = "1-10 only" data-success = "">Level/s:<span style = "color: red;">*</span></label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input id="blockColumn" type="number" class="validate" required = "" aria-required = "true" min = "1" max = "20">
+                                <label for="blockColumn" data-error = "1-20 only" data-success = "">Unit/s:<span style = "color: red">*</span></label>
+                            </div>
+                            <div class="input-field col s6" id="divUnitType">
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="row" style = "padding-left: 20px;">
-                        <h5 style = "font-family: arial;">Block size:</h5>
-                        <div class="input-field col s6" style = "padding-left: 10px;">
-                            <input id="blockLevel" type="number" class="validate" required = "" aria-required = "true" min = "1" max = "10">
-                            <label for="blockLevel" data-error = "1-10 only" data-success = "">Level/s:<span style = "color: red;">*</span></label>
-                        </div>
-                        <div class="input-field col s6">
-                            <input id="blockColumn" type="number" class="validate" required = "" aria-required = "true" min = "1" max = "20">
-                            <label for="blockColumn" data-error = "1-20 only" data-success = "">Unit/s:<span style = "color: red">*</span></label>
-                        </div>
-                        <div class="input-field col s6" id="divUnitType">
-                        </div>
-                    </div>
-
-                    <br><br>
-
-                    <br>
                     <i class = "left" style = "padding-top: 20px; margin-bottom: 0px; padding-left: 30px; color: red;">*Required Fields</i>
-                    <br>
                     <div style = "margin-top: 50px;">
                         <div class="modal-footer">
-                            <button onclick="createBlock()" name = "action" class="btn red" style = "margin-left: 10px;">Confirm</button>
-                            <button name = "action" class="btn red modal-close">Cancel</button>
+                            <button onclick="createBlock()" name = "action" class="btn light-green" style = "color: black; margin-left: 10px;">Confirm</button>
+                            <button name = "action" class="btn light-green modal-close" style = "color: black;">Cancel</button>
                         </div>
                     </div>
                 </form>
@@ -168,7 +164,7 @@
             <!-- Modal Update -->
             <form id="modalUpdateBlock" class="modal" style = "width: 400px;">
                 <div class = "modal-header" style = "height: 55px;">
-                    <h4 style = "padding-left: 20px; font-size: 30px;">Update Block</h4>
+                    <h4 style = "font-family: myFirstFont2; padding-left: 20px; font-size: 30px;">Update Block</h4>
                 </div>
                 <div class="modal-content">
                     <div style = "padding-left: 10px;">
@@ -182,23 +178,23 @@
                 </div>
                 <br><br><br><br>
                 <div class="modal-footer">
-                    <button onclick="updateBlock()" type = "submit" name = "action" class="btn red" style = "margin-left: 10px; ">Confirm</button>
-                    <button name = "action" class="btn red modal-close">Cancel</button>
+                    <button onclick="updateBlock()" type = "submit" name = "action" class="btn light-green" style = "margin-right: 20px; color: black; margin-left: 10px; ">Confirm</button>
+                    <button name = "action" class="btn light-green modal-close" style = "color: black;">Cancel</button>
                 </div>
             </form>
 
             <!-- Modal Deactivate -->
             <div id="modalDeactivateBlock" class="modal" style = "width: 400px;">
                 <div class = "modal-header" style = "height: 55px;">
-                    <h4 style = "padding-left: 20px; font-size: 30px;">Deactivate Block</h4>
+                    <h4 style = "font-family: myFirstFont2; padding-left: 20px; font-size: 30px;">Deactivate Block</h4>
                 </div>
                 <div class="modal-content">
                     <p style = "padding-left: 20px; font-size: 15px;">Are you sure you want to deactivate this block?</p>
                 </div>
 				<input id="blockIdDeactivate" type="hidden">
                 <div class="modal-footer">
-                    <button onclick="deactivateBlock()" name = "action" class="btn red" style = "margin-left: 10px; ">Confirm</button>
-                    <button name = "action" class="btn red modal-close">Cancel</button>
+                    <button onclick="deactivateBlock()" name = "action" class="btn light-green" style = "color: black; margin-left: 10px; ">Confirm</button>
+                    <button name = "action" class="btn light-green modal-close" style = "color: black;">Cancel</button>
                 </div>
             </div>
 
@@ -209,7 +205,7 @@
                     <div id="admin1" class="col s12" style="margin-top: 0px">
                         <div class="z-depth-2 card material-table" style="margin-top: 0px">
                             <div class="table-header" style="height: 45px; background-color: #00897b;">
-                                <h4 style = "padding-top: 10px; font-size: 30px; color: white; padding-left: 0px;">Archive Block/s</h4>
+                                <h4 style = "font-family: myFirstFont2; padding-top: 10px; font-size: 30px; color: white; padding-left: 0px;">Archive Block/s</h4>
                                 <a href="#" class="search-toggle btn-flat right"><i class="material-icons right" style="margin-left: 150px; color: #ffffff;">search</i></a>
                             </div>
                             <table id="datatable2">
@@ -223,49 +219,49 @@
                                 <tr>
                                     <td>Block One</td>
                                     <td>
-                                        <button name = "action" class="btn red modal-close">Activate</button>
+                                        <button name = "action" class="btn light-green modal-close" style = "color: black;">Activate</button>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Block Two</td>
                                     <td>
-                                        <button name = "action" class="btn red modal-close">Activate</button>
+                                        <button name = "action" class="btn light-green modal-close" style = "color: black;">Activate</button>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Block Three</td>
                                     <td>
-                                        <button name = "action" class="btn red modal-close">Activate</button>
+                                        <button name = "action" class="btn light-green modal-close" style = "color: black;">Activate</button>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Block Three</td>
                                     <td>
-                                        <button name = "action" class="btn red modal-close">Activate</button>
+                                        <button name = "action" class="btn light-green modal-close" style = "color: black;">Activate</button>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Block Four</td>
                                     <td>
-                                        <button name = "action" class="btn red modal-close">Activate</button>
+                                        <button name = "action" class="btn light-green modal-close" style = "color: black;">Activate</button>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Block Five</td>
                                     <td>
-                                        <button name = "action" class="btn red modal-close">Activate</button>
+                                        <button name = "action" class="btn light-green modal-close" style = "color: black;">Activate</button>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Block Six</td>
                                     <td>
-                                        <button name = "action" class="btn red modal-close">Activate</button>
+                                        <button name = "action" class="btn light-green modal-close" style = "color: black;">Activate</button>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Block Seven</td>
                                     <td>
-                                        <button name = "action" class="btn red modal-close">Activate</button>
+                                        <button name = "action" class="btn light-green modal-close" style = "color: black;">Activate</button>
                                     </td>
                                 </tr>
                                 </tbody>
@@ -273,13 +269,13 @@
                         </div>
                     </div>
                 </div>
-                <button name = "action" class="btn red modal-close right" style = "margin-bottom: 10px; margin-right: 30px;">DONE</button>
+                <button name = "action" class="btn light-green modal-close right" style = "color: black; margin-bottom: 10px; margin-right: 30px;">DONE</button>
             </div>
             
  	        <!-- Modal Price -->
             <div id="modalUpdatePrice" class="modal" style = "width: 700px;">
                 <div class = "modal-header" style = "height: 55px;">
-                    <h4 style = "padding-left: 20px; font-size: 30px; ">Floor Price</h4>
+                    <h4 style = "font-family: myFirstFont2; padding-left: 20px; font-size: 30px; ">Block Price</h4>
                 </div>
                 <div class="modal-content">
                     <div class = "col s12">
@@ -340,20 +336,20 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; ">Confirm</button>
-                    <button name = "action" class="waves-effect waves-light btn red modal-close">Cancel</button>
+                    <button name = "action" class="waves-effect waves-light btn light-green" style = "color: black; margin-left: 10px; margin-right: 40px;">Confirm</button>
+                    <button name = "action" class="waves-effect waves-light btn light-green modal-close" style = "color: black;">Cancel</button>
                 </div>
             </div>
 
             <!-- Data Grid -->
-            <div class = "col s8">
+            <div class = "col s7" style = "margin-top: 0px; margin-left: 30px;">
                 <div class="row">
-                    <div id="admin" class="col s12" style="margin-top: 20px">
+                    <div id="admin">
                         <div class="z-depth-2 card material-table">
                             <div class="table-header" style="background-color: #00897b;">
-                                <h4 style = "font-size: 30px; color: white; padding-left: 0px;">Block Record</h4>
+                                <h4 style = "font-family: myFirstFont2; font-size: 30px; color: white; padding-left: 0px;">Block Record</h4>
                                 <div class="actions">
-                                    <button name = "action" class="btn tooltipped modal-trigger btn-floating black" data-position = "bottom" data-delay = "30" data-tooltip = "Deactivated Block/s" style = "margin-right: 10px;" href = "#modalArchiveBlock"><i class="material-icons" style = "color: white">delete</i></button>
+                                    <button name = "action" class="btn tooltipped modal-trigger btn-floating light-green" data-position = "bottom" data-delay = "30" data-tooltip = "Deactivated Block/s" style = "margin-right: 10px;" href = "#modalArchiveBlock"><i class="material-icons" style = "color: black">delete</i></button>
                                     <a href="#" class="search-toggle waves-effect btn-flat nopadding"><i class="material-icons" style="color: #ffffff;">search</i></a>
                                 </div>
                             </div>
@@ -364,8 +360,6 @@
                                     <th>Type</th>
                                     <th>Name</th>
                                     <th>Floor Number</th>
-                                    <th>Row/s</th>
-                                    <th>Column/s</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -374,112 +368,84 @@
                                     <td>Full Body</td>
                                     <td>Building One</td>
                                     <td>First Floor</td>
-                                    <td>5</td>
-                                    <td>6</td>
                                 </tr>
                                 <tr>
                                     <td>Block Two</td>
                                     <td>Full Body</td>
                                     <td>Building One</td>
                                     <td>First Floor</td>
-                                    <td>5</td>
-                                    <td>6</td>
                                 </tr>
                                 <tr>
                                     <td>Block Three</td>
                                     <td>Columbary Vault</td>
                                     <td>Building One</td>
                                     <td>First Floor</td>
-                                    <td>5</td>
-                                    <td>6</td>
                                 </tr>
                                 <tr>
                                     <td>Block Four</td>
                                     <td>Full Body</td>
                                     <td>Building One</td>
                                     <td>First Floor</td>
-                                    <td>5</td>
-                                    <td>6</td>
                                 </tr>
                                 <tr>
                                     <td>Block Five</td>
                                     <td>Columbary Vault</td>
                                     <td>Building One</td>
                                     <td>First Floor</td>
-                                    <td>5</td>
-                                    <td>6</td>
                                 </tr>
                                 <tr>
                                     <td>Block Six</td>
                                     <td>Full Body</td>
                                     <td>Building One</td>
                                     <td>First Floor</td>
-                                    <td>5</td>
-                                    <td>6</td>
                                 </tr>
                                 <tr>
                                     <td>Block Seven</td>
                                     <td>Columbary Vault</td>
                                     <td>Building One</td>
                                     <td>First Floor</td>
-                                    <td>5</td>
-                                    <td>6</td>
                                 </tr>
                                 <tr>
                                     <td>Block Eight</td>
                                     <td>Full Body</td>
                                     <td>Building One</td>
                                     <td>First Floor</td>
-                                    <td>5</td>
-                                    <td>6</td>
                                 </tr>
                                 <tr>
                                     <td>Block Nine</td>
                                     <td>Columbary Vault</td>
                                     <td>Building One</td>
                                     <td>First Floor</td>
-                                    <td>5</td>
-                                    <td>6</td>
                                 </tr>
                                 <tr>
                                     <td>Block Ten</td>
                                     <td>Full Body</td>
                                     <td>Building One</td>
                                     <td>First Floor</td>
-                                    <td>5</td>
-                                    <td>6</td>
                                 </tr>
                                 <tr>
                                     <td>Block Eleven</td>
                                     <td>Columbary Vault</td>
                                     <td>Building One</td>
                                     <td>First Floor</td>
-                                    <td>5</td>
-                                    <td>6</td>
                                 </tr>
                                 <tr>
                                     <td>Block Twelve</td>
                                     <td>Full Body</td>
                                     <td>Building One</td>
                                     <td>First Floor</td>
-                                    <td>5</td>
-                                    <td>6</td>
                                 </tr>
                                 <tr>
                                     <td>Block Thirteen</td>
                                     <td>Full Body</td>
                                     <td>Building One</td>
                                     <td>First Floor</td>
-                                    <td>5</td>
-                                    <td>6</td>
                                 </tr>
                                 <tr>
                                     <td>Block Fourteen</td>
                                     <td>Columbary Vault</td>
                                     <td>Building One</td>
                                     <td>First Floor</td>
-                                    <td>5</td>
-                                    <td>6</td>
                                 </tr>
                                 </tbody>
                             </table>
