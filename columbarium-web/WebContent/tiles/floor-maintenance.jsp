@@ -11,12 +11,13 @@
     <script type="text/javascript" src = "../js/index.js"></script>
 
     <!-- Section -->
+<h2 style = "font-family: myFirstFont2; padding-left: 35px; font-size: 30px; margin-top: 0px;">Floor Maintenance</h2>
 <div class = "col s12" >
     <div class = "row">
         <div class = "responsive">
 
-        <div class = "col s5">
-            <h2 style = "padding-left: 40px; font-size: 30px; margin-top: 0px;">Floor Maintenance</h2>
+        <div class = "col s4" style = "margin-left: 10px;">
+
 
             <div style = "overflow: auto;height: 470px;">
                 <div class = "col s12">
@@ -43,16 +44,16 @@
                             	<c:forEach items="${buildingList}" var="building">
 	                            	<li>
 		                                <div class="collapsible-header" style = "background-color: #00897b"><i class="medium material-icons">business</i>
-		                                    <label style = "font-family: myFirstFont; font-size: 20px; color: white;">${building.strBuildingName }</label>
+		                                    <label style = "font-family: myFirstFont2; font-size: 20px; color: white;">${building.strBuildingName }</label>
 		                                </div>
 		                                <c:forEach items="${building.floorList}" var="floor">
 			                                <div class="collapsible-body">
-			                                    <p>Floor No. ${floor.intFloorNo}
+			                                    <p style = "max-height: 50px; padding-top: 15px;">Floor No. ${floor.intFloorNo}
 			                                    	<c:if test="${floor.floorType == 0 }">
-			                                        	<button value="${floor.floorId}" name = "action" class="btn tooltipped modal-trigger btn-floating black right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor is not yet configured." style = "margin-left: 5px;" onclick="openConfigureFloor(this.value)"><i class="material-icons">settings</i></button>
+			                                        	<button value="${floor.floorId}" name = "action" class="btn tooltipped modal-trigger btn-floating black right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor is not yet configured." style = "margin-top: -10px; margin-left: 5px;" onclick="openConfigureFloor(this.value)"><i class="material-icons">settings</i></button>
 			                                        </c:if>
 			                                        <c:if test="${floor.floorType != 0}">
-			                                        	<button value="${floor.floorId}" name = "action" class="btn tooltipped modal-trigger btn-floating green right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor is configured." style = "margin-left: 5px;" onclick="openConfigureFloor(this.value)"><i class="material-icons">settings</i></button>
+			                                        	<button value="${floor.floorId}" name = "action" class="btn tooltipped modal-trigger btn-floating green right" data-position = "bottom" data-delay = "30" data-tooltip = "Floor is configured." style = "margin-top: -10px; margin-left: 5px;" onclick="openConfigureFloor(this.value)"><i class="material-icons">settings</i></button>
 			                                        </c:if>
 			                                    </p>
 			                                </div>
@@ -69,44 +70,40 @@
 
 
             <!-- Modal Configure -->
-            <div id="modalConfigure" class="modal" style = "width: 800px;">
+            <div id="modalConfigure" class="modal" style = "width: 650px;">
                 <div class = "modal-header" style = "height: 55px;">
-                    <h4 style = "font-size: 30px; padding-left: 20px;">Floor Configuration</h4>
+                    <h4 style = "font-family: myFirstFont2; font-size: 30px; padding-left: 20px;">Floor Configuration</h4>
                 </div>
 
           <div class="modal-content">
-              <button name = "action" class="btn tooltipped modal-trigger btn-floating red right" data-position = "bottom" data-delay = "30" data-tooltip = "New Floor Type" style = "margin-left: 5px;" href = "#modalNewFloorType"><i class="material-icons">add</i></button>
+              <button name = "action" class="btn tooltipped modal-trigger light-green right" data-position = "bottom" data-delay = "30" data-tooltip = "New Floor Type" style = "color: black; margin-top: 0px; margin-left: 5px;" href = "#modalNewFloorType">New Floor Type</button>
 			<input type="hidden" id="buildingIdToBeConfigured">
 			<input type="hidden" id="floorIdToBeConfigured">
 			<input type="hidden" id="floorTypes" name="floorType[]">
+
+			 <br>
             <div class = "row">
                 <h3 style = "font-size: 18px; padding-left: 20px;">Select Floor Type</h3>
               <div class = "col s6" style = "padding-left: 20px;" id="firstDivFloorType">
-                     
 
-                      
               </div>
                 <div class = "col s6" style = "padding-left: 20px;" id="secondDivFloorType">
                         
                     <br>
                 </div>
 
-			<div class="modal-footer">
-                          <button type = "submit" onclick="configureFloor()" name = "action" class="btn green" style = "margin-left: 10px; ">Confirm</button>
-
-                          <button name = "action" class="btn green modal-close">Cancel</button>
-                      </div>
-
             </div>
-
-
             </div>
+				<div class="modal-footer">
+					<button type = "submit" onclick="configureFloor()" name = "action" class="btn light-green" style = "margin-right: 20px; color: black; margin-left: 10px; ">Confirm</button>
+					<button name = "action" class="btn light-green modal-close" style = "color: black;">Cancel</button>
+				</div>
             </div>
 
             <!-- Modal New Floor Type -->
-            <div id="modalNewFloorType" class="modal" style = "width: 500px;">
+            <div id="modalNewFloorType" class="modal" style = "width: 450px;">
                 <div class = "modal-header" style = "height: 55px;">
-                    <h4 style = "padding-left: 20px; font-size: 30px;">Create Floor Type</h4>
+                    <h4 style = "font-family: myFirstFont2; padding-left: 20px; font-size: 30px;">Create Floor Type</h4>
                 </div>
                 <div class="modal-content">
                     <div class = "col s12">
@@ -125,9 +122,9 @@
 
                 </div>
                 <div class="modal-footer">
-                    <button onclick="createFloorType()" name = "action" class="btn green" style = "margin-left: 10px; ">Confirm</button>
+                    <button onclick="createFloorType()" name = "action" class="btn light-green" style = "color: black; margin-right: 30px; margin-left: 10px; ">Confirm</button>
                     </form>
-                    <button name = "action" class="btn green modal-close">Cancel</button>
+                    <button name = "action" class="btn light-green modal-close" style = "color: black;">Cancel</button>
                 </div>
             </div>
 
@@ -138,7 +135,7 @@
                     <div id="admin1" class="col s12" style="margin-top: 0px">
                         <div class="z-depth-2 card material-table" style="margin-top: 0px">
                             <div class="table-header" style="height: 45px; background-color: #00897b;">
-                                <h4 style = "padding-top: 10px; font-size: 30px; color: white; padding-left: 0px;">Archive Floor/s</h4>
+                                <h4 style = "font-family: myFirstFont2; padding-top: 10px; font-size: 30px; color: white; padding-left: 0px;">Archive Floor/s</h4>
                                 <a href="#" class="search-toggle btn-flat right"><i class="material-icons right" style="margin-left: 150px; color: #ffffff;">search</i></a>
                             </div>
                             <table id="datatable2">
@@ -152,49 +149,49 @@
                                 <tr>
                                     <td>Floor One</td>
                                     <td>
-                                        <button name = "action" class="btn red modal-close">Activate</button>
+                                        <button name = "action" class="btn light-green modal-close" style = "color: black;">Activate</button>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Floor Two</td>
                                     <td>
-                                        <button name = "action" class="btn red modal-close">Activate</button>
+                                        <button name = "action" class="btn light-green modal-close" style = "color: black;">Activate</button>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Floor Three</td>
                                     <td>
-                                        <button name = "action" class="btn red modal-close">Activate</button>
+                                        <button name = "action" class="btn light-green modal-close" style = "color: black;">Activate</button>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Floor Three</td>
                                     <td>
-                                        <button name = "action" class="btn red modal-close">Activate</button>
+                                        <button name = "action" class="btn light-green modal-close" style = "color: black;">Activate</button>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Floor Four</td>
                                     <td>
-                                        <button name = "action" class="btn red modal-close">Activate</button>
+                                        <button name = "action" class="btn light-green modal-close" style = "color: black;">Activate</button>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Floor Five</td>
                                     <td>
-                                        <button name = "action" class="btn red modal-close">Activate</button>
+                                        <button name = "action" class="btn light-green modal-close" style = "color: black;">Activate</button>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Floor Six</td>
                                     <td>
-                                        <button name = "action" class="btn red modal-close">Activate</button>
+                                        <button name = "action" class="btn light-green modal-close" style = "color: black;">Activate</button>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Floor Seven</td>
                                     <td>
-                                        <button name = "action" class="btn red modal-close">Activate</button>
+                                        <button name = "action" class="btn light-green modal-close" style = "color: black;">Activate</button>
                                     </td>
                                 </tr>
                                 </tbody>
@@ -202,18 +199,18 @@
                         </div>
                     </div>
                 </div>
-                <button name = "action" class="btn green modal-close right" style = "margin-bottom: 10px; margin-right: 30px;">DONE</button>
+                <button name = "action" class="btn light-green modal-close right" style = "color: black; margin-bottom: 10px; margin-right: 30px;">DONE</button>
             </div>
 
             <!-- Data Grid -->
-            <div class = "col s7">
+            <div class = "col s7" style = "margin-top: 0px;">
                 <div class="row">
-                    <div id="admin" class="col s12" style="margin-top: 20px">
+                    <div id="admin">
                         <div class="z-depth-2 card material-table">
                             <div class="table-header" style="background-color: #00897b;">
-                                <h4 style = "font-size: 30px; color: white; padding-left: 0px;">Floor Record</h4>
+                                <h4 style = "font-family: myFirstFont2; font-size: 30px; color: white; padding-left: 0px;">Floor Record</h4>
                                 <div class="actions">
-                                    <button name = "action" class="btn tooltipped modal-trigger btn-floating black" data-position = "bottom" data-delay = "30" data-tooltip = "Deactivated Floor/s" style = "margin-right: 10px;" href = "#modalArchiveFloor"><i class="material-icons" style = "color: white">delete</i></button>
+                                    <button name = "action" class="btn tooltipped modal-trigger btn-floating light-green" data-position = "bottom" data-delay = "30" data-tooltip = "Deactivated Floor/s" style = "margin-right: 10px;" href = "#modalArchiveFloor"><i class="material-icons" style = "color: black;">delete</i></button>
                                     <a href="#" class="search-toggle waves-effect btn-flat nopadding"><i class="material-icons" style="color: #ffffff;">search</i></a>
                                 </div>
                             </div>

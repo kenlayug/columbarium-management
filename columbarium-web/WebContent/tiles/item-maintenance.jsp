@@ -9,33 +9,34 @@
 		<link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css">
 		<link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.min.css">
 
-	<!-- Section -->
-	<div class = "responsive col s12">
-	    <div class = "row">
-	        <div class = "col s3">
-					<div id="alertDiv">
-						
-	            	</div>
-	            <!-- Create Items -->
-	            <div class = "col s12">
-	                <form class = "aside aside z-depth-3" style = "height: 430px; margin-left: 230px;" id="formCreate">
-	                    <div class = "header">
-	                        <h4 style = "font-size: 30px;padding-top: 10px; margin-top: 10px;">Item Maintenance</h4>
-	                    </div>
-	                        <div class = "row">
-	                        <div style = "padding-left: 10px;">
-	                            <div class="input-field col s6">
-	                                <input id="itemName" type="text" class="validate" name="item.strItemName" required = "" aria-required="true" minlength = "1" maxlength="20" pattern= "^[a-zA-Z'-\s]+|[0-9a-zA-Z'-\s]+|[a-zA-Z0-9'-]{1,20}">
-	                                <label for="itemName" data-error = "Invalid format." data-success = "">Item Name<span style = "color: red;">*</span></label>
-	                            </div>
-	                        </div>
-	                        <div style = "padding-left: 10px;">
-	                            <div class="input-field col s6">
-	                                <input id="itemPrice" type="text" class="validate" name="item.dblPrice" required = "" min="1" step="1" aria-required = "true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
-	                                <label for="itemPrice" data-error = "Invalid Format." data-success = "">Item Price<span style = "color: red;">*</span></label>
-	                            </div>
-	                        </div>
-	                    </div>
+
+<!-- Section -->
+<div class = "parent" style = "display: flex; flex-wrap: wrap; flex-direction: column;">
+	<div class = "row">
+		<div class = "col s4">
+			<div id="alertDiv">
+
+			</div>
+			<!-- Create Items -->
+			<div class = "col s12">
+				<form class = "aside aside z-depth-3" style = "margin-top: 20px; height: 430px; margin-left: 30px;" id="formCreate">
+					<div class = "header">
+						<h4 style = "font-family: myFirstFont2; font-size: 30px;padding-top: 10px; margin-top: 10px;">Additionals Maintenance</h4>
+					</div>
+					<div class = "row">
+						<div style = "padding-left: 10px;">
+							<div class="input-field col s6">
+								<input id="itemName" type="text" class="validate" name="item.strItemName" required = "" aria-required="true" minlength = "1" maxlength="20" pattern= "^[a-zA-Z'-\s]+|[0-9a-zA-Z'-\s]+|[a-zA-Z0-9'-]{1,20}">
+								<label for="itemName" data-error = "Invalid format." data-success = "">Item Name<span style = "color: red;">*</span></label>
+							</div>
+						</div>
+						<div style = "padding-left: 10px;">
+							<div class="input-field col s6">
+								<input id="itemPrice" type="text" class="validate" name="item.dblPrice" required = "" min="1" step="1" aria-required = "true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
+								<label for="itemPrice" data-error = "Invalid Format." data-success = "">Item Price<span style = "color: red;">*</span></label>
+							</div>
+						</div>
+					</div>
 
 					<div class = "row">
 						<div class="input-field col s6">
@@ -53,20 +54,81 @@
 					</div>
 
 
-	                        <div class="row" style = "padding-left: 10px;">
-	                            <div class="input-field col s12">
-	                                <input id="itemDesc" type="text" class="validate" name="item.strItemDesc">
-	                                <label for="itemDesc" data-error = "Invalid Format" data-success = "">Item Description</label>
-	                            </div>
-	                        </div>
-						<i class = "left" style = "margin-bottom: 0px; padding-left: 20px; color: red;">*Required Fields</i>
-	                	<br>
-						<button onClick = "createItem()" type = "submit" name = "action" class="btn green right" style = "margin-right: 10px;">Create</button>
+					<div class="row" style = "padding-left: 10px;">
+						<div class="input-field col s12">
+							<input id="itemDesc" type="text" class="validate" name="item.strItemDesc">
+							<label for="itemDesc" data-error = "Invalid Format" data-success = "">Item Description</label>
+						</div>
+					</div>
+					<i class = "left" style = "margin-bottom: 0px; padding-left: 20px; color: red;">*Required Fields</i>
+					<br>
+					<button onClick = "createItem()" type = "submit" name = "action" class="btn green right" style = "margin-right: 10px;">Create</button>
 
-					</form>
+				</form>
 
-	            </div>
-	        </div>
+			</div>
+		</div>
+
+
+<!-- Data Grid -->
+<div class = "col s7" style = "height: 500px; margin-top: 20px; margin-left: 40px;">
+	<div class="row">
+		<div id="admin">
+			<div class="z-depth-2 card material-table">
+				<div class="table-header" style="background-color: #00897b;">
+					<h4 style = "font-family: myFirstFont2; font-size: 30px; color: white; padding-left: 0px;">Item Record</h4>
+					<div class="actions">
+						<button name = "action" class="btn tooltipped modal-trigger btn-floating light-green" data-position = "bottom" data-delay = "30" data-tooltip = "Deactivated Item/s" style = "margin-right: 10px;" href = "#modalArchiveItem"><i class="material-icons" style = "color: black">delete</i></button>
+						<a href="#" class="search-toggle btn-flat nopadding"><i class="material-icons" style="color: #ffffff;">search</i></a>
+					</div>
+				</div>
+				<table id="datatable">
+					<thead>
+					<tr>
+						<th>Name</th>
+						<th>Price</th>
+						<th>Category</th>
+						<th>Description</th>
+						<th>Action</th>
+					</tr>
+					</thead>
+					<tbody>
+
+					<c:if test="${itemList == null }">
+						<tr>
+							<td>Item One</td>
+							<td>P 200</td>
+							<td>Item One</td>
+							<td><button name = "action" class="modal-trigger btn-floating light-green" onclick="openUpdate('${item.strItemName}')"><i class="material-icons" style = "color: black;">mode_edit</i></button>
+								<button name = "action" class="modal-trigger btn-floating light-green" href = "#modalDeactivateItem"><i class="material-icons" style = "color: black;">not_interested</i></button></td>
+						</tr>
+					</c:if>
+
+					<c:if test="${itemList != null }">
+						<c:forEach items="${itemList }" var="item">
+							<tr>
+								<td>${item.strItemName }</td>
+								<td>P ${item.dblPrice }</td>
+								<td>${item.strItemDesc }</td>
+								<td><button name = "action" class="modal-trigger btn-floating light-green" onclick="openUpdate('${item.strItemName}')"><i class="material-icons" style = "color: black;">mode_edit</i></button>
+									<button name = "action" class="modal-trigger btn-floating light-green" href = "#modalDeactivateItem"><i class="material-icons" style = "color: black;">not_interested</i></button></td>
+							</tr>
+						</c:forEach>
+					</c:if>
+
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src = "<%=request.getContextPath()%>/js/index.js"></script>
+</div>
+</div>
+</div>
+
+
+
 	
 	        <!-- Modal Update -->
 	        <div id="modalUpdateItem" class="modal" style = "width: 500px;">
@@ -74,6 +136,7 @@
 	                <h4 style = "padding-left: 20px; font-size: 30px;">Update Item</h4>
 	            </div>
 					<form id="formUpdate">
+						<br>
 		                <div class = "col s12">
 		                    <div class = "row">
 		                        <div style = "padding-left: 10px;">
@@ -99,7 +162,7 @@
 	                        </div>
 	                    </div>
 
-					<i class = "left" style = "margin-bottom: 0px; padding-left: 30px; color: red;">*Required Fields</i>
+					<i class = "left" style = "margin-bottom: 0px; padding-left: 20px; color: red;">*Required Fields</i>
 					<br>
 
 					<div class="modal-footer">
@@ -122,7 +185,7 @@
 				</div>
 				<input id="itemToBeDeactivated" type="hidden"/>
 				<div class="modal-footer">
-					<button onclick = "deactivateItem()" name = "action" class="btn red" style = "margin-left: 10px; ">Confirm</button>
+					<button onclick = "deactivateItem()" name = "action" class="btn light-green" style = "margin-left: 10px; ">Confirm</button>
 					<button name = "action" class="btn green modal-close">Cancel</button>
 				</div>
 			</div>
@@ -142,8 +205,8 @@
 						<br>
 					</div>
 					<div class="modal-footer">
-						<button onclick="createItemCategory()" name = "action" class="btn red" style = "margin-left: 10px; ">Confirm</button>
-						<button name = "action" class="btn green modal-close">Cancel</button>
+						<button onclick="createItemCategory()" name = "action" class="btn light-green" style = "color: black; margin-left: 10px; margin-top: 42px;">Confirm</button>
+						<button name = "action" class="btn light-green modal-close" style = "color: black;">Cancel</button>
 					</div>
 				</form>
 
@@ -223,67 +286,12 @@
 				<button name = "action" class="btn green modal-close right" style = "margin-bottom: 10px; margin-right: 30px;">DONE</button>
 			</div>
 
+	<script>
+		$(document).ready(function() {
+			$('select').material_select();
+		});
+	</script>
 
-
-			<!-- Data Grid -->
-			<div class = "col s7">
-				<div class="row">
-					<div id="admin" class="col s12" style="margin-left: 230px; margin-top: 20px">
-						<div class="z-depth-2 card material-table">
-							<div class="table-header" style="background-color: #00897b;">
-								<h4 style = "font-size: 30px; color: white; padding-left: 0px;">Item Record</h4>
-								<div class="actions">
-									<button name = "action" class="btn tooltipped modal-trigger btn-floating black" data-position = "bottom" data-delay = "30" data-tooltip = "Deactivated Item/s" style = "margin-right: 10px;" href = "#modalArchiveItem"><i class="material-icons" style = "color: white">delete</i></button>
-									<a href="#" class="search-toggle btn-flat nopadding"><i class="material-icons" style="color: #ffffff;">search</i></a>
-								</div>
-							</div>
-							<table id="datatable">
-								<thead>
-								<tr>
-									<th>Name</th>
-									<th>Price</th>
-									<th>Category</th>
-									<th>Description</th>
-									<th>Action</th>
-								</tr>
-								</thead>
-								<tbody>
-								
-									<c:if test="${itemList == null }">
-										<tr>
-											<td>Item One</td>
-											<td>P 200</td>
-											<td>Item One</td>
-											<td><button name = "action" class="modal-trigger btn-floating blue" onclick="openUpdate('${item.strItemName}')"><i class="material-icons" style = "color: black;">mode_edit</i></button>
-												<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateItem"><i class="material-icons" style = "color: black;">not_interested</i></button></td>
-										</tr>
-									</c:if>
-									
-									<c:if test="${itemList != null }">
-										<c:forEach items="${itemList }" var="item">
-											<tr>
-												<td>${item.strItemName }</td>
-												<td>P ${item.dblPrice }</td>
-												<td>${item.strItemDesc }</td>
-												<td><button name = "action" class="modal-trigger btn-floating blue" onclick="openUpdate('${item.strItemName}')"><i class="material-icons" style = "color: black;">mode_edit</i></button>
-													<button name = "action" class="modal-trigger btn-floating red" href = "#modalDeactivateItem"><i class="material-icons" style = "color: black;">not_interested</i></button></td>
-											</tr>
-										</c:forEach>
-									</c:if>
-								
-								</tbody>
-							</table>
-						</div>
-					</div>
-				</div>
-
-				<script type="text/javascript" src = "<%=request.getContextPath()%>/js/index.js"></script>
-			</div>
-	
-	
-	    </div>
-	</div>
-	
 	<script type="text/javascript">
 		$(document).ready(function(){
 			// the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
@@ -465,8 +473,8 @@
 	        		
 		        		$.each(itemList, function(i, item){
 							
-		        			var addButtons = "<button value = "+item.itemId+" name = action class= 'modal-trigger btn-floating blue' onclick= openUpdate(this.value) ><i class= material-icons style = 'color: black;''>mode_edit</i></button>"+
-		        			"<button name = action value = "+item.itemId+" class= 'modal-trigger btn-floating red' onclick = openDeactivate(this.value) ><i class= material-icons style = 'color: black;'>not_interested</i></button></td>";
+		        			var addButtons = "<button value = "+item.itemId+" name = action class= 'modal-trigger btn-floating light-green' onclick= openUpdate(this.value) ><i class= material-icons style = 'color: black;''>mode_edit</i></button>"+
+		        			"<button name = action value = "+item.itemId+" class= 'modal-trigger btn-floating light-green' style = 'margin-left: 5px;' onclick = openDeactivate(this.value) ><i class= material-icons style = 'color: black;'>not_interested</i></button></td>";
 		        			
 		        			
 		        			table.row.add( [
