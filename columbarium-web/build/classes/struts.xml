@@ -90,6 +90,10 @@
      	<action name="unit" class="columbarium.actions.ChainAction">
 			<result name="success" type="redirect">/unit/</result>
 		</action>
+
+		 <action name="interest" class="columbarium.actions.ChainAction">
+			 <result name="success" type="tiles">interest-maintenance</result>
+		 </action>
 		
 		<action name="inventory" class="columbarium.actions.ChainAction">
 			<result name="success" type="tiles">inventory-transaction</result>
@@ -135,5 +139,6 @@
      <include file="struts-floor.xml"/>
      <include file="struts-block.xml"/>
      <include file="struts-unit.xml"/>
+
      
  </struts> 
