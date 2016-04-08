@@ -10,7 +10,7 @@
         <div class="nav-wrapper">
 
 
-            <a href="#" class="brand-logo center" style = "font-family: myFirstFont1;">Columbary and Crematory Management System</a>
+            <a href="#" class="brand-logo center" style = "font-size: 2.5vw; font-family: myFirstFont1;">Columbary and Crematory Management System</a>
 
             <nav id="slide-out-l" class="side-nav left" style = "background-color: #212121;">
 
@@ -41,6 +41,7 @@
                                 <li style = "margin-top: -8px; max-height: 40px;"><a href="<%=request.getContextPath()%>/floor"><h6 style = "font-size: 15px; font-family: myFirstFont2; padding-top: 10px;">Floor</h6></a></li>
                                 <li style = "margin-top: -8px; max-height: 40px;"><a href="<%=request.getContextPath()%>/block"><h6 style = "font-size: 15px; font-family: myFirstFont2; padding-top: 10px;">Block</h6></a></li>
                                 <li style = "margin-top: -8px; max-height: 40px;"><a href="<%=request.getContextPath()%>/unit"><h6 style = "font-size: 15px; font-family: myFirstFont2; padding-top: 10px;">Unit</h6></a></li>
+                                <li style = "margin-top: -8px; max-height: 40px;"><a href="<%=request.getContextPath()%>/interest"><h6 style = "font-size: 15px; font-family: myFirstFont2; padding-top: 10px;">Interest</h6></a></li>
                             </ul>
                         </div>
                     </li>
@@ -48,11 +49,11 @@
                         <div class="collapsible-header" style = "padding-left: 0px;font-family: myFirstFont2;"><i class="material-icons">work</i>Transaction</div>
                         <div class="collapsible-body">
                             <ul>
-                                <li style = "margin-top: -8px; max-height: 40px;"><a href = "#!"><h6 style = "font-size: 15px; font-family: myFirstFont2; padding-top: 10px;">Manage Service</h6></a></li>
-                                <li style = "margin-top: -8px; max-height: 40px;"><a href = "#!"><h6 style = "font-size: 15px; font-family: myFirstFont2; padding-top: 10px;">Scheduling</h6></a></li>
-                                <li style = "margin-top: -8px; max-height: 40px;"><a href = "#!"><h6 style = "font-size: 15px; font-family: myFirstFont2; padding-top: 10px;">Manage Unit</h6></a></li>
-                                <li style = "margin-top: -8px; max-height: 40px;"><a href = "#!"><h6 style = "font-size: 15px; font-family: myFirstFont2; padding-top: 10px;">Collection</h6></a></li>
-                                <li style = "margin-top: -8px; max-height: 40px;"><a href = "#!"><h6 style = "font-size: 15px; font-family: myFirstFont2; padding-top: 10px;">Notification</h6></a></li>
+                                <li style = "margin-top: -8px; max-height: 40px;"><a href="<%=request.getContextPath()%>/buy-unit"><h6 style = "font-size: 15px; font-family: myFirstFont2; padding-top: 10px;">Manage Service</h6></a></li>
+                                <li style = "margin-top: -8px; max-height: 40px;"><a href="<%=request.getContextPath()%>/schedule"><h6 style = "font-size: 15px; font-family: myFirstFont2; padding-top: 10px;">Scheduling</h6></a></li>
+                                <li style = "margin-top: -8px; max-height: 40px;"><a href="<%=request.getContextPath()%>/manage-unit"><h6 style = "font-size: 15px; font-family: myFirstFont2; padding-top: 10px;">Manage Unit</h6></a></li>
+                                <li style = "margin-top: -8px; max-height: 40px;"><a href="<%=request.getContextPath()%>/collection"><h6 style = "font-size: 15px; font-family: myFirstFont2; padding-top: 10px;">Collection</h6></a></li>
+                                <li style = "margin-top: -8px; max-height: 40px;"><a href="<%=request.getContextPath()%>/notification"><h6 style = "font-size: 15px; font-family: myFirstFont2; padding-top: 10px;">Notification</h6></a></li>
                             </ul>
                         </div>
                     </li>

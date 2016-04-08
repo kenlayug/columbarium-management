@@ -21,7 +21,7 @@
 			<div class = "col s12">
 				<form class = "aside aside z-depth-3" style = "margin-top: 20px; height: 430px; margin-left: 30px;" id="formCreate">
 					<div class = "header">
-						<h4 style = "font-family: myFirstFont2; font-size: 30px;padding-top: 10px; margin-top: 10px;">Additionals Maintenance</h4>
+						<h4 style = "font-family: myFirstFont2; font-size: 2.5vw;padding-top: 10px; margin-top: 10px;">Additionals Maintenance</h4>
 					</div>
 					<div class = "row">
 						<div style = "padding-left: 10px;">
