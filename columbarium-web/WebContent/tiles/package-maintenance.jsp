@@ -20,33 +20,46 @@
             </div>
             <!-- Create Package -->
             <div class = "col s12">
-                <form class = "aside aside z-depth-3" style = "margin-top: 20px; height: 450px; margin-left: 30px;" id="formCreate">
+                <form class = "aside aside z-depth-3" style = "margin-top: 20px; height: 430px; margin-left: 30px;" id="formCreate">
                     <div class = "header">
                         <h4 style = "font-family: myFirstFont2; font-size: 30px;padding-top: 10px; margin-top: 10px;">Package Maintenance</h4>
                     </div>
 
-                    <div class = "col s12">
                         <div class="row">
-                            <div class="input-field col s12">
-                                <input id="packageName" type="text" class="validate" required = "" aria-required="true" minlength = "1" maxlength="20" pattern= "^[a-zA-Z'-\s]+|[0-9a-zA-Z'-\s]+|[a-zA-Z0-9'-]{1,20}">
-                                <label for="packageName" data-error = "Invalid format." data-success = "">Package Name<span style = "color: red;">*</span></label>
-                            </div>
-                            <div class="input-field col s12">
-                                <input id="packagePrice" type="text" class="validate" required = "" aria-required="true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
-                                <label for="packagePrice" data-error = "Invalid format." data-success = "">Package Price<span style = "color: red;">*</span></label>
-                            </div>
-                            <div class="input-field col s12" style = "padding-bottom: 10px;">
-                                <input id="packageDesc" type="text" class="validate">
-                                <label for="packageDesc">Package Description</label>
-                                <i class = "left" style = "margin-top: 0px; padding-left: 0px; color: red;">*Required Fields</i>
+                            <div class = "row" style = "padding-left: 10px; padding-top: -30px;">
+                                <div class="input-field col s6">
+                                    <input id="packageName" type="text" class="validate" required = "" aria-required="true" minlength = "1" maxlength="20" pattern= "^[a-zA-Z'-\s]+|[0-9a-zA-Z'-\s]+|[a-zA-Z0-9'-]{1,20}">
+                                    <label for="packageName" data-error = "Invalid format." data-success = "">Package Name<span style = "color: red;">*</span></label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <input id="packagePrice" type="number" class="validate" required = "" aria-required="true" pattern = "(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
+                                    <label for="packagePrice" data-error = "Invalid format." data-success = "">Package Price<span style = "color: red;">*</span></label>
+                                </div>
+                                <div class="input-field col s12" style = "padding-bottom: 10px;">
+                                    <input id="packageDesc" type="text" class="validate">
+                                    <label for="packageDesc">Package Description</label>
+                                </div>
+                                <i class = "left" style = "margin-top: 0px; padding-left: 10px; color: red;">*Required Fields</i>
                             </div>
 
-                            <button type = "submit" name = "action" class="modal-trigger btn light-green left" style = "color: black; margin-left: 10px; margin-top: 10px; width: 175px; margin-right: 10px;" href = "#modalItem">View Item/s</button>
-                            <button type = "submit" name = "action" class="modal-trigger btn light-green left" style = "color: black; margin-top: 10px; margin-right: 10px; width: 180px;" href = "#modalService">View Service/s</button>
+
+
+                            <div class = "row">
+                                <div class = "col s6" style = "padding-top: -10px; margin-top: -20px;">
+                                        <button type = "submit" name = "action" class="modal-trigger btn light-green left" style = "color: black; margin-left: 10px; margin-top: 10px; width: 180px; margin-right: 10px;" href = "#modalItem">View Item/s</button>
+                                </div>
+                                <div class = "col s6" style = "padding-top: -10px; margin-top: -20px;">
+                                        <button type = "submit" name = "action" class="modal-trigger btn light-green left" style = "color: black; margin-top: 10px; margin-right: 10px; width: 180px;" href = "#modalService">View Service/s</button>
+                                </div>
+                            </div>
+
+                            <label style = "color: black; padding-left: 20px; font-size: 1vw;">Total Price:</label>
+                            <br>
+                            <label style = "padding-left: 20px; font-size: 1vw;">P 000.00</label>
+
                         </div>
-                    </div>
                     <br><br>
-                    <button onClick = "createPackage()" type = "submit" name = "action" class="btn light-green right" style = "margin-bottom: -20px; color: black; margin-right: 20px;">Create</button>
+                    <button onClick = "createPackage()" type = "submit" name = "action" class="btn light-green right" style = "margin-top: -50px; color: black; margin-right: 20px;">Create</button>
 
                 </form>
             </div>
@@ -60,12 +73,12 @@
                 <h4 style = "font-family: myFirstFont2; font-size: 30px; padding-left: 20px;">Item Inclusion/s</h4>
             </div>
                 <div class = "col s12">
-
-                        <h6 style = "font-family: arial;">Items</h6>
-                        <div id="itemCheckBox">
+                <br>
+                        <h6 style = "font-family: arial; padding-left: 10px;">Items</h6>
+                        <div id="itemCheckBox" style = "padding-bottom: 20px; padding-left: 10px;">
 	                        <c:if test="${itemList == null}">
 	                            <p>
-	                                <h7>No items available</h7>
+	                                <h7 style = "padding-left: 10px;">No items available</h7>
 	                            </p>
 	                        </c:if>
 	                        <c:if test="${itemList != null }">
@@ -80,6 +93,9 @@
                     </div>
 
                 <br><br><br>
+                <label style = "color: black; padding-left: 380px; font-size: 1vw;">Total Item Price:</label>
+                <br>
+                <label style = "padding-left: 380px; font-size: 1vw;">P 000.00</label>
 
                 <div style = "margin-top: 30px;">
                 <div class="modal-footer">
@@ -122,6 +138,11 @@
                 </div>
             </div>
         </div>
+
+        <label style = "color: black; padding-left: 370px; font-size: 1vw;">Total Service Price:</label>
+        <br>
+        <label style = "padding-left: 370px; font-size: 1vw;">P 000.00</label>
+        <br>
 
         <div class="modal-footer">
             <button name = "action" class="btn light-green" style = "color: black; margin-left: 10px; ">Confirm</button>

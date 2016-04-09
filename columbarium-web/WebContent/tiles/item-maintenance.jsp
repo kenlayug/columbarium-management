@@ -50,7 +50,7 @@
 							</select>
 							<label>Select Item Category</label>
 						</div>
-						<button type = "submit" name = "action" class="modal-trigger btn green right" style = "margin-top: 10px; margin-right: 10px;" href = "#modalItemCategory">Item Category</button>
+						<button type = "submit" name = "action" class="modal-trigger btn light-green right" style = "color: black; margin-top: 20px; margin-right: 10px;" href = "#modalItemCategory">Item Category</button>
 					</div>
 
 
@@ -62,7 +62,7 @@
 					</div>
 					<i class = "left" style = "margin-bottom: 0px; padding-left: 20px; color: red;">*Required Fields</i>
 					<br>
-					<button onClick = "createItem()" type = "submit" name = "action" class="btn green right" style = "margin-right: 10px;">Create</button>
+					<button onClick = "createItem()" type = "submit" name = "action" class="btn light-green right" style = "color: black; margin-right: 10px;">Create</button>
 
 				</form>
 
@@ -76,7 +76,7 @@
 		<div id="admin">
 			<div class="z-depth-2 card material-table">
 				<div class="table-header" style="background-color: #00897b;">
-					<h4 style = "font-family: myFirstFont2; font-size: 30px; color: white; padding-left: 0px;">Additionals Record</h4>
+					<h4 style = "font-family: myFirstFont2; font-size: 2.5vw; color: white; padding-left: 0px;">Additionals Record</h4>
 					<div class="actions">
 						<button name = "action" class="btn tooltipped modal-trigger btn-floating light-green" data-position = "bottom" data-delay = "30" data-tooltip = "Deactivated Item/s" style = "margin-right: 10px;" href = "#modalArchiveItem"><i class="material-icons" style = "color: black">delete</i></button>
 						<a href="#" class="search-toggle btn-flat nopadding"><i class="material-icons" style="color: #ffffff;">search</i></a>
@@ -193,7 +193,7 @@
 			<!-- Modal Item Category -->
 			<div id="modalItemCategory" class="modal" style = "width: 400px;">
 				<div class = "modal-header" style = "height: 55px;">
-					<h4 style = "padding-left: 20px; font-size: 30px;">Item Category</h4>
+					<h4 style = "font-family: myFirstFont2; padding-left: 20px; font-size: 30px;">Item Category</h4>
 				</div>
 				<form class="modal-content" id="formCreateItemCategory">
 					<div style = "padding-left: 10px;">
@@ -213,13 +213,13 @@
 			</div>
 
 			<!-- Modal Archive Item-->
-			<div id="modalArchiveItem" class="modal" style = "height: 1300px; width: 740px;">
+			<div id="modalArchiveItem" class="modal" style = "height: 400px; width: 500px;">
 				<div class="modal-content">
 					<!-- Data Grid Deactivated Item/s-->
 					<div id="admin1" class="col s12" style="margin-top: 0px">
 						<div class="z-depth-2 card material-table" style="margin-top: 0px">
 							<div class="table-header" style="height: 45px; background-color: #00897b;">
-								<h4 style = "padding-top: 10px; font-size: 30px; color: white; padding-left: 0px;">Archive Item/s</h4>
+								<h4 style = "font-family: myFirstFont2; padding-top: 10px; font-size: 25px; color: white; padding-left: 0px;">Archive Item/s</h4>
 								<a href="#" class="search-toggle btn-flat right"><i class="material-icons right" style="margin-left: 270px; color: #ffffff;">search</i></a>
 							</div>
 							<table id="datatable2">

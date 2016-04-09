@@ -49,6 +49,7 @@
                         <div class="collapsible-header" style = "padding-left: 0px;font-family: myFirstFont2;"><i class="material-icons">work</i>Transaction</div>
                         <div class="collapsible-body">
                             <ul>
+                                <li style = "margin-top: -8px; max-height: 40px;"><a href="<%=request.getContextPath()%>/customer"><h6 style = "font-size: 15px; font-family: myFirstFont2; padding-top: 10px;">Customer</h6></a></li>
                                 <li style = "margin-top: -8px; max-height: 40px;"><a href="<%=request.getContextPath()%>/buy-unit"><h6 style = "font-size: 15px; font-family: myFirstFont2; padding-top: 10px;">Manage Service</h6></a></li>
                                 <li style = "margin-top: -8px; max-height: 40px;"><a href="<%=request.getContextPath()%>/schedule"><h6 style = "font-size: 15px; font-family: myFirstFont2; padding-top: 10px;">Scheduling</h6></a></li>
                                 <li style = "margin-top: -8px; max-height: 40px;"><a href="<%=request.getContextPath()%>/manage-unit"><h6 style = "font-size: 15px; font-family: myFirstFont2; padding-top: 10px;">Manage Unit</h6></a></li>
