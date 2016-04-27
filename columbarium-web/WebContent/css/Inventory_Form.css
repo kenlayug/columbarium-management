@@ -3,6 +3,12 @@
     src: url(../fonts/KGBlankSpaceSketch.ttf);
 }
 
+@media only screen and (max-width: 1026px) {
+    #fadeshow {
+        display: none;
+    }
+}
+
 #toast-container {
     position: fixed !important;
     bottom: 100px !important;

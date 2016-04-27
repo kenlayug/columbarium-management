@@ -22,7 +22,7 @@
             <div class = "col s12">
                 <form class = "aside aside z-depth-3" style = "margin-top: 20px; height: 430px; margin-left: 30px;" id="formCreate">
                     <div class = "header">
-                        <h4 style = "font-family: myFirstFont2; font-size: 30px;padding-top: 10px; margin-top: 10px;">Package Maintenance</h4>
+                        <h4 style = "font-family: myFirstFont2; font-size: 1.8vw;padding-top: 10px; margin-top: 10px;">Package Maintenance</h4>
                     </div>
 
                         <div class="row">
@@ -70,7 +70,7 @@
         <!-- Modal Item -->
         <div id="modalItem" class="modal" style = "width: 500px;">
             <div class = "modal-header" style = "height: 55px;">
-                <h4 style = "font-family: myFirstFont2; font-size: 30px; padding-left: 20px;">Item Inclusion/s</h4>
+                <h4 style = "font-family: myFirstFont2; font-size: 1.8vw; padding-left: 20px;">Item Inclusion/s</h4>
             </div>
                 <div class = "col s12">
                 <br>
@@ -95,7 +95,7 @@
                 <br><br><br>
                 <label style = "color: black; padding-left: 380px; font-size: 1vw;">Total Item Price:</label>
                 <br>
-                <label style = "padding-left: 380px; font-size: 1vw;">P 000.00</label>
+                <label style = "padding-left: 380px; font-size: 1vw;">P 0.00</label>
 
                 <div style = "margin-top: 30px;">
                 <div class="modal-footer">
@@ -108,7 +108,7 @@
     <!-- Modal Service -->
     <div id="modalService" class="modal" style = "width: 500px;">
         <div class = "modal-header" style = "height: 55px;">
-            <h4 style = "font-family: myFirstFont2; font-size: 30px; padding-left: 20px;">Service Inclusion/s</h4>
+            <h4 style = "font-family: myFirstFont2; font-size: 1.8vw; padding-left: 20px;">Service Inclusion/s</h4>
         </div>
         <div class="modal-content">
             <div class = "col s12">
@@ -141,7 +141,7 @@
 
         <label style = "color: black; padding-left: 370px; font-size: 1vw;">Total Service Price:</label>
         <br>
-        <label style = "padding-left: 370px; font-size: 1vw;">P 000.00</label>
+        <label style = "padding-left: 370px; font-size: 1vw;">P 0.00</label>
         <br>
 
         <div class="modal-footer">
@@ -154,7 +154,7 @@
     <!-- Modal Update -->
         <form id="modalUpdatePackage" class="modal" style = "width: 650px;">
             <div class = "modal-header" style = "height: 55px;">
-                <h4 style = "font-family: myFirstFont2; padding-left: 20px; font-size: 30px;">Update Package</h4>
+                <h4 style = "font-family: myFirstFont2; padding-left: 20px; font-size: 1.8vw;">Update Package</h4>
             </div>
             <div class="modal-content">
                 <i class = "left" style = "margin-top: 0px; padding-left: 10px; color: red;">*Required Fields</i>
@@ -190,7 +190,7 @@
         <!-- Modal Deactivate -->
         <div id="modalDeactivatePackage" class="modal" style = "width: 400px;">
             <div class = "modal-header" style = "height: 55px;">
-                <h4 style = "font-family: myFirstFont2; font-size: 30px; padding-left: 20px;">Deactivate Package</h4>
+                <h4 style = "font-family: myFirstFont2; font-size: 1.8vw; padding-left: 20px;">Deactivate Package</h4>
             </div>
             <input id="packageToBeDeactivated" type="hidden">
             <div class="modal-content">
@@ -205,7 +205,7 @@
     <!-- Modal Package Includes -->
     <div id="modalPackageIncludes" class="modal" style = "width: 500px;">
         <div class = "modal-header" style = "height: 55px;">
-            <h4 style = "font-family: myFirstFont2; font-size: 30px; padding-left: 20px;">Package</h4>
+            <h4 style = "font-family: myFirstFont2; font-size: 1.8vw; padding-left: 20px;">Package</h4>
         </div>
         <div class="modal-content">
         	<div id="inclusionDiv">
@@ -227,7 +227,7 @@
             <div id="admin1" class="col s12" style="margin-top: 0px">
                 <div class="z-depth-2 card material-table" style="margin-top: 0px">
                     <div class="table-header" style="height: 45px; background-color: #00897b;">
-                        <h4 style = "font-family: myFirstFont2; padding-top: 10px; font-size: 25px; color: white; padding-left: 0px;">Archive Package/s</h4>
+                        <h4 style = "font-family: myFirstFont2; padding-top: 10px; font-size: 1.7vw; color: white; padding-left: 0px;">Archive Package/s</h4>
                         <a href="#" class="search-toggle btn-flat right"><i class="material-icons right" style="margin-left: 140px; color: #ffffff;">search</i></a>
                     </div>
                     <table id="datatable2">
@@ -303,7 +303,7 @@
                 <div id="admin">
                     <div class="z-depth-2 card material-table">
                         <div class="table-header" style="background-color: #00897b;">
-                            <h4 style = "font-family: myFirstFont2; font-size: 30px; color: white; padding-left: 0px;">Package Record</h4>
+                            <h4 style = "font-family: myFirstFont2; font-size: 1.8vw; color: white; padding-left: 0px;">Package Record</h4>
 
                             <div class="actions">
                                 <button name = "action" class="btn tooltipped modal-trigger btn-floating light-green" data-position = "bottom" data-delay = "30" data-tooltip = "Deactivated Package/s" style = "margin-right: 10px;" href = "#modalArchivePackage"><i class="material-icons" style = "color: black;">delete</i></button>

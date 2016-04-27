@@ -11,7 +11,7 @@
     <script type="text/javascript" src = "../js/index.js"></script>
 
     <!-- Section -->
-<h2 style = "font-family: myFirstFont2; padding-left: 35px; font-size: 30px; margin-top: 0px;">Floor Maintenance</h2>
+<h2 style = "font-family: myFirstFont2; padding-left: 35px; font-size: 2vw; margin-top: 0px;">Floor Maintenance</h2>
 <div class = "col s12" >
     <div class = "row">
         <div class = "responsive">
@@ -26,7 +26,7 @@
                             <c:if test="${buildingList == null }">
                             	<li>
 	                                <div class="collapsible-header" style = "background-color: #00897b"><i class="medium material-icons">business</i>
-	                                    <label style = "font-family: myFirstFont; font-size: 20px; color: white;">Building One</label>
+	                                    <label style = "font-family: myFirstFont; font-size: 1.8vw; color: white;">Building One</label>
 	                                </div>
 	                                <div class="collapsible-body">
 	                                    <p>Ground Floor
@@ -44,7 +44,7 @@
                             	<c:forEach items="${buildingList}" var="building">
 	                            	<li>
 		                                <div class="collapsible-header" style = "background-color: #00897b"><i class="medium material-icons">business</i>
-		                                    <label style = "font-family: myFirstFont2; font-size: 20px; color: white;">${building.strBuildingName }</label>
+		                                    <label style = "font-family: myFirstFont2; font-size: 1.8vw; color: white;">${building.strBuildingName }</label>
 		                                </div>
 		                                <c:forEach items="${building.floorList}" var="floor">
 			                                <div class="collapsible-body">
@@ -72,7 +72,7 @@
             <!-- Modal Configure -->
             <div id="modalConfigure" class="modal" style = "width: 650px;">
                 <div class = "modal-header" style = "height: 55px;">
-                    <h4 style = "font-family: myFirstFont2; font-size: 30px; padding-left: 20px;">Floor Configuration</h4>
+                    <h4 style = "font-family: myFirstFont2; font-size: 1.8vw; padding-left: 20px;">Floor Configuration</h4>
                 </div>
 
           <div class="modal-content">
@@ -103,7 +103,7 @@
             <!-- Modal New Floor Type -->
             <div id="modalNewFloorType" class="modal" style = "width: 450px;">
                 <div class = "modal-header" style = "height: 55px;">
-                    <h4 style = "font-family: myFirstFont2; padding-left: 20px; font-size: 30px;">Create Floor Type</h4>
+                    <h4 style = "font-family: myFirstFont2; padding-left: 20px;; font-size:1.8vw;">Create Floor Type</h4>
                 </div>
                 <div class="modal-content">
                     <div class = "col s12">
@@ -123,7 +123,6 @@
                 </div>
                 <div class="modal-footer">
                     <button onclick="createFloorType()" name = "action" class="btn light-green" style = "color: black; margin-right: 30px; margin-left: 10px; ">Confirm</button>
-                    </form>
                     <button name = "action" class="btn light-green modal-close" style = "color: black;">Cancel</button>
                 </div>
             </div>
@@ -135,7 +134,7 @@
                     <div id="admin1" class="col s12" style="margin-top: 0px">
                         <div class="z-depth-2 card material-table" style="margin-top: 0px">
                             <div class="table-header" style="height: 45px; background-color: #00897b;">
-                                <h4 style = "font-family: myFirstFont2; padding-top: 10px; font-size: 30px; color: white; padding-left: 0px;">Archive Floor/s</h4>
+                                <h4 style = "font-family: myFirstFont2; padding-top: 10px; font-size: 1.8vw; color: white; padding-left: 0px;">Archive Floor/s</h4>
                                 <a href="#" class="search-toggle btn-flat right"><i class="material-icons right" style="margin-left: 150px; color: #ffffff;">search</i></a>
                             </div>
                             <table id="datatable2">
@@ -208,7 +207,7 @@
                     <div id="admin">
                         <div class="z-depth-2 card material-table">
                             <div class="table-header" style="background-color: #00897b;">
-                                <h4 style = "font-family: myFirstFont2; font-size: 30px; color: white; padding-left: 0px;">Floor Record</h4>
+                                <h4 style = "font-family: myFirstFont2; font-size: 1.8vw; color: white; padding-left: 0px;">Floor Record</h4>
                                 <div class="actions">
                                     <button name = "action" class="btn tooltipped modal-trigger btn-floating light-green" data-position = "bottom" data-delay = "30" data-tooltip = "Deactivated Floor/s" style = "margin-right: 10px;" href = "#modalArchiveFloor"><i class="material-icons" style = "color: black;">delete</i></button>
                                     <a href="#" class="search-toggle waves-effect btn-flat nopadding"><i class="material-icons" style="color: #ffffff;">search</i></a>

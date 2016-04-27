@@ -5,7 +5,7 @@
 
     <link href="../css/vaults.css" rel="stylesheet" type="text/css"/>
 <!-- Section -->
-<h2 style = "font-family: myFirstFont2; font-size: 30px; padding-left: 55px; margin-bottom: 10px;">Unit Maintenance</h2>
+<h2 style = "font-family: myFirstFont2; font-size: 2vw; padding-left: 55px; margin-bottom: 10px;">Unit Maintenance</h2>
 <div class = col s12 >
     <div class = "row">
         <div class = "col s4" style="margin-left: 20px; height: 500px">
@@ -21,7 +21,7 @@
 									<c:forEach items="${buildingList }" var="building">
 										 <li>
 		                                    <div class="collapsible-header" style = "background-color: #00897b"><i class="medium material-icons">business</i>
-		                                        <label style = "font-family: myFirstFont2; font-size: 20px; color: white;">${building.strBuildingName }</label>
+		                                        <label style = "font-family: myFirstFont2; font-size: 1.8vw; color: white;">${building.strBuildingName }</label>
 		                                    </div>
 		                                    <div class="collapsible-body">
 		                                        <div class="row">
@@ -38,13 +38,13 @@
 						                                                    	
 							                                                        <c:if test="${floor.blockList == null }">
 							                                                        	<div class="collapsible-body">
-									                                                            <p  style = "font-family: myFirstFont2;">No blocks available.</p>
+									                                                            <p  style = "font-family: myFirstFont2; font-size: 1.5vw;">No blocks available.</p>
 									                                                    </div>
 							                                                        </c:if>
 							                                                        <c:if test="${floor.blockList != null}">
 							                                                        	<c:forEach items="${floor.blockList }" var="block">
 							                                                        		<div class="collapsible-body">
-									                                                            <p  style = "max-height: 50px; padding-top: 15px; font-size: 18px; font-family: myFirstFont2;">${block.strBlockName }
+									                                                            <p  style = "max-height: 50px; padding-top: 15px; font-size: 1.3vw; font-family: myFirstFont2;">${block.strBlockName }
 									                                                            	<button value="${block.blockId }" name = "action" class="btn tooltipped light-green right btn-floating" data-position = "bottom" data-delay = "30" data-tooltip = "View Block" style = "margin-top: -10px; margin-right: 0px; font-family: arial; color: black;" onclick="viewUnits(this.value)" ><i class="material-icons" style = "color: black">visibility</i></button>
                                                             									</p>
 									                                                        </div>
@@ -87,7 +87,7 @@
                                 <!-- Modal Structure For Unit Status -->
                                 <div id="modal1" class="modal modal-fixed">
                                     <div class="modal-header">
-                                        <label style="font-size: large">UNIT STATUS</label>
+                                        <label style="font-family: myFirstFont2; font-size: 1.8vw">Unit Status</label>
                                     </div>
                                         <div class="row">
                                             <div class="input-field col s3">

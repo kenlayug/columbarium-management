@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="../css/style.css">
 
 
-<h2 style = "font-family: myFirstFont2; padding-left: 50px; font-size: 30px; margin-top: 20px;">Block Maintenance</h2>
+<h2 style = "font-family: myFirstFont2; padding-left: 50px; font-size: 2vw; margin-top: 20px;">Block Maintenance</h2>
 <div class = "col s12" >
     <div class = "row">
         <div class = "responsive">
@@ -24,7 +24,7 @@
                             	<c:if test="${buildingList == null }">
 	                                <li>
 	                                    <div class="collapsible-header" style = "background-color: #00897b"><i class="medium material-icons">business</i>
-	                                        <label style = "font-family: myFirstFont2; font-size: 20px; color: white;">Building One</label>
+	                                        <label style = "font-family: myFirstFont2; font-size: 1.8vw; color: white;">Building One</label>
 	                                    </div>
 	                                    <div class="collapsible-body">
 	                                        <div class="row">
@@ -70,7 +70,7 @@
 									<c:forEach items="${buildingList }" var="building">
 										 <li>
 		                                    <div class="collapsible-header" style = "background-color: #00897b"><i class="medium material-icons">business</i>
-		                                        <label style = "font-family: myFirstFont2; font-size: 20px; color: white;">${building.strBuildingName }</label>
+		                                        <label style = "font-family: myFirstFont2; font-size: 1.8vw; color: white;">${building.strBuildingName }</label>
 		                                    </div>
 		                                    <div class="collapsible-body">
 		                                        <div class="row">
@@ -124,7 +124,7 @@
             <!-- Modal Create -->
             <div id="modalCreateBlock" class="modal" style = "width: 550px;">
                 <div class = "modal-header" style = "height: 55px;">
-                    <h4 style = "font-family: myFirstFont2; font-size: 30px; padding-left: 20px;">Create Block</h4>
+                    <h4 style = "font-family: myFirstFont2; font-size: 1.8vw; padding-left: 20px;">Create Block</h4>
                 </div>
                 <form id="createBlockForm" style = "padding-bottom: 0px;">
 
@@ -164,7 +164,7 @@
             <!-- Modal Update -->
             <form id="modalUpdateBlock" class="modal" style = "width: 400px;">
                 <div class = "modal-header" style = "height: 55px;">
-                    <h4 style = "font-family: myFirstFont2; padding-left: 20px; font-size: 30px;">Update Block</h4>
+                    <h4 style = "font-family: myFirstFont2; padding-left: 20px; font-size: 1.8vw;">Update Block</h4>
                 </div>
                 <div class="modal-content">
                     <div style = "padding-left: 10px;">
@@ -186,7 +186,7 @@
             <!-- Modal Deactivate -->
             <div id="modalDeactivateBlock" class="modal" style = "width: 400px;">
                 <div class = "modal-header" style = "height: 55px;">
-                    <h4 style = "font-family: myFirstFont2; padding-left: 20px; font-size: 30px;">Deactivate Block</h4>
+                    <h4 style = "font-family: myFirstFont2; padding-left: 20px; font-size: 1.8vw;">Deactivate Block</h4>
                 </div>
                 <div class="modal-content">
                     <p style = "padding-left: 20px; font-size: 15px;">Are you sure you want to deactivate this block?</p>
@@ -205,7 +205,7 @@
                     <div id="admin1" class="col s12" style="margin-top: 0px">
                         <div class="z-depth-2 card material-table" style="margin-top: 0px">
                             <div class="table-header" style="height: 45px; background-color: #00897b;">
-                                <h4 style = "font-family: myFirstFont2; padding-top: 10px; font-size: 30px; color: white; padding-left: 0px;">Archive Block/s</h4>
+                                <h4 style = "font-family: myFirstFont2; padding-top: 10px; font-size: 1.8vw; color: white; padding-left: 0px;">Archive Block/s</h4>
                                 <a href="#" class="search-toggle btn-flat right"><i class="material-icons right" style="margin-left: 150px; color: #ffffff;">search</i></a>
                             </div>
                             <table id="datatable2">
@@ -275,7 +275,7 @@
  	        <!-- Modal Price -->
             <div id="modalUpdatePrice" class="modal" style = "width: 700px;">
                 <div class = "modal-header" style = "height: 55px;">
-                    <h4 style = "font-family: myFirstFont2; padding-left: 20px; font-size: 30px; ">Block Price</h4>
+                    <h4 style = "font-family: myFirstFont2; padding-left: 20px; font-size: 1.8vw; ">Block Price</h4>
                 </div>
                 <div class="modal-content">
                     <div class = "col s12">
@@ -347,7 +347,7 @@
                     <div id="admin">
                         <div class="z-depth-2 card material-table">
                             <div class="table-header" style="background-color: #00897b;">
-                                <h4 style = "font-family: myFirstFont2; font-size: 30px; color: white; padding-left: 0px;">Block Record</h4>
+                                <h4 style = "font-family: myFirstFont2; font-size: 1.8vw; color: white; padding-left: 0px;">Block Record</h4>
                                 <div class="actions">
                                     <button name = "action" class="btn tooltipped modal-trigger btn-floating light-green" data-position = "bottom" data-delay = "30" data-tooltip = "Deactivated Block/s" style = "margin-right: 10px;" href = "#modalArchiveBlock"><i class="material-icons" style = "color: black">delete</i></button>
                                     <a href="#" class="search-toggle waves-effect btn-flat nopadding"><i class="material-icons" style="color: #ffffff;">search</i></a>

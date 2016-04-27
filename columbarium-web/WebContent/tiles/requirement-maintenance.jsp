@@ -8,11 +8,29 @@
 	<link rel="stylesheet" href="../css/style.css">
 
 
+<script>
+	$(window).resize(function() {
+		if ($(this).width() < 1026) {
+			$('#fadeShow').hide();
+		} else {
+			$('#fadeShow').show();
+		}
+	})
+</script>
+<script>
+	$(window).resize(function() {
+		if ($(this).width() > 1026) {
+			$('#modalCreateBtn').hide();
+		} else {
+			$('#modalCreateBtn').show();
+		}
+	})
+</script>
 
 	<!-- Section -->
 	<div class = "parent" style = "display: flex; flex-wrap: wrap; flex-direction: column;">
 		<div class = "row">
-			<div class = "col s4">
+			<div class = "col s4" id = "fadeShow">
 				<div id="alertDiv">
 
 				</div>
@@ -20,12 +38,12 @@
 				<div class = "col s12">
 					<form class = "aside aside z-depth-3" style = "margin-top: 20px; height: 360px; margin-left: 30px;" id="formCreate">
 						<div class = "header">
-							<h4 style = "font-family: myFirstFont2; font-size: 25px;padding-top: 10px; margin-top: 10px;">Requirement Maintenance</h4>
+							<h4 style = "font-family: myFirstFont2; font-size: 1.8vw;padding-top: 10px; margin-top: 10px;">Requirement Maintenance</h4>
 						</div>
 						<div class="row" style = "padding-left: 10px;" id = "formCreate">
 							<div class="input-field col s6">
 								<input id="requirementName" type="text" class="validate" required = "" aria-required = "true" minlength = "1" maxlength="20" pattern= "^[a-zA-Z'-\s]+|[0-9a-zA-Z'-\s]+|[a-zA-Z0-9'-]{1,20}">
-								<label for="requirementName">Requirement Name<span style = "color: red;">*</span></label>
+								<label for="requirementName" data-error = "Invalid Format." data-success = "">Requirement Name<span style = "color: red;">*</span></label>
 							</div>
 						</div>
 						<div class="row" style = "padding-left: 10px;">
@@ -44,11 +62,38 @@
 				</div>
 			</div>
 
-	
+
+			<!-- Modal Create Requirement -->
+			<div id="modalCreateRequirement" class="modal" style = "width: 600px;">
+				<div class = "modal-header" style = "height: 55px;">
+					<h4 style = "font-family: myFirstFont2; padding-left: 20px; font-size: 2.5vw;">Create Requirement</h4>
+				</div>
+				<form class="form">
+					<div class="row" style = "padding-left: 10px;" id = "formCreate">
+						<div class="input-field col s6">
+							<input id="requirementName" type="text" class="validate" required = "" aria-required = "true" minlength = "1" maxlength="20" pattern= "^[a-zA-Z'-\s]+|[0-9a-zA-Z'-\s]+|[a-zA-Z0-9'-]{1,20}">
+							<label for="requirementName">Requirement Name<span style = "color: red;">*</span></label>
+						</div>
+					</div>
+					<div class="row" style = "padding-left: 10px;">
+						<div class="input-field col s12">
+							<input id="requirementDesc" type="text" class="validate" >
+							<label for="requirementDesc">Requirement Description</label>
+						</div>
+					</div>
+					<i class = "left" style = "margin-bottom: 0px; padding-left: 20px; color: red;">*Required Fields</i>
+
+					<div class="modal-footer">
+						<button onclick = "createRequirement()" name = "action" class="btn light-green" style = "color: black; margin-left: 10px; ">Confirm</button>
+						<button name = "action" class="btn light-green modal-close" style = "color: black;">Cancel</button>
+					</div>
+				</form>
+			</div>
+
 	        <!-- Modal Update -->
 	        <div id="modalUpdateRequirement" class="modal" style = "width: 600px;">
 	            <div class = "modal-header" style = "height: 55px; margin-bottom: 0px;">
-	                <h4 style = "font-family: myFirstFont2; font-size: 30px; padding-left: 20px;">Update Requirement</h4>
+	                <h4 style = "font-family: myFirstFont2; font-size: 1.8vw; padding-left: 20px;">Update Requirement</h4>
 	            </div>
 	            <form class="modal-content" id="formUpdate">
 
@@ -82,7 +127,7 @@
 			<!-- Modal Deactivate -->
 			<div id="modalDeactivateRequirement" class="modal" style = "width: 450px;">
 				<div class = "modal-header" style = "height: 55px;">
-					<h4 style = "padding-left: 20px; font-size: 30px;">Deactivate Requirement</h4>
+					<h4 style = "font-family: myFirstFont2; padding-left: 20px; font-size: 1.8vw;">Deactivate Requirement</h4>
 				</div>
 				<div class="modal-content">
 					<p style = "padding-left: 20px; font-size: 15px;">Are you sure you want to deactivate this requirement?</p>
@@ -102,7 +147,7 @@
 					<div id="admin1" class="col s12" style="margin-top: 0px">
 						<div class="z-depth-2 card material-table" style="margin-top: 0px">
 							<div class="table-header" style="height: 45px; background-color: #00897b;">
-								<h4 style = "font-family: myFirstFont2; padding-top: 10px; font-size: 30px; color: white; padding-left: 0px;">Archive Requirement/s</h4>
+								<h4 style = "font-family: myFirstFont2; padding-top: 10px; font-size: 1.5vw; color: white; padding-left: 0px;">Archive Requirement/s</h4>
 								<a href="#" class="search-toggle btn-flat right"><i class="material-icons right" style="margin-left: 60px; color: #ffffff;">search</i></a>
 							</div>
 							<table id="datatable2">
@@ -176,8 +221,11 @@
 					<div id="admin">
 						<div class="z-depth-2 card material-table">
 							<div class="table-header" style="background-color: #00897b;">
-								<h4 style = "font-family: myFirstFont2; font-size: 30px; color: white; padding-left: 0px;">Requirement Record</h4>
+								<h4 style = "font-family: myFirstFont2; font-size: 1.8vw; color: white; padding-left: 0px;">Requirement Record</h4>
 								<div class="actions">
+									<div id = "modalCreateBtn" style = "display: none;">
+										<button name = "action" class="btn tooltipped modal-trigger btn-floating light-green" data-position = "bottom" data-delay = "30" data-tooltip = "Create Requirement" style = "margin-right: 10px;" href = "#modalCreateRequirement"><i class="material-icons" style = "color: black">add</i></button>
+									</div>
 									<button name = "action" class="btn tooltipped modal-trigger btn-floating light-green" data-position = "bottom" data-delay = "30" data-tooltip = "Deactivated Requirement/s" style = "margin-right: 10px;" href = "#modalArchiveRequirement"><i class="material-icons" style = "color: black;">delete</i></button>
 									<a href="#" class="search-toggle waves-effect btn-flat nopadding"><i class="material-icons" style="color: #ffffff;">search</i></a>
 								</div>
@@ -200,7 +248,29 @@
 				<script type="text/javascript" src = "../js/index.js"></script>
 			</div>
 	</div>
-	
+
+		<div class="spinner-layer spinner-green" style = "display: none;">
+			<div class="circle-clipper left">
+				<div class="circle"></div>
+			</div><div class="gap-patch">
+			<div class="circle"></div>
+		</div><div class="circle-clipper right">
+			<div class="circle"></div>
+		</div>
+		</div>
+	</div>
+
+	<script>
+		$('#buttonID').click(function(){
+			$('#img').show();
+			$.ajax({
+					....
+					success:function(result){
+				$('#img').hide();  //<--- hide again
+			}
+		}
+	</script>
+
 	<script>
 	$(document).ready(function() {
 	    $('select').material_select();

@@ -20,7 +20,7 @@
 			<div class = "col s12">
 				<form class = "aside aside z-depth-3" style = "margin-top: 20px; height: 400px; margin-left: 30px;" id="formCreate">
 					<div class = "header">
-						<h4 style = "font-family: myFirstFont2; font-size: 30px;padding-top: 10px; margin-top: 10px;">Building Maintenance</h4>
+						<h4 style = "font-family: myFirstFont2; font-size: 1.8vw;padding-top: 10px; margin-top: 10px;">Building Maintenance</h4>
 					</div>
 					<div class="row" style = "padding-left: 10px;">
 						<div class="input-field required col s12">
@@ -54,7 +54,7 @@
 	        <!-- Modal Update -->
 	        <div id="modalUpdateBuilding" class="modal" style = "width: 550px; height: 400px;">
 	            <div class = "modal-header" style = "height: 55px;">
-	                <h4 style = "font-family: myFirstFont2; font-size: 30px; padding-left: 20px;">Update Building</h4>
+	                <h4 style = "font-family: myFirstFont2; font-size: 1.8vw; padding-left: 20px;">Update Building</h4>
 	            </div>
 	            <div class="modal-content" id="formUpdate">
 						<br>
@@ -84,7 +84,7 @@
 	        <!-- Modal Deactivate -->
 	        <div id="modalDeactivateBuilding" class="modal" style = "width: 450px;">
 	            <div class = "modal-header" style = "height: 55px;">
-	                <h4 style = "font-family: myFirstFont2; font-size: 30px; padding-left: 20px;">Deactivate Building</h4>
+	                <h4 style = "font-family: myFirstFont2; font-size: 1.8vw; padding-left: 20px;">Deactivate Building</h4>
 	            </div>
 	            <input id="buildingToBeDeactivated" type="hidden">
 	            <div class="modal-content">
@@ -104,7 +104,7 @@
 		<div id="admin1" class="col s12" style="margin-top: 0px">
 			<div class="z-depth-2 card material-table" style="margin-top: 0px">
 				<div class="table-header" style="height: 45px; background-color: #00897b;">
-					<h4 style = "font-family: myFirstFont2; padding-top: 10px; font-size: 25px; color: white; padding-left: 0px;">Archive Building/s</h4>
+					<h4 style = "font-family: myFirstFont2; padding-top: 10px; font-size: 1.8vw; color: white; padding-left: 0px;">Archive Building/s</h4>
 					<a href="#" class="search-toggle btn-flat right"><i class="material-icons right" style="margin-left: 150px; color: #ffffff;">search</i></a>
 				</div>
 				<table id="datatable2">
@@ -177,7 +177,7 @@
 					<div id="admin">
 						<div class="z-depth-2 card material-table">
 							<div class="table-header" style="background-color: #00897b;">
-								<h4 style = "font-family: myFirstFont2; font-size: 30px; color: white; padding-left: 0px;">Building Record</h4>
+								<h4 style = "font-family: myFirstFont2; font-size: 1.8vw; color: white; padding-left: 0px;">Building Record</h4>
 								<div class="actions">
 									<button name = "action" class="btn tooltipped modal-trigger btn-floating light-green" data-position = "bottom" data-delay = "30" data-tooltip = "Deactivated Building/s" style = "margin-right: 10px;" href = "#modalArchiveBuilding"><i class="material-icons" style = "color: black;">delete</i></button>
 									<a href="#" class="search-toggle waves-effect btn-flat nopadding"><i class="material-icons" style="color: #ffffff;">search</i></a>

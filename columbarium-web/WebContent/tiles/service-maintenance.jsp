@@ -18,7 +18,7 @@
 			<div class = "col s12">
 				<div class = "aside aside z-depth-3" style = "margin-top: 20px; height: 430px; margin-left: 30px;" id="formCreate">
 					<div class = "header">
-						<h4 style = "font-family: myFirstFont2; font-size: 30px;padding-top: 10px; margin-top: 10px;">Service Maintenance</h4>
+						<h4 style = "font-family: myFirstFont2; font-size: 1.8vw;padding-top: 10px; margin-top: 10px;">Service Maintenance</h4>
 					</div>
 					<form id="formCreate">
 						<div class="row" style = "padding-left: 10px;" id="formCreate">
@@ -57,7 +57,7 @@
             <!-- Modal Requirements -->
             <div id="modalRequirement" class="modal" style = "width: 600px;">
                 <div class = "modal-header" style = "height: 55px;">
-                    <h4 style = "font-family: myFirstFont2; font-size: 30px; padding-left: 20px;">List of Requirement/s</h4>
+                    <h4 style = "font-family: myFirstFont2; font-size: 1.8vw; padding-left: 20px;">List of Requirement/s</h4>
                 </div>
                 <div class="modal-content">
                         <div class = "col s12">
@@ -96,9 +96,9 @@
 
 
         <!-- Modal Update -->
-        <div id="modalUpdateService" class="modal" style = "width: 600px;">
+        <div id="modalUpdateService" class="modal" style = "width: 550px;">
             <div class = "modal-header" style = "height: 55px;">
-                <h4 style = "font-family: myFirstFont2; padding-left: 20px; font-size: 30px;">Update Service</h4>
+                <h4 style = "font-family: myFirstFont2; padding-left: 20px; font-size: 1.8vw;">Update Service</h4>
             </div>
             <form class="modal-content" id="formUpdate">
 
@@ -122,18 +122,18 @@
                             </div>
                         </div>
                 </div>
-				<div class="modal-footer">
-					<button type = "submit" onclick="updateService()" name = "action" class="btn light-green" style = "color: black; margin-left: 10px; ">Confirm</button>
-					<button name = "action" class="modal-close btn light-green" style = "color: black;">Cancel</button>
-				</div>
             </form>
+			<div class="modal-footer" style = "margin-top: -50px;">
+				<button type = "submit" onclick="updateService()" name = "action" class="btn light-green" style = "margin-right: 30px; color: black; margin-left: 10px; ">Confirm</button>
+				<button name = "action" class="modal-close btn light-green" style = "color: black;">Cancel</button>
+			</div>
 
         </div>
 
 		<!-- Modal List of Requirement/s -->
 		<div id="modalListOfRequirement" class="modal" style = "width: 550px;">
 			<div class = "modal-header" style = "height: 55px;">
-				<h4 style = "font-family: myFirstFont2; font-size: 30px; padding-left: 20px;">List of Requirement/s</h4>
+				<h4 style = "font-family: myFirstFont2; font-size: 1.8vw; padding-left: 20px;">List of Requirement/s</h4>
 			</div>
 			<div class="modal-content">
 				<ul class="collection with-header">
@@ -152,7 +152,7 @@
         <!-- Modal Deactivate -->
         <div id="modalDeactivateService" class="modal" style = "width: 400px;">
             <div class = "modal-header" style = "height: 55px;">
-                <h4 style = "font-family: myFirstFont2; font-size: 30px; padding-left: 20px;">Deactivate Service</h4>
+                <h4 style = "font-family: myFirstFont2; font-size: 1.8vw; padding-left: 20px;">Deactivate Service</h4>
             </div>
             <div class="modal-content">
 				<input id="serviceToBeDeactivated" type="hidden">
@@ -171,7 +171,7 @@
 				<div id="admin1" class="col s12" style="margin-top: 0px">
 					<div class="z-depth-2 card material-table" style="margin-top: 0px">
 						<div class="table-header" style="height: 45px; background-color: #00897b;">
-							<h4 style = "padding-top: 10px; font-size: 30px; color: white; padding-left: 0px;">Archive Service/s</h4>
+							<h4 style = "font-family: myFirstFont2; padding-top: 10px; font-size: 1.8vw; color: white; padding-left: 0px;">Archive Service/s</h4>
 							<a href="#" class="search-toggle btn-flat right"><i class="material-icons right" style="margin-left: 150px; color: #ffffff;">search</i></a>
 						</div>
 						<table id="datatable2">
@@ -245,7 +245,7 @@
 				<div id="admin">
 					<div class="z-depth-2 card material-table">
 						<div class="table-header" style="background-color: #00897b;">
-							<h4 style = "font-size: 30px; color: white; padding-left: 0px; font-family: myFirstFont2;">Service Record</h4>
+							<h4 style = "font-size: 1.8vw; color: white; padding-left: 0px; font-family: myFirstFont2;">Service Record</h4>
 							<div class="actions">
 								<button name = "action" class="btn tooltipped modal-trigger btn-floating light-green" data-position = "bottom" data-delay = "30" data-tooltip = "Deactivated Service/s" style = "margin-right: 10px;" href = "#modalArchiveService"><i class="material-icons" style = "color: black;">delete</i></button>
 								<a href="#" class="search-toggle waves-effect btn-flat nopadding"><i class="material-icons" style="color: #ffffff;">search</i></a>
@@ -445,7 +445,7 @@
 	
 		        			var addButtons = "<button name = action class= 'modal-trigger btn-floating light-green' onclick = openUpdate(this.value) value = "+service.serviceId+" ><i class= material-icons style = 'color: black;'>mode_edit</i></button>"+
 		        			"<button name = action class= 'modal-trigger btn-floating light-green' style = 'margin-left: 5px;' onclick = openDeactivate(this.value) value = "+service.serviceId+"><i class= material-icons style = 'color: black;'>not_interested</i></button></td>";
-		        			var viewRequirementButton = "<button name = 'action' class='btn tooltipped modal-trigger light-green right' data-position = 'bottom' data-delay = '30' data-tooltip = 'View Requirement/s' style = 'width: 85px; color: black; margin-right: 20px;' >VIEW</button>";
+		        			var viewRequirementButton = "<button name = 'action' class='btn tooltipped btn-floating modal-trigger light-green right' data-position = 'bottom' data-delay = '30' data-tooltip = 'View Requirement/s' style = 'margin-right: 40px; color: black;' ><i class= material-icons style = 'color: black;'>visibility</i></button>";
 		        			
 		        			table.row.add( [
 		    	        		            service.strServiceName,
