@@ -3,111 +3,16 @@
     
     
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/vaults.css">
-    
-    <script>
-    
-	    $(document).ready(function(){
-	        // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-	        $('.modal-trigger').leanModal();
-	    });
-	
-	
-	    $(document).ready(function() {
-	        $('select').material_select();
-	    });
-	
-	
-	    $(document).ready(function() {
-	        $('input#input_text, textarea#textarea1').characterCounter();
-	    });
-    
-    </script>
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css">
 
-	<style>
-	
-		.vaults-content {
-		    float: left;
-		}
-		table{
-		    margin-top: 10px;
-		    table-layout: fixed;
-		}
-		td{
-		    width: 10px;
-		    height: 10px;
-		}
-		table, td {
-		    border: 2px solid #00beab;
-		    color: #ffffff;
-		    background-color: #00897b;
-		}
-		#data td{
-		    text-align: center;
-		    background: white;
-		    border: none;
-		    font-family:  myFirstFont;
-		}
-		#data tr td{
-		    color: #000000;
-		}
-		#iba th{
-		    text-align: center;
-		    border: none;
-		    font-family:  myFirstFont;
-		}
-		
-	
-	</style>
-    
-    <script>
-        function showMe (box) {
 
-            var chboxs = document.getElementsByName("c1");
-            var vis = "none";
-            for(var i=0;i<chboxs.length;i++) {
-                if(chboxs[i].checked){
-                    vis = "block";
-                    break;
-                }
-            }
-            document.getElementById(box).style.display = vis;
-        }
-    </script>
-
-    <script>
-        function switchVisible() {
-            if (document.getElementById('tableUnit') !== undefined) {
-
-                if (document.getElementById('tableUnit').style.display == 'block') {
-                    document.getElementById('tableUnit').style.display = 'none';
-                    document.getElementById('tableStart').style.display = 'block';
-                } else {
-                    document.getElementById('tableUnit').style.display = 'block';
-                    document.getElementById('tableStart').style.display = 'none';
-                }
-            }
-        }
-    </script>
-    <script language="javascript">
-        function toggle2() {
-            var ele = document.getElementById("newCustomer");
-            var text = document.getElementById("new");
-            if(ele.style.display == "block") {
-                ele.style.display = "none";
-            }
-            else {
-                ele.style.display = "block";
-            }
-        }
-    </script>
-    
 <!-- Section -->
 <div class = "col s12" >
     <div class = "row">
         <div class = "responsive">
 
             <div class = "col s4">
-                <h2 style = "font-size: 30px; margin-top: 10px;">Buy, Reserve, At Need</h2>
+                <h2 style = "font-size: 30px; margin-top: 20px; margin-left: 20px; font-family: myFirstFont2">Manage Service</h2>
 
                 <div style = "overflow: auto;height: 370px;">
                     <div class = "col s12">
@@ -116,7 +21,7 @@
                             <ul class="collapsible" data-collapsible="collapsible">
                                 <li>
                                     <div class="collapsible-header" style = "background-color: #00897b"><i class="medium material-icons">business</i>
-                                        <label style = "font-family: myFirstFont; font-size: 20px; color: white;">Building One</label>
+                                        <label style = "font-family: myFirstFont2; font-size: 20px; color: white;">Building One</label>
                                         <button id = "configuredFloorPrice" name = "action" class="right small btn tooltipped btn-floating blue" data-position = "bottom" data-delay = "25" data-tooltip = "Reserved Units" style = "margin-left: 15px; margin-top: 5px;">35</button>
                                         <button id = "notConfigure" name = "action" class="right btn tooltipped btn-floating red" data-position = "bottom" data-delay = "25" data-tooltip = "Owned Units" style = "margin-left: 15px; margin-top: 5px;">103</button>
                                         <button id = "configure" name = "action" class="right btn tooltipped small btn-floating green" data-position = "bottom" data-delay = "25" data-tooltip = "Available Unit" style = "margin-left: 15px;margin-top: 5px;">12</button>
@@ -144,7 +49,7 @@
                                                                 <button id = "configuredFloorPrice" name = "action" class="right btn tooltipped btn-floating blue" data-position = "bottom" data-delay = "25" data-tooltip = "Reserved Units" style = "margin-left: 15px; margin-top: 5px;">32</button>
                                                                 <button id = "notConfigure" name = "action" class="right btn tooltipped btn-floating red" data-position = "bottom" data-delay = "25" data-tooltip = "Owned Units" style = "margin-left: 15px; margin-top: 5px;">12</button>
                                                                 <button id = "configure" name = "action" class="right btn tooltipped small btn-floating green" data-position = "bottom" data-delay = "25" data-tooltip = "Available Unit" style = "margin-left: 15px;margin-top: 5px;">5</button>
-                                                                <button id = "Button1" name = "action" class="right btn tooltipped btn-floating black" data-position = "bottom" data-delay = "25" data-tooltip = "View" style = "margin-left: 15px; margin-top: 5px;" onclick="javascript:switchVisible();"><i class="material-icons" style="color: #ffffff">visibility</i></button>
+                                                                <button id = "Button1" name = "action" class="right btn tooltipped btn-floating light-green" data-position = "bottom" data-delay = "25" data-tooltip = "View" style = "margin-left: 15px; margin-top: 5px;" onclick="javascript:switchVisible();"><i class="material-icons" style="color: #000000">visibility</i></button>
                                                             </p>
                                                         </div>
                                                         <div class="collapsible-body">
@@ -152,7 +57,7 @@
                                                                 <button id = "configuredFloorPrice" name = "action" class="right btn tooltipped btn-floating blue" data-position = "bottom" data-delay = "25" data-tooltip = "Reserved Units" style = "margin-left: 15px; margin-top: 5px;">32</button>
                                                                 <button id = "notConfigure" name = "action" class="right btn tooltipped btn-floating red" data-position = "bottom" data-delay = "25" data-tooltip = "Owned Units" style = "margin-left: 15px; margin-top: 5px;">12</button>
                                                                 <button id = "configure" name = "action" class="right btn tooltipped small btn-floating green" data-position = "bottom" data-delay = "25" data-tooltip = "Available Unit" style = "margin-left: 15px;margin-top: 5px;">3</button>
-                                                                <button id = "Button1" name = "action" class="right btn tooltipped btn-floating black" data-position = "bottom" data-delay = "25" data-tooltip = "View" style = "margin-left: 15px; margin-top: 5px;" onclick="javascript:switchVisible();"><i class="material-icons" style="color: #ffffff">visibility</i></button>
+                                                                <button id = "Button1" name = "action" class="right btn tooltipped btn-floating light-green" data-position = "bottom" data-delay = "25" data-tooltip = "View" style = "margin-left: 15px; margin-top: 5px;" onclick="javascript:switchVisible();"><i class="material-icons" style="color: #000000">visibility</i></button>
                                                             </p>
                                                         </div>
                                                     </li>
@@ -168,7 +73,7 @@
                                                                 <button id = "configuredFloorPrice" name = "action" class="right btn tooltipped btn-floating blue" data-position = "bottom" data-delay = "25" data-tooltip = "Reserved Units" style = "margin-left: 15px; margin-top: 5px;">32</button>
                                                                 <button id = "notConfigure" name = "action" class="right btn tooltipped btn-floating red" data-position = "bottom" data-delay = "25" data-tooltip = "Owned Units" style = "margin-left: 15px; margin-top: 5px;">12</button>
                                                                 <button id = "configure" name = "action" class="right btn tooltipped small btn-floating green" data-position = "bottom" data-delay = "25" data-tooltip = "Available Unit" style = "margin-left: 15px;margin-top: 5px;">4</button>
-                                                                <button id = "Button1" name = "action" class="right btn tooltipped btn-floating black" data-position = "bottom" data-delay = "25" data-tooltip = "View" style = "margin-left: 15px; margin-top: 5px;" onclick="javascript:switchVisible();"><i class="material-icons" style="color: #ffffff">visibility</i></button>
+                                                                <button id = "Button1" name = "action" class="right btn tooltipped btn-floating light-green" data-position = "bottom" data-delay = "25" data-tooltip = "View" style = "margin-left: 15px; margin-top: 5px;" onclick="javascript:switchVisible();"><i class="material-icons" style="color: #000000">visibility</i></button>
                                                             </p>
                                                         </div>
                                                     </li>
@@ -179,7 +84,7 @@
                                 </li>
                                 <li>
                                     <div class="collapsible-header" style = "background-color: #00897b"><i class="medium material-icons">business</i>
-                                        <label style = "font-family: myFirstFont; font-size: 20px; color: white;">Building Two</label>
+                                        <label style = "font-family: myFirstFont2; font-size: 20px; color: white;">Building Two</label>
                                         <button id = "configuredFloorPrice" name = "action" class="right btn tooltipped btn-floating blue" data-position = "bottom" data-delay = "25" data-tooltip = "Reserved Units" style = "margin-left: 15px; margin-top: 5px;">34</button>
                                         <button id = "notConfigure" name = "action" class="right btn tooltipped btn-floating red" data-position = "bottom" data-delay = "25" data-tooltip = "Owned Units" style = "margin-left: 15px; margin-top: 5px;">32</button>
                                         <button id = "configure" name = "action" class="right btn tooltipped small btn-floating green" data-position = "bottom" data-delay = "25" data-tooltip = "Available Unit" style = "margin-left: 15px;margin-top: 5px;">64</button>
@@ -207,7 +112,7 @@
                                                                 <button id = "configuredFloorPrice" name = "action" class="right btn tooltipped btn-floating blue" data-position = "bottom" data-delay = "25" data-tooltip = "Reserved Units" style = "margin-left: 15px; margin-top: 5px;">32</button>
                                                                 <button id = "notConfigure" name = "action" class="right btn tooltipped btn-floating red" data-position = "bottom" data-delay = "25" data-tooltip = "Owned Units" style = "margin-left: 15px; margin-top: 5px;">12</button>
                                                                 <button id = "configure" name = "action" class="right btn tooltipped small btn-floating green" data-position = "bottom" data-delay = "25" data-tooltip = "Available Unit" style = "margin-left: 15px;margin-top: 5px;">54</button>
-                                                                <button id = "Button1" name = "action" class="right btn tooltipped btn-floating black" data-position = "bottom" data-delay = "25" data-tooltip = "View" style = "margin-left: 15px; margin-top: 5px;" onclick="javascript:switchVisible();"><i class="material-icons" style="color: #ffffff">visibility</i></button>
+                                                                <button id = "Button1" name = "action" class="right btn tooltipped btn-floating light-green" data-position = "bottom" data-delay = "25" data-tooltip = "View" style = "margin-left: 15px; margin-top: 5px;" onclick="javascript:switchVisible();"><i class="material-icons" style="color: #000000">visibility</i></button>
                                                             </p>
                                                         </div>
                                                         <div class="collapsible-body">
@@ -215,7 +120,7 @@
                                                                 <button id = "configuredFloorPrice" name = "action" class="right btn tooltipped btn-floating blue" data-position = "bottom" data-delay = "25" data-tooltip = "Reserved Units" style = "margin-left: 15px; margin-top: 5px;">32</button>
                                                                 <button id = "notConfigure" name = "action" class="right btn tooltipped btn-floating red" data-position = "bottom" data-delay = "25" data-tooltip = "Owned Units" style = "margin-left: 15px; margin-top: 5px;">12</button>
                                                                 <button id = "configure" name = "action" class="right btn tooltipped small btn-floating green" data-position = "bottom" data-delay = "25" data-tooltip = "Available Unit" style = "margin-left: 15px;margin-top: 5px;">54</button>
-                                                                <button id = "Button1" name = "action" class="right btn tooltipped btn-floating black" data-position = "bottom" data-delay = "25" data-tooltip = "View" style = "margin-left: 15px; margin-top: 5px;" onclick="javascript:switchVisible();"><i class="material-icons" style="color: #ffffff">visibility</i></button>
+                                                                <button id = "Button1" name = "action" class="right btn tooltipped btn-floating light-green" data-position = "bottom" data-delay = "25" data-tooltip = "View" style = "margin-left: 15px; margin-top: 5px;" onclick="javascript:switchVisible();"><i class="material-icons" style="color: #000000">visibility</i></button>
                                                             </p>
                                                         </div>
                                                     </li>
@@ -231,7 +136,7 @@
                                                                 <button id = "configuredFloorPrice" name = "action" class="right btn tooltipped btn-floating blue" data-position = "bottom" data-delay = "25" data-tooltip = "Reserved Units" style = "margin-left: 15px; margin-top: 5px;">32</button>
                                                                 <button id = "notConfigure" name = "action" class="right btn tooltipped btn-floating red" data-position = "bottom" data-delay = "25" data-tooltip = "Owned Units" style = "margin-left: 15px; margin-top: 5px;">12</button>
                                                                 <button id = "configure" name = "action" class="right btn tooltipped small btn-floating green" data-position = "bottom" data-delay = "25" data-tooltip = "Available Unit" style = "margin-left: 15px;margin-top: 5px;">54</button>
-                                                                <button id = "Button1" name = "action" class="right btn tooltipped btn-floating black" data-position = "bottom" data-delay = "25" data-tooltip = "View" style = "margin-left: 15px; margin-top: 5px;" onclick="javascript:switchVisible();"><i class="material-icons" style="color: #ffffff">visibility</i></button>
+                                                                <button id = "Button1" name = "action" class="right btn tooltipped btn-floating light-green" data-position = "bottom" data-delay = "25" data-tooltip = "View" style = "margin-left: 15px; margin-top: 5px;" onclick="javascript:switchVisible();"><i class="material-icons" style="color: #000000">visibility</i></button>
                                                             </p>
                                                         </div>
                                                     </li>
@@ -242,7 +147,7 @@
                                 </li>
                                 <li>
                                     <div class="collapsible-header" style = "background-color: #00897b"><i class="medium material-icons">business</i>
-                                        <label style = "font-family: myFirstFont; font-size: 20px; color: white;">Building Three</label>
+                                        <label style = "font-family: myFirstFont2; font-size: 20px; color: white;">Building Three</label>
                                         <button id = "configuredFloorPrice" name = "action" class="right btn tooltipped btn-floating blue" data-position = "bottom" data-delay = "25" data-tooltip = "Reserved Units" style = "margin-left: 15px; margin-top: 5px;">24</button>
                                         <button id = "notConfigure" name = "action" class="right btn tooltipped btn-floating red" data-position = "bottom" data-delay = "25" data-tooltip = "Owned Units" style = "margin-left: 15px; margin-top: 5px;">29</button>
                                         <button id = "configure" name = "action" class="right btn tooltipped small btn-floating green" data-position = "bottom" data-delay = "25" data-tooltip = "Available Unit" style = "margin-left: 15px;margin-top: 5px;">43</button>
@@ -270,7 +175,7 @@
                                                                 <button id = "configuredFloorPrice" name = "action" class="right btn tooltipped btn-floating blue" data-position = "bottom" data-delay = "25" data-tooltip = "Reserved Units" style = "margin-left: 15px; margin-top: 5px;">32</button>
                                                                 <button id = "notConfigure" name = "action" class="right btn tooltipped btn-floating red" data-position = "bottom" data-delay = "25" data-tooltip = "Owned Units" style = "margin-left: 15px; margin-top: 5px;">12</button>
                                                                 <button id = "configure" name = "action" class="right btn tooltipped small btn-floating green" data-position = "bottom" data-delay = "25" data-tooltip = "Available Unit" style = "margin-left: 15px;margin-top: 5px;">54</button>
-                                                                <button id = "Button1" name = "action" class="right btn tooltipped btn-floating black" data-position = "bottom" data-delay = "25" data-tooltip = "View" style = "margin-left: 15px; margin-top: 5px;" onclick="javascript:switchVisible();"><i class="material-icons" style="color: #ffffff">visibility</i></button>
+                                                                <button id = "Button1" name = "action" class="right btn tooltipped btn-floating light-green" data-position = "bottom" data-delay = "25" data-tooltip = "View" style = "margin-left: 15px; margin-top: 5px;" onclick="javascript:switchVisible();"><i class="material-icons" style="color: #000000">visibility</i></button>
                                                             </p>
                                                         </div>
                                                         <div class="collapsible-body">
@@ -278,7 +183,7 @@
                                                                 <button id = "configuredFloorPrice" name = "action" class="right btn tooltipped btn-floating blue" data-position = "bottom" data-delay = "25" data-tooltip = "Reserved Units" style = "margin-left: 15px; margin-top: 5px;">32</button>
                                                                 <button id = "notConfigure" name = "action" class="right btn tooltipped btn-floating red" data-position = "bottom" data-delay = "25" data-tooltip = "Owned Units" style = "margin-left: 15px; margin-top: 5px;">12</button>
                                                                 <button id = "configure" name = "action" class="right btn tooltipped small btn-floating green" data-position = "bottom" data-delay = "25" data-tooltip = "Available Unit" style = "margin-left: 15px;margin-top: 5px;">54</button>
-                                                                <button id = "Button1" name = "action" class="right btn tooltipped btn-floating black" data-position = "bottom" data-delay = "25" data-tooltip = "View" style = "margin-left: 15px; margin-top: 5px;" onclick="javascript:switchVisible();"><i class="material-icons" style="color: #ffffff">visibility</i></button>
+                                                                <button id = "Button1" name = "action" class="right btn tooltipped btn-floating light-green" data-position = "bottom" data-delay = "25" data-tooltip = "View" style = "margin-left: 15px; margin-top: 5px;" onclick="javascript:switchVisible();"><i class="material-icons" style="color: #000000">visibility</i></button>
                                                             </p>
                                                         </div>
                                                     </li>
@@ -294,7 +199,7 @@
                                                                 <button id = "configuredFloorPrice" name = "action" class="right btn tooltipped btn-floating blue" data-position = "bottom" data-delay = "25" data-tooltip = "Reserved Units" style = "margin-left: 15px; margin-top: 5px;">32</button>
                                                                 <button id = "notConfigure" name = "action" class="right btn tooltipped btn-floating red" data-position = "bottom" data-delay = "25" data-tooltip = "Owned Units" style = "margin-left: 15px; margin-top: 5px;">12</button>
                                                                 <button id = "configure" name = "action" class="right btn tooltipped small btn-floating green" data-position = "bottom" data-delay = "25" data-tooltip = "Available Unit" style = "margin-left: 15px;margin-top: 5px;">54</button>
-                                                                <button id = "Button1" name = "action" class="right btn tooltipped btn-floating black" data-position = "bottom" data-delay = "25" data-tooltip = "View" style = "margin-left: 15px; margin-top: 5px;" onclick="javascript:switchVisible();"><i class="material-icons" style="color: #ffffff">visibility</i></button>
+                                                                <button id = "Button1" name = "action" class="right btn tooltipped btn-floating light-green" data-position = "bottom" data-delay = "25" data-tooltip = "View" style = "margin-left: 15px; margin-top: 5px;" onclick="javascript:switchVisible();"><i class="material-icons" style="color: #000000">visibility</i></button>
                                                             </p>
                                                         </div>
                                                     </li>
@@ -305,11 +210,11 @@
                                 </li>
                                 <li>
                                     <div class="collapsible-header" style = "background-color: #00897b"><i class="medium material-icons">business</i>
-                                        <label style = "font-family: myFirstFont; font-size: 20px; color: white;">Building Four</label>
+                                        <label style = "font-family: myFirstFont2; font-size: 20px; color: white;">Building Four</label>
                                         <button id = "configuredFloorPrice" name = "action" class="right btn tooltipped btn-floating blue" data-position = "bottom" data-delay = "25" data-tooltip = "Reserved Units" style = "margin-left: 15px; margin-top: 5px;">32</button>
                                         <button id = "notConfigure" name = "action" class="right btn tooltipped btn-floating red" data-position = "bottom" data-delay = "25" data-tooltip = "Owned Units" style = "margin-left: 15px; margin-top: 5px;">12</button>
                                         <button id = "configure" name = "action" class="right btn tooltipped small btn-floating green" data-position = "bottom" data-delay = "25" data-tooltip = "Available Unit" style = "margin-left: 15px;margin-top: 5px;">54</button>
-                                     </div>
+                                    </div>
                                     <div class="collapsible-body">
                                         <div class="row">
                                             <div class="col s12 m12">
@@ -333,7 +238,7 @@
                                                                 <button id = "configuredFloorPrice" name = "action" class="right btn tooltipped btn-floating blue" data-position = "bottom" data-delay = "25" data-tooltip = "Reserved Units" style = "margin-left: 15px; margin-top: 5px;">32</button>
                                                                 <button id = "notConfigure" name = "action" class="right btn tooltipped btn-floating red" data-position = "bottom" data-delay = "25" data-tooltip = "Owned Units" style = "margin-left: 15px; margin-top: 5px;">12</button>
                                                                 <button id = "configure" name = "action" class="right btn tooltipped small btn-floating green" data-position = "bottom" data-delay = "25" data-tooltip = "Available Unit" style = "margin-left: 15px;margin-top: 5px;">54</button>
-                                                                <button id = "Button1" name = "action" class="right btn tooltipped btn-floating black" data-position = "bottom" data-delay = "25" data-tooltip = "View" style = "margin-left: 15px; margin-top: 5px;" onclick="javascript:switchVisible();"><i class="material-icons" style="color: #ffffff">visibility</i></button>
+                                                                <button id = "Button1" name = "action" class="right btn tooltipped btn-floating light-green" data-position = "bottom" data-delay = "25" data-tooltip = "View" style = "margin-left: 15px; margin-top: 5px;" onclick="javascript:switchVisible();"><i class="material-icons" style="color: #000000">visibility</i></button>
                                                             </p>
                                                         </div>
                                                         <div class="collapsible-body">
@@ -341,7 +246,7 @@
                                                                 <button id = "configuredFloorPrice" name = "action" class="right btn tooltipped btn-floating blue" data-position = "bottom" data-delay = "25" data-tooltip = "Reserved Units" style = "margin-left: 15px; margin-top: 5px;">32</button>
                                                                 <button id = "notConfigure" name = "action" class="right btn tooltipped btn-floating red" data-position = "bottom" data-delay = "25" data-tooltip = "Owned Units" style = "margin-left: 15px; margin-top: 5px;">12</button>
                                                                 <button id = "configure" name = "action" class="right btn tooltipped small btn-floating green" data-position = "bottom" data-delay = "25" data-tooltip = "Available Unit" style = "margin-left: 15px;margin-top: 5px;">54</button>
-                                                                <button id = "Button1" name = "action" class="right btn tooltipped btn-floating black" data-position = "bottom" data-delay = "25" data-tooltip = "View" style = "margin-left: 15px; margin-top: 5px;" onclick="javascript:switchVisible();"><i class="material-icons" style="color: #ffffff">visibility</i></button>
+                                                                <button id = "Button1" name = "action" class="right btn tooltipped btn-floating light-green" data-position = "bottom" data-delay = "25" data-tooltip = "View" style = "margin-left: 15px; margin-top: 5px;" onclick="javascript:switchVisible();"><i class="material-icons" style="color: #000000">visibility</i></button>
                                                             </p>
                                                         </div>
                                                     </li>
@@ -357,7 +262,7 @@
                                                                 <button id = "configuredFloorPrice" name = "action" class="right btn tooltipped btn-floating blue" data-position = "bottom" data-delay = "25" data-tooltip = "Reserved Units" style = "margin-left: 15px; margin-top: 5px;">32</button>
                                                                 <button id = "notConfigure" name = "action" class="right btn tooltipped btn-floating red" data-position = "bottom" data-delay = "25" data-tooltip = "Owned Units" style = "margin-left: 15px; margin-top: 5px;">12</button>
                                                                 <button id = "configure" name = "action" class="right btn tooltipped small btn-floating green" data-position = "bottom" data-delay = "25" data-tooltip = "Available Unit" style = "margin-left: 15px;margin-top: 5px;">54</button>
-                                                                <button id = "Button1" name = "action" class="right btn tooltipped btn-floating black" data-position = "bottom" data-delay = "25" data-tooltip = "View" style = "margin-left: 15px; margin-top: 5px;" onclick="javascript:switchVisible();"><i class="material-icons" style="color: #ffffff">visibility</i></button>
+                                                                <button id = "Button1" name = "action" class="right btn tooltipped btn-floating light-green" data-position = "bottom" data-delay = "25" data-tooltip = "View" style = "margin-left: 15px; margin-top: 5px;" onclick="javascript:switchVisible();"><i class="material-icons" style="color: #000000">visibility</i></button>
                                                             </p>
                                                         </div>
                                                     </li>
@@ -368,7 +273,7 @@
                                 </li>
                                 <li>
                                     <div class="collapsible-header" style = "background-color: #00897b"><i class="medium material-icons">business</i>
-                                        <label style = "font-family: myFirstFont; font-size: 20px; color: white;">Building Five</label>
+                                        <label style = "font-family: myFirstFont2; font-size: 20px; color: white;">Building Five</label>
                                         <button id = "configuredFloorPrice" name = "action" class="right btn tooltipped btn-floating blue" data-position = "bottom" data-delay = "25" data-tooltip = "Reserved Units" style = "margin-left: 15px; margin-top: 5px;">34</button>
                                         <button id = "notConfigure" name = "action" class="right btn tooltipped btn-floating red" data-position = "bottom" data-delay = "25" data-tooltip = "Owned Units" style = "margin-left: 15px; margin-top: 5px;">32</button>
                                         <button id = "configure" name = "action" class="right btn tooltipped small btn-floating green" data-position = "bottom" data-delay = "25" data-tooltip = "Available Unit" style = "margin-left: 15px;margin-top: 5px;">64</button>
@@ -396,7 +301,7 @@
                                                                 <button id = "configuredFloorPrice" name = "action" class="right btn tooltipped btn-floating blue" data-position = "bottom" data-delay = "25" data-tooltip = "Reserved Units" style = "margin-left: 15px; margin-top: 5px;">32</button>
                                                                 <button id = "notConfigure" name = "action" class="right btn tooltipped btn-floating red" data-position = "bottom" data-delay = "25" data-tooltip = "Owned Units" style = "margin-left: 15px; margin-top: 5px;">12</button>
                                                                 <button id = "configure" name = "action" class="right btn tooltipped small btn-floating green" data-position = "bottom" data-delay = "25" data-tooltip = "Available Unit" style = "margin-left: 15px;margin-top: 5px;">54</button>
-                                                                <button id = "Button1" name = "action" class="right btn tooltipped btn-floating black" data-position = "bottom" data-delay = "25" data-tooltip = "View" style = "margin-left: 15px; margin-top: 5px;" onclick="javascript:switchVisible();"><i class="material-icons" style="color: #ffffff">visibility</i></button>
+                                                                <button id = "Button1" name = "action" class="right btn tooltipped btn-floating light-green" data-position = "bottom" data-delay = "25" data-tooltip = "View" style = "margin-left: 15px; margin-top: 5px;" onclick="javascript:switchVisible();"><i class="material-icons" style="color: #000000">visibility</i></button>
                                                             </p>
                                                         </div>
                                                         <div class="collapsible-body">
@@ -404,7 +309,7 @@
                                                                 <button id = "configuredFloorPrice" name = "action" class="right btn tooltipped btn-floating blue" data-position = "bottom" data-delay = "25" data-tooltip = "Reserved Units" style = "margin-left: 15px; margin-top: 5px;">32</button>
                                                                 <button id = "notConfigure" name = "action" class="right btn tooltipped btn-floating red" data-position = "bottom" data-delay = "25" data-tooltip = "Owned Units" style = "margin-left: 15px; margin-top: 5px;">12</button>
                                                                 <button id = "configure" name = "action" class="right btn tooltipped small btn-floating green" data-position = "bottom" data-delay = "25" data-tooltip = "Available Unit" style = "margin-left: 15px;margin-top: 5px;">54</button>
-                                                                <button id = "Button1" name = "action" class="right btn tooltipped btn-floating black" data-position = "bottom" data-delay = "25" data-tooltip = "View" style = "margin-left: 15px; margin-top: 5px;" onclick="javascript:switchVisible();"><i class="material-icons" style="color: #ffffff">visibility</i></button>
+                                                                <button id = "Button1" name = "action" class="right btn tooltipped btn-floating light-green" data-position = "bottom" data-delay = "25" data-tooltip = "View" style = "margin-left: 15px; margin-top: 5px;" onclick="javascript:switchVisible();"><i class="material-icons" style="color: #000000">visibility</i></button>
                                                             </p>
                                                         </div>
                                                     </li>
@@ -420,7 +325,7 @@
                                                                 <button id = "configuredFloorPrice" name = "action" class="right btn tooltipped btn-floating blue" data-position = "bottom" data-delay = "25" data-tooltip = "Reserved Units" style = "margin-left: 15px; margin-top: 5px;">32</button>
                                                                 <button id = "notConfigure" name = "action" class="right btn tooltipped btn-floating red" data-position = "bottom" data-delay = "25" data-tooltip = "Owned Units" style = "margin-left: 15px; margin-top: 5px;">12</button>
                                                                 <button id = "configure" name = "action" class="right btn tooltipped small btn-floating green" data-position = "bottom" data-delay = "25" data-tooltip = "Available Unit" style = "margin-left: 15px;margin-top: 5px;">54</button>
-                                                                <button id = "Button1" name = "action" class="right btn tooltipped btn-floating black" data-position = "bottom" data-delay = "25" data-tooltip = "View" style = "margin-left: 15px; margin-top: 5px;" onclick="javascript:switchVisible();"><i class="material-icons" style="color: #ffffff">visibility</i></button>
+                                                                <button id = "Button1" name = "action" class="right btn tooltipped btn-floating light-green" data-position = "bottom" data-delay = "25" data-tooltip = "View" style = "margin-left: 15px; margin-top: 5px;" onclick="javascript:switchVisible();"><i class="material-icons" style="color: #000000">visibility</i></button>
                                                             </p>
                                                         </div>
                                                     </li>
@@ -431,7 +336,7 @@
                                 </li>
                                 <li>
                                     <div class="collapsible-header" style = "background-color: #00897b"><i class="medium material-icons">business</i>
-                                        <label style = "font-family: myFirstFont; font-size: 20px; color: white;">Building Six</label>
+                                        <label style = "font-family: myFirstFont2; font-size: 20px; color: white;">Building Six</label>
                                         <button id = "configuredFloorPrice" name = "action" class="right btn tooltipped btn-floating blue" data-position = "bottom" data-delay = "25" data-tooltip = "Reserved Units" style = "margin-left: 15px; margin-top: 5px;">54</button>
                                         <button id = "notConfigure" name = "action" class="right btn tooltipped btn-floating red" data-position = "bottom" data-delay = "25" data-tooltip = "Owned Units" style = "margin-left: 15px; margin-top: 5px;">12</button>
                                         <button id = "configure" name = "action" class="right btn tooltipped small btn-floating green" data-position = "bottom" data-delay = "25" data-tooltip = "Available Unit" style = "margin-left: 15px;margin-top: 5px;">24</button>
@@ -459,7 +364,7 @@
                                                                 <button id = "configuredFloorPrice" name = "action" class="right btn tooltipped btn-floating blue" data-position = "bottom" data-delay = "25" data-tooltip = "Reserved Units" style = "margin-left: 15px; margin-top: 5px;">32</button>
                                                                 <button id = "notConfigure" name = "action" class="right btn tooltipped btn-floating red" data-position = "bottom" data-delay = "25" data-tooltip = "Owned Units" style = "margin-left: 15px; margin-top: 5px;">12</button>
                                                                 <button id = "configure" name = "action" class="right btn tooltipped small btn-floating green" data-position = "bottom" data-delay = "25" data-tooltip = "Available Unit" style = "margin-left: 15px;margin-top: 5px;">54</button>
-                                                                <button id = "Button1" name = "action" class="right btn tooltipped btn-floating black" data-position = "bottom" data-delay = "25" data-tooltip = "View" style = "margin-left: 15px; margin-top: 5px;" onclick="javascript:switchVisible();"><i class="material-icons" style="color: #ffffff">visibility</i></button>
+                                                                <button id = "Button1" name = "action" class="right btn tooltipped btn-floating light-green" data-position = "bottom" data-delay = "25" data-tooltip = "View" style = "margin-left: 15px; margin-top: 5px;" onclick="javascript:switchVisible();"><i class="material-icons" style="color: #000000">visibility</i></button>
                                                             </p>
                                                         </div>
                                                         <div class="collapsible-body">
@@ -467,7 +372,7 @@
                                                                 <button id = "configuredFloorPrice" name = "action" class="right btn tooltipped btn-floating blue" data-position = "bottom" data-delay = "25" data-tooltip = "Reserved Units" style = "margin-left: 15px; margin-top: 5px;">32</button>
                                                                 <button id = "notConfigure" name = "action" class="right btn tooltipped btn-floating red" data-position = "bottom" data-delay = "25" data-tooltip = "Owned Units" style = "margin-left: 15px; margin-top: 5px;">12</button>
                                                                 <button id = "configure" name = "action" class="right btn tooltipped small btn-floating green" data-position = "bottom" data-delay = "25" data-tooltip = "Available Unit" style = "margin-left: 15px;margin-top: 5px;">54</button>
-                                                                <button id = "Button1" name = "action" class="right btn tooltipped btn-floating black" data-position = "bottom" data-delay = "25" data-tooltip = "View" style = "margin-left: 15px; margin-top: 5px;" onclick="javascript:switchVisible();"><i class="material-icons" style="color: #ffffff">visibility</i></button>
+                                                                <button id = "Button1" name = "action" class="right btn tooltipped btn-floating light-green" data-position = "bottom" data-delay = "25" data-tooltip = "View" style = "margin-left: 15px; margin-top: 5px;" onclick="javascript:switchVisible();"><i class="material-icons" style="color: #000000">visibility</i></button>
                                                             </p>
                                                         </div>
                                                     </li>
@@ -483,7 +388,7 @@
                                                                 <button id = "configuredFloorPrice" name = "action" class="right btn tooltipped btn-floating blue" data-position = "bottom" data-delay = "25" data-tooltip = "Reserved Units" style = "margin-left: 15px; margin-top: 5px;">32</button>
                                                                 <button id = "notConfigure" name = "action" class="right btn tooltipped btn-floating red" data-position = "bottom" data-delay = "25" data-tooltip = "Owned Units" style = "margin-left: 15px; margin-top: 5px;">12</button>
                                                                 <button id = "configure" name = "action" class="right btn tooltipped small btn-floating green" data-position = "bottom" data-delay = "25" data-tooltip = "Available Unit" style = "margin-left: 15px;margin-top: 5px;">54</button>
-                                                                <button id = "Button1" name = "action" class="right btn tooltipped btn-floating black" data-position = "bottom" data-delay = "25" data-tooltip = "View" style = "margin-left: 15px; margin-top: 5px;" onclick="javascript:switchVisible();"><i class="material-icons" style="color: #ffffff">visibility</i></button>
+                                                                <button id = "Button1" name = "action" class="right btn tooltipped btn-floating light-green" data-position = "bottom" data-delay = "25" data-tooltip = "View" style = "margin-left: 15px; margin-top: 5px;" onclick="javascript:switchVisible();"><i class="material-icons" style="color: #000000">visibility</i></button>
                                                             </p>
                                                         </div>
                                                     </li>
@@ -502,7 +407,7 @@
                     <div class = "col s12">
                         <div class = "aside aside z-depth-3" style = "height: 120px;">
                             <div class = "header" style = "height: 35px; background-color: #00897b">
-                                <label style = "padding-left: 10px;font-size: 23px; color: white; font-family: myFirstFont;">Legend:</label>
+                                <label style = "padding-left: 10px;font-size: 23px; color: white; font-family: myFirstFont2;">Legend:</label>
                             </div>
 
                             <div class = "row" style = "margin-top: 10px;">
@@ -889,162 +794,650 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Main Form for Manage Service -->
                     <div id="modal1" class="modal modal-fixed" style="">
                         <center>
                             <div class="modal-header">
-                                <label style="font-size: large">MANAGE UNIT</label>
+                                <label style="font-size: large">MANAGE SERVICE</label>
                             </div>
-                            <form class="cmxform" id="ownershipForm" action="Reservation" method="get" autocomplete="off">
+                            <form id='form-id'>
                                 <br>
-                                <div class = "aside aside col s12">
-                                    <input type="radio" id="ser6" name="c1" onclick="showMe('view')"/>
-                                    <label for="ser6">View</label>
+                                <input id="1" name='test' type='radio' value="view" checked="checked"/>
+                                <label for="1">View</label>
 
-                                    <input type="radio" id="ser5" name="c1" onclick="showMe('buyUnit')"/>
-                                    <label for="ser5">Buy Unit</label>
+                                <input id="2" name='test' type='radio' value="buy" />
+                                <label for="2">Avail Unit</label>
+                            </form>
 
-                                    <input type="radio" id="ser4" name="c1" onclick="showMe('reserveUnit')"/>
-                                    <label for="ser4">Reserve Unit</label>
+                            <div id='viewDetails' style="background-color: #f3f3f3;">
+                                <div style="margin-top: 20px;">
+                                    <br>
+                                    <label style="font-size: large; text-align: center; color: #000000;">Unit Details</label>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s2">
+                                        <label><b>Status:</b></label>
+                                    </div>
+                                    <div class="input-field col s6">
+                                        <label><u>Reserved</u></label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s2">
+                                        <label><b>Owner Name:</b></label>
+                                    </div>
+                                    <div class="input-field col s6">
+                                        <label><u>LastName, FirstName Middle Name</u></label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s2">
+                                        <label><b>Details:</b></label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s2">
 
+                                    </div>
+                                    <div class="input-field col s5">
+                                        <div class="row">
+                                            <div class="input-field col s3">
+                                                <label>Price:</label>
+                                            </div>
+                                            <div class="input-field col s5">
+                                                <label><u>P55,000</u></label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="input-field col s3">
+                                                <label>Years:</label>
+                                            </div>
+                                            <div class="input-field col s5">
+                                                <label><u>6 Years</u></label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="input-field col s3">
+                                                <label>Term:</label>
+                                            </div>
+                                            <div class="input-field col s5">
+                                                <label><u>Semi Annual</u></label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="input-field col s3">
+                                                <label>Payment:</label>
+                                            </div>
+                                            <div class="input-field col s5">
+                                                <label><u>P5,000</u></label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="input-field col s3">
+                                                <label>Balance:</label>
+                                            </div>
+                                            <div class="input-field col s5">
+                                                <label><u>P29,000</u></label>
+                                            </div>
+                                        </div>
+                                        <br>
+                                    </div>
+                                    <div class="input-field col s5">
+                                        <div class="row">
+                                            <div class="input-field col s3">
+                                                <label>Building:</label>
+                                            </div>
+                                            <div class="input-field col s5">
+                                                <label><u>Building B</u></label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="input-field col s3">
+                                                <label>Floor:</label>
+                                            </div>
+                                            <div class="input-field col s5">
+                                                <label><u>Floor 3</u></label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="input-field col s3">
+                                                <label>Block:</label>
+                                            </div>
+                                            <div class="input-field col s5">
+                                                <label><u>Block C</u></label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="input-field col s3">
+                                                <label>Unit:</label>
+                                            </div>
+                                            <div class="input-field col s5">
+                                                <label><u>Unit B3C5</u></label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="right row" style="margin-top: 50px;">
+                                        <div class="input-field col s12">
+                                            <button name = "action" class="waves-light btn light-green" style = "color: #000000; margin-left: 10px; margin-right: 10px">Cancel Transaction</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
-                                    <input type="radio" id="ser3" name="c1" onclick="showMe('atNeed')"/>
-                                    <label for="ser3">At Need</label>
+                            <!-- Buy, Reserve, At Need Form -->
+                            <div id='buyUnit' style="background-color: #f3f3f3; display:none">
+                                <div style="margin-top: 20px;">
+                                    <br>
+                                    <label style="font-size: large; text-align: center; color: #000000;">Avail Form</label>
+                                </div>
+                                <form class="modal-transfer"method="get" autocomplete="off">
+                                    <div class="row">
 
-                                    <div id="newCustomer" style="display:none; background-color: rgba(10, 193, 232, 0.12); display: none; margin-top: 0; margin-bottom: 20px;">
-                                        <form class="cmxform" id="newCustomerForm" action="Manage-Unit.html" method="get" autocomplete="off">
+                                        <div id="Customer">
+                                            <div class="row">
+                                                <div class="input-field      col s7">
+                                                    <input name="cname" id="cname" type="text" required="" aria-required="true" class="validate" list="nameList">
+                                                    <label for="cname">Customer Name<span style = "color: red;">*</span></label>
+                                                </div>
+                                                <div class="input-field col s4">
+                                                    <select required = "required">
+                                                        <option value="" disabled selected>Select Avail Type<span style = "color: red;">*</span></option>
+                                                        <option value="buyU">Buy Unit</option>
+                                                        <option value="reserveU">Reserve Unit</option>
+                                                        <option value="atNeedU">At Need</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <left>
+                                                    <div class="input-field col s2">
+                                                        <label><b>Details:</b></label>
+                                                    </div>
+                                                </left>
+                                            </div>
                                             <div class="row">
                                                 <div class="input-field col s2">
-                                                    <label>New Customer:</label>
-                                                </div>
-                                                <div class="input-field col s3">
-                                                    <input id="cfname" type="text" class="validate">
-                                                    <label for="cfname">First Name</label>
-                                                </div>
-                                                <div class="input-field col s3">
-                                                    <input id="cmname" type="text" class="validate">
-                                                    <label for="cmname">Middle Name</label>
-                                                </div>
-                                                <div class="input-field col s3">
-                                                    <input id="clname" type="text" class="validate">
-                                                    <label for="clname">Last Name</label>
-                                                </div>
-                                                <div class="right input-field col s12" style="margin-bottom: 10px;">
-                                                    <button name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; margin-right: 10px">Save</button>
-                                                    <button name = "action" class="waves-effect waves-light btn red">Cancel</button>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
 
-                                    <div id="atNeed" style="display:none; background-color: rgba(10, 193, 232, 0.12);">
-                                        <div class="row">
-                                            <div class="input-field col s2">
-                                                <label>Name:</label>
+                                                </div>
+                                                <div class="input-field col s5">
+                                                    <div class="row">
+                                                        <div class="input-field col s3">
+                                                            <label>Price:</label>
+                                                        </div>
+                                                        <div class="input-field col s5">
+                                                            <label><u>P55,000</u></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="input-field col s3">
+                                                            <label>Years:</label>
+                                                        </div>
+                                                        <div class="input-field col s4">
+                                                            <input id="quantity" type="number" required="" aria-required="true" class="validate" min="1" max="30">
+                                                            <label for="quantity" data-error="From 1-30 Years Only">To Pay<span style = "color: red;">*</span></label>
+                                                        </div>
+                                                    </div><br>
+                                                    <div class="row" style="margin-top: -70px; margin-bottom: 0;">
+                                                        <div class="input-field col s3">
+                                                            <label>Term:</label>
+                                                        </div>
+                                                        <div class="input-field col s7">
+                                                            <select>
+                                                                <option value="" disabled selected>Payment Term<span style = "color: red;">*</span></option>
+                                                                <option value="1">Annual</option>
+                                                                <option value="2">Semi-Annual</option>
+                                                                <option value="3">Quarterly</option>
+                                                                <option value="3">Monthly</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="input-field col s3">
+                                                            <label>Payment:</label>
+                                                        </div>
+                                                        <div class="input-field col s5">
+                                                            <label><u>P5,000</u></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="input-field col s3">
+                                                            <label>Balance:</label>
+                                                        </div>
+                                                        <div class="input-field col s5">
+                                                            <label><u>P29,000</u></label>
+                                                        </div>
+                                                    </div>
+                                                    <br>
+                                                </div>
+                                                <div class="input-field col s5">
+                                                    <div class="row">
+                                                        <div class="input-field col s3">
+                                                            <label>Building:</label>
+                                                        </div>
+                                                        <div class="input-field col s5">
+                                                            <label><u>Building B</u></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="input-field col s3">
+                                                            <label>Floor:</label>
+                                                        </div>
+                                                        <div class="input-field col s5">
+                                                            <label><u>Floor 3</u></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="input-field col s3">
+                                                            <label>Block:</label>
+                                                        </div>
+                                                        <div class="input-field col s5">
+                                                            <label><u>Block C</u></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="input-field col s3">
+                                                            <label>Unit:</label>
+                                                        </div>
+                                                        <div class="input-field col s5">
+                                                            <label><u>Unit B3C5</u></label>
+                                                        </div>
+                                                    </div><br><br>
+                                                </div>
                                             </div>
-                                            <div class="input-field col s8">
-                                                <input name="cname" id="cname" type="text" required="" aria-required="true" data-error="No Customer Name Found!" class="validate" list="nameList">
-                                                <label for="cname" data-error="No Existing Customer Found!">Customer Name</label>
+                                            <div class="right row">
+                                                <div class="input-field col s12">
+                                                    <button name = "action" class="waves-light btn light-green" style = "color: #000000; margin-left: 10px; margin-right: 210px; margin-top: -5px;">Confirm</button>
+                                                </div>
                                             </div>
-                                            <div class="input-field col s2">
-                                                <a class="btn-floating btn-medium waves-effect waves-light red" id="new" href="javascript:toggle2();">New</a>
-                                            </div>
-                                        </div>
-                                        <div class="row" style="text-align: left;">
-                                            <div class = "col s4" style = "padding-left: 20px; text-align: left">
-                                                <legend style="font-size: 15px; text-align: center">Unit Info:</legend>
-                                                <label style="font-size: 15px;">Unit Building: <span style="color: green">BuildingA</span></label><br>
-                                                <label style="font-size: 15px;">Unit Floor: <span style="color: green">Floor2</span></label><br>
-                                                <label style="font-size: 15px;">Unit Block: <span style="color: green">BlockC</span></label><br>
-                                                <label style="font-size: 15px;">Unit Code: <span style="color: green">E11</span></label><br>
-                                                <label style="font-size: 15px;">Unit Price: <span style="color: green">P54,000</span></label>
-                                            </div>
-                                        </div>
-                                        <div class="row" style="margin-bottom: 10px;">
-                                            <button name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; margin-right: 10px">Confirm</button>
-                                            <button name = "action" class="waves-effect waves-light btn red">Cancel</button>
-                                        </div>
-                                    </div>
-
-                                    <div id="reserveUnit" style="display:none; background-color: rgba(10, 193, 232, 0.12);">
-                                        <div class="row">
-                                            <div class="input-field col s2">
-                                                <label>Name:</label>
-                                            </div>
-                                            <div class="input-field col s8">
-                                                <input name="cname" id="cname" type="text" required="" aria-required="true" data-error="No Customer Name Found!" class="validate" list="nameList">
-                                                <label for="cname" data-error="No Existing Customer Found!">Customer Name</label>
-                                            </div>
-                                            <div class="input-field col s2">
-                                                <a class="btn-floating btn-medium waves-effect waves-light red" id="new" href="javascript:toggle2();">New</a>
-                                            </div>
-                                        </div>
-                                        <div class="row" style="text-align: left;">
-                                            <div class = "col s4" style = "padding-left: 20px; text-align: left">
-                                                <legend style="font-size: 15px; text-align: center">Unit Info:</legend>
-                                                <label style="font-size: 15px;">Unit Building: <span style="color: green">BuildingA</span></label><br>
-                                                <label style="font-size: 15px;">Unit Floor: <span style="color: green">Floor2</span></label><br>
-                                                <label style="font-size: 15px;">Unit Block: <span style="color: green">BlockC</span></label><br>
-                                                <label style="font-size: 15px;">Unit Code: <span style="color: green">E11</span></label><br>
-                                                <label style="font-size: 15px;">Unit Price: <span style="color: green">P54,000</span></label>
-                                            </div>
-                                        </div>
-                                        <div class="row" style="margin-bottom: 10px;">
-                                            <button name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; margin-right: 10px">Confirm</button>
-                                            <button name = "action" class="waves-effect waves-light btn red">Cancel</button>
-                                        </div>
-                                    </div>
-
-                                    <div id="buyUnit" style="display:none; background-color: rgba(10, 193, 232, 0.12);">
-                                        <div class="row">
-                                            <div class="input-field col s2">
-                                                <label>Name:</label>
-                                            </div>
-                                            <div class="input-field col s8">
-                                                <input name="cname" id="cname" type="text" required="" aria-required="true" data-error="No Customer Name Found!" class="validate" list="nameList">
-                                                <label for="cname" data-error="No Existing Customer Found!">Customer Name</label>
-                                            </div>
-                                            <div class="input-field col s2">
-                                                <a class="btn-floating btn-medium waves-effect waves-light red" id="new" href="javascript:toggle2();">New</a>
-                                            </div>
-                                        </div>
-                                        <div class="row" style="text-align: left;">
-                                            <div class = "col s4" style = "padding-left: 20px; text-align: left">
-                                                <legend style="font-size: 15px; text-align: center">Unit Info:</legend>
-                                                <label style="font-size: 15px;">Unit Building: <span style="color: green">BuildingA</span></label><br>
-                                                <label style="font-size: 15px;">Unit Floor: <span style="color: green">Floor2</span></label><br>
-                                                <label style="font-size: 15px;">Unit Block: <span style="color: green">BlockC</span></label><br>
-                                                <label style="font-size: 15px;">Unit Code: <span style="color: green">E11</span></label><br>
-                                                <label style="font-size: 15px;">Unit Price: <span style="color: green">P54,000</span></label>
-                                            </div>
-                                        </div>
-                                        <div class="row" style="margin-bottom: 10px;">
-                                            <button name = "action" class="waves-effect waves-light btn red" style = "margin-left: 10px; margin-right: 10px">Confirm</button>
-                                            <button name = "action" class="waves-effect waves-light btn red">Cancel</button>
+                                            <datalist id="nameList">
+                                                <option value="Monkey D. Luffy">
+                                                <option value="Roronoa Zoro">
+                                                <option value="Vinsmoke Sanji">
+                                                <option value="Tony Tony Chopper">
+                                                <option value="Nico Robin">
+                                            </datalist>
                                         </div>
                                     </div>
+                                </form>
+                                <button name = "action" class="waves-light btn light-green modal-close" style="color: #000000; margin-left: 450px; margin-top: -145px">Cancel</button>
+                            </div>
 
-                                    <div id="view" style="display:none; background-color: rgba(10, 193, 232, 0.12);">
-                                        <div class="row" style="text-align: left;">
-                                            <div class = "col s4" style = "padding-left: 20px; text-align: left">
-                                                <legend style="font-size: 15px; text-align: center">Unit Info:</legend>
-                                                <label style="font-size: 15px;">Unit Building: <span style="color: green">BuildingA</span></label><br>
-                                                <label style="font-size: 15px;">Unit Floor: <span style="color: green">Floor2</span></label><br>
-                                                <label style="font-size: 15px;">Unit Block: <span style="color: green">BlockC</span></label><br>
-                                                <label style="font-size: 15px;">Unit Code: <span style="color: green">E11</span></label><br>
-                                                <label style="font-size: 15px;">Unit Price: <span style="color: green">P54,000</span></label>
-                                            </div>
-                                        </div>
-                                        <div class="row" style="margin-bottom: 10px;">
-                                            <button name = "action" class="waves-effect waves-light btn red">Cancel Reservation</button>
-                                        </div>
-                                    </div>
 
+                            <!--
+                            <div id='reserveUnit' style="background-color: #f3f3f3; display:none">
+                                <div style="margin-top: 20px;">
+                                    <br>
+                                    <label style="font-size: large; text-align: center; color: #000000;">Reserve Unit</label>
                                 </div>
-                            </form>
+                                <form class="modal-transfer"method="get" autocomplete="off">
+                                    <div class="row">
+
+                                        <div id="Customer2">
+                                            <div class="row">
+                                                <div class="input-field col s3">
+                                                    <label>Customer Name:</label>
+                                                </div>
+                                                <div class="input-field      col s6">
+                                                    <input name="cname2" id="cname2" type="text" required="" aria-required="true" class="validate" list="nameList">
+                                                    <label for="cname2">Name</label>
+                                                </div>
+                                                <div class="input-field col s2">
+                                                    <button id = "change" class="waves-light btn light-green" onclick="javascript:switchDiv();" style="color: #000000">New</button>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <left>
+                                                    <div class="input-field col s2">
+                                                        <label><b>Details:</b></label>
+                                                    </div>
+                                                </left>
+                                            </div>
+                                            <div class="row">
+                                                <div class="input-field col s2">
+
+                                                </div>
+                                                <div class="input-field col s5">
+                                                    <div class="row">
+                                                        <div class="input-field col s3">
+                                                            <label>Price:</label>
+                                                        </div>
+                                                        <div class="input-field col s5">
+                                                            <label><u>P55,000</u></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="input-field col s3">
+                                                            <label>Years:</label>
+                                                        </div>
+                                                        <div class="input-field col s4">
+                                                            <input id="quantity2" type="number" required="" aria-required="true" class="validate" min="1" max="30">
+                                                            <label for="quantity2" data-error="From 1-30 Years Only">To Pay</label>
+                                                        </div>
+                                                    </div><br>
+                                                    <div class="row" style="margin-top: -70px; margin-bottom: 0;">
+                                                        <div class="input-field col s3">
+                                                            <label>Term:</label>
+                                                        </div>
+                                                        <div class="input-field col s7">
+                                                            <select>
+                                                                <option value="" disabled selected>Payment Term</option>
+                                                                <option value="1">Annual</option>
+                                                                <option value="2">Semi-Annual</option>
+                                                                <option value="3">Quarterly</option>
+                                                                <option value="3">Monthly</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="input-field col s3">
+                                                            <label>Payment:</label>
+                                                        </div>
+                                                        <div class="input-field col s5">
+                                                            <label><u>P5,000</u></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="input-field col s3">
+                                                            <label>Balance:</label>
+                                                        </div>
+                                                        <div class="input-field col s5">
+                                                              <label><u>P29,000</u></label>
+                                                        </div>
+                                                    </div>
+                                                    <br>
+                                                </div>
+                                                <div class="input-field col s5">
+                                                    <div class="row">
+                                                        <div class="input-field col s3">
+                                                            <label>Building:</label>
+                                                        </div>
+                                                        <div class="input-field col s5">
+                                                            <label><u>Building B</u></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="input-field col s3">
+                                                            <label>Floor:</label>
+                                                        </div>
+                                                        <div class="input-field col s5">
+                                                            <label><u>Floor 3</u></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="input-field col s3">
+                                                            <label>Block:</label>
+                                                        </div>
+                                                        <div class="input-field col s5">
+                                                            <label><u>Block C</u></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="input-field col s3">
+                                                            <label>Unit:</label>
+                                                        </div>
+                                                        <div class="input-field col s5">
+                                                            <label><u>Unit B3C5</u></label>
+                                                        </div>
+                                                    </div><br><br>
+                                                </div>
+                                            </div>
+                                            <div class="right row">
+                                                <div class="input-field col s12">
+                                                    <button name = "action" class="waves-light btn light-green" style = "color: #000000; margin-left: 10px; margin-right: 10px">Confirm</button>
+                                                    <button name = "action" class="waves-light btn light-green" style="color: #000000;">Cancel</button>
+                                                </div>
+                                            </div>
+                                            <datalist id="nameList">
+                                                <option value="Monkey D. Luffy">
+                                                <option value="Roronoa Zoro">
+                                                <option value="Vinsmoke Sanji">
+                                                <option value="Tony Tony Chopper">
+                                                <option value="Nico Robin">
+                                            </datalist>
+                                        </div>
+
+                                        <div id="newCustomer2" style="display: none;">
+                                            <br>
+                                            <div>
+                                                <label style="font-size: 10px;; text-align: center">Add New Customer</label>
+                                            </div>
+                                            <form class="cmxform" action="Reservation_Transaction.html" method="get" autocomplete="off">
+                                                <div class="row">
+                                                    <div class="input-field col s2">
+                                                        <label>New Customer:</label>
+                                                    </div>
+                                                    <div class="input-field col s3">
+                                                        <input id="cfname2" type="text" class="validate">
+                                                        <label for="cfname2">First Name</label>
+                                                    </div>
+                                                    <div class="input-field col s3">
+                                                        <input id="cmname2" type="text" class="validate">
+                                                        <label for="cmname2">Middle Name</label>
+                                                    </div>
+                                                    <div class="input-field col s3">
+                                                        <input id="clname2" type="text" class="validate">
+                                                        <label for="clname2">Last Name</label>
+                                                    </div>
+                                                </div>
+                                                <div class="right row">
+                                                    <div class="input-field col s12">
+                                                        <button id = "change" class="waves-light btn light-green" onclick="javascript:switchDiv();" style="color: #000000">Save</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+
+                                </form>
+                            </div>
+
+                            <div id='atNeedUnit' style="background-color: #f3f3f3; display:none">
+                                <div style="margin-top: 20px;">
+                                    <br>
+                                    <label style="font-size: large; text-align: center; color: #000000;">At Need Unit </label>
+                                </div>
+                                <form class="modal-transfer"method="get" autocomplete="off">
+                                    <div class="row">
+
+                                        <div id="Customer3">
+                                            <div class="row">
+                                                <div class="input-field col s3">
+                                                    <label>Customer Name:</label>
+                                                </div>
+                                                <div class="input-field      col s6">
+                                                    <input name="cname3" id="cname3" type="text" required="" aria-required="true" class="validate" list="nameList">
+                                                    <label for="cname3">Name</label>
+                                                </div>
+                                                <div class="input-field col s2">
+                                                    <button id = "change" class="waves-light btn light-green" onclick="javascript:switchDiv();" style="color: #000000">New</button>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <left>
+                                                    <div class="input-field col s2">
+                                                        <label><b>Details:</b></label>
+                                                    </div>
+                                                </left>
+                                            </div>
+                                            <div class="row">
+                                                <div class="input-field col s2">
+
+                                                </div>
+                                                <div class="input-field col s5">
+                                                    <div class="row">
+                                                        <div class="input-field col s3">
+                                                            <label>Price:</label>
+                                                        </div>
+                                                        <div class="input-field col s5">
+                                                            <label><u>P55,000</u></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="input-field col s3">
+                                                            <label>Years:</label>
+                                                        </div>
+                                                        <div class="input-field col s4">
+                                                            <input id="quantity3" type="number" required="" aria-required="true" class="validate" min="1" max="30">
+                                                            <label for="quantity3" data-error="From 1-30 Years Only">To Pay</label>
+                                                        </div>
+                                                    </div><br>
+                                                    <div class="row" style="margin-top: -70px; margin-bottom: 0;">
+                                                        <div class="input-field col s3">
+                                                            <label>Term:</label>
+                                                        </div>
+                                                        <div class="input-field col s7">
+                                                            <select>
+                                                                <option value="" disabled selected>Payment Term</option>
+                                                                <option value="1">Annual</option>
+                                                                <option value="2">Semi-Annual</option>
+                                                                <option value="3">Quarterly</option>
+                                                                <option value="3">Monthly</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="input-field col s3">
+                                                            <label>Payment:</label>
+                                                        </div>
+                                                        <div class="input-field col s5">
+                                                            <label><u>P5,000</u></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="input-field col s3">
+                                                            <label>Balance:</label>
+                                                        </div>
+                                                        <div class="input-field col s5">
+                                                            <label><u>P29,000</u></label>
+                                                        </div>
+                                                    </div>
+                                                    <br>
+                                                </div>
+                                                <div class="input-field col s5">
+                                                    <div class="row">
+                                                        <div class="input-field col s3">
+                                                            <label>Building:</label>
+                                                        </div>
+                                                        <div class="input-field col s5">
+                                                            <label><u>Building B</u></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="input-field col s3">
+                                                            <label>Floor:</label>
+                                                        </div>
+                                                        <div class="input-field col s5">
+                                                            <label><u>Floor 3</u></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="input-field col s3">
+                                                            <label>Block:</label>
+                                                        </div>
+                                                        <div class="input-field col s5">
+                                                            <label><u>Block C</u></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="input-field col s3">
+                                                            <label>Unit:</label>
+                                                        </div>
+                                                        <div class="input-field col s5">
+                                                            <label><u>Unit B3C5</u></label>
+                                                        </div>
+                                                    </div><br><br>
+                                                </div>
+                                            </div>
+                                            <div class="right row">
+                                                <div class="input-field col s12">
+                                                    <button name = "action" class="waves-light btn light-green" style = "color: #000000; margin-left: 10px; margin-right: 10px">Confirm</button>
+                                                    <button name = "action" class="waves-light btn light-green" style="color: #000000;">Cancel</button>
+                                                </div>
+                                            </div>
+                                            <datalist id="nameList">
+                                                <option value="Monkey D. Luffy">
+                                                <option value="Roronoa Zoro">
+                                                <option value="Vinsmoke Sanji">
+                                                <option value="Tony Tony Chopper">
+                                                <option value="Nico Robin">
+                                            </datalist>
+                                        </div>
+
+                                        <div id="newCustomer3" style="display: none;">
+                                            <br>
+                                            <div>
+                                                <label style="font-size: 10px;; text-align: center">Add New Customer</label>
+                                            </div>
+                                            <form class="cmxform" action="Reservation_Transaction.html" method="get" autocomplete="off">
+                                                <div class="row">
+                                                    <div class="input-field col s2">
+                                                        <label>New Customer:</label>
+                                                    </div>
+                                                    <div class="input-field col s3">
+                                                        <input id="cfname3" type="text" class="validate">
+                                                        <label for="cfname3">First Name</label>
+                                                    </div>
+                                                    <div class="input-field col s3">
+                                                        <input id="cmname3" type="text" class="validate">
+                                                        <label for="cmname3">Middle Name</label>
+                                                    </div>
+                                                    <div class="input-field col s3">
+                                                        <input id="clname3" type="text" class="validate">
+                                                        <label for="clname3">Last Name</label>
+                                                    </div>
+                                                </div>
+                                                <div class="right row">
+                                                    <div class="input-field col s12">
+                                                        <button id = "change" class="waves-light btn light-green" onclick="javascript:switchDiv();" style="color: #000000">Save</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+
+                                </form>
+                            </div>
+
+                            -->
+                            <!-- Buy, Reserve, At Need Radio Buttons -->
+                            <script>
+                                $("input[name='test']").click(function () {
+                                    $('#viewDetails').css('display', ($(this).val() === 'view') ? 'block':'none');
+                                    $('#buyUnit').css('display', ($(this).val() === 'buy') ? 'block':'none');
+                                    $('#reserveUnit').css('display', ($(this).val() === 'reserve') ? 'block':'none');
+                                    $('#atNeedUnit').css('display', ($(this).val() === 'atNeed') ? 'block':'none');
+                                });
+                            </script>
                         </center>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <!-- Show Hide Unit -->x
+    <script>
+        function switchVisible() {
+            if (document.getElementById('tableUnit') !== undefined) {
+
+                if (document.getElementById('tableUnit').style.display == 'block') {
+                    document.getElementById('tableUnit').style.display = 'none';
+                    document.getElementById('tableStart').style.display = 'block';
+                } else {
+                    document.getElementById('tableUnit').style.display = 'block';
+                    document.getElementById('tableStart').style.display = 'none';
+                }
+            }
+        }
+    </script>
+    <script>
+        $(document).ready(function(){
+            // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+            $('.modal-trigger').leanModal();
+        });
+
+
+        $(document).ready(function() {
+            $('select').material_select();
+        });
+    </script>
 </div>

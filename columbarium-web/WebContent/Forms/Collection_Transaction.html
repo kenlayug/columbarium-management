@@ -10,8 +10,12 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
 
+
+    <!-- CSS -->
     <link rel = "stylesheet" href = "../css/style.css"/>
+    <link href="../css/calendar.css" rel="stylesheet" type="text/css"/>
     <!-- Sabay bumababa yung search ng tatlong data table -->
+
 
 </head>
 <body>
@@ -25,7 +29,7 @@
                 <div id="admin1" class="col s12">
                     <div class="z-depth-2 card material-table">
                         <div class="table-header" style="background-color: #00897b;">
-                            <h4 style = "font-size: 20px; color: white; padding-left: 0px;">Customer with Overdue Dates</h4>
+                            <h4 style = "font-size: 20px; color: white; padding-left: 0px; font-family: myFirstFont2">Customer with Overdue Dates</h4>
                             <div class="actions">
                                 <a href="#" class="search-toggle btn-flat nopadding"><i class="material-icons" style="color: #ffffff;">search</i></a>
                             </div>
@@ -33,26 +37,31 @@
                         <table id="datatable2">
                             <thead>
                             <tr>
-                                <th>Customer Name</th>
                                 <th>Unit Code</th>
+                                <th>Customer Name</th>
                             </tr>
                             </thead>
                             <tbody>
                             <tr>
+                                <td>A1</td>
                                 <td>Aaron Clyde Garil</td>
-                                <td>A1</td> </tr>
+                            </tr>
                             <tr>
+                                <td>H12</td>
                                 <td>John Ezekiel Martinez</td>
-                                <td>H12</td></tr>
+                            </tr>
                             <tr>
+                                <td>C6</td>
                                 <td>Aila Bianca Jacalne</td>
-                                <td>C6</td></tr>
+                            </tr>
                             <tr>
+                                <td>B9</td>
                                 <td>Tiffany Banzuela</td>
-                                <td>B9</td></tr>
+                            </tr>
                             <tr>
+                                <td>C13</td>
                                 <td>Alvin John Perez</td>
-                                <td>C13</td></tr>
+                            </tr>
                             </tbody>
                         </table>
                     </div>
@@ -61,14 +70,14 @@
         </div>
 
 
-        <!-- Collection history data table -->
+        <!-- Collection history data table Modal-->
         <div id="modal1" class="modal modal-fixed">
             <div class="cmxform" action="Collection_Transaction.html" method="get" autocomplete="off">
                 <div class="row">
                     <div id="admin2" class="col s12" style="margin: 0;">
                         <div class="card material-table">
                             <div class="table-header" style="background-color: #00897b;">
-                                <h4 style = "font-size: 20px; color: white; padding-left: 0px;">Customer Collection History</h4>
+                                <h4 style = "font-size: 20px; color: white; padding-left: 0px; font-family: myFirstFont2">Customer Collection History</h4>
                                 <div class="actions">
                                     <a href="#" class="search-toggle btn-flat nopadding"><i class="material-icons" style="color: #ffffff;">search</i></a>
                                 </div>
@@ -121,73 +130,116 @@
             </div>
         </div>
 
-        <!-- Collection of Payment -->
+        <!-- Collection of Payment Modal-->
         <div id="modal2" class="modal modal-fixed" style="">
             <div class="modal-header">
                 <center>
-                    <h4 style = "font-size: 20px; color: white; padding-left: 15px; padding-top: 15px; padding-bottom: 0;">Collection</h4>
+                    <h4 style = "font-size: 20px; color: white; padding-left: 15px; padding-top: 15px; padding-bottom: 0; font-family: myFirstFont2">Collection</h4>
                 </center>
             </div>
             <div class="cmxform" id="collect" action="Collection_Transaction.html" method="get" autocomplete="off">
 
+                <!-- Collection Form -->
                 <div id="payment">
                     <form>
+                        <!-- Collection Info -->
                         <div class="row" style="text-align: left;">
-                            <div class = "col s8" style = "padding-left: 20px; margin-top: 10px; text-align: left">
-                                <legend style="font-size: 20px;">Collection Info:</legend>
-                                <label style="font-size: 20px;">Balance: <span style="color: green">P54,000</span></label>
+                            <div class = "col s7" style = "padding-left: 20px; margin-top: 10px; text-align: left">
+                                <div class="card material-table">
+                                    <table id="datatable4">
+                                        <thead>
+                                        <tr>
+                                            <th>Date</th>
+                                            <th>Principal</th>
+                                            <th>Payment</th>
+                                            <th>Status</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <th>01/03/16</th>
+                                            <th>P82,000</th>
+                                            <th>P4,000</th>
+                                            <th><i class="material-icons">done</i></th>
+                                        </tr>
+                                        <tr>
+                                            <th>01/04/16</th>
+                                            <th>P78,000</th>
+                                            <th>P4,000</th>
+                                            <th><i class="material-icons">done</i></th>
+                                        </tr>
+                                        <tr>
+                                            <th>01/05/16</th>
+                                            <th>P74,000</th>
+                                            <th>P4,000</th>
+                                            <th><i class="material-icons">done</i></th>
+                                        </tr>
+                                        <tr>
+                                            <th><i class="material-icons">done</i></th>
+                                            <th>01/06/16</th>
+                                            <th>P70,000</th>
+                                            <th>P4,000</th>
+                                        </tr>
+                                        <tr>
+                                            <th>01/07/16</th>
+                                            <th>P66,000</th>
+                                            <th>P4,000</th>
+                                            <th><i class="material-icons">done</i></th>
+                                        </tr>
+                                        <tr>
+                                            <th>01/08/16</th>
+                                            <th>P62,000</th>
+                                            <th>P4,000</th>
+                                            <th><i class="material-icons">done</i></th>
+                                        </tr>
+                                        <tr>
+                                            <th>01/09/16</th>
+                                            <th>P58,000</th>
+                                            <th>P4,000</th>
+                                            <th><i class="material-icons">done</i></th>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <i class = "left" style="margin-left: 10px; font-size: medium">Balance: <span style = " color: red;">P 54,000</span></i>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="input-field col s3">
-                                <label>Mode of Payment:</label>
-                            </div>
-                            <div class="input-field col s3">
-                                <input name="mode" id="mode" type="text" required="" aria-required="true" class="validate" list="modePayment">
-                                <label for="mode" data-error="No Existing Customer Found!"></label>
-                            </div>
-                            <div class="left input-field col s1" style="margin-bottom: 10px; padding-left: 5px;">
-                                <button id = "change" class="waves-light btn light-green" onclick="javascript:switchDiv();" style="color: #000000">New</button>
-                            </div>
+                            <div class="col s5">
+                                <div class="row">
+                                    <div class="input-field col s6">
+                                        <label>Mode of Payment:<span style = "color: red;">*</span></label>
+                                    </div>
+                                    <div class="input-field col s6">
+                                        <select required>
+                                            <option value="" disabled selected></option>
+                                            <option value="Cash">Cash</option>
+                                            <option value="Cheque">Cheque</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row" ng-controller="myCtrl">
+                                    <div class="input-field col s5">
+                                        <label for="amount" data-error = "Invalid Format!">Enter Amount:<span style = "color: red;">*</span></label>
+                                    </div>
+                                    <div class="input-field col s6">
+                                        <span class="input-peso left">
+                                            <input id="amount" type="number" required="" aria-required="true" class="validate" minlenght="1" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.01">
+                                        </span>
 
-                            <!-- Autocomplete List-->
-                            <datalist id="modePayment">
-                                <option value="Cash">
-                                <option value="Cheque">
-                            </datalist>
-                        </div>
-                        <div class="row">
-                            <div class="input-field col s2">
-                                <label>Enter Amount: </label>
-                            </div>
-                            <div class="input-field col s3">
-                                <input id="amount" type="number" class="validate">
-                                <label for="amount"></label>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="right row">
+                        <!-- Collection -->
+
+                        <div class="right row" style="margin-top: -100px;">
                             <div class="input-field col s12">
-                                <button name = "action" class="waves-light btn light-green" style = "margin-left: 10px; margin-right: 10px; color: #000000;">Save</button>
-                                <button name = "action" class="waves-light btn light-green modal-close" style = "color: #000000;">Cancel</button>
+                                <br>
+                                <button name = "action" class="waves-light btn light-green" style = "margin-left: 10px; margin-right: 10px; color: #000000; margin-top: 10px;">Save</button>
+                                <button name = "action" class="wav  es-light btn light-green modal-close" style = "color: #000000; margin-top: 10px;">Cancel</button>
                             </div>
                         </div>
+                        <i class = "left" style = "margin-top: -110px; margin-bottom: 50px; padding-left: 450px; color: red;">*Required Fields</i>
                     </form>
-                </div>
-                <div id="newModeOfPayment" style="display: none;">
-                    <div class="input-field col s8">
-                        <form class="cmxform" id="newPaymentForm" method="get" autocomplete="off">
-                            <div class="row">
-                                <div class="input-field col s10">
-                                    <input id="tPayment" type="text" class="validate">
-                                    <label for="tPayment">New Mode of Payment</label>
-                                </div>
-                                <div class="right input-field col s1" style="margin-bottom: 10px;">
-                                    <button id = "saveNewPaymentMode" class="waves-light btn light-green" style="color: #000000; margin-left: -20px;">Save</button>
-                                </div>
-                            </div>
-                        </form>
-                        <button id = "cancel" class="waves-light btn light-green" onclick="javascript:switchDiv();" style="color: #000000;margin-top: -150px; margin-left: 545px;">Cancel</button>
-                    </div>
                 </div>
             </div>
         </div>
@@ -199,7 +251,7 @@
                 <div id="admin" class="col s12">
                     <div class="z-depth-2 card material-table">
                         <div class="table-header" style="background-color: #00897b;">
-                            <h4 style = "font-size: 20px; color: white; padding-left: 0px;">Collection</h4>
+                            <h4 style = "font-size: 20px; color: white; padding-left: 0px; font-family: myFirstFont2">Collection</h4>
                             <div class="actions">
                                 <a href="#" class="search-toggle btn-flat nopadding"><i class="material-icons" style="color: #ffffff;">search</i></a>
                             </div>
@@ -257,6 +309,7 @@
             </div>
             <script src='http://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js'></script>
             <script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js'></script>
+            <!-- Data table js -->
             <script>
                 (function(window, document, undefined) {
 
@@ -494,6 +547,28 @@
                 });
 
                 $(document).ready(function() {
+                    $('#datatable4').dataTable({
+                        "iDisplayLength": 3,
+                        "oLanguage": {
+                            "sStripClasses": "",
+                            "sSearch": "",
+                            "sSearchPlaceholder": "Enter Keywords Here",
+                            "sInfo": "_START_ -_END_ of _TOTAL_",
+                            "sLengthMenu": '<span>Rows per page:</span><select class="browser-default">' +
+                            '<option value="3">3</option>' +
+                            '<option value="10">10</option>' +
+                            '<option value="20">20</option>' +
+                            '<option value="30">30</option>' +
+                            '<option value="40">40</option>' +
+                            '<option value="50">50</option>' +
+                            '<option value="-1">All</option>' +
+                            '</select></div>'
+                        },
+                        bAutoWidth: false
+                    });
+                });
+
+                $(document).ready(function() {
                     $('#datatable2').dataTable({
                         "iDisplayLength": 5,
                         "oLanguage": {
@@ -515,48 +590,36 @@
                     });
                 });
             </script>
-            <!-- JS -->
-            <script>
-                function switchDiv() {
-                    if (document.getElementById('newModeOfPayment') !== undefined) {
 
-                        if (document.getElementById('newModeOfPayment').style.display == 'block') {
-                            document.getElementById('newModeOfPayment').style.display = 'none';
-                            document.getElementById('payment').style.display = 'block';
-                        } else {
-                            document.getElementById('newModeOfPayment').style.display = 'block';
-                            document.getElementById('payment').style.display = 'none';
-                        }
-                    }
-                }
-            </script>
-
+            <!-- modal js -->
             <script>
                 $(document).ready(function(){
                     // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
                     $('.modal-trigger').leanModal();
                 });
+                function myCtrl($scope) {
+                    $scope.myDecimal = 0;
+                }
+
+                $(document).ready(function() {
+                    $('select').material_select();
+                });
             </script>
-
-            <!-- CSS -->
             <style>
-                tr, th, td{
-                    text-align: center;
+                .input-peso {
+                    position: relative;
                 }
-                @font-face {
-                    font-family: myFirstFont;
-                    src: url(../fonts/KGBlankSpaceSketch.ttf);
-                }
-
-                h4 {
-                    font-family: myFirstFont;
-                    font-size: 40px;
-                    padding-left: 50px;
+                .input-peso.left input {
+                    padding-left:18px;
                 }
 
-                .modal-header {
-                    background-color: #00897b;
-                    height: 70px;
+                .input-peso:before {
+                    position: absolute;
+                    top: 10px;
+                    content:"P";
+                }
+                .input-peso.left:before {
+                    left: 5px;
                 }
             </style>
         </div>

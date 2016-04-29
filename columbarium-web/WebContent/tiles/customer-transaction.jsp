@@ -1,26 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Add Customer</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
-    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css'>
-    <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="../css/style.css">
-    <link href="../css/datepicker.css" rel="stylesheet" type="text/css"/>
-    <link href="../css/CustomerCSS.css" rel="stylesheet" type="text/css"/>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
 
 
+<link rel = "stylesheet" href = "<%=request.getContextPath()%>/css/style.css"/>
+<link rel = "stylesheet" href = "<%=request.getContextPath()%>/css/datepicker.css"/>
+<link rel = "stylesheet" href = "<%=request.getContextPath()%>/css/CustomerCSS.css"/>
 
-</head>
-<body>
 <div class = "col s12">
     <div class = "row">
         <div class = "col s5" style="margin-top: 13px;">
@@ -317,14 +302,14 @@
                                 <td>09314242123</td>
                                 <td>Edinburgh</td>
                                 <td><button name = "action" class="modal-trigger btn-floating light-green" href = "#modal1"><i class="material-icons" style="color: #000000">mode_edit</i></button>
-                                <button name = "action" class="modal-trigger btn-floating light-green" href = "#modal2"><i class="material-icons" style="color: #000000">not_interested</i></button></td> </tr>
+                                    <button name = "action" class="modal-trigger btn-floating light-green" href = "#modal2"><i class="material-icons" style="color: #000000">not_interested</i></button></td> </tr>
                             </tr>
                             <tr>
                                 <td>Airi Satou</td>
                                 <td>09314242123</td>
                                 <td>Edinburgh</td>
                                 <td><button name = "action" class="modal-trigger btn-floating light-green" href = "#modal1"><i class="material-icons" style="color: #000000">mode_edit</i></button>
-                                <button name = "action" class="modal-trigger btn-floating light-green" href = "#modal2"><i class="material-icons" style="color: #000000">not_interested</i></button></td> </tr>
+                                    <button name = "action" class="modal-trigger btn-floating light-green" href = "#modal2"><i class="material-icons" style="color: #000000">not_interested</i></button></td> </tr>
                             </tr>
                             <tr>
                                 <td>Brielle Williamson</td>
@@ -620,5 +605,3 @@
     </script>
 
 </div>
-</body>
-</html>

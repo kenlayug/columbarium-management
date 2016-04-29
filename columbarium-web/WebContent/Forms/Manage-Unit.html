@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
-    <!-- Import File -->
+    <!-- CSS -->
     <link href="../css/vaults.css" rel="stylesheet" type="text/css"/>
 
 
@@ -19,7 +19,7 @@
 <div class = col s12 >
     <div class = "row">
         <div class = "col s4">
-            <h2 style = "padding-left: 40px; font-size: 30px; margin-top: 20px; font-family: 'KG Blank Space Sketch'">Manage Unit</h2>
+            <h2 style = "padding-left: 40px; font-size: 30px; margin-top: 20px; font-family:  myFirstFont2">Manage Unit</h2>
 
             <div style = "overflow: auto;height: 370px;">
                 <div class = "col s12">
@@ -28,7 +28,7 @@
                         <ul class="collapsible" data-collapsible="collapsible">
                             <li>
                                 <div class="collapsible-header" style = "background-color: #00897b"><i class="medium material-icons">business</i>
-                                    <label style = "font-family: myFirstFont; font-size: 20px; color: white;">Building One</label>
+                                    <label style = "font-family: myFirstFont2; font-size: 20px; color: white;">Building One</label>
                                 </div>
                                 <div class="collapsible-body">
                                     <div class="row">
@@ -71,7 +71,7 @@
                             </li>
                             <li>
                                 <div class="collapsible-header" style = "background-color: #00897b"><i class="medium material-icons">business</i>
-                                    <label style = "font-family: myFirstFont; font-size: 20px; color: white;">Building Two</label>
+                                    <label style = "font-family: myFirstFont2; font-size: 20px; color: white;">Building Two</label>
                                 </div>
                                 <div class="collapsible-body">
                                     <div class="row">
@@ -114,7 +114,7 @@
                             </li>
                             <li>
                                 <div class="collapsible-header" style = "background-color: #00897b"><i class="medium material-icons">business</i>
-                                    <label style = "font-family: myFirstFont; font-size: 20px; color: white;">Building Three</label>
+                                    <label style = "font-family: myFirstFont2; font-size: 20px; color: white;">Building Three</label>
                                 </div>
                                 <div class="collapsible-body">
                                     <div class="row">
@@ -157,7 +157,7 @@
                             </li>
                             <li>
                                 <div class="collapsible-header" style = "background-color: #00897b"><i class="medium material-icons">business</i>
-                                    <label style = "font-family: myFirstFont; font-size: 20px; color: white;">Building Four</label>
+                                    <label style = "font-family: myFirstFont2; font-size: 20px; color: white;">Building Four</label>
                                 </div>
                                 <div class="collapsible-body">
                                     <div class="row">
@@ -200,7 +200,7 @@
                             </li>
                             <li>
                                 <div class="collapsible-header" style = "background-color: #00897b"><i class="medium material-icons">business</i>
-                                    <label style = "font-family: myFirstFont; font-size: 20px; color: white;">Building Five</label>
+                                    <label style = "font-family: myFirstFont2; font-size: 20px; color: white;">Building Five</label>
                                 </div>
                                 <div class="collapsible-body">
                                     <div class="row">
@@ -243,7 +243,7 @@
                             </li>
                             <li>
                                 <div class="collapsible-header" style = "background-color: #00897b"><i class="medium material-icons">business</i>
-                                    <label style = "font-family: myFirstFont; font-size: 20px; color: white;">Building Six</label>
+                                    <label style = "font-family: myFirstFont2; font-size: 20px; color: white;">Building Six</label>
                                 </div>
                                 <div class="collapsible-body">
                                     <div class="row">
@@ -656,8 +656,7 @@
                                 </table>
                                 <!-- Modal Structure -->
                                 <div id="modal1" class="modal modal-fixed">
-
-
+                                    <!-- Main Form for Manage Unit-->
                                     <div id="deceasedForm">
                                         <div class="modal-header">
                                             <label style="font-size: large">MANAGE UNIT</label>
@@ -686,7 +685,8 @@
                                                     <label for="2">Pull Out Deceased</label>
                                                 </form>
 
-                                                <div id='transferDeceased' style='display:none'>
+                                                <!-- Transfer Deceased Form-->
+                                                <form id='transferDeceased' style='display:none'>
                                                     <div class="row">
                                                         <div class="input-field col s3">
                                                             <h6 style="color: #000000;">Deceased Name/s:</h6>
@@ -709,11 +709,11 @@
                                                             <label>Building No:</label>
                                                         </div>
                                                         <div class = "col s9" style = "padding-left: 20px;">
-                                                            <select>
-                                                                <option value="" disabled selected> Select Building No:</option>
-                                                                <option value="1">Building 1</option>
-                                                                <option value="2">Building 2</option>
-                                                                <option value="3">Building 3</option>
+                                                            <select required>
+                                                                <option value="" disabled selected> Select Building Name:<span style = "color: red;">*</span></option>
+                                                                <option value="1">Building A</option>
+                                                                <option value="2">Building B</option>
+                                                                <option value="3">Building C</option>
                                                             </select>
 
                                                         </div>
@@ -721,8 +721,8 @@
                                                             <label>Floor No:</label>
                                                         </div>
                                                         <div class = "col s9" style = "padding-left: 20px;">
-                                                            <select>
-                                                                <option value="" disabled selected> Select Floor No:</option>
+                                                            <select required>
+                                                                <option value="" disabled selected> Select Floor No:<span style = "color: red;">*</span></option>
                                                                 <option value="1">Floor 1</option>
                                                                 <option value="2">Floor 2</option>
                                                                 <option value="3">Floor 3</option>
@@ -732,8 +732,8 @@
                                                             <label>Block Name:</label>
                                                         </div>
                                                         <div class = "col s9" style = "padding-left: 20px;">
-                                                            <select>
-                                                                <option value="" disabled selected> Select Block Name:</option>
+                                                            <select required>
+                                                                <option value="" disabled selected> Select Block Name:<span style = "color: red;">*</span></option>
                                                                 <option value="1">Block A</option>
                                                                 <option value="2">Block B</option>
                                                                 <option value="3">Block C</option>
@@ -743,9 +743,16 @@
                                                             <label>Unit Code:</label>
                                                         </div>
                                                         <div class="input-field col s3">
-                                                            <input id="ucode" type="text" class="validate">
-                                                            <label for="ucode">Unit Code</label>
+                                                            <input id="ucode" type="text" required="" aria-required="true" class="validate" list="unitCode">
+                                                            <label for="ucode">Unit Code<span style = "color: red;">*</span></label>
                                                         </div>
+                                                        <datalist id="unitCode">
+                                                            <option value="E401">
+                                                            <option value="A512">
+                                                            <option value="A101">
+                                                            <option value="H304">
+                                                            <option value="C212">
+                                                        </datalist>
                                                     </div>
                                                     <div class="row">
                                                         <div class="left input-field col s4">
@@ -755,16 +762,20 @@
                                                             </left>
                                                         </div>
                                                     </div>
+                                                    <i class = "left" style = "margin-top: 0px; margin-bottom: 50px; padding-left: 15px; color: red;">*Required Fields</i>
+
                                                     <div class="row">
                                                         <div class="input-field col s6" style="margin-bottom: 20px; visibility: hidden">
 
                                                         </div>
-                                                        <div class="input-field col s6" style="margin-bottom: 20px;">
+                                                        <div class="right input-field col s6" style="margin-bottom: 20px;">
                                                             <button name = "action" class="waves-light btn light-green" style = "color: #000000; margin-left: 10px; margin-right: 10px">Confirm</button>
                                                             <button name = "action" class="waves-light btn light-green modal-close" style="color: #000000;">Cancel</button>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </form>
+
+                                                <!-- Pull Out Deceased Form-->
                                                 <div id='pullOutDeceased' style='display:none'>
                                                     <div class="row">
                                                         <div class="input-field col s3">
@@ -792,8 +803,8 @@
                                                             <button name = "action" class="waves-light btn light-green modal-close" style="color: #000000;">Cancel</button>
                                                         </div>
                                                     </div>
-
                                                 </div>
+                                                <!-- Radio Buttons JS-->
                                                 <script>
                                                     $("input[name='test']").click(function () {
                                                         $('#transferDeceased').css('display', ($(this).val() === 'transfer') ? 'block':'none');
@@ -803,25 +814,27 @@
                                             </div>
                                         </div>
                                     </div>
+
+                                    <!-- Transfer Ownership Form -->
                                     <div id="transferOwnership" style="display: none;">
                                         <div class="modal-header">
                                             <label style="font-size: large">Transfer Ownership</label>
                                         </div>
                                         <form class="modal-transfer"method="get" autocomplete="off">
                                             <div class="row">
-                                                <div class="input-field col s3">
-                                                    <label style="font-size: large"><b>New Owner Name:</b></label>
-                                                </div>
-                                                <div class="input-field      col s4">
+                                                <div class="input-field      col s7">
                                                     <input name="cname" id="cname" type="text" required="" aria-required="true" class="validate" list="nameList">
-                                                    <label for="cname">Customer Name</label>
+                                                    <label for="cname">New Owner Name<span style = "color: red;">*</span></label>
                                                 </div>
                                                 <div class="right row">
                                                     <div class="input-field col s12">
-                                                        <button name = "action" class="waves-light btn light-green" style = "color: #000000; margin-left: -415px;">Confirm</button>
+                                                        <button name = "action" class="waves-light btn light-green" style = "color: #000000; margin-left: -480px;">Confirm</button>
                                                     </div>
                                                 </div>
                                             </div>
+                                            <i class = "left" style = "margin-top: 0px; margin-bottom: 50px; padding-left: 15px; color: red;">*Required Field</i>
+
+                                            <!-- Autocomplete -->
                                             <datalist id="nameList">
                                                 <option value="Monkey D. Luffy">
                                                 <option value="Roronoa Zoro">
@@ -830,9 +843,10 @@
                                                 <option value="Nico Robin">
                                             </datalist>
                                         </form>
-                                        <button id = "change" class="waves-light btn light-green" onclick="javascript:switchDiv();" style="color: #000000; margin-right: -600px; margin-top: -150px">Cancel</button>
+                                        <button id = "change" class="waves-light btn light-green" onclick="javascript:switchDiv();" style="color: #000000; margin-right: -400px; margin-top: -150px">Cancel</button>
                                     </div>
 
+                                    <!-- Pull Out Ownership Form -->
                                     <div id="pullOutOwnership" style="display: none;">
                                         <div class="modal-header">
                                             <label style="font-size: large">Pull Out Ownership</label>
@@ -849,6 +863,7 @@
                                         </form>
                                         <button id = "change" class="waves-light btn light-green" onclick="javascript:switchDiv1();" style="color: #000000; margin-right: -600px; margin-top: -100px">Cancel</button>
                                     </div>
+
                                 </div>
                             </div>
                         </div>
@@ -858,6 +873,7 @@
         </div>
     </div>
     </form>
+    <!-- Pull Out Ownership JS -->
     <script>
         function switchDiv1() {
             if (document.getElementById('pullOutOwnership') !== undefined) {
@@ -872,7 +888,7 @@
             }
         }
     </script>
-
+    <!-- Transfer Ownership JS -->
     <script>
         function switchDiv() {
             if (document.getElementById('transferOwnership') !== undefined) {
@@ -887,6 +903,7 @@
             }
         }
     </script>
+    <!-- Show Hide Unit JS -->
     <script>
         function switchVisible() {
             if (document.getElementById('tableUnit') !== undefined) {
@@ -901,8 +918,8 @@
             }
         }
     </script>
+    <!-- Modal and Select JS -->
     <script>
-
         $(document).ready(function(){
             // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
             $('.modal-trigger').leanModal();
@@ -923,7 +940,6 @@
         });
     </script>
 </div>
-
 </body>
 </html>
 

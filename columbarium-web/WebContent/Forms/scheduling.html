@@ -15,6 +15,7 @@
     <link href="../css/datepicker.css" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="../css/style.css">
 
+
 </head>
 <body>
 <div class = "col s12" >
@@ -23,15 +24,15 @@
             <div class = "col s12">
                 <div class = "aside aside z-depth-3" style="height: 450px; overflow: auto">
                     <div class="modal-header">
-                        <label style="font-size: x-large">Scheduling</label>
+                        <label style="font-size: x-large; font-family: myFirstFont2;">Scheduling</label>
                     </div>
-                    <div action="scheduling.html" method="post">
+                    <form action="scheduling.html" method="post">
 
                         <div id="time" class=" responsive modal">
                                 <div id="admin1" class="col s12"    >
                                     <div class="z-depth-2 card material-table">
                                         <div class="table-header" style="background-color: #00897b;">
-                                            <label style="font-size: large; color: #ffffff; font-family: 'KG Blank Space Sketch'">Select Time</label>
+                                            <label style="font-size: large; color: #ffffff; font-family: myFirstFont2">Select Time</label>
                                             <button class="add-toggle btn-floating light-green nopadding" style = "margin-left: 510px;"><i class="material-icons" style="color: #000000">add</i></button>
                                         </div>
 
@@ -42,12 +43,12 @@
                                                         <label>Add Time:</label>
                                                     </div>
                                                     <div class="input-field col s2">
-                                                        <input id="sTime" type="text" class="validate">
-                                                        <label for="sTime">Start Time</label>
+                                                        <input id="sTime" type="text" required="" aria-required="true" class="validate" pattern= "([01]?[0-9]|2[0-3]):[0-5][0-9]">
+                                                        <label for="sTime" data-error = "24 Hrs Format">Start Time</label>
                                                     </div>
                                                     <div class="input-field col s2">
-                                                        <input id="eTime" type="text" class="validate">
-                                                        <label for="eTime">End Time</label>
+                                                        <input id="eTime" type="text" class="validate" required="" aria-required="true" class="validate" pattern= "([01]?[0-9]|2[0-3]):[0-5][0-9]">
+                                                        <label for="eTime" data-error = "24 Hrs Format">End Time</label>
                                                     </div>
                                                     <div id="h" class="input-field col s1" style="visibility: hidden">
                                                         <p>hidden</p>
@@ -110,12 +111,9 @@
                                 </div>
                         </div>
                         <div class="row">
-                            <div class="input-field col s3">
-                                <label>Customer Name:</label>
-                            </div>
-                            <div class="input-field      col s6">
+                            <div class="input-field      col s6 ">
                                 <input name="cname" id="cname" type="text" required="" aria-required="true" class="validate" list="nameList">
-                                <label for="cname" data-error="No Existing Customer Found!">Customer Name</label>
+                                <label for="cname" data-error="No Existing Customer Found!">Customer Name<span style = "color: red;">*</span></label>
                             </div>
                         </div>
                         <div class="row">
@@ -144,7 +142,7 @@
                                             <input type="text" class="time"/>
                                         </div>
                                         <div class="input-field col s12">
-                                            <a class="waves-light btn light-green modal-trigger" href="#time" style="width: 100%; color#000000;">Select Time</a>
+                                            <a class="waves-light btn light-green modal-trigger" href="#time" style="width: 100%; color: #000000;">Select Time</a>
                                         </div>
                                     </div>
                                 </div>
@@ -330,7 +328,7 @@
                             <option value="Tony Tony Chopper">
                             <option value="Nico Robin">
                         </datalist>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -339,7 +337,7 @@
                 <div id="admin" class="col s12" style="margin-top: 13px">
                     <div class="z-depth-2 card material-table">
                         <div class="table-header" style="background-color: #00897b;">
-                            <span class="table-title" style="color:#ffffff; font-family: 'KG Blank Space Sketch';">Amortization Data Table</span>
+                            <span class="table-title" style="color:#ffffff; font-family: myFirstFont2">Amortization Data Table</span>
                             <div class="actions">
                                 <a href="#" class="right search-toggle btn-flat nopadding"><i class="material-icons" style="color: #ffffff;">search</i></a>
                             </div>
@@ -427,7 +425,264 @@
             </div>
             <script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js'></script>
             <script src='http://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js'></script>
-            <script type="text/javascript" src = "../js/index.js"></script>
+            <script>
+                (function(window, document, undefined) {
+
+                    var factory = function($, DataTable) {
+                        "use strict";
+
+                        $('.search-toggle').click(function() {
+                            if ($('.hiddensearch').css('display') == 'none')
+                                $('.hiddensearch').slideDown();
+                            else
+                                $('.hiddensearch').slideUp();
+                        });
+
+                        <!-- Scheduling Slide Add Time -->
+                        $('.add-toggle').click(function() {
+                            if ($('#addTime').css('display') == 'none')
+                                $('#addTime').slideDown();
+                            else
+                                $('#addTime').slideUp();
+                        });
+
+
+                        /* Set the defaults for DataTables initialisation */
+                        $.extend(true, DataTable.defaults, {
+                            dom: "<'hiddensearch'f'>" +
+                            "tr" +
+                            "<'table-footer'lip'>",
+                            renderer: 'material'
+                        });
+
+                        /* Default class modification */
+                        $.extend(DataTable.ext.classes, {
+                            sWrapper: "dataTables_wrapper",
+                            sFilterInput: "form-control input-sm",
+                            sLengthSelect: "form-control input-sm"
+                        });
+
+                        /* Bootstrap paging button renderer */
+                        DataTable.ext.renderer.pageButton.material = function(settings, host, idx, buttons, page, pages) {
+                            var api = new DataTable.Api(settings);
+                            var classes = settings.oClasses;
+                            var lang = settings.oLanguage.oPaginate;
+                            var btnDisplay, btnClass, counter = 0;
+
+                            var attach = function(container, buttons) {
+                                var i, ien, node, button;
+                                var clickHandler = function(e) {
+                                    e.preventDefault();
+                                    if (!$(e.currentTarget).hasClass('disabled')) {
+                                        api.page(e.data.action).draw(false);
+                                    }
+                                };
+
+                                for (i = 0, ien = buttons.length; i < ien; i++) {
+                                    button = buttons[i];
+
+                                    if ($.isArray(button)) {
+                                        attach(container, button);
+                                    } else {
+                                        btnDisplay = '';
+                                        btnClass = '';
+
+                                        switch (button) {
+
+                                            case 'first':
+                                                btnDisplay = lang.sFirst;
+                                                btnClass = button + (page > 0 ?
+                                                                '' : ' disabled');
+                                                break;
+
+                                            case 'previous':
+                                                btnDisplay = '<i class="material-icons">chevron_left</i>';
+                                                btnClass = button + (page > 0 ?
+                                                                '' : ' disabled');
+                                                break;
+
+                                            case 'next':
+                                                btnDisplay = '<i class="material-icons">chevron_right</i>';
+                                                btnClass = button + (page < pages - 1 ?
+                                                                '' : ' disabled');
+                                                break;
+
+                                            case 'last':
+                                                btnDisplay = lang.sLast;
+                                                btnClass = button + (page < pages - 1 ?
+                                                                '' : ' disabled');
+                                                break;
+
+                                        }
+
+                                        if (btnDisplay) {
+                                            node = $('<li>', {
+                                                'class': classes.sPageButton + ' ' + btnClass,
+                                                'id': idx === 0 && typeof button === 'string' ?
+                                                settings.sTableId + '_' + button : null
+                                            })
+                                                    .append($('<a>', {
+                                                                'href': '#',
+                                                                'aria-controls': settings.sTableId,
+                                                                'data-dt-idx': counter,
+                                                                'tabindex': settings.iTabIndex
+                                                            })
+                                                            .html(btnDisplay)
+                                                    )
+                                                    .appendTo(container);
+
+                                            settings.oApi._fnBindAction(
+                                                    node, {
+                                                        action: button
+                                                    }, clickHandler
+                                            );
+
+                                            counter++;
+                                        }
+                                    }
+                                }
+                            };
+
+                            // IE9 throws an 'unknown error' if document.activeElement is used
+                            // inside an iframe or frame.
+                            var activeEl;
+
+                            try {
+                                // Because this approach is destroying and recreating the paging
+                                // elements, focus is lost on the select button which is bad for
+                                // accessibility. So we want to restore focus once the draw has
+                                // completed
+                                activeEl = $(document.activeElement).data('dt-idx');
+                            } catch (e) {}
+
+                            attach(
+                                    $(host).empty().html('<ul class="material-pagination"/>').children('ul'),
+                                    buttons
+                            );
+
+                            if (activeEl) {
+                                $(host).find('[data-dt-idx=' + activeEl + ']').focus();
+                            }
+                        };
+
+                        /*
+                         * TableTools Bootstrap compatibility
+                         * Required TableTools 2.1+
+                         */
+                        if (DataTable.TableTools) {
+                            // Set the classes that TableTools uses to something suitable for Bootstrap
+                            $.extend(true, DataTable.TableTools.classes, {
+                                "container": "DTTT btn-group",
+                                "buttons": {
+                                    "normal": "btn btn-default",
+                                    "disabled": "disabled"
+                                },
+                                "collection": {
+                                    "container": "DTTT_dropdown dropdown-menu",
+                                    "buttons": {
+                                        "normal": "",
+                                        "disabled": "disabled"
+                                    }
+                                },
+                                "print": {
+                                    "info": "DTTT_print_info"
+                                },
+                                "select": {
+                                    "row": "active"
+                                }
+                            });
+
+                            // Have the collection use a material compatible drop down
+                            $.extend(true, DataTable.TableTools.DEFAULTS.oTags, {
+                                "collection": {
+                                    "container": "ul",
+                                    "button": "li",
+                                    "liner": "a"
+                                }
+                            });
+                        }
+
+                    }; // /factory
+
+                    // Define as an AMD module if possible
+                    if (typeof define === 'function' && define.amd) {
+                        define(['jquery', 'datatables'], factory);
+                    } else if (typeof exports === 'object') {
+                        // Node/CommonJS
+                        factory(require('jquery'), require('datatables'));
+                    } else if (jQuery) {
+                        // Otherwise simply initialise as normal, stopping multiple evaluation
+                        factory(jQuery, jQuery.fn.dataTable);
+                    }
+
+                })(window, document);
+
+                $(document).ready(function() {
+                    $('#datatable').dataTable({
+                        "iDisplayLength": 5,
+                        "oLanguage": {
+                            "sStripClasses": "",
+                            "sSearch": "",
+                            "sSearchPlaceholder": "Enter Keywords Here",
+                            "sInfo": "_START_ -_END_ of _TOTAL_",
+                            "sLengthMenu": '<span>Rows per page:</span><select class="browser-default">' +
+                            '<option value="5">5</option>' +
+                            '<option value="10">10</option>' +
+                            '<option value="20">20</option>' +
+                            '<option value="30">30</option>' +
+                            '<option value="40">40</option>' +
+                            '<option value="50">50</option>' +
+                            '<option value="-1">All</option>' +
+                            '</select></div>'
+                        },
+                        bAutoWidth: false
+                    });
+                });
+
+                $(document).ready(function() {
+                    $('#datatable3').dataTable({
+                        "iDisplayLength": 5,
+                        "oLanguage": {
+                            "sStripClasses": "",
+                            "sSearch": "",
+                            "sSearchPlaceholder": "Enter Keywords Here",
+                            "sInfo": "_START_ -_END_ of _TOTAL_",
+                            "sLengthMenu": '<span>Rows per page:</span><select class="browser-default">' +
+                            '<option value="5">5</option>' +
+                            '<option value="10">10</option>' +
+                            '<option value="20">20</option>' +
+                            '<option value="30">30</option>' +
+                            '<option value="40">40</option>' +
+                            '<option value="50">50</option>' +
+                            '<option value="-1">All</option>' +
+                            '</select></div>'
+                        },
+                        bAutoWidth: false
+                    });
+                });
+
+                $(document).ready(function() {
+                    $('#datatable2').dataTable({
+                        "iDisplayLength": 5,
+                        "oLanguage": {
+                            "sStripClasses": "",
+                            "sSearch": "",
+                            "sSearchPlaceholder": "Enter Keywords Here",
+                            "sInfo": "_START_ -_END_ of _TOTAL_",
+                            "sLengthMenu": '<span>Rows per page:</span><select class="browser-default">' +
+                            '<option value="5">5</option>' +
+                            '<option value="10">10</option>' +
+                            '<option value="20">20</option>' +
+                            '<option value="30">30</option>' +
+                            '<option value="40">40</option>' +
+                            '<option value="50">50</option>' +
+                            '<option value="-1">All</option>' +
+                            '</select></div>'
+                        },
+                        bAutoWidth: false
+                    });
+                });
+            </script>
         </div>
     </div>
     <script>
@@ -443,11 +698,14 @@
         });
     </script>
     <script>
+        var today = new Date();
+        var lastDate = new Date(today.getFullYear() +1, 11, 31);
         $( document ).ready(function() {
             $('.datepicker').pickadate({
                 format: 'mm/dd/yyyy',
                 selectMonths: true, // Creates a dropdown to control month
-                selectYears: 15 // Creates a dropdown of 15 years to control year
+                selectYears: 15, // Creates a dropdown of 15 years to control year
+                minDate: 0
             });
         });
     </script>
@@ -482,6 +740,5 @@
         });
     </script>
 </div>
-
 </body>
 </html>
